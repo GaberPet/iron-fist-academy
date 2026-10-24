@@ -1,0 +1,96 @@
+{
+  "version": 1,
+  "note": "General Tekken fundamentals shared by every character. These are game-system concepts, not character frame data.",
+  "lessons": [
+    {
+      "id": "g-notation",
+      "stage": 1,
+      "title": "Reading Tekken notation",
+      "objectives": [
+        "Map 1/2/3/4 to the DualSense face buttons",
+        "Read directions (f, b, d, df, uf...) relative to your character facing right",
+        "Understand +, comma, ~, *, and uppercase (hold) notation"
+      ],
+      "explanation": "Tekken moves are written as **direction + button**. Buttons are numbered by limb: **1** = left punch (□), **2** = right punch (△), **3** = left kick (✕), **4** = right kick (○) on Tekken 8's default PlayStation layout.\n\nDirections assume you are on the **left side facing right**: `f` forward, `b` back, `u` up, `d` down, and diagonals `df`, `db`, `uf`, `ub`. `n` means neutral (let go).\n\n- `df+2`: hold down-forward and press 2\n- `1,2`: press 1, then 2 (a string)\n- `1+2`: press 1 and 2 together\n- `f,F+2`: tap forward, then forward again and **hold** it (uppercase = hold) while pressing 2\n- `~`: immediately after; `*`: hold the button; `:` just-frame\n- `ws`: while standing up from a crouch; `FC`: full crouch; `H.`: during Heat; `CH`: on counter hit\n\nThe app shows PlayStation icons next to every notation so you build the mapping automatically. Practising from the right side? Turn on **P2 side** in Controller Setup and left/right are mirrored for you.",
+      "visual": { "type": "controller" },
+      "guided": { "type": "input", "moves": ["1", "2", "3", "4", "1+2", "df+1", "d+4", "f,F+2"], "reps": 1, "note": "Perform each input once. Take your time." },
+      "challenge": { "type": "quiz", "generator": "notation", "count": 6 },
+      "success": "Every input performed correctly and at least the mastery threshold on the notation quiz.",
+      "review": ["If directions feel backwards, check Controller Setup → P2 side is off.", "Diagonals must be exact: df is down AND forward together."],
+      "related": { "lessons": ["g-movement"] }
+    },
+    {
+      "id": "g-movement",
+      "stage": 1,
+      "title": "Movement: dash, backdash, sidestep, crouch",
+      "objectives": ["Dash and backdash on command", "Sidestep both directions", "Crouch and stand up cleanly (ws inputs)"],
+      "explanation": "Movement wins more rounds than combos.\n\n- **Dash** `f,f`: closes distance quickly.\n- **Backdash** `b,b`: creates space so attacks whiff. Repeated backdashes are how you escape pressure.\n- **Sidestep** tap `u` (sidestep left, into the background on the P1 side) or tap `d` (sidestep right). Linear moves miss a sidestepping opponent; moves with tracking hit them.\n- **Crouch** `d`: ducks high attacks and blocks lows. Moves done while rising from a crouch are written `ws` (while standing): crouch, release down, then press.\n\nThe recognizer below checks the exact directions you input so you learn clean motions from day one.",
+      "visual": { "type": "controller" },
+      "guided": { "type": "input", "moves": ["dash", "backdash", "ssl", "ssr"], "reps": 2 },
+      "challenge": { "type": "input", "moves": ["backdash", "backdash", "ssl", "dash", "ssr"], "reps": 2, "note": "Chain the movement inputs without hesitating." },
+      "success": "Clean motions in both the guided and challenge sets at the mastery threshold.",
+      "review": ["Backdash needs two separate taps of back; holding back only walks.", "A sidestep is a single short tap; holding becomes sidewalk."],
+      "related": { "lessons": ["g-blocking"] }
+    },
+    {
+      "id": "g-blocking",
+      "stage": 1,
+      "title": "Blocking highs, mids and lows",
+      "objectives": ["Stand-block highs and mids", "Crouch-block lows", "Know that crouching ducks highs but loses to mids"],
+      "explanation": "Hold **back** to stand-block: it stops **highs** and **mids**. Hold **down-back** to crouch-block: it stops **lows** and makes **highs** whiff, but **mids hit you**.\n\nThat triangle is the core of Tekken's mix-up game: an opponent who expects you to stand will go low, and if you crouch they hit you with a mid.\n\nIn the training simulation below the bot shows the attack's height a short time after it starts; the reaction time is adjustable. The simulation is a timing exercise, not a replica of Tekken 8 animations: to learn real animations, record dummy mix-ups in Tekken 8 Practice mode.",
+      "guided": { "type": "drill", "drill": "block-mixup", "reps": 10, "passRate": 0.7 },
+      "challenge": { "type": "drill", "drill": "block-mixup", "reps": 15, "passRate": 0.8 },
+      "success": "Block correctly at the required rate.",
+      "review": ["Don't hold down-back by default: mids are far more common than lows.", "Practise the real animations in Tekken 8 Practice: set the dummy to random mid/low recordings."],
+      "related": { "lessons": ["g-frames"] }
+    },
+    {
+      "id": "g-throws",
+      "stage": 1,
+      "title": "Throws and throw breaks",
+      "objectives": ["Know which button breaks which throw", "Break throws in the simulation at the required rate"],
+      "explanation": "Generic Tekken throws are `1+3` and `2+4`. Break rules:\n\n- a throw started with **1+3** (left arm grabs first) is broken with **1**\n- a throw started with **2+4** (right arm first) is broken with **2**\n- a **1+2**-type throw (both arms) is broken with **1+2**\n\nIf you can't tell which arm came first you have to guess, so learning the throw animations in Tekken 8 Practice mode is the long-term fix. Command throws (e.g. Armor King's grabs) have their own rules listed in the move list.\n\nThe simulation's break window is an adjustable approximation (default 20 frames). Verify the real window in Tekken 8 Practice with the dummy set to throw.",
+      "guided": { "type": "quiz", "generator": "throwbreak", "count": 4 },
+      "challenge": { "type": "drill", "drill": "throw-break", "reps": 12, "passRate": 0.7 },
+      "success": "Pass the quiz and break throws at the required rate.",
+      "review": ["Watch which arm reaches first.", "Ducking (crouching) avoids standing throws entirely."],
+      "related": { "lessons": ["g-blocking"] }
+    },
+    {
+      "id": "g-frames",
+      "stage": 1,
+      "title": "Frame data in plain language",
+      "objectives": ["Read startup (i13), block (-12) and hit (+5) numbers", "Classify moves as plus, safe, punishable or launch punishable"],
+      "explanation": "Tekken runs at **60 frames per second**. Frame data tells you how long things take.\n\n- **Startup** `i13`: the move hits on frame 13 at the earliest. Lower is faster.\n- **On block** `-12`: after it is blocked, the attacker recovers 12 frames later than the defender. The defender has a **guaranteed** punish with any move of startup ≤ 12.\n- **On hit** `+5`: the attacker recovers first by 5 frames.\n\nRules of thumb used throughout this app (general Tekken rules):\n\n- **+1 or more**: plus, you keep your turn\n- **0 to -9**: safe (the fastest standard punishers are i10)\n- **-10 to -14**: punishable\n- **-15 or worse**: launch punishable for most characters\n\nAll frame numbers in this app come from Wavu Wiki and show their source. Tekken 8's Practice mode has a frame data display you can use to double-check any value.",
+      "guided": { "type": "quiz", "generator": "safety", "count": 6 },
+      "challenge": { "type": "quiz", "generator": "startup", "count": 6 },
+      "success": "Mastery threshold on both quizzes.",
+      "review": ["A minus move isn't automatically bad: -5 is still safe.", "Advantage on hit lets you continue attacking; on block it decides whose turn it is."],
+      "related": { "lessons": ["g-punish"] }
+    },
+    {
+      "id": "g-punish",
+      "stage": 2,
+      "title": "Punishment fundamentals",
+      "objectives": ["Know your guaranteed punisher for each frame window", "Punish blocked unsafe moves in the simulation"],
+      "explanation": "When you block a move that is -10 or worse you get a **free hit**. Strong players punish every time; this is the most reliable damage in Tekken.\n\n1. Block the move.\n2. Recognise how minus it is (learn the common ones from your matchups).\n3. Press the strongest punisher fast enough for that window.\n\nAfter blocking a **low** you are crouching, so you need **while-standing (ws)** or crouching punishers instead of standing ones.\n\nThe simulation checks frame timing: your punisher's startup plus how late you pressed must fit inside the window. It does **not** model range or pushback, so some punishes that work in the simulation whiff in Tekken 8 at long range.",
+      "guided": { "type": "quiz", "generator": "punisher", "count": 6 },
+      "challenge": { "type": "drill", "drill": "punish-standing", "reps": 10, "passRate": 0.7 },
+      "success": "Quiz at the mastery threshold and punish at the required rate.",
+      "review": ["If you were 'too slow', you pressed after the window: input your punisher during blockstun so it comes out on the first possible frame.", "Use the strongest punisher that fits, not just jab."],
+      "related": { "lessons": ["g-frames"] }
+    },
+    {
+      "id": "g-heat-rage",
+      "stage": 2,
+      "title": "Heat and Rage basics",
+      "objectives": ["Know how to activate Heat (2+3 Heat Burst or a Heat Engager)", "Know when Rage Art is available"],
+      "explanation": "**Heat** (Tekken 8): once per round you can enter Heat with **Heat Burst** (`2+3`) or by landing a **Heat Engager** move. During Heat you get stronger options, chip damage on block, and access to `H.` moves; **Heat Smash** is `H.2+3`. Heat Dash (pressing f during certain engagers) extends pressure.\n\n**Rage**: when your health is low you enter Rage and can use a **Rage Art** (`R.df+1+2`), a high-damage move with armour that is very unsafe on block.\n\nCharacter pages list each character's engagers, Heat Smash and Rage Art with frame data. Practise Heat activation timing in Tekken 8 Practice mode; the simulation does not model Heat.",
+      "guided": { "type": "input", "moves": ["2+3", "df+1+2"], "reps": 3, "note": "Heat Burst and the Rage Art motion." },
+      "challenge": { "type": "checklist", "items": ["In Tekken 8 Practice mode, activate Heat with 2+3 and with one of your Heat Engagers", "Use your Heat Smash (H.2+3) on a standing dummy", "Set the dummy's health low and land your Rage Art", "Block your own Rage Art (record the dummy) and note how unsafe it is"] },
+      "success": "Inputs performed and in-game checklist confirmed.",
+      "review": ["Don't throw away Rage Art on block: it is one of the most punishable moves in the game."],
+      "related": { "lessons": ["g-punish"] }
+    }
+  ]
+}

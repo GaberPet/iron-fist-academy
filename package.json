@@ -1,0 +1,92 @@
+{
+  "name": "iron-fist-academy",
+  "productName": "Iron Fist Academy",
+  "version": "0.1.0",
+  "description": "Open-source training academy for Tekken 8: structured lessons, live DualSense combo trainer, punishment drills and progress tracking. Unofficial fan project.",
+  "author": "GaberPet and contributors",
+  "license": "MIT",
+  "private": true,
+  "main": "electron/main.cjs",
+  "type": "module",
+  "scripts": {
+    "dev": "node scripts/dev.mjs",
+    "dev:web": "vite",
+    "build": "tsc --noEmit && vite build",
+    "start": "electron .",
+    "test": "vitest run",
+    "typecheck": "tsc --noEmit",
+    "import-data": "node scripts/import-wavu.mjs",
+    "dist:win": "npm run build && electron-builder --win nsis portable --x64",
+    "dist:linux": "npm run build && electron-builder --linux AppImage"
+  },
+  "build": {
+    "appId": "io.github.gaberpet.ironfistacademy",
+    "productName": "Iron Fist Academy",
+    "files": [
+      "dist/**",
+      "electron/**",
+      "package.json"
+    ],
+    "directories": {
+      "output": "release"
+    },
+    "win": {
+      "target": [
+        "nsis",
+        "portable"
+      ],
+      "icon": "build/icon.png"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    },
+    "portable": {
+      "artifactName": "Iron-Fist-Academy-${version}-portable.exe"
+    },
+    "linux": {
+      "target": [
+        "AppImage"
+      ],
+      "icon": "build/icon.png"
+    },
+    "copyright": "Copyright © 2026 GaberPet and contributors",
+    "publish": null
+  },
+  "dependencies": {
+    "react": "^18.3.1",
+    "react-dom": "^18.3.1"
+  },
+  "devDependencies": {
+    "@types/react": "^18.3.12",
+    "@types/react-dom": "^18.3.1",
+    "@vitejs/plugin-react": "^4.3.4",
+    "electron": "^33.2.1",
+    "electron-builder": "^25.1.8",
+    "jsdom": "^25.0.1",
+    "typescript": "^5.6.3",
+    "vite": "^5.4.11",
+    "vitest": "^2.1.8"
+  },
+  "allowScripts": {
+    "electron@33.2.1": true,
+    "esbuild@0.21.5": true
+  },
+  "homepage": "https://github.com/GaberPet/iron-fist-academy#readme",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/GaberPet/iron-fist-academy.git"
+  },
+  "bugs": {
+    "url": "https://github.com/GaberPet/iron-fist-academy/issues"
+  },
+  "keywords": [
+    "tekken",
+    "tekken-8",
+    "fighting-games",
+    "training",
+    "frame-data",
+    "dualsense",
+    "combo-trainer"
+  ]
+}

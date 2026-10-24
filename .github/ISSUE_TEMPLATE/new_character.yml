@@ -1,0 +1,22 @@
+name: Character curation
+description: Volunteer or request curated lessons and combos for a character
+labels: [content, character]
+body:
+  - type: input
+    id: character
+    attributes:
+      label: Character
+    validations:
+      required: true
+  - type: dropdown
+    id: role
+    attributes:
+      label: Are you volunteering to curate?
+      options: [Yes, I'd like to curate this character, No, requesting it]
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Notes
+      description: Key moves, sources you'd use, your experience with the character.

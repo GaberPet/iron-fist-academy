@@ -1,0 +1,30 @@
+name: Data correction
+description: A frame value, input, damage or combo route is wrong
+labels: [data]
+body:
+  - type: input
+    id: character
+    attributes:
+      label: Character
+    validations:
+      required: true
+  - type: input
+    id: move
+    attributes:
+      label: Move or combo (notation)
+      placeholder: e.g. df+2, or the combo name
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What the app shows vs. the correct value
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: How you verified it
+      description: Practice mode frame display, patch/version, source link, video timestamp...
+    validations:
+      required: true

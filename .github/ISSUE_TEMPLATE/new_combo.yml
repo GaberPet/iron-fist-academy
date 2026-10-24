@@ -1,0 +1,39 @@
+name: New combo
+description: Suggest a combo route to add
+labels: [content, combo]
+body:
+  - type: input
+    id: character
+    attributes:
+      label: Character
+    validations:
+      required: true
+  - type: input
+    id: starter
+    attributes:
+      label: Starter(s)
+      placeholder: e.g. df+2, uf+4, CH ws2
+    validations:
+      required: true
+  - type: input
+    id: route
+    attributes:
+      label: Route (Wavu notation)
+      placeholder: e.g. df+3 f+3,2~DF CD.1 f+3,2,1 T! dash f+1+2~F BAD.2+4
+    validations:
+      required: true
+  - type: input
+    id: damage
+    attributes:
+      label: Damage (as listed by the source)
+  - type: input
+    id: source
+    attributes:
+      label: Source link
+      description: Wavu page with revision, or "verified in Practice mode on patch X".
+    validations:
+      required: true
+  - type: textarea
+    id: notes
+    attributes:
+      label: Situation, difficulty and common mistakes

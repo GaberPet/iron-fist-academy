@@ -1,0 +1,5 @@
+blank_issues_enabled: true
+contact_links:
+  - name: Frame data source (Wavu Wiki)
+    url: https://wavu.wiki
+    about: Frame data is imported from Wavu Wiki. If a value is wrong there, it can be fixed on the wiki.

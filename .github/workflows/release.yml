@@ -1,0 +1,40 @@
+name: Release desktop builds
+
+# Push a tag like v0.2.0 to build the Windows installer + portable .exe on a real Windows runner
+# and attach them to a GitHub Release (created as a draft so you can review the notes first).
+on:
+  push:
+    tags: ['v*']
+
+permissions:
+  contents: write
+
+jobs:
+  windows:
+    runs-on: windows-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+      - run: npm test
+      - name: Build installer and portable exe
+        run: npm run dist:win
+      - name: Smoke-test the packaged app
+        shell: pwsh
+        run: |
+          $env:IFA_SMOKE = '1'
+          $env:IFA_SMOKE_OUT = "$env:RUNNER_TEMP\smoke.json"
+          $p = Start-Process -FilePath "release\win-unpacked\Iron Fist Academy.exe" -PassThru
+          if (-not $p.WaitForExit(120000)) { $p.Kill(); throw 'Smoke test timed out' }
+          Get-Content $env:IFA_SMOKE_OUT
+          if ($p.ExitCode -ne 0) { throw "Smoke test failed with exit code $($p.ExitCode)" }
+      - name: Create draft release
+        shell: bash
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: |
+          gh release create "$GITHUB_REF_NAME" --draft --generate-notes --title "Iron Fist Academy $GITHUB_REF_NAME" \
+            release/*.exe
