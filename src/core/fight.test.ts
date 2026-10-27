@@ -328,4 +328,19 @@ describe('FightEngine', () => {
     expect(['air', 'down']).toContain(e.f[1].state);
     expect(e.f[0].hp).toBe(MAX_HP);
   });
+
+  it('practice mode: the dummy guards as set, health refills, no timer', () => {
+    const e = new FightEngine({ player: jin, bot: anna, difficulty: 'normal', rng: passive, practice: { dummy: 'none' } });
+    const f = closeIn(e);
+    const t0 = e.timer;
+    run(e, f, 60, (x) => (x < f + 3 ? { dir: 'df', press: [1] } : {}));
+    expect(e.f[1].hp).toBeLessThan(MAX_HP);
+    run(e, f + 60, 120, () => ({}));
+    expect(e.f[1].hp).toBe(MAX_HP);
+    expect(e.timer).toBe(t0);
+    const c = new FightEngine({ player: jin, bot: anna, difficulty: 'normal', rng: passive, practice: { dummy: 'crouch' } });
+    const g = closeIn(c);
+    const low = run(c, g, 60, (x) => (x < g + 3 ? { dir: 'd', press: [4] } : { dir: 'n' }));
+    expect(low.some((x) => x.type === 'block' && x.by === 0)).toBe(true);
+  });
 });

@@ -1,12 +1,13 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CharacterData } from '../../types';
 import type { Difficulty } from '../../core/progress';
-import { FightEngine, MAX_HP, RAGE_HP, heatShare, inRage, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
+import { FightEngine, MAX_HP, type DummyMode, RAGE_HP, heatShare, inRage, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
 import { useCaptureInput, useInputFrames } from '../hooks';
 import { useStore } from '../store';
 import { inputManager } from '../../runtime/inputManager';
 import { lookFor } from '../components/fighterLooks';
 import { Arena3D } from '../three/arena3d';
+import { DrillView } from '../three/dojo3d';
 import { playEvents, playFall, setSfxMuted, sfxMuted, unlockAudio } from '../three/sfx';
 import { NotationView } from '../components/Notation';
 import { InputLog } from '../components/InputLog';
@@ -22,6 +23,8 @@ export function FightPage() {
   const [run, setRun] = useState(0);
   const [running, setRunning] = useState(false);
   const [mute, setMute] = useState(sfxMuted());
+  const [mode, setMode] = useState<'match' | 'practice'>('match');
+  const [dummy, setDummy] = useState<DummyMode>('stand');
   useEffect(() => {
     ensureLoaded([oppId, meId]).catch(() => undefined);
   }, [oppId, meId, ensureLoaded]);
@@ -49,6 +52,22 @@ export function FightPage() {
           </select>
         </label>
         <button className="btn" onClick={() => { setOppId(pickRandom(roster.map((r) => r.id).filter((id) => id !== oppId))); setRunning(false); }}>Random</button>
+        <label className="field">Mode
+          <div className="seg">
+            {(['match', 'practice'] as const).map((m) => <button key={m} className={mode === m ? 'on' : ''} onClick={() => { setMode(m); setRunning(false); }}>{m === 'match' ? 'Match' : 'Practice'}</button>)}
+          </div>
+        </label>
+        {mode === 'practice' && (
+          <label className="field">Dummy
+            <select value={dummy} onChange={(e) => { setDummy(e.target.value as DummyMode); setRunning(false); }}>
+              <option value="stand">Stand guard</option>
+              <option value="crouch">Crouch guard</option>
+              <option value="random">Random guard</option>
+              <option value="none">No guard (combo practice)</option>
+              <option value="fight">Fights back (no K.O.)</option>
+            </select>
+          </label>
+        )}
         <label className="field">Bot level
           <div className="seg">
             {(['easy', 'normal', 'hard'] as Difficulty[]).map((d) => (
@@ -56,11 +75,13 @@ export function FightPage() {
             ))}
           </div>
         </label>
-        <label className="field">Rounds to win
-          <div className="seg">
-            {[1, 2, 3].map((n) => <button key={n} className={rounds === n ? 'on' : ''} onClick={() => { setRounds(n); setRunning(false); }}>{n}</button>)}
-          </div>
-        </label>
+        {mode === 'match' && (
+          <label className="field">Rounds to win
+            <div className="seg">
+              {[1, 2, 3].map((n) => <button key={n} className={rounds === n ? 'on' : ''} onClick={() => { setRounds(n); setRunning(false); }}>{n}</button>)}
+            </div>
+          </label>
+        )}
         <span className="right" />
         <button className="btn" aria-pressed={!mute} onClick={() => { unlockAudio(); setSfxMuted(!mute); setMute(!mute); }}>{mute ? 'Sound off' : 'Sound on'}</button>
         <button className="btn primary" disabled={!opp || !me} onClick={() => { unlockAudio(); setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
@@ -70,12 +91,63 @@ export function FightPage() {
         <b>Heat</b> (once per round): <b>2+3</b> Heat Burst (10 s) or land a Heat Engager (15 s). In Heat: H. moves, chip damage on block, faster health recovery; <b>2+3</b> is your Heat Smash; hold <b>f</b> when a Heat Engager connects for a Heat Dash. <b>Rage</b> at {RAGE_HP} HP or less: +10% damage, <b>d/f+1+2</b> Rage Art (armoured). White health is recoverable: you get it back by attacking.
       </div>
       {running && opp && me ? (
-        <FightArena key={`${run}-${meId}-${oppId}-${rounds}-${settings.drillDifficulty}`} me={me} opp={opp} rounds={rounds} difficulty={settings.drillDifficulty} />
+        <FightArena key={`${run}-${meId}-${oppId}-${rounds}-${settings.drillDifficulty}-${mode}-${dummy}`} me={me} opp={opp} rounds={rounds} difficulty={settings.drillDifficulty} practice={mode === 'practice' ? dummy : null} />
       ) : (
-        <div className="empty">{me?.profile.name ?? '…'} vs {opp?.profile.name ?? '…'}. Press <b>Fight!</b></div>
+        <div className="arena-wrap arena-3d vs-preview">
+          {me && opp && <VsPreview me={me} opp={opp} />}
+          <div className="vs-names">
+            <span>{me?.profile.name ?? '…'}</span>
+            <b>VS</b>
+            <span>{opp?.profile.name ?? '…'}</span>
+          </div>
+        </div>
       )}
     </div>
   );
+}
+
+/** Both fighters idling in 3D on the select screen. */
+function VsPreview({ me, opp }: { me: CharacterData; opp: CharacterData }) {
+  const ref = useRef<HTMLCanvasElement>(null);
+  const arena = useRef<Arena3D | null>(null);
+  useEffect(() => {
+    if (!ref.current) return;
+    let a: Arena3D;
+    try {
+      a = new Arena3D(ref.current, [lookFor(me.profile.id, me.profile.color, 'you'), lookFor(opp.profile.id, opp.profile.color, 'bot')]);
+    } catch {
+      return;
+    }
+    arena.current = a;
+    const view = new DrillView();
+    view.p.pos.x = -75;
+    view.b.pos.x = 75;
+    const fit = () => a.resize(ref.current?.clientWidth ?? 960, ref.current?.clientHeight ?? 465);
+    fit();
+    window.addEventListener('resize', fit);
+    let raf = 0;
+    let t = 0;
+    const loop = () => {
+      a.render(view.fake, t++);
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', fit);
+      a.dispose();
+      arena.current = null;
+    };
+    // the arena is built once; looks are swapped below
+    // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, []);
+  useEffect(() => {
+    arena.current?.setLook(0, lookFor(me.profile.id, me.profile.color, 'you'));
+  }, [me]);
+  useEffect(() => {
+    arena.current?.setLook(1, lookFor(opp.profile.id, opp.profile.color, 'bot'));
+  }, [opp]);
+  return <canvas ref={ref} className="gl" aria-label={`${me.profile.name} versus ${opp.profile.name}`} />;
 }
 
 function pickRandom(ids: string[]) {
@@ -90,14 +162,14 @@ interface Hud {
 
 const SIZE = { w: 1280, h: 620 };
 
-function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: CharacterData; rounds: number; difficulty: Difficulty }) {
+function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterData; opp: CharacterData; rounds: number; difficulty: Difficulty; practice: DummyMode | null }) {
   const { settings } = useStore();
   useCaptureInput();
   const gl = useRef<HTMLCanvasElement>(null);
   const hudCanvas = useRef<HTMLCanvasElement>(null);
   const engine = useMemo(
-    () => new FightEngine({ player: me, bot: opp, difficulty, rng: Math.random, roundsToWin: rounds, recognizer: settings.recognizer }),
-    [me, opp, difficulty, rounds, settings.recognizer],
+    () => new FightEngine({ player: me, bot: opp, difficulty, rng: Math.random, roundsToWin: rounds, recognizer: settings.recognizer, practice: practice ? { dummy: practice } : undefined }),
+    [me, opp, difficulty, rounds, settings.recognizer, practice],
   );
   const arena = useRef<Arena3D | null>(null);
   const pending = useRef<FightEvent[]>([]);
@@ -411,7 +483,7 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
   ctx.font = `600 44px ${DISPLAY}`;
   ctx.textAlign = 'center';
   ctx.fillStyle = e.secondsLeft <= 10 && e.phase === 'fight' ? '#ff5d6c' : '#f2f3f8';
-  ctx.fillText(String(Math.max(0, e.secondsLeft)), W / 2, top + 34);
+  ctx.fillText(e.cfg.practice ? '∞' : String(Math.max(0, e.secondsLeft)), W / 2, top + 34);
   // banners
   if (e.banner && e.frame < e.banner.until) {
     ctx.font = `600 96px ${DISPLAY}`;

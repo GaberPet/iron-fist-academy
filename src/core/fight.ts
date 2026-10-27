@@ -139,7 +139,11 @@ export interface FightConfig {
   rng: Rng;
   roundsToWin?: number;
   recognizer?: RecognizerOptions;
+  /** Practice mode (like Tekken's training mode): a configurable dummy, health refills, no timer. */
+  practice?: { dummy: DummyMode };
 }
+
+export type DummyMode = 'stand' | 'crouch' | 'random' | 'none' | 'fight';
 
 // ---------- move helpers (exported for tests) ----------
 
@@ -476,7 +480,7 @@ export class FightEngine {
       return ev;
     }
 
-    this.timer--;
+    if (!this.cfg.practice) this.timer--;
     this.tick(p, now, ev);
     this.tick(b, now, ev);
     this.playerControl(input, ev);
@@ -494,6 +498,21 @@ export class FightEngine {
     if (this.pending.length) {
       ev.push(...this.pending);
       this.pending = [];
+    }
+    if (this.cfg.practice) {
+      for (const x of [p, b]) {
+        if (x.hp <= 0) x.hp = 1;
+        const idle = (x.state === 'neutral' || x.state === 'blockstun') && now - x.lastHit > 50;
+        if (idle && x.hp < MAX_HP) {
+          x.hp = MAX_HP;
+          x.recov = 0;
+        }
+        if (x.heat === 'used' && now - x.lastHit > 50 && x.state === 'neutral') {
+          x.heat = 'ready';
+          x.heatLeft = 0;
+        }
+        if (x.rageUsed && x.hp === MAX_HP) x.rageUsed = false;
+      }
     }
     for (const x of [p, b]) {
       if (inRage(x) && !this.rageShown[x.side]) {
@@ -1192,6 +1211,19 @@ export class FightEngine {
     const rng = this.cfg.rng;
     const dist = this.distance;
 
+    const dummy = this.cfg.practice?.dummy;
+    if (dummy && dummy !== 'fight') {
+      b.walking = 0;
+      if (b.state === 'down' && now - b.stateAt === 2 && !b.noTech && rng() < 0.5) {
+        this.setState(b, 'techroll', now, now + TECH_ROLL);
+        b.step = { dir: rng() < 0.5 ? 1 : -1, ssr: false };
+      }
+      if (b.state !== 'neutral' && b.state !== 'blockstun') return;
+      if (dummy === 'random' && b.state === 'neutral' && now % 40 === 0) b.guard = rng() < 0.5 ? 'stand' : 'crouch';
+      else if (dummy !== 'random') b.guard = dummy === 'stand' ? 'stand' : dummy === 'crouch' ? 'crouch' : 'none';
+      b.crouching = b.guard === 'crouch';
+      return;
+    }
     if (b.state === 'thrown') {
       if (b.until - now === THROW_BREAK - 9 && rng() < S.breakThrow) {
         const want = b.throwBreak;
