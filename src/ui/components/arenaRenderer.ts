@@ -45,11 +45,15 @@ export function lerpPose(a: Pose, b: Pose, t: number): Pose {
   return o;
 }
 
+export type FightStyle = 'boxer' | 'mishima' | 'wrestler' | 'capoeira' | 'muaythai' | 'kungfu' | 'kicker' | 'wingchun' | 'ninja' | 'elegant' | 'beast' | 'robot' | 'karate' | 'grappler';
+
 export interface FighterLook {
   build: 'male' | 'female' | 'beast' | 'robot';
   hairStyle: 'short' | 'spiky' | 'bob' | 'ponytail' | 'long' | 'buns' | 'bald';
   /** 3D only: outfit cut, height and width scale. */
   outfit?: 'tank' | 'jacket' | 'bare' | 'gi' | 'suit' | 'dress';
+  /** 3D only: fighting-style stance. */
+  style?: FightStyle;
   height?: number;
   width?: number;
   skin: string;

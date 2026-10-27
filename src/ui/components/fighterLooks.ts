@@ -1,6 +1,6 @@
 // Generic, original looks for the arena fighters: body type, hair and colours only.
 // No Bandai Namco designs or art are reproduced; the colours are loose hints so characters can be told apart.
-import type { FighterLook } from './arenaRenderer';
+import type { FightStyle, FighterLook } from './arenaRenderer';
 
 type Partial = Pick<FighterLook, 'build' | 'hairStyle'> & { hair?: string; skin?: string; top?: string; pants?: string };
 
@@ -68,6 +68,16 @@ const BODY: Record<string, [FighterLook['outfit'], number, number?]> = {
   kuma: ['bare', 1.25, 1.45], panda: ['bare', 1.2, 1.45], 'jack-8': ['suit', 1.22, 1.3],
 };
 
+/** Fighting style of each character (general martial-art families, used for the 3D stance). */
+const STYLE: Record<string, FightStyle> = {
+  steve: 'boxer', jin: 'karate', kazuya: 'mishima', 'devil-jin': 'mishima', heihachi: 'mishima', reina: 'mishima',
+  'armor-king': 'wrestler', king: 'wrestler', eddy: 'capoeira', bryan: 'muaythai', fahkumram: 'muaythai',
+  lee: 'kungfu', law: 'kungfu', xiaoyu: 'kungfu', feng: 'kungfu', jun: 'kungfu', leo: 'kungfu', azucena: 'kungfu', 'miary-zo': 'kungfu',
+  hwoarang: 'kicker', lili: 'elegant', asuka: 'karate', leroy: 'wingchun', raven: 'ninja', kunimitsu: 'ninja', yoshimitsu: 'ninja',
+  nina: 'elegant', anna: 'elegant', zafina: 'ninja', paul: 'grappler', dragunov: 'grappler', lidia: 'karate', claudio: 'karate',
+  shaheen: 'kungfu', victor: 'boxer', clive: 'karate', bob: 'karate', alisa: 'robot', 'jack-8': 'robot', kuma: 'beast', panda: 'beast', lars: 'karate',
+};
+
 /** Look for a character. `role` picks the default outfit (you = red gloves, bot = blue). */
 export function lookFor(charId: string | undefined, color: string, role: 'you' | 'bot'): FighterLook {
   const l = (charId && LOOKS[charId]) || M('short', '#1a1210');
@@ -75,6 +85,7 @@ export function lookFor(charId: string | undefined, color: string, role: 'you' |
   const body = (charId && BODY[charId]) || ['tank', 1];
   return {
     outfit: body[0],
+    style: (charId && STYLE[charId]) || 'karate',
     height: body[1],
     width: body[2] ?? 1,
     build: l.build,

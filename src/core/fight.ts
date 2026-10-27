@@ -126,6 +126,8 @@ export interface FightEvent {
   level?: Level;
   damage?: number;
   text?: string;
+  /** Attacker's frame advantage after this hit / block, from the data ("+8", "-12", "KND", "LAUNCH"). */
+  adv?: string;
 }
 
 export interface FightConfig {
@@ -846,7 +848,7 @@ export class FightEngine {
       if (/Heat Engager/.test(m.notes) && a.heat === 'active' && this.holdingForward(a)) this.heatDash(a, d, now, false, attackerEnd);
       this.push(a, d, 12, now, ev);
       if (a.side === 1) this.botAdv = { adv: m.blockFrame ?? 0, until: attackerEnd + 20 };
-      ev.push({ type: 'block', by: a.side, at: mid, y: hitY, level: lv });
+      ev.push({ type: 'block', by: a.side, at: mid, y: hitY, level: lv, adv: m.blockFrame === null ? undefined : `${m.blockFrame >= 0 ? '+' : ''}${m.blockFrame}` });
       return;
     }
 
@@ -911,7 +913,8 @@ export class FightEngine {
     }
     if (a.side === 1) this.botAdv = { adv: res.launch ? 30 : res.adv, until: attackerEnd + 20 };
     this.freeze = Math.max(this.freeze, counter ? 5 : dmg >= 20 ? 4 : 2);
-    ev.push({ type: counter ? 'counter' : 'hit', by: a.side, at: mid, y: hitY, level: lv, damage: dmg, text: counter ? 'COUNTER HIT' : undefined });
+    const adv = juggle ? undefined : res.launch ? 'LAUNCH' : res.knockdown ? 'KND' : `${res.adv >= 0 ? '+' : ''}${res.adv}`;
+    ev.push({ type: counter ? 'counter' : 'hit', by: a.side, at: mid, y: hitY, level: lv, damage: dmg, text: counter ? 'COUNTER HIT' : undefined, adv });
   }
 
   private holdingForward(x: Fighter) {

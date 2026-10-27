@@ -238,7 +238,7 @@ export class Arena3D {
     for (const i of [0, 1] as const) {
       const x = e.f[i];
       const fig = this.fighters[i];
-      const a = poseFor(e, x, now, this.walkPhase[i]);
+      const a = poseFor(e, x, now, this.walkPhase[i], fig.look.style);
       fig.apply(a.pose, a.k);
       fig.root.position.set(x.pos.x / 100, 0, x.pos.z / 100);
       fig.root.position.y = a.lift;
@@ -256,9 +256,10 @@ export class Arena3D {
     while (da > Math.PI) da -= Math.PI * 2;
     while (da < -Math.PI) da += Math.PI * 2;
     this.camAngle += da * 0.08;
-    const dist = Math.max(4.7, Math.min(8.5, 3.4 + (e.distance / 100) * 1.3));
+    const tall = Math.max(this.fighters[0].H, this.fighters[1].H);
+    const dist = Math.max(4.7, Math.min(8.5, 3.4 + (e.distance / 100) * 1.3)) * (0.75 + tall * 0.25);
     let target = new THREE.Vector3(mid.x + Math.sin(this.camAngle) * dist, 1.45 + dist * 0.06, mid.z + Math.cos(this.camAngle) * dist);
-    let look = new THREE.Vector3(mid.x, 1.22, mid.z);
+    let look = new THREE.Vector3(mid.x, 1.22 * tall, mid.z);
     // cinematics: Heat Burst / Rage Art flash zooms on the attacker, K.O. orbits slowly
     if (e.freeze > 8) {
       const who = e.f.find((x) => x.state === 'attack' && x.move && /Heat Burst|Rage Art/.test(x.move.notes)) ?? null;

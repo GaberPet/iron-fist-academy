@@ -5,6 +5,7 @@ import type { Move } from '../../types';
 import type { Fighter, FightEngine } from '../../core/fight';
 import { moveLevel } from '../../core/fight';
 import type { Euler3, Joint, Pose3 } from './fighter3d';
+import type { FightStyle } from '../components/arenaRenderer';
 
 type J = Partial<Record<Joint, Euler3>>;
 const P = (j: J, hipY = 0, extra: Partial<Pose3> = {}): Pose3 => ({ j, hipY, ...extra });
@@ -30,6 +31,30 @@ export const STANCE = P({
   lSh: [-62, 0, 16], lEl: [-108, 0, 0], rSh: [-42, 0, -24], rEl: [-128, 0, 0],
   lHip: [-24, 10, 5], lKnee: [30, 0, 0], lFoot: [-6, 0, 0], rHip: [16, -10, -5], rKnee: [24, 0, 0], rFoot: [-38, 0, 0],
 }, -0.05);
+/** Stance per fighting style: [pose, bounce amplitude (m), bounce speed]. */
+const STYLE_STANCE: Record<FightStyle, [Pose3, number, number]> = {
+  karate: [STANCE, 0.008, 22],
+  boxer: [over(STANCE, { hips: [0, -30, 0], spine: [10, 0, 0], head: [6, 22, 0], lSh: [-78, 0, 18], lEl: [-128, 0, 0], rSh: [-72, 0, -20], rEl: [-138, 0, 0], lHip: [-14, 10, 5], lKnee: [24, 0, 0], rHip: [12, -10, -5], rKnee: [26, 0, 0], rFoot: [-34, 0, 0] }, { hipY: -0.04 }), 0.025, 7],
+  mishima: [over(STANCE, { spine: [16, 0, 0], head: [-10, 16, 0], lSh: [-38, 0, 14], lEl: [-70, 0, 0], rSh: [-20, 0, -18], rEl: [-95, 0, 0], lHip: [-34, 10, 6], lKnee: [44, 0, 0], rHip: [20, -10, -6], rKnee: [40, 0, 0], rFoot: [-56, 0, 0] }, { hipY: -0.11 }), 0.006, 26],
+  wrestler: [over(STANCE, { hips: [0, -8, 0], spine: [24, 0, 0], head: [-16, 8, 0], lSh: [-72, 0, 32], lEl: [-42, 0, 0], rSh: [-70, 0, -32], rEl: [-48, 0, 0], lHip: [-26, 10, 16], lKnee: [44, 0, 0], rHip: [14, -10, -16], rKnee: [40, 0, 0] }, { hipY: -0.13 }), 0.01, 16],
+  capoeira: [over(STANCE, { hips: [0, -10, 0], spine: [20, 0, 0], lSh: [-40, 0, 30], lEl: [-60, 0, 0], rSh: [-30, 0, -40], rEl: [-50, 0, 0], lHip: [-30, 10, 14], lKnee: [55, 0, 0], rHip: [26, -10, -14], rKnee: [55, 0, 0] }, { hipY: -0.17 }), 0.03, 14],
+  muaythai: [over(STANCE, { hips: [0, -12, 0], spine: [-2, 0, 0], head: [6, 10, 0], lSh: [-82, 0, 22], lEl: [-118, 0, 0], rSh: [-80, 0, -22], rEl: [-122, 0, 0], lHip: [-12, 10, 5], lKnee: [38, 0, 0], lFoot: [10, 0, 0], rHip: [8, -10, -5], rKnee: [16, 0, 0] }, { hipY: -0.03 }), 0.02, 12],
+  kungfu: [over(STANCE, { lSh: [-82, 0, 6], lEl: [-38, 0, 0], rSh: [-55, 0, -14], rEl: [-115, 0, 0], lHip: [-30, 10, 8], lKnee: [40, 0, 0], rKnee: [36, 0, 0] }, { hipY: -0.09 }), 0.008, 20],
+  kicker: [over(STANCE, { hips: [0, -48, 0], chest: [4, 14, 0], head: [-4, 34, 0], lSh: [-48, 0, 20], lEl: [-100, 0, 0], rSh: [-36, 0, -20], rEl: [-110, 0, 0], lHip: [-16, 10, 5], lKnee: [34, 0, 0], rKnee: [26, 0, 0] }, { hipY: -0.05 }), 0.03, 8],
+  wingchun: [over(STANCE, { hips: [0, -6, 0], spine: [4, 0, 0], lSh: [-78, 0, 0], lEl: [-52, 0, 0], rSh: [-62, 0, -6], rEl: [-95, 0, 0], lHip: [-18, 10, 8], lKnee: [36, 0, 0], rHip: [10, -10, -8], rKnee: [34, 0, 0] }, { hipY: -0.07 }), 0.005, 24],
+  ninja: [over(STANCE, { spine: [20, 0, 0], head: [-12, 14, 0], lSh: [-30, 0, 24], lEl: [-50, 0, 0], rSh: [-24, 0, -30], rEl: [-60, 0, 0], lHip: [-34, 10, 8], lKnee: [52, 0, 0], rHip: [18, -10, -8], rKnee: [50, 0, 0] }, { hipY: -0.13 }), 0.006, 20],
+  elegant: [over(STANCE, { hips: [0, -26, 0], spine: [2, 0, 0], head: [-6, 18, 0], lSh: [-58, 0, 12], lEl: [-95, 0, 0], rSh: [-26, 0, -20], rEl: [-100, 0, 0], lHip: [-18, 10, 2], lKnee: [22, 0, 0], rHip: [10, -10, -2], rKnee: [20, 0, 0] }, { hipY: -0.03 }), 0.01, 18],
+  grappler: [over(STANCE, { spine: [16, 0, 0], lSh: [-70, 0, 20], lEl: [-80, 0, 0], rSh: [-55, 0, -24], rEl: [-95, 0, 0], lKnee: [42, 0, 0], rKnee: [38, 0, 0] }, { hipY: -0.1 }), 0.01, 18],
+  beast: [over(STANCE, { hips: [0, -6, 0], spine: [30, 0, 0], head: [-24, 6, 0], lSh: [-55, 0, 30], lEl: [-50, 0, 0], rSh: [-55, 0, -30], rEl: [-50, 0, 0], lHip: [-22, 10, 12], lKnee: [36, 0, 0], rHip: [10, -10, -12], rKnee: [34, 0, 0] }, { hipY: -0.1 }), 0.015, 26],
+  robot: [over(STANCE, { hips: [0, -10, 0], spine: [4, 0, 0], chest: [0, 0, 0], head: [0, 10, 0], lSh: [-70, 0, 16], lEl: [-90, 0, 0], rSh: [-60, 0, -16], rEl: [-95, 0, 0] }, { hipY: -0.04 }), 0.003, 30],
+};
+
+/** Stance for a style, breathing / bouncing at time `now` (frames). */
+export function stanceOf(style: FightStyle | undefined, now: number, side: number): Pose3 {
+  const [p, amp, speed] = STYLE_STANCE[style ?? 'karate'];
+  return over(p, {}, { hipY: (p.hipY ?? 0) - Math.abs(Math.sin(now / speed + side)) * amp });
+}
+
 const GUARD = over(STANCE, { spine: [12, 0, 0], head: [8, 16, 0], lSh: [-80, 0, 22], lEl: [-135, 0, 0], rSh: [-76, 0, -22], rEl: [-138, 0, 0] }, { hipY: -0.07 });
 const CROUCH = P({
   hips: [0, -20, 0], spine: [24, 0, 0], chest: [8, -8, 0], neck: [-12, 12, 0], head: [-14, 12, 0],
@@ -116,12 +141,14 @@ const STRIKES: Record<StrikeKind, { windup: Pose3; strike: Pose3 }> = (() => {
 })();
 
 /** Walk cycle on top of the stance. */
-function walk(phase: number, dir: number): Pose3 {
+function walk(base: Pose3, phase: number, dir: number): Pose3 {
   const s = Math.sin(phase), c = Math.cos(phase);
-  return over(STANCE, {
-    lHip: [-24 + 16 * s * dir, 10, 5], lKnee: [30 + 18 * Math.max(0, c), 0, 0],
-    rHip: [16 - 16 * s * dir, -10, -5], rKnee: [24 + 18 * Math.max(0, -c), 0, 0],
-  }, { hipY: -0.05 + 0.012 * Math.abs(c) });
+  const l = base.j.lHip ?? [-24, 10, 5], r = base.j.rHip ?? [16, -10, -5];
+  const lk = base.j.lKnee?.[0] ?? 30, rk = base.j.rKnee?.[0] ?? 24;
+  return over(base, {
+    lHip: [l[0] + 16 * s * dir, l[1], l[2]], lKnee: [lk + 18 * Math.max(0, c), 0, 0],
+    rHip: [r[0] - 16 * s * dir, r[1], r[2]], rKnee: [rk + 18 * Math.max(0, -c), 0, 0],
+  }, { hipY: (base.hipY ?? -0.05) + 0.012 * Math.abs(c) });
 }
 
 export interface AnimOut {
@@ -131,7 +158,8 @@ export interface AnimOut {
 }
 
 /** The pose for a fighter this frame. */
-export function poseFor(e: FightEngine, x: Fighter, now: number, walkPhase: number): AnimOut {
+export function poseFor(e: FightEngine, x: Fighter, now: number, walkPhase: number, style?: FightStyle): AnimOut {
+  const ST = stanceOf(style, now, x.side);
   const y = x.y / 100;
   const t = now - x.stateAt;
   const breathe = Math.sin(now / 22 + x.side) * 0.008;
@@ -147,20 +175,23 @@ export function poseFor(e: FightEngine, x: Fighter, now: number, walkPhase: numb
       }
       if (now <= x.hitAt + 5) return { pose: st.strike, k: 0.75, lift: 0 };
       const rec = smooth((now - x.hitAt - 5) / Math.max(1, x.endAt - x.hitAt - 5));
-      return { pose: mixP(st.strike, x.crouching ? CROUCH : STANCE, rec), k: 0.35, lift: 0 };
+      return { pose: mixP(st.strike, x.crouching ? CROUCH : ST, rec), k: 0.35, lift: 0 };
     }
     case 'throwing': {
       const p = smooth(t / 20);
-      return { pose: over(STRIKES.throw.strike, { spine: [16 + 30 * p, 0, 0] }), k: 0.4, lift: 0 };
+      return { pose: over(STRIKES.throw.strike, { spine: [16 - 30 * p, 0, 0], lSh: [-88 - 60 * p, 0, -12], rSh: [-88 - 60 * p, 0, 12], lEl: [-30 - 30 * p, 0, 0], rEl: [-30 - 30 * p, 0, 0] }, { hipY: -0.1 * p }), k: 0.4, lift: 0 };
     }
-    case 'thrown':
-      return { pose: over(HIT_HIGH, { lSh: [-60, 0, 30], rSh: [-60, 0, -30] }), k: 0.4, lift: 0 };
+    case 'thrown': {
+      // grabbed and hoisted while the break window runs
+      const p = smooth(t / 20);
+      return { pose: over(AIR, { lSh: [-70, 0, 40], rSh: [-70, 0, -40] }, { root: [-40 * p, 0, 0], hipY: -0.2 * p }), k: 0.35, lift: 0.35 * p };
+    }
     case 'blockstun':
       return { pose: over(x.crouching ? CROUCH_GUARD : GUARD, {}, { root: [-5, 0, 0] }), k: 0.6, lift: 0 };
     case 'hitstun': {
       const base = x.hitHeight > 130 ? HIT_HIGH : x.hitHeight < 60 ? HIT_LOW : HIT_MID;
       const recover = smooth((t - 6) / Math.max(1, x.until - x.stateAt - 6));
-      return { pose: t < 6 ? base : mixP(base, STANCE, recover * 0.7), k: t < 4 ? 0.7 : 0.3, lift: 0 };
+      return { pose: t < 6 ? base : mixP(base, ST, recover * 0.7), k: t < 4 ? 0.7 : 0.3, lift: 0 };
     }
     case 'air': {
       const spin = x.tornadoUsed ? (now * 18) % 360 : 0;
@@ -170,7 +201,7 @@ export function poseFor(e: FightEngine, x: Fighter, now: number, walkPhase: numb
     case 'splat':
       return { pose: over(SPLAT, {}, { root: [-8, 0, 0] }), k: 0.5, lift: y };
     case 'down':
-      return { pose: over(DOWN, {}, { root: [-88, 0, 0], hipY: -0.6 }), k: 0.3, lift: -0.18 };
+      return { pose: over(DOWN, {}, { root: [-88, 0, 0], hipY: -0.6 }), k: x.noTech && t < 6 ? 0.6 : 0.3, lift: -0.18 };
     case 'getup': {
       const p = smooth(t / 26);
       return { pose: mixP(over(DOWN, {}, { root: [-88, 0, 0], hipY: -0.6, lift: -0.18 }), CROUCH, p), k: 0.5, lift: -0.18 * (1 - p) };
@@ -197,7 +228,6 @@ export function poseFor(e: FightEngine, x: Fighter, now: number, walkPhase: numb
   // neutral
   if (e.phase === 'over' && e.winner === x.side) return { pose: WIN, k: 0.08, lift: 0 };
   if (x.crouching) return { pose: x.guard === 'crouch' ? CROUCH_GUARD : CROUCH, k: 0.35, lift: 0 };
-  if (x.walking !== 0) return { pose: walk(walkPhase, x.walking), k: 0.3, lift: 0 };
-  const base = x.guard === 'stand' ? STANCE : STANCE;
-  return { pose: over(base, {}, { hipY: (base.hipY ?? 0) + breathe }), k: 0.18, lift: 0 };
+  if (x.walking !== 0) return { pose: walk(ST, walkPhase, x.walking), k: 0.3, lift: 0 };
+  return { pose: over(ST, {}, { hipY: (ST.hipY ?? 0) + breathe }), k: 0.2, lift: 0 };
 }

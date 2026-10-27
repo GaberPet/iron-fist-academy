@@ -106,6 +106,7 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
   const [myMove, setMyMove] = useState<string | null>(null);
   const [over, setOver] = useState<{ winner: 0 | 1 | null; dealt: [number, number] } | null>(null);
   const [glError, setGlError] = useState<string | null>(null);
+  const [adv, setAdv] = useState<{ who: 0 | 1; text: string; kind: string; move: string } | null>(null);
 
   const tick = useRef(0);
   const skipped = useRef(0);
@@ -136,6 +137,13 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
     const pop = (text: string, at: { x: number; z: number } | undefined, y: number, color: string) => at && h.popups.push({ text, at: { x: at.x / 100, y: y / 100, z: at.z / 100 }, age: 0, color });
     for (const e of ev) {
       if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#ff5d6c');
+      // frame advantage readout (attacker's), like the in-game frame meter
+      if ((e.type === 'hit' || e.type === 'counter' || e.type === 'block') && e.adv && e.by !== undefined) {
+        const n = Number(e.adv);
+        const color = Number.isNaN(n) ? '#ffd36a' : n >= 0 ? '#3ccf8e' : n <= -10 ? '#ff5d6c' : '#f2b33d';
+        pop(e.adv, engine.f[e.by].pos, 205, color);
+        setAdv({ who: e.by, text: e.adv, kind: e.type, move: engine.f[e.by].move?.id ?? '' });
+      }
       if ((e.type === 'hit' || e.type === 'counter') && e.by === 0 && settings.rumble) inputManager.rumble(60, 0.5);
       if (e.type === 'launch') pop('LAUNCH', e.at, 210, '#5aa9ff');
       if (e.type === 'tornado') pop('TORNADO', e.at, 220, '#ffd36a');
@@ -240,6 +248,10 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
         <div className="card tight stack">
           <div className="section-label">{opp.profile.short}'s current move</div>
           <BotMove f={engine.f[1]} />
+        </div>
+        <div className="card tight stack">
+          <div className="section-label">Frame advantage</div>
+          {adv ? <div className="small"><b className="mono" style={{ fontSize: '1.4rem' }}>{adv.text}</b> for {adv.who === 0 ? 'you' : opp.profile.short} after {adv.move} {adv.kind === 'block' ? 'was blocked' : 'hit'}{adv.text.startsWith('-') && Number(adv.text) <= -10 ? ' (punishable)' : ''}</div> : <span className="dim small">Shows the attacker's advantage after every hit or block, from the frame data.</span>}
         </div>
         <div className="card tight stack">
           <div className="section-label">Fight log</div>
