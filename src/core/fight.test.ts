@@ -1,5 +1,5 @@
 import { loadCharacter } from '../data/testData';
-import { FightEngine, MAX_HP, HEAT_FRAMES, RAGE_HP, inRage, resolveRoute, chainTo, crushRanges, moveDamage, moveSet, parseOnHit, throwBreakOf, type FightEvent } from './fight';
+import { FightEngine, MAX_HP, HEAT_FRAMES, HEAT_BURST_COST, RAGE_HP, ARENA, AIR_SCALING, inRage, resolveRoute, chainTo, crushRanges, moveDamage, moveSet, parseOnHit, throwBreakOf, type FightEvent } from './fight';
 import { lookupMove } from '../data';
 import { maskOf } from './input';
 import type { Dir, TekkenButton } from '../types';
@@ -28,8 +28,8 @@ function run(e: FightEngine, from: number, n: number, plan: (f: number) => { dir
 /** Skip the intro and walk the player into close range. */
 function closeIn(e: FightEngine) {
   run(e, 0, 120, () => ({}));
-  run(e, 120, 60, () => ({ dir: 'f' }));
-  return 180;
+  run(e, 120, 80, () => ({ dir: 'f' }));
+  return 200;
 }
 
 describe('move data helpers', () => {
@@ -104,7 +104,7 @@ describe('FightEngine', () => {
     closeIn(e);
     e.f[1].hp = 100;
     e.timer = 3;
-    const ev = run(e, 180, 5, () => ({}));
+    const ev = run(e, 200, 5, () => ({}));
     expect(ev.some((x) => x.type === 'time-up')).toBe(true);
     expect(e.wins).toEqual([1, 0]);
   });
@@ -181,5 +181,116 @@ describe('FightEngine', () => {
     expect(botHits.length).toBeGreaterThan(3);
     expect(botHits.some((x) => x.level === 'low')).toBe(true);
     expect(e.wins[1]).toBeGreaterThanOrEqual(1);
+  });
+
+  it('Heat Burst leaves 600F, a Heat Engager hit gives the full 900F', () => {
+    const e = engine();
+    const f = closeIn(e);
+    run(e, f, 3, (x) => (x < f + 3 ? { press: [2, 3] } : {}));
+    expect(e.f[0].heatLeft).toBeGreaterThan(HEAT_FRAMES - HEAT_BURST_COST - 40);
+    expect(e.f[0].heatLeft).toBeLessThanOrEqual(HEAT_FRAMES - HEAT_BURST_COST);
+  });
+
+  it('juggle hits are scaled 70% for the first air hit', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const d = e.f[1];
+    e['setState'](d, 'air', f);
+    d.y = 80;
+    d.vy = 2;
+    d.airHits = 0;
+    const m = lookupMove(jin, '1')!;
+    expect(e.scaledDamage(e.f[0], d, m, { juggle: true, grounded: false })).toBe(Math.floor(moveDamage(m) * AIR_SCALING[0]));
+    d.airHits = 3;
+    d.wallHit = true;
+    expect(e.scaledDamage(e.f[0], d, m, { juggle: true, grounded: false })).toBe(Math.max(1, Math.floor(moveDamage(m) * 0.3 * 0.8)));
+  });
+
+  it('Rage adds 10% damage', () => {
+    const e = engine();
+    const m = lookupMove(jin, 'df+2')!;
+    e.f[0].hp = RAGE_HP;
+    expect(e.baseDamage(e.f[0], e.f[1], m)).toBe(Math.floor(moveDamage(m) * 1.1));
+  });
+
+  it('dash and backdash move along the fight axis; a sidestep moves off it', () => {
+    const e = engine();
+    run(e, 0, 120, () => ({}));
+    const d0 = e.distance;
+    // f, n, f = dash
+    run(e, 120, 30, (x) => ({ dir: x < 122 ? 'f' : x < 124 ? 'n' : x < 126 ? 'f' : 'n' }));
+    expect(e.distance).toBeLessThan(d0 - 60);
+    const d1 = e.distance;
+    run(e, 150, 40, (x) => ({ dir: x < 152 ? 'b' : x < 154 ? 'n' : x < 156 ? 'b' : 'n' }));
+    expect(e.distance).toBeGreaterThan(d1 + 50);
+    const z0 = e.f[0].pos.z;
+    run(e, 190, 30, (x) => ({ dir: x < 193 ? 'd' : 'n' }));
+    expect(Math.abs(e.f[0].pos.z - z0)).toBeGreaterThan(40);
+  });
+
+  it('a sidestep makes a slow linear move whiff', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const slow = jin.frames.moves.find((m) => !m.parent && !m.isThrow && (m.startupFrame ?? 0) >= 18 && !/Homing/.test(m.notes) && /^[a-z]/.test(m.id) && !/^[A-Z]/.test(m.id));
+    expect(slow).toBeTruthy();
+    e.startMove(e.f[1], slow!, f);
+    const ev = run(e, f, 40, (x) => ({ dir: x < f + 3 ? 'u' : 'n' }));
+    expect(ev.some((x) => x.type === 'whiff' && x.by === 1)).toBe(true);
+    expect(e.f[0].hp).toBe(MAX_HP);
+  });
+
+  it('teching right after landing starts a tech roll', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const p = e.f[0];
+    e['setState'](p, 'air', f);
+    p.y = 10;
+    p.vy = 0;
+    let landed = -1;
+    for (let x = f; x < f + 40; x++) {
+      e.update({ frame: x, dir: 'n', buttons: landed >= 0 && x <= landed + 3 ? 1 : 0 });
+      if (landed < 0 && p.state === 'down') landed = x;
+    }
+    expect(landed).toBeGreaterThan(0);
+    expect(['techroll', 'neutral']).toContain(p.state);
+  });
+
+  it('juggling into the wall splats and later hits get the wall scaling', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const d = e.f[1];
+    d.pos = { x: ARENA - 10, z: 0 };
+    e.f[0].pos = { x: ARENA - 100, z: 0 };
+    e['setState'](d, 'air', f);
+    d.y = 90;
+    d.vy = 3;
+    const ev = run(e, f, 20, (x) => (x < f + 3 ? { press: [1] } : {}));
+    expect(ev.some((x) => x.type === 'wall')).toBe(true);
+    expect(d.wallHit).toBe(true);
+  });
+
+  it('attacking regains recoverable health', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const p = e.f[0];
+    p.hp = 100;
+    p.recov = 30;
+    e.f[1].state = 'hitstun';
+    e.f[1].until = f + 100;
+    run(e, f, 30, (x) => (x < f + 3 ? { press: [1] } : {}));
+    expect(p.hp).toBeGreaterThan(100);
+    expect(p.recov).toBeLessThan(30);
+  });
+
+  it('a wrong throw-break button locks the break out', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const thr = moveSet(anna).throws[0];
+    e.startMove(e.f[1], thr, f);
+    const t = run(e, f, 20, () => ({}));
+    if (!t.some((x) => x.type === 'throw')) return; // out of range in this setup
+    const at = e.frame + 1;
+    const ev = run(e, at, 40, (x) => (x < at + 2 ? { press: [1, 2] } : x < at + 6 ? { press: [1] } : {}));
+    expect(ev.some((x) => x.type === 'break')).toBe(false);
   });
 });

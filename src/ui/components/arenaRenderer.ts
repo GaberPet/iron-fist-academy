@@ -48,6 +48,10 @@ export function lerpPose(a: Pose, b: Pose, t: number): Pose {
 export interface FighterLook {
   build: 'male' | 'female' | 'beast' | 'robot';
   hairStyle: 'short' | 'spiky' | 'bob' | 'ponytail' | 'long' | 'buns' | 'bald';
+  /** 3D only: outfit cut, height and width scale. */
+  outfit?: 'tank' | 'jacket' | 'bare' | 'gi' | 'suit' | 'dress';
+  height?: number;
+  width?: number;
   skin: string;
   hair: string;
   top: string; // shirt / tank top

@@ -1,4 +1,4 @@
-import { Component, useEffect, useState, type ReactNode } from 'react';
+import { Component, Suspense, lazy, useEffect, useState, type ReactNode } from 'react';
 import { navigate, useControllerStatus, useRoute } from './hooks';
 import { useStore } from './store';
 import { HomePage } from './pages/HomePage';
@@ -8,7 +8,7 @@ import { MovesPage } from './pages/MovesPage';
 import { ComboLabPage } from './pages/ComboLabPage';
 import { PunishPage } from './pages/PunishPage';
 import { DojoPage } from './pages/DojoPage';
-import { FightPage } from './pages/FightPage';
+const FightPage = lazy(() => import('./pages/FightPage').then((m) => ({ default: m.FightPage })));
 import { ControllerPage } from './pages/ControllerPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
@@ -116,7 +116,7 @@ export function App() {
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;
       case 'punish': return <PunishPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
-      case 'fight': return <FightPage />;
+      case 'fight': return <Suspense fallback={<div className="empty">Loading the 3D arena…</div>}><FightPage /></Suspense>;
       case 'companion': return <CompanionPage />;
       case 'updates': return <WhatsNewPage />;
       case 'credits': return <CreditsPage />;

@@ -55,11 +55,28 @@ const LOOKS: Record<string, Partial> = {
   'jack-8': { build: 'robot', hairStyle: 'bald', hair: '#2a2e36', skin: '#8f98a6', top: '#4a5260', pants: '#3a414c' },
 };
 
+/** Outfit cut, height and width for the 3D fighters (generic categories, not the game's designs). */
+const BODY: Record<string, [FighterLook['outfit'], number, number?]> = {
+  alisa: ['suit', 0.93], anna: ['dress', 0.95], asuka: ['jacket', 0.92], azucena: ['tank', 0.93], jun: ['gi', 0.94], leo: ['jacket', 0.93],
+  lidia: ['gi', 0.94], kunimitsu: ['suit', 0.93], lili: ['dress', 0.91], 'miary-zo': ['jacket', 0.93], nina: ['suit', 0.94], reina: ['jacket', 0.93],
+  xiaoyu: ['dress', 0.88], zafina: ['dress', 0.95],
+  'armor-king': ['bare', 1.08, 1.15], bob: ['tank', 1.0, 1.4], bryan: ['tank', 1.03], claudio: ['jacket', 1.0], clive: ['suit', 1.02],
+  'devil-jin': ['bare', 1.01], dragunov: ['suit', 1.03], eddy: ['bare', 1.0], fahkumram: ['bare', 1.1, 1.1], feng: ['gi', 1.0],
+  heihachi: ['gi', 0.97, 1.08], hwoarang: ['jacket', 1.0], jin: ['bare', 1.01], kazuya: ['bare', 1.0], king: ['bare', 1.06, 1.15],
+  lars: ['suit', 1.03], law: ['bare', 0.98], lee: ['suit', 0.98], leroy: ['jacket', 0.97], paul: ['gi', 1.01], raven: ['suit', 1.03],
+  shaheen: ['jacket', 1.02], steve: ['tank', 1.0], victor: ['suit', 1.01], yoshimitsu: ['suit', 1.0],
+  kuma: ['bare', 1.25, 1.45], panda: ['bare', 1.2, 1.45], 'jack-8': ['suit', 1.22, 1.3],
+};
+
 /** Look for a character. `role` picks the default outfit (you = red gloves, bot = blue). */
 export function lookFor(charId: string | undefined, color: string, role: 'you' | 'bot'): FighterLook {
   const l = (charId && LOOKS[charId]) || M('short', '#1a1210');
   const beast = l.build === 'beast' || l.build === 'robot';
+  const body = (charId && BODY[charId]) || ['tank', 1];
   return {
+    outfit: body[0],
+    height: body[1],
+    width: body[2] ?? 1,
     build: l.build,
     hairStyle: l.hairStyle,
     hair: l.hair ?? '#1a1210',

@@ -1,19 +1,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CharacterData } from '../../types';
 import type { Difficulty } from '../../core/progress';
-import { FightEngine, HEAT_FRAMES, MAX_HP, inRage, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
-import type { Frame } from '../../core/recognizer';
+import { FightEngine, MAX_HP, RAGE_HP, heatShare, inRage, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
 import { useCaptureInput, useInputFrames } from '../hooks';
 import { useStore } from '../store';
 import { inputManager } from '../../runtime/inputManager';
-import { drawFighter, drawSpark, drawStage, lerpPose, POSES, type Pose, type PoseName, type Spark } from '../components/arenaRenderer';
 import { lookFor } from '../components/fighterLooks';
+import { Arena3D } from '../three/arena3d';
 import { NotationView } from '../components/Notation';
 import { InputLog } from '../components/InputLog';
 
-const W = 960;
-const H = 470;
-const GROUND = 400;
 const DISPLAY = '"Teko Variable", "Teko", sans-serif';
 const BODY = '"Metropolis", system-ui, sans-serif';
 
@@ -35,7 +31,7 @@ export function FightPage() {
       <div className="page-head">
         <div>
           <h1>Free Fight</h1>
-          <p>A full match against a bot that plays a real character: its own moves, damage, startup, block and hit advantage, launchers, crush frames, throws and its real punishers, all from the imported frame data. Health bars, a 60-second timer and rounds like a Tekken match. This is a <b>simulation</b>, not Tekken 8: range, movement, juggles, string timing and the Heat and Rage rules are approximations, and sidesteps are not modelled.</p>
+          <p>A 3D match against a bot that plays a real character. Every move uses its imported frame data (startup, damage, hit level, block / hit / counter-hit advantage, launch, tornado, homing, crush and power-crush frames, Heat Engagers, Heat Dash, Rage Art) and the bot punishes and juggles with the character's real punishers and combo routes. Tekken 8's documented systems are built in: 180 HP with recoverable health, Heat (2+3 or a Heat Engager), Rage at 45 HP, air-combo scaling, walls, throws, sidesteps, dashes and tech rolls. This is a <b>simulation</b>, not Tekken 8: reach, movement speeds, tracking, juggle gravity and string timing are approximations, and the fighters are original models, not the game's characters.</p>
         </div>
       </div>
       <div className="card row">
@@ -67,8 +63,8 @@ export function FightPage() {
         <button className="btn primary" disabled={!opp || !me} onClick={() => { setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
       </div>
       <div className="notice info">
-        <b>Controls:</b> forward / back walk, <b>neutral or back</b> blocks highs and mids, <b>down-back</b> blocks lows and ducks highs and throws. Buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for its strings. Break throws with 1, 2 or 1+2.<br />
-        <b>Heat</b> (once per round): <b>2+3</b> Heat Burst, or land a Heat Engager. In Heat your <b>H.</b> moves work and <b>2+3</b> is your Heat Smash. <b>Rage</b>: below 20% health, <b>d/f+1+2</b> is your Rage Art (once). Heat Bursts and Rage Arts absorb highs and mids during startup.
+        <b>Move:</b> f / b walk, <b>f,f</b> dash, <b>b,b</b> backdash, tap <b>u</b> or <b>d</b> to sidestep (dodges linear moves), hold u to jump. <b>Guard:</b> neutral or back blocks highs and mids, down-back blocks lows and ducks highs and throws. <b>Attack:</b> buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for strings. <b>Throws</b> break with 1, 2 or 1+2 (generic throws: 1 or 2; a wrong button locks you out). <b>Knocked down:</b> press a button as you land to tech roll, or a direction to get up.<br />
+        <b>Heat</b> (once per round): <b>2+3</b> Heat Burst (10 s) or land a Heat Engager (15 s). In Heat: H. moves, chip damage on block, faster health recovery; <b>2+3</b> is your Heat Smash; hold <b>f</b> when a Heat Engager connects for a Heat Dash. <b>Rage</b> at {RAGE_HP} HP or less: +10% damage, <b>d/f+1+2</b> Rage Art (armoured). White health is recoverable: you get it back by attacking.
       </div>
       {running && opp && me ? (
         <FightArena key={`${run}-${meId}-${oppId}-${rounds}-${settings.drillDifficulty}`} me={me} opp={opp} rounds={rounds} difficulty={settings.drillDifficulty} />
@@ -83,66 +79,74 @@ function pickRandom(ids: string[]) {
   return ids[Math.floor(Math.random() * ids.length)] ?? 'anna';
 }
 
-interface Anim {
-  pose: [Pose, Pose];
-  shown: [number, number]; // displayed health (drains smoothly)
-  trail: [number, number]; // red damage trail
-  sparks: Spark[];
-  shake: number;
-  popups: { text: string; x: number; y: number; age: number; color: string }[];
+interface Hud {
+  shown: [number, number];
+  trail: [number, number];
+  popups: { text: string; at: { x: number; y: number; z: number }; age: number; color: string }[];
 }
+
+const SIZE = { w: 1280, h: 620 };
 
 function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: CharacterData; rounds: number; difficulty: Difficulty }) {
   const { settings } = useStore();
   useCaptureInput();
-  const canvas = useRef<HTMLCanvasElement>(null);
+  const gl = useRef<HTMLCanvasElement>(null);
+  const hudCanvas = useRef<HTMLCanvasElement>(null);
   const engine = useMemo(
-    () => new FightEngine({ player: me, bot: opp, difficulty, rng: Math.random, roundsToWin: rounds, throwBreakWindow: settings.throwBreakWindow, recognizer: settings.recognizer }),
-    [me, opp, difficulty, rounds, settings.throwBreakWindow, settings.recognizer],
+    () => new FightEngine({ player: me, bot: opp, difficulty, rng: Math.random, roundsToWin: rounds, recognizer: settings.recognizer }),
+    [me, opp, difficulty, rounds, settings.recognizer],
   );
-  const anim = useRef<Anim>({ pose: [{ ...POSES.idle }, { ...POSES.idle }], shown: [MAX_HP, MAX_HP], trail: [MAX_HP, MAX_HP], sparks: [], shake: 0, popups: [] });
-  const lastInput = useRef<Frame | null>(null);
+  const arena = useRef<Arena3D | null>(null);
+  const pending = useRef<FightEvent[]>([]);
+  const hud = useRef<Hud>({ shown: [MAX_HP, MAX_HP], trail: [MAX_HP, MAX_HP], popups: [] });
   const [feed, setFeed] = useState<string[]>([]);
   const [myMove, setMyMove] = useState<string | null>(null);
   const [over, setOver] = useState<{ winner: 0 | 1 | null; dealt: [number, number] } | null>(null);
+  const [glError, setGlError] = useState<string | null>(null);
 
+  const tick = useRef(0);
+  const skipped = useRef(0);
   useInputFrames((f) => {
-    lastInput.current = f;
+    // final K.O.: slow motion (one engine frame every 3 input frames for a moment)
+    tick.current++;
+    const finalKo = engine.phase === 'ko' && engine.frame - engine.phaseAt < 50 && Math.max(...engine.wins) >= engine.roundsToWin;
+    if (finalKo && tick.current % 3 !== 0) {
+      skipped.current++;
+      return;
+    }
     const before = engine.f[0].move;
-    const ev = engine.update(f);
+    const ev = engine.update({ ...f, frame: f.frame - skipped.current });
     if (engine.f[0].move && engine.f[0].move !== before) setMyMove(engine.f[0].move.id);
-    if (ev.length) handleEvents(ev);
+    if (ev.length) {
+      pending.current.push(...ev);
+      handleEvents(ev);
+    }
   });
 
   function handleEvents(ev: FightEvent[]) {
-    const a = anim.current;
+    const h = hud.current;
     const lines: string[] = [];
+    const pop = (text: string, at: { x: number; z: number } | undefined, y: number, color: string) => at && h.popups.push({ text, at: { x: at.x / 100, y: y / 100, z: at.z / 100 }, age: 0, color });
     for (const e of ev) {
-      const y = e.level === 'high' ? GROUND - 165 : e.level === 'low' ? GROUND - 35 : GROUND - 115;
-      if ((e.type === 'hit' || e.type === 'counter') && e.x !== undefined) {
-        a.sparks.push({ x: e.x, y, age: 0, kind: 'hit' });
-        a.shake = e.type === 'counter' ? 12 : 6;
-        if (e.text) a.popups.push({ text: e.text, x: e.x, y: y - 40, age: 0, color: e.type === 'counter' ? '#ff5d6c' : '#ffad00' });
-        if (e.by === 0 && settings.rumble) inputManager.rumble(60, 0.5);
-      }
-      if (e.type === 'block' && e.x !== undefined) a.sparks.push({ x: e.x, y, age: 0, kind: 'block' });
-      if (e.type === 'launch' && e.x !== undefined) a.popups.push({ text: 'LAUNCH', x: e.x, y: GROUND - 220, age: 0, color: '#5aa9ff' });
-      if ((e.type === 'throw' || e.type === 'break') && e.x !== undefined) {
-        a.sparks.push({ x: e.x, y: GROUND - 130, age: 0, kind: e.type === 'break' ? 'block' : 'grab' });
-        a.popups.push({ text: e.type === 'break' ? 'THROW BREAK' : 'THROW', x: e.x, y: GROUND - 200, age: 0, color: '#f2f3f8' });
-      }
-      if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'rage' || e.type === 'rage-art') {
+      if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#ff5d6c');
+      if ((e.type === 'hit' || e.type === 'counter') && e.by === 0 && settings.rumble) inputManager.rumble(60, 0.5);
+      if (e.type === 'launch') pop('LAUNCH', e.at, 210, '#5aa9ff');
+      if (e.type === 'tornado') pop('TORNADO', e.at, 220, '#ffd36a');
+      if (e.type === 'wall') pop('WALL SPLAT', e.at, 200, '#ffffff');
+      if (e.type === 'throw' || e.type === 'break') pop(e.type === 'break' ? 'THROW BREAK' : 'THROW', e.at, 200, '#f2f3f8');
+      if (e.type === 'crush' || e.type === 'armor') pop(e.type === 'armor' ? 'ARMOR' : 'CRUSH', e.at, 200, '#3ccf8e');
+      if (e.type === 'step-evade') pop('SIDESTEP', e.at, 200, '#c9d6ea');
+      if (e.type === 'tech') pop('TECH', e.at, 120, '#c9d6ea');
+      if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'heat-dash' || e.type === 'rage' || e.type === 'rage-art') {
         const who = engine.f[e.by ?? 0];
-        const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';
-        a.popups.push({ text: label, x: who.x, y: GROUND - 250, age: 0, color: e.type.startsWith('heat') ? '#5aa9ff' : '#ff3b3b' });
-        if (e.type !== 'rage') a.shake = 8;
+        const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'heat-dash' ? 'HEAT DASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';
+        pop(label, who.pos, 230, e.type.startsWith('heat') ? '#5aa9ff' : '#ff3b3b');
         if (e.text) lines.push(e.text);
       }
-      if (e.type === 'crush' && e.x !== undefined) a.popups.push({ text: 'CRUSH', x: e.x, y: GROUND - 200, age: 0, color: '#3ccf8e' });
       if (e.type === 'punish' && e.text) lines.push(e.text);
       if (e.type === 'counter') lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: counter hit for ${e.damage}`);
-      if (e.type === 'crush' && e.text) lines.push(e.text);
-      if (e.type === 'throw' && e.text) lines.push(e.text);
+      if ((e.type === 'crush' || e.type === 'armor' || e.type === 'throw') && e.text) lines.push(e.text);
+      if (e.type === 'wall') lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: wall splat`);
       if (e.type === 'round-end') lines.push(e.by === 0 ? 'You take the round' : e.by === 1 ? `${opp.profile.short} takes the round` : 'Draw round');
       if (e.type === 'match-end') setOver({ winner: engine.winner, dealt: [engine.f[0].dealt, engine.f[1].dealt] });
     }
@@ -150,22 +154,65 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
   }
 
   useEffect(() => {
-    let raf = 0;
-    const draw = () => {
-      const ctx = canvas.current?.getContext('2d');
-      if (ctx) drawFight(ctx, engine, anim.current, me, opp);
-      raf = requestAnimationFrame(draw);
+    if (!gl.current) return;
+    let a: Arena3D;
+    try {
+      a = new Arena3D(gl.current, [lookFor(me.profile.id, me.profile.color, 'you'), lookFor(opp.profile.id, opp.profile.color, 'bot')]);
+    } catch (err) {
+      setGlError((err as Error).message || 'WebGL is not available');
+      return;
+    }
+    arena.current = a;
+    if ((import.meta as unknown as { env?: { DEV?: boolean } }).env?.DEV) (window as unknown as { __ifa: unknown }).__ifa = { arena: a, engine };
+    const fit = () => {
+      const w = gl.current?.clientWidth ?? SIZE.w;
+      const h = Math.round((w * SIZE.h) / SIZE.w);
+      a.resize(w, h);
+      if (hudCanvas.current) {
+        const dpr = Math.min(window.devicePixelRatio, 2);
+        hudCanvas.current.width = Math.round(w * dpr);
+        hudCanvas.current.height = Math.round(h * dpr);
+      }
     };
-    raf = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(raf);
+    fit();
+    const ro = new ResizeObserver(fit);
+    ro.observe(gl.current);
+    let raf = 0;
+    const loop = () => {
+      const ev = pending.current;
+      pending.current = [];
+      a.events(ev, engine);
+      a.render(engine, engine.frame);
+      const hc = hudCanvas.current;
+      const ctx = hc?.getContext('2d');
+      if (hc && ctx) {
+        const dpr = hc.width / Math.max(1, hc.clientWidth);
+        ctx.setTransform(1, 0, 0, 1, 0, 0);
+        ctx.clearRect(0, 0, hc.width, hc.height);
+        const k = hc.clientWidth / 960;
+        ctx.setTransform(dpr * k, 0, 0, dpr * k, 0, 0);
+        drawHud(ctx, engine, hud.current, me, opp, 960, hc.clientHeight / k);
+        drawPopups(ctx, a, hud.current, 960, hc.clientHeight / k);
+      }
+      raf = requestAnimationFrame(loop);
+    };
+    raf = requestAnimationFrame(loop);
+    return () => {
+      cancelAnimationFrame(raf);
+      ro.disconnect();
+      a.dispose();
+      arena.current = null;
+    };
   }, [engine, me, opp]);
 
   const p = engine.f[0];
   const lastMove = myMove ? me.moveIndex.get(myMove) : null;
   return (
     <div className="stack">
-      <div className="arena-wrap">
-        <canvas ref={canvas} width={W} height={H} aria-label="Free fight" />
+      <div className="arena-wrap arena-3d">
+        <canvas ref={gl} className="gl" aria-label="Free fight (3D)" />
+        <canvas ref={hudCanvas} className="hud" aria-hidden />
+        {glError && <div className="notice warn">3D could not start: {glError}. Try another browser or enable hardware acceleration.</div>}
         <div className="sim-banner bottom">
           <span className="badge warn">SIMULATION · not Tekken 8's engine</span>
         </div>
@@ -189,7 +236,7 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
         </div>
         <div className="card tight stack">
           <div className="section-label">Fight log</div>
-          {feed.length ? feed.map((l, i) => <div key={i} className={`small ${i ? 'dim' : ''}`}>{l}</div>) : <span className="dim small">Punishes, counter hits, crushes and throws show up here.</span>}
+          {feed.length ? feed.map((l, i) => <div key={i} className={`small ${i ? 'dim' : ''}`}>{l}</div>) : <span className="dim small">Punishes, counter hits, crushes, wall splats and throws show up here.</span>}
         </div>
         <div className="card tight">
           <div className="section-label">Inputs</div>
@@ -213,129 +260,87 @@ function BotMove({ f }: { f: Fighter }) {
   return <><NotationView notation={m.id} big /><div className="small dim">{m.name || m.id} · i{m.startupFrame ?? '?'} · {m.hitLevels.join(',')} · {m.block || '?'} on block</div></>;
 }
 
-// ---------- drawing ----------
+// ---------- HUD (2D overlay in a 960-wide coordinate space) ----------
 
-function poseFor(x: Fighter, now: number): { name: PoseName; lift: number; rot: number } {
-  switch (x.state) {
-    case 'attack': {
-      const m = x.move;
-      if (!m) return { name: 'idle', lift: 0, rot: 0 };
-      if (now < x.hitAt - 2) return { name: 'windup', lift: 0, rot: 0 };
-      if (now <= x.hitAt + 8) {
-        const lv = m.hitLevels[0]?.toLowerCase() ?? 'm';
-        const kick = /[34]/.test(m.id.split(',').pop() ?? '');
-        return { name: m.isThrow ? 'grab' : lv.startsWith('l') ? 'kickLow' : kick ? 'kickMid' : lv.startsWith('h') ? 'punchHigh' : 'punchMid', lift: 0, rot: 0 };
-      }
-      return { name: 'recover', lift: 0, rot: 0 };
-    }
-    case 'blockstun': return { name: x.crouching ? 'crouchGuard' : 'block', lift: 0, rot: 0 };
-    case 'hitstun': case 'thrown': return { name: 'hit', lift: 0, rot: 0 };
-    case 'throwing': return { name: 'grab', lift: 0, rot: 0 };
-    case 'air': return { name: 'air', lift: 0, rot: 70 };
-    case 'down': return { name: 'down', lift: 0, rot: 90 };
-    case 'ko': return { name: x.air ? 'air' : 'down', lift: 0, rot: x.air ? 75 : 90 };
-    default:
-      if (x.crouching) return { name: x.guard === 'crouch' ? 'crouchGuard' : 'crouch', lift: 0, rot: 0 };
-      return { name: x.guard === 'stand' && x.walking !== 1 ? 'guard' : 'idle', lift: 0, rot: 0 };
-  }
-}
-
-function drawFight(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: CharacterData, opp: CharacterData) {
-  const now = e.frame;
-  ctx.save();
-  if (a.shake > 0) {
-    ctx.translate((Math.random() - 0.5) * a.shake, (Math.random() - 0.5) * a.shake);
-    a.shake *= 0.82;
-    if (a.shake < 0.5) a.shake = 0;
-  }
-  drawStage(ctx, W, H, GROUND);
-  const looks = [lookFor(me.profile.id, me.profile.color, 'you'), lookFor(opp.profile.id, opp.profile.color, 'bot')];
-  // draw the fighter who was hit last behind the other
-  const order = e.f[0].lastHit > e.f[1].lastHit ? [0, 1] : [1, 0];
-  for (const i of order) {
-    const x = e.f[i];
-    const target = poseFor(x, now);
-    a.pose[i] = lerpPose(a.pose[i], POSES[target.name], x.state === 'attack' ? 0.5 : 0.3);
-    const lift = x.state === 'air' || (x.state === 'ko' && x.air) ? e.liftOf(x, now) + 40 : x.state === 'down' || x.state === 'ko' ? -78 : 0;
-    const flash = now - x.lastHit < 4;
-    const glow = x.heat === 'active' ? '#3aa0ff' : inRage(x) ? '#ff3030' : null;
-    const filters = [flash ? 'brightness(1.8)' : '', glow ? `drop-shadow(0 0 ${6 + Math.sin(now / 5) * 3}px ${glow})` : ''].filter(Boolean);
-    if (filters.length) ctx.filter = filters.join(' ');
-    drawFighter(ctx, x.x, GROUND, i === 0 ? 1 : -1, a.pose[i], looks[i], 1.15, { lift, rot: target.rot });
-    ctx.filter = 'none';
-  }
-  for (const s of a.sparks) {
-    drawSpark(ctx, s, { hit: '#ffad00', block: '#5aa9ff', grab: '#f2f3f8' });
-    s.age++;
-  }
-  a.sparks = a.sparks.filter((s) => s.age < 18);
-  for (const pu of a.popups) {
-    ctx.globalAlpha = Math.max(0, 1 - pu.age / 50);
+function drawPopups(ctx: CanvasRenderingContext2D, a: Arena3D, h: Hud, W: number, H: number) {
+  for (const pu of h.popups) {
+    const s = a.projectXYZ(pu.at.x, pu.at.y, pu.at.z, W, H);
+    if (!s.visible) continue;
+    ctx.globalAlpha = Math.max(0, 1 - pu.age / 55);
     ctx.font = `600 28px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.9)';
     ctx.shadowBlur = 8;
     ctx.fillStyle = pu.color;
-    ctx.fillText(pu.text, pu.x, pu.y - pu.age * 0.6);
+    ctx.fillText(pu.text, s.x, s.y - pu.age * 0.6);
     ctx.shadowBlur = 0;
     ctx.globalAlpha = 1;
     pu.age++;
   }
-  a.popups = a.popups.filter((p) => p.age < 50);
-  ctx.restore();
-  drawHud(ctx, e, a, me, opp);
+  h.popups = h.popups.filter((p) => p.age < 55);
 }
 
-function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: CharacterData, opp: CharacterData) {
+function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: CharacterData, opp: CharacterData, W: number, H: number) {
   const barW = 380, barH = 18, top = 22;
   for (const i of [0, 1] as const) {
-    const hp = e.f[i].hp;
+    const f = e.f[i];
+    const hp = f.hp;
     a.shown[i] += (hp - a.shown[i]) * 0.35;
     if (a.trail[i] > a.shown[i]) a.trail[i] -= 0.6;
     if (a.trail[i] < a.shown[i]) a.trail[i] = a.shown[i];
     const x0 = i === 0 ? W / 2 - 52 - barW : W / 2 + 52;
-    // frame
     ctx.fillStyle = 'rgba(8,8,14,0.75)';
     ctx.fillRect(x0 - 3, top - 3, barW + 6, barH + 6);
     ctx.fillStyle = '#2a1015';
     ctx.fillRect(x0, top, barW, barH);
-    // P1 drains towards the left edge, P2 towards the right edge (bars fill from the outside in)
-    const wTrail = (a.trail[i] / MAX_HP) * barW, wHp = (a.shown[i] / MAX_HP) * barW;
+    // bars fill from the outside in: P1 drains towards the left edge, P2 towards the right edge
     const fillFrom = (w: number) => (i === 0 ? x0 + barW - w : x0);
+    const wTrail = (a.trail[i] / MAX_HP) * barW;
     ctx.fillStyle = '#ff5d6c';
     ctx.fillRect(fillFrom(wTrail), top, wTrail, barH);
-    const low = hp / MAX_HP < 0.25;
+    // recoverable health (white) sits next to the current health
+    const wRec = ((hp + f.recov) / MAX_HP) * barW;
+    ctx.fillStyle = 'rgba(235,235,240,0.85)';
+    ctx.fillRect(fillFrom(wRec), top, wRec, barH);
+    const wHp = (a.shown[i] / MAX_HP) * barW;
+    const low = inRage(f);
     const g = ctx.createLinearGradient(0, top, 0, top + barH);
-    g.addColorStop(0, low ? '#ffd27a' : '#ffe39a');
-    g.addColorStop(0.5, low ? '#ff9a2a' : '#ffad00');
-    g.addColorStop(1, low ? '#c4581a' : '#c47e00');
+    g.addColorStop(0, low ? '#ff9a7a' : '#ffe39a');
+    g.addColorStop(0.5, low ? '#ff3b3b' : '#ffad00');
+    g.addColorStop(1, low ? '#a01818' : '#c47e00');
     ctx.fillStyle = g;
     ctx.fillRect(fillFrom(wHp), top, wHp, barH);
     ctx.fillStyle = 'rgba(255,255,255,0.25)';
     ctx.fillRect(fillFrom(wHp), top + 2, wHp, 3);
-    // rage: the health bar pulses red
-    const f = e.f[i];
-    if (inRage(f)) {
+    // Rage threshold notch
+    const notch = i === 0 ? x0 + barW - (RAGE_HP / MAX_HP) * barW : x0 + (RAGE_HP / MAX_HP) * barW;
+    ctx.strokeStyle = 'rgba(255,255,255,0.6)';
+    ctx.lineWidth = 1.5;
+    ctx.beginPath();
+    ctx.moveTo(notch - 4, top + barH);
+    ctx.lineTo(notch + 4, top);
+    ctx.stroke();
+    if (low) {
       ctx.strokeStyle = `rgba(255,48,48,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
       ctx.lineWidth = 3;
       ctx.strokeRect(x0 - 3, top - 3, barW + 6, barH + 6);
     }
-    // heat gauge under the bar
-    const hw = 150, hx = i === 0 ? x0 + barW - hw : x0, hy = top + barH + 30;
-    const heatLeft = f.heat === 'ready' ? 1 : f.heat === 'active' ? Math.max(0, (f.heatUntil - e.frame) / HEAT_FRAMES) : 0;
+    // heat gauge
+    const hw = 160, hx = i === 0 ? x0 + barW - hw : x0, hy = top + barH + 30;
+    const share = heatShare(f);
     ctx.fillStyle = 'rgba(8,8,14,0.7)';
     ctx.fillRect(hx - 2, hy - 2, hw + 4, 10);
     const hg = ctx.createLinearGradient(hx, 0, hx + hw, 0);
     hg.addColorStop(0, '#1f6fd6');
     hg.addColorStop(1, '#7cc4ff');
     ctx.fillStyle = hg;
-    const hwNow = hw * heatLeft;
+    const hwNow = hw * share;
     ctx.fillRect(i === 0 ? hx + hw - hwNow : hx, hy, hwNow, 6);
     ctx.font = `600 15px ${DISPLAY}`;
     ctx.textAlign = i === 0 ? 'right' : 'left';
     ctx.fillStyle = f.heat === 'active' ? '#7cc4ff' : f.heat === 'ready' ? '#c9d6ea' : '#6a7080';
     ctx.fillText(f.heat === 'active' ? 'HEAT ACTIVE' : f.heat === 'ready' ? 'HEAT' : 'HEAT USED', i === 0 ? hx - 8 : hx + hw + 8, hy + 7);
-    if (inRage(f)) {
+    if (low) {
       ctx.fillStyle = '#ff3b3b';
       ctx.fillText('RAGE', i === 0 ? hx - 8 : hx + hw + 8, hy + 26);
     }
@@ -363,14 +368,14 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: Cha
     if (victim.combo.hits >= 2) {
       ctx.textAlign = i === 0 ? 'left' : 'right';
       const cx = i === 0 ? 24 : W - 24;
-      ctx.font = `600 34px ${DISPLAY}`;
+      ctx.font = `600 38px ${DISPLAY}`;
       ctx.fillStyle = '#ffad00';
       ctx.shadowColor = 'rgba(0,0,0,0.9)';
       ctx.shadowBlur = 8;
-      ctx.fillText(`${victim.combo.hits} HITS`, cx, 130);
+      ctx.fillText(`${victim.combo.hits} HITS`, cx, 150);
       ctx.font = `500 18px ${BODY}`;
       ctx.fillStyle = '#f2f3f8';
-      ctx.fillText(`${victim.combo.damage} DAMAGE`, cx, 152);
+      ctx.fillText(`${victim.combo.damage} DAMAGE`, cx, 174);
       ctx.shadowBlur = 0;
     }
   }
@@ -386,12 +391,12 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: Cha
   ctx.fillText(String(Math.max(0, e.secondsLeft)), W / 2, top + 34);
   // banners
   if (e.banner && e.frame < e.banner.until) {
-    ctx.font = `600 84px ${DISPLAY}`;
+    ctx.font = `600 96px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.95)';
     ctx.shadowBlur = 18;
     ctx.fillStyle = e.banner.text === 'YOU LOSE' || e.banner.text === 'K.O.' ? '#ff5d6c' : '#ffad00';
-    ctx.fillText(e.banner.text, W / 2, 210);
+    ctx.fillText(e.banner.text, W / 2, H * 0.45);
     ctx.shadowBlur = 0;
   }
 }
