@@ -223,17 +223,37 @@ function figure(ctx: CanvasRenderingContext2D, x: number, ground: number, color:
   ctx.restore();
 }
 
+/** Theme colours for the canvas, read from the CSS tokens so the arena follows the site theme. */
+let tokenCache: Record<string, string> | null = null;
+function tokens() {
+  if (tokenCache) return tokenCache;
+  const cs = getComputedStyle(document.documentElement);
+  const v = (n: string, fb: string) => cs.getPropertyValue(n).trim() || fb;
+  tokenCache = {
+    paper: v('--color-paper', '#0d0f1a'), paper2: v('--color-paper-2', '#141827'), rule: v('--color-rule', '#2a3145'),
+    ink: v('--color-ink', '#f2f3f8'), ink2: v('--color-ink-2', '#c9cfdd'), muted: v('--color-muted', '#9aa1b5'),
+    accent: v('--color-accent', '#ffad00'), info: v('--color-info', '#5aa9ff'), warn: v('--color-warn', '#f2b33d'),
+    error: v('--color-error', '#ff5d6c'), success: v('--color-success', '#3ccf8e'),
+  };
+  return tokenCache;
+}
+const DISPLAY = '"Teko Variable", "Teko", sans-serif';
+const BODY = '"Metropolis", sans-serif';
+
 function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, playerColor: string) {
+  const T = tokens();
   const g = ctx.createLinearGradient(0, 0, 0, H);
-  g.addColorStop(0, '#121726');
-  g.addColorStop(1, '#07080c');
+  g.addColorStop(0, T.paper2);
+  g.addColorStop(1, T.paper);
   ctx.fillStyle = g;
   ctx.fillRect(0, 0, W, H);
   const ground = 300;
-  ctx.fillStyle = '#1a2033';
+  ctx.fillStyle = T.rule;
   ctx.fillRect(0, ground, W, 4);
-  ctx.fillStyle = 'rgba(255,255,255,0.03)';
+  ctx.fillStyle = T.rule;
+  ctx.globalAlpha = 0.35;
   for (let x = 0; x < W; x += 60) ctx.fillRect(x, ground + 4, 1, 30);
+  ctx.globalAlpha = 1;
 
   const frame = f?.frame ?? 0;
   const a = e.action;
@@ -257,14 +277,14 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     if (recovering && !botStrike) lean = 12;
   }
   const botX = a?.kind === 'whiff' ? 720 : 560;
-  figure(ctx, botX, ground, '#c9cfdd', -1, { strike: botStrike, lean });
+  figure(ctx, botX, ground, T.ink2, -1, { strike: botStrike, lean });
 
   // cue
   if (a && tl && frame >= tl.reveal && e.phase !== 'done') {
     const label = a.kind === 'throw' ? (a.throwBreak === 1 ? 'THROW · LEFT ARM' : a.throwBreak === 2 ? 'THROW · RIGHT ARM' : 'THROW · BOTH ARMS') : a.level.toUpperCase();
-    const col = a.level === 'low' ? '#5aa9ff' : a.level === 'mid' ? '#f2b33d' : a.level === 'high' ? '#ff5d6c' : '#c084fc';
+    const col = a.level === 'low' ? T.info : a.level === 'mid' ? T.warn : a.level === 'high' ? T.error : T.accent;
     ctx.fillStyle = col;
-    ctx.font = '800 26px Segoe UI, sans-serif';
+    ctx.font = `600 34px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.fillText(label, botX, 110);
     const y = a.level === 'high' ? ground - 150 : a.level === 'mid' ? ground - 100 : a.level === 'low' ? ground - 20 : ground - 110;
@@ -278,8 +298,8 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     ctx.setLineDash([]);
   }
   if (a) {
-    ctx.fillStyle = '#7d859c';
-    ctx.font = '600 13px Segoe UI, sans-serif';
+    ctx.fillStyle = tokens().muted;
+    ctx.font = `400 13px ${BODY}`;
     ctx.textAlign = 'right';
     ctx.fillText(a.kind === 'throw' ? 'Bot: generic throw' : `${a.label} · i${a.startup} · ${a.blockAdv >= 0 ? '+' : ''}${a.blockAdv} on block${a.kind === 'whiff' ? ` · whiff recovery ${a.recovery}f` : ''}`, W - 16, 72);
     ctx.textAlign = 'left';
@@ -288,8 +308,8 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
   // result text
   if (e.result) {
     ctx.textAlign = 'center';
-    ctx.font = '800 30px Segoe UI, sans-serif';
-    ctx.fillStyle = e.result.success ? '#3ccf8e' : '#ff5d6c';
+    ctx.font = `600 40px ${DISPLAY}`;
+    ctx.fillStyle = e.result.success ? T.success : T.error;
     ctx.fillText(OUTCOME_TEXT[e.result.outcome], W / 2, 160);
   }
   drawFrameMeter(ctx, e, frame);
@@ -297,15 +317,16 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
 
 /** Tekken 8-style frame meter: bot row (startup/active/recovery) and player row. */
 function drawFrameMeter(ctx: CanvasRenderingContext2D, e: DrillEngine, frame: number) {
+  const T = tokens();
   const a = e.action;
   const tl = e.timeline;
   const x0 = 16;
   const y0 = 340;
   const cell = 9;
   const n = Math.floor((W - 32) / cell);
-  ctx.font = '600 11px Segoe UI, sans-serif';
+  ctx.font = `400 11px ${BODY}`;
   ctx.textAlign = 'left';
-  ctx.fillStyle = '#7d859c';
+  ctx.fillStyle = tokens().muted;
   ctx.fillText('FRAME METER (60 fps): green = startup · red = active · blue = recovery · yellow = blockstun · white = your move', x0, y0 - 8);
   if (!a || !tl) return;
   const start = tl.t0;
@@ -329,12 +350,12 @@ function drawFrameMeter(ctx: CanvasRenderingContext2D, e: DrillEngine, frame: nu
     ctx.fillStyle = pc;
     ctx.fillRect(x0 + i * cell, y0 + 20, cell - 1, 16);
   }
-  ctx.fillStyle = '#b6bccd';
+  ctx.fillStyle = T.ink2;
   ctx.fillText('BOT', x0 + n * cell - 26, y0 + 12);
   ctx.fillText('YOU', x0 + n * cell - 26, y0 + 32);
   if (e.blocked && (a.kind === 'punish' || a.kind === 'safe')) {
     const window = -a.blockAdv;
-    ctx.fillStyle = window > 0 ? '#f2b33d' : '#7d859c';
+    ctx.fillStyle = window > 0 ? T.accent : T.muted;
     ctx.fillText(window > 0 ? `Punish window: ${window} frames after your blockstun` : `Bot is ${a.blockAdv >= 0 ? '+' : ''}${a.blockAdv}: not punishable`, x0, y0 + 56);
   }
 }

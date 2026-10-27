@@ -27,7 +27,7 @@ export function DojoPage({ drill }: { drill?: string }) {
           <h1>Bot Dojo</h1>
           <p>A standalone training simulation. The bot uses real moves and frame data (startup, block advantage, recovery) and judges you with Tekken's frame rules. It does <b>not</b> reproduce Tekken 8's animations, hitboxes, range, pushback, tracking or AI, and cannot replace practice against the real game.</p>
         </div>
-        <button className="btn" onClick={() => navigate('companion')}>Set up the same drill in Tekken 8 →</button>
+        <button className="btn" onClick={() => navigate('companion')}>Same drill in Tekken 8</button>
       </div>
       <div className="grid g3">
         {(Object.keys(DRILLS) as DrillId[]).map((d) => (

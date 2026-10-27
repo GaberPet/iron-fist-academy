@@ -2,7 +2,7 @@ import { Component, type ReactNode } from 'react';
 import { navigate, useControllerStatus, useRoute } from './hooks';
 import { useStore } from './store';
 import { HomePage } from './pages/HomePage';
-import { CharactersPage } from './pages/CharactersPage';
+import { CharactersPage, CardDemo } from './pages/CharactersPage';
 import { AcademyPage } from './pages/AcademyPage';
 import { MovesPage } from './pages/MovesPage';
 import { ComboLabPage } from './pages/ComboLabPage';
@@ -13,6 +13,9 @@ import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
 import { WhatsNewPage } from './pages/WhatsNewPage';
+import { CreditsPage } from './pages/CreditsPage';
+import { Logo } from './components/Logo';
+import { Icon } from './components/Icon';
 import { isRecent } from '../data';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
@@ -90,12 +93,12 @@ function TopBar() {
 
 export function App() {
   const route = useRoute();
-  const { char, changelog, data, roster } = useStore();
+  const { char, changelog, data } = useStore();
   const page = route[0];
   const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
-      case 'characters': return <CharactersPage />;
+      case 'characters': return route[1] === 'demo' ? <CardDemo /> : <CharactersPage />;
       case 'academy': return <AcademyPage lessonId={route[1]} />;
       case 'moves': return <MovesPage moveId={route[1]} />;
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;
@@ -103,6 +106,7 @@ export function App() {
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'companion': return <CompanionPage />;
       case 'updates': return <WhatsNewPage />;
+      case 'credits': return <CreditsPage />;
       case 'controller': return <ControllerPage />;
       case 'progress': return <ProgressPage />;
       case 'settings': return <SettingsPage />;
@@ -113,7 +117,7 @@ export function App() {
     <div className="app" style={{ ['--char' as string]: char.profile.color }}>
       <nav className="sidebar" aria-label="Main">
         <div className="brand">
-          <div className="brand-mark">IF</div>
+          <Logo />
           <div>
             <div className="brand-name">Iron Fist Academy</div>
             <div className="brand-sub">Unofficial Tekken 8 coach</div>
@@ -123,7 +127,7 @@ export function App() {
           <div key={n.id}>
             {n.sep && <div className="nav-sep" />}
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
-              <span className="nav-ico" aria-hidden>{n.icon}</span>
+              <Icon name={n.id} />
               <span className="lbl">{n.label}</span>
               {n.id === 'updates' && recentUpdates > 0 && <span className="badge good right" title="Data updates in the last 7 days">{recentUpdates}</span>}
             </button>
@@ -131,9 +135,10 @@ export function App() {
         ))}
         <div className="sidebar-foot">
           <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
-            Data {data.manifest.generatedAt.slice(0, 10)} · {roster.length} characters · auto-updated daily
+            Data updated {data.manifest.generatedAt.slice(5, 10)}
           </button>
-          <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).
+          <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).{' '}
+          <a href="#/credits">Credits</a>
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
       </nav>

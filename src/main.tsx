@@ -3,6 +3,10 @@ import { createRoot } from 'react-dom/client';
 import { App } from './ui/App';
 import { StoreProvider } from './ui/store';
 import { inputManager } from './runtime/inputManager';
+import '@fontsource-variable/teko';
+import '@fontsource/metropolis/400.css';
+import '@fontsource/metropolis/700.css';
+import '@fontsource-variable/jetbrains-mono';
 import './ui/styles.css';
 
 inputManager.start();

@@ -70,6 +70,8 @@ export interface Settings {
   keyboardEnabled: boolean;
   rumble: boolean;
   sound: boolean;
+  /** Style of the character cards: motif photos, or generated art. */
+  cardStyle: 'photo' | 'emblem' | 'silhouette' | 'type' | 'mix';
 }
 
 export const DEFAULT_SETTINGS: Settings = {
@@ -89,6 +91,7 @@ export const DEFAULT_SETTINGS: Settings = {
   keyboardEnabled: true,
   rumble: true,
   sound: true,
+  cardStyle: 'photo',
 };
 
 export const MAX_ATTEMPTS = 20000;

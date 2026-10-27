@@ -4,6 +4,7 @@ import { computeStats, lessonState, recommend, type Recommendation } from '../..
 import { navigate } from '../hooks';
 import { useStore } from '../store';
 import { Ring } from '../components/Charts';
+import { CharacterArt } from '../components/CharacterArt';
 
 function go(r: Recommendation) {
   if (r.type === 'focus-step') navigate('combos', r.comboId, String(r.stepIndex));
@@ -47,34 +48,45 @@ export function HomePage() {
   const recentOk = recent.reduce((s, d) => s + d.successes, 0);
   return (
     <div className="stack">
-      <div className="page-head">
-        <div>
-          <h1>{char.profile.name} training</h1>
-          <p>{char.profile.playstyle}</p>
-        </div>
-        <button className="btn" onClick={() => navigate('characters')}>Character profile</button>
-      </div>
-
-      <div className="grid g4">
-        <div className="card row" style={{ flexWrap: 'nowrap' }}>
-          <Ring value={stats.todaySeconds / goal} label="Daily goal" />
-          <div className="stat">
-            <span className="stat-val">{Math.floor(stats.todaySeconds / 60)}<span className="dim" style={{ fontSize: 15 }}> / {settings.dailyGoalMinutes} min</span></span>
-            <span className="stat-label">Today's practice</span>
+      <div className="home-lead">
+        <button className="char-card home-portrait" onClick={() => navigate('characters')} aria-label={`${char.profile.name}: change character`}>
+          <div className="char-art"><CharacterArt id={char.profile.id} name={char.profile.name} variant={settings.cardStyle} /></div>
+          <div className="char-info">
+            <span className="char-name">{char.profile.name}</span>
+            <span className="char-meta">Change character</span>
           </div>
-        </div>
-        <div className="card stat"><span className="stat-val">{stats.streakDays}</span><span className="stat-label">Day streak</span></div>
-        <div className="card stat"><span className="stat-val">{mastered}<span className="dim" style={{ fontSize: 15 }}> / {lessons.length}</span></span><span className="stat-label">Lessons mastered</span><div className="progress" style={{ marginTop: 8 }}><i style={{ width: `${(mastered / lessons.length) * 100}%` }} /></div></div>
-        <div className="card stat">
-          <span className="stat-val">{recentAttempts ? `${Math.round((recentOk / recentAttempts) * 100)}%` : '—'}</span>
-          <span className="stat-label">{recentAttempts ? `Success rate, last 7 days (${recentAttempts} attempts)` : 'No attempts in the last 7 days'}</span>
+        </button>
+        <div className="stack">
+          <div>
+            <h1>{char.profile.name} training</h1>
+            <p className="dim" style={{ maxWidth: '70ch' }}>{char.profile.playstyle}</p>
+          </div>
+          {recs[0] && recs[0].type !== 'done' && (
+            <button className="list-item home-next" onClick={() => go(recs[0])}>
+              <span>
+                <span className="small muted">Train next</span>
+                <span className="home-next-title">{recs[0].title}</span>
+                <span className="small dim">{recs[0].reason}</span>
+              </span>
+              <span className="btn primary right">Start</span>
+            </button>
+          )}
+          <dl className="stat-strip">
+            <div className="row" style={{ flexWrap: 'nowrap' }}>
+              <Ring value={stats.todaySeconds / goal} label="Daily goal" size={56} />
+              <div><dt>Today</dt><dd>{Math.floor(stats.todaySeconds / 60)} of {settings.dailyGoalMinutes} min</dd></div>
+            </div>
+            <div><dt>Day streak</dt><dd>{stats.streakDays}</dd></div>
+            <div><dt>Lessons mastered</dt><dd>{mastered} of {lessons.length}</dd></div>
+            <div><dt>Last 7 days</dt><dd>{recentAttempts ? `${Math.round((recentOk / recentAttempts) * 100)}% of ${recentAttempts}` : 'No attempts'}</dd></div>
+          </dl>
         </div>
       </div>
 
-      <div className="grid" style={{ gridTemplateColumns: '2fr 1fr' }}>
-        <div className="card stack">
-          <div className="card-title"><h2>Recommended next</h2><span className="small muted">Based on your recorded results</span></div>
-          {recs.map((r, i) => (
+      <div className="grid" style={{ gridTemplateColumns: recs.length > 1 ? '2fr 1fr' : '1fr' }}>
+        {recs.length > 1 && <div className="card stack">
+          <div className="card-title"><h2>Also worth training</h2><span className="small muted">Based on your recorded results</span></div>
+          {recs.slice(1).map((r, i) => (
             <button key={i} className="list-item" onClick={() => go(r)} disabled={r.type === 'done'}>
               <span className={`badge ${r.type === 'focus-step' || r.type === 'drill' ? 'warn' : r.type === 'review' ? 'info' : 'char'}`}>{r.type === 'focus-step' ? 'Weakness' : r.type === 'drill' ? 'Weakness' : r.type === 'review' ? 'Review' : r.type === 'lesson' ? 'Path' : 'Done'}</span>
               <span>
@@ -84,8 +96,8 @@ export function HomePage() {
               {r.type !== 'done' && <span className="right muted">→</span>}
             </button>
           ))}
-        </div>
-        <div className="stack">
+        </div>}
+        <div className={recs.length > 1 ? 'stack' : 'grid g2'}>
           <SessionTimer minutes={settings.sessionMinutes} />
           <div className="card stat">
             <span className="stat-val">{combosMastered}<span className="dim" style={{ fontSize: 15 }}> / {char.combos.length}</span></span>

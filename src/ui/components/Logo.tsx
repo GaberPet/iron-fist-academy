@@ -1,0 +1,19 @@
+// Iron Fist Academy mark: a clenched fist in a hexagon badge (original design, concept A).
+export function Logo({ size = 40, title = 'Iron Fist Academy' }: { size?: number; title?: string }) {
+  return (
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 512 512" role="img" aria-label={title}>
+      <rect width="512" height="512" rx="72" fill="var(--color-paper)" />
+      <path d="M256 44 L452 156 V356 L256 468 L60 356 V156 Z" fill="none" stroke="var(--color-accent)" strokeWidth="18" />
+      <g fill="var(--color-ink)">
+        <rect x="150" y="168" width="52" height="92" rx="12" />
+        <rect x="208" y="150" width="52" height="110" rx="12" />
+        <rect x="266" y="156" width="52" height="104" rx="12" />
+        <rect x="324" y="176" width="44" height="84" rx="12" />
+        <path d="M150 268 H368 V318 Q368 372 314 372 H206 Q150 372 150 318 Z" />
+        <path d="M150 268 L132 236 Q124 214 146 210 L196 246 Z" />
+      </g>
+      <rect x="166" y="282" width="140" height="18" rx="9" fill="var(--color-paper)" />
+      <rect x="190" y="390" width="132" height="14" rx="7" fill="var(--color-accent)" />
+    </svg>
+  );
+}
