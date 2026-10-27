@@ -27,6 +27,10 @@ const WALK_F = 2.6;
 const WALK_B = 2.2;
 const INTRO_FRAMES = 110;
 const KO_FRAMES = 150;
+/** Heat lasts about 10 seconds (simulation value). */
+export const HEAT_FRAMES = 600;
+/** Rage turns on at low health (simulation value: 20%). */
+export const RAGE_HP = Math.round(MAX_HP * 0.2);
 
 export type Level = 'high' | 'mid' | 'low' | 'throw';
 export type FighterState = 'neutral' | 'attack' | 'blockstun' | 'hitstun' | 'air' | 'down' | 'throwing' | 'thrown' | 'ko';
@@ -54,10 +58,17 @@ export interface Fighter {
   throwBreak: '1' | '2' | '1+2' | 'either' | null;
   /** Damage this fighter dealt in the round. */
   dealt: number;
+  /** Heat: one per round. Heat Burst (2+3) or a Heat Engager hit starts it; a Heat Smash spends it. */
+  heat: 'ready' | 'active' | 'used';
+  heatUntil: number;
+  /** Rage Art used this round. */
+  rageUsed: boolean;
 }
 
+export const inRage = (x: Fighter) => x.hp > 0 && x.hp <= RAGE_HP && !x.rageUsed;
+
 export interface FightEvent {
-  type: 'hit' | 'counter' | 'block' | 'whiff' | 'launch' | 'throw' | 'break' | 'ko' | 'round-start' | 'fight' | 'time-up' | 'round-end' | 'match-end' | 'punish' | 'crush';
+  type: 'hit' | 'counter' | 'block' | 'whiff' | 'launch' | 'throw' | 'break' | 'ko' | 'round-start' | 'fight' | 'time-up' | 'round-end' | 'match-end' | 'punish' | 'crush' | 'heat' | 'heat-smash' | 'rage' | 'rage-art';
   by?: 0 | 1;
   x?: number;
   level?: Level;
@@ -155,6 +166,29 @@ export interface MoveSet {
   fast: Move[];
   running: Move[];
   childStep: Map<Move, InputStep>;
+  heatBurst: Move | null;
+  heatMoves: Move[]; // H. roots (Heat Smash first)
+  rageArt: Move | null;
+  /** Real juggle routes from the character's combos, resolved to moves (string segments in order). */
+  routes: Move[][];
+  /** Player-side matching for H. / R. moves (prefix stripped). */
+  special: { move: Move; step: InputStep; kind: 'heat' | 'rage' }[];
+}
+
+const stripHR = (id: string) => id.replace(/^[HR]\./, '');
+
+/** Resolve a combo route ("df+3 f+3,2~DF CD.1 T! dash f+1+2") into moves; stops at the first unknown token. */
+export function resolveRoute(c: CharacterData, route: string): Move[] {
+  const out: Move[] = [];
+  for (const raw of route.split(/\s+/)) {
+    const tok = raw.replace(/[(),]+$/, '').replace(/~[A-Za-z]+$/, '');
+    if (!tok || /^(T!|W!|B!|dash|ff|f,f|ss|SS|\.\.\.)$/i.test(tok)) continue;
+    const m = lookupMove(c, tok);
+    if (!m || m.startupFrame === null || m.isThrow) break;
+    if (STANCE_PREFIX.test(m.id) && !/^(H)\./.test(m.id)) break; // needs a stance transition the sim does not model
+    for (const seg of chainTo(c, m)) if (out[out.length - 1] !== seg) out.push(seg);
+  }
+  return out;
 }
 
 export function moveSet(c: CharacterData): MoveSet {
@@ -165,9 +199,9 @@ export function moveSet(c: CharacterData): MoveSet {
   for (const m of c.frames.moves) {
     if (!m.parent || m.startupFrame === null) continue;
     try {
-      const steps = parseNotation(m.id).filter((s) => s.kind === 'press');
+      const steps = parseNotation(stripHR(m.id)).filter((s) => s.kind === 'press');
       const last = steps[steps.length - 1];
-      if (!last || last.heat || last.rage) continue;
+      if (!last) continue;
       childStep.set(m, last);
     } catch {
       continue;
@@ -178,14 +212,35 @@ export function moveSet(c: CharacterData): MoveSet {
   }
   const lv = (m: Move) => moveLevel(m);
   const sf = (m: Move) => m.startupFrame ?? 99;
+  const special: MoveSet['special'] = [];
+  for (const m of c.frames.moves) {
+    if (m.parent || m.startupFrame === null || !/^[HR]\./.test(m.id)) continue;
+    try {
+      const first = parseNotation(stripHR(m.id)).find((s) => s.kind === 'press');
+      if (first && !first.stance) special.push({ move: m, step: first, kind: m.id.startsWith('H.') ? 'heat' : 'rage' });
+    } catch {
+      /* unparseable: not offered */
+    }
+  }
+  special.sort((a, b) => b.step.motion.length - a.step.motion.length || b.step.buttons.length - a.step.buttons.length);
+  const heatMoves = c.frames.moves.filter((m) => !m.parent && m.id.startsWith('H.') && m.startupFrame !== null && !STANCE_PREFIX.test(stripHR(m.id)));
+  heatMoves.sort((a, b) => Number(/Heat Smash/.test(b.notes)) - Number(/Heat Smash/.test(a.notes)));
+  const routes = c.combos
+    .map((x) => resolveRoute(c, x.route))
+    .filter((r) => r.length >= 2 && r.every((m) => !m.id.startsWith('R.')));
   return {
+    heatBurst: roots.find((m) => /Heat Burst/.test(m.notes)) ?? null,
+    heatMoves,
+    rageArt: c.frames.moves.find((m) => m.id.startsWith('R.') && /Rage Art/.test(m.notes)) ?? null,
+    routes,
+    special,
     roots,
     children,
     childStep,
-    pokes: roots.filter((m) => !m.isThrow && lv(m) !== 'low' && sf(m) <= 15 && (m.blockFrame ?? -99) >= -6),
+    pokes: roots.filter((m) => !/Heat Burst/.test(m.notes) && !m.isThrow && lv(m) !== 'low' && sf(m) <= 15 && (m.blockFrame ?? -99) >= -6),
     lows: roots.filter((m) => lv(m) === 'low' && sf(m) <= 26),
     launchers: roots.filter((m) => !m.isThrow && /\d+a/.test(m.hit) && lv(m) !== 'high'),
-    signature: roots.filter((m) => !m.isThrow && (SIGNATURE.test(m.notes) || c.profile.heatEngagers.includes(m.id) || c.profile.keyLaunchers.includes(m.id))),
+    signature: roots.filter((m) => !m.isThrow && !/Heat Burst/.test(m.notes) && (SIGNATURE.test(m.notes) || c.profile.heatEngagers.includes(m.id) || c.profile.keyLaunchers.includes(m.id))),
     strings: roots.filter((m) => !m.isThrow && children.has(m.id)),
     throws: roots.filter((m) => m.isThrow && /^(1\+3|2\+4)$/.test(m.id)),
     fast: roots.filter((m) => !m.isThrow && lv(m) !== 'low' && sf(m) <= 13).sort((a, b) => sf(a) - sf(b)),
@@ -237,6 +292,11 @@ export class FightEngine {
   private botGuardSet = -1;
   private botPlan: Move[] = [];
   private botBlocked: { adv: number; free: number; crouch: boolean } | null = null;
+  private rageShown: [boolean, boolean] = [false, false];
+  /** What the player tends to do, for the bot's reads. */
+  habits = { stand: 1, crouch: 1, mash: 1, patient: 1 };
+  /** Bot's expected frame advantage after the last exchange, valid until `until`. */
+  private botAdv = { adv: 0, until: -1 };
 
   constructor(cfg: FightConfig) {
     this.cfg = cfg;
@@ -257,7 +317,7 @@ export class FightEngine {
   private newFighter(side: 0 | 1, char: CharacterData): Fighter {
     return {
       side, char, x: side === 0 ? 360 : 600, hp: MAX_HP, state: 'neutral', until: 0, crouching: false, guard: 'stand', walking: 0,
-      move: null, moveStart: 0, hitAt: 0, endAt: 0, outcome: 'pending', lunge: 0, queued: null, air: null, combo: { hits: 0, damage: 0 }, lastHit: -999, throwBreak: null, dealt: 0,
+      move: null, moveStart: 0, hitAt: 0, endAt: 0, outcome: 'pending', lunge: 0, queued: null, air: null, combo: { hits: 0, damage: 0 }, lastHit: -999, throwBreak: null, dealt: 0, heat: 'ready', heatUntil: 0, rageUsed: false,
     };
   }
 
@@ -271,6 +331,7 @@ export class FightEngine {
     this.botPlan = [];
     this.botBlocked = null;
     this.buffered = null;
+    this.rageShown = [false, false];
     this.banner = { text: this.wins[0] === this.roundsToWin - 1 && this.wins[1] === this.roundsToWin - 1 ? 'FINAL ROUND' : `ROUND ${this.round}`, until: at + 70 };
   }
 
@@ -316,8 +377,15 @@ export class FightEngine {
     this.resolveThrow(p, b, now, ev, input);
     this.resolveThrow(b, p, now, ev, input);
     this.separate();
-
+    if (this.pending.length) {
+      ev.push(...this.pending);
+      this.pending = [];
+    }
     for (const x of [p, b]) {
+      if (inRage(x) && !this.rageShown[x.side]) {
+        this.rageShown[x.side] = true;
+        ev.push({ type: 'rage', by: x.side, text: `${x.char.profile.short}: RAGE` });
+      }
       if (x.hp <= 0 && x.state !== 'ko') {
         x.hp = 0;
         x.state = 'ko';
@@ -372,7 +440,9 @@ export class FightEngine {
   }
 
   private tickStates(x: Fighter, now: number) {
+    if (x.side === 0 && this.botAdv.until === now && this.botAdv.adv >= 0 && x.state === 'neutral') this.habits.patient++;
     if (x.state === 'ko') return;
+    if (x.heat === 'active' && now >= x.heatUntil) x.heat = 'used';
     if ((x.state === 'blockstun' || x.state === 'hitstun') && now >= x.until) {
       x.state = 'neutral';
       x.combo = { hits: 0, damage: 0 };
@@ -404,6 +474,31 @@ export class FightEngine {
     x.state = 'attack';
     x.queued = null;
     this.beginSegment(x, m, now, true);
+    if (/Heat Burst/.test(m.notes) && x.heat === 'ready') this.startHeat(x, now);
+    if (m.id.startsWith('H.') && /Heat Smash/.test(m.notes)) {
+      x.heat = 'used';
+      this.pending.push({ type: 'heat-smash', by: x.side, text: `${x.char.profile.short}: Heat Smash` });
+    }
+    if (m.id.startsWith('R.')) {
+      x.rageUsed = true;
+      this.pending.push({ type: 'rage-art', by: x.side, text: `${x.char.profile.short}: RAGE ART` });
+    }
+  }
+
+  private pending: FightEvent[] = [];
+
+  private startHeat(x: Fighter, now: number) {
+    x.heat = 'active';
+    x.heatUntil = now + HEAT_FRAMES;
+    this.pending.push({ type: 'heat', by: x.side, text: `${x.char.profile.short}: HEAT` });
+  }
+
+  /** Can this fighter use the move right now (Heat / Rage requirements)? */
+  allowed(x: Fighter, m: Move) {
+    if (m.id.startsWith('H.')) return x.heat === 'active';
+    if (m.id.startsWith('R.')) return inRage(x);
+    if (/Heat Burst/.test(m.notes)) return x.heat === 'ready';
+    return true;
   }
 
   private beginSegment(x: Fighter, m: Move, now: number, root = false) {
@@ -478,8 +573,19 @@ export class FightEngine {
           }
         }
       }
-      const m = this.matcher.match(group, this.history, this.opts);
+      let m: Move | null = null;
+      for (const sp of this.sets[0].special) {
+        if (!this.allowed(p, sp.move)) continue;
+        if (checkPress(sp.step, group, this.history, this.opts).ok) {
+          m = sp.move;
+          break;
+        }
+      }
+      m ??= this.matcher.match(group, this.history, this.opts);
+      if (m && !this.allowed(p, m)) m = null;
       if (m) this.buffered = { move: m, frame: now };
+      // habit: pressing right after blocking the bot's move
+      if (this.botAdv.until >= now && this.botAdv.adv >= 0) this.habits.mash++;
     }
     if (this.canAct(p) && this.buffered && now - this.buffered.frame <= 10) {
       this.startMove(p, this.buffered.move, now);
@@ -518,15 +624,18 @@ export class FightEngine {
       if (b.until - now === 8 && rng() < S.breakThrow) this.breakThrow(p, b, now, ev);
       return;
     }
-    // continue strings / juggles
-    if (b.state === 'attack' && b.move && !b.queued && b.outcome !== 'pending' && b.outcome !== 'whiff') {
-      const kids = (set.children.get(b.move.id) ?? []).filter((k) => moveLevel(k) !== 'throw');
+    // continue strings: the planned route first, otherwise a follow-up that suits the situation
+    if (b.state === 'attack' && b.move && !b.queued && b.outcome !== 'pending') {
       const planned = this.botPlan[0];
       if (planned && planned.parent === b.move.id) {
         this.botPlan.shift();
         this.queueChild(b, planned);
-      } else if (kids.length && rng() < (b.outcome === 'hit' || b.outcome === 'counter' ? S.combo : S.combo * 0.6)) {
-        this.queueChild(b, this.pick(kids)!);
+      } else if (b.outcome !== 'whiff') {
+        const kids = (set.children.get(b.move.id) ?? []).filter((k) => moveLevel(k) !== 'throw' && this.allowed(b, k));
+        const onHit = b.outcome === 'hit' || b.outcome === 'counter';
+        // on hit: finish the string; on block: only continue if the next hit is safe-ish (no free punish)
+        const choices = onHit ? kids : kids.filter((k) => (k.blockFrame ?? -99) >= -9);
+        if (choices.length && rng() < (onHit ? S.combo : S.combo * 0.5)) this.queueChild(b, this.pick(choices)!);
       }
     }
     if (!this.canAct(b)) {
@@ -538,45 +647,58 @@ export class FightEngine {
       return;
     }
 
-    // 1. punish a blocked unsafe move with the character's real punisher table
+    const go = (m: Move | null | undefined, plan: Move[] = []) => {
+      if (!m || !this.allowed(b, m)) return false;
+      this.startMove(b, m, now);
+      this.botPlan = plan;
+      return true;
+    };
+
+    // 1. punish a blocked unsafe move with the character's real punisher table (or the Rage Art)
     if (this.botBlocked) {
       const bl = this.botBlocked;
       this.botBlocked = null;
       if (bl.adv <= -10 && now - bl.free <= 2 && rng() < S.punish) {
-        const opts = punishersFor(b.char.punishers, bl.adv, bl.crouch ? 'crouching' : 'standing');
-        const entry = this.pick(opts);
+        if (bl.adv <= -20 && set.rageArt && inRage(b) && rng() < 0.6 && go(set.rageArt)) return;
+        const entry = this.pick(punishersFor(b.char.punishers, bl.adv, bl.crouch ? 'crouching' : 'standing'));
         const mv = entry ? lookupMove(b.char, entry.moveId) : null;
         if (mv && mv.startupFrame !== null) {
           const chain = chainTo(b.char, mv);
-          this.startMove(b, chain[0], now);
-          this.botPlan = chain.slice(1);
-          ev.push({ type: 'punish', by: 1, text: `${b.char.profile.short} punishes with ${entry!.moveId} (i${chain[0].startupFrame})` });
-          return;
+          if (go(chain[0], chain.slice(1))) {
+            ev.push({ type: 'punish', by: 1, text: `${b.char.profile.short} punishes with ${entry!.moveId} (i${chain[0].startupFrame})` });
+            return;
+          }
         }
       }
     }
-    // 2. juggle a launched opponent
-    if (p.state === 'air' && dist < 150 && rng() < S.combo) {
-      const m = this.pick(set.fast.slice(0, 6)) ?? this.pick(set.pokes);
-      if (m) {
-        this.startMove(b, m, now);
-        return;
+    // 2. juggle: follow the character's real combo route, else fast hits
+    if (p.state === 'air' && dist < 170) {
+      const next = this.botPlan[0];
+      if (next && !next.parent) {
+        this.botPlan.shift();
+        if (go(next, this.botPlan)) return;
+      }
+      if (rng() < S.combo) {
+        const route = this.pick(set.routes);
+        if (route && go(route[0], route.slice(1))) return;
+        if (go(this.pick(set.fast.slice(0, 6)) ?? this.pick(set.pokes))) return;
       }
     }
+    this.botPlan = [];
     // 3. whiff punish
-    if (p.state === 'attack' && p.outcome === 'whiff' && p.endAt - now > 12 && dist < 190 && rng() < S.punish * 0.5) {
-      const m = this.pick(set.launchers.filter((x) => (x.startupFrame ?? 99) <= 16)) ?? this.pick(set.pokes);
-      if (m) {
-        this.startMove(b, m, now);
-        return;
-      }
+    if (p.state === 'attack' && p.outcome === 'whiff' && p.endAt - now > 12 && dist < 190 && rng() < S.punish * 0.7) {
+      if (go(this.pick(set.launchers.filter((x) => (x.startupFrame ?? 99) <= 16)) ?? this.pick(set.pokes))) return;
     }
-    // 4. react to an incoming attack
+    // 4. an attack is coming: guard (after reaction time), or reversal with Rage Art / Heat Burst armor
     if (p.state === 'attack' && p.move && now < p.hitAt) {
       b.walking = 0;
       if (this.botGuardSet !== p.moveStart && now - p.moveStart >= S.react) {
         this.botGuardSet = p.moveStart;
         const lv = moveLevel(p.move);
+        if (lv !== 'low' && lv !== 'throw' && dist < 120 && p.hitAt - now > 6) {
+          if (set.rageArt && inRage(b) && rng() < S.guard * 0.25 && go(set.rageArt)) return;
+          if (set.heatBurst && b.heat === 'ready' && rng() < S.guard * 0.12 && go(set.heatBurst)) return;
+        }
         const right = lv === 'low' ? 'crouch' : 'stand';
         const wrong = right === 'crouch' ? 'stand' : 'crouch';
         b.guard = rng() < S.guard ? right : rng() < 0.5 ? wrong : 'stand';
@@ -584,34 +706,48 @@ export class FightEngine {
       }
       return;
     }
-    // 5. neutral: approach, back off, or attack with the character's own moves
     if (now < this.botNext) {
       b.x -= b.walking === 1 ? WALK_F : b.walking === -1 ? -WALK_B : 0;
       return;
     }
-    this.botNext = now + 10 + Math.floor(rng() * 16);
+    this.botNext = now + 6 + Math.floor(rng() * 10);
     b.crouching = false;
     b.guard = 'stand';
     b.walking = 0;
-    const close = dist < 140;
-    if (!close) {
-      if (set.running.length && dist < 260 && rng() < S.aggression * 0.4) return this.startMove(b, this.pick(set.running)!, now);
-      b.walking = rng() < 0.85 ? 1 : 0;
+
+    const adv = this.botAdv.until >= now ? this.botAdv.adv : 0;
+    const poke = Math.max(...set.pokes.map(moveRange), 100);
+    // 5. minus: respect the opponent's turn (block, or step back when very minus)
+    if (adv <= -4) {
+      if (adv <= -8 && rng() < 0.4) b.walking = -1;
       return;
     }
-    if (rng() < S.aggression) {
+    // 6. Heat: spend it with a Heat Smash / Heat move, or start it with a Heat Burst at close range
+    if (b.heat === 'active' && dist < 140 && rng() < 0.25 && go(set.heatMoves[0] && rng() < 0.6 ? set.heatMoves[0] : this.pick(set.heatMoves))) return;
+    if (b.heat === 'ready' && set.heatBurst && dist < 120 && rng() < (adv > 0 ? 0.12 : 0.03) && go(set.heatBurst)) return;
+    // 7. plus or close: a read-based mixup on what the player tends to do
+    if (adv > 0 || (dist < poke + 10 && rng() < S.aggression)) {
+      const standRate = this.habits.stand / (this.habits.stand + this.habits.crouch);
+      const mashRate = this.habits.mash / (this.habits.mash + this.habits.patient);
       const r = rng();
-      const cat: Move[] =
-        dist < 95 && r < 0.12 ? set.throws
-        : r < 0.38 ? set.pokes
-        : r < 0.52 ? set.lows
-        : r < 0.72 ? set.strings
-        : r < 0.88 ? set.signature
-        : set.launchers;
-      const m = this.pick(cat.length ? cat : set.pokes.length ? set.pokes : set.roots);
-      if (m) return this.startMove(b, m, now);
+      let pool: Move[];
+      if (adv > 0 && mashRate > 0.55 && r < 0.4) pool = set.fast; // they press after blocking: beat it with a fast poke
+      else if (r < standRate * 0.45) pool = set.lows; // they stand a lot: go low
+      else if (r < 0.62) pool = set.pokes.concat(set.strings.filter((m) => (m.startupFrame ?? 99) <= 14));
+      else if (r < 0.86) pool = set.signature.concat(set.launchers); // mids that launch / big reward
+      else pool = dist < 95 && standRate > 0.5 ? set.throws : set.pokes;
+      if (go(this.pick(pool.length ? pool : set.pokes))) return;
     }
-    b.walking = rng() < 0.3 ? -1 : 0;
+    // 8. neutral spacing: stay just outside the opponent's poke range, step in to attack
+    const ideal = poke + 15;
+    if (dist > ideal + 60) {
+      if (set.running.length && dist < 280 && rng() < S.aggression * 0.3 && go(this.pick(set.running))) return;
+      b.walking = 1;
+    } else if (dist > ideal) b.walking = rng() < 0.7 ? 1 : 0;
+    else if (dist < ideal - 40) b.walking = rng() < 0.5 ? -1 : 0;
+    else b.walking = rng() < 0.3 ? -1 : rng() < 0.5 ? 1 : 0;
+    // whiff bait: sometimes step back right after the player attacks
+    if (p.state === 'attack' && rng() < 0.3) b.walking = -1;
   }
 
   // ---------- attacks ----------
@@ -635,6 +771,13 @@ export class FightEngine {
     // crush properties of the defender's own move
     if (d.state === 'attack' && d.move) {
       const t = now - d.moveStart + 1;
+      // Rage Arts and Heat Bursts absorb hits during startup (power-crush-like)
+      if (/Rage Art|Heat Burst/.test(d.move.notes) && now < d.hitAt && lv !== 'low' && lv !== 'throw') {
+        a.outcome = 'hit';
+        this.damage(a, d, Math.round(moveDamage(m) * 0.5), now, false);
+        ev.push({ type: 'crush', by: d.side, x: hitX, text: `${d.move.id} absorbs the hit` });
+        return;
+      }
       for (const c of crushRanges(d.move)) {
         if (t < c.from || t > c.to) continue;
         if ((c.kind === 'cs' && lv === 'high') || (c.kind === 'js' && lv === 'low')) {
@@ -662,6 +805,8 @@ export class FightEngine {
       return;
     }
     if (lv === 'high' && d.crouching && d.state !== 'air') return whiff('ducked');
+    if (a.side === 1 && !d.crouching) this.habits.stand++;
+    else if (a.side === 1) this.habits.crouch++;
 
     const juggle = d.state === 'air';
     const stunned = d.state === 'hitstun';
@@ -677,6 +822,9 @@ export class FightEngine {
       const chip = /(\d+) chip damage/.exec(m.notes);
       if (chip) this.damage(a, d, Number(chip[1]), now, false);
       this.push(a, d, 12);
+      if (a.side === 1) {
+        this.botAdv = { adv: m.blockFrame ?? 0, until: attackerEnd + 20 };
+      }
       ev.push({ type: 'block', by: a.side, x: hitX, level: lv });
       return;
     }
@@ -687,6 +835,8 @@ export class FightEngine {
     if (juggle) dmg = Math.max(1, Math.round(dmg * Math.max(0.3, 0.7 - 0.08 * d.combo.hits)));
     a.outcome = counter ? 'counter' : 'hit';
     this.damage(a, d, dmg, now);
+    if (/Heat Engager/.test(m.notes) && a.heat === 'ready') this.startHeat(a, now);
+    if (a.side === 1) this.botAdv = { adv: res.launch ? 30 : res.adv, until: attackerEnd + 20 };
     d.move = null;
     d.queued = null;
     if (juggle) {

@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { CharacterData } from '../../types';
 import type { Difficulty } from '../../core/progress';
-import { FightEngine, MAX_HP, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
+import { FightEngine, HEAT_FRAMES, MAX_HP, inRage, moveDamage, type Fighter, type FightEvent } from '../../core/fight';
 import type { Frame } from '../../core/recognizer';
 import { useCaptureInput, useInputFrames } from '../hooks';
 import { useStore } from '../store';
@@ -19,24 +19,32 @@ const BODY = '"Metropolis", system-ui, sans-serif';
 
 export function FightPage() {
   const { char, roster, opponents, ensureLoaded, settings, updateSettings } = useStore();
+  const [meId, setMeId] = useState<string>(char.profile.id);
   const [oppId, setOppId] = useState<string>(() => pickRandom(roster.map((r) => r.id).filter((id) => id !== char.profile.id)));
   const [rounds, setRounds] = useState(2);
   const [run, setRun] = useState(0);
   const [running, setRunning] = useState(false);
   useEffect(() => {
-    ensureLoaded([oppId]).catch(() => undefined);
-  }, [oppId, ensureLoaded]);
+    ensureLoaded([oppId, meId]).catch(() => undefined);
+  }, [oppId, meId, ensureLoaded]);
   const opp = opponents.find((o) => o.profile.id === oppId);
+  const me = opponents.find((o) => o.profile.id === meId);
 
   return (
     <div className="stack">
       <div className="page-head">
         <div>
           <h1>Free Fight</h1>
-          <p>A full match against a bot that plays a real character: its own moves, damage, startup, block and hit advantage, launchers, crush frames, throws and its real punishers, all from the imported frame data. Health bars, a 60-second timer and rounds like a Tekken match. This is a <b>simulation</b>, not Tekken 8: range, movement, juggles and string timing are approximations, and sidesteps, Heat and Rage are not modelled.</p>
+          <p>A full match against a bot that plays a real character: its own moves, damage, startup, block and hit advantage, launchers, crush frames, throws and its real punishers, all from the imported frame data. Health bars, a 60-second timer and rounds like a Tekken match. This is a <b>simulation</b>, not Tekken 8: range, movement, juggles, string timing and the Heat and Rage rules are approximations, and sidesteps are not modelled.</p>
         </div>
       </div>
       <div className="card row">
+        <label className="field">You play
+          <select value={meId} onChange={(e) => { setMeId(e.target.value); setRunning(false); }}>
+            {roster.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
+          </select>
+        </label>
+        <span className="vs-mark">VS</span>
         <label className="field">Opponent
           <select value={oppId} onChange={(e) => { setOppId(e.target.value); setRunning(false); }}>
             {roster.map((r) => <option key={r.id} value={r.id}>{r.name}</option>)}
@@ -56,13 +64,16 @@ export function FightPage() {
           </div>
         </label>
         <span className="right" />
-        <button className="btn primary" disabled={!opp} onClick={() => { setRun(run + 1); setRunning(true); }}>{!opp ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
+        <button className="btn primary" disabled={!opp || !me} onClick={() => { setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
       </div>
-      <div className="notice info"><b>Controls:</b> forward / back walk, <b>neutral or back</b> blocks highs and mids, <b>down-back</b> blocks lows and ducks highs and throws. Buttons do {char.profile.name}'s real moves; press the next button during a move for its strings. Break throws with 1, 2 or 1+2.</div>
-      {running && opp ? (
-        <FightArena key={`${run}-${oppId}-${rounds}-${settings.drillDifficulty}`} me={char} opp={opp} rounds={rounds} difficulty={settings.drillDifficulty} />
+      <div className="notice info">
+        <b>Controls:</b> forward / back walk, <b>neutral or back</b> blocks highs and mids, <b>down-back</b> blocks lows and ducks highs and throws. Buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for its strings. Break throws with 1, 2 or 1+2.<br />
+        <b>Heat</b> (once per round): <b>2+3</b> Heat Burst, or land a Heat Engager. In Heat your <b>H.</b> moves work and <b>2+3</b> is your Heat Smash. <b>Rage</b>: below 20% health, <b>d/f+1+2</b> is your Rage Art (once). Heat Bursts and Rage Arts absorb highs and mids during startup.
+      </div>
+      {running && opp && me ? (
+        <FightArena key={`${run}-${meId}-${oppId}-${rounds}-${settings.drillDifficulty}`} me={me} opp={opp} rounds={rounds} difficulty={settings.drillDifficulty} />
       ) : (
-        <div className="empty">{char.profile.name} vs {opp?.profile.name ?? '…'}. Press <b>Fight!</b></div>
+        <div className="empty">{me?.profile.name ?? '…'} vs {opp?.profile.name ?? '…'}. Press <b>Fight!</b></div>
       )}
     </div>
   );
@@ -119,6 +130,13 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
       if ((e.type === 'throw' || e.type === 'break') && e.x !== undefined) {
         a.sparks.push({ x: e.x, y: GROUND - 130, age: 0, kind: e.type === 'break' ? 'block' : 'grab' });
         a.popups.push({ text: e.type === 'break' ? 'THROW BREAK' : 'THROW', x: e.x, y: GROUND - 200, age: 0, color: '#f2f3f8' });
+      }
+      if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'rage' || e.type === 'rage-art') {
+        const who = engine.f[e.by ?? 0];
+        const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';
+        a.popups.push({ text: label, x: who.x, y: GROUND - 250, age: 0, color: e.type.startsWith('heat') ? '#5aa9ff' : '#ff3b3b' });
+        if (e.type !== 'rage') a.shake = 8;
+        if (e.text) lines.push(e.text);
       }
       if (e.type === 'crush' && e.x !== undefined) a.popups.push({ text: 'CRUSH', x: e.x, y: GROUND - 200, age: 0, color: '#3ccf8e' });
       if (e.type === 'punish' && e.text) lines.push(e.text);
@@ -240,7 +258,9 @@ function drawFight(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: C
     a.pose[i] = lerpPose(a.pose[i], POSES[target.name], x.state === 'attack' ? 0.5 : 0.3);
     const lift = x.state === 'air' || (x.state === 'ko' && x.air) ? e.liftOf(x, now) + 40 : x.state === 'down' || x.state === 'ko' ? -78 : 0;
     const flash = now - x.lastHit < 4;
-    if (flash) ctx.filter = 'brightness(1.8)';
+    const glow = x.heat === 'active' ? '#3aa0ff' : inRage(x) ? '#ff3030' : null;
+    const filters = [flash ? 'brightness(1.8)' : '', glow ? `drop-shadow(0 0 ${6 + Math.sin(now / 5) * 3}px ${glow})` : ''].filter(Boolean);
+    if (filters.length) ctx.filter = filters.join(' ');
     drawFighter(ctx, x.x, GROUND, i === 0 ? 1 : -1, a.pose[i], looks[i], 1.15, { lift, rot: target.rot });
     ctx.filter = 'none';
   }
@@ -293,6 +313,32 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Anim, me: Cha
     ctx.fillRect(fillFrom(wHp), top, wHp, barH);
     ctx.fillStyle = 'rgba(255,255,255,0.25)';
     ctx.fillRect(fillFrom(wHp), top + 2, wHp, 3);
+    // rage: the health bar pulses red
+    const f = e.f[i];
+    if (inRage(f)) {
+      ctx.strokeStyle = `rgba(255,48,48,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
+      ctx.lineWidth = 3;
+      ctx.strokeRect(x0 - 3, top - 3, barW + 6, barH + 6);
+    }
+    // heat gauge under the bar
+    const hw = 150, hx = i === 0 ? x0 + barW - hw : x0, hy = top + barH + 30;
+    const heatLeft = f.heat === 'ready' ? 1 : f.heat === 'active' ? Math.max(0, (f.heatUntil - e.frame) / HEAT_FRAMES) : 0;
+    ctx.fillStyle = 'rgba(8,8,14,0.7)';
+    ctx.fillRect(hx - 2, hy - 2, hw + 4, 10);
+    const hg = ctx.createLinearGradient(hx, 0, hx + hw, 0);
+    hg.addColorStop(0, '#1f6fd6');
+    hg.addColorStop(1, '#7cc4ff');
+    ctx.fillStyle = hg;
+    const hwNow = hw * heatLeft;
+    ctx.fillRect(i === 0 ? hx + hw - hwNow : hx, hy, hwNow, 6);
+    ctx.font = `600 15px ${DISPLAY}`;
+    ctx.textAlign = i === 0 ? 'right' : 'left';
+    ctx.fillStyle = f.heat === 'active' ? '#7cc4ff' : f.heat === 'ready' ? '#c9d6ea' : '#6a7080';
+    ctx.fillText(f.heat === 'active' ? 'HEAT ACTIVE' : f.heat === 'ready' ? 'HEAT' : 'HEAT USED', i === 0 ? hx - 8 : hx + hw + 8, hy + 7);
+    if (inRage(f)) {
+      ctx.fillStyle = '#ff3b3b';
+      ctx.fillText('RAGE', i === 0 ? hx - 8 : hx + hw + 8, hy + 26);
+    }
     // name + round wins
     const c = i === 0 ? me : opp;
     ctx.font = `600 22px ${DISPLAY}`;

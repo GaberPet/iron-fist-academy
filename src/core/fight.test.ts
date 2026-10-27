@@ -1,5 +1,5 @@
 import { loadCharacter } from '../data/testData';
-import { FightEngine, MAX_HP, chainTo, crushRanges, moveDamage, moveSet, parseOnHit, throwBreakOf, type FightEvent } from './fight';
+import { FightEngine, MAX_HP, HEAT_FRAMES, RAGE_HP, inRage, resolveRoute, chainTo, crushRanges, moveDamage, moveSet, parseOnHit, throwBreakOf, type FightEvent } from './fight';
 import { lookupMove } from '../data';
 import { maskOf } from './input';
 import type { Dir, TekkenButton } from '../types';
@@ -127,5 +127,59 @@ describe('FightEngine', () => {
     expect(e.wins[0]).toBe(2);
     expect(e.phase).toBe('over');
     expect(e.winner).toBe(0);
+  });
+
+  it('Heat: 2+3 starts Heat once per round, Heat Smash spends it, and H. moves only work in Heat', () => {
+    const e = engine();
+    let f = closeIn(e);
+    expect(e.f[0].heat).toBe('ready');
+    const ev = run(e, f, 90, (x) => (x < f + 3 ? { press: [2, 3] } : {}));
+    expect(ev.some((x) => x.type === 'heat' && x.by === 0)).toBe(true);
+    expect(e.f[0].heat).toBe('active');
+    f += 90;
+    const smash = run(e, f, 90, (x) => (x < f + 3 ? { press: [2, 3] } : {}));
+    expect(smash.some((x) => x.type === 'heat-smash' && x.by === 0)).toBe(true);
+    expect(e.f[0].heat).toBe('used');
+    f += 90;
+    run(e, f, 60, (x) => (x < f + 3 ? { press: [2, 3] } : {}));
+    expect(e.f[0].move?.id ?? '').not.toMatch(/^(H\.)?2\+3$/);
+  });
+
+  it('Heat runs out after its duration', () => {
+    const e = engine();
+    const f = closeIn(e);
+    run(e, f, 5, (x) => (x < f + 3 ? { press: [2, 3] } : {}));
+    run(e, f + 5, HEAT_FRAMES + 5, () => ({ dir: 'b' }));
+    expect(e.f[0].heat).toBe('used');
+  });
+
+  it('Rage Art (df+1+2) is only available in Rage and only once', () => {
+    const e = engine();
+    let f = closeIn(e);
+    run(e, f, 60, (x) => (x < f + 3 ? { dir: 'df', press: [1, 2] } : {}));
+    expect(e.f[0].rageUsed).toBe(false);
+    f += 60;
+    e.f[0].hp = RAGE_HP - 5;
+    expect(inRage(e.f[0])).toBe(true);
+    const ev = run(e, f, 90, (x) => (x < f + 3 ? { dir: 'df', press: [1, 2] } : {}));
+    expect(ev.some((x) => x.type === 'rage-art' && x.by === 0)).toBe(true);
+    expect(inRage(e.f[0])).toBe(false);
+  });
+
+  it('resolves real combo routes into moves for the bot', () => {
+    const r = resolveRoute(jin, 'df+1,4 uf+4');
+    expect(r.map((m) => m.id)).toEqual(['df+1', 'df+1,4', 'uf+4']);
+    expect(moveSet(jin).routes.length).toBeGreaterThan(0);
+  });
+
+  it('the bot fights a passive player with its own moves: damage, lows and a won round', () => {
+    let seed = 7;
+    const rng = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const e = new FightEngine({ player: jin, bot: anna, difficulty: 'hard', rng });
+    const ev = run(e, 0, 120 + 60 * 60, () => ({}));
+    const botHits = ev.filter((x) => (x.type === 'hit' || x.type === 'counter') && x.by === 1);
+    expect(botHits.length).toBeGreaterThan(3);
+    expect(botHits.some((x) => x.level === 'low')).toBe(true);
+    expect(e.wins[1]).toBeGreaterThanOrEqual(1);
   });
 });

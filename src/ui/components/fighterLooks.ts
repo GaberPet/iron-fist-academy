@@ -16,6 +16,7 @@ const LOOKS: Record<string, Partial> = {
   jun: F('long', '#120c0a'),
   leo: F('short', '#c99a52'),
   lidia: F('ponytail', '#3b2418'),
+  kunimitsu: F('ponytail', '#2a1410'),
   lili: F('long', '#f0d58a', '#f2d2bd'),
   'miary-zo': F('ponytail', '#1c120c', '#9c6644'),
   nina: F('ponytail', '#efd27a', '#f0cdb6'),
