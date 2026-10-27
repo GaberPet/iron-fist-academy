@@ -3,57 +3,9 @@ import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 import { navigate } from '../hooks';
 import { isRecent } from '../../data';
-import { CharacterArt, type ArtVariant } from '../components/CharacterArt';
-
-const VARIANTS: { id: ArtVariant; label: string; note: string }[] = [
-  { id: 'photo', label: 'Motif photos', note: 'A real, freely licensed photo of something tied to each character (credited on the Credits page). Not official art.' },
-  { id: 'emblem', label: 'Emblem and colour', note: 'A geometric emblem generated from the name, in the character\'s own colour.' },
-  { id: 'silhouette', label: 'Stance silhouettes', note: 'Original fighting-stance silhouettes (four poses, mirrored), over the character\'s colour.' },
-  { id: 'type', label: 'Typographic', note: 'Initials set huge in the display face over a striped field.' },
-  { id: 'mix', label: 'Emblem and initials', note: 'The emblem dimmed behind, big initials on top.' },
-];
-
-/** Side-by-side comparison of the three card styles on six characters. */
-export function CardDemo() {
-  const { roster, settings, updateSettings } = useStore();
-  const sample = ['anna', 'armor-king', 'paul', 'kazuya', 'lili', 'jack-8'].map((id) => roster.find((r) => r.id === id)).filter(Boolean) as typeof roster;
-  return (
-    <div className="stack">
-      <div className="page-head">
-        <div>
-          <h1>Card styles</h1>
-          <p>Three original styles for the character select. None uses game art. Pick one and it applies to all {roster.length} characters.</p>
-        </div>
-        <button className="btn" onClick={() => navigate('characters')}>Back to characters</button>
-      </div>
-      {VARIANTS.map((v) => (
-        <section key={v.id} className="card stack">
-          <div className="card-title">
-            <div>
-              <h2>{v.label}</h2>
-              <p className="dim small" style={{ margin: 0 }}>{v.note}</p>
-            </div>
-            {settings.cardStyle === v.id ? <span className="badge char">In use</span> : <button className="btn primary" onClick={() => updateSettings({ cardStyle: v.id })}>Use this style</button>}
-          </div>
-          <div className="roster">
-            {sample.map((c) => (
-              <div key={c.id} className="char-card">
-                <div className="char-art"><CharacterArt id={c.id} name={c.name} variant={v.id} /></div>
-                <div className="char-info">
-                  <span className="char-name">{c.name}</span>
-                  <span className="char-meta">{c.counts.moves} moves, {c.counts.combos} combos</span>
-                </div>
-              </div>
-            ))}
-          </div>
-        </section>
-      ))}
-    </div>
-  );
-}
 
 export function CharactersPage() {
-  const { roster, char, setActiveChar, progress, isCurated, data, settings } = useStore();
+  const { roster, char, setActiveChar, progress, isCurated, data } = useStore();
   const [q, setQ] = useState('');
   const p = char.profile;
   const curated = isCurated(p.id);
@@ -73,17 +25,12 @@ export function CharactersPage() {
         </div>
         <input type="search" placeholder="Find a character…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Find a character" />
       </div>
-      <div className="row small dim">
-        Card style: {VARIANTS.find((v) => v.id === settings.cardStyle)?.label}
-        <button className="btn sm ghost" onClick={() => navigate('characters', 'demo')}>Compare styles</button>
-      </div>
       <div className="roster">
         {shown.map((c) => (
           <button key={c.id} className={`char-card ${c.id === char.profile.id ? 'sel' : ''}`} onClick={() => setActiveChar(c.id)} aria-pressed={c.id === char.profile.id}>
-            <div className="char-art"><CharacterArt id={c.id} name={c.name} variant={settings.cardStyle} /></div>
             <div className="char-info">
               <span className="char-name">{c.name}</span>
-              <span className="char-meta">{c.counts.moves} moves, {c.counts.combos} combos</span>
+              <span className="char-meta">{c.counts.combos} combos, {c.counts.moves} moves</span>
               <span className="char-tags">
                 {isRecent(c.addedAt) && <span className="badge good">New</span>}
                 {isCurated(c.id) && <span className="badge char">Curriculum</span>}

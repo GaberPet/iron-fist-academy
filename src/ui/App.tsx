@@ -2,7 +2,7 @@ import { Component, type ReactNode } from 'react';
 import { navigate, useControllerStatus, useRoute } from './hooks';
 import { useStore } from './store';
 import { HomePage } from './pages/HomePage';
-import { CharactersPage, CardDemo } from './pages/CharactersPage';
+import { CharactersPage } from './pages/CharactersPage';
 import { AcademyPage } from './pages/AcademyPage';
 import { MovesPage } from './pages/MovesPage';
 import { ComboLabPage } from './pages/ComboLabPage';
@@ -98,7 +98,7 @@ export function App() {
   const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
-      case 'characters': return route[1] === 'demo' ? <CardDemo /> : <CharactersPage />;
+      case 'characters': return <CharactersPage />;
       case 'academy': return <AcademyPage lessonId={route[1]} />;
       case 'moves': return <MovesPage moveId={route[1]} />;
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;

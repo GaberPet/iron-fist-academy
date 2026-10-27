@@ -4,7 +4,6 @@ import { computeStats, lessonState, recommend, type Recommendation } from '../..
 import { navigate } from '../hooks';
 import { useStore } from '../store';
 import { Ring } from '../components/Charts';
-import { CharacterArt } from '../components/CharacterArt';
 
 function go(r: Recommendation) {
   if (r.type === 'focus-step') navigate('combos', r.comboId, String(r.stepIndex));
@@ -50,7 +49,6 @@ export function HomePage() {
     <div className="stack">
       <div className="home-lead">
         <button className="char-card home-portrait" onClick={() => navigate('characters')} aria-label={`${char.profile.name}: change character`}>
-          <div className="char-art"><CharacterArt id={char.profile.id} name={char.profile.name} variant={settings.cardStyle} /></div>
           <div className="char-info">
             <span className="char-name">{char.profile.name}</span>
             <span className="char-meta">Change character</span>
