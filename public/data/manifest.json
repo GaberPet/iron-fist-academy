@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-27T12:40:40.578Z",
+ "generatedAt": "2026-10-27T17:28:27.303Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -11,8 +11,8 @@
    "id": "alisa",
    "name": "Alisa",
    "file": "characters/alisa.json",
-   "hash": "ioej5c",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "d9nld1",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 188,
@@ -51,13 +51,13 @@
    "id": "armor-king",
    "name": "Armor King",
    "file": "characters/armor-king.json",
-   "hash": "1s5u5iw",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "5fd2ds",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 173,
-    "combos": 62,
-    "combosParsed": 62,
+    "combos": 61,
+    "combosParsed": 61,
     "punishers": 23
    },
    "revisions": {
@@ -91,8 +91,8 @@
    "id": "azucena",
    "name": "Azucena",
    "file": "characters/azucena.json",
-   "hash": "uzxplh",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "dz3wwu",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 149,
@@ -111,8 +111,8 @@
    "id": "bob",
    "name": "Bob",
    "file": "characters/bob.json",
-   "hash": "1rdxj7u",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "lkohsv",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 161,
@@ -131,8 +131,8 @@
    "id": "bryan",
    "name": "Bryan",
    "file": "characters/bryan.json",
-   "hash": "1qsonmv",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "177epm1",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 168,
@@ -151,13 +151,13 @@
    "id": "claudio",
    "name": "Claudio",
    "file": "characters/claudio.json",
-   "hash": "1rlcxzo",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "qbbhvi",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 99,
     "combos": 22,
-    "combosParsed": 15,
+    "combosParsed": 17,
     "punishers": 15
    },
    "revisions": {
@@ -171,8 +171,8 @@
    "id": "clive",
    "name": "Clive",
    "file": "characters/clive.json",
-   "hash": "ctg2j0",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "b6sf7m",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -191,13 +191,13 @@
    "id": "devil-jin",
    "name": "Devil Jin",
    "file": "characters/devil-jin.json",
-   "hash": "tb60xg",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "bt0vp9",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
     "combos": 84,
-    "combosParsed": 56,
+    "combosParsed": 66,
     "punishers": 17
    },
    "revisions": {
@@ -211,8 +211,8 @@
    "id": "dragunov",
    "name": "Dragunov",
    "file": "characters/dragunov.json",
-   "hash": "1hjif92",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1ypghpn",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
@@ -231,13 +231,13 @@
    "id": "eddy",
    "name": "Eddy",
    "file": "characters/eddy.json",
-   "hash": "5vkzpv",
-   "updatedAt": "2026-10-27T12:40:40.578Z",
+   "hash": "1byz9ve",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 152,
     "combos": 43,
-    "combosParsed": 39,
+    "combosParsed": 40,
     "punishers": 12
    },
    "revisions": {
@@ -251,8 +251,8 @@
    "id": "fahkumram",
    "name": "Fahkumram",
    "file": "characters/fahkumram.json",
-   "hash": "mtob0f",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "10xi3q5",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 144,
@@ -271,8 +271,8 @@
    "id": "feng",
    "name": "Feng",
    "file": "characters/feng.json",
-   "hash": "zwi10",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "10uake0",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 149,
@@ -291,13 +291,13 @@
    "id": "heihachi",
    "name": "Heihachi",
    "file": "characters/heihachi.json",
-   "hash": "157zmzo",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "13pg77p",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 145,
     "combos": 90,
-    "combosParsed": 86,
+    "combosParsed": 89,
     "punishers": 21
    },
    "revisions": {
@@ -311,13 +311,13 @@
    "id": "hwoarang",
    "name": "Hwoarang",
    "file": "characters/hwoarang.json",
-   "hash": "1amalfx",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1aonzh2",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 210,
     "combos": 60,
-    "combosParsed": 33,
+    "combosParsed": 39,
     "punishers": 17
    },
    "revisions": {
@@ -351,8 +351,8 @@
    "id": "jin",
    "name": "Jin",
    "file": "characters/jin.json",
-   "hash": "12rl2rk",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "3xkbu3",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 128,
@@ -391,13 +391,13 @@
    "id": "kazuya",
    "name": "Kazuya",
    "file": "characters/kazuya.json",
-   "hash": "1u7fk80",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "tjb8hd",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 135,
-    "combos": 36,
-    "combosParsed": 24,
+    "combos": 38,
+    "combosParsed": 28,
     "punishers": 11
    },
    "revisions": {
@@ -411,8 +411,8 @@
    "id": "king",
    "name": "King",
    "file": "characters/king.json",
-   "hash": "jvh66m",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "bclsqq",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 215,
@@ -471,8 +471,8 @@
    "id": "lars",
    "name": "Lars",
    "file": "characters/lars.json",
-   "hash": "ukm0oj",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1k8u0yl",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 121,
@@ -491,8 +491,8 @@
    "id": "law",
    "name": "Law",
    "file": "characters/law.json",
-   "hash": "4a5wjr",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "axhly",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 162,
@@ -511,8 +511,8 @@
    "id": "lee",
    "name": "Lee",
    "file": "characters/lee.json",
-   "hash": "1hnmhnn",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1cr3qns",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 156,
@@ -531,8 +531,8 @@
    "id": "leo",
    "name": "Leo",
    "file": "characters/leo.json",
-   "hash": "8eprr8",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1wdznsc",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 140,
@@ -551,13 +551,13 @@
    "id": "leroy",
    "name": "Leroy",
    "file": "characters/leroy.json",
-   "hash": "opxugs",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "qd7qtr",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 130,
     "combos": 44,
-    "combosParsed": 42,
+    "combosParsed": 43,
     "punishers": 10
    },
    "revisions": {
@@ -571,8 +571,8 @@
    "id": "lidia",
    "name": "Lidia",
    "file": "characters/lidia.json",
-   "hash": "qxvron",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1y2oqoj",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 167,
@@ -591,8 +591,8 @@
    "id": "lili",
    "name": "Lili",
    "file": "characters/lili.json",
-   "hash": "koqarp",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "k2dxrt",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 148,
@@ -631,8 +631,8 @@
    "id": "nina",
    "name": "Nina",
    "file": "characters/nina.json",
-   "hash": "l6mwgo",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "3l8k49",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 191,
@@ -671,13 +671,13 @@
    "id": "paul",
    "name": "Paul",
    "file": "characters/paul.json",
-   "hash": "1qu6qi9",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1kmjwpy",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 143,
     "combos": 362,
-    "combosParsed": 356,
+    "combosParsed": 359,
     "punishers": 19
    },
    "revisions": {
@@ -691,8 +691,8 @@
    "id": "raven",
    "name": "Raven",
    "file": "characters/raven.json",
-   "hash": "1ed30ke",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "13cj5eu",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 177,
@@ -711,8 +711,8 @@
    "id": "reina",
    "name": "Reina",
    "file": "characters/reina.json",
-   "hash": "ohkhje",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "1r3szoe",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 150,
@@ -751,8 +751,8 @@
    "id": "steve",
    "name": "Steve",
    "file": "characters/steve.json",
-   "hash": "fv9xsg",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "ke1w4c",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 171,
@@ -771,8 +771,8 @@
    "id": "victor",
    "name": "Victor",
    "file": "characters/victor.json",
-   "hash": "14jb8lt",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "1mslbqy",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -791,8 +791,8 @@
    "id": "xiaoyu",
    "name": "Xiaoyu",
    "file": "characters/xiaoyu.json",
-   "hash": "180h61z",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "whscpe",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 175,
@@ -811,13 +811,13 @@
    "id": "yoshimitsu",
    "name": "Yoshimitsu",
    "file": "characters/yoshimitsu.json",
-   "hash": "6omw4s",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "12vve7o",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 312,
-    "combos": 64,
-    "combosParsed": 27,
+    "combos": 71,
+    "combosParsed": 48,
     "punishers": 22
    },
    "revisions": {
@@ -831,8 +831,8 @@
    "id": "zafina",
    "name": "Zafina",
    "file": "characters/zafina.json",
-   "hash": "1g2m7q9",
-   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "hash": "wbcwqf",
+   "updatedAt": "2026-10-27T17:28:27.303Z",
    "addedAt": null,
    "counts": {
     "moves": 146,

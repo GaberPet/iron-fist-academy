@@ -77,6 +77,17 @@ for (const id of Object.keys(CURATED)) {
       expect(unresolved).toEqual([]);
     });
 
+  });
+}
+
+for (const entry of manifest.characters) {
+  const c = loadCharacter(entry.id);
+  describe(`${entry.name} curriculum (${CURATED[entry.id] ? 'hand-written' : 'generated'})`, () => {
+    it('key move notes reference existing moves', () => {
+      expect(c.keyMoves.length).toBeGreaterThan(3);
+      for (const k of c.keyMoves) expect(lookupMove(c, k.id), k.id).toBeTruthy();
+    });
+
     const lessons = lessonsFor(c);
     it('lesson ids are unique and related links resolve', () => {
       const ids = new Set<string>();
@@ -116,7 +127,8 @@ describe('non-curated characters still work', () => {
     expect(paul.profile.name).toBe('Paul');
     expect(paul.combos.length).toBeGreaterThan(50);
     expect(paul.punishers.length).toBeGreaterThan(5);
-    expect(lessonsFor(paul).length).toBe(GENERAL_LESSONS.length);
+    expect(lessonsFor(paul).length).toBe(GENERAL_LESSONS.length + 24);
+    expect(paul.lessons.every((l) => l.generated)).toBe(true);
   });
 
   it('does not duplicate curated combos with imported ones', () => {

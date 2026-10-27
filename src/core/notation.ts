@@ -125,7 +125,7 @@ function splitParts(segment: string): Part[] {
   return parts;
 }
 
-const STANCE_RE = /^([A-Za-z]{1,6})\.(.*)$/;
+const STANCE_RE = /^([0-9]?[A-Za-z]{1,6})\.(.*)$/; // e.g. HAM., CD., Yoshimitsu's 1SS.
 const WS_RE = /^(i?ws|wr|hFC|FC|ss|SS)(?=[1-4udfbnUDFB])(.*)$/;
 
 interface ParsedBody {

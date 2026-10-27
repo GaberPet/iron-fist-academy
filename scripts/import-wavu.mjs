@@ -10,6 +10,7 @@
 //   node scripts/import-wavu.mjs              # whole roster
 //   node scripts/import-wavu.mjs anna paul    # selected characters (ids)
 //   node scripts/import-wavu.mjs --force      # rewrite even if unchanged
+//   node scripts/import-wavu.mjs --no-changelog   # after a parser change: update data silently
 import { readFile, writeFile, mkdir } from 'node:fs/promises';
 import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
@@ -147,6 +148,8 @@ async function readJson(file) {
 async function main() {
   const args = process.argv.slice(2);
   const force = args.includes('--force');
+  // Parser upgrades change routes without Wavu changing: don't log them as news or badge them as new.
+  const noChangelog = args.includes('--no-changelog');
   const only = args.filter((a) => !a.startsWith('--'));
   await mkdir(join(OUT, 'characters'), { recursive: true });
   const oldManifest = (await readJson(join(OUT, 'manifest.json'))) ?? { characters: [] };
@@ -178,14 +181,14 @@ async function main() {
       if (oldMoves && content.frames.moves.length < oldMoves * 0.7) {
         throw new Error(`move count dropped ${oldMoves} -> ${content.frames.moves.length}; keeping previous data`);
       }
-      stampFirstSeen(old, content, today);
+      stampFirstSeen(old, content, noChangelog ? null : today);
       const hash = contentHash(content);
       const isChanged = force || !prev || prev.hash !== hash;
       const updatedAt = isChanged ? now : prev.updatedAt;
       if (isChanged) {
         await writeFile(file, JSON.stringify({ ...content, updatedAt }) + '\n');
         changed++;
-        if (!firstRun) {
+        if (!firstRun && !noChangelog) {
           const diff = diffCharacter(old, content);
           if (diff) changelog.push(diff);
         }

@@ -20,9 +20,9 @@ export function AcademyPage({ lessonId }: { lessonId?: string }) {
   const id = char.profile.id;
   return (
     <div>
-      {char.lessons.length === 0 && (
+      {!isCurated(char.profile.id) && (
         <div className="notice info" style={{ marginBottom: 16 }}>
-          <b>{char.profile.name} doesn't have a character curriculum yet.</b> The shared fundamentals below apply to every character, and the Move Library, Combo Lab ({char.combos.length} routes), Punishment trainer and Bot Dojo all work with {char.profile.name}'s imported data. Full curricula exist for: {roster.filter((r) => isCurated(r.id)).map((r) => r.name).join(', ')}.
+          <b>{char.profile.name}'s lessons are generated from their data.</b> Moves, punishers and combos come from {char.profile.name}'s frame data, punisher table and Wavu combos, and update automatically. Hand-written coaching exists for: {roster.filter((r) => isCurated(r.id)).map((r) => r.name).join(', ')}.
         </div>
       )}
       <div className="page-head">

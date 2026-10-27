@@ -9,6 +9,7 @@ import annaCurated from './characters/anna/curated.json';
 import akCurated from './characters/armor-king/curated.json';
 import general from './general.json';
 import { parseFrame, parseFrameRange, parseStartup } from './wavuNormalize.js';
+import { generateCurriculum } from './autoCurriculum';
 
 export const CURATED: Record<string, CharacterCurated> = {
   anna: annaCurated as unknown as CharacterCurated,
@@ -120,13 +121,18 @@ export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, ove
   for (const m of moves) moveIndex.set(m.id, m);
   for (const m of moves) for (const a of m.alt) if (!moveIndex.has(a)) moveIndex.set(a, m);
   const curatedCombos = (curated?.combos ?? []).map((c) => ({ ...c, curated: true, parseOk: true }));
+  const combos = [...curatedCombos, ...importedCombos(f, curatedCombos)];
+  const profile = curated?.profile ?? autoProfile(f);
+  const punishers = curated?.punishers?.length ? curated.punishers : f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) }));
+  // Characters without a hand-written curriculum get one generated from their own data.
+  const generated = curated ? null : generateCurriculum({ ...f, frames: { ...f.frames, moves } }, combos, punishers, profile.heatEngagers, profile.stances.map((s) => s.code));
   return {
-    profile: curated?.profile ?? autoProfile(f),
-    keyMoves: curated?.keyMoves ?? [],
-    combos: [...curatedCombos, ...importedCombos(f, curatedCombos)],
-    punishers: curated?.punishers?.length ? curated.punishers : f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) })),
+    profile,
+    keyMoves: curated?.keyMoves ?? generated!.keyMoves,
+    combos,
+    punishers,
     whiffPunishers: curated?.whiffPunishers ?? [],
-    lessons: curated?.lessons ?? [],
+    lessons: curated?.lessons ?? generated!.lessons,
     frames: { ...f.frames, moves, source: { ...f.frames.source, fetchedAt: f.updatedAt } },
     moveIndex,
   };

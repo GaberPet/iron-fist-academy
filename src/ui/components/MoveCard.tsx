@@ -63,7 +63,7 @@ export function MoveCard({ c, m, compact }: { c: CharacterData; m: Move; compact
       {!compact && classifySafety(m) !== 'unknown' && <p className="small muted" style={{ margin: 0 }}>Safety class is derived from the block value with general Tekken rules: {SAFETY_EXPLAIN[classifySafety(m)]}</p>}
       {!compact && note && (
         <div className="notice info stack">
-          <div className="section-label" style={{ color: 'var(--info)' }}>Coach notes · strategic advice (not frame data)</div>
+          <div className="section-label" style={{ color: 'var(--info)' }}>{note.generated ? 'Move notes, generated from the frame data' : 'Coach notes: strategic advice (not frame data)'}</div>
           <p style={{ margin: 0 }}><b>{note.summary}</b> {note.purpose}</p>
           <dl className="kv">
             <dt>Use it</dt><dd>{note.use}</dd>

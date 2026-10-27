@@ -17,9 +17,10 @@ export function stripLinks(t) {
 /** Collect <ref name="x">text</ref> definitions on a page. */
 export function collectRefs(text) {
   const named = new Map();
-  for (const m of text.matchAll(/<ref\s+name\s*=\s*"?([^">/]+)"?\s*>([\s\S]*?)<\/ref>/g)) {
+  for (const m of text.matchAll(/<ref\b([^>]*?)>([\s\S]*?)<\/ref>/g)) {
+    const name = /name\s*=\s*"?([^">/]+?)"?(?:\s|$)/.exec(m[1] + ' ')?.[1];
     const body = plain(m[2]);
-    if (body) named.set(m[1].trim(), body);
+    if (name && body) named.set(name.trim(), body);
   }
   return named;
 }
@@ -37,13 +38,16 @@ export function plain(t) {
 /** Split refs out of a line: returns the text without refs and the list of note texts. */
 export function extractRefs(line, named) {
   const notes = [];
-  let out = line.replace(/<ref(?:\s+name\s*=\s*"?([^">/]+)"?)?\s*>([\s\S]*?)<\/ref>/g, (_m, name, body) => {
-    const txt = plain(body) || (name ? named.get(name.trim()) : '');
+  const refName = (attrs) => /name\s*=\s*"?([^">/]+?)"?(?:\s|$)/.exec(`${attrs} `)?.[1]?.trim();
+  let out = line.replace(/<ref\b([^>]*?)>([\s\S]*?)<\/ref>/g, (_m, attrs, body) => {
+    const name = refName(attrs);
+    const txt = plain(body) || (name ? named.get(name) : '');
     if (txt) notes.push(txt);
     return ' ';
   });
-  out = out.replace(/<ref\s+name\s*=\s*"?([^">/]+)"?\s*\/>/g, (_m, name) => {
-    const txt = named.get(name.trim());
+  out = out.replace(/<ref\b([^>]*?)\/>/g, (_m, attrs) => {
+    const name = refName(attrs);
+    const txt = name ? named.get(name) : '';
     if (txt) notes.push(txt);
     return ' ';
   });
@@ -74,11 +78,15 @@ export function normalizeComboNotation(s) {
   return t
     .split(/\s+/)
     .filter(Boolean)
-    .map((tok) => {
+    .map((t0) => {
+      let tok = t0;
+      if (/[1-4]|^(m\.?d(ash)?|md|dash|bb|ff|up)[.,;]+$/i.test(tok)) tok = tok.replace(/[.,;]+$/, ''); // "md." "up," "dash,"
       if (/^(ff|FF)$/.test(tok)) return 'dash';
-      if (/^(md|MD|microdash)$/.test(tok)) return 'microdash';
+      if (/^(md|MD|m\.dash|microdash)$/.test(tok)) return 'microdash';
+      if (/^(bb|BB)$/.test(tok)) return 'backdash';
+      if (/^heat ?smash$/i.test(tok)) return 'H.2+3';
       if (/^delay(ed)?$/i.test(tok)) return '';
-      let x = tok.replace(/^ff(?=[1-4])/, 'f,f+');
+      let x = tok.replace(/^ff\+?(?=[1-4])/, 'f,f+').replace(/,ff$/, ' dash');
       // "a/b" and "a_b" list alternatives: practise the first one
       if (x.includes('/')) x = x.split('/')[0];
       if (x.includes('_')) x = x.split('_')[0];

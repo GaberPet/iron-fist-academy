@@ -62,6 +62,8 @@ export type MoveRole =
 /** Coach notes: strategic advice. Never a source of frame data. */
 export interface KeyMoveNote {
   id: string; // move id in frames.json
+  /** True if written by the curriculum generator from frame data (not hand-written). */
+  generated?: boolean;
   roles: MoveRole[];
   summary: string;
   purpose: string;
@@ -155,6 +157,8 @@ export interface Lesson {
   review: string[];
   related: { moves?: string[]; lessons?: string[]; combos?: string[] };
   isStageTest?: boolean;
+  /** True if produced by the curriculum generator from the character's data. */
+  generated?: boolean;
 }
 
 export interface CharacterCurated {
