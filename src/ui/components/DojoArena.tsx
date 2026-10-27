@@ -235,7 +235,7 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     anim.shake *= 0.8;
     if (anim.shake < 0.5) anim.shake = 0;
   }
-  drawStage(ctx, W, H, ground, { paper: T.paper, paper2: T.paper2, rule: T.rule, accent: T.accent });
+  drawStage(ctx, W, H, ground);
 
   // ----- choose target poses -----
   const playerHit = res && ['got-hit', 'pressed-early', 'thrown', 'pressed-into-safe'].includes(res.outcome);
@@ -265,8 +265,8 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
   const pPose = { ...anim.player, hipDrop: anim.player.hipDrop + (pTarget === 'idle' || pTarget === 'guard' ? bob : 0) };
   const bPose = { ...anim.bot, hipDrop: anim.bot.hipDrop + (bTarget === 'idle' ? -bob : 0) };
 
-  const botLook: FighterLook = { outfit: T.rule, trim: T.muted, skin: T.ink2, dark: T.paper };
-  const playerLook: FighterLook = { outfit: playerColor, trim: T.accent, skin: T.ink2, dark: T.paper };
+  const botLook: FighterLook = { skin: '#8d5b3e', hair: '#141014', top: '#3c4250', pants: '#22252c', shoes: '#e8e8ec', gloves: '#2b6fd6', belt: '#9aa0aa' };
+  const playerLook: FighterLook = { skin: '#d9a07c', hair: '#2a1a12', top: playerColor, pants: '#1c1c26', shoes: '#141418', gloves: '#c8282c', belt: '#ffad00' };
   const bot = drawFighter(ctx, botX, ground, -1, bPose, botLook, 1.2);
   const player = drawFighter(ctx, playerX, ground, 1, pPose, playerLook, 1.2);
 
@@ -300,7 +300,10 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     ctx.fillStyle = col;
     ctx.font = `600 34px ${DISPLAY}`;
     ctx.textAlign = 'center';
+    ctx.shadowColor = 'rgba(0,0,0,0.85)';
+    ctx.shadowBlur = 8;
     ctx.fillText(label, botX, 92);
+    ctx.shadowBlur = 0;
   }
   ctx.restore();
   // result text
@@ -308,7 +311,10 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     ctx.textAlign = 'center';
     ctx.font = `600 40px ${DISPLAY}`;
     ctx.fillStyle = e.result.success ? T.success : T.error;
+    ctx.shadowColor = 'rgba(0,0,0,0.85)';
+    ctx.shadowBlur = 10;
     ctx.fillText(OUTCOME_TEXT[e.result.outcome], W / 2, 160);
+    ctx.shadowBlur = 0;
   }
   drawFrameMeter(ctx, e, frame);
 }
