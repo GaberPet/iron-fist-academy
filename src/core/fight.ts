@@ -109,6 +109,8 @@ export interface Fighter {
   rageUsed: boolean;
   /** For the renderer: frame of the last impact this fighter landed / blocked. */
   impactAt: number;
+  /** Bot only: low parry attempt active until this frame. */
+  parryUntil: number;
   facing: Vec;
 }
 
@@ -119,7 +121,7 @@ export interface FightEvent {
   type:
     | 'hit' | 'counter' | 'block' | 'whiff' | 'launch' | 'throw' | 'break' | 'ko' | 'round-start' | 'fight'
     | 'time-up' | 'round-end' | 'match-end' | 'punish' | 'crush' | 'heat' | 'heat-smash' | 'heat-dash' | 'rage'
-    | 'rage-art' | 'tornado' | 'wall' | 'tech' | 'step-evade' | 'armor';
+    | 'rage-art' | 'tornado' | 'wall' | 'tech' | 'step-evade' | 'armor' | 'parry';
   by?: 0 | 1;
   at?: Vec;
   y?: number; // height of the impact (cm)
@@ -253,7 +255,10 @@ export interface MoveSet {
 }
 
 export function moveSet(c: CharacterData): MoveSet {
-  const usable = (m: Move) => m.startupFrame !== null && m.startupFrame > 0 && !STANCE_PREFIX.test(m.id);
+  // moves that need a state the bot is not in (stances, while standing, back turned, sidestep) are left out
+  const usable = (m: Move) =>
+    m.startupFrame !== null && m.startupFrame > 0 && !STANCE_PREFIX.test(m.id) && !/\s/.test(m.id) &&
+    (!m.id.includes('.') || /^[HR]\.[^.]*$/.test(m.id)) && !/^(ws|iws|FC|hFC|SS|SW|BT|OTG|wr|WR)/.test(m.id);
   const roots = c.frames.moves.filter((m) => !m.parent && usable(m));
   const children = new Map<string, Move[]>();
   const childStep = new Map<Move, InputStep>();
@@ -402,7 +407,7 @@ export class FightEngine {
     return {
       side, char, pos: v(side === 0 ? -150 : 150, 0), hp: MAX_HP, recov: 0, state: 'neutral', stateAt: 0, until: 0, crouching: false, guard: 'stand', walking: 0,
       move: null, moveStart: 0, hitAt: 0, endAt: 0, outcome: 'pending', aim: null, lunge: 0, queued: null, y: 0, vy: 0, airHits: 0, tornadoUsed: false, wallHit: false, noTech: false,
-      step: null, combo: { hits: 0, damage: 0 }, lastHit: -999, hitHeight: 100, throwBreak: null, breakLocked: false, dealt: 0, heat: 'ready', heatLeft: 0, rageUsed: false, impactAt: -999,
+      step: null, combo: { hits: 0, damage: 0 }, lastHit: -999, hitHeight: 100, throwBreak: null, breakLocked: false, dealt: 0, heat: 'ready', heatLeft: 0, rageUsed: false, impactAt: -999, parryUntil: -1,
       facing: v(side === 0 ? 1 : -1, 0),
     };
   }
@@ -826,6 +831,20 @@ export class FightEngine {
       else this.habits.stand++;
     }
 
+    // universal low parry: a timed d/f against a low (not weapon lows) puts the attacker in a tornado state
+    if (lv === 'low' && !/Weapon/.test(m.notes) && d.state === 'neutral' && this.lowParry(d, now)) {
+      this.setState(a, 'air', now);
+      a.y = 12;
+      a.vy = 5.2;
+      a.airHits = 0;
+      a.tornadoUsed = true;
+      a.wallHit = false;
+      a.noTech = false;
+      a.combo = { hits: 0, damage: 0 };
+      this.freeze = 8;
+      ev.push({ type: 'parry', by: d.side, at: mid, y: 40, text: 'LOW PARRY' });
+      return;
+    }
     const juggle = d.state === 'air' || d.state === 'splat';
     const stunned = d.state === 'hitstun';
     const canGuard = !juggle && !stunned && !grounded && (d.state === 'neutral' || d.state === 'blockstun' || d.state === 'backdash') && d.walking !== 1;
@@ -915,6 +934,14 @@ export class FightEngine {
     this.freeze = Math.max(this.freeze, counter ? 5 : dmg >= 20 ? 4 : 2);
     const adv = juggle ? undefined : res.launch ? 'LAUNCH' : res.knockdown ? 'KND' : `${res.adv >= 0 ? '+' : ''}${res.adv}`;
     ev.push({ type: counter ? 'counter' : 'hit', by: a.side, at: mid, y: hitY, level: lv, damage: dmg, text: counter ? 'COUNTER HIT' : undefined, adv });
+  }
+
+  /** Low parry timing: d/f entered within the last 6 frames before the low connects. */
+  private lowParry(d: Fighter, now: number) {
+    if (d.side === 1) return now <= d.parryUntil;
+    const segs = this.history.segments(now - 8);
+    const last = segs[segs.length - 1];
+    return !!last && last.dir === 'df' && now - last.start <= 6;
   }
 
   private holdingForward(x: Fighter) {
@@ -1207,8 +1234,9 @@ export class FightEngine {
       return;
     }
 
-    const go = (m: Move | null | undefined, plan: Move[] = []) => {
+    const go = (m: Move | null | undefined, plan: Move[] = [], reachCheck = false) => {
       if (!m || !this.allowed(b, m)) return false;
+      if (reachCheck && (dist > moveRange(m) + (isRunning(m) ? 100 : 8) || (isRunning(m) && dist < 160))) return false;
       this.startMove(b, m, now);
       this.botPlan = plan;
       return true;
@@ -1247,10 +1275,11 @@ export class FightEngine {
     }
     this.botPlan = [];
     // 3. okizeme: hit a grounded opponent who did not tech
-    if (p.state === 'down' && now - p.stateAt > TECH_WINDOW && dist < 170 && rng() < S.combo * 0.6 && go(this.pick(set.groundHits))) return;
+    if (p.state === 'down' && now - p.stateAt > TECH_WINDOW && dist < 170 && rng() < S.combo * 0.6 && go(this.pick(set.groundHits), [], true)) return;
     // 4. whiff punish
     if (p.state === 'attack' && p.outcome === 'whiff' && p.endAt - now > 12 && dist < 200 && rng() < S.punish * 0.7) {
-      if (go(this.pick(set.launchers.filter((x) => (x.startupFrame ?? 99) <= 16)) ?? this.pick(set.pokes))) return;
+      const reach = (m: Move) => dist <= moveRange(m) + (isRunning(m) ? 100 : 8);
+      if (go(this.pick(set.launchers.filter((x) => (x.startupFrame ?? 99) <= 16 && reach(x))) ?? this.pick(set.pokes.filter(reach)), [], true)) return;
     }
     // 5. an attack is coming: guard (after reaction time), sidestep a slow linear move, or armour through
     if (p.state === 'attack' && p.move && now < p.hitAt) {
@@ -1268,6 +1297,12 @@ export class FightEngine {
         if (lv === 'throw' && rng() < S.guard * 0.5) {
           b.guard = 'crouch';
           b.crouching = true;
+          return;
+        }
+        if (lv === 'low' && !/Weapon/.test(p.move.notes) && p.hitAt - now <= 10 && rng() < S.guard * 0.2) {
+          b.parryUntil = p.hitAt;
+          b.crouching = true;
+          b.guard = 'crouch';
           return;
         }
         const right = lv === 'low' ? 'crouch' : 'stand';
@@ -1308,7 +1343,10 @@ export class FightEngine {
       else if (r < 0.62) pool = set.pokes.concat(set.strings.filter((m) => (m.startupFrame ?? 99) <= 14));
       else if (r < 0.86) pool = set.signature.concat(set.launchers);
       else pool = dist < 100 && standRate > 0.5 ? set.throws : set.pokes;
-      if (go(this.pick(pool.length ? pool : set.pokes))) return;
+      const inReach = (pool.length ? pool : set.pokes).filter((m) => !isRunning(m) && dist <= moveRange(m) + 8);
+      if (go(this.pick(inReach), [], true)) return;
+      b.walking = 1; // nothing reaches from here: step in
+      return;
     }
     // 9. neutral: spacing (walk, dash in, backdash out), occasional sidestep
     const ideal = poke + 18;

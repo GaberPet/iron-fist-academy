@@ -1,10 +1,14 @@
 // 3D arena: renderer, Tekken-style side camera, fighters, hit effects. Reads FightEngine state.
 import * as THREE from 'three';
+import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { OutputPass } from 'three/examples/jsm/postprocessing/OutputPass.js';
 import type { FightEngine, FightEvent, Vec } from '../../core/fight';
 import { inRage } from '../../core/fight';
 import type { FighterLook } from '../components/arenaRenderer';
 import { Fighter3D, glowTexture } from './fighter3d';
-import { poseFor, STANCE } from './anim3d';
+import { poseFor, STANCE, strikeKind } from './anim3d';
 import { buildStage, type Stage } from './stage3d';
 
 interface Particle {
@@ -68,6 +72,9 @@ export class Arena3D {
   private walkPhase: [number, number] = [0, 0];
   private lastPos: [Vec, Vec] | null = null;
   private shocks: { mesh: THREE.Mesh; age: number }[] = [];
+  private composer: EffectComposer | null = null;
+  private bloom: UnrealBloomPass | null = null;
+  private trailTick = 0;
 
   constructor(canvas: HTMLCanvasElement, looks: [FighterLook, FighterLook]) {
     this.renderer = new THREE.WebGLRenderer({ canvas, antialias: true, powerPreference: 'high-performance' });
@@ -82,6 +89,15 @@ export class Arena3D {
     for (const f of this.fighters) {
       f.snap(STANCE);
       this.stage.scene.add(f.root);
+    }
+    try {
+      this.composer = new EffectComposer(this.renderer);
+      this.composer.addPass(new RenderPass(this.stage.scene, this.camera));
+      this.bloom = new UnrealBloomPass(new THREE.Vector2(640, 360), 0.55, 0.5, 0.82);
+      this.composer.addPass(this.bloom);
+      this.composer.addPass(new OutputPass());
+    } catch {
+      this.composer = null; // plain rendering
     }
   }
 
@@ -98,6 +114,8 @@ export class Arena3D {
 
   resize(w: number, h: number) {
     this.renderer.setSize(w, h, false);
+    this.composer?.setSize(w, h);
+    this.bloom?.resolution.set(w / 2, h / 2);
     this.camera.aspect = w / h;
     this.camera.updateProjectionMatrix();
   }
@@ -169,6 +187,12 @@ export class Arena3D {
         case 'throw':
         case 'break':
           if (at) this.ring(at, '#ffffff', 0.7);
+          break;
+        case 'parry':
+          if (at) {
+            this.ring(at, '#ffd36a', 1);
+            this.burst(at, '#ffd36a', 16, 1);
+          }
           break;
         case 'tech':
           if (x.at) this.dust(this.world(x.at, 5));
@@ -245,6 +269,16 @@ export class Arena3D {
       fig.root.rotation.y = Math.atan2(x.facing.x, x.facing.z);
       fig.setAura(x.heat === 'active' ? 'heat' : inRage(x) ? 'rage' : null, now);
       fig.flash(now - x.lastHit < 3 && now >= x.lastHit);
+      // motion trail on the striking limb around the active frames
+      if (x.state === 'attack' && x.move && !x.move.isThrow && now >= x.hitAt - 3 && now <= x.hitAt + 2 && this.trailTick++ % 1 === 0) {
+        const kind = strikeKind(x.move);
+        const limb = /Kick|sweep|knee/i.test(kind) ? (/L$/.test(kind) ? 'lFoot' : 'rFoot') : /hookL|jab/.test(kind) ? 'lHand' : 'rHand';
+        const wp = fig.jointWorld(limb as 'lHand');
+        const s = this.sprite(x.heat === 'active' ? '#7cc4ff' : '#fff2d8', glowTexture(), 0.22);
+        s.position.copy(wp);
+        (s.material as THREE.SpriteMaterial).opacity = 0.5;
+        this.particles.push({ sprite: s, vel: new THREE.Vector3(), life: 0, max: 8, grow: -0.015, gravity: 0 });
+      }
     }
 
     // ----- camera: side view perpendicular to the fighters' axis -----
@@ -318,7 +352,8 @@ export class Arena3D {
     this.shocks = this.shocks.filter((x) => x.age <= 30);
 
     this.stage.update(performance.now());
-    this.renderer.render(this.stage.scene, this.camera);
+    if (this.composer) this.composer.render();
+    else this.renderer.render(this.stage.scene, this.camera);
   }
 
   dispose() {

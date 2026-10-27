@@ -181,6 +181,7 @@ export function playEvents(ev: FightEvent[]) {
         sounds.grab();
         break;
       case 'break':
+      case 'parry':
         sounds.block();
         break;
       case 'heat':

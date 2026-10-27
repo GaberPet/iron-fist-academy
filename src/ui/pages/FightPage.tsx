@@ -66,7 +66,7 @@ export function FightPage() {
         <button className="btn primary" disabled={!opp || !me} onClick={() => { unlockAudio(); setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
       </div>
       <div className="notice info">
-        <b>Move:</b> f / b walk, <b>f,f</b> dash, <b>b,b</b> backdash, tap <b>u</b> or <b>d</b> to sidestep (dodges linear moves), hold u to jump. <b>Guard:</b> neutral or back blocks highs and mids, down-back blocks lows and ducks highs and throws. <b>Attack:</b> buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for strings. <b>Throws</b> break with 1, 2 or 1+2 (generic throws: 1 or 2; a wrong button locks you out). <b>Knocked down:</b> press a button as you land to tech roll, or a direction to get up.<br />
+        <b>Move:</b> f / b walk, <b>f,f</b> dash, <b>b,b</b> backdash, tap <b>u</b> or <b>d</b> to sidestep (dodges linear moves), hold u to jump. <b>Guard:</b> neutral or back blocks highs and mids, down-back blocks lows and ducks highs and throws. <b>Attack:</b> buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for strings. <b>Throws</b> break with 1, 2 or 1+2 (generic throws: 1 or 2; a wrong button locks you out). <b>Low parry:</b> tap d/f just before a low hits (not weapon lows). <b>Knocked down:</b> press a button as you land to tech roll, or a direction to get up.<br />
         <b>Heat</b> (once per round): <b>2+3</b> Heat Burst (10 s) or land a Heat Engager (15 s). In Heat: H. moves, chip damage on block, faster health recovery; <b>2+3</b> is your Heat Smash; hold <b>f</b> when a Heat Engager connects for a Heat Dash. <b>Rage</b> at {RAGE_HP} HP or less: +10% damage, <b>d/f+1+2</b> Rage Art (armoured). White health is recoverable: you get it back by attacking.
       </div>
       {running && opp && me ? (
@@ -152,6 +152,10 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
       if (e.type === 'crush' || e.type === 'armor') pop(e.type === 'armor' ? 'ARMOR' : 'CRUSH', e.at, 200, '#3ccf8e');
       if (e.type === 'step-evade') pop('SIDESTEP', e.at, 200, '#c9d6ea');
       if (e.type === 'tech') pop('TECH', e.at, 120, '#c9d6ea');
+      if (e.type === 'parry') {
+        pop('LOW PARRY', e.at, 180, '#ffd36a');
+        lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: low parry`);
+      }
       if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'heat-dash' || e.type === 'rage' || e.type === 'rage-art') {
         const who = engine.f[e.by ?? 0];
         const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'heat-dash' ? 'HEAT DASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';

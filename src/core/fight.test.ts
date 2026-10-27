@@ -316,4 +316,16 @@ describe('FightEngine', () => {
       expect(e.wins[0] + e.wins[1]).toBeGreaterThan(0);
     }
   });
+
+  it('a timed d/f low parry puts the low attacker into the air', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const low = moveSet(anna).lows.find((m) => !/Weapon/.test(m.notes) && (m.startupFrame ?? 0) >= 14)!;
+    e.startMove(e.f[1], low, f);
+    const hitAt = e.f[1].hitAt;
+    const ev = run(e, f, 40, (x) => ({ dir: x >= hitAt - 3 && x <= hitAt ? 'df' : 'n' }));
+    expect(ev.some((x) => x.type === 'parry' && x.by === 0)).toBe(true);
+    expect(['air', 'down']).toContain(e.f[1].state);
+    expect(e.f[0].hp).toBe(MAX_HP);
+  });
 });

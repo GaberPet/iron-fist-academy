@@ -16,7 +16,7 @@ function blank(side: 0 | 1): Fighter {
   return {
     side, char: null as never, pos: { x: side ? 60 : -60, z: 0 }, hp: 180, recov: 0, state: 'neutral', stateAt: 0, until: 0, crouching: false, guard: 'stand', walking: 0,
     move: null, moveStart: 0, hitAt: 0, endAt: 0, outcome: 'pending', aim: null, lunge: 0, queued: null, y: 0, vy: 0, airHits: 0, tornadoUsed: false, wallHit: false, noTech: false,
-    step: null, combo: { hits: 0, damage: 0 }, lastHit: -999, hitHeight: 100, throwBreak: null, breakLocked: false, dealt: 0, heat: 'ready', heatLeft: 0, rageUsed: false, impactAt: -999,
+    step: null, combo: { hits: 0, damage: 0 }, lastHit: -999, hitHeight: 100, throwBreak: null, breakLocked: false, dealt: 0, heat: 'ready', heatLeft: 0, rageUsed: false, impactAt: -999, parryUntil: -1,
     facing: { x: side ? -1 : 1, z: 0 },
   };
 }
