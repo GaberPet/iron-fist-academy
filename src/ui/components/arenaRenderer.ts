@@ -4,7 +4,7 @@
 export type PoseName =
   | 'idle' | 'guard' | 'crouch' | 'crouchGuard'
   | 'punchHigh' | 'punchMid' | 'kickMid' | 'kickLow' | 'grab'
-  | 'windup' | 'hit' | 'recover';
+  | 'windup' | 'hit' | 'recover' | 'air' | 'down' | 'block';
 
 /** Joint angles in degrees (0 = straight down for limbs, 0 = upright for torso), plus hip drop in px. */
 export interface Pose {
@@ -34,6 +34,9 @@ export const POSES: Record<PoseName, Pose> = {
   grab:        P(14, 22,  6,  84,  84,  74,  80,  26, -12, -24,  8),
   hit:         P( 8, -28, -24, 20, 120, -10, 140,  6,  -4, -32,  10),
   recover:     P(12, -10, -6,  40, 120,  30, 150,  18, -14, -22,  10),
+  block:       P(16, -10, -4, 110, 160, 100, 165,  16, -14, -26,  12),
+  air:         P( 0,  0, -20, -30, 150, -50, 160, 20, -40,  -6, -20),
+  down:        P( 0,  0, -10, -60, 170, -80, 170, 10, -10,  -4,  -6),
 };
 
 export function lerpPose(a: Pose, b: Pose, t: number): Pose {
@@ -43,6 +46,8 @@ export function lerpPose(a: Pose, b: Pose, t: number): Pose {
 }
 
 export interface FighterLook {
+  build: 'male' | 'female' | 'beast' | 'robot';
+  hairStyle: 'short' | 'spiky' | 'bob' | 'ponytail' | 'long' | 'buns' | 'bald';
   skin: string;
   hair: string;
   top: string; // shirt / tank top
@@ -168,26 +173,113 @@ function shoe(ctx: CanvasRenderingContext2D, x: number, y: number, facing: numbe
   ctx.restore();
 }
 
-/** Head in profile: skull, jaw, nose, ear, eye, short hair. */
-function head(ctx: CanvasRenderingContext2D, x: number, y: number, facing: number, tiltDeg: number, S: number, look: FighterLook) {
+/** Back hair drawn behind the head (ponytail, long hair, buns). */
+function hairBack(ctx: CanvasRenderingContext2D, look: FighterLook, sway: number) {
+  ctx.fillStyle = look.hair;
+  if (look.hairStyle === 'ponytail') {
+    ctx.beginPath();
+    ctx.moveTo(-10, -10);
+    ctx.quadraticCurveTo(-26, -6 + sway, -24, 18 + sway);
+    ctx.quadraticCurveTo(-20, 26 + sway, -16, 20 + sway);
+    ctx.quadraticCurveTo(-16, 2, -6, -4);
+    ctx.closePath();
+    ctx.fill();
+  } else if (look.hairStyle === 'long') {
+    ctx.beginPath();
+    ctx.moveTo(-12, -12);
+    ctx.quadraticCurveTo(-20, 10, -16 + sway * 0.5, 36);
+    ctx.lineTo(-2, 34);
+    ctx.quadraticCurveTo(-4, 12, 2, 4);
+    ctx.closePath();
+    ctx.fill();
+  } else if (look.hairStyle === 'buns') {
+    for (const [bx, by] of [[-10, -17], [3, -21]]) {
+      ctx.beginPath();
+      ctx.arc(bx, by, 6.5, 0, Math.PI * 2);
+      ctx.fill();
+    }
+  }
+}
+
+/** Head in profile: skull, jaw, nose, ear, eye, hair (or a creature / robot head). */
+function head(ctx: CanvasRenderingContext2D, x: number, y: number, facing: number, tiltDeg: number, S: number, look: FighterLook, sway = 0) {
   ctx.save();
   ctx.translate(x, y);
   ctx.scale(facing * S, S);
   ctx.rotate(rad(tiltDeg));
+  const fem = look.build === 'female';
   const skinG = ctx.createRadialGradient(-4, -8, 2, 0, 0, 18);
   skinG.addColorStop(0, mix(look.skin, SUNLIGHT, 0.35));
   skinG.addColorStop(0.6, look.skin);
   skinG.addColorStop(1, mix(look.skin, SHADOW, 0.5));
+
+  if (look.build === 'beast') {
+    ctx.fillStyle = skinG;
+    ctx.beginPath();
+    ctx.ellipse(0, -2, 17, 16, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = look.hair; // ears
+    for (const ex of [-9, 6]) {
+      ctx.beginPath();
+      ctx.arc(ex, -16, 6, 0, Math.PI * 2);
+      ctx.fill();
+    }
+    ctx.fillStyle = mix(look.skin, '#ffffff', 0.25); // snout
+    ctx.beginPath();
+    ctx.ellipse(13, 4, 9, 7, 0, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#111';
+    ctx.beginPath();
+    ctx.ellipse(20, 2, 3, 2.4, 0, 0, Math.PI * 2);
+    ctx.fill();
+    const lightFur = toRgb(look.skin)[0] > 180;
+    ctx.fillStyle = lightFur ? look.hair : '#111'; // eye (with a dark patch on light fur)
+    ctx.beginPath();
+    ctx.ellipse(6, -5, lightFur ? 4.5 : 2, lightFur ? 3.4 : 2, -0.4, 0, Math.PI * 2);
+    ctx.fill();
+    ctx.fillStyle = '#fff';
+    ctx.fillRect(6, -6, 1.5, 1.5);
+    ctx.restore();
+    return;
+  }
+  if (look.build === 'robot') {
+    ctx.fillStyle = skinG;
+    ctx.beginPath();
+    ctx.moveTo(-12, 10);
+    ctx.lineTo(-13, -12);
+    ctx.lineTo(-4, -18);
+    ctx.lineTo(10, -16);
+    ctx.lineTo(14, -4);
+    ctx.lineTo(13, 12);
+    ctx.lineTo(-2, 15);
+    ctx.closePath();
+    ctx.fill();
+    ctx.fillStyle = '#ff3b3b'; // visor
+    ctx.fillRect(3, -6, 11, 4);
+    ctx.fillStyle = mix(look.skin, SHADOW, 0.4);
+    ctx.fillRect(-6, 4, 14, 2);
+    ctx.fillRect(-6, 8, 14, 2);
+    ctx.restore();
+    return;
+  }
+
+  hairBack(ctx, look, sway);
   ctx.fillStyle = skinG;
-  ctx.beginPath(); // skull + jaw
+  ctx.beginPath(); // skull + jaw (softer, smaller jaw for the female build)
   ctx.moveTo(-11, 6);
   ctx.bezierCurveTo(-15, -6, -9, -17, 1, -17);
   ctx.bezierCurveTo(10, -17, 14, -9, 13, -2);
-  ctx.lineTo(15.5, 3); // nose
+  ctx.lineTo(fem ? 14.5 : 15.5, 3); // nose
   ctx.lineTo(12.5, 5);
-  ctx.quadraticCurveTo(13, 9, 11, 11); // mouth / chin
-  ctx.quadraticCurveTo(9, 15, 3, 15);
-  ctx.quadraticCurveTo(-4, 14, -7, 11);
+  if (fem) {
+    ctx.quadraticCurveTo(13, 8, 11, 10);
+    ctx.quadraticCurveTo(8, 14, 3, 13.5);
+    ctx.quadraticCurveTo(-3, 12.5, -7, 10);
+  } else {
+    ctx.quadraticCurveTo(13, 9, 11, 11);
+    ctx.quadraticCurveTo(9, 15, 3, 15);
+    ctx.quadraticCurveTo(-4, 14, -7, 11);
+  }
   ctx.closePath();
   ctx.fill();
   // ear
@@ -195,37 +287,77 @@ function head(ctx: CanvasRenderingContext2D, x: number, y: number, facing: numbe
   ctx.beginPath();
   ctx.ellipse(-2, 1, 3, 4.5, 0, 0, Math.PI * 2);
   ctx.fill();
-  // eye + brow
+  // eye + brow (+ lashes and lips for the female build)
   ctx.fillStyle = '#16100c';
   ctx.beginPath();
   ctx.ellipse(8, -3, 1.8, 1.2, 0, 0, Math.PI * 2);
   ctx.fill();
   ctx.strokeStyle = mix(look.hair, SHADOW, 0.2);
-  ctx.lineWidth = 1.6;
+  ctx.lineWidth = fem ? 1.1 : 1.6;
   ctx.beginPath();
   ctx.moveTo(5, -6.5);
-  ctx.lineTo(11, -6);
+  ctx.lineTo(11, fem ? -6.8 : -6);
   ctx.stroke();
-  // hair
-  const hg = ctx.createLinearGradient(-6, -18, 4, -4);
-  hg.addColorStop(0, mix(look.hair, SUNLIGHT, 0.3));
-  hg.addColorStop(1, look.hair);
-  ctx.fillStyle = hg;
-  ctx.beginPath();
-  ctx.moveTo(-12, 5);
-  ctx.bezierCurveTo(-17, -8, -10, -20, 2, -19);
-  ctx.bezierCurveTo(10, -19, 15, -13, 13, -7);
-  ctx.quadraticCurveTo(7, -11, 1, -9);
-  ctx.quadraticCurveTo(-4, -7, -5, -2);
-  ctx.quadraticCurveTo(-7, 3, -8, 8);
-  ctx.closePath();
-  ctx.fill();
+  if (fem) {
+    ctx.strokeStyle = '#16100c';
+    ctx.lineWidth = 0.9;
+    ctx.beginPath();
+    ctx.moveTo(9.5, -4);
+    ctx.lineTo(11.5, -5);
+    ctx.stroke();
+    ctx.fillStyle = '#b5524f';
+    ctx.beginPath();
+    ctx.ellipse(12, 7.5, 1.8, 1.1, 0.3, 0, Math.PI * 2);
+    ctx.fill();
+  }
+  if (look.hairStyle !== 'bald') {
+    const hg = ctx.createLinearGradient(-6, -18, 4, -4);
+    hg.addColorStop(0, mix(look.hair, SUNLIGHT, 0.3));
+    hg.addColorStop(1, look.hair);
+    ctx.fillStyle = hg;
+    ctx.beginPath();
+    if (look.hairStyle === 'bob') {
+      ctx.moveTo(-13, 10);
+      ctx.bezierCurveTo(-18, -8, -10, -21, 2, -20);
+      ctx.bezierCurveTo(12, -20, 16, -12, 14, -4);
+      ctx.quadraticCurveTo(8, -10, 2, -8);
+      ctx.quadraticCurveTo(-2, -2, -1, 6);
+      ctx.quadraticCurveTo(-4, 11, -8, 12);
+    } else if (look.hairStyle === 'spiky') {
+      ctx.moveTo(-12, 5);
+      ctx.lineTo(-17, -6);
+      ctx.lineTo(-12, -9);
+      ctx.lineTo(-15, -18);
+      ctx.lineTo(-6, -16);
+      ctx.lineTo(-4, -26);
+      ctx.lineTo(3, -18);
+      ctx.lineTo(10, -24);
+      ctx.lineTo(10, -16);
+      ctx.lineTo(18, -14);
+      ctx.lineTo(13, -7);
+      ctx.quadraticCurveTo(7, -11, 1, -9);
+      ctx.quadraticCurveTo(-4, -7, -5, -2);
+      ctx.quadraticCurveTo(-7, 3, -8, 8);
+    } else {
+      ctx.moveTo(-12, 5);
+      ctx.bezierCurveTo(-17, -8, -10, -20, 2, -19);
+      ctx.bezierCurveTo(10, -19, 15, -13, 13, -7);
+      ctx.quadraticCurveTo(7, -11, 1, -9);
+      ctx.quadraticCurveTo(-4, -7, -5, -2);
+      ctx.quadraticCurveTo(-7, 3, -8, 8);
+    }
+    ctx.closePath();
+    ctx.fill();
+  }
   ctx.restore();
 }
 
 /** Forward kinematics + drawing of one fighter. `facing` 1 = facing right. */
-export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: number, facing: 1 | -1, pose: Pose, look: FighterLook, scale = 1) {
-  const S = scale;
+export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: number, facing: 1 | -1, pose: Pose, look: FighterLook, scale = 1, extra: { lift?: number; rot?: number } = {}) {
+  const fem = look.build === 'female';
+  const big = look.build === 'beast' ? 1.25 : 1;
+  const S = scale * (fem ? 0.95 : 1);
+  const aw = fem ? 0.8 : big, lw = fem ? 0.9 : big, tw = fem ? 0.85 : big;
   const thigh = 46 * S, shin = 46 * S, upper = 34 * S, fore = 32 * S, torso = 62 * S;
   const hipY = ground - (thigh + shin) + pose.hipDrop * S;
   // soft contact shadow
@@ -240,6 +372,16 @@ export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: nu
   ctx.fill();
   ctx.restore();
 
+  // airborne / lying: lift the body and rotate it around the hip
+  ctx.save();
+  if (extra.lift || extra.rot) {
+    ctx.translate(0, -(extra.lift ?? 0));
+    if (extra.rot) {
+      ctx.translate(x, hipY);
+      ctx.rotate(rad(-extra.rot * facing));
+      ctx.translate(-x, -hipY);
+    }
+  }
   const [chestX, chestY] = [x + Math.sin(rad(pose.lean)) * torso * facing, hipY - Math.cos(rad(pose.lean)) * torso];
   const legs = (thighA: number, shinA: number, ox: number) => {
     const hx = x + ox * facing;
@@ -259,13 +401,14 @@ export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: nu
   const frontArm = arms(pose.frontUpper, pose.frontFore, 8 * S);
 
   const drawLeg = (l: ReturnType<typeof legs>, depth: number) => {
-    limb(ctx, l.kx, l.ky, l.fx, l.fy, 17 * S, 19 * S, 13 * S, look.pants, 0.35, depth); // shin (loose trousers)
-    limb(ctx, l.hx, hipY, l.kx, l.ky, 25 * S, 26 * S, 18 * S, look.pants, 0.35, depth); // thigh
+    limb(ctx, l.kx, l.ky, l.fx, l.fy, 17 * S * lw, 19 * S * lw, 13 * S * lw, look.pants, 0.35, depth); // shin (loose trousers)
+    limb(ctx, l.hx, hipY, l.kx, l.ky, 25 * S * (fem ? 1.05 : big), 26 * S * lw, 18 * S * lw, look.pants, 0.35, depth); // thigh
     shoe(ctx, l.fx, l.fy, facing, S, look.shoes, depth, l.lifted ? Math.max(-60, Math.min(60, l.tilt - 90)) : 0);
   };
   const drawArm = (arm: ReturnType<typeof arms>, depth: number) => {
-    limb(ctx, arm.sx, arm.sy, arm.ex, arm.ey, 17 * S, 19 * S, 12 * S, look.skin, 0.35, depth); // deltoid + biceps
-    limb(ctx, arm.ex, arm.ey, arm.hx, arm.hy, 12 * S, 15 * S, 10 * S, look.skin, 0.3, depth); // forearm
+    const armColor = look.build === 'robot' ? look.top : look.skin;
+    limb(ctx, arm.sx, arm.sy, arm.ex, arm.ey, 17 * S * aw, 19 * S * aw, 12 * S * aw, armColor, 0.35, depth); // deltoid + biceps
+    limb(ctx, arm.ex, arm.ey, arm.hx, arm.hy, 12 * S * aw, 15 * S * aw, 10 * S * aw, armColor, 0.3, depth); // forearm
     fist(ctx, arm.ex, arm.ey, arm.hx, arm.hy, S, look.gloves, depth);
   };
 
@@ -278,11 +421,23 @@ export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: nu
   const hx = neckX + Math.sin(rad(pose.lean + pose.head)) * 19 * S * facing;
   const hy = neckY - Math.cos(rad(pose.lean + pose.head)) * 19 * S;
   limb(ctx, neckX, neckY, hx, hy, 14 * S, 14 * S, 12 * S, look.skin, 0.5);
-  head(ctx, hx, hy - 2 * S, facing, pose.lean + pose.head, S, look);
+  head(ctx, hx, hy - 2 * S, facing, pose.lean + pose.head, S, look, Math.sin(performance.now() / 300) * 2);
 
-  // torso: pelvis in trousers, tank top with chest, belt
-  limb(ctx, x, hipY + 4 * S, x + (chestX - x) * 0.2, hipY - torso * 0.18, 36 * S, 38 * S, 34 * S, look.pants, 0.5);
-  limb(ctx, x, hipY - 6 * S, chestX, chestY + 2 * S, 30 * S, 44 * S, 38 * S, look.top, 0.68);
+  // torso: pelvis in trousers, top with chest, belt (narrow waist + wider hips for the female build)
+  limb(ctx, x, hipY + 4 * S, x + (chestX - x) * 0.2, hipY - torso * 0.18, 36 * S * (fem ? 1.08 : big), 38 * S * (fem ? 1.08 : big), 34 * S * tw, look.pants, 0.5);
+  limb(ctx, x, hipY - 6 * S, chestX, chestY + 2 * S, (fem ? 24 : 30) * S * big, 44 * S * tw, 38 * S * tw, look.top, fem ? 0.75 : 0.68);
+  if (fem) {
+    // bust, in the top's colour
+    const t = 0.7, ux = chestX - x, uy = chestY - hipY;
+    const bxp = x + ux * t + Math.cos(rad(pose.lean)) * 12 * S * facing, byp = hipY + uy * t + Math.sin(rad(pose.lean)) * 3 * S;
+    const bg = ctx.createRadialGradient(bxp - 3 * S, byp - 4 * S, 1, bxp, byp, 10 * S);
+    bg.addColorStop(0, mix(look.top, SUNLIGHT, 0.3));
+    bg.addColorStop(1, mix(look.top, SHADOW, 0.25));
+    ctx.fillStyle = bg;
+    ctx.beginPath();
+    ctx.ellipse(bxp, byp, 8.5 * S, 7.5 * S, 0, 0, Math.PI * 2);
+    ctx.fill();
+  }
   const bx = Math.cos(rad(pose.lean)) * 18 * S, by = Math.sin(rad(pose.lean)) * 18 * S * facing;
   const bcx = x + Math.sin(rad(pose.lean)) * 8 * S * facing, bcy = hipY - Math.cos(rad(pose.lean)) * 8 * S;
   ctx.strokeStyle = look.belt;
@@ -302,6 +457,7 @@ export function drawFighter(ctx: CanvasRenderingContext2D, x: number, ground: nu
   // near side
   drawLeg(front, 0);
   drawArm(frontArm, 0);
+  ctx.restore();
   return { hand: [frontArm.hx, frontArm.hy] as const, foot: [front.fx, front.fy] as const, head: [hx, hy] as const };
 }
 
@@ -666,5 +822,20 @@ export function drawSpark(ctx: CanvasRenderingContext2D, s: Spark, c: { hit: str
     ctx.arc(s.x, s.y, 8 * (1 - t), 0, Math.PI * 2);
     ctx.fill();
   }
+  ctx.restore();
+}
+
+/** Small name plate above a fighter. */
+export function drawNameTag(ctx: CanvasRenderingContext2D, x: number, y: number, text: string, color: string, font: string) {
+  ctx.save();
+  ctx.font = font;
+  ctx.textAlign = 'center';
+  const w = ctx.measureText(text).width + 16;
+  ctx.fillStyle = 'rgba(8,8,14,0.65)';
+  ctx.fillRect(x - w / 2, y - 17, w, 22);
+  ctx.fillStyle = color;
+  ctx.fillRect(x - w / 2, y + 3, w, 2);
+  ctx.fillStyle = '#f2f3f8';
+  ctx.fillText(text, x, y);
   ctx.restore();
 }

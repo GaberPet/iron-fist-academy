@@ -25,6 +25,27 @@ export interface BotAction {
   recovery: number; // whiff recovery (frames after active)
   throwBreak?: ThrowBreak;
   label: string;
+  /** Character the move belongs to (drawn as that character). */
+  charId?: string;
+  /** 1 = basic moves, 2 = signature moves and string enders, 3 = stance and Heat moves. */
+  tier?: 1 | 2 | 3;
+}
+
+/** What the bot adds in each stage of a session. */
+export const TIER_NAMES: Record<1 | 2 | 3, string> = {
+  1: 'basic moves',
+  2: 'signature moves: launchers, Heat Engagers, power crushes, string enders',
+  3: 'stance and Heat moves',
+};
+
+const SIGNATURE_RE = /Heat Engager|Power Crush|Homing|Tornado|Balcony Break/i;
+const STANCE_RE = /^([A-Z][A-Za-z]{0,5})\./;
+
+/** Tier of a move for the stage system (see TIER_NAMES). */
+export function moveTier(c: CharacterData, m: Move): 1 | 2 | 3 {
+  if (STANCE_RE.test(m.id)) return 3;
+  if (m.parent || SIGNATURE_RE.test(m.notes) || /a/.test(m.hit) || c.profile.keyLaunchers.includes(m.id) || c.profile.heatEngagers.includes(m.id)) return 2;
+  return 1;
 }
 
 export type Outcome =
@@ -139,13 +160,16 @@ export function botPools(opponents: CharacterData[]) {
   const whiffable: BotAction[] = [];
   for (const c of opponents) {
     for (const m of c.frames.moves) {
-      if (m.parent || m.isThrow || m.startupFrame === null || m.startupFrame < 10) continue;
-      if (m.hitLevels.length !== 1) continue; // single-hit moves keep the model honest
+      if (m.isThrow || m.startupFrame === null || m.startupFrame < 10) continue;
+      if (m.hitLevels.length !== 1) continue; // single-hit moves (or single-hit string enders) keep the model honest
       const lv = firstHitLevel(m);
       if (lv !== 'high' && lv !== 'mid' && lv !== 'low') continue;
       if (!m.blockRange || m.blockRange[0] !== m.blockRange[1] || m.blockFrame === null) continue;
-      if (/^[A-Z]{2,}\./.test(m.id) || m.id.startsWith('H.') || m.id.startsWith('R.')) continue; // stance/heat/rage moves need setup
-      const base = { move: m, charName: c.profile.short, level: lv, startup: m.startupFrame, blockAdv: m.blockFrame, recovery: recoveryFrames(m) ?? 0, label: `${c.profile.short} ${m.input}${m.name ? ` (${m.name})` : ''}` } as const;
+      if (m.id.startsWith('R.')) continue; // rage moves need rage
+      const tier = moveTier(c, m);
+      const stance = STANCE_RE.exec(m.id)?.[1];
+      const from = stance ? (stance === 'H' ? ' in Heat' : ` from ${c.profile.stances.find((s) => s.code === stance)?.name ?? stance}`) : m.parent ? ' (string ender)' : '';
+      const base = { move: m, charName: c.profile.short, charId: c.profile.id, tier, level: lv, startup: m.startupFrame, blockAdv: m.blockFrame, recovery: recoveryFrames(m) ?? 0, label: `${c.profile.short} ${m.input || m.id}${m.name ? ` (${m.name})` : ''}${from}` } as const;
       const s = classifySafety(m);
       if ((s === 'punishable' || s === 'launch-punishable') && m.blockFrame >= -24) {
         if (lv === 'low') unsafeLow.push({ ...base, kind: 'punish' });
@@ -159,11 +183,11 @@ export function botPools(opponents: CharacterData[]) {
   return { unsafeHighMid, unsafeLow, blockable, safe, whiffable };
 }
 
-export function throwAction(rng: Rng): BotAction {
+export function throwAction(rng: Rng, c?: CharacterData): BotAction {
   const r = rng();
   const tb: ThrowBreak = r < 0.4 ? 1 : r < 0.8 ? 2 : 12;
   const label = tb === 1 ? 'Throw: left arm first (1+3)' : tb === 2 ? 'Throw: right arm first (2+4)' : 'Throw: both arms (1+2 type)';
-  return { kind: 'throw', move: null, charName: 'Bot', level: 'throw', startup: GENERIC_THROW_STARTUP, blockAdv: 0, recovery: 0, throwBreak: tb, label };
+  return { kind: 'throw', move: null, charName: c?.profile.short ?? 'Bot', charId: c?.profile.id, tier: 1, level: 'throw', startup: GENERIC_THROW_STARTUP, blockAdv: 0, recovery: 0, throwBreak: tb, label };
 }
 
 // ---------- round engine ----------
@@ -195,6 +219,8 @@ export interface EngineConfig {
   throwBreakWindow: number;
   rng: Rng;
   recognizer?: RecognizerOptions;
+  /** Session length; the bot unlocks signature (2nd third) and stance/Heat moves (last third). */
+  reps?: number;
 }
 
 const STAND_GUARD = new Set<Dir>(['n', 'b']);
@@ -221,6 +247,8 @@ export class DrillEngine {
   /** Recent outcomes per kind for adaptive selection (mixed-pressure). */
   recentByKind: Record<RoundKind, boolean[]> = { punish: [], block: [], throw: [], whiff: [], safe: [] };
   private forced: BotAction | null = null;
+  /** Rounds started so far. */
+  roundIndex = 0;
 
   constructor(cfg: EngineConfig) {
     this.cfg = cfg;
@@ -237,8 +265,26 @@ export class DrillEngine {
     this.forced = a;
   }
 
+  /** Current stage: 1 basic, 2 adds signature moves, 3 adds stance and Heat moves. */
+  get stage(): 1 | 2 | 3 {
+    const reps = this.cfg.reps;
+    if (!reps) return 3;
+    const i = Math.max(0, this.roundIndex - 1);
+    return i < reps / 3 ? 1 : i < (2 * reps) / 3 ? 2 : 3;
+  }
+
   private pick<T>(arr: T[]): T | null {
     return arr.length ? arr[Math.floor(this.cfg.rng() * arr.length)] : null;
+  }
+
+  /** Picks a bot move allowed in the current stage, favouring the newest unlocked tier. */
+  private pickTiered(arr: BotAction[]): BotAction | null {
+    const st = this.stage;
+    const allowed = arr.filter((a) => (a.tier ?? 1) <= st);
+    const pool = allowed.length ? allowed : arr;
+    const newest = pool.filter((a) => (a.tier ?? 1) === st);
+    if (st > 1 && newest.length && this.cfg.rng() < 0.6) return this.pick(newest);
+    return this.pick(pool);
   }
 
   /** Adaptive weights: kinds you fail more often come up more often. */
@@ -262,15 +308,15 @@ export class DrillEngine {
     const rng = this.cfg.rng;
     switch (this.cfg.drill) {
       case 'punish-standing':
-        return this.pick(p.unsafeHighMid.filter((a) => a.level === 'mid' || a.level === 'high'))!;
+        return this.pickTiered(p.unsafeHighMid.filter((a) => a.level === 'mid' || a.level === 'high'))!;
       case 'punish-crouching':
-        return this.pick(p.unsafeLow)!;
+        return this.pickTiered(p.unsafeLow)!;
       case 'block-mixup':
-        return this.pick(p.blockable)!;
+        return this.pickTiered(p.blockable)!;
       case 'throw-break':
-        return throwAction(rng);
+        return throwAction(rng, this.pick(this.cfg.opponents) ?? undefined);
       case 'whiff-punish':
-        return this.pick(p.whiffable)!;
+        return this.pickTiered(p.whiffable)!;
       case 'mixed-pressure': {
         const w = this.adaptiveWeights();
         const kinds: [RoundKind, number][] = [['punish', w.punish], ['block', w.block], ['throw', w.throw], ['safe', w.safe]];
@@ -282,15 +328,16 @@ export class DrillEngine {
             break;
           }
         }
-        if (kind === 'throw') return throwAction(rng);
-        if (kind === 'punish') return this.pick(shuffle([...p.unsafeHighMid, ...p.unsafeLow], rng))!;
-        if (kind === 'safe') return this.pick(p.safe)!;
-        return this.pick(p.blockable)!;
+        if (kind === 'throw') return throwAction(rng, this.pick(this.cfg.opponents) ?? undefined);
+        if (kind === 'punish') return this.pickTiered(shuffle([...p.unsafeHighMid, ...p.unsafeLow], rng))!;
+        if (kind === 'safe') return this.pickTiered(p.safe)!;
+        return this.pickTiered(p.blockable)!;
       }
     }
   }
 
   startRound(atFrame: number): EngineEvent[] {
+    this.roundIndex++;
     const a = this.chooseAction();
     const d = DIFFICULTY[this.cfg.difficulty];
     const idle = d.idleMin + Math.floor(this.cfg.rng() * (d.idleMax - d.idleMin));

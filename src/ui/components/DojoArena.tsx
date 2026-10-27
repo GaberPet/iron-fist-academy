@@ -1,7 +1,7 @@
 // Canvas front-end for the training simulation (core/sim.ts).
 import { useEffect, useMemo, useRef, useState } from 'react';
 import type { DrillId } from '../../types';
-import { DrillEngine, OUTCOME_TEXT, type BotAction, type Outcome, type RoundResult } from '../../core/sim';
+import { DrillEngine, OUTCOME_TEXT, TIER_NAMES, type BotAction, type Outcome, type RoundResult } from '../../core/sim';
 import { isDownish } from '../../core/notation';
 import type { Difficulty } from '../../core/progress';
 import type { Frame } from '../../core/recognizer';
@@ -11,7 +11,8 @@ import { inputManager } from '../../runtime/inputManager';
 import { NotationView, DirGlyph } from './Notation';
 import { InputLog } from './InputLog';
 import { punishersFor } from '../../core/frames';
-import { drawFighter, drawSpark, drawStage, lerpPose, POSES, type FighterLook, type Pose, type PoseName, type Spark } from './arenaRenderer';
+import { lookFor } from './fighterLooks';
+import { drawFighter, drawNameTag, drawSpark, drawStage, lerpPose, POSES, type FighterLook, type Pose, type PoseName, type Spark } from './arenaRenderer';
 import { firstHitLevel } from '../../core/frames';
 import type { Move } from '../../types';
 
@@ -70,8 +71,8 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   // Fixed when the drill starts: characters that finish loading later must not reset a running session.
   const [opps] = useState(() => opponents.filter((o) => !opponentIds || opponentIds.includes(o.profile.id)));
   const engine = useMemo(
-    () => new DrillEngine({ drill, player: char, opponents: opps, difficulty, throwBreakWindow: settings.throwBreakWindow, rng: Math.random, recognizer: settings.recognizer }),
-    [drill, char, opps, difficulty, settings.throwBreakWindow, settings.recognizer],
+    () => new DrillEngine({ drill, player: char, opponents: opps, difficulty, throwBreakWindow: settings.throwBreakWindow, rng: Math.random, recognizer: settings.recognizer, reps }),
+    [drill, char, opps, difficulty, settings.throwBreakWindow, settings.recognizer, reps],
   );
   const [results, setResults] = useState<RoundResult[]>([]);
   const [last, setLast] = useState<{ result: RoundResult; action: BotAction } | null>(null);
@@ -134,12 +135,12 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
     let raf = 0;
     const draw = () => {
       const ctx = canvas.current?.getContext('2d');
-      if (ctx) drawScene(ctx, engine, lastFrame.current, char.profile.color, anim.current);
+      if (ctx) drawScene(ctx, engine, lastFrame.current, char.profile, anim.current);
       raf = requestAnimationFrame(draw);
     };
     raf = requestAnimationFrame(draw);
     return () => cancelAnimationFrame(raf);
-  }, [engine, char.profile.color]);
+  }, [engine, char.profile]);
 
   const ok = results.filter((r) => r.success).length;
   const byOutcome = results.reduce<Record<string, number>>((m, r) => ((m[r.outcome] = (m[r.outcome] ?? 0) + 1), m), {});
@@ -152,6 +153,7 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
         <canvas ref={canvas} width={W} height={H} aria-label="Training simulation" />
         <div className="sim-banner">
           <span className="badge warn">SIMULATION · not Tekken 8's engine</span>
+          {current && <span className="badge">Stage {engine.stage}/3: {TIER_NAMES[engine.stage].split(':')[0]}</span>}
           <span className="badge">Round {Math.min(results.length + (finished ? 0 : 1), reps)} / {reps} · {ok} ✔</span>
         </div>
       </div>
@@ -216,7 +218,7 @@ const isKick = (id: string | undefined) => !!id && /[34](?![^+,]*[12])/.test(id.
 const strikePose = (level: string, kick: boolean): PoseName =>
   level === 'throw' ? 'grab' : level === 'low' ? 'kickLow' : kick ? 'kickMid' : level === 'high' ? 'punchHigh' : 'punchMid';
 
-function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, playerColor: string, anim: ArenaAnim) {
+function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, me: { id: string; short: string; color: string }, anim: ArenaAnim) {
   const T = tokens();
   const ground = 318;
   const frame = f?.frame ?? 0;
@@ -265,10 +267,14 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
   const pPose = { ...anim.player, hipDrop: anim.player.hipDrop + (pTarget === 'idle' || pTarget === 'guard' ? bob : 0) };
   const bPose = { ...anim.bot, hipDrop: anim.bot.hipDrop + (bTarget === 'idle' ? -bob : 0) };
 
-  const botLook: FighterLook = { skin: '#8d5b3e', hair: '#141014', top: '#3c4250', pants: '#22252c', shoes: '#e8e8ec', gloves: '#2b6fd6', belt: '#9aa0aa' };
-  const playerLook: FighterLook = { skin: '#d9a07c', hair: '#2a1a12', top: playerColor, pants: '#1c1c26', shoes: '#141418', gloves: '#c8282c', belt: '#ffad00' };
+  const botChar = e.cfg.opponents.find((o) => o.profile.id === a?.charId)?.profile;
+  const botLook: FighterLook = lookFor(botChar?.id, '#3c4250', 'bot');
+  const playerLook: FighterLook = lookFor(me.id, me.color, 'you');
   const bot = drawFighter(ctx, botX, ground, -1, bPose, botLook, 1.2);
   const player = drawFighter(ctx, playerX, ground, 1, pPose, playerLook, 1.2);
+  const tagFont = `500 16px ${DISPLAY}`;
+  drawNameTag(ctx, playerX, ground + 36, `YOU · ${me.short.toUpperCase()}`, me.color, tagFont);
+  if (botChar) drawNameTag(ctx, botX, ground + 36, `BOT · ${botChar.short.toUpperCase()}`, botChar.color, tagFont);
 
   // ----- effects -----
   if (tl && frame === tl.impact && anim.lastImpact !== tl.impact) {

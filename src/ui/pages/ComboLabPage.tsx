@@ -116,13 +116,13 @@ function ComboDetail({ combo, mode, focusStep, required }: { combo: ComboDef; mo
         {combo.notes && combo.notes.length > 0 && (
           <div>
             <div className="section-label">Notes from the source</div>
-            <ul className="dim small" style={{ paddingLeft: 18, margin: 0 }}>{combo.notes.map((m) => <li key={m}>{m}</li>)}</ul>
+            <ul className="dim small" style={{ paddingLeft: 18, margin: 0 }}>{combo.notes.map((m, i) => <li key={i}>{m}</li>)}</ul>
           </div>
         )}
         {combo.mistakes.length > 0 && (
           <div>
             <div className="section-label">Common execution mistakes (coach tips)</div>
-            <ul className="dim small" style={{ paddingLeft: 18, margin: 0 }}>{combo.mistakes.map((m) => <li key={m}>{m}</li>)}</ul>
+            <ul className="dim small" style={{ paddingLeft: 18, margin: 0 }}>{combo.mistakes.map((m, i) => <li key={i}>{m}</li>)}</ul>
           </div>
         )}
         {alt && <div className="small">Too hard? Easier alternative: <button className="btn sm" onClick={() => navigate('combos', alt.id)}>{alt.name}</button></div>}

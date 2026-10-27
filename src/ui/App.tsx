@@ -8,6 +8,7 @@ import { MovesPage } from './pages/MovesPage';
 import { ComboLabPage } from './pages/ComboLabPage';
 import { PunishPage } from './pages/PunishPage';
 import { DojoPage } from './pages/DojoPage';
+import { FightPage } from './pages/FightPage';
 import { ControllerPage } from './pages/ControllerPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
@@ -27,6 +28,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'combos', label: 'Combo Lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'dojo', label: 'Bot Dojo', icon: '⚔' },
+  { id: 'fight', label: 'Free Fight', icon: '✊' },
   { id: 'updates', label: "What's new", icon: '✧', sep: true },
   { id: 'companion', label: 'In Tekken 8', icon: '⎚' },
   { id: 'controller', label: 'Controller', icon: '🎮' },
@@ -114,6 +116,7 @@ export function App() {
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;
       case 'punish': return <PunishPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
+      case 'fight': return <FightPage />;
       case 'companion': return <CompanionPage />;
       case 'updates': return <WhatsNewPage />;
       case 'credits': return <CreditsPage />;
