@@ -343,4 +343,13 @@ describe('FightEngine', () => {
     const low = run(c, g, 60, (x) => (x < g + 3 ? { dir: 'd', press: [4] } : { dir: 'n' }));
     expect(low.some((x) => x.type === 'block' && x.by === 0)).toBe(true);
   });
+
+  it('a backdash is not cancelled by holding back after the input', () => {
+    const e = engine();
+    run(e, 0, 120, () => ({}));
+    const d0 = e.distance;
+    // b, n, b and keep holding b
+    run(e, 120, 30, (x) => ({ dir: x < 122 ? 'b' : x < 124 ? 'n' : 'b' }));
+    expect(e.distance).toBeGreaterThan(d0 + 80);
+  });
 });

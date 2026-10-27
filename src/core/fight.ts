@@ -598,8 +598,9 @@ export class FightEngine {
         if (now >= x.endAt) {
           if (x.queued) this.beginSegment(x, x.queued, now);
           else {
+            const fc = /FC|crouch/i.test(x.move?.recovery ?? '');
             this.setState(x, 'neutral', now);
-            x.crouching = /FC|crouch/i.test(x.move?.recovery ?? '');
+            x.crouching = fc;
           }
         }
         break;
@@ -1188,8 +1189,12 @@ export class FightEngine {
       return;
     }
     if (p.state !== 'neutral') {
-      // during a step / dash: holding back or down cancels into guard
-      if (dir === 'b' || dir === 'db' || dir === 'd') this.setState(p, 'neutral', now);
+      // cancels: a step or dash into guard with b / d; a backdash only into a crouch (KBD-style)
+      const t = now - p.stateAt;
+      const cancel =
+        p.state === 'backdash' ? (dir === 'd' || dir === 'db') && t > 10
+        : dir === 'b' || dir === 'db' || dir === 'd';
+      if (cancel) this.setState(p, 'neutral', now);
       else return;
     }
     p.crouching = isDownish(dir);
