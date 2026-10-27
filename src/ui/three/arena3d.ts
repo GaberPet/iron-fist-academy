@@ -59,7 +59,7 @@ export class Arena3D {
   readonly renderer: THREE.WebGLRenderer;
   readonly camera = new THREE.PerspectiveCamera(36, 16 / 9, 0.1, 900);
   readonly stage: Stage;
-  readonly fighters: [Fighter3D, Fighter3D];
+  fighters: [Fighter3D, Fighter3D];
   private particles: Particle[] = [];
   private shake = 0;
   private camAngle: number | null = null;
@@ -83,6 +83,17 @@ export class Arena3D {
       f.snap(STANCE);
       this.stage.scene.add(f.root);
     }
+  }
+
+  /** Swap a fighter's look (e.g. the Dojo bot changes character between rounds). */
+  setLook(i: 0 | 1, look: FighterLook) {
+    const old = this.fighters[i];
+    this.stage.scene.remove(old.root);
+    old.dispose();
+    const f = new Fighter3D(look);
+    f.snap(STANCE);
+    this.fighters[i] = f;
+    this.stage.scene.add(f.root);
   }
 
   resize(w: number, h: number) {

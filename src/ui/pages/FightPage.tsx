@@ -7,6 +7,7 @@ import { useStore } from '../store';
 import { inputManager } from '../../runtime/inputManager';
 import { lookFor } from '../components/fighterLooks';
 import { Arena3D } from '../three/arena3d';
+import { playEvents, playFall, setSfxMuted, sfxMuted, unlockAudio } from '../three/sfx';
 import { NotationView } from '../components/Notation';
 import { InputLog } from '../components/InputLog';
 
@@ -20,6 +21,7 @@ export function FightPage() {
   const [rounds, setRounds] = useState(2);
   const [run, setRun] = useState(0);
   const [running, setRunning] = useState(false);
+  const [mute, setMute] = useState(sfxMuted());
   useEffect(() => {
     ensureLoaded([oppId, meId]).catch(() => undefined);
   }, [oppId, meId, ensureLoaded]);
@@ -60,7 +62,8 @@ export function FightPage() {
           </div>
         </label>
         <span className="right" />
-        <button className="btn primary" disabled={!opp || !me} onClick={() => { setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
+        <button className="btn" aria-pressed={!mute} onClick={() => { unlockAudio(); setSfxMuted(!mute); setMute(!mute); }}>{mute ? 'Sound off' : 'Sound on'}</button>
+        <button className="btn primary" disabled={!opp || !me} onClick={() => { unlockAudio(); setRun(run + 1); setRunning(true); }}>{!opp || !me ? 'Loading…' : running ? 'Rematch' : 'Fight!'}</button>
       </div>
       <div className="notice info">
         <b>Move:</b> f / b walk, <b>f,f</b> dash, <b>b,b</b> backdash, tap <b>u</b> or <b>d</b> to sidestep (dodges linear moves), hold u to jump. <b>Guard:</b> neutral or back blocks highs and mids, down-back blocks lows and ducks highs and throws. <b>Attack:</b> buttons do {me?.profile.name ?? 'your character'}'s real moves; press the next button during a move for strings. <b>Throws</b> break with 1, 2 or 1+2 (generic throws: 1 or 2; a wrong button locks you out). <b>Knocked down:</b> press a button as you land to tech roll, or a direction to get up.<br />
@@ -117,9 +120,13 @@ function FightArena({ me, opp, rounds, difficulty }: { me: CharacterData; opp: C
     const before = engine.f[0].move;
     const ev = engine.update({ ...f, frame: f.frame - skipped.current });
     if (engine.f[0].move && engine.f[0].move !== before) setMyMove(engine.f[0].move.id);
+    for (const x of engine.f) {
+      if (x.state === 'down' && x.stateAt === engine.frame) playFall();
+    }
     if (ev.length) {
       pending.current.push(...ev);
       handleEvents(ev);
+      playEvents(ev);
     }
   });
 

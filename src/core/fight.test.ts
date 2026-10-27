@@ -293,4 +293,27 @@ describe('FightEngine', () => {
     const ev = run(e, at, 40, (x) => (x < at + 2 ? { press: [1, 2] } : x < at + 6 ? { press: [1] } : {}));
     expect(ev.some((x) => x.type === 'break')).toBe(false);
   });
+
+  it('survives random mashing for a whole match on every difficulty (no NaN, valid health, rounds end)', () => {
+    const dirs: Dir[] = ['n', 'f', 'b', 'd', 'db', 'df', 'u', 'ub', 'uf'];
+    for (const diff of ['easy', 'normal', 'hard'] as const) {
+      let seed = 99;
+      const rng = () => ((seed = (seed * 48271) % 2147483647) / 2147483647);
+      const e = new FightEngine({ player: anna, bot: jin, difficulty: diff, rng, roundsToWin: 2 });
+      let dir: Dir = 'n';
+      let btn = 0;
+      for (let f = 0; f < 60 * 60 * 5 && e.phase !== 'over'; f++) {
+        if (f % 7 === 0) dir = dirs[Math.floor(rng() * dirs.length)];
+        btn = f % 5 === 0 && rng() < 0.5 ? 1 << Math.floor(rng() * 4) : 0;
+        e.update({ frame: f, dir, buttons: btn });
+        for (const x of e.f) {
+          expect(Number.isFinite(x.pos.x) && Number.isFinite(x.pos.z) && Number.isFinite(x.y)).toBe(true);
+          expect(x.hp).toBeGreaterThanOrEqual(0);
+          expect(x.hp + x.recov).toBeLessThanOrEqual(MAX_HP);
+          expect(Math.abs(x.pos.x)).toBeLessThanOrEqual(ARENA);
+        }
+      }
+      expect(e.wins[0] + e.wins[1]).toBeGreaterThan(0);
+    }
+  });
 });

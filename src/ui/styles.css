@@ -322,3 +322,5 @@ table.data tr.sel td { background: var(--color-paper-3); box-shadow: inset 0 -1p
 .arena-3d { position: relative; aspect-ratio: 1280 / 620; width: 100%; background: #0a0812; }
 .arena-3d canvas.gl, .arena-3d canvas.hud { position: absolute; inset: 0; width: 100%; height: 100%; display: block; }
 .arena-3d canvas.hud { pointer-events: none; }
+.arena-wrap canvas.gl3d { position: absolute; inset: 0; width: 100%; height: 100%; }
+.arena-wrap canvas.overlay2d { position: relative; }

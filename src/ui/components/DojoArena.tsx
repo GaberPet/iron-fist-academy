@@ -12,6 +12,8 @@ import { NotationView, DirGlyph } from './Notation';
 import { InputLog } from './InputLog';
 import { punishersFor } from '../../core/frames';
 import { lookFor } from './fighterLooks';
+import type { Arena3D } from '../three/arena3d';
+import type { DrillView } from '../three/dojo3d';
 import { drawFighter, drawNameTag, drawSpark, drawStage, lerpPose, POSES, type FighterLook, type Pose, type PoseName, type Spark } from './arenaRenderer';
 import { firstHitLevel } from '../../core/frames';
 import type { Move } from '../../types';
@@ -68,6 +70,7 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   useCaptureInput();
   usePracticeTimer();
   const canvas = useRef<HTMLCanvasElement>(null);
+  const gl = useRef<HTMLCanvasElement>(null);
   // Fixed when the drill starts: characters that finish loading later must not reset a running session.
   const [opps] = useState(() => opponents.filter((o) => !opponentIds || opponentIds.includes(o.profile.id)));
   const engine = useMemo(
@@ -133,13 +136,47 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   // Render loop
   useEffect(() => {
     let raf = 0;
+    // 3D arena underneath, the 2D canvas becomes an overlay (cues, result, frame meter)
+    let three: Arena3D | null = null;
+    let view: DrillView | null = null;
+    let botId: string | undefined;
+    let alive = true;
+    const fit = () => three?.resize(gl.current?.clientWidth ?? W, gl.current?.clientHeight ?? H);
+    Promise.all([import('../three/arena3d'), import('../three/dojo3d')]).then(([A, D]) => {
+      if (!alive || !gl.current) return;
+      try {
+        three = new A.Arena3D(gl.current, [lookFor(char.profile.id, char.profile.color, 'you'), lookFor(undefined, '#3c4250', 'bot')]);
+        view = new D.DrillView();
+        fit();
+        window.addEventListener('resize', fit);
+      } catch {
+        three = null; // no WebGL: keep the 2D arena
+      }
+    }, () => undefined);
     const draw = () => {
       const ctx = canvas.current?.getContext('2d');
-      if (ctx) drawScene(ctx, engine, lastFrame.current, char.profile, anim.current);
+      const f = lastFrame.current;
+      if (three && view) {
+        const id = engine.action?.charId;
+        if (id && id !== botId) {
+          botId = id;
+          const c = engine.cfg.opponents.find((o) => o.profile.id === id)?.profile;
+          three.setLook(1, lookFor(id, c?.color ?? '#3c4250', 'bot'));
+        }
+        const ev = view.update(engine, f);
+        three.events(ev, view.fake);
+        three.render(view.fake, f?.frame ?? 0);
+      }
+      if (ctx) drawScene(ctx, engine, f, char.profile, anim.current, !!three);
       raf = requestAnimationFrame(draw);
     };
     raf = requestAnimationFrame(draw);
-    return () => cancelAnimationFrame(raf);
+    return () => {
+      alive = false;
+      cancelAnimationFrame(raf);
+      window.removeEventListener('resize', fit);
+      (three as Arena3D | null)?.dispose();
+    };
   }, [engine, char.profile]);
 
   const ok = results.filter((r) => r.success).length;
@@ -150,7 +187,8 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   return (
     <div className="stack">
       <div className="arena-wrap">
-        <canvas ref={canvas} width={W} height={H} aria-label="Training simulation" />
+        <canvas ref={gl} className="gl3d" aria-hidden />
+        <canvas ref={canvas} width={W} height={H} className="overlay2d" aria-label="Training simulation" />
         <div className="sim-banner">
           <span className="badge warn">SIMULATION · not Tekken 8's engine</span>
           {current && <span className="badge">Stage {engine.stage}/3: {TIER_NAMES[engine.stage].split(':')[0]}</span>}
@@ -218,7 +256,7 @@ const isKick = (id: string | undefined) => !!id && /[34](?![^+,]*[12])/.test(id.
 const strikePose = (level: string, kick: boolean): PoseName =>
   level === 'throw' ? 'grab' : level === 'low' ? 'kickLow' : kick ? 'kickMid' : level === 'high' ? 'punchHigh' : 'punchMid';
 
-function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, me: { id: string; short: string; color: string }, anim: ArenaAnim) {
+function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, me: { id: string; short: string; color: string }, anim: ArenaAnim, overlay = false) {
   const T = tokens();
   const ground = 318;
   const frame = f?.frame ?? 0;
@@ -237,7 +275,15 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     anim.shake *= 0.8;
     if (anim.shake < 0.5) anim.shake = 0;
   }
-  drawStage(ctx, W, H, ground);
+  if (overlay) {
+    ctx.clearRect(-20, -20, W + 40, H + 40);
+    const band = ctx.createLinearGradient(0, ground + 20, 0, H);
+    band.addColorStop(0, 'rgba(8,7,12,0)');
+    band.addColorStop(0.35, 'rgba(8,7,12,0.7)');
+    band.addColorStop(1, 'rgba(8,7,12,0.9)');
+    ctx.fillStyle = band;
+    ctx.fillRect(0, ground + 20, W, H - ground - 20);
+  } else drawStage(ctx, W, H, ground);
 
   // ----- choose target poses -----
   const playerHit = res && ['got-hit', 'pressed-early', 'thrown', 'pressed-into-safe'].includes(res.outcome);
@@ -270,11 +316,17 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
   const botChar = e.cfg.opponents.find((o) => o.profile.id === a?.charId)?.profile;
   const botLook: FighterLook = lookFor(botChar?.id, '#3c4250', 'bot');
   const playerLook: FighterLook = lookFor(me.id, me.color, 'you');
-  const bot = drawFighter(ctx, botX, ground, -1, bPose, botLook, 1.2);
-  const player = drawFighter(ctx, playerX, ground, 1, pPose, playerLook, 1.2);
   const tagFont = `500 16px ${DISPLAY}`;
-  drawNameTag(ctx, playerX, ground + 36, `YOU · ${me.short.toUpperCase()}`, me.color, tagFont);
-  if (botChar) drawNameTag(ctx, botX, ground + 36, `BOT · ${botChar.short.toUpperCase()}`, botChar.color, tagFont);
+  if (overlay) {
+    drawNameTag(ctx, W * 0.3, ground + 36, `YOU · ${me.short.toUpperCase()}`, me.color, tagFont);
+    if (botChar) drawNameTag(ctx, W * 0.7, ground + 36, `BOT · ${botChar.short.toUpperCase()}`, botChar.color, tagFont);
+  }
+  const bot = overlay ? { head: [botX, ground - 200] as const } : drawFighter(ctx, botX, ground, -1, bPose, botLook, 1.2);
+  const player = overlay ? null : drawFighter(ctx, playerX, ground, 1, pPose, playerLook, 1.2);
+  if (!overlay) {
+    drawNameTag(ctx, playerX, ground + 36, `YOU · ${me.short.toUpperCase()}`, me.color, tagFont);
+    if (botChar) drawNameTag(ctx, botX, ground + 36, `BOT · ${botChar.short.toUpperCase()}`, botChar.color, tagFont);
+  }
 
   // ----- effects -----
   if (tl && frame === tl.impact && anim.lastImpact !== tl.impact) {
@@ -293,7 +345,7 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     if (res.outcome === 'broke-throw') anim.sparks.push({ x: (playerX + botX) / 2, y: ground - 130, age: 0, kind: 'block' });
   }
   for (const sp of anim.sparks) {
-    drawSpark(ctx, sp, { hit: T.accent, block: T.info, grab: T.ink });
+    if (!overlay) drawSpark(ctx, sp, { hit: T.accent, block: T.info, grab: T.ink });
     sp.age++;
   }
   anim.sparks = anim.sparks.filter((sp) => sp.age < 18);
@@ -308,7 +360,7 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.85)';
     ctx.shadowBlur = 8;
-    ctx.fillText(label, botX, 92);
+    ctx.fillText(label, overlay ? W * 0.7 : botX, 92);
     ctx.shadowBlur = 0;
   }
   ctx.restore();
