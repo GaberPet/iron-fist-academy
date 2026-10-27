@@ -12,6 +12,8 @@ import { ControllerPage } from './pages/ControllerPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
+import { WhatsNewPage } from './pages/WhatsNewPage';
+import { isRecent } from '../data';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'home', label: 'Dashboard', icon: '⌂' },
@@ -21,7 +23,8 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'combos', label: 'Combo Lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'dojo', label: 'Bot Dojo', icon: '⚔' },
-  { id: 'companion', label: 'In Tekken 8', icon: '⎚', sep: true },
+  { id: 'updates', label: "What's new", icon: '✧', sep: true },
+  { id: 'companion', label: 'In Tekken 8', icon: '⎚' },
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
   { id: 'settings', label: 'Settings & Data', icon: '⚙' },
@@ -63,7 +66,7 @@ function TopBar() {
               {curated.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
             </optgroup>
             <optgroup label="Frame data, combos & punishers">
-              {others.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+              {others.map((c) => <option key={c.id} value={c.id}>{c.name}{isRecent(c.addedAt) ? ' (new)' : ''}</option>)}
             </optgroup>
           </select>
         </label>
@@ -87,8 +90,9 @@ function TopBar() {
 
 export function App() {
   const route = useRoute();
-  const { char } = useStore();
+  const { char, changelog, data, roster } = useStore();
   const page = route[0];
+  const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
       case 'characters': return <CharactersPage />;
@@ -98,6 +102,7 @@ export function App() {
       case 'punish': return <PunishPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'companion': return <CompanionPage />;
+      case 'updates': return <WhatsNewPage />;
       case 'controller': return <ControllerPage />;
       case 'progress': return <ProgressPage />;
       case 'settings': return <SettingsPage />;
@@ -120,11 +125,15 @@ export function App() {
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
               <span className="nav-ico" aria-hidden>{n.icon}</span>
               <span className="lbl">{n.label}</span>
+              {n.id === 'updates' && recentUpdates > 0 && <span className="badge good right" title="Data updates in the last 7 days">{recentUpdates}</span>}
             </button>
           </div>
         ))}
         <div className="sidebar-foot">
-          Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).
+          <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
+            Data {data.manifest.generatedAt.slice(0, 10)} · {roster.length} characters · auto-updated daily
+          </button>
+          <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
       </nav>

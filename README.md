@@ -160,6 +160,10 @@ Wavu Wiki ──(daily GitHub Action: scripts/import-wavu.mjs)──► public/d
 - **Safety gates:** a character keeps its previous data if its fetch fails or its move count drops by
   more than 30% (vandalism or outage). The run fails, and GitHub emails you, only if most of the
   roster failed or the tests fail.
+- **What changed:** each run records added/removed combos, frame-data changes and new characters in
+  `public/data/changelog.json`. The app shows it on the **What's new** page, marks characters and combos
+  from the last 7 days with a **New** badge (Combo Lab can filter "New this week"), and shows the data
+  date on every page.
 - **How the app gets it:** the website serves the data next to the app, so a redeploy is all it takes.
   The desktop app ships a copy and checks the website for a newer data set on start (falling back to
   its copy offline). Both re-check every few hours while open. *(The website only exists once the
@@ -206,7 +210,7 @@ Local data (Windows): `%APPDATA%\Iron Fist Academy\data\` — `settings.json`, `
 
 ## 9. Tests
 
-`npm test` runs 130 tests: the Wavu parsers (combo, punisher and character pages), every generated character file, notation parsing, controller mapping (DualSense layout, stick/D-pad,
+`npm test` runs 135 tests: change detection for the What's new page, the Wavu parsers (combo, punisher and character pages), every generated character file, notation parsing, controller mapping (DualSense layout, stick/D-pad,
 SOCD, P2 mirroring, remapping), the recognizer (motions, cancels, ws, simultaneous presses, timeouts,
 held buttons), frame-rule simulation (punish windows, throw breaks, whiff punish, safe-move rounds,
 adaptive weights), quizzes (answers match data), progress (mastery streaks, stage gating, weakness

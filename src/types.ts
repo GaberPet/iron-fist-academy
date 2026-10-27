@@ -85,6 +85,8 @@ export interface ComboDef {
   parseOk?: boolean;
   notes?: string[];
   curated?: boolean;
+  /** Date an imported combo first appeared (absent = part of the initial import). */
+  firstSeen?: string;
   /** Starter(s) as written on the source, e.g. ["df+2", "uf+4"]. */
   starters: string[];
   situation: string;
@@ -195,7 +197,7 @@ export interface CharacterFile {
   frames: FrameDataFile;
   combos: {
     source: DataSource | null;
-    items: { id: string; section: string; starters: string[]; starterNotes: string[]; route: string; damage: string; notes: string[]; parseOk: boolean }[];
+    items: { id: string; section: string; starters: string[]; starterNotes: string[]; route: string; damage: string; notes: string[]; parseOk: boolean; firstSeen?: string }[];
     droppedCount: number;
   };
   punishers: { source: DataSource | null; items: (PunisherEntry & { derived?: boolean })[] };
@@ -207,6 +209,8 @@ export interface ManifestEntry {
   file: string;
   hash: string;
   updatedAt: string;
+  /** Date the character first appeared in the data (null = part of the initial import). */
+  addedAt?: string | null;
   counts: { moves: number; combos: number; combosParsed: number; punishers: number };
   revisions: Record<string, number | null>;
 }
@@ -216,4 +220,23 @@ export interface Manifest {
   generatedAt: string;
   source: DataSource;
   characters: ManifestEntry[];
+}
+
+export interface ChangelogCharacter {
+  id: string;
+  name: string;
+  newCharacter?: boolean;
+  otherChanges?: boolean;
+  totals: Record<string, number>;
+  movesAdded?: string[];
+  movesRemoved?: string[];
+  movesChanged?: { id: string; name: string; fields: Record<string, [string, string]> }[];
+  combosAdded?: { id: string; section: string; starters: string[]; route: string }[];
+  combosRemoved?: { section: string; starters: string[]; route: string }[];
+  punishersChanged?: boolean;
+}
+
+export interface Changelog {
+  schema: number;
+  entries: { date: string; at: string; initial?: boolean; summary?: string; characters: ChangelogCharacter[] }[];
 }

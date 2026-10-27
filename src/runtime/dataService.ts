@@ -3,7 +3,7 @@
 // Web: data is served next to the app, so every redeploy is picked up automatically.
 // Desktop (Electron): the app ships a copy, and on start checks the published website for a newer
 // data set with the same schema. Offline, or if the site is unreachable, the bundled copy is used.
-import type { CharacterFile, Manifest, ManifestEntry } from '../types';
+import type { Changelog, CharacterFile, Manifest, ManifestEntry } from '../types';
 
 export const DATA_SCHEMA = 1;
 export const REMOTE_DATA_BASE = 'https://gaberpet.github.io/iron-fist-academy/data/';
@@ -67,4 +67,14 @@ export async function loadCharacterFile(loc: DataLocation, entry: ManifestEntry)
 export async function checkForUpdate(current: DataLocation): Promise<DataLocation | null> {
   const next = await locateData();
   return next.manifest.generatedAt > current.manifest.generatedAt ? next : null;
+}
+
+/** The update history behind the "What's new" page. Missing file = empty history. */
+export async function loadChangelog(loc: DataLocation): Promise<Changelog> {
+  try {
+    const log = await fetchJson<Changelog>(`${loc.base}changelog.json?v=${encodeURIComponent(loc.manifest.generatedAt)}`);
+    return Array.isArray(log.entries) ? log : { schema: DATA_SCHEMA, entries: [] };
+  } catch {
+    return { schema: DATA_SCHEMA, entries: [] };
+  }
 }

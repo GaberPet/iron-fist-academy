@@ -3,6 +3,7 @@ import type { ComboDef } from '../../types';
 import { inputSteps, parseNotation } from '../../core/notation';
 import { shuffle } from '../../core/quiz';
 import { navigate } from '../hooks';
+import { isRecent } from '../../data';
 import { useStore } from '../store';
 import { ComboTrainer, MODE_INFO, type TrainerMode } from '../components/ComboTrainer';
 import { NotationView } from '../components/Notation';
@@ -21,10 +22,11 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
   const tags = [...new Set(char.combos.flatMap((c) => c.tags))];
   const needle = q.trim().toLowerCase();
   const shown = char.combos
-    .filter((c) => filter === 'all' || c.tags.includes(filter))
+    .filter((c) => filter === 'all' || (filter === 'new' ? isRecent(c.firstSeen) : c.tags.includes(filter)))
     .filter((c) => !needle || `${c.name} ${c.starters.join(' ')} ${c.route}`.toLowerCase().includes(needle))
     .sort((a, b) => Number(!!b.curated) - Number(!!a.curated) || (a.difficulty ?? 9) - (b.difficulty ?? 9));
   const imported = char.combos.filter((c) => !c.curated);
+  const newCount = char.combos.filter((c) => isRecent(c.firstSeen)).length;
 
   return (
     <div className="stack">
@@ -39,6 +41,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
           <input type="search" placeholder="Search starter or route…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Search combos" />
           <select value={filter} onChange={(e) => setFilter(e.target.value)} aria-label="Filter combos">
             <option value="all">All combos ({char.combos.length})</option>
+            {newCount > 0 && <option value="new">New this week ({newCount})</option>}
             {tags.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
           <div className="list scroll" style={{ maxHeight: 'calc(100vh - 290px)' }}>
@@ -50,6 +53,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
                   <div className="row" style={{ width: '100%' }}>
                     <b>{c.name}</b>
                     {c.curated && <span className="badge char">Curated</span>}
+                    {isRecent(c.firstSeen) && <span className="badge good" title={`Added to the wiki on or before ${c.firstSeen}`}>New</span>}
                     {c.parseOk === false && <span className="badge" title="The trainer can't read this notation yet">View only</span>}
                     <span className="right">{st?.mastered ? <span className="badge good">Mastered</span> : st ? <span className="badge">{st.successes}/{st.attempts}</span> : null}</span>
                   </div>

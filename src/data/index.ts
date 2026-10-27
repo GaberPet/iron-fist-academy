@@ -103,6 +103,7 @@ export function importedCombos(f: CharacterFile, curated: ComboDef[] = []): Comb
       damage: c.damage || undefined,
       notes: c.notes,
       parseOk: c.parseOk,
+      ...(c.firstSeen ? { firstSeen: c.firstSeen } : {}),
       tags: [slugTag(c.section), 'imported'],
       mistakes: [],
       source: { name: f.combos.source?.name ?? 'Wavu Wiki combos', url: f.combos.source?.url ?? '', revision: f.combos.source?.revision ?? null, verified: 'source' },
@@ -159,3 +160,10 @@ export const STAGE_NAMES: Record<number, string> = {
   4: 'Advanced Character Play',
   5: 'Competitive Preparation',
 };
+
+/** True if an ISO date (YYYY-MM-DD...) is within the last `days` days. */
+export function isRecent(date: string | null | undefined, days = 7, now = new Date()): boolean {
+  if (!date) return false;
+  const t = Date.parse(date.length === 10 ? `${date}T00:00:00Z` : date);
+  return Number.isFinite(t) && now.getTime() - t <= days * 86400000 && t <= now.getTime() + 86400000;
+}

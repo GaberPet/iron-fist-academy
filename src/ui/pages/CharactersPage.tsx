@@ -2,6 +2,7 @@ import { useMemo, useState } from 'react';
 import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 import { navigate } from '../hooks';
+import { isRecent } from '../../data';
 
 export function CharactersPage() {
   const { roster, char, setActiveChar, progress, isCurated, data } = useStore();
@@ -30,6 +31,7 @@ export function CharactersPage() {
             <span className="glyph" style={{ fontSize: 70, top: -10 }}>{c.name.slice(0, 2)}</span>
             <h3 style={{ margin: 0 }}>{c.name}</h3>
             <div className="row" style={{ marginTop: 8, gap: 4 }}>
+              {isRecent(c.addedAt) && <span className="badge good">New</span>}
               {isCurated(c.id) && <span className="badge char">Curriculum</span>}
               <span className="badge">{c.counts.moves} moves</span>
               <span className="badge">{c.counts.combos} combos</span>

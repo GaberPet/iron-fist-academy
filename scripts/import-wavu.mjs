@@ -15,6 +15,7 @@ import { dirname, join } from 'node:path';
 import { fileURLToPath } from 'node:url';
 import { normalizeWavuRows } from '../src/data/wavuNormalize.js';
 import { parseCombosPage, parsePunishersPage, parseCharacterPage, hashId } from '../src/data/wavuParse.js';
+import { diffCharacter, stampFirstSeen } from '../src/data/changes.js';
 import { parseNotation } from '../src/core/notation.ts';
 
 const ROOT = join(dirname(fileURLToPath(import.meta.url)), '..');
@@ -154,8 +155,11 @@ async function main() {
   const roster = await fetchRoster();
   console.log(`Roster: ${roster.length} characters`);
   const now = new Date().toISOString();
+  const today = now.slice(0, 10);
+  const firstRun = oldManifest.characters.length === 0;
   const entries = [];
   const problems = [];
+  const changelog = [];
   let changed = 0;
 
   for (const name of roster) {
@@ -174,12 +178,17 @@ async function main() {
       if (oldMoves && content.frames.moves.length < oldMoves * 0.7) {
         throw new Error(`move count dropped ${oldMoves} -> ${content.frames.moves.length}; keeping previous data`);
       }
+      stampFirstSeen(old, content, today);
       const hash = contentHash(content);
       const isChanged = force || !prev || prev.hash !== hash;
       const updatedAt = isChanged ? now : prev.updatedAt;
       if (isChanged) {
         await writeFile(file, JSON.stringify({ ...content, updatedAt }) + '\n');
         changed++;
+        if (!firstRun) {
+          const diff = diffCharacter(old, content);
+          if (diff) changelog.push(diff);
+        }
       }
       const c = content.combos.items;
       entries.push({
@@ -188,6 +197,7 @@ async function main() {
         file: `characters/${id}.json`,
         hash,
         updatedAt,
+        addedAt: prev ? prev.addedAt ?? null : firstRun ? null : today,
         counts: { moves: content.frames.moves.length, combos: c.length, combosParsed: c.filter((x) => x.parseOk).length, punishers: content.punishers.items.length },
         revisions: { movelist: content.frames.source.revision, combos: content.combos.source?.revision ?? null, punishers: content.punishers.source?.revision ?? null, page: content.profile.source.revision },
       });
@@ -207,6 +217,14 @@ async function main() {
     characters: entries.sort((a, b) => a.name.localeCompare(b.name)),
   };
   if (anyChange || force) await writeFile(join(OUT, 'manifest.json'), JSON.stringify(manifest, null, 1) + '\n');
+  if (changelog.length) {
+    const logFile = join(OUT, 'changelog.json');
+    const log = (await readJson(logFile)) ?? { schema: SCHEMA, entries: [] };
+    log.entries.unshift({ date: today, at: now, characters: changelog });
+    log.entries = log.entries.slice(0, 90); // about three months of daily runs
+    await writeFile(logFile, JSON.stringify(log) + '\n');
+    console.log(`Changelog: ${changelog.length} character(s) recorded.`);
+  }
   console.log(`\n${changed} character file(s) changed, ${problems.length} problem(s).`);
   if (problems.length) console.log(problems.map((p) => `  - ${p}`).join('\n'));
   // Fail the run (so GitHub emails you) only if most of the roster failed.

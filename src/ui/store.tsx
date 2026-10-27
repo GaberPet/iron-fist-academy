@@ -1,6 +1,6 @@
 // Global app state: settings, progress, data overrides (local storage) + roster data (loaded on demand).
 import { createContext, useCallback, useContext, useEffect, useMemo, useRef, useState, type ReactNode } from 'react';
-import type { CharacterData, CharacterFile, ManifestEntry } from '../types';
+import type { Changelog, CharacterData, CharacterFile, ManifestEntry } from '../types';
 import { CURATED, buildCharacter, type MoveOverride, type OverrideMap } from '../data';
 import {
   addPracticeSeconds, emptyProgress, migrateProgress, migrateSettings, recordAttempt, recordComboAttempt,
@@ -8,7 +8,7 @@ import {
 } from '../core/progress';
 import { storage, type StorageInfo } from '../runtime/storage';
 import { inputManager } from '../runtime/inputManager';
-import { checkForUpdate, loadCharacterFile, locateData, type DataLocation } from '../runtime/dataService';
+import { checkForUpdate, loadChangelog, loadCharacterFile, locateData, type DataLocation } from '../runtime/dataService';
 
 const UPDATE_CHECK_MS = 6 * 60 * 60 * 1000;
 
@@ -19,6 +19,7 @@ interface Store {
   /** Every character in the data set (loaded or not). */
   roster: ManifestEntry[];
   data: DataLocation;
+  changelog: Changelog | null;
   /** Characters whose data is loaded. */
   characters: CharacterData[];
   char: CharacterData;
@@ -76,6 +77,7 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
   const [files, setFiles] = useState<Record<string, CharacterFile>>({});
   const [loadingIds, setLoadingIds] = useState<string[]>([]);
   const [dataNotice, setDataNotice] = useState<string | null>(null);
+  const [changelog, setChangelog] = useState<Changelog | null>(null);
   const inflight = useRef(new Map<string, Promise<void>>());
   const lastCheck = useRef(0);
 
@@ -114,6 +116,7 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
         setOverrides(o && typeof o === 'object' ? o : {});
         setStorageInfo(info);
         setData(loc);
+        loadChangelog(loc).then(setChangelog);
         lastCheck.current = Date.now();
         await loadInto(loc, [st.activeChar]);
         setReady(true);
@@ -144,6 +147,7 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
   const applyUpdate = useCallback(async (next: DataLocation) => {
     const prev = data;
     setData(next);
+    loadChangelog(next).then(setChangelog);
     const changed = Object.keys(files).filter((id) => next.manifest.characters.find((c) => c.id === id)?.hash !== prev?.manifest.characters.find((c) => c.id === id)?.hash);
     await loadInto(next, changed);
     const added = next.manifest.characters.length - (prev?.manifest.characters.length ?? 0);
@@ -210,12 +214,12 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
     () =>
       data && char
         ? {
-            settings, progress, overrides, roster: data.manifest.characters, data, characters, char, opponents: characters, loadingIds,
+            settings, progress, overrides, roster: data.manifest.characters, data, changelog, characters, char, opponents: characters, loadingIds,
             storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice,
             updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride,
           }
         : null,
-    [settings, progress, overrides, data, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride],
+    [settings, progress, overrides, data, changelog, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride],
   );
 
   if (loadError) return <>{errorView(loadError)}</>;
