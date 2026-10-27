@@ -20,4 +20,17 @@ Iron Fist Academy is an unofficial fan project. It is not affiliated with, endor
 approved by Bandai Namco Entertainment Inc. TEKKEN and all related names and characters are
 trademarks of Bandai Namco Entertainment Inc. Character and move names are used only to describe
 what the training material refers to. The project contains no game assets (art, audio, models or
-video): character cards use freely licensed motif photos, credited in the app.
+video). The 3D fighters, arena, animations and sound effects in Free Fight and the Bot Dojo are
+original and generated in code; they are generic martial-art figures, not models of the game's
+characters.
+
+## Third-party libraries
+
+- [three.js](https://threejs.org) (MIT): 3D rendering, including its post-processing examples.
+- Fonts: Teko and JetBrains Mono (SIL Open Font License), Metropolis (Unlicense).
+
+## Game mechanics references
+
+The fight simulation follows Tekken 8's publicly documented systems (health, recoverable
+health, Heat, Rage, combo scaling, throw breaks, tech rolls, low parry) as described on
+[Wavu Wiki](https://wavu.wiki) (CC0) and in Bandai Namco's own game guides.

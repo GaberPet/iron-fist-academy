@@ -100,7 +100,8 @@ controller drives the exercise; press **Options** to go back.
 | Move Library | All imported moves (6,500+ across the roster) with startup/block/hit/CH/damage/hit level/properties, derived safety class, source + revision, and **coach notes** (labelled as strategic advice) for key moves. Filter by hit level, safety, role. **Correct any value** locally; corrections are marked "Edited by you". |
 | Combo Lab | 2,500+ Wavu-documented routes for the whole roster (about 92% checkable by the trainer, the rest shown as written), with search and section filters; curated routes add PS icons + notation per step, timing notes, stance-transition notes pulled from the move data, damage exactly as listed, common mistakes, easier alternatives. Modes: **Step-by-step, Full, Slow, Memory, Consistency, Challenge** (situation → pick route → perform), **Demo** playback on a controller diagram, **focus drill** on a single transition, and **Manual mode** for practising inside Tekken 8. |
 | Punishment | Punishment mode: a real unsafe opponent move with its block value → choose your guaranteed punisher → execute it on the controller. Punisher tables from Wavu. |
-| Bot Dojo | Simulation drills: standing punish, crouching punish, mid/low defence, throw breaks, whiff punish, and **adaptive pressure** (mixes punishable, safe/plus, lows and throws; serves more of what you fail). Easy/normal/hard reaction windows. Tekken 8-style frame meter. |
+| Bot Dojo | 3D simulation drills: standing punish, crouching punish, mid/low defence, throw breaks, whiff punish, and **adaptive pressure** (mixes punishable, safe/plus, lows and throws; serves more of what you fail). The bot is drawn as the character whose move it uses and moves from basic to signature to stance / Heat moves over a session. Easy/normal/hard reaction windows. Tekken 8-style frame meter. |
+| Free Fight | A full 3D match (or **Practice** against a configurable dummy) against a bot that plays a real character with its own frame data, punishers and combo routes. Tekken 8's documented systems: 180 HP and recoverable health, Heat (Heat Burst, Engagers, Heat Dash, Heat Smash, chip), Rage at 45 HP and Rage Art, air-combo scaling, walls and wall splats, tornado, throws and breaks, sidesteps against tracking, dash / backdash, tech rolls, low parry. Frame advantage readout after every exchange. Original procedural 3D fighters in each character's fighting style, synthesised sound. |
 | In Tekken 8 | What works where, and Practice-mode recipes to repeat each drill in the real game. |
 | Progress | Attempts/day and success-rate charts, weakest transitions, recurring error types, per-activity stats, curriculum and combo mastery, full history, **export / import / reset** (per character or all). |
 | Settings & Data | Mastery threshold, combo consistency, unlock requirement, review interval, daily goal, session length, throw-break window, recognizer strictness; **refresh frame data from Wavu** with a change summary and revert; storage location. |
@@ -122,10 +123,11 @@ missing crouch, too slow), and those failures drive the recommendations.
 - **The combo trainer validates inputs, not hits.** It can't know whether a hit connects in Tekken 8
   (link windows, hitboxes, character-specific juggles). Use it to learn order and rhythm; confirm
   routes in Practice mode.
-- **The Bot Dojo is a simulation**, not Tekken 8. It uses real startup / block / recovery numbers and
-  Tekken's frame rules, but no animations, range, pushback, hitboxes, tracking or real AI. Some punishes
-  that work there whiff in the game at long range. The throw-break window (default 20f) is an
-  adjustable approximation.
+- **The Bot Dojo and Free Fight are simulations**, not Tekken 8. They use real startup / block / hit /
+  recovery numbers, move properties and Tekken 8's documented rules, but reach (no range data exists),
+  movement speeds, tracking angles, juggle gravity, string timing between hits and recoverable-health
+  amounts are approximations, and there are no real hitboxes. Some punishes that work there whiff in
+  the game at long range. The 3D fighters are original generic figures, not the game's characters.
 - **Recognizer windows are app settings**, not Tekken 8's real input buffers (which can't be measured
   from outside the game).
 - **Controller:** the Gamepad API does not report USB vs Bluetooth, so connection type isn't shown.
