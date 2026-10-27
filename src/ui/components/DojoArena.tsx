@@ -8,6 +8,14 @@ import type { Frame } from '../../core/recognizer';
 import { useCaptureInput, useInputFrames, usePracticeTimer } from '../hooks';
 import { useStore } from '../store';
 import { inputManager } from '../../runtime/inputManager';
+import { NotationView, DirGlyph } from './Notation';
+import { InputLog } from './InputLog';
+import { punishersFor } from '../../core/frames';
+import { drawFighter, drawSpark, drawStage, lerpPose, POSES, type FighterLook, type Pose, type PoseName, type Spark } from './arenaRenderer';
+import { firstHitLevel } from '../../core/frames';
+import type { Move } from '../../types';
+
+const firstHit = (m: Move) => { const l = firstHitLevel(m); return l === 'other' || l === 'unblockable' ? 'mid' : l; };
 
 export const DRILLS: Record<DrillId, { title: string; desc: string; how: string }> = {
   'punish-standing': {
@@ -43,7 +51,7 @@ export const DRILLS: Record<DrillId, { title: string; desc: string; how: string 
 };
 
 const W = 960;
-const H = 420;
+const H = 470;
 
 interface Props {
   drill: DrillId;
@@ -67,10 +75,13 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   );
   const [results, setResults] = useState<RoundResult[]>([]);
   const [last, setLast] = useState<{ result: RoundResult; action: BotAction } | null>(null);
+  const [current, setCurrent] = useState<BotAction | null>(null);
+  const [yourMove, setYourMove] = useState<Move | null>(null);
   const [finished, setFinished] = useState(false);
   const nextRoundAt = useRef<number | null>(null);
   const lastFrame = useRef<Frame | null>(null);
   const resultsRef = useRef<RoundResult[]>([]);
+  const anim = useRef<ArenaAnim>(newAnim());
 
   const poolEmpty = (() => {
     const p = engine.pools;
@@ -95,9 +106,12 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
     if (!engine.action || (engine.phase === 'done' && nextRoundAt.current !== null && f.frame >= nextRoundAt.current)) {
       if (resultsRef.current.length >= reps) return;
       engine.startRound(f.frame);
+      setCurrent(engine.action);
+      setYourMove(null);
       nextRoundAt.current = null;
     }
     for (const e of engine.update(f)) {
+      if (e.type === 'player-move' && e.move) setYourMove(e.move);
       if (e.type === 'result' && e.result && e.action) {
         const r = e.result;
         const next = [...resultsRef.current, r];
@@ -120,7 +134,7 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
     let raf = 0;
     const draw = () => {
       const ctx = canvas.current?.getContext('2d');
-      if (ctx) drawScene(ctx, engine, lastFrame.current, char.profile.color);
+      if (ctx) drawScene(ctx, engine, lastFrame.current, char.profile.color, anim.current);
       raf = requestAnimationFrame(draw);
     };
     raf = requestAnimationFrame(draw);
@@ -141,6 +155,7 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
           <span className="badge">Round {Math.min(results.length + (finished ? 0 : 1), reps)} / {reps} · {ok} ✔</span>
         </div>
       </div>
+      <DojoHud action={current} yourMove={yourMove} drill={drill} />
       {last ? (
         <div className={`result-banner ${last.result.success ? 'ok' : 'no'}`}>
           <div>
@@ -168,61 +183,6 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
 
 // ---------- drawing ----------
 
-function figure(ctx: CanvasRenderingContext2D, x: number, ground: number, color: string, facing: 1 | -1, pose: { crouch?: boolean; guard?: boolean; strike?: 'high' | 'mid' | 'low' | 'throw' | null; lean?: number }) {
-  const h = pose.crouch ? 100 : 150;
-  const hipY = ground - (pose.crouch ? 42 : 70);
-  const shoulderY = ground - h + 34;
-  const lean = (pose.lean ?? 0) * facing;
-  ctx.save();
-  ctx.lineCap = 'round';
-  ctx.strokeStyle = color;
-  ctx.fillStyle = color;
-  ctx.lineWidth = 12;
-  // legs
-  ctx.beginPath();
-  ctx.moveTo(x, hipY);
-  ctx.lineTo(x - 22 * facing, ground);
-  ctx.moveTo(x, hipY);
-  if (pose.strike === 'low') ctx.lineTo(x + 95 * facing, ground - 8);
-  else ctx.lineTo(x + 20 * facing, ground);
-  ctx.stroke();
-  // torso
-  ctx.beginPath();
-  ctx.moveTo(x, hipY);
-  ctx.lineTo(x + lean, shoulderY);
-  ctx.stroke();
-  // head
-  ctx.beginPath();
-  ctx.arc(x + lean, shoulderY - 24, 17, 0, Math.PI * 2);
-  ctx.fill();
-  // arms
-  ctx.lineWidth = 10;
-  ctx.beginPath();
-  const sx = x + lean;
-  if (pose.strike === 'high') {
-    ctx.moveTo(sx, shoulderY + 4);
-    ctx.lineTo(sx + 105 * facing, shoulderY - 18);
-  } else if (pose.strike === 'mid') {
-    ctx.moveTo(sx, shoulderY + 4);
-    ctx.lineTo(sx + 105 * facing, shoulderY + 34);
-  } else if (pose.strike === 'throw') {
-    ctx.moveTo(sx, shoulderY + 4);
-    ctx.lineTo(sx + 80 * facing, shoulderY + 6);
-    ctx.moveTo(sx, shoulderY + 10);
-    ctx.lineTo(sx + 80 * facing, shoulderY + 22);
-  } else if (pose.guard) {
-    ctx.moveTo(sx, shoulderY + 4);
-    ctx.lineTo(sx + 26 * facing, shoulderY - 6);
-    ctx.lineTo(sx + 14 * facing, shoulderY - 30);
-  } else {
-    ctx.moveTo(sx, shoulderY + 4);
-    ctx.lineTo(sx + 24 * facing, shoulderY + 30);
-    ctx.lineTo(sx + 36 * facing, shoulderY + 6);
-  }
-  ctx.stroke();
-  ctx.restore();
-}
-
 /** Theme colours for the canvas, read from the CSS tokens so the arena follows the site theme. */
 let tokenCache: Record<string, string> | null = null;
 function tokens() {
@@ -240,71 +200,109 @@ function tokens() {
 const DISPLAY = '"Teko Variable", "Teko", sans-serif';
 const BODY = '"Metropolis", sans-serif';
 
-function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, playerColor: string) {
-  const T = tokens();
-  const g = ctx.createLinearGradient(0, 0, 0, H);
-  g.addColorStop(0, T.paper2);
-  g.addColorStop(1, T.paper);
-  ctx.fillStyle = g;
-  ctx.fillRect(0, 0, W, H);
-  const ground = 300;
-  ctx.fillStyle = T.rule;
-  ctx.fillRect(0, ground, W, 4);
-  ctx.fillStyle = T.rule;
-  ctx.globalAlpha = 0.35;
-  for (let x = 0; x < W; x += 60) ctx.fillRect(x, ground + 4, 1, 30);
-  ctx.globalAlpha = 1;
+/** Animation state kept between frames (poses blend towards their target). */
+export interface ArenaAnim {
+  player: Pose;
+  bot: Pose;
+  sparks: Spark[];
+  lastResult: RoundResult | null;
+  lastImpact: number;
+  shake: number;
+}
 
+export const newAnim = (): ArenaAnim => ({ player: { ...POSES.idle }, bot: { ...POSES.idle }, sparks: [], lastResult: null, lastImpact: -1, shake: 0 });
+
+const isKick = (id: string | undefined) => !!id && /[34](?![^+,]*[12])/.test(id.split(',')[0]);
+const strikePose = (level: string, kick: boolean): PoseName =>
+  level === 'throw' ? 'grab' : level === 'low' ? 'kickLow' : kick ? 'kickMid' : level === 'high' ? 'punchHigh' : 'punchMid';
+
+function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | null, playerColor: string, anim: ArenaAnim) {
+  const T = tokens();
+  const ground = 318;
   const frame = f?.frame ?? 0;
   const a = e.action;
   const tl = e.timeline;
   const dir = f?.dir ?? 'n';
   const crouch = isDownish(dir);
   const guard = dir === 'b' || dir === 'db';
+  const res = e.result;
+  const botX = a?.kind === 'whiff' ? 700 : 590;
+  const playerX = 360;
 
-  // player
-  const pm = e.playerMove;
-  const pStrike = pm && frame - pm.frame < 20 ? 'mid' : null;
-  figure(ctx, 330, ground, playerColor, 1, { crouch, guard, strike: pStrike });
-  // bot
-  let botStrike: 'high' | 'mid' | 'low' | 'throw' | null = null;
-  let lean = 0;
-  if (a && tl) {
-    const reachedImpact = frame >= tl.impact;
-    const recovering = a.kind === 'whiff' ? frame >= tl.impact && frame < tl.impact + a.recovery : frame >= tl.impact && frame < tl.botActionable;
-    if (frame >= tl.t0 && !reachedImpact) lean = -10;
-    if (reachedImpact && frame < tl.impact + 8 && e.result?.outcome !== 'pressed-early') botStrike = a.level;
-    if (recovering && !botStrike) lean = 12;
+  ctx.save();
+  if (anim.shake > 0) {
+    ctx.translate((Math.random() - 0.5) * anim.shake, (Math.random() - 0.5) * anim.shake);
+    anim.shake *= 0.8;
+    if (anim.shake < 0.5) anim.shake = 0;
   }
-  const botX = a?.kind === 'whiff' ? 720 : 560;
-  figure(ctx, botX, ground, T.ink2, -1, { strike: botStrike, lean });
+  drawStage(ctx, W, H, ground, { paper: T.paper, paper2: T.paper2, rule: T.rule, accent: T.accent });
+
+  // ----- choose target poses -----
+  const playerHit = res && ['got-hit', 'pressed-early', 'thrown', 'pressed-into-safe'].includes(res.outcome);
+  const botHit = res && ['punished', 'whiff-punished'].includes(res.outcome);
+  let pTarget: PoseName = crouch ? (guard ? 'crouchGuard' : 'crouch') : guard ? 'guard' : 'idle';
+  const pm = e.playerMove;
+  if (pm) {
+    const since = frame - pm.frame;
+    const s = pm.move.startupFrame ?? 12;
+    if (since >= 0 && since < s) pTarget = 'windup';
+    else if (since >= s && since < s + 10) pTarget = strikePose(firstHit(pm.move), isKick(pm.move.id));
+  }
+  if (playerHit && tl && frame - tl.impact < 30) pTarget = 'hit';
+
+  let bTarget: PoseName = 'idle';
+  if (a && tl) {
+    if (frame >= tl.t0 && frame < tl.impact) bTarget = 'windup';
+    else if (frame >= tl.impact && frame < tl.impact + 10 && res?.outcome !== 'pressed-early') bTarget = strikePose(a.level, isKick(a.move?.id));
+    else if (frame >= tl.impact && (a.kind === 'whiff' ? frame < tl.impact + a.recovery : frame < tl.botActionable)) bTarget = 'recover';
+  }
+  if (botHit && pm && frame - pm.frame < 40) bTarget = 'hit';
+
+  const k = 0.35;
+  anim.player = lerpPose(anim.player, POSES[pTarget], k);
+  anim.bot = lerpPose(anim.bot, POSES[bTarget], k);
+  const bob = Math.sin(performance.now() / 260) * 2;
+  const pPose = { ...anim.player, hipDrop: anim.player.hipDrop + (pTarget === 'idle' || pTarget === 'guard' ? bob : 0) };
+  const bPose = { ...anim.bot, hipDrop: anim.bot.hipDrop + (bTarget === 'idle' ? -bob : 0) };
+
+  const botLook: FighterLook = { outfit: T.rule, trim: T.muted, skin: T.ink2, dark: T.paper };
+  const playerLook: FighterLook = { outfit: playerColor, trim: T.accent, skin: T.ink2, dark: T.paper };
+  const bot = drawFighter(ctx, botX, ground, -1, bPose, botLook, 1.2);
+  const player = drawFighter(ctx, playerX, ground, 1, pPose, playerLook, 1.2);
+
+  // ----- effects -----
+  if (tl && frame === tl.impact && anim.lastImpact !== tl.impact) {
+    anim.lastImpact = tl.impact;
+    const y = a?.level === 'high' ? ground - 165 : a?.level === 'low' ? ground - 30 : ground - 115;
+    if (a?.kind === 'throw') anim.sparks.push({ x: playerX + 30, y: ground - 130, age: 0, kind: 'grab' });
+    else if (a?.kind !== 'whiff') anim.sparks.push({ x: playerX + 34, y, age: 0, kind: e.blocked ? 'block' : 'hit' });
+  }
+  if (res && res !== anim.lastResult) {
+    anim.lastResult = res;
+    if (playerHit) anim.shake = 10;
+    if (botHit) {
+      anim.sparks.push({ x: bot.head[0] - 10, y: bot.head[1] + 50, age: 0, kind: 'hit' });
+      anim.shake = 12;
+    }
+    if (res.outcome === 'broke-throw') anim.sparks.push({ x: (playerX + botX) / 2, y: ground - 130, age: 0, kind: 'block' });
+  }
+  for (const sp of anim.sparks) {
+    drawSpark(ctx, sp, { hit: T.accent, block: T.info, grab: T.ink });
+    sp.age++;
+  }
+  anim.sparks = anim.sparks.filter((sp) => sp.age < 18);
+  void player;
 
   // cue
   if (a && tl && frame >= tl.reveal && e.phase !== 'done') {
-    const label = a.kind === 'throw' ? (a.throwBreak === 1 ? 'THROW · LEFT ARM' : a.throwBreak === 2 ? 'THROW · RIGHT ARM' : 'THROW · BOTH ARMS') : a.level.toUpperCase();
+    const label = a.kind === 'throw' ? (a.throwBreak === 1 ? 'THROW, LEFT ARM' : a.throwBreak === 2 ? 'THROW, RIGHT ARM' : 'THROW, BOTH ARMS') : a.level.toUpperCase();
     const col = a.level === 'low' ? T.info : a.level === 'mid' ? T.warn : a.level === 'high' ? T.error : T.accent;
     ctx.fillStyle = col;
     ctx.font = `600 34px ${DISPLAY}`;
     ctx.textAlign = 'center';
-    ctx.fillText(label, botX, 110);
-    const y = a.level === 'high' ? ground - 150 : a.level === 'mid' ? ground - 100 : a.level === 'low' ? ground - 20 : ground - 110;
-    ctx.beginPath();
-    ctx.moveTo(botX - 70, y);
-    ctx.lineTo(400, y);
-    ctx.strokeStyle = col;
-    ctx.lineWidth = 3;
-    ctx.setLineDash([8, 6]);
-    ctx.stroke();
-    ctx.setLineDash([]);
+    ctx.fillText(label, botX, 92);
   }
-  if (a) {
-    ctx.fillStyle = tokens().muted;
-    ctx.font = `400 13px ${BODY}`;
-    ctx.textAlign = 'right';
-    ctx.fillText(a.kind === 'throw' ? 'Bot: generic throw' : `${a.label} · i${a.startup} · ${a.blockAdv >= 0 ? '+' : ''}${a.blockAdv} on block${a.kind === 'whiff' ? ` · whiff recovery ${a.recovery}f` : ''}`, W - 16, 72);
-    ctx.textAlign = 'left';
-    ctx.fillText(`You: ${crouch ? 'crouching' : guard ? 'standing guard' : dir === 'n' ? 'neutral (blocks highs/mids)' : 'moving'}`, 16, 72);
-  }
+  ctx.restore();
   // result text
   if (e.result) {
     ctx.textAlign = 'center';
@@ -321,7 +319,7 @@ function drawFrameMeter(ctx: CanvasRenderingContext2D, e: DrillEngine, frame: nu
   const a = e.action;
   const tl = e.timeline;
   const x0 = 16;
-  const y0 = 340;
+  const y0 = 384;
   const cell = 9;
   const n = Math.floor((W - 32) / cell);
   ctx.font = `400 11px ${BODY}`;
@@ -364,4 +362,50 @@ function shade(hex: string) {
   if (!hex.startsWith('#') || hex.length !== 7) return hex;
   const r = parseInt(hex.slice(1, 3), 16), g = parseInt(hex.slice(3, 5), 16), b = parseInt(hex.slice(5, 7), 16);
   return `rgba(${r},${g},${b},0.25)`;
+}
+
+/** Commands shown the Combo Lab way: the bot's move, your answer and the right answer, as icons. */
+function DojoHud({ action, yourMove, drill }: { action: BotAction | null; yourMove: Move | null; drill: DrillId }) {
+  const { char } = useStore();
+  if (!action) return null;
+  const crouching = action.level === 'low';
+  let answer: JSX.Element;
+  if (action.kind === 'throw') {
+    const btn = action.throwBreak === 12 ? '1+2' : String(action.throwBreak);
+    answer = <><NotationView notation={btn} big /><div className="small dim">Break after the grab connects, or crouch to duck it.</div></>;
+  } else if (action.kind === 'block') {
+    answer = <><span className="notation big"><span className="nstep"><DirGlyph d={crouching ? 'db' : 'b'} hold /></span></span><div className="small dim">{crouching ? 'Crouch-block the low (hold down-back).' : 'Stand and block (hold back or neutral).'}</div></>;
+  } else if (action.kind === 'safe') {
+    answer = <><span className="notation big"><span className="nstep"><DirGlyph d="b" hold /></span></span><div className="small dim">{action.blockAdv >= 0 ? `It is +${action.blockAdv} on block: keep blocking, do not press.` : `Only ${action.blockAdv} on block: not punishable. Block or use your fastest move.`}</div></>;
+  } else if (action.kind === 'whiff') {
+    const opts = (char.whiffPunishers.length ? char.whiffPunishers : char.punishers.filter((p) => p.window <= -15).map((p) => p.moveId)).slice(0, 3);
+    answer = <><span className="row">{opts.map((o) => <NotationView key={o} notation={o} />)}</span><div className="small dim">Wait for the whiff to end, then hit it during its {action.recovery}-frame recovery.</div></>;
+  } else {
+    const best = punishersFor(char.punishers, action.blockAdv, crouching ? 'crouching' : 'standing');
+    answer = best.length
+      ? <><span className="row">{best.map((b) => <NotationView key={b.moveId} notation={b.moveId} big />)}</span><div className="small dim">{`${-action.blockAdv}-frame window after ${crouching ? 'crouch-blocking' : 'blocking'}: punishes ${best[0].window}.`}</div></>
+      : <div className="small dim">No listed punisher fits a {-action.blockAdv}-frame window for {char.profile.short}.</div>;
+  }
+  return (
+    <div className="dojo-hud">
+      <div className="card tight stack">
+        <div className="section-label">Bot</div>
+        {action.move ? <NotationView notation={action.move.id} big /> : <span className="dim">Generic throw</span>}
+        <div className="small dim">{action.kind === 'throw' ? action.label : `${action.charName} ${action.move?.name ?? ''} · ${action.level} · i${action.startup} · ${action.blockAdv >= 0 ? '+' : ''}${action.blockAdv} on block`}</div>
+      </div>
+      <div className="card tight stack">
+        <div className="section-label">You</div>
+        {yourMove ? <NotationView notation={yourMove.id} big /> : <span className="dim">Nothing pressed yet</span>}
+        {yourMove && <div className="small dim">{yourMove.name || yourMove.id} · {yourMove.startup || 'no startup data'}</div>}
+      </div>
+      <div className="card tight stack">
+        <div className="section-label">{drill === 'block-mixup' || action.kind === 'block' ? 'Guard' : 'Answer'}</div>
+        {answer}
+      </div>
+      <div className="card tight">
+        <div className="section-label">Inputs</div>
+        <InputLog rows={8} />
+      </div>
+    </div>
+  );
 }
