@@ -14,6 +14,7 @@ Recorded 2026-10-24. Change a decision by opening an issue or PR that updates th
 | 8 | Visibility | Private until the first web release is ready, then public | Avoid a half-finished first impression. GitHub Pages needs a public repo on a free plan. |
 | 9 | Infrastructure | CI (typecheck, tests, build), GitHub Pages deploy, Windows release builds on version tags, contribution kit | Keeps data and code trustworthy as outside contributions arrive. |
 | 10 | First focus | Web version + PWA polish | Matches decision 4. |
+| 11 | Data updates | Daily GitHub Action re-imports Wavu, gates on tests, commits only real changes, redeploys | Data stays current after patches with no manual work, and users load data from our site instead of hitting the wiki. |
 
 ## Standing principles
 
@@ -27,7 +28,7 @@ Recorded 2026-10-24. Change a decision by opening an issue or PR that updates th
 ## Roadmap
 
 1. **Web/PWA:** first-class browser build, installable, offline-capable, responsive; deployed to Pages.
-2. **Full roster data:** import frame data for every character; move library, quizzes and bot drills work for all.
+2. ~~**Full roster data:**~~ done: all characters imported (frame data, combos, punishers, overviews), refreshed daily by GitHub Actions.
 3. **Beginner experience:** onboarding, first-run tutorial, clearer early lessons.
 4. **Curated content:** contributor-friendly combo and lesson authoring; more characters curated.
 5. **Real-hardware validation:** DualSense testing on Windows (USB/Bluetooth) in Chrome, Edge and the desktop build.

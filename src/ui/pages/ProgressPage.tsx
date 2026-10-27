@@ -11,7 +11,8 @@ import { storage } from '../../runtime/storage';
 const errLabel = (t: string) => ERROR_TEXT[t as InputErrorType] ?? OUTCOME_TEXT[t as Outcome] ?? t;
 
 export function ProgressPage() {
-  const { char, characters, progress, reset, replaceProgress } = useStore();
+  const { char, roster, progress, reset, replaceProgress } = useStore();
+  const withProgress = roster.filter((r) => r.id === char.profile.id || progress.attempts.some((a) => a.char === r.id));
   const [days, setDays] = useState(14);
   const [msg, setMsg] = useState<string | null>(null);
   const [confirm, setConfirm] = useState<string | null>(null);
@@ -145,10 +146,10 @@ export function ProgressPage() {
           <button className="btn" onClick={exportAll}>Export all progress (JSON)</button>
           <button className="btn" onClick={importAll}>Import progress…</button>
           <span className="right" />
-          {characters.map((c) => (
-            confirm === c.profile.id ? (
-              <span key={c.profile.id} className="row"><span className="small">Reset {c.profile.name}?</span><button className="btn sm danger" onClick={() => { reset(c.profile.id); setConfirm(null); setMsg(`${c.profile.name}'s progress was reset.`); }}>Yes, reset</button><button className="btn sm" onClick={() => setConfirm(null)}>Cancel</button></span>
-            ) : <button key={c.profile.id} className="btn danger" onClick={() => setConfirm(c.profile.id)}>Reset {c.profile.short}</button>
+          {withProgress.map((c) => (
+            confirm === c.id ? (
+              <span key={c.id} className="row"><span className="small">Reset {c.name}?</span><button className="btn sm danger" onClick={() => { reset(c.id); setConfirm(null); setMsg(`${c.name}'s progress was reset.`); }}>Yes, reset</button><button className="btn sm" onClick={() => setConfirm(null)}>Cancel</button></span>
+            ) : <button key={c.id} className="btn danger" onClick={() => setConfirm(c.id)}>Reset {c.name}</button>
           ))}
           {confirm === 'all' ? (
             <span className="row"><span className="small">Erase everything?</span><button className="btn sm danger" onClick={() => { reset('all'); setConfirm(null); setMsg('All progress was reset.'); }}>Yes, erase all</button><button className="btn sm" onClick={() => setConfirm(null)}>Cancel</button></span>

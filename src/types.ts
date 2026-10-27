@@ -77,7 +77,14 @@ export interface KeyMoveNote {
 export interface ComboDef {
   id: string;
   name: string;
-  difficulty: 1 | 2 | 3 | 4 | 5;
+  /** Coach estimate for curated combos; absent for imported ones (not rated). */
+  difficulty?: 1 | 2 | 3 | 4 | 5;
+  /** Section of the source page (Bread n' butter, Staples, Wall...). */
+  section?: string;
+  /** False if the trainer's notation parser can't read the route (shown as written). */
+  parseOk?: boolean;
+  notes?: string[];
+  curated?: boolean;
   /** Starter(s) as written on the source, e.g. ["df+2", "uf+4"]. */
   starters: string[];
   situation: string;
@@ -88,7 +95,7 @@ export interface ComboDef {
   mistakes: string[];
   easierAlternative?: string; // combo id
   stepTips?: Record<string, string>; // notation token -> timing tip
-  source: { name: string; url: string; revision?: number; verified: 'source' | 'unverified' };
+  source: { name: string; url: string; revision?: number | null; verified: 'source' | 'unverified' };
 }
 
 export interface PunisherEntry {
@@ -160,4 +167,53 @@ export interface CharacterCurated {
 export interface CharacterData extends CharacterCurated {
   frames: FrameDataFile;
   moveIndex: Map<string, Move>;
+}
+
+/** One generated file per character in public/data/characters/<id>.json (see scripts/import-wavu.mjs). */
+export interface CharacterFile {
+  schema: number;
+  id: string;
+  name: string;
+  wavuName: string;
+  updatedAt: string;
+  profile: {
+    color: string;
+    overview?: string;
+    strengths?: string[];
+    weaknesses?: string[];
+    stances?: string[];
+    heat?: string[];
+    heatEngagers?: string[];
+    heatSmash?: string[];
+    launch?: string[];
+    chLaunch?: string[];
+    splat?: string[];
+    parry?: string[];
+    midCheck?: string[];
+    source: DataSource;
+  };
+  frames: FrameDataFile;
+  combos: {
+    source: DataSource | null;
+    items: { id: string; section: string; starters: string[]; starterNotes: string[]; route: string; damage: string; notes: string[]; parseOk: boolean }[];
+    droppedCount: number;
+  };
+  punishers: { source: DataSource | null; items: (PunisherEntry & { derived?: boolean })[] };
+}
+
+export interface ManifestEntry {
+  id: string;
+  name: string;
+  file: string;
+  hash: string;
+  updatedAt: string;
+  counts: { moves: number; combos: number; combosParsed: number; punishers: number };
+  revisions: Record<string, number | null>;
+}
+
+export interface Manifest {
+  schema: number;
+  generatedAt: string;
+  source: DataSource;
+  characters: ManifestEntry[];
 }

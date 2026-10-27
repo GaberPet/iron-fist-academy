@@ -59,7 +59,8 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
   useCaptureInput();
   usePracticeTimer();
   const canvas = useRef<HTMLCanvasElement>(null);
-  const opps = useMemo(() => opponents.filter((o) => !opponentIds || opponentIds.includes(o.profile.id)), [opponents, opponentIds]);
+  // Fixed when the drill starts: characters that finish loading later must not reset a running session.
+  const [opps] = useState(() => opponents.filter((o) => !opponentIds || opponentIds.includes(o.profile.id)));
   const engine = useMemo(
     () => new DrillEngine({ drill, player: char, opponents: opps, difficulty, throwBreakWindow: settings.throwBreakWindow, rng: Math.random, recognizer: settings.recognizer }),
     [drill, char, opps, difficulty, settings.throwBreakWindow, settings.recognizer],

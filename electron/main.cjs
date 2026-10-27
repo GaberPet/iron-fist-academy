@@ -1,9 +1,23 @@
 // Electron main process: window, local JSON persistence, import/export dialogs.
-const { app, BrowserWindow, ipcMain, dialog, shell, Menu } = require('electron');
+const { app, BrowserWindow, ipcMain, dialog, shell, Menu, protocol, net } = require('electron');
+const { pathToFileURL } = require('node:url');
 const path = require('node:path');
 const fs = require('node:fs');
 
 const isDev = !!process.env.IFA_DEV_URL;
+const DIST = path.join(__dirname, '..', 'dist');
+
+// Serve the built app from app://ifa/ so fetch() works for the data files (it doesn't over file://).
+protocol.registerSchemesAsPrivileged([{ scheme: 'app', privileges: { standard: true, secure: true, supportFetchAPI: true, corsEnabled: true } }]);
+
+function registerAppProtocol() {
+  protocol.handle('app', (req) => {
+    const { pathname } = new URL(req.url);
+    const file = path.normalize(path.join(DIST, decodeURIComponent(pathname)));
+    if (!file.startsWith(DIST + path.sep) || !fs.existsSync(file)) return new Response('Not found', { status: 404 });
+    return net.fetch(pathToFileURL(file).toString());
+  });
+}
 const dataDir = () => path.join(app.getPath('userData'), 'data');
 const KEY_RE = /^[a-z0-9-]{1,64}$/;
 
@@ -47,10 +61,10 @@ function createWindow() {
   });
   win.webContents.on('will-navigate', (e, url) => {
     if (isDev && url.startsWith(process.env.IFA_DEV_URL)) return;
-    if (!url.startsWith('file://')) e.preventDefault();
+    if (!url.startsWith('app://ifa/')) e.preventDefault();
   });
   if (isDev) win.loadURL(process.env.IFA_DEV_URL);
-  else win.loadFile(path.join(__dirname, '..', 'dist', 'index.html'));
+  else win.loadURL('app://ifa/index.html');
   if (process.env.IFA_SMOKE) runSmokeTest(win);
 }
 
@@ -65,14 +79,15 @@ function runSmokeTest(win) {
         await window.ifaApi.save(key, { ok: true, at: Date.now() });
         const back = await window.ifaApi.load(key);
         const info = await window.ifaApi.info();
-        return { bridge: !!window.ifaApi, roundTrip: back && back.ok === true, title: document.title,
+        const manifest = await fetch('./data/manifest.json').then((r) => r.json());
+        return { bridge: !!window.ifaApi, roundTrip: back && back.ok === true, title: document.title, characters: manifest.characters.length,
           h1: document.querySelector('h1') && document.querySelector('h1').textContent, gamepadApi: typeof navigator.getGamepads, dataDir: info.dataDir };
       })()`);
       console.log('SMOKE_RESULT ' + JSON.stringify(result));
       if (process.env.IFA_SMOKE_OUT) fs.writeFileSync(process.env.IFA_SMOKE_OUT, JSON.stringify(result));
       fs.rmSync(fileFor('smoke-test'), { force: true });
       fs.rmSync(fileFor('smoke-test') + '.bak', { force: true });
-      app.exit(result.roundTrip && result.h1 ? 0 : 1);
+      app.exit(result.roundTrip && result.h1 && result.characters > 0 ? 0 : 1);
     } catch (e) {
       console.log('SMOKE_RESULT ' + JSON.stringify({ error: String(e) }));
       if (process.env.IFA_SMOKE_OUT) fs.writeFileSync(process.env.IFA_SMOKE_OUT, JSON.stringify({ error: String(e) }));
@@ -119,6 +134,7 @@ ipcMain.handle('shell:openData', () => shell.openPath(dataDir()));
 
 app.whenReady().then(() => {
   Menu.setApplicationMenu(null);
+  registerAppProtocol();
   createWindow();
   app.on('activate', () => {
     if (BrowserWindow.getAllWindows().length === 0) createWindow();

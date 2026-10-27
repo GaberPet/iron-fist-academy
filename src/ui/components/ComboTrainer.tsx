@@ -89,8 +89,16 @@ function demoScript(steps: InputStep[]): { pad: PadButton[]; stepIndex: number }
 
 export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, lessonId, onMastered }: Props) {
   const { settings, recordCombo, progress } = useStore();
-  const [starterIdx, setStarterIdx] = useState(0);
-  const [includeStarter, setIncludeStarter] = useState(combo.starters.length > 0);
+  const startersParse = useMemo(() => combo.starters.map((s) => {
+    try {
+      return parseNotation(s).some((x) => x.kind === 'press');
+    } catch {
+      return false;
+    }
+  }), [combo.starters]);
+  const firstParseable = startersParse.indexOf(true);
+  const [starterIdx, setStarterIdx] = useState(Math.max(0, firstParseable));
+  const [includeStarter, setIncludeStarter] = useState(firstParseable >= 0);
   const [manual, setManual] = useState(false);
   const [manualIdx, setManualIdx] = useState(0);
   const [attempt, setAttempt] = useState<Attempt>({ status: 'ready', index: 0 });
@@ -103,7 +111,7 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
   useCaptureInput(!manual);
   usePracticeTimer();
 
-  const starter = combo.starters[starterIdx];
+  const starter = startersParse[starterIdx] ? combo.starters[starterIdx] : undefined;
   const fullNotation = includeStarter && starter ? `${starter} ${combo.route}` : combo.route;
   const allSteps = useMemo(() => parseNotation(fullNotation), [fullNotation]);
   const range = useMemo(() => {
@@ -210,14 +218,6 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
   const moveFor = (i: number): Move | undefined => (steps[i].kind === 'press' ? lookupMove(char, stringNotation(allSteps, i + range[0])) : undefined);
   const visibleIdx = mode === 'step' ? steps.map((_, i) => i).filter((i) => i === curIndex || (i === curIndex + 1 && steps[i])) : steps.map((_, i) => i);
   const nInputs = inputSteps(steps).length;
-  const startersParse = combo.starters.map((s) => {
-    try {
-      parseNotation(s);
-      return true;
-    } catch {
-      return false;
-    }
-  });
 
   return (
     <div className="stack">
@@ -225,7 +225,7 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
         {combo.starters.length > 0 && (
           <>
             <label className="row small dim">
-              <input type="checkbox" checked={includeStarter} onChange={(e) => setIncludeStarter(e.target.checked)} /> Include starter
+              <input type="checkbox" checked={includeStarter} disabled={firstParseable < 0} onChange={(e) => setIncludeStarter(e.target.checked)} /> Include starter
             </label>
             <select value={starterIdx} onChange={(e) => setStarterIdx(Number(e.target.value))} disabled={!includeStarter} aria-label="Starter">
               {combo.starters.map((s, i) => (

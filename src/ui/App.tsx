@@ -48,25 +48,40 @@ class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string },
 }
 
 function TopBar() {
-  const { characters, char, setActiveChar, saveError } = useStore();
+  const { roster, char, setActiveChar, saveError, isCurated, loadingIds, dataNotice, dismissDataNotice } = useStore();
   const { pads, active } = useControllerStatus();
   const pad = pads.find((p) => p.index === active);
+  const curated = roster.filter((r) => isCurated(r.id));
+  const others = roster.filter((r) => !isCurated(r.id));
   return (
-    <div className="topbar">
-      <div className="seg" role="tablist" aria-label="Character">
-        {characters.map((c) => (
-          <button key={c.profile.id} className={c.profile.id === char.profile.id ? 'on' : ''} onClick={() => setActiveChar(c.profile.id)} style={c.profile.id === char.profile.id ? { color: c.profile.color } : undefined}>
-            {c.profile.name}
-          </button>
-        ))}
+    <>
+      <div className="topbar">
+        <label className="row" style={{ gap: 8 }}>
+          <span className="dot" style={{ background: char.profile.color }} />
+          <select value={char.profile.id} onChange={(e) => setActiveChar(e.target.value)} aria-label="Character" style={{ fontWeight: 700, minWidth: 200 }}>
+            <optgroup label="With full curriculum">
+              {curated.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </optgroup>
+            <optgroup label="Frame data, combos & punishers">
+              {others.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </optgroup>
+          </select>
+        </label>
+        {loadingIds.length > 0 && <span className="small muted">Loading {loadingIds.length} character{loadingIds.length > 1 ? 's' : ''}…</span>}
+        <span className="spacer" />
+        {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
+        <button className="pill" onClick={() => navigate('controller')} style={{ cursor: 'pointer', color: 'var(--text)' }}>
+          <span className={`dot ${pad ? 'on' : 'off'}`} />
+          {pad ? pad.label : 'No controller'}
+        </button>
       </div>
-      <span className="spacer" />
-      {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
-      <button className="pill" onClick={() => navigate('controller')} style={{ cursor: 'pointer', color: 'var(--text)' }}>
-        <span className={`dot ${pad ? 'on' : 'off'}`} />
-        {pad ? pad.label : 'No controller'}
-      </button>
-    </div>
+      {dataNotice && (
+        <div className="notice info row" style={{ margin: '12px 24px 0', borderRadius: 10 }}>
+          <span>{dataNotice}</span>
+          <button className="btn sm ghost right" onClick={dismissDataNotice}>Dismiss</button>
+        </div>
+      )}
+    </>
   );
 }
 
