@@ -1,7 +1,8 @@
 import { computeStats, emptyProgress, lessonUnlocked, migrateSettings, recommend, recordAttempt, recordComboAttempt, resetProgress, setLessonPart, stageUnlock, DEFAULT_SETTINGS, passes, type AttemptRecord } from './progress';
-import { BUNDLED, buildCharacter, lessonsFor } from '../data';
+import { lessonsFor } from '../data';
+import { loadCharacter } from '../data/testData';
 
-const anna = buildCharacter(BUNDLED[0].frames, BUNDLED[0].curated);
+const anna = loadCharacter('anna');
 const lessons = lessonsFor(anna);
 const at = (d: string) => new Date(d).toISOString();
 

@@ -12,6 +12,8 @@ import { ControllerPage } from './pages/ControllerPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
+import { WhatsNewPage } from './pages/WhatsNewPage';
+import { isRecent } from '../data';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'home', label: 'Dashboard', icon: '⌂' },
@@ -21,7 +23,8 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'combos', label: 'Combo Lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'dojo', label: 'Bot Dojo', icon: '⚔' },
-  { id: 'companion', label: 'In Tekken 8', icon: '⎚', sep: true },
+  { id: 'updates', label: "What's new", icon: '✧', sep: true },
+  { id: 'companion', label: 'In Tekken 8', icon: '⎚' },
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
   { id: 'settings', label: 'Settings & Data', icon: '⚙' },
@@ -48,32 +51,48 @@ class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string },
 }
 
 function TopBar() {
-  const { characters, char, setActiveChar, saveError } = useStore();
+  const { roster, char, setActiveChar, saveError, isCurated, loadingIds, dataNotice, dismissDataNotice } = useStore();
   const { pads, active } = useControllerStatus();
   const pad = pads.find((p) => p.index === active);
+  const curated = roster.filter((r) => isCurated(r.id));
+  const others = roster.filter((r) => !isCurated(r.id));
   return (
-    <div className="topbar">
-      <div className="seg" role="tablist" aria-label="Character">
-        {characters.map((c) => (
-          <button key={c.profile.id} className={c.profile.id === char.profile.id ? 'on' : ''} onClick={() => setActiveChar(c.profile.id)} style={c.profile.id === char.profile.id ? { color: c.profile.color } : undefined}>
-            {c.profile.name}
-          </button>
-        ))}
+    <>
+      <div className="topbar">
+        <label className="row" style={{ gap: 8 }}>
+          <span className="dot" style={{ background: char.profile.color }} />
+          <select value={char.profile.id} onChange={(e) => setActiveChar(e.target.value)} aria-label="Character" style={{ fontWeight: 700, minWidth: 200 }}>
+            <optgroup label="With full curriculum">
+              {curated.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </optgroup>
+            <optgroup label="Frame data, combos & punishers">
+              {others.map((c) => <option key={c.id} value={c.id}>{c.name}{isRecent(c.addedAt) ? ' (new)' : ''}</option>)}
+            </optgroup>
+          </select>
+        </label>
+        {loadingIds.length > 0 && <span className="small muted">Loading {loadingIds.length} character{loadingIds.length > 1 ? 's' : ''}…</span>}
+        <span className="spacer" />
+        {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
+        <button className="pill" onClick={() => navigate('controller')} style={{ cursor: 'pointer', color: 'var(--text)' }}>
+          <span className={`dot ${pad ? 'on' : 'off'}`} />
+          {pad ? pad.label : 'No controller'}
+        </button>
       </div>
-      <span className="spacer" />
-      {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
-      <button className="pill" onClick={() => navigate('controller')} style={{ cursor: 'pointer', color: 'var(--text)' }}>
-        <span className={`dot ${pad ? 'on' : 'off'}`} />
-        {pad ? pad.label : 'No controller'}
-      </button>
-    </div>
+      {dataNotice && (
+        <div className="notice info row" style={{ margin: '12px 24px 0', borderRadius: 10 }}>
+          <span>{dataNotice}</span>
+          <button className="btn sm ghost right" onClick={dismissDataNotice}>Dismiss</button>
+        </div>
+      )}
+    </>
   );
 }
 
 export function App() {
   const route = useRoute();
-  const { char } = useStore();
+  const { char, changelog, data, roster } = useStore();
   const page = route[0];
+  const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
       case 'characters': return <CharactersPage />;
@@ -83,6 +102,7 @@ export function App() {
       case 'punish': return <PunishPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'companion': return <CompanionPage />;
+      case 'updates': return <WhatsNewPage />;
       case 'controller': return <ControllerPage />;
       case 'progress': return <ProgressPage />;
       case 'settings': return <SettingsPage />;
@@ -105,11 +125,15 @@ export function App() {
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
               <span className="nav-ico" aria-hidden>{n.icon}</span>
               <span className="lbl">{n.label}</span>
+              {n.id === 'updates' && recentUpdates > 0 && <span className="badge good right" title="Data updates in the last 7 days">{recentUpdates}</span>}
             </button>
           </div>
         ))}
         <div className="sidebar-foot">
-          Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).
+          <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
+            Data {data.manifest.generatedAt.slice(0, 10)} · {roster.length} characters · auto-updated daily
+          </button>
+          <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
       </nav>

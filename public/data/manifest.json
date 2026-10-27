@@ -1,0 +1,851 @@
+{
+ "schema": 1,
+ "generatedAt": "2026-10-27T11:43:46.748Z",
+ "source": {
+  "name": "Wavu Wiki",
+  "url": "https://wavu.wiki",
+  "license": "CC0 1.0 (public domain)"
+ },
+ "characters": [
+  {
+   "id": "alisa",
+   "name": "Alisa",
+   "file": "characters/alisa.json",
+   "hash": "ioej5c",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 188,
+    "combos": 49,
+    "combosParsed": 48,
+    "punishers": 20
+   },
+   "revisions": {
+    "movelist": 62775,
+    "combos": 60854,
+    "punishers": 59229,
+    "page": 62074
+   },
+   "addedAt": null
+  },
+  {
+   "id": "anna",
+   "name": "Anna",
+   "file": "characters/anna.json",
+   "hash": "1fb8jan",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 165,
+    "combos": 17,
+    "combosParsed": 16,
+    "punishers": 13
+   },
+   "revisions": {
+    "movelist": 61984,
+    "combos": 61102,
+    "punishers": 60547,
+    "page": 62075
+   },
+   "addedAt": null
+  },
+  {
+   "id": "armor-king",
+   "name": "Armor King",
+   "file": "characters/armor-king.json",
+   "hash": "1s5u5iw",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 173,
+    "combos": 62,
+    "combosParsed": 62,
+    "punishers": 23
+   },
+   "revisions": {
+    "movelist": 63326,
+    "combos": 60491,
+    "punishers": 60993,
+    "page": 62076
+   },
+   "addedAt": null
+  },
+  {
+   "id": "asuka",
+   "name": "Asuka",
+   "file": "characters/asuka.json",
+   "hash": "j26gs8",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 146,
+    "combos": 3,
+    "combosParsed": 3,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 62778,
+    "combos": 59716,
+    "punishers": 59231,
+    "page": 62078
+   },
+   "addedAt": null
+  },
+  {
+   "id": "azucena",
+   "name": "Azucena",
+   "file": "characters/azucena.json",
+   "hash": "uzxplh",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 149,
+    "combos": 118,
+    "combosParsed": 113,
+    "punishers": 16
+   },
+   "revisions": {
+    "movelist": 62002,
+    "combos": 61095,
+    "punishers": 47087,
+    "page": 62079
+   },
+   "addedAt": null
+  },
+  {
+   "id": "bob",
+   "name": "Bob",
+   "file": "characters/bob.json",
+   "hash": "1rdxj7u",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 161,
+    "combos": 23,
+    "combosParsed": 22,
+    "punishers": 11
+   },
+   "revisions": {
+    "movelist": 62023,
+    "combos": 61877,
+    "punishers": 61867,
+    "page": 62080
+   },
+   "addedAt": null
+  },
+  {
+   "id": "bryan",
+   "name": "Bryan",
+   "file": "characters/bryan.json",
+   "hash": "1qsonmv",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 168,
+    "combos": 53,
+    "combosParsed": 51,
+    "punishers": 18
+   },
+   "revisions": {
+    "movelist": 62021,
+    "combos": 59619,
+    "punishers": 58423,
+    "page": 62081
+   },
+   "addedAt": null
+  },
+  {
+   "id": "claudio",
+   "name": "Claudio",
+   "file": "characters/claudio.json",
+   "hash": "1rlcxzo",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 99,
+    "combos": 22,
+    "combosParsed": 15,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 63089,
+    "combos": 60974,
+    "punishers": 61366,
+    "page": 62082
+   },
+   "addedAt": null
+  },
+  {
+   "id": "clive",
+   "name": "Clive",
+   "file": "characters/clive.json",
+   "hash": "ctg2j0",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 122,
+    "combos": 28,
+    "combosParsed": 28,
+    "punishers": 14
+   },
+   "revisions": {
+    "movelist": 61570,
+    "combos": 61417,
+    "punishers": 59233,
+    "page": 62083
+   },
+   "addedAt": null
+  },
+  {
+   "id": "devil-jin",
+   "name": "Devil Jin",
+   "file": "characters/devil-jin.json",
+   "hash": "tb60xg",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 141,
+    "combos": 84,
+    "combosParsed": 56,
+    "punishers": 17
+   },
+   "revisions": {
+    "movelist": 63066,
+    "combos": 60625,
+    "punishers": 61042,
+    "page": 62084
+   },
+   "addedAt": null
+  },
+  {
+   "id": "dragunov",
+   "name": "Dragunov",
+   "file": "characters/dragunov.json",
+   "hash": "1hjif92",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 141,
+    "combos": 56,
+    "combosParsed": 56,
+    "punishers": 20
+   },
+   "revisions": {
+    "movelist": 61304,
+    "combos": 59565,
+    "punishers": 59234,
+    "page": 62085
+   },
+   "addedAt": null
+  },
+  {
+   "id": "eddy",
+   "name": "Eddy",
+   "file": "characters/eddy.json",
+   "hash": "ddiafu",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 152,
+    "combos": 43,
+    "combosParsed": 39,
+    "punishers": 12
+   },
+   "revisions": {
+    "movelist": 61870,
+    "combos": 59573,
+    "punishers": 60971,
+    "page": 63354
+   },
+   "addedAt": null
+  },
+  {
+   "id": "fahkumram",
+   "name": "Fahkumram",
+   "file": "characters/fahkumram.json",
+   "hash": "mtob0f",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 144,
+    "combos": 15,
+    "combosParsed": 15,
+    "punishers": 17
+   },
+   "revisions": {
+    "movelist": 63097,
+    "combos": 60558,
+    "punishers": 59236,
+    "page": 62087
+   },
+   "addedAt": null
+  },
+  {
+   "id": "feng",
+   "name": "Feng",
+   "file": "characters/feng.json",
+   "hash": "zwi10",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 149,
+    "combos": 42,
+    "combosParsed": 38,
+    "punishers": 12
+   },
+   "revisions": {
+    "movelist": 62032,
+    "combos": 60621,
+    "punishers": 60205,
+    "page": 62089
+   },
+   "addedAt": null
+  },
+  {
+   "id": "heihachi",
+   "name": "Heihachi",
+   "file": "characters/heihachi.json",
+   "hash": "157zmzo",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 145,
+    "combos": 90,
+    "combosParsed": 86,
+    "punishers": 21
+   },
+   "revisions": {
+    "movelist": 62119,
+    "combos": 59753,
+    "punishers": 58167,
+    "page": 62090
+   },
+   "addedAt": null
+  },
+  {
+   "id": "hwoarang",
+   "name": "Hwoarang",
+   "file": "characters/hwoarang.json",
+   "hash": "1amalfx",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 210,
+    "combos": 60,
+    "combosParsed": 33,
+    "punishers": 17
+   },
+   "revisions": {
+    "movelist": 61929,
+    "combos": 59624,
+    "punishers": 59238,
+    "page": 63349
+   },
+   "addedAt": null
+  },
+  {
+   "id": "jack-8",
+   "name": "Jack-8",
+   "file": "characters/jack-8.json",
+   "hash": "alap9a",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 199,
+    "combos": 48,
+    "combosParsed": 48,
+    "punishers": 18
+   },
+   "revisions": {
+    "movelist": 62055,
+    "combos": 61148,
+    "punishers": 60808,
+    "page": 62092
+   },
+   "addedAt": null
+  },
+  {
+   "id": "jin",
+   "name": "Jin",
+   "file": "characters/jin.json",
+   "hash": "12rl2rk",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 128,
+    "combos": 42,
+    "combosParsed": 38,
+    "punishers": 10
+   },
+   "revisions": {
+    "movelist": 62015,
+    "combos": 62005,
+    "punishers": 59239,
+    "page": 62093
+   },
+   "addedAt": null
+  },
+  {
+   "id": "jun",
+   "name": "Jun",
+   "file": "characters/jun.json",
+   "hash": "1m1osqc",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 149,
+    "combos": 57,
+    "combosParsed": 56,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 62067,
+    "combos": 60765,
+    "punishers": 33176,
+    "page": 62094
+   },
+   "addedAt": null
+  },
+  {
+   "id": "kazuya",
+   "name": "Kazuya",
+   "file": "characters/kazuya.json",
+   "hash": "1u7fk80",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 135,
+    "combos": 36,
+    "combosParsed": 24,
+    "punishers": 11
+   },
+   "revisions": {
+    "movelist": 63068,
+    "combos": 59522,
+    "punishers": 26753,
+    "page": 62095
+   },
+   "addedAt": null
+  },
+  {
+   "id": "king",
+   "name": "King",
+   "file": "characters/king.json",
+   "hash": "jvh66m",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 215,
+    "combos": 64,
+    "combosParsed": 62,
+    "punishers": 10
+   },
+   "revisions": {
+    "movelist": 61905,
+    "combos": 59521,
+    "punishers": 30989,
+    "page": 62096
+   },
+   "addedAt": null
+  },
+  {
+   "id": "kuma",
+   "name": "Kuma",
+   "file": "characters/kuma.json",
+   "hash": "z0i0jb",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 142,
+    "combos": 8,
+    "combosParsed": 6,
+    "punishers": 9
+   },
+   "revisions": {
+    "movelist": 63251,
+    "combos": 61879,
+    "punishers": 59240,
+    "page": 62097
+   },
+   "addedAt": null
+  },
+  {
+   "id": "kunimitsu",
+   "name": "Kunimitsu",
+   "file": "characters/kunimitsu.json",
+   "hash": "lhgjgc",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 167,
+    "combos": 15,
+    "combosParsed": 14,
+    "punishers": 11
+   },
+   "revisions": {
+    "movelist": 62066,
+    "combos": 59982,
+    "punishers": 60313,
+    "page": 63350
+   },
+   "addedAt": null
+  },
+  {
+   "id": "lars",
+   "name": "Lars",
+   "file": "characters/lars.json",
+   "hash": "ukm0oj",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 121,
+    "combos": 39,
+    "combosParsed": 39,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 62127,
+    "combos": 59536,
+    "punishers": 57730,
+    "page": 62099
+   },
+   "addedAt": null
+  },
+  {
+   "id": "law",
+   "name": "Law",
+   "file": "characters/law.json",
+   "hash": "4a5wjr",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 162,
+    "combos": 58,
+    "combosParsed": 58,
+    "punishers": 16
+   },
+   "revisions": {
+    "movelist": 61978,
+    "combos": 62202,
+    "punishers": 59241,
+    "page": 62100
+   },
+   "addedAt": null
+  },
+  {
+   "id": "lee",
+   "name": "Lee",
+   "file": "characters/lee.json",
+   "hash": "1hnmhnn",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 156,
+    "combos": 129,
+    "combosParsed": 128,
+    "punishers": 21
+   },
+   "revisions": {
+    "movelist": 63020,
+    "combos": 60975,
+    "punishers": 48522,
+    "page": 62101
+   },
+   "addedAt": null
+  },
+  {
+   "id": "leo",
+   "name": "Leo",
+   "file": "characters/leo.json",
+   "hash": "8eprr8",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 140,
+    "combos": 68,
+    "combosParsed": 67,
+    "punishers": 25
+   },
+   "revisions": {
+    "movelist": 62756,
+    "combos": 60603,
+    "punishers": 31741,
+    "page": 62102
+   },
+   "addedAt": null
+  },
+  {
+   "id": "leroy",
+   "name": "Leroy",
+   "file": "characters/leroy.json",
+   "hash": "opxugs",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 130,
+    "combos": 44,
+    "combosParsed": 42,
+    "punishers": 10
+   },
+   "revisions": {
+    "movelist": 61970,
+    "combos": 62149,
+    "punishers": 33306,
+    "page": 62103
+   },
+   "addedAt": null
+  },
+  {
+   "id": "lidia",
+   "name": "Lidia",
+   "file": "characters/lidia.json",
+   "hash": "qxvron",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 167,
+    "combos": 33,
+    "combosParsed": 19,
+    "punishers": 17
+   },
+   "revisions": {
+    "movelist": 62026,
+    "combos": 62147,
+    "punishers": 31703,
+    "page": 62104
+   },
+   "addedAt": null
+  },
+  {
+   "id": "lili",
+   "name": "Lili",
+   "file": "characters/lili.json",
+   "hash": "koqarp",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 148,
+    "combos": 20,
+    "combosParsed": 17,
+    "punishers": 13
+   },
+   "revisions": {
+    "movelist": 61966,
+    "combos": 59747,
+    "punishers": 59242,
+    "page": 62105
+   },
+   "addedAt": null
+  },
+  {
+   "id": "miary-zo",
+   "name": "Miary Zo",
+   "file": "characters/miary-zo.json",
+   "hash": "17a8g97",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 122,
+    "combos": 51,
+    "combosParsed": 47,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 61932,
+    "combos": 60973,
+    "punishers": 58661,
+    "page": 62106
+   },
+   "addedAt": null
+  },
+  {
+   "id": "nina",
+   "name": "Nina",
+   "file": "characters/nina.json",
+   "hash": "l6mwgo",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 191,
+    "combos": 102,
+    "combosParsed": 102,
+    "punishers": 20
+   },
+   "revisions": {
+    "movelist": 62022,
+    "combos": 60807,
+    "punishers": 61917,
+    "page": 62107
+   },
+   "addedAt": null
+  },
+  {
+   "id": "panda",
+   "name": "Panda",
+   "file": "characters/panda.json",
+   "hash": "d13gry",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 132,
+    "combos": 1,
+    "combosParsed": 1,
+    "punishers": 9
+   },
+   "revisions": {
+    "movelist": 63252,
+    "combos": 61880,
+    "punishers": 59244,
+    "page": 62108
+   },
+   "addedAt": null
+  },
+  {
+   "id": "paul",
+   "name": "Paul",
+   "file": "characters/paul.json",
+   "hash": "1qu6qi9",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 143,
+    "combos": 362,
+    "combosParsed": 356,
+    "punishers": 19
+   },
+   "revisions": {
+    "movelist": 62131,
+    "combos": 60911,
+    "punishers": 58529,
+    "page": 62109
+   },
+   "addedAt": null
+  },
+  {
+   "id": "raven",
+   "name": "Raven",
+   "file": "characters/raven.json",
+   "hash": "1ed30ke",
+   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "counts": {
+    "moves": 177,
+    "combos": 83,
+    "combosParsed": 77,
+    "punishers": 12
+   },
+   "revisions": {
+    "movelist": 62124,
+    "combos": 61046,
+    "punishers": 59636,
+    "page": 62110
+   },
+   "addedAt": null
+  },
+  {
+   "id": "reina",
+   "name": "Reina",
+   "file": "characters/reina.json",
+   "hash": "ohkhje",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 150,
+    "combos": 202,
+    "combosParsed": 194,
+    "punishers": 14
+   },
+   "revisions": {
+    "movelist": 61909,
+    "combos": 60661,
+    "punishers": 37395,
+    "page": 62111
+   },
+   "addedAt": null
+  },
+  {
+   "id": "shaheen",
+   "name": "Shaheen",
+   "file": "characters/shaheen.json",
+   "hash": "ede69u",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 90,
+    "combos": 24,
+    "combosParsed": 20,
+    "punishers": 11
+   },
+   "revisions": {
+    "movelist": 62465,
+    "combos": 61820,
+    "punishers": 32799,
+    "page": 62112
+   },
+   "addedAt": null
+  },
+  {
+   "id": "steve",
+   "name": "Steve",
+   "file": "characters/steve.json",
+   "hash": "fv9xsg",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 171,
+    "combos": 33,
+    "combosParsed": 25,
+    "punishers": 15
+   },
+   "revisions": {
+    "movelist": 63098,
+    "combos": 59439,
+    "punishers": 60968,
+    "page": 62401
+   },
+   "addedAt": null
+  },
+  {
+   "id": "victor",
+   "name": "Victor",
+   "file": "characters/victor.json",
+   "hash": "14jb8lt",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 122,
+    "combos": 31,
+    "combosParsed": 27,
+    "punishers": 13
+   },
+   "revisions": {
+    "movelist": 62128,
+    "combos": 60825,
+    "punishers": 37570,
+    "page": 63069
+   },
+   "addedAt": null
+  },
+  {
+   "id": "xiaoyu",
+   "name": "Xiaoyu",
+   "file": "characters/xiaoyu.json",
+   "hash": "180h61z",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 175,
+    "combos": 103,
+    "combosParsed": 100,
+    "punishers": 13
+   },
+   "revisions": {
+    "movelist": 63091,
+    "combos": 61068,
+    "punishers": 47950,
+    "page": 62115
+   },
+   "addedAt": null
+  },
+  {
+   "id": "yoshimitsu",
+   "name": "Yoshimitsu",
+   "file": "characters/yoshimitsu.json",
+   "hash": "6omw4s",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 312,
+    "combos": 64,
+    "combosParsed": 27,
+    "punishers": 22
+   },
+   "revisions": {
+    "movelist": 62125,
+    "combos": 59572,
+    "punishers": 59246,
+    "page": 62116
+   },
+   "addedAt": null
+  },
+  {
+   "id": "zafina",
+   "name": "Zafina",
+   "file": "characters/zafina.json",
+   "hash": "1g2m7q9",
+   "updatedAt": "2026-10-27T11:43:46.748Z",
+   "counts": {
+    "moves": 146,
+    "combos": 60,
+    "combosParsed": 55,
+    "punishers": 29
+   },
+   "revisions": {
+    "movelist": 62027,
+    "combos": 61689,
+    "punishers": 53760,
+    "page": 62117
+   },
+   "addedAt": null
+  }
+ ]
+}

@@ -1,5 +1,4 @@
 import { useState } from 'react';
-import { BUNDLED } from '../../data';
 import { DEFAULT_SETTINGS, type Settings } from '../../core/progress';
 import { DEFAULT_OPTIONS } from '../../core/recognizer';
 import { useStore } from '../store';
@@ -17,7 +16,7 @@ function Num({ label, value, min, max, step = 1, onChange, help }: { label: stri
 }
 
 export function SettingsPage() {
-  const { settings, updateSettings, characters, frameCache, refreshFrames, revertFrames, overrides, setOverride, storageInfo } = useStore();
+  const { settings, updateSettings, roster, data, isCurated, checkForDataUpdate, overrides, setOverride, storageInfo } = useStore();
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<Record<string, string>>({});
   const set = (p: Partial<Settings>) => updateSettings(p);
@@ -62,52 +61,52 @@ export function SettingsPage() {
       </div>
 
       <div className="card stack">
-        <h3>Character data</h3>
-        <p className="small dim" style={{ margin: 0 }}>Frame data is imported from <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a> (CC0 public domain). You can refresh it after a patch; the app shows what changed and you can revert to the bundled copy. Curated content (lessons, combos, coach notes) lives in <code>src/data/characters/&lt;id&gt;/curated.json</code>.</p>
-        <table className="data">
-          <thead><tr><th>Character</th><th>Frame data in use</th><th>Your corrections</th><th>Actions</th></tr></thead>
-          <tbody>
-            {characters.map((c) => {
-              const id = c.profile.id;
-              const src = c.frames.source;
-              const ov = Object.entries(overrides[id] ?? {});
-              const bundled = BUNDLED.find((b) => b.id === id)!;
-              return (
-                <tr key={id}>
-                  <td><b>{c.profile.name}</b><div className="small muted">{c.frames.moves.length} moves</div></td>
-                  <td className="small">
-                    {frameCache[id] ? <span className="badge warn">Refreshed in-app</span> : <span className="badge info">Bundled</span>} rev {src.revision ?? '?'} · fetched {src.fetchedAt?.slice(0, 10)}
-                    {frameCache[id] && <div className="muted">Bundled copy: rev {bundled.frames.source.revision ?? '?'} · {bundled.frames.source.fetchedAt?.slice(0, 10)}</div>}
-                    {msg[id] && <div style={{ color: 'var(--info)' }}>{msg[id]}</div>}
-                  </td>
-                  <td className="small">
-                    {ov.length ? ov.map(([mid, o]) => (
-                      <div key={mid} className="row"><code>{mid}</code> <span className="muted">{Object.keys(o.fields).join(', ')}</span> <button className="btn sm ghost" onClick={() => setOverride(id, mid, null)}>Revert</button></div>
-                    )) : <span className="muted">None</span>}
-                  </td>
-                  <td>
-                    <div className="row">
-                      <button className="btn sm" disabled={busy === id} onClick={async () => {
-                        setBusy(id);
-                        try {
-                          const r = await refreshFrames(id);
-                          setMsg((m) => ({ ...m, [id]: r }));
-                        } catch (e) {
-                          setMsg((m) => ({ ...m, [id]: `Refresh failed: ${(e as Error).message}. Existing data kept.` }));
-                        } finally {
-                          setBusy(null);
-                        }
-                      }}>{busy === id ? 'Fetching…' : 'Refresh from Wavu'}</button>
-                      {frameCache[id] && <button className="btn sm" onClick={() => { revertFrames(id); setMsg((m) => ({ ...m, [id]: 'Reverted to the bundled data.' })); }}>Use bundled</button>}
-                    </div>
-                  </td>
-                </tr>
-              );
-            })}
-          </tbody>
-        </table>
+        <div className="card-title">
+          <h3>Character data</h3>
+          <button className="btn sm" disabled={busy === 'check'} onClick={async () => {
+            setBusy('check');
+            try {
+              setMsg((m) => ({ ...m, check: '' }));
+              const r = await checkForDataUpdate();
+              setMsg((m) => ({ ...m, check: r }));
+            } catch (e) {
+              setMsg((m) => ({ ...m, check: `Check failed: ${(e as Error).message}` }));
+            } finally {
+              setBusy(null);
+            }
+          }}>{busy === 'check' ? 'Checking…' : 'Check for updates'}</button>
+        </div>
+        <p className="small dim" style={{ margin: 0 }}>
+          The whole roster is imported from <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a> (CC0) by an automatic job that runs every day and republishes the site when anything changed, so new patches, characters and combos arrive without an app update. Data set: <b>{data.manifest.generatedAt.slice(0, 10)}</b> ({data.origin === 'remote' ? 'downloaded from the website' : storageInfo?.kind === 'electron' ? 'bundled with this app' : 'served with this site'}). The app also re-checks every few hours while it's open.
+        </p>
+        {msg.check && <div className="notice info">{msg.check}</div>}
+        <div className="scroll" style={{ maxHeight: 420 }}>
+          <table className="data">
+            <thead><tr><th>Character</th><th>Moves</th><th>Combos (trainable)</th><th>Punishers</th><th>Wiki revisions</th><th>Changed</th><th>Your corrections</th></tr></thead>
+            <tbody>
+              {roster.map((e) => {
+                const ov = Object.entries(overrides[e.id] ?? {});
+                return (
+                  <tr key={e.id}>
+                    <td><b>{e.name}</b> {isCurated(e.id) && <span className="badge char">Curated</span>}</td>
+                    <td className="mono">{e.counts.moves}</td>
+                    <td className="mono">{e.counts.combos} ({e.counts.combosParsed})</td>
+                    <td className="mono">{e.counts.punishers}</td>
+                    <td className="small muted mono">{Object.entries(e.revisions).filter(([, v]) => v).map(([k, v]) => `${k} ${v}`).join(' · ')}</td>
+                    <td className="small">{e.updatedAt.slice(0, 10)}</td>
+                    <td className="small">
+                      {ov.length ? ov.map(([mid, o]) => (
+                        <div key={mid} className="row"><code>{mid}</code> <span className="muted">{Object.keys(o.fields).join(', ')}</span> <button className="btn sm ghost" onClick={() => setOverride(e.id, mid, null)}>Revert</button></div>
+                      )) : <span className="muted">None</span>}
+                    </td>
+                  </tr>
+                );
+              })}
+            </tbody>
+          </table>
+        </div>
+        <div className="small muted">Your corrections (Move Library → "Correct this data") stay on this device and are applied on top of every update.</div>
       </div>
-
       <div className="card stack">
         <h3>Storage</h3>
         <div className="small dim">

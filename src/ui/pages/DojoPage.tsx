@@ -1,4 +1,4 @@
-import { useState } from 'react';
+import { useEffect, useState } from 'react';
 import type { DrillId } from '../../types';
 import type { Difficulty } from '../../core/progress';
 import { DIFFICULTY } from '../../core/sim';
@@ -7,7 +7,11 @@ import { useStore } from '../store';
 import { DojoArena, DRILLS } from '../components/DojoArena';
 
 export function DojoPage({ drill }: { drill?: string }) {
-  const { settings, updateSettings, opponents, progress, char } = useStore();
+  const { settings, updateSettings, opponents, progress, char, roster, ensureLoaded, loadingIds } = useStore();
+  // Drills draw bot moves from every character, so load the whole roster's data.
+  useEffect(() => {
+    ensureLoaded(roster.map((r) => r.id)).catch(() => undefined);
+  }, [roster, ensureLoaded]);
   const current = (drill && drill in DRILLS ? drill : 'punish-standing') as DrillId;
   const [reps, setReps] = useState(15);
   const [opp, setOpp] = useState<string>('all');
@@ -44,7 +48,7 @@ export function DojoPage({ drill }: { drill?: string }) {
         <span className="small muted" style={{ maxWidth: 260 }}>Hit level shown {DIFFICULTY[settings.drillDifficulty].revealBefore} frames ({Math.round((DIFFICULTY[settings.drillDifficulty].revealBefore / 60) * 1000)} ms) before impact.</span>
         <label className="field">Opponent moves from
           <select value={opp} onChange={(e) => setOpp(e.target.value)}>
-            <option value="all">All characters</option>
+            <option value="all">All characters{loadingIds.length ? ` (loading ${loadingIds.length}…)` : ` (${opponents.length})`}</option>
             {opponents.map((o) => <option key={o.profile.id} value={o.profile.id}>{o.profile.name}</option>)}
           </select>
         </label>
@@ -53,7 +57,7 @@ export function DojoPage({ drill }: { drill?: string }) {
         </label>
         <span className="right" />
         {rate !== null && <span className="badge">{char.profile.short}: {rate}% over last {recent.length} rounds</span>}
-        <button className="btn primary" onClick={() => { setRun(run + 1); setRunning(true); }}>{running ? 'Restart' : 'Start drill'}</button>
+        <button className="btn primary" disabled={opp === 'all' && loadingIds.length > 0} onClick={() => { setRun(run + 1); setRunning(true); }}>{running ? 'Restart' : 'Start drill'}</button>
       </div>
       <div className="notice info"><b>How:</b> {DRILLS[current].how} You play as {char.profile.name}: your presses are matched against {char.profile.short}'s real move list.</div>
       {running ? (

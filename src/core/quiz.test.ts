@@ -1,8 +1,9 @@
-import { BUNDLED, buildCharacter, lookupMove } from '../data';
+import { lookupMove } from '../data';
+import { loadCharacter } from '../data/testData';
 import { generateQuiz, seededRng } from './quiz';
 import { classifySafety } from './frames';
 
-const [anna, ak] = BUNDLED.map((b) => buildCharacter(b.frames, b.curated));
+const [anna, ak] = [loadCharacter('anna'), loadCharacter('armor-king')];
 
 describe('quiz generation', () => {
   it('safety answers match the imported frame data', () => {

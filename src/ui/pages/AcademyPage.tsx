@@ -11,7 +11,7 @@ import { ControllerDiagram } from '../components/ControllerDiagram';
 import { NotationView } from '../components/Notation';
 
 export function AcademyPage({ lessonId }: { lessonId?: string }) {
-  const { char, progress, settings } = useStore();
+  const { char, progress, settings, roster, isCurated } = useStore();
   const lessons = useMemo(() => lessonsFor(char), [char]);
   const lesson = lessons.find((l) => l.id === lessonId);
   if (lessonId && !lesson) return <div className="notice warn">Lesson "{lessonId}" is not part of {char.profile.name}'s curriculum. <button className="btn sm" onClick={() => navigate('academy')}>Back to Academy</button></div>;
@@ -20,6 +20,11 @@ export function AcademyPage({ lessonId }: { lessonId?: string }) {
   const id = char.profile.id;
   return (
     <div>
+      {char.lessons.length === 0 && (
+        <div className="notice info" style={{ marginBottom: 16 }}>
+          <b>{char.profile.name} doesn't have a character curriculum yet.</b> The shared fundamentals below apply to every character, and the Move Library, Combo Lab ({char.combos.length} routes), Punishment trainer and Bot Dojo all work with {char.profile.name}'s imported data. Full curricula exist for: {roster.filter((r) => isCurated(r.id)).map((r) => r.name).join(', ')}.
+        </div>
+      )}
       <div className="page-head">
         <div>
           <h1>Learning Academy · {char.profile.name}</h1>

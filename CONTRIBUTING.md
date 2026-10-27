@@ -42,8 +42,9 @@ CI runs the same checks on every pull request.
 ## Data rules
 
 1. **Never invent** frame data, inputs, damage values or combo routes.
-2. Frame data comes from Wavu Wiki via `npm run import-data`. Don't hand-edit `frames.json`; if Wavu is
-   wrong, fix it on Wavu (it's a wiki) and re-import, or report it with a data-correction issue.
+2. Everything in `public/data/` is generated from Wavu Wiki by `npm run import-data` and refreshed daily
+   by GitHub Actions. Don't hand-edit it: if Wavu is wrong, fix it on Wavu (it's a wiki) and the next
+   nightly run picks it up, or report it with a data-correction issue.
 3. Combo routes, punisher windows and damage are copied **verbatim** from the source with its URL and
    page revision in the `source` field.
 4. Coach notes and lesson text are strategic advice. Keep them qualitative: don't repeat frame numbers in
@@ -52,12 +53,14 @@ CI runs the same checks on every pull request.
    against the imported data. A failing integrity test means the content references something that
    doesn't exist.
 
-## Adding a character
+## Adding a character curriculum
 
-1. Add the character to `CHARACTERS` in `scripts/import-wavu.mjs` and run `npm run import-data`.
+All characters on Wavu's roster are imported automatically. To add lessons and coach notes for one:
+
+1. Find its id (file name) in `public/data/characters/`.
 2. Copy `src/data/characters/anna/curated.json` to `src/data/characters/<id>/curated.json` and fill in
    the profile, key-move notes, combos, punishers and lessons.
-3. Register it in `BUNDLED` in `src/data/index.ts`.
+3. Register it in `CURATED` in `src/data/index.ts`.
 4. Run `npm test`.
 
 ## Style

@@ -1,4 +1,4 @@
-import { useMemo, useState } from 'react';
+import { useEffect, useMemo, useState } from 'react';
 import { punisherQuestions, type QuizQuestion } from '../../core/quiz';
 import { lookupMove } from '../../data';
 import { navigate } from '../hooks';
@@ -7,7 +7,10 @@ import { NotationView } from '../components/Notation';
 import { InputDrill } from '../components/InputDrill';
 
 export function PunishPage() {
-  const { char, opponents, record } = useStore();
+  const { char, opponents, record, roster, ensureLoaded } = useStore();
+  useEffect(() => {
+    ensureLoaded(roster.map((r) => r.id)).catch(() => undefined);
+  }, [roster, ensureLoaded]);
   const [oppId, setOppId] = useState<string>('all');
   const [round, setRound] = useState(0);
   const [picked, setPicked] = useState<number | null>(null);

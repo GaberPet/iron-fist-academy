@@ -1,11 +1,11 @@
-import { BUNDLED, buildCharacter } from '../data';
+import { loadCharacter } from '../data/testData';
 import { DrillEngine, MoveMatcher, BLOCKSTUN, type BotAction, type EngineEvent } from './sim';
 import { seededRng } from './quiz';
 import type { Frame } from './recognizer';
 import { maskOf } from './input';
 import type { Dir, Move, TekkenButton } from '../types';
 
-const chars = BUNDLED.map((b) => buildCharacter(b.frames, b.curated));
+const chars = [loadCharacter('anna'), loadCharacter('armor-king')];
 const anna = chars.find((c) => c.profile.id === 'anna')!;
 const ak = chars.find((c) => c.profile.id === 'armor-king')!;
 

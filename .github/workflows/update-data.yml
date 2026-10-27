@@ -1,0 +1,65 @@
+name: Update character data
+
+# Every day: re-import the whole roster from Wavu Wiki (frame data, combos, punishers).
+# If anything changed AND all tests still pass, commit the new data and redeploy the website.
+# The app picks the new data up on its next launch (desktop) or page load (web); no manual work.
+# If the tests fail (e.g. the wiki renamed a move that a curated lesson uses), nothing is committed
+# and GitHub emails the repository owner about the failed run.
+on:
+  schedule:
+    - cron: '17 5 * * *' # 05:17 UTC daily
+  workflow_dispatch:
+
+permissions:
+  contents: write
+  actions: write
+
+concurrency:
+  group: update-data
+  cancel-in-progress: false
+
+jobs:
+  update:
+    runs-on: ubuntu-latest
+    env:
+      ELECTRON_SKIP_BINARY_DOWNLOAD: '1'
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          ref: main
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 24
+          cache: npm
+      - run: npm ci
+
+      - name: Import roster from Wavu Wiki
+        run: npm run import-data
+
+      - name: Quality gate (typecheck + tests incl. data integrity)
+        run: |
+          npm run typecheck
+          npm test
+
+      - name: Commit changed data
+        id: commit
+        run: |
+          if [ -z "$(git status --porcelain public/data)" ]; then
+            echo "No data changes."
+            echo "changed=false" >> "$GITHUB_OUTPUT"
+            exit 0
+          fi
+          changed=$(git status --porcelain public/data/characters | sed -E 's#.*characters/([^.]+)\.json#\1#' | paste -sd ', ' -)
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add public/data
+          git commit -m "data: update from Wavu Wiki ($(date -u +%F))" -m "Changed: ${changed:-manifest only}"
+          git push
+          echo "changed=true" >> "$GITHUB_OUTPUT"
+
+      # Pushes made with GITHUB_TOKEN don't trigger other workflows, so start the deploy explicitly.
+      - name: Redeploy website
+        if: steps.commit.outputs.changed == 'true' && !github.event.repository.private
+        env:
+          GH_TOKEN: ${{ github.token }}
+        run: gh workflow run pages.yml --ref main

@@ -48,6 +48,8 @@ const MARKERS: Record<string, string> = {
   'FH!': 'Floor hazard.',
   'BB!': 'Balcony break.',
   'HB!': 'Marker from the source combo (see source page).',
+  'WS!': 'Wall splat.',
+  'FB!': 'Floor break.',
 };
 
 export function markerDescription(m: string): string {
@@ -70,6 +72,8 @@ const MOVEMENT_WORDS: Record<string, DirReq[]> = {
   dash: [{ dir: 'f', hold: false }, { dir: 'f', hold: false }],
   run: [{ dir: 'f', hold: false }, { dir: 'f', hold: false }, { dir: 'f', hold: true }],
   backdash: [{ dir: 'b', hold: false }, { dir: 'b', hold: false }],
+  microdash: [{ dir: 'f', hold: false }, { dir: 'f', hold: false }],
+  cc: [{ dir: 'd', hold: false }],
   ssr: [{ dir: 'd', hold: false }],
   ssl: [{ dir: 'u', hold: false }],
   sswr: [{ dir: 'd', hold: true }],
@@ -172,7 +176,7 @@ export function parseBody(raw: string): ParsedBody | null {
   return { dirs, buttons: [...new Set(buttons)].sort() as TekkenButton[], holdButton, sameFrame, stance, heat, rage };
 }
 
-const MARKER_RE = /(T!|W!|WB!|WH!|F!|FH!|BB!|HB!)$/;
+const MARKER_RE = /([A-Za-z]{1,4}!)$/;
 
 /** Parse a full combo / move notation string into steps. Throws on unparseable input. */
 export function parseNotation(notation: string): InputStep[] {
@@ -191,6 +195,7 @@ export function parseNotation(notation: string): InputStep[] {
     const tagGroup = () => {
       for (let i = before; i < steps.length; i++) steps[i].group = tokIndex;
     };
+    if (rawTok === '>' || rawTok === '<') continue; // stand-alone delay marks
     if (rawTok === 'CH' || rawTok === 'CL') {
       counterHitNext = rawTok === 'CH';
       continue;
@@ -304,6 +309,8 @@ export function timingHint(step: InputStep): string {
   else if (step.word === 'ssr') hints.push('Sidestep right: tap down once.');
   else if (step.word === 'ssl') hints.push('Sidestep left: tap up once.');
   else if (step.word === 'backdash') hints.push('Backdash: tap back twice.');
+  else if (step.word === 'microdash') hints.push('Microdash: a very short dash (f, f) cancelled almost immediately.');
+  else if (step.word === 'cc') hints.push('Crouch cancel: tap down to cancel the dash or run.');
   if (step.optional) hints.push('Optional / situational step (shown in parentheses on the source).');
   if (step.immediate) hints.push('Input immediately after the previous move (cancel, "~").');
   if (step.justFrame) hints.push('Just-frame (":"): very tight timing window.');

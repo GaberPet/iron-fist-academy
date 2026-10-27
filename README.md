@@ -6,8 +6,11 @@
 
 An open-source training academy for **Tekken 8**, aimed at **beginner and intermediate** players.
 Structured lessons, a live **DualSense** combo trainer, a punishment trainer, frame-accurate training
-drills and local progress tracking with personal recommendations. Anna Williams and Armor King are
-curated first; the rest of the roster is coming (see [docs/DECISIONS.md](docs/DECISIONS.md)).
+drills and local progress tracking with personal recommendations.
+
+**The whole roster (42 characters)** has frame data, combos and punishers, imported from Wavu Wiki and
+**updated automatically every day** (see "Data and automatic updates" below). Anna Williams and Armor King also have a
+full lesson curriculum and coach notes; more curricula are welcome (see [docs/DECISIONS.md](docs/DECISIONS.md)).
 
 Runs in the browser (Chrome/Edge read the DualSense directly) and as an optional Windows desktop app.
 
@@ -65,7 +68,7 @@ This starts Vite and opens the Electron window with hot reload. `npm run dev:web
 browser at http://localhost:5199 (data is then kept in browser localStorage instead of files).
 
 Other scripts: `npm run build` (typecheck + production bundle), `npm start` (run the built app),
-`npm run typecheck`, `npm run import-data` (re-import frame data from Wavu Wiki).
+`npm run typecheck`, `npm run import-data` (re-import the roster from Wavu Wiki; normally done by the nightly job).
 
 ## 3. Connecting your DualSense
 
@@ -94,8 +97,8 @@ controller drives the exercise; press **Options** to go back.
 | Dashboard | Daily goal ring, day streak, mastery counts, **recommended next** (weak combo transitions → focused drill, failing bot drills, decayed lessons due for review, next unlocked lesson), session timer with configurable length. |
 | Characters | Overview, strengths/weaknesses, stances, Heat info, sources. Progress is per character; switch any time. |
 | Academy | 5 stages (Foundations → Competitive Preparation): 7 shared fundamentals lessons plus 24 Anna / 25 Armor King lessons, each with objectives, explanation, visual aid, guided exercise, independent challenge, success criterion, mistake review and related links. Stages unlock only through **mastery** (configurable %) **and** passing the stage test. |
-| Move Library | All imported moves (165 Anna / 173 Armor King) with startup/block/hit/CH/damage/hit level/properties, derived safety class, source + revision, and **coach notes** (labelled as strategic advice) for key moves. Filter by hit level, safety, role. **Correct any value** locally; corrections are marked "Edited by you". |
-| Combo Lab | Wavu-documented routes (8 Anna, 14 Armor King) with PS icons + notation per step, timing notes, stance-transition notes pulled from the move data, damage exactly as listed, common mistakes, easier alternatives. Modes: **Step-by-step, Full, Slow, Memory, Consistency, Challenge** (situation → pick route → perform), **Demo** playback on a controller diagram, **focus drill** on a single transition, and **Manual mode** for practising inside Tekken 8. |
+| Move Library | All imported moves (6,500+ across the roster) with startup/block/hit/CH/damage/hit level/properties, derived safety class, source + revision, and **coach notes** (labelled as strategic advice) for key moves. Filter by hit level, safety, role. **Correct any value** locally; corrections are marked "Edited by you". |
+| Combo Lab | 2,500+ Wavu-documented routes for the whole roster (about 92% checkable by the trainer, the rest shown as written), with search and section filters; curated routes add PS icons + notation per step, timing notes, stance-transition notes pulled from the move data, damage exactly as listed, common mistakes, easier alternatives. Modes: **Step-by-step, Full, Slow, Memory, Consistency, Challenge** (situation → pick route → perform), **Demo** playback on a controller diagram, **focus drill** on a single transition, and **Manual mode** for practising inside Tekken 8. |
 | Punishment | Punishment mode: a real unsafe opponent move with its block value → choose your guaranteed punisher → execute it on the controller. Punisher tables from Wavu. |
 | Bot Dojo | Simulation drills: standing punish, crouching punish, mid/low defence, throw breaks, whiff punish, and **adaptive pressure** (mixes punishable, safe/plus, lows and throws; serves more of what you fail). Easy/normal/hard reaction windows. Tekken 8-style frame meter. |
 | In Tekken 8 | What works where, and Practice-mode recipes to repeat each drill in the real game. |
@@ -128,40 +131,66 @@ missing crouch, too slow), and those failures drive the recommendations.
 - **Controller:** the Gamepad API does not report USB vs Bluetooth, so connection type isn't shown.
   Chromium may stop delivering controller input while the window is unfocused. The PS and touchpad
   buttons may be captured by Windows/Steam. Rumble works only where Chromium exposes it.
-- **Data coverage:** Anna's Wavu combo page currently has only a BnB, one staple and mini-combos, and
-  its wall-combo section is empty. The app ships what is documented rather than inventing routes. Some
+- **Data coverage:** the app shows what Wavu documents. Some characters' pages are thin (for example
+  Panda or Kuma have few routes), and about 8% of routes use notation the trainer can't check yet; those
+  are view-only. The app ships what is documented rather than inventing routes. Some
   Wavu values carry "?" (unconfirmed) in the source; they are shown verbatim.
 - **Frame data can lag behind patches.** Each data set shows its source revision and fetch date;
-  refresh it in Settings or correct values locally.
+  it updates automatically from the wiki; you can also correct values locally.
 - Combo difficulty stars and coach notes are **opinions**, labelled as such.
-- Only **Anna** and **Armor King** are bundled.
+- Full lesson curricula exist only for **Anna** and **Armor King** so far; other characters get the shared
+  fundamentals plus all data-driven features.
+- Automatic updates follow Wavu Wiki, which the community updates after patches, typically within days, not instantly.
 
-## 6. Data and accuracy
+## 6. Data and automatic updates
+
+```
+Wavu Wiki ──(daily GitHub Action: scripts/import-wavu.mjs)──► public/data/*.json
+                    │ typecheck + tests must pass, else nothing is committed
+                    ▼
+        commit "data: update from Wavu Wiki" ──► redeploy website ──► app loads new data
+```
+
+- **What is imported**, for every character on Wavu's roster (new DLC characters appear automatically):
+  frame data (Cargo API), combo routes (combo page, including "Fake Combos" excluded and placeholder
+  rows dropped), punisher tables, and the character overview (intro, strengths/weaknesses, stances, Heat).
+- **When:** every day at 05:17 UTC (`.github/workflows/update-data.yml`), or manually via
+  *Actions → Update character data → Run workflow*. A file is only rewritten when its content changed,
+  so there are no empty commits.
+- **Safety gates:** a character keeps its previous data if its fetch fails or its move count drops by
+  more than 30% (vandalism or outage). The run fails, and GitHub emails you, only if most of the
+  roster failed or the tests fail.
+- **What changed:** each run records added/removed combos, frame-data changes and new characters in
+  `public/data/changelog.json`. The app shows it on the **What's new** page, marks characters and combos
+  from the last 7 days with a **New** badge (Combo Lab can filter "New this week"), and shows the data
+  date on every page.
+- **How the app gets it:** the website serves the data next to the app, so a redeploy is all it takes.
+  The desktop app ships a copy and checks the website for a newer data set on start (falling back to
+  its copy offline). Both re-check every few hours while open. *(The website only exists once the
+  repository is public; until then the desktop app uses its bundled data.)*
 
 | Data | Source | Notes |
 |---|---|---|
-| Frame data (`src/data/characters/<id>/frames.json`) | Wavu Wiki Cargo API, CC0 | Records page revision and fetch time. Imported by `scripts/import-wavu.mjs`, refreshable in-app. |
-| Combo routes, punisher tables | Wavu Wiki combo / punisher pages, CC0 | Transcribed verbatim, with revision; damage brackets shown exactly as listed. |
-| Character overview | Wavu Wiki character pages | Summarised. |
-| Coach notes, lesson text, difficulty ratings | Written for this app | Labelled as strategic advice; they avoid quoting frame numbers, which are always shown live from the data. |
-| Safety classes, quiz answers | Computed from frame data with general rules (i10 fastest punisher, −15 launchable for most characters) | Never hand-entered. |
+| Frame data, combo routes, punisher tables, overviews (`public/data/`) | Wavu Wiki, CC0 | Generated; records page revisions. Don't hand-edit: fix the wiki or correct values locally in the app. |
+| Lessons, coach notes, combo tips (`src/data/characters/<id>/curated.json`) | Written for this project, CC BY-SA 4.0 | Labelled as strategic advice; avoid frame numbers in prose (the UI shows live numbers). |
+| Safety classes, quiz answers | Computed from frame data with general rules | Never hand-entered. |
 
-`npm test` includes a **content integrity test**: every move, combo, lesson link and exercise in the
-curated files must resolve against the imported frame data, and every notation must parse.
+`npm test` checks every generated file (shape, counts, notation of trainable routes) and runs the strict
+**content integrity test** for curated content: every move, combo, lesson link and exercise must resolve
+against the current frame data.
 
-## 7. Adding characters and exercises
+## 7. Adding a curriculum for a character
 
-1. Add the character to `CHARACTERS` in `scripts/import-wavu.mjs` (id → Wavu name) and run
-   `npm run import-data`.
-2. Copy `src/data/characters/anna/curated.json` to `src/data/characters/<id>/curated.json` and fill in
-   the profile, key-move notes, combos (from the Wavu combo page), punishers and lessons.
+Every character already works with imported data. To add lessons and coach notes:
+
+1. Copy `src/data/characters/anna/curated.json` to `src/data/characters/<id>/curated.json`
+   (`<id>` is the file name in `public/data/characters/`).
+2. Fill in the profile, key-move notes, curated combos (with coaching tips), punishers and lessons.
    Exercise types: `input`, `combo`, `quiz` (`safety`, `hitlevel`, `startup`, `punisher`, `notation`,
    `throwbreak`), `drill` (`punish-standing`, `punish-crouching`, `block-mixup`, `throw-break`,
    `whiff-punish`, `mixed-pressure`) and `checklist`.
-3. Add one entry to `BUNDLED` in `src/data/index.ts`.
-4. Run `npm test`: the integrity test flags any reference that doesn't exist in the frame data.
-
-New characters automatically become opponents in quizzes and Bot Dojo drills.
+3. Add it to `CURATED` in `src/data/index.ts`.
+4. Run `npm test`.
 
 ## 8. Project structure
 
@@ -171,7 +200,8 @@ scripts/           Wavu importer, dev runner
 src/core/          pure logic: notation parser, input mapping, recognizer, frame rules,
                    quizzes, progress/mastery/recommendations, bot simulation (+ unit tests)
 src/data/          frame data (imported), curated content, registry, integrity test
-src/runtime/       Gamepad/keyboard input manager, storage, Wavu refresh
+src/runtime/       Gamepad/keyboard input manager, storage, data loading/update checks
+public/data/       generated roster data (manifest + one JSON file per character), refreshed nightly
 src/ui/            React app: store, pages, components
 ```
 
@@ -180,7 +210,7 @@ Local data (Windows): `%APPDATA%\Iron Fist Academy\data\` — `settings.json`, `
 
 ## 9. Tests
 
-`npm test` runs 79 unit tests: notation parsing, controller mapping (DualSense layout, stick/D-pad,
+`npm test` runs 135 tests: change detection for the What's new page, the Wavu parsers (combo, punisher and character pages), every generated character file, notation parsing, controller mapping (DualSense layout, stick/D-pad,
 SOCD, P2 mirroring, remapping), the recognizer (motions, cancels, ws, simultaneous presses, timeouts,
 held buttons), frame-rule simulation (punish windows, throw breaks, whiff punish, safe-move rounds,
 adaptive weights), quizzes (answers match data), progress (mastery streaks, stage gating, weakness
@@ -194,7 +224,7 @@ storage through the preload bridge and exits with a pass/fail result.
 - **Blank window / error page:** run `npm run build` again; check the console with Ctrl+Shift+I in dev.
 - **Controller not detected:** see section 3. Try another USB port/cable; re-pair Bluetooth.
 - **"Save failed" badge:** the data folder isn't writable; check permissions or disk space.
-- **Refresh from Wavu fails:** you're offline or the wiki is down; the existing data is kept.
+- **"Could not load character data":** the data files are missing from the build; run `npm run import-data` then `npm run build`.
 
 ## 11. Licence
 
