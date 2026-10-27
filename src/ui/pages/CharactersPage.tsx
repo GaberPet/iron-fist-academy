@@ -1,20 +1,12 @@
-import { useMemo, useState } from 'react';
 import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 import { navigate } from '../hooks';
-import { isRecent } from '../../data';
+import { RosterTiles } from '../components/RosterTiles';
 
 export function CharactersPage() {
-  const { roster, char, setActiveChar, progress, isCurated, data } = useStore();
-  const [q, setQ] = useState('');
+  const { roster, char, isCurated, data } = useStore();
   const p = char.profile;
   const curated = isCurated(p.id);
-  const mastered = useMemo(() => {
-    const m = new Map<string, number>();
-    for (const [k, v] of Object.entries(progress.lessons)) if (v.mastered) m.set(k.split(':')[0], (m.get(k.split(':')[0]) ?? 0) + 1);
-    return m;
-  }, [progress.lessons]);
-  const shown = roster.filter((r) => r.name.toLowerCase().includes(q.trim().toLowerCase()));
 
   return (
     <div className="stack">
@@ -23,24 +15,8 @@ export function CharactersPage() {
           <h1>Characters</h1>
           <p>The full Tekken 8 roster from Wavu Wiki ({roster.length} characters, data from {data.manifest.generatedAt.slice(0, 10)}). Every character has frame data, combos, punishers, quizzes and bot drills. Characters marked <span className="badge char">Curriculum</span> also have a full lesson path and coach notes. Progress is stored per character.</p>
         </div>
-        <input type="search" placeholder="Find a character…" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Find a character" />
       </div>
-      <div className="roster">
-        {shown.map((c) => (
-          <button key={c.id} className={`char-card ${c.id === char.profile.id ? 'sel' : ''}`} onClick={() => setActiveChar(c.id)} aria-pressed={c.id === char.profile.id}>
-            <div className="char-info">
-              <span className="char-name">{c.name}</span>
-              <span className="char-meta">{c.counts.combos} combos, {c.counts.moves} moves</span>
-              <span className="char-tags">
-                {isRecent(c.addedAt) && <span className="badge good">New</span>}
-                {isCurated(c.id) && <span className="badge char">Curriculum</span>}
-                {mastered.get(c.id) ? <span className="badge good">{mastered.get(c.id)} mastered</span> : null}
-              </span>
-            </div>
-          </button>
-        ))}
-      </div>
-      {!shown.length && <div className="empty">No character matches "{q}".</div>}
+      <RosterTiles />
 
       <div className="grid g2">
         <div className="card stack">

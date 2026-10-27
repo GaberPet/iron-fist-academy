@@ -1,4 +1,4 @@
-import { Component, type ReactNode } from 'react';
+import { Component, useEffect, useState, type ReactNode } from 'react';
 import { navigate, useControllerStatus, useRoute } from './hooks';
 import { useStore } from './store';
 import { HomePage } from './pages/HomePage';
@@ -16,6 +16,7 @@ import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
 import { Logo } from './components/Logo';
 import { Icon } from './components/Icon';
+import { RosterTiles } from './components/RosterTiles';
 import { isRecent } from '../data';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
@@ -54,25 +55,23 @@ class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string },
 }
 
 function TopBar() {
-  const { roster, char, setActiveChar, saveError, isCurated, loadingIds, dataNotice, dismissDataNotice } = useStore();
+  const { char, saveError, loadingIds, dataNotice, dismissDataNotice } = useStore();
   const { pads, active } = useControllerStatus();
   const pad = pads.find((p) => p.index === active);
-  const curated = roster.filter((r) => isCurated(r.id));
-  const others = roster.filter((r) => !isCurated(r.id));
+  const [picking, setPicking] = useState(false);
+  useEffect(() => {
+    if (!picking) return;
+    const onKey = (e: KeyboardEvent) => e.key === 'Escape' && setPicking(false);
+    window.addEventListener('keydown', onKey);
+    return () => window.removeEventListener('keydown', onKey);
+  }, [picking]);
   return (
     <>
       <div className="topbar">
-        <label className="row" style={{ gap: 8 }}>
-          <span className="dot" style={{ background: char.profile.color }} />
-          <select value={char.profile.id} onChange={(e) => setActiveChar(e.target.value)} aria-label="Character" style={{ fontWeight: 700, minWidth: 200 }}>
-            <optgroup label="With full curriculum">
-              {curated.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
-            </optgroup>
-            <optgroup label="Frame data, combos & punishers">
-              {others.map((c) => <option key={c.id} value={c.id}>{c.name}{isRecent(c.addedAt) ? ' (new)' : ''}</option>)}
-            </optgroup>
-          </select>
-        </label>
+        <button className="btn char-switch" onClick={() => setPicking(true)} aria-haspopup="dialog">
+          <span className="char-switch-name">{char.profile.name}</span>
+          <span className="small muted">Change character</span>
+        </button>
         {loadingIds.length > 0 && <span className="small muted">Loading {loadingIds.length} character{loadingIds.length > 1 ? 's' : ''}…</span>}
         <span className="spacer" />
         {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
@@ -81,6 +80,17 @@ function TopBar() {
           {pad ? pad.label : 'No controller'}
         </button>
       </div>
+      {picking && (
+        <div className="picker-backdrop" onClick={(e) => e.target === e.currentTarget && setPicking(false)}>
+          <div className="picker card" role="dialog" aria-modal="true" aria-label="Choose a character">
+            <div className="card-title">
+              <h2>Choose a character</h2>
+              <button className="btn ghost" onClick={() => setPicking(false)}>Close</button>
+            </div>
+            <RosterTiles autoFocusSearch onPicked={() => setPicking(false)} />
+          </div>
+        </div>
+      )}
       {dataNotice && (
         <div className="notice info row" style={{ margin: '12px 24px 0', borderRadius: 10 }}>
           <span>{dataNotice}</span>
