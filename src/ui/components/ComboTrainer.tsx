@@ -10,8 +10,29 @@ import { StepChip, type StepState } from './Notation';
 import { InputLog } from './InputLog';
 import { ControllerDiagram } from './ControllerDiagram';
 import { inputManager } from '../../runtime/inputManager';
+import { navigate } from '../hooks';
 
 const errText = (e: InputErrorType | 'self-reported') => (e === 'self-reported' ? 'Self-reported drop' : ERROR_TEXT[e]);
+
+/** What to do differently, per error type. */
+const FIX_TIP: Record<InputErrorType | 'self-reported', string> = {
+  'wrong-button': 'You pressed a different button than this step needs. Check the button icons above: □ = 1, △ = 2, ✕ = 3, ○ = 4 on the default layout.',
+  'wrong-direction': 'The direction you were holding when you pressed was wrong. Hold the direction shown, then press. Diagonals must be exact: down-forward is down AND forward together.',
+  'missing-motion': 'The motion was not detected in order. Do each direction one after another, in the order shown (return to neutral where the step shows ★), then press the button at the end of the motion.',
+  'not-simultaneous': 'The buttons were pressed too far apart. Press them at the same moment: roll one finger across both, or bind the pair to a shoulder button on the Controller page.',
+  'missing-crouch': 'This step needs a crouch first. Hold down, then release and press as you stand up (that is what "ws" means).',
+  'too-slow': 'Too long a pause before this input. Start it sooner after the previous hit. Slow practice mode removes the time limit while you learn the order.',
+  'self-reported': 'Replay this step slowly in Step-by-step mode, then try the whole combo again.',
+};
+
+interface LastResult {
+  ok: boolean;
+  at: number;
+  stepIndex?: number; // index into allSteps
+  error?: InputErrorType | 'self-reported';
+  detail?: string;
+  seconds?: number;
+}
 
 export type TrainerMode = 'step' | 'full' | 'slow' | 'memory' | 'consistency';
 
@@ -103,6 +124,7 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
   const [manualIdx, setManualIdx] = useState(0);
   const [attempt, setAttempt] = useState<Attempt>({ status: 'ready', index: 0 });
   const [streak, setStreak] = useState(0);
+  const [history, setHistory] = useState<LastResult[]>([]);
   const [session, setSession] = useState({ ok: 0, fail: 0 });
   const [demo, setDemo] = useState<{ frame: number; script: ReturnType<typeof demoScript> } | null>(null);
   const recRef = useRef<SequenceRecognizer | null>(null);
@@ -139,12 +161,15 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
   useEffect(() => {
     setStreak(0);
     setSession({ ok: 0, fail: 0 });
+    setHistory([]);
     mastered.current = false;
   }, [combo.id, mode, fullNotation]);
   useEffect(() => () => { if (resetTimer.current) window.clearTimeout(resetTimer.current); }, []);
 
   const finish = (ok: boolean, info?: Attempt['fail'], frames?: number) => {
     const globalIndex = info ? info.index + range[0] : undefined;
+    const result: LastResult = { ok, at: Date.now(), stepIndex: globalIndex, error: info?.error, detail: info?.detail, seconds: frames !== undefined ? frames / 60 : undefined };
+    setHistory((h) => [result, ...h].slice(0, 5));
     recordCombo({
       itemId: combo.id,
       success: ok,
@@ -296,6 +321,8 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
         </div>
       )}
 
+      <LastAttemptPanel history={history} steps={allSteps} comboId={combo.id} />
+
       <div className="grid g2">
         <div className="card tight">
           <h4>Controller</h4>
@@ -310,6 +337,54 @@ export function ComboTrainer({ char, combo, mode, requiredStreak, focusStep, les
       <div className="source-line">
         Route: {combo.source.name} {combo.source.revision ? `(rev ${combo.source.revision})` : ''} · {nInputs} inputs. The trainer checks input order, directions, simultaneous presses and gaps; it cannot confirm that hits connect in Tekken 8. Verify new routes in Practice mode.
       </div>
+    </div>
+  );
+}
+
+/** Stays on screen after each attempt so there is time to read what went wrong and how to fix it. */
+function LastAttemptPanel({ history, steps, comboId }: { history: LastResult[]; steps: InputStep[]; comboId: string }) {
+  const last = history[0];
+  if (!last) {
+    return (
+      <div className="attempt-panel card">
+        <div className="section-label">Last attempt</div>
+        <p className="dim" style={{ margin: 0 }}>Your result stays here after each try: which step went wrong, what the step needs, and how to fix it.</p>
+      </div>
+    );
+  }
+  const step = last.stepIndex !== undefined ? steps[last.stepIndex] : undefined;
+  return (
+    <div className={`attempt-panel card ${last.ok ? 'ok' : 'no'}`} aria-live="polite">
+      <div className="card-title">
+        <div className="section-label" style={{ margin: 0 }}>Last attempt</div>
+        <span className="small muted">{new Date(last.at).toLocaleTimeString()}</span>
+      </div>
+      {last.ok ? (
+        <p style={{ margin: 0 }}><b>Clean.</b> Every input in order{last.seconds !== undefined ? `, in ${last.seconds.toFixed(2)} s` : ''}. Keep the streak going.</p>
+      ) : (
+        <div className="attempt-grid">
+          <div className="stack">
+            <div><span className="dim">Dropped at</span> <b>step {(last.stepIndex ?? 0) + 1}</b></div>
+            {step && <div className="big"><StepChip step={step} /></div>}
+            {step && <div className="small dim">{timingHint(step)}</div>}
+          </div>
+          <div className="stack">
+            <div><b>{last.error ? errText(last.error) : 'Dropped'}</b>{last.detail ? <span className="dim">: {last.detail}</span> : null}</div>
+            {last.error && <p style={{ margin: 0 }}>{FIX_TIP[last.error]}</p>}
+            {last.stepIndex !== undefined && (
+              <div><button className="btn sm" onClick={() => navigate('combos', comboId, String(last.stepIndex))}>Practise just this step</button></div>
+            )}
+          </div>
+        </div>
+      )}
+      {history.length > 1 && (
+        <div className="attempt-history small">
+          <span className="muted">Recent:</span>
+          {history.slice(1).map((h) => (
+            <span key={h.at} className={`badge ${h.ok ? 'good' : 'bad'}`}>{h.ok ? 'Clean' : `Step ${(h.stepIndex ?? 0) + 1}: ${h.error ? errText(h.error).toLowerCase() : 'dropped'}`}</span>
+          ))}
+        </div>
+      )}
     </div>
   );
 }
