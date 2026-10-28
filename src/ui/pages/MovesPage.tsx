@@ -1,8 +1,9 @@
 import { useMemo, useState } from 'react';
+import { NotationView } from '../components/Notation';
 import type { CharacterData, Move } from '../../types';
 import { classifySafety, firstHitLevel, SAFETY_TEXT, type Safety } from '../../core/frames';
 import { lookupMove } from '../../data';
-import { hrefTo, rowClick } from '../hooks';
+import { hrefTo } from '../hooks';
 import { useStore } from '../store';
 import { MoveCard, SafetyBadge } from '../components/MoveCard';
 
@@ -55,22 +56,31 @@ export function MovesPage({ moveId }: { moveId?: string }) {
       <div className="split" style={{ gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)' }}>
         <div className="card tight scroll" style={{ maxHeight: 'calc(100vh - 260px)' }}>
           {list.length ? (
-            <table className="data">
-              <thead><tr><th>Input</th><th>Name</th><th>Lvl</th><th>Startup</th><th>Block</th><th>Hit</th><th>Dmg</th></tr></thead>
-              <tbody>
-                {list.map((m) => (
-                  <tr key={m.id} className={`clickable ${selected?.id === m.id ? 'sel' : ''}`} onClick={rowClick('moves', m.id)}>
-                    <td className="mono">{keyIds.has(m.id) && <span title="Key move" aria-label="Key move" style={{ color: 'var(--char)' }}>★ </span>}<a className="row-link" href={hrefTo('moves', m.id)} aria-current={selected?.id === m.id ? 'true' : undefined}>{m.id}</a></td>
-                    <td>{m.name || <span className="muted">—</span>}</td>
-                    <td className="mono">{m.hitLevels.join(',')}</td>
-                    <td className="mono">{m.startup}</td>
-                    <td className="mono">{m.block} </td>
-                    <td className="mono">{m.hit}</td>
-                    <td className="mono">{m.damage}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
+            <div className="list combo-list" role="list">
+              {list.map((m) => (
+                <a
+                  key={m.id}
+                  role="listitem"
+                  className={`list-item move-row ${selected?.id === m.id ? 'sel' : ''}`}
+                  href={hrefTo('moves', m.id)}
+                  aria-current={selected?.id === m.id ? 'true' : undefined}
+                  aria-label={`${m.id}${m.name ? `, ${m.name}` : ''}`}
+                >
+                  <span className="move-input">
+                    {keyIds.has(m.id) && <span className="key-star" title="Key move" aria-hidden>★</span>}
+                    <NotationView notation={m.id} />
+                  </span>
+                  <span className="move-meta small">
+                    <b>{m.name || 'Unnamed move'}</b>
+                    <span>{m.hitLevels.join(',') || '—'}</span>
+                    <span>i{m.startup || '?'}</span>
+                    <span>{m.block || '—'} on block</span>
+                    <span>{m.hit || '—'} on hit</span>
+                    <span>{m.damage || '—'} dmg</span>
+                  </span>
+                </a>
+              ))}
+            </div>
           ) : <div className="empty">No moves match these filters.</div>}
         </div>
         <div className="stack">
