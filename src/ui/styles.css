@@ -398,3 +398,7 @@ a:hover { color: var(--red); }
 .login .list { border-top: var(--rule-hair) solid var(--line); }
 .login input { width: 100%; }
 .link-btn { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }
+.login-card:has(.consent-table) { max-width: 640px; }
+.consent-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }
+.consent-table th, .consent-table td { text-align: left; vertical-align: top; padding: var(--space-xs); border-bottom: var(--rule-hair) solid var(--line); }
+.consent-table th { color: var(--muted); font-weight: 600; }

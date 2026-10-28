@@ -2,10 +2,10 @@ import { useState } from 'react';
 import { DEFAULT_SETTINGS, type Settings } from '../../core/progress';
 import { DEFAULT_OPTIONS } from '../../core/recognizer';
 import { useStore } from '../store';
-import { storage } from '../../runtime/storage';
+import { storage, canPersist } from '../../runtime/storage';
 import { navigate } from '../hooks';
 import { fmtDate } from '../format';
-import { currentPlayer, switchPlayer } from '../LoginGate';
+import { currentPlayer, switchPlayer, changeConsent } from '../LoginGate';
 
 function Num({ label, value, min, max, step = 1, onChange, help }: { label: string; value: number; min: number; max: number; step?: number; onChange(v: number): void; help?: string }) {
   return (
@@ -37,6 +37,13 @@ export function SettingsPage() {
         <p>Signed in as <b>{currentPlayer()?.name}</b>. Each player's progress is saved separately on this device.</p>
         <button className="btn sm" onClick={switchPlayer}>Switch player</button>
       </div>
+
+      {!storage.isElectron() && (
+        <div className="card row">
+          <p>{canPersist() ? 'Saving is on: your progress is kept in this browser.' : "Saving is off: your progress is lost when you close this tab."} No cookies or trackers are used.</p>
+          <button className="btn sm" onClick={changeConsent}>Change storage choice</button>
+        </div>
+      )}
 
       <div className="grid g2">
         <div className="card stack">

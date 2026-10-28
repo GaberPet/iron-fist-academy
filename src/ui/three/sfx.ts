@@ -1,3 +1,4 @@
+import { canPersist } from '../../runtime/storage';
 // Fight sounds, synthesised with Web Audio (no audio files): impacts, blocks, whooshes,
 // body falls, wall crashes, Heat / Rage cues and the K.O. boom.
 import type { FightEvent } from '../../core/fight';
@@ -17,7 +18,7 @@ export const sfxMuted = () => muted;
 export function setSfxMuted(m: boolean) {
   muted = m;
   try {
-    localStorage.setItem('ifa.sfx.muted', m ? '1' : '0');
+    if (canPersist()) localStorage.setItem('ifa.sfx.muted', m ? '1' : '0');
   } catch {
     /* private mode */
   }
