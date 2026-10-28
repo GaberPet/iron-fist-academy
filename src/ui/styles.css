@@ -331,3 +331,8 @@ a.row-link:hover { text-decoration: underline; text-underline-offset: 3px; }
 table.data tbody tr { content-visibility: auto; contain-intrinsic-size: auto 44px; }
 .combo-list > * { content-visibility: auto; contain-intrinsic-size: auto 72px; }
 h1, h2, h3, [id] { scroll-margin-top: var(--space-xl); }
+
+/* sidebar: each category in a black hairline outline */
+.sidebar { gap: var(--space-xs); }
+.sidebar .nav-btn { border: var(--rule-hair) solid var(--paper); border-radius: var(--radius-control); color: var(--paper); }
+.sidebar .nav-btn.active { color: var(--ink); }
