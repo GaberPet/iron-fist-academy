@@ -8,11 +8,12 @@ import type { FightEngine, FightEvent, Vec } from '../../core/fight';
 import { inRage } from '../../core/fight';
 import type { FighterLook } from '../components/arenaRenderer';
 import { Fighter3D, glowTexture } from './fighter3d';
-import { HumanFighter, MODEL_IDS } from './human3d';
+import { HumanFighter, MODEL_IDS, PRIVATE_IDS } from './human3d';
 
 type AnyFighter = Fighter3D | HumanFighter;
 
 export function makeFighter(look: FighterLook): AnyFighter {
+  if (look.id && PRIVATE_IDS.has(look.id)) return new HumanFighter(look, new URL(`models-private/${look.id}.glb`, document.baseURI).href, true);
   if (look.id && MODEL_IDS.has(look.id)) return new HumanFighter(look, new URL(`models/${look.id}.glb`, document.baseURI).href);
   return new Fighter3D(look);
 }

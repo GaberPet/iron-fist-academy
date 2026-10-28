@@ -33,6 +33,15 @@ const CHILD: Record<string, string> = {
   thigh_l: 'calf_l', calf_l: 'foot_l', thigh_r: 'calf_r', calf_r: 'foot_r', foot_l: 'ball_l', foot_r: 'ball_r',
 };
 
+/** Private fan-look models (git-ignored public/models-private, personal use; absent on the public site). */
+export const PRIVATE_IDS = new Set<string>();
+export const privateReady: Promise<void> =
+  typeof fetch === 'undefined'
+    ? Promise.resolve()
+    : fetch(new URL('models-private/index.json', document.baseURI).href)
+        .then((r) => (r.ok ? r.json() : []))
+        .then((ids: string[]) => ids.forEach((i) => PRIVATE_IDS.add(i)), () => undefined);
+
 /** Characters with a realistic model in public/models (see scripts/fighters/roster.mjs). */
 export const MODEL_IDS = new Set<string>([
   'alisa', 'anna', 'asuka', 'azucena', 'jun', 'leo', 'lidia', 'kunimitsu', 'lili', 'miary-zo', 'nina', 'reina', 'xiaoyu', 'zafina',
@@ -65,10 +74,14 @@ export class HumanFighter {
   private pelvisRest = new THREE.Vector3();
   private model: THREE.Object3D | null = null;
   private fistAxis = new Map<string, THREE.Vector3>();
+  private flashing = false;
   ready = false;
 
-  constructor(look: FighterLook, url: string) {
+  private readonly baked: boolean;
+
+  constructor(look: FighterLook, url: string, baked = false) {
     this.look = look;
+    this.baked = baked;
     this.driver = new Fighter3D(look);
     this.root = this.driver.root;
     this.H = this.driver.H;
@@ -96,7 +109,7 @@ export class HumanFighter {
           m.alphaTest = cutout ? 0.45 : 0;
           m.side = cutout ? THREE.DoubleSide : THREE.FrontSide;
           if (/body/.test(m.name)) m.roughness = 0.55;
-          const trousers = this.look.id ? TROUSERS[this.look.id] : undefined;
+          const trousers = this.look.id && !this.baked ? TROUSERS[this.look.id] : undefined;
           if (trousers && /worksuit/.test(m.name)) {
             const avg = new THREE.Color().setRGB(...TROUSERS_AVG, THREE.SRGBColorSpace);
             const want = new THREE.Color(trousers);
@@ -221,10 +234,15 @@ export class HumanFighter {
   }
   flash(on: boolean) {
     if (!this.model) return this.driver.flash(on);
+    if (on === this.flashing) return;
+    this.flashing = on;
     this.model.traverse((o) => {
       if (o instanceof THREE.Mesh) {
         const m = o.material as THREE.MeshStandardMaterial;
-        if (m.emissive) m.emissive.setRGB(on ? 0.45 : 0, on ? 0.34 : 0, on ? 0.24 : 0);
+        if (!m.emissive) return;
+        if (!m.userData.baseEmissive) m.userData.baseEmissive = m.emissive.clone();
+        if (on) m.emissive.setRGB(0.45, 0.34, 0.24);
+        else m.emissive.copy(m.userData.baseEmissive as THREE.Color);
       }
     });
   }

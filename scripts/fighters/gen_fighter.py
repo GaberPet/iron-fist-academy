@@ -87,6 +87,16 @@ if cut is not None:
             if vg:
                 vg.remove([i for i, z in enumerate(body_z) if z > hip_z])
 
+# private fan-look extras (git-ignored module; only used when a spec asks for it)
+if spec.get("extras"):
+    sys.path.insert(0, os.path.join(os.path.dirname(os.path.abspath(__file__)), "private"))
+    import extras
+    extras.apply(spec, basemesh)
+    try:
+        bpy.context.scene.render.engine = 'BLENDER_EEVEE_NEXT'
+    except Exception:
+        pass
+
 # opaque skin / clothes, alpha-clipped hair and lashes (MPFB defaults to blended)
 for m in bpy.data.materials:
     cut = any(k in m.name.lower() for k in ("eyelash", "eyebrow", "hair", "short0", "long0", "bob0", "ponytail", "braid", "afro"))

@@ -3,3 +3,7 @@ dist
 release
 *.log
 .claude/
+
+# Private fan-look pack: personal use only, never published
+public/models-private/
+scripts/fighters/private/
