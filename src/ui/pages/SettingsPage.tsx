@@ -40,7 +40,7 @@ export function SettingsPage() {
 
       {!storage.isElectron() && (
         <div className="card row">
-          <p>{canPersist() ? 'Saving is on: your progress is kept in this browser.' : "Saving is off: your progress is lost when you close this tab."} No cookies or trackers are used.</p>
+          <p>{canPersist() ? 'Saving is on: your progress is kept in this browser.' : "Saving is off: your progress is lost when you close this tab."} No cookies or trackers are used. <a href="#/privacy">Privacy policy</a></p>
           <button className="btn sm" onClick={changeConsent}>Change storage choice</button>
         </div>
       )}

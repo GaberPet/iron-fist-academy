@@ -1,6 +1,7 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
 import { storage, setProfile, setPersist, canPersist } from '../runtime/storage';
 import { Logo, Wordmark } from './components/Logo';
+import { PrivacyPage } from './pages/PrivacyPage';
 
 // Players on this device. No passwords: this only keeps each player's progress apart, it is not security.
 interface Player { id: string; name: string; createdAt: string }
@@ -62,6 +63,7 @@ function ConsentForm({ onChoose }: { onChoose: (c: Consent) => void }) {
           </tbody>
         </table>
         <p className="small muted">Frame data and 3D models are loaded from this same site. If you choose not to save, everything works but your progress is lost when you close the tab. You can change your choice any time in Settings and data.</p>
+        <details className="small"><summary>Read the full privacy policy</summary><PrivacyPage /></details>
         <div className="row">
           <button className="btn primary" onClick={() => choose('all')}>Allow saving</button>
           <button className="btn" onClick={() => choose('none')}>Don't save anything</button>
@@ -137,6 +139,7 @@ function SignIn({ children }: { children: ReactNode }) {
           {error && <p className="notice warn" role="alert">{error}</p>}
           <button className="btn primary" type="submit">Create player and start</button>
         </form>
+        <details className="small"><summary>Privacy policy</summary><PrivacyPage /></details>
       </div>
     </main>
   );

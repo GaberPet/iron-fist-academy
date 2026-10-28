@@ -16,6 +16,7 @@ import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
 import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
+import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
 import { RosterTiles } from './components/RosterTiles';
@@ -123,6 +124,7 @@ export function App() {
       case 'companion': return <CompanionPage />;
       case 'updates': return <WhatsNewPage />;
       case 'credits': return <CreditsPage />;
+      case 'privacy': return <PrivacyPage />;
       case 'controller': return <ControllerPage />;
       case 'progress': return <ProgressPage />;
       case 'settings': return <SettingsPage />;
@@ -164,7 +166,7 @@ export function App() {
             Data updated {fmtShortDate(data.manifest.generatedAt)}
           </button>
           <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).{' '}
-          <a href="#/credits">Credits</a>
+          <a href="#/credits">Credits</a> · <a href="#/privacy">Privacy</a>
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
       </nav>
