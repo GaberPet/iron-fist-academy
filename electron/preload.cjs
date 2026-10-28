@@ -8,4 +8,5 @@ contextBridge.exposeInMainWorld('ifaApi', {
   exportFile: (name, text) => ipcRenderer.invoke('file:export', name, text),
   importFile: () => ipcRenderer.invoke('file:import'),
   openDataFolder: () => ipcRenderer.invoke('shell:openData'),
+  uninstall: () => ipcRenderer.invoke('app:uninstall'),
 });

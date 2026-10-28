@@ -6,6 +6,7 @@ const PATHS: Record<string, string> = {
   moves: 'M5 5h14M5 10h14M5 15h14M5 20h9',
   combos: 'M13 3 5 14h6l-1 7 8-11h-6z',
   punish: 'M4 20 14 10m-3-3 6 6m-1-9 4 4-3 3-4-4z',
+  install: 'M12 3v12m-5-5 5 5 5-5M4 19h16',
   matchup: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-4a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z',
   dojo: 'M5 19 19 5M9 5H5v4m10 10h4v-4M5 5l5 5m4 4 5 5',
   fight: 'M7 11V7a2 2 0 0 1 4 0v4m0-1V6a2 2 0 0 1 4 0v5m0-2a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1a6 6 0 0 1-6-6v-2a2 2 0 0 1 4 0',

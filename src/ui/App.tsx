@@ -16,7 +16,9 @@ import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
 import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
+import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
+import { InstallPage } from './pages/InstallPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
@@ -39,7 +41,10 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
   { id: 'settings', label: 'Settings and data', icon: '⚙' },
+  { id: 'install', label: 'Install the app', icon: '⬇', sep: true },
 ];
+// The desktop app is the install: it has no "Install the app" tab, and gets an Uninstall button instead.
+const NAV_HERE = storage.isElectron() ? NAV.filter((n) => n.id !== 'install') : NAV;
 
 class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string }, { error: Error | null }> {
   state = { error: null as Error | null };
@@ -128,6 +133,7 @@ export function App() {
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;
       case 'punish': return <PunishPage />;
       case 'matchup': return <MatchupPage />;
+      case 'install': return <InstallPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'fight': return <Suspense fallback={<div className="empty">Loading the 3D arena…</div>}><FightPage /></Suspense>;
       case 'companion': return <CompanionPage />;
@@ -158,7 +164,7 @@ export function App() {
           <Wordmark />
           <span className="brand-sub">A Level Academy programme</span>
         </div>
-        {NAV.map((n) => (
+        {NAV_HERE.map((n) => (
           <div key={n.id}>
             {n.sep && <div className="nav-sep" />}
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
@@ -178,6 +184,11 @@ export function App() {
           <a href="#/credits">Credits</a> · <a href="#/privacy">Privacy</a>
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
+        {storage.isElectron() && (
+          <button className="btn uninstall-btn" onClick={() => storage.uninstall()} title="Remove Iron Fist Academy from this computer">
+            <span aria-hidden>✕</span> <span className="lbl">Uninstall</span>
+          </button>
+        )}
       </nav>
       <div className="main">
         <TopBar />

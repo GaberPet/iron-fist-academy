@@ -423,3 +423,8 @@ a:hover { color: var(--red); }
 .player-row input { flex: 1; min-width: 0; }
 .favourite-pick { max-width: 360px; }
 .favourite-pick select { width: 100%; }
+
+/* Desktop app: a clear red uninstall button at the bottom of the sidebar */
+.uninstall-btn { margin-top: var(--space-sm); width: 100%; justify-content: center; background: var(--red); border-color: var(--red); color: #ffffff; font-weight: 700; }
+.uninstall-btn:hover:not(:disabled) { background: var(--red-dark); border-color: var(--red-dark); color: #ffffff; }
+.download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-md); }

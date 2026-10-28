@@ -13,6 +13,7 @@ interface IfaApi {
   exportFile(name: string, text: string): Promise<string | null>;
   importFile(): Promise<string | null>;
   openDataFolder(): Promise<string>;
+  uninstall(): Promise<boolean>;
 }
 
 declare global {
@@ -127,4 +128,5 @@ export const storage = {
   },
 
   openDataFolder: () => api()?.openDataFolder(),
+  uninstall: () => api()?.uninstall(),
 };

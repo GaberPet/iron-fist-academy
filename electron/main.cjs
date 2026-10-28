@@ -3,6 +3,7 @@ const { app, BrowserWindow, ipcMain, dialog, shell, Menu, protocol, net } = requ
 const { pathToFileURL } = require('node:url');
 const path = require('node:path');
 const fs = require('node:fs');
+const { spawn } = require('node:child_process');
 
 const isDev = !!process.env.IFA_DEV_URL;
 const DIST = path.join(__dirname, '..', 'dist');
@@ -41,7 +42,7 @@ function createWindow() {
     height: 900,
     minWidth: 1024,
     minHeight: 680,
-    backgroundColor: '#0b0d12',
+    backgroundColor: '#000000',
     title: 'Iron Fist Academy',
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     autoHideMenuBar: true,
@@ -131,6 +132,47 @@ ipcMain.handle('file:import', async (e) => {
 });
 
 ipcMain.handle('shell:openData', () => shell.openPath(dataDir()));
+
+// Uninstall from inside the app. Installed (Windows): run the normal uninstaller. AppImage (Linux):
+// delete the AppImage file. Portable .exe: Windows cannot delete a running program, so show the file
+// instead of using a self-delete trick (antivirus tools treat self-deleting programs as suspicious).
+function installKind() {
+  const dir = path.dirname(process.execPath);
+  if (process.platform === 'win32' && !process.env.PORTABLE_EXECUTABLE_FILE) {
+    const u = fs.readdirSync(dir).find((f) => /^Uninstall .*\.exe$/i.test(f));
+    if (u) return { kind: 'installer', file: path.join(dir, u) };
+  }
+  if (process.env.PORTABLE_EXECUTABLE_FILE) return { kind: 'portable', file: process.env.PORTABLE_EXECUTABLE_FILE };
+  if (process.env.APPIMAGE) return { kind: 'appimage', file: process.env.APPIMAGE };
+  return { kind: 'dev', file: process.execPath };
+}
+
+ipcMain.handle('app:uninstall', async (e) => {
+  const win = BrowserWindow.fromWebContents(e.sender);
+  const { kind, file } = installKind();
+  if (kind === 'dev') {
+    await dialog.showMessageBox(win, { type: 'info', message: 'This is a development copy', detail: 'There is nothing to uninstall.' });
+    return false;
+  }
+  const r = await dialog.showMessageBox(win, {
+    type: 'warning',
+    title: 'Uninstall Iron Fist Academy',
+    message: 'Uninstall Iron Fist Academy from this computer?',
+    detail: kind === 'portable' ? 'This is the portable version: the app will close and show you its file so you can delete it.' : 'The app will close and be removed.',
+    buttons: ['Uninstall', 'Cancel'],
+    defaultId: 1,
+    cancelId: 1,
+    checkboxLabel: 'Also delete my players and saved progress',
+    checkboxChecked: false,
+  });
+  if (r.response !== 0) return false;
+  if (r.checkboxChecked) fs.rmSync(dataDir(), { recursive: true, force: true });
+  if (kind === 'installer') spawn(file, [], { detached: true, stdio: 'ignore' }).unref();
+  else if (kind === 'appimage') fs.rmSync(file, { force: true });
+  else shell.showItemInFolder(file);
+  app.quit();
+  return true;
+});
 
 app.whenReady().then(() => {
   Menu.setApplicationMenu(null);

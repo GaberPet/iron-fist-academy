@@ -1,7 +1,7 @@
 {
   "name": "iron-fist-academy",
   "productName": "Iron Fist Academy",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "Open-source training academy for Tekken 8: structured lessons, live DualSense combo trainer, punishment drills and progress tracking. Unofficial fan project.",
   "author": "GaberPet and contributors",
   "license": "MIT",
@@ -17,14 +17,16 @@
     "typecheck": "tsc --noEmit",
     "import-data": "node scripts/import-wavu.mjs",
     "dist:win": "npm run build && electron-builder --win nsis portable --x64",
-    "dist:linux": "npm run build && electron-builder --linux AppImage"
+    "dist:linux": "npm run build && electron-builder --linux AppImage --x64"
   },
   "build": {
     "appId": "io.github.gaberpet.ironfistacademy",
     "productName": "Iron Fist Academy",
     "files": [
       "dist/**",
+      "!dist/models-private/**",
       "electron/**",
+      "build/icon.png",
       "package.json"
     ],
     "directories": {
@@ -39,16 +41,21 @@
     },
     "nsis": {
       "oneClick": false,
-      "allowToChangeInstallationDirectory": true
+      "allowToChangeInstallationDirectory": true,
+      "artifactName": "Iron-Fist-Academy-Setup.exe",
+      "shortcutName": "Iron Fist Academy",
+      "uninstallDisplayName": "Iron Fist Academy"
     },
     "portable": {
-      "artifactName": "Iron-Fist-Academy-${version}-portable.exe"
+      "artifactName": "Iron-Fist-Academy-Portable.exe"
     },
     "linux": {
       "target": [
         "AppImage"
       ],
-      "icon": "build/icon.png"
+      "icon": "build/icon.png",
+      "category": "Game",
+      "artifactName": "Iron-Fist-Academy.AppImage"
     },
     "copyright": "Copyright © 2026 GaberPet and contributors",
     "publish": null
