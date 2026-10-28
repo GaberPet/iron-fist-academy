@@ -1,0 +1,30 @@
+{
+ "short": "Kuma",
+ "playstyle": "An oddball bear built on ranged poking and whiff punishment. Use his massive range and damage to punish every mistake, and go into Hunting Bear Stance (HBS) and his roll and sit stances for odd mix-ups. His huge, wonky hurtbox makes him take bigger combos, so avoid getting launched.",
+ "stances": [
+  {"code": "HBS", "name": "Hunting Bear Stance", "entry": "D or 3+4 after moves like db+2 and u+1+2", "note": "HBS.3+4 is a power crush and Heat Engager; HBS.df+2 and HBS.1+2 tornado; HBS.d+1+2 launches on counter hit."},
+  {"code": "ROL", "name": "Roll", "entry": "From transitions (see the Move Library)", "note": "ROL.1 is +4 on block and guard-breaks in Heat. Heat enhances the roll stance (Wavu)."},
+  {"code": "SIT", "name": "Sit", "entry": "From transitions (see the Move Library)", "note": "SIT.2 tornadoes on hit."}
+ ],
+ "keyLaunchers": ["df+2,1", "ws2", "f,F+2", "HBS.df+2"],
+ "whiffPunishers": ["f,F+2", "df+2,1", "b,f+2"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["2,1", "punisher", "i10 punish string (Wavu).", "His i10 punish.", "After -10 moves.", "Nothing major.", "Block.", "-3.", "+2.", "Low risk.", "Fast punish."],
+  ["df+1", "poke", "i15 mid, -6 on block.", "His mid check.", "To stop ducking.", "Slow-ish for a check.", "Block.", "-6.", "+2.", "Low risk.", "Basic mid."],
+  ["f+2,1", "punisher", "i12 high string (Wavu punisher), -5 on block.", "His i12 punish with a launch on hit.", "After -12 moves.", "Against crouchers.", "Duck it.", "-5.", "+36a.", "Low risk.", "Strong i12 punish."],
+  ["df+2,1", "launcher,punisher", "i15 launch string (Wavu BnB starter), -16 on block.", "His i15 launch punisher.", "After -15 moves.", "Raw: -16.", "Block and launch.", "-16.", "Launch (+35a).", "Risky.", "Main punish."],
+  ["ws2", "launcher,punisher", "Mad Angler: i15 while-standing launcher, -12 on block.", "His crouch launch punish.", "After -15 lows.", "Raw: -12.", "Block.", "-12.", "Launch (+29a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "Paw Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["f,F+2", "launcher", "Demon Uppercut: i19 launcher that crushes lows, -19 on block.", "A long whiff punisher.", "Whiff punish at range.", "Raw: -19.", "Block and launch.", "-19.", "Launch (+45a).", "Very risky.", "Whiff punish only."],
+  ["b,f+2", "counter-hit", "Anger Hook: i15 high, -5 on block, launches on counter hit (+62a).", "A safe CH launcher.", "When they press.", "Against crouchers.", "Duck it.", "-5.", "+17a; launch on CH.", "Low risk.", "Read-based damage."],
+  ["db+3", "low", "Bear Pump in Pedal: i18 low, -12 on block.", "His low poke.", "Against standing block.", "When they block low.", "Block low.", "-12.", "+1.", "Moderate.", "Chip."],
+  ["db+4", "low,counter-hit", "Spinning Kuma: i21 low, -23 on block, tornadoes on counter hit.", "A big-reward low.", "As a read.", "Getting blocked: -23.", "Block low and launch.", "-23.", "+6; tornado on CH.", "Very risky.", "Use sparingly."],
+  ["1+2", "heat,punisher", "Demon Bear Breath: i13 mid Heat Engager, -13 on block.", "His i13 punisher and Heat start.", "Punish -13.", "Raw: -13.", "Block.", "-13.", "+18cg; Heat Engager.", "Moderate.", "Punish into Heat."],
+  ["f,f,F+1+2", "heat", "Rabid Bear: i20 mid from a run, +3 on block, Heat Engager.", "A plus Heat Engager from range.", "To close distance and start Heat.", "Linear.", "Sidestep it.", "+3.", "+9c.", "Moderate.", "Approach tool."],
+  ["2+4", "throw", "Bear Hug: i12 throw, break with 1 or 2.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "kuma-bnb", "name": "Launch BnB: u+1+2,3+4 HBS.1 b+2,2,1 T! uf+2 b+1", "difficulty": 3, "section": "Bread n' butter", "starters": ["df+2,1"], "situation": "After a regular launch such as df+2,1 (Wavu: 63 damage).", "route": "u+1+2,3+4 HBS.1 b+2,2,1 T! uf+2 b+1", "damage": "[63]", "tags": ["bnb"], "mistakes": ["Missing the 3+4 transition into HBS after u+1+2.", "Pressing uf+2 too early after the tornado."]}
+ ]
+}

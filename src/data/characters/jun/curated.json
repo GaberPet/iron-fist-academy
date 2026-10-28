@@ -1,0 +1,329 @@
+{
+ "profile": {
+  "id": "jun",
+  "name": "Jun",
+  "short": "Jun",
+  "color": "hsl(178 70% 62%)",
+  "overview": "Jun is a versatile poking, lockdown, and defense-oriented character, excelling at chipping away an opponent's health and frustrating them into pressing into her strong whiff punishment, reversals, and counterhits. She is also known for her extreme safety. She can have a safe df+2 which launches crouchers, and a safe version of the Kazama f+2 launcher, as well as some other safe launching and evasive options. What's the catch? These Kazama Power moves cost health to use, essentially giving the opponent a tiny \"punish\" without them actually hitting you. This \"downside\" is further mitigated by her Heat reducing the health-cost of these moves, as well as Jun having a few special moves which recover her health, and her heat smash being designed to heal her. Using the moves which damage and heal you, grants her a unique resource, Kazama Essence, which empowers a number of her key moves when the gauge reaches 100.",
+  "playstyle": "Poking, lockdown and defence. Chip the opponent down with safe pokes and layered strings, frustrate them with her parry (Inner Peace, f+1+2) and counter-hit tools, and move between Izumo (IZU), Genjitsu (GEN) and Miare (MIA). Some of her Kazama powers cost her own health, which is cheaper in Heat (Wavu). She has no i15 standing launcher.",
+  "strengths": [
+   "Very well-rounded character, with emphasis on poking, defense, and CH tools",
+   "Layered string mixups are hard to defend against",
+   "Very strong punishment at i10 both crouching and standing",
+   "Can launch from crouch at i14",
+   "Useful Heat Engagers and and amazing long-range heat smash which recovers a lot of grey health for her",
+   "Kazama's Essence improves her already amazing damage by a lot"
+  ],
+  "weaknesses": [
+   "No i15 standing launcher",
+   "Can over-spend health trying to poke through the opponent's defenses",
+   "Still needs to spend health when trying to mount a comeback at low life",
+   "Mediocre frame data on her low pokes, lacks a strong low out of stance"
+  ],
+  "stances": [
+   {
+    "code": "IZU",
+    "name": "Izumo",
+    "entry": "f+3,2, 1,2,2 and MIA.1+2 transition to it",
+    "note": "IZU.3 is a Heat Engager; IZU.1,1 tornadoes and is used in her BnB."
+   },
+   {
+    "code": "GEN",
+    "name": "Genjitsu",
+    "entry": "F after b+2,1",
+    "note": "GEN.4 is a homing high, +4 to +6 on block; GEN.2 ends her tornado combo."
+   },
+   {
+    "code": "MIA",
+    "name": "Miare",
+    "entry": "f+1+2 (Inner Peace) on hit",
+    "note": "Follow-ups after a successful Inner Peace; MIA.1+2 goes into IZU."
+   }
+  ],
+  "heat": [
+   "Kazama Powers cost less health.",
+   "Inner Peace (f+1+2) becomes powered up, gaining more parry frames."
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "df+4",
+   "ws3+4",
+   "uf+4,3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Jun",
+    "url": "https://wavu.wiki/t/Jun",
+    "revision": 62094,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Jun_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62067,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Jun_combos",
+    "revision": 60765,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Jun_punishers",
+    "revision": 33176,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "uf+1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Divine Exile - Heaven: i10 high, -14 on block.",
+   "purpose": "Her i10 punisher (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-14.",
+   "afterHit": "+12a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "2,1,4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 string, -12 on block.",
+   "purpose": "Her i12 punisher (Wavu) and a fast string.",
+   "use": "After -12 moves.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "-1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish string."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Core poke."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Kazakiri: i17 homing mid, -8 on block.",
+   "purpose": "A homing mid.",
+   "use": "To catch sidesteps.",
+   "avoid": "-8 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+19a.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Anti-step poke."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Getsukankyaku: i19 homing high, +3 to +5 on block.",
+   "purpose": "A plus, homing high.",
+   "use": "To keep the turn and catch steps.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3 to +5.",
+   "afterHit": "+13 to +15.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "i12 high, +32d on counter hit.",
+   "purpose": "A fast counter-hit tool with Wavu mini-combos.",
+   "use": "When they press.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-9.",
+   "afterHit": "+7; CH leads to 4+3 and others.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fast CH reward."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Mizuho: i16 launcher, launches crouchers. -12 on block.",
+   "purpose": "Her main launcher (she has no i15 standing launcher).",
+   "use": "Punish -16 and whiff punish.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Katabami: i15 mid, crumples on hit (+48a), -14 on block.",
+   "purpose": "An i15 combo starter.",
+   "use": "As a punish or read.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Crumple into combo.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Faster combo starter."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Ichikaku: i11 while-standing kick, -12 on block.",
+   "purpose": "Fast crouch punisher that gives a juggle (+18a).",
+   "use": "After -11 lows.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+18a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Rewarding crouch punish."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Leg Scythe: i18 low, -12 on block.",
+   "purpose": "Her main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip damage."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Inner Peace: i12 parry, +2 on block, powered up in Heat.",
+   "purpose": "Her parry that leads into Miare.",
+   "use": "As a read on the opponent's attacks.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low her.",
+   "afterBlock": "+2.",
+   "afterHit": "+26g.",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "Defensive cornerstone."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Shunkei: i13 mid Heat Engager, -12 on block.",
+   "purpose": "An i13 punisher that starts Heat.",
+   "use": "Punish -13.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "Minus on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "jun-bnb",
+   "name": "Launch BnB: b+4,2 f+3,2~IZU.1,1 T! b+4,2",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "b+4,2 f+3,2~IZU.1,1 T! b+4,2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing IZU.1,1 before the stance starts after f+3,2.",
+    "Rushing the final b+4,2."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Jun",
+    "url": "https://wavu.wiki/t/Jun_combos",
+    "revision": 60765,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f+2",
+  "d+1+2"
+ ],
+ "lessons": []
+}

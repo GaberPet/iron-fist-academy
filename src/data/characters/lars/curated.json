@@ -1,0 +1,318 @@
+{
+ "profile": {
+  "id": "lars",
+  "name": "Lars",
+  "short": "Lars",
+  "color": "hsl(149 70% 62%)",
+  "overview": "Lars is a simple, solid all-rounder with good generics and stance mixups, strong block punishment and great combo damage. Simple to pick up and play, and boasting some very flashy moves, Lars is a great choice for the Tekken beginner as he is very safe (most of his moves are -12 on block).",
+  "playstyle": "A simple, solid all-rounder. Good generic pokes, strong punishment and great combo damage, plus stance mix-ups through Dynamic Entry (DEN), Silent Entry (SEN) and Limited Entry (LEN). Wavu notes his counter-hit game is below average apart from 1,1,1, so win by punishing and by stance pressure, not by fishing.",
+  "strengths": [
+   "Tricky: Strong stance mixups, and new extensions and stance transitions can easily confuse opponents.",
+   "Fundamental: Good generic tools make him well rounded, fit to tackle any kind of opponent.",
+   "Watch your ankles: Decent selection of lows, especially with Heat active.",
+   "Punishing: Strong block punishment, with ability to launch at i14 standing, making Lars quite dangerous should his opponents be careless with their move selections."
+  ],
+  "weaknesses": [
+   "Bad at fishing: Other than his 1,1,1, his CH game is below average; he has no other fast options, and CH launchers are not any faster than his existing natural launchers.",
+   "Slow Dancer: His great single backdash distance is offset by having a very awkward cancel window."
+  ],
+  "stances": [
+   {
+    "code": "DEN",
+    "name": "Dynamic Entry",
+    "entry": "From many moves (e.g. f+3,DEN, df+3~d,DEN)",
+    "note": "DEN.1+2 is i12 and tornadoes; DEN.1,2 and DEN.3 are Heat Engagers; DEN.3 is +5 on block."
+   },
+   {
+    "code": "SEN",
+    "name": "Silent Entry",
+    "entry": "df+2, f+2,1 and others transition here; also used with ~f in combos",
+    "note": "SEN.1 is an i12 Heat Engager; SEN.2 is a low; SEN.4 is a homing high, +4 on block; SEN.1+2 is a power crush that tornadoes."
+   },
+   {
+    "code": "LEN",
+    "name": "Limited Entry",
+    "entry": "D after 3 or ws3",
+    "note": "A low-profile stance; LEN.2 tornadoes. Heat empowers LEN moves (Wavu)."
+   }
+  ],
+  "heat": [
+   "Empowered moves from LEN",
+   "Lars-H.f+3+4|name can be used (Lars-H.f+3+4|input)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "f+1+2",
+   "uf+3",
+   "f,n,b+2,1",
+   "ws1"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Lars",
+    "url": "https://wavu.wiki/t/Lars",
+    "revision": 62099,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Lars_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62127,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Lars_combos",
+    "revision": 59536,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Lars_punishers",
+    "revision": 57730,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,1,1",
+   "roles": [
+    "counter-hit",
+    "heat"
+   ],
+   "summary": "Delta Slicer: Heat Engager string, his main counter-hit tool (Wavu).",
+   "purpose": "Fast string that rewards presses and starts Heat.",
+   "use": "When the opponent presses after you.",
+   "avoid": "-12 if the whole string is blocked.",
+   "counterplay": "Block and punish the end.",
+   "afterBlock": "-12.",
+   "afterHit": "+17a; Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best fishing tool."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block.",
+   "purpose": "His mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Flash Bullet: i14 mid, -3 on block, transitions to SEN.",
+   "purpose": "A safe mid into stance pressure.",
+   "use": "To check and go into SEN.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Stance starter."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Tactical Sword: i18 mid, +0c on block.",
+   "purpose": "A safe mid that spikes on counter hit.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+0c.",
+   "afterHit": "+8c; +30d on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure mid."
+  },
+  {
+   "id": "f+2,1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i13 high string into SEN, -5 on block.",
+   "purpose": "His i12 punisher (Wavu).",
+   "use": "After -12 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into stance."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Ark Blast: i15 mid, -13 on block.",
+   "purpose": "His i15 punish and BnB starter (Wavu).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "+28 into his combo.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "f,n,b+2,1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Blue Bolt: i16 launcher, -18 on block.",
+   "purpose": "An i14 punisher on Wavu's table.",
+   "use": "After -14 moves.",
+   "avoid": "Raw: -18.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-18.",
+   "afterHit": "Launch (+47a).",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "uf+3",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Lightning Screw: i16 knee launcher, -26 on block.",
+   "purpose": "A launcher (Wavu BnB starter).",
+   "use": "As a punish or read.",
+   "avoid": "Raw: -26.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-26.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Punish or hard read."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Streamer: i15 while-standing tornado, -12 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Tornado (+38a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Shell Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low",
+    "counter-hit"
+   ],
+   "summary": "Shadow Cutter: i20 low, -26 on block, launches on counter hit.",
+   "purpose": "A big-reward low.",
+   "use": "As a read.",
+   "avoid": "Getting blocked: -26.",
+   "counterplay": "Block low and launch.",
+   "afterBlock": "-26.",
+   "afterHit": "+5c; +29a on CH.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Use sparingly."
+  },
+  {
+   "id": "SEN.2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Turbine Hook: i17 low from SEN, -12 on block.",
+   "purpose": "The low side of his SEN mix-up.",
+   "use": "Against standing block from SEN.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+6c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Stance low."
+  },
+  {
+   "id": "f,f,F+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Red Sprite: i20 mid from a run, +6 on block.",
+   "purpose": "A plus approach.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+6.",
+   "afterHit": "+15a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with stance pressure."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,F+2",
+  "f+1+2",
+  "uf+4"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,29 @@
+{
+ "short": "Lars",
+ "playstyle": "A simple, solid all-rounder. Good generic pokes, strong punishment and great combo damage, plus stance mix-ups through Dynamic Entry (DEN), Silent Entry (SEN) and Limited Entry (LEN). Wavu notes his counter-hit game is below average apart from 1,1,1, so win by punishing and by stance pressure, not by fishing.",
+ "stances": [
+  {"code": "DEN", "name": "Dynamic Entry", "entry": "From many moves (e.g. f+3,DEN, df+3~d,DEN)", "note": "DEN.1+2 is i12 and tornadoes; DEN.1,2 and DEN.3 are Heat Engagers; DEN.3 is +5 on block."},
+  {"code": "SEN", "name": "Silent Entry", "entry": "df+2, f+2,1 and others transition here; also used with ~f in combos", "note": "SEN.1 is an i12 Heat Engager; SEN.2 is a low; SEN.4 is a homing high, +4 on block; SEN.1+2 is a power crush that tornadoes."},
+  {"code": "LEN", "name": "Limited Entry", "entry": "D after 3 or ws3", "note": "A low-profile stance; LEN.2 tornadoes. Heat empowers LEN moves (Wavu)."}
+ ],
+ "keyLaunchers": ["f+1+2", "uf+3", "f,n,b+2,1", "ws1"],
+ "whiffPunishers": ["f,F+2", "f+1+2", "uf+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,1,1", "counter-hit,heat", "Delta Slicer: Heat Engager string, his main counter-hit tool (Wavu).", "Fast string that rewards presses and starts Heat.", "When the opponent presses after you.", "-12 if the whole string is blocked.", "Block and punish the end.", "-12.", "+17a; Heat Engager.", "Moderate.", "His best fishing tool."],
+  ["df+1", "poke", "i13 mid, -3 on block.", "His mid check.", "To stop ducking.", "Little risk.", "Block.", "-3.", "+5.", "Low risk.", "Basic mid."],
+  ["df+2", "poke", "Flash Bullet: i14 mid, -3 on block, transitions to SEN.", "A safe mid into stance pressure.", "To check and go into SEN.", "Little risk.", "Block.", "-3.", "+9.", "Low risk.", "Stance starter."],
+  ["d+2", "poke", "Tactical Sword: i18 mid, +0c on block.", "A safe mid that spikes on counter hit.", "To keep the turn.", "As an interrupt.", "Interrupt or step.", "+0c.", "+8c; +30d on CH.", "Moderate.", "Pressure mid."],
+  ["f+2,1", "punisher", "i13 high string into SEN, -5 on block.", "His i12 punisher (Wavu).", "After -12 moves.", "Against crouchers.", "Duck it.", "-5.", "+6.", "Low risk.", "Punish into stance."],
+  ["f+1+2", "launcher,punisher", "Ark Blast: i15 mid, -13 on block.", "His i15 punish and BnB starter (Wavu).", "After -15 moves.", "Raw: -13.", "Block.", "-13.", "+28 into his combo.", "Risky.", "Main punish."],
+  ["f,n,b+2,1", "launcher,punisher", "Blue Bolt: i16 launcher, -18 on block.", "An i14 punisher on Wavu's table.", "After -14 moves.", "Raw: -18.", "Block and launch.", "-18.", "Launch (+47a).", "Very risky raw.", "Punish only."],
+  ["uf+3", "launcher", "Lightning Screw: i16 knee launcher, -26 on block.", "A launcher (Wavu BnB starter).", "As a punish or read.", "Raw: -26.", "Block and launch.", "-26.", "Launch (+33a).", "Very risky.", "Punish or hard read."],
+  ["ws1", "launcher,punisher", "Streamer: i15 while-standing tornado, -12 on block.", "His crouch launch punish.", "After -15 lows.", "Raw: -12.", "Block.", "-12.", "Tornado (+38a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "Shell Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["db+4", "low,counter-hit", "Shadow Cutter: i20 low, -26 on block, launches on counter hit.", "A big-reward low.", "As a read.", "Getting blocked: -26.", "Block low and launch.", "-26.", "+5c; +29a on CH.", "Very risky.", "Use sparingly."],
+  ["SEN.2", "low", "Turbine Hook: i17 low from SEN, -12 on block.", "The low side of his SEN mix-up.", "Against standing block from SEN.", "When they block low.", "Block low.", "-12.", "+6c.", "Moderate.", "Stance low."],
+  ["f,f,F+3", "poke", "Red Sprite: i20 mid from a run, +6 on block.", "A plus approach.", "To close distance and keep the turn.", "Linear.", "Sidestep it.", "+6.", "+15a.", "Moderate.", "Approach tool."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with stance pressure."]
+ ],
+ "combos": []
+}

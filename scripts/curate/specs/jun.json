@@ -1,0 +1,239 @@
+{
+ "short": "Jun",
+ "playstyle": "Poking, lockdown and defence. Chip the opponent down with safe pokes and layered strings, frustrate them with her parry (Inner Peace, f+1+2) and counter-hit tools, and move between Izumo (IZU), Genjitsu (GEN) and Miare (MIA). Some of her Kazama powers cost her own health, which is cheaper in Heat (Wavu). She has no i15 standing launcher.",
+ "stances": [
+  {
+   "code": "IZU",
+   "name": "Izumo",
+   "entry": "f+3,2, 1,2,2 and MIA.1+2 transition to it",
+   "note": "IZU.3 is a Heat Engager; IZU.1,1 tornadoes and is used in her BnB."
+  },
+  {
+   "code": "GEN",
+   "name": "Genjitsu",
+   "entry": "F after b+2,1",
+   "note": "GEN.4 is a homing high, +4 to +6 on block; GEN.2 ends her tornado combo."
+  },
+  {
+   "code": "MIA",
+   "name": "Miare",
+   "entry": "f+1+2 (Inner Peace) on hit",
+   "note": "Follow-ups after a successful Inner Peace; MIA.1+2 goes into IZU."
+  }
+ ],
+ "keyLaunchers": [
+  "df+2",
+  "df+4",
+  "ws3+4",
+  "uf+4,3"
+ ],
+ "whiffPunishers": [
+  "df+2",
+  "f+2",
+  "d+1+2"
+ ],
+ "keyMoves": [
+  [
+   "1",
+   "poke",
+   "Jab: i10, +1 on block.",
+   "Fast check.",
+   "Up close.",
+   "Against crouchers.",
+   "Duck it.",
+   "+1.",
+   "+8.",
+   "Low risk.",
+   "Close-range glue."
+  ],
+  [
+   "uf+1",
+   "punisher",
+   "Divine Exile - Heaven: i10 high, -14 on block.",
+   "Her i10 punisher (Wavu).",
+   "After -10 moves.",
+   "Raw: -14.",
+   "Duck it.",
+   "-14.",
+   "+12a.",
+   "Moderate.",
+   "Fast punish."
+  ],
+  [
+   "2,1,4",
+   "punisher",
+   "i10 string, -12 on block.",
+   "Her i12 punisher (Wavu) and a fast string.",
+   "After -12 moves.",
+   "Raw: -12.",
+   "Block.",
+   "-12.",
+   "-1.",
+   "Moderate.",
+   "Punish string."
+  ],
+  [
+   "df+1",
+   "poke",
+   "i13 mid, -3 on block.",
+   "Her safe mid check.",
+   "To stop ducking.",
+   "Little risk.",
+   "Block.",
+   "-3.",
+   "+8.",
+   "Low risk.",
+   "Core poke."
+  ],
+  [
+   "df+3",
+   "poke",
+   "Kazakiri: i17 homing mid, -8 on block.",
+   "A homing mid.",
+   "To catch sidesteps.",
+   "-8 on block.",
+   "Block.",
+   "-8.",
+   "+19a.",
+   "Low risk.",
+   "Anti-step poke."
+  ],
+  [
+   "f+4",
+   "poke",
+   "Getsukankyaku: i19 homing high, +3 to +5 on block.",
+   "A plus, homing high.",
+   "To keep the turn and catch steps.",
+   "Against crouchers.",
+   "Duck it.",
+   "+3 to +5.",
+   "+13 to +15.",
+   "Moderate.",
+   "Pressure tool."
+  ],
+  [
+   "4",
+   "counter-hit",
+   "i12 high, +32d on counter hit.",
+   "A fast counter-hit tool with Wavu mini-combos.",
+   "When they press.",
+   "Against crouchers.",
+   "Duck it.",
+   "-9.",
+   "+7; CH leads to 4+3 and others.",
+   "Moderate.",
+   "Fast CH reward."
+  ],
+  [
+   "df+2",
+   "launcher,punisher",
+   "Mizuho: i16 launcher, launches crouchers. -12 on block.",
+   "Her main launcher (she has no i15 standing launcher).",
+   "Punish -16 and whiff punish.",
+   "Raw: -12.",
+   "Block.",
+   "-12.",
+   "Launch (+29a).",
+   "Risky.",
+   "Main punish (Wavu BnB starter)."
+  ],
+  [
+   "df+4",
+   "launcher",
+   "Katabami: i15 mid, crumples on hit (+48a), -14 on block.",
+   "An i15 combo starter.",
+   "As a punish or read.",
+   "Raw: -14.",
+   "Block.",
+   "-14.",
+   "Crumple into combo.",
+   "Risky.",
+   "Faster combo starter."
+  ],
+  [
+   "ws4",
+   "punisher",
+   "Ichikaku: i11 while-standing kick, -12 on block.",
+   "Fast crouch punisher that gives a juggle (+18a).",
+   "After -11 lows.",
+   "-12 on block.",
+   "Block.",
+   "-12.",
+   "+18a.",
+   "Moderate.",
+   "Rewarding crouch punish."
+  ],
+  [
+   "db+3",
+   "low",
+   "Leg Scythe: i18 low, -12 on block.",
+   "Her main low.",
+   "Against standing block.",
+   "When they block low.",
+   "Block low.",
+   "-12.",
+   "+2.",
+   "Moderate.",
+   "Chip damage."
+  ],
+  [
+   "f+1+2",
+   "evasion",
+   "Inner Peace: i12 parry, +2 on block, powered up in Heat.",
+   "Her parry that leads into Miare.",
+   "As a read on the opponent's attacks.",
+   "Against lows and throws.",
+   "Throw or low her.",
+   "+2.",
+   "+26g.",
+   "Bad if read.",
+   "Defensive cornerstone."
+  ],
+  [
+   "1+2",
+   "heat,punisher",
+   "Shunkei: i13 mid Heat Engager, -12 on block.",
+   "An i13 punisher that starts Heat.",
+   "Punish -13.",
+   "Raw: -12.",
+   "Block.",
+   "-12.",
+   "Launch (+28a).",
+   "Moderate.",
+   "Punish into Heat."
+  ],
+  [
+   "2+4",
+   "throw",
+   "i12 throw, break with 1 or 2, side switch.",
+   "Generic throw.",
+   "Against blockers.",
+   "When they break.",
+   "Break with 1 or 2.",
+   "Minus on break.",
+   "Knockdown.",
+   "Whiffs if ducked.",
+   "Mix with pokes."
+  ]
+ ],
+ "combos": [
+  {
+   "id": "jun-bnb",
+   "name": "Launch BnB: b+4,2 f+3,2~IZU.1,1 T! b+4,2",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "b+4,2 f+3,2~IZU.1,1 T! b+4,2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing IZU.1,1 before the stance starts after f+3,2.",
+    "Rushing the final b+4,2."
+   ]
+  }
+ ]
+}

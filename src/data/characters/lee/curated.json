@@ -1,0 +1,330 @@
+{
+ "profile": {
+  "id": "lee",
+  "name": "Lee",
+  "short": "Lee",
+  "color": "hsl(117 70% 62%)",
+  "overview": "Lee is a stylish, counterhit-focused character who rewards mastery. He has counterhits for days, and can fish for them while representing any kind of playstyle, whether poking or keepout. Lee boasts the highest number of just frames in the game, including the strongest i10 punisher in the game in Acid Rain. Along with high combo damage and wall carry, Lee truly rewards excellence, and time spent mastering the character.",
+  "playstyle": "Stylish counter-hit fishing that rewards mastery. Keep the opponent scared with strong mid checks and the oppressive running 3,4 (wr3,4), fish for counter hits with fast strings, and use Hitman (HMS) and Mist Step (MS). In Heat, his just-frame Cardinal moves can be done without the timing. Wavu notes his lows deal little damage.",
+  "strengths": [
+   "Pressure: Lee boasts a plethora of powerful CH options as well as an oppressive WR3,4 and strong mid checks to keep opponents scared. His access to the combination of a high evading launcher in ff4, an i11 CH launcher in his magic 4 series, and a low CH launcher in d3 make attacking into Lee a constant gamble, even when he is nominally disadvantaged.",
+   "Amazing Wall Carry: Lee's loopable combo strings, particularly with b+2, have excellent potential for carrying opponents to the wall.",
+   "Keepout: Tools such as b4 & ff3 allow Lee to keep the opponent outside of their perfect range.",
+   "Full Crouch Mixups: In crouch, Lee has a multitude of options to mix the opponent up, such as the safe WS4 or the quick FC.df4 for a low risk mixup, or using his slide as well as WS2,3 for a more brilliant, but risky mixup.",
+   "Defense and Punishment: Lee boasts the highest damage i10 punisher in the game, along with a suite of moves that can evade, outspeed, parry, or otherwise subvert the opponent's offense for marvelous reward."
+  ],
+  "weaknesses": [
+   "Lows: Lee's lows are heavily poke oriented tools that tend to have overall poor damage in exchange for obnoxious properties such as range, speed, advantage, or reward on CH. His only true power lows are locked behind FC or a once per round Heat Smash, and though b3,3 is an exceptional low string, it is launch punishable and doesn't do much damage compared to other mixup tools in the game. Lee must take many risks throughout a round to break down a turtling opponent.",
+   "Long Range Tracking: Many of his most important moves are vulnerable to SWR, especially at longer ranges, making approaching a wary opponent risky. While his homing moves have great properties, they are more suited for locking down an opponent that Lee has already approached, or calling out an aggressor for trying to move around his other more linear keepout tools.",
+   "Execution: Lee is designed to reward execution heavy players. Though he may not have the hardest techniques in the game, full combos from CH d3 or CH 4,4,4 are tight, as well as his Just Frames demanding a bit more execution on things that other characters get for free—and in some cases, missing the timing can lead to you getting punished."
+  ],
+  "stances": [
+   {
+    "code": "HMS",
+    "name": "Hitman Stance",
+    "entry": "3+4, or 3 after moves like ws4, b+4 and 1,2,4",
+    "note": "HMS.1,1,1 is a Heat Engager. HMS also parries some attacks."
+   },
+   {
+    "code": "MS",
+    "name": "Mist Step",
+    "entry": "f~n, or F after b+2 and f,F+2",
+    "note": "A fast forward step; Sway is MS.b~n (Wavu)."
+   }
+  ],
+  "heat": [
+   "- Just frame moves can be used without a just frame input in exchange for heat gauge.",
+   "- Allows the use of Crimson Howl and Phantom Rose."
+  ],
+  "heatEngagers": [
+   "4,4:4",
+   "df+4,4",
+   "b+3+4",
+   "f,F+3",
+   "HMS.1,1,1"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "ws2,3",
+   "f,F+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Lee",
+    "url": "https://wavu.wiki/t/Lee",
+    "revision": 62101,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Lee_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63020,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Lee_combos",
+    "revision": 60975,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Lee_punishers",
+    "revision": 48522,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,2,4 and 1,3:3:3 are his i10 punishes (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2,4",
+   "roles": [
+    "punisher",
+    "counter-hit"
+   ],
+   "summary": "i10 string, -12 on block, launches on counter hit (+58a).",
+   "purpose": "His i10 punish and CH fishing tool.",
+   "use": "After -10 moves, or as a fishing string.",
+   "avoid": "Finishing it raw: -12.",
+   "counterplay": "Block, punish the last hit.",
+   "afterBlock": "-12.",
+   "afterHit": "-1; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fish and punish with one string."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Silver Uppercut: i15 launcher, -7 on block, launches on counter hit.",
+   "purpose": "His i15 launch punisher, safe on block.",
+   "use": "Punish -15, whiff punish.",
+   "avoid": "Against crouchers: only +4s on normal hit.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Silver Arrow: i15 knee launcher, -13 on block.",
+   "purpose": "His other i15 launcher (Wavu).",
+   "use": "Punish -15.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws2,3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i14 while-standing launch string that wall-splats, -13 on block.",
+   "purpose": "His crouch launch punish (Wavu: i14 splat).",
+   "use": "After -14 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Tornado (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -6 on block, can enter HMS.",
+   "purpose": "Fast crouch punish and crouching mid check.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Silver Heel: i20 mid, -3 on block, launches on counter hit (+64a).",
+   "purpose": "A safe mid CH launcher.",
+   "use": "When they press.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+7c; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe fishing."
+  },
+  {
+   "id": "f,F+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Jostle Wolf: i15 high, +2 on block, tornadoes on counter hit (+69a).",
+   "purpose": "A plus high with a huge CH reward.",
+   "use": "To keep the turn and fish.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+2.",
+   "afterHit": "+18cg; tornado on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure and fishing."
+  },
+  {
+   "id": "f,f,F+3,4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "wr3,4: i20 mid string, +3 on block.",
+   "purpose": "Wavu's 'oppressive' running pressure tool.",
+   "use": "From range to close distance and keep the turn.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+3.",
+   "afterHit": "+19a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His signature approach."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Silver Low: i16 low, -15 on block, launches on counter hit.",
+   "purpose": "His fast low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-15.",
+   "afterHit": "-1; +17a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low with a CH reward."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Bump Kick: i20 low, -12 on block.",
+   "purpose": "A low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "-1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip damage."
+  },
+  {
+   "id": "f,F+3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Pulse Blast: i14 mid Heat Engager, -9 on block.",
+   "purpose": "A fast Heat Engager.",
+   "use": "To start Heat and punish.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+21a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side swap.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "lee-1333",
+   "name": "1,3:3:3 → qcf+4",
+   "difficulty": 3,
+   "section": "Mini-combos",
+   "starters": [
+    "1,3:3:3"
+   ],
+   "situation": "After the just-frame 1,3:3:3 hits (Wavu mini-combo, 47 damage).",
+   "route": "qcf+4",
+   "tags": [
+    "mini-combo",
+    "just-frame"
+   ],
+   "mistakes": [
+    "Missing the just-frame timing on the 3s: in Heat it is not needed.",
+    "Following up on block."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Lee",
+    "url": "https://wavu.wiki/t/Lee_combos",
+    "revision": 60975,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,F+4"
+ ],
+ "lessons": []
+}

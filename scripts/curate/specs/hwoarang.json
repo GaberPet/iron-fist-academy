@@ -222,5 +222,24 @@
    "Mix with his pressure."
   ]
  ],
- "combos": []
+ "combos": [
+  {
+   "id": "hwoarang-bnb",
+   "name": "Launch BnB: f+4~RFS.3~4 d+4,4 T! uf+3,4,3",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "f+4~RFS.3~4 d+4,4 T! uf+3,4,3",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Not cancelling f+4 into RFS quickly enough.",
+    "Doing d+4,4 too slowly after the stance kick."
+   ]
+  }
+ ]
 }

@@ -71,7 +71,12 @@ for (const id of Object.keys(CURATED)) {
           for (const tok of s.split(/\s+/)) {
             const clean = tok.replace(/[A-Za-z]{1,4}!$/, '').replace(/(?<=\d)[~,][A-Z]+$/, '');
             if (!clean || /^(CH|CJM|dash|run|ssr|ssl|SSL|SSR|f,F|f,f|b,b|f,f,F|b,B)$/.test(clean) || clean.startsWith('~')) continue;
-            if (!lookupMove(c, clean)) unresolved.push(`${combo.id}: ${clean}`);
+            if (lookupMove(c, clean)) continue;
+            // Cancels ("f+4~RFS.3~4", "3,1~df~3"): each part must be a move, a direction or a button follow-up.
+            const parts = clean.split('~').map((p) => p.replace(/,[A-Za-z]+$/, '')).filter((p) => p && !/^[A-Za-z]+$/.test(p));
+            // A trailing button press can be a stance transition, e.g. "u+1+2,3+4" (into Hunting Bear).
+            const ok = (p: string) => lookupMove(c, p) || /^[1-4+,]+$/.test(p) || (/,[1-4+]+$/.test(p) && lookupMove(c, p.replace(/,[1-4+]+$/, '')));
+            if (!parts.length || !parts.every(ok)) unresolved.push(`${combo.id}: ${clean}`);
           }
         }
       }

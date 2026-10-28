@@ -1,0 +1,332 @@
+{
+ "profile": {
+  "id": "law",
+  "name": "Law",
+  "short": "Law",
+  "color": "hsl(115 70% 62%)",
+  "overview": "Law is a close range, poking-based, slide archetype character with strong neutral tools and strong block punishment. A legacy character with traditionally challenging execution, he is very accessible this time around and is suitable for anyone looking to live out their Bruce Lee fantasy.",
+  "playstyle": "Close-range poking with a slide and strong punishment. Win neutral with quick pokes and some of the fastest panic moves in the game, punish hard standing and crouching, and use Dragon Sign Stance (DSS) for follow-ups. His backdash is slow, so fight up close rather than running.",
+  "strengths": [
+   "WATA! Strong standing/crouching punishment.",
+   "Lightning-quick: Some of the fastest panic moves in the game, including d+2,3 and 1,1,1.",
+   "Don't Move! Insane stagger pressure.",
+   "Slide to the Left: One of the better crouch mixups in the game.",
+   "Fiery Action: Heat engagers include a i10 CH string, a i14 CH string, and a low crush. Nunchuck moves become more rewarding on hit and safer on block, and Law's Heat Smash is one of the fastest in the game."
+  ],
+  "weaknesses": [
+   "Baby Steps: One of the few characters with a slower backdash.",
+   "Quick Burner: Combos become more complicated during heat if heat consumption is a concern.",
+   "Up Close and Personal: Only strong at a close range."
+  ],
+  "stances": [
+   {
+    "code": "DSS",
+    "name": "Dragon Sign Stance",
+    "entry": "F after 1,1,2 and 4,3; ws3 transitions too",
+    "note": "DSS.3 is a homing high, +3 on block; DSS.f+1 is a Heat Engager. In Heat, DSS automatically parries punches (Wavu)."
+   }
+  ],
+  "heat": [
+   "Enhanced nunchuck moves",
+   "DSS automatically parries punches"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "ws2",
+   "1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Law",
+    "url": "https://wavu.wiki/t/Law",
+    "revision": 62100,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Law_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61978,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Law_combos",
+    "revision": 62202,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Law_punishers",
+    "revision": 59241,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string, -6 on block, can enter DSS with F.",
+   "purpose": "His i10 punish (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-6.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish into stance."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "d+2,3",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Body Blow > Dragon Lift: fast panic string that tornadoes on counter hit, -15 on block.",
+   "purpose": "One of his fastest panic options (Wavu).",
+   "use": "When you are pressured and expect a button.",
+   "avoid": "Raw on block: -15.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-15.",
+   "afterHit": "Tornado (+30a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Panic button with a big reward."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Dragon Hammer: i20 mid, +3c on block, launches on counter hit.",
+   "purpose": "A plus mid with a CH launch.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+3c.",
+   "afterHit": "+8c; +55a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Dragon Raise: i15 launcher, -7 on block.",
+   "purpose": "His i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers: only +4s on normal hit.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Dragon's Rising Kick: i15 launcher, -13 on block.",
+   "purpose": "Another i15 launcher.",
+   "use": "Punish -15.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "i16 nunchaku mid, tornadoes on counter hit.",
+   "purpose": "A CH launcher (Wavu instant tornado).",
+   "use": "When they press.",
+   "avoid": "-13 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "+12a; tornado on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read-based damage."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Dragon Uppercut: i15 while-standing launcher, -18 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -18.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-18.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick.",
+   "purpose": "Fast crouch punish (Wavu).",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "Check the Move Library.",
+   "afterHit": "Small advantage.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Shin Crusher: i17 low, -13 on block, +13g on counter hit.",
+   "purpose": "His main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "+3c; +13g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "df+3+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Banana Peel: i18 slide low, -15 on block.",
+   "purpose": "His slide.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-15.",
+   "afterHit": "+4c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Slide pressure."
+  },
+  {
+   "id": "uf+3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Dragon's Fury: i18 mid Heat Engager, -8 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+16c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "f,f,F+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Running Side Kick: i20 mid from a run, +6 on block.",
+   "purpose": "A plus approach.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+6.",
+   "afterHit": "+9c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side swap.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "Minus on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "law-bnb",
+   "name": "Launch BnB: 4,u+3 b+2 b+2,1 T! 4,3~F DSS.f+4",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2 or uf+4.",
+   "route": "4,u+3 b+2 b+2,1 T! 4,3~F DSS.f+4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing u+3 too late after 4.",
+    "Holding F too late after 4,3: DSS has to start straight away."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Law",
+    "url": "https://wavu.wiki/t/Law_combos",
+    "revision": 62202,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,F+4"
+ ],
+ "lessons": []
+}

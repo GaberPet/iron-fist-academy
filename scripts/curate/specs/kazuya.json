@@ -1,0 +1,30 @@
+{
+ "short": "Kazuya",
+ "playstyle": "Defensive Mishima with the strongest punishment kit in the game (Wavu). Block, punish everything hard, and threaten the Wind God Fist and hellsweep from a crouch dash. In Heat he becomes Devil Kazuya and can do the EWGF easily. Like all Mishimas he is weak to sidesteps to his left.",
+ "stances": [
+  {"code": "CD", "name": "Crouch Dash", "entry": "f,n,d,df", "note": "Wind God Fist, Thunder God Fist, hellsweep and Hell Lancer come from here."},
+  {"code": "DVK", "name": "Devil Kazuya", "entry": "Heat", "note": "Devil Transformation: new moves and an easier EWGF (Wavu)."}
+ ],
+ "keyLaunchers": ["f,n,d,df+2", "ws1,2", "df+2", "f,F+3"],
+ "whiffPunishers": ["f,n,d,df+2", "f,F+2", "f,F+3"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,1,2", "punisher", "i10 punish string; the last hit is -17 on block.", "His i10 punish (Wavu).", "After -10 moves.", "Finishing it raw: -17.", "Block and punish the last hit.", "-17 if all three are blocked.", "Launch (+20a).", "Risky raw.", "Punish only."],
+  ["1+2", "punisher", "Acute Pain: i12 mid, -13 on block, launches on hit (+13a).", "His i12 punisher.", "After -12 moves.", "Raw: -13.", "Block.", "-13.", "+13a.", "Moderate.", "Strong i12 punish."],
+  ["df+4", "poke", "i13 mid, -9 on block.", "His standing mid check (Wavu).", "To stop ducking.", "-9 on block.", "Block.", "-9.", "+2.", "Low risk.", "Basic mid."],
+  ["df+1,2", "heat,poke", "Slaughter Hook: i18 Heat Engager string, +0c on block.", "A safe Heat Engager string.", "To keep the turn and start Heat.", "Against crouchers on the second hit.", "Duck the second hit.", "+0c.", "+9c; Heat Engager.", "Moderate.", "Pressure and Heat."],
+  ["f+4", "poke", "Right Splits Kick: i19 mid, +4c on block.", "A plus-on-block mid.", "To keep the turn.", "As an interrupt.", "Interrupt or step.", "+4c.", "+7c.", "Moderate.", "Pressure tool."],
+  ["f,n,d,df+2", "launcher,punisher", "Wind God Fist: i11 high, -10 on block; the EWGF is +5.", "Fast launcher, punisher and whiff punisher.", "Punish, whiff punish and neutral.", "Against crouchers.", "Duck it.", "-10 (EWGF +5).", "Launch (+39a).", "Moderate.", "Practise the input until it is automatic."],
+  ["ws1,2", "launcher,punisher", "Twin Pistons: i13 while-standing launcher, -12 on block.", "His crouch launch punish (Wavu: i13).", "After lows that are -13 or worse.", "Raw: -12.", "Block.", "-12.", "Launch (+73a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "i11 while-standing kick, -3 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-3.", "+8.", "Low risk.", "Basic crouch punish."],
+  ["df+2", "counter-hit", "Abolishing Fist: i14 homing mid, launches on counter hit (+59a).", "His CH launcher (Wavu).", "When they press.", "-12 on block.", "Block.", "-12.", "+5; launch on CH.", "Moderate.", "Read-based damage."],
+  ["b+1,2", "punisher,wall", "i11 string that wall-splats (Wavu: i11 splat). -14 on block.", "A fast punish near the wall.", "After -11 moves near the wall.", "Raw: -14.", "Block.", "-14.", "Splat at the wall.", "Moderate.", "Wall punish."],
+  ["f,n,d,DF+4", "low", "Hellsweep: i16 low, -23 on block, launches on counter hit.", "His Mishima low.", "Once they respect the Wind God Fist.", "Getting blocked: -23.", "Block low and launch.", "-23.", "-3c; +20a on CH.", "Very risky.", "The low half of his mix-up."],
+  ["db+4", "low", "Stature Smash: i20 low, -12 on block, +17g on counter hit.", "A safer low.", "Against standing block.", "When they block low.", "Block low.", "-12.", "+4; +17g on CH.", "Moderate.", "Low poke."],
+  ["f,F+2", "heat", "Devil Fist: i16 mid Heat Engager, -9 on block.", "A Heat Engager.", "To start Heat and whiff punish.", "-9 on block.", "Block.", "-9.", "+13cg.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "+0 on break (he recovers back-turned).", "Knockdown.", "Whiffs if ducked.", "Mix with his mids."]
+ ],
+ "combos": [
+  {"id": "kazuya-bnb", "name": "Launch BnB: 3,1,4 df+1,df+2 T! 3,1~df~3", "difficulty": 3, "section": "Bread n' butter", "starters": ["f,F+3"], "situation": "After a regular launch such as f,F+3 (Left Splits Kick).", "route": "3,1,4 df+1,df+2 T! 3,1~df~3", "tags": ["bnb"], "mistakes": ["Delaying 3,1,4: start it as soon as they are in the air.", "Missing the df+1,df+2 rhythm."]}
+ ]
+}

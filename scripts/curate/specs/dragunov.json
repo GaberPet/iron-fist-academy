@@ -204,5 +204,24 @@
    "Throws are a big part of his game."
   ]
  ],
- "combos": []
+ "combos": [
+  {
+   "id": "dragunov-bnb",
+   "name": "Launch BnB: 4,4 FC.df+1,4~2 T! df+3+4",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "4,4 FC.df+1,4~2 T! df+3+4 2,1,df~1+2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Not crouching before FC.df+1: the move needs full crouch.",
+    "Rushing df+3+4 after the tornado."
+   ]
+  }
+ ]
 }

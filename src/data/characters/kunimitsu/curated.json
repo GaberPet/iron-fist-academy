@@ -1,0 +1,351 @@
+{
+ "profile": {
+  "id": "kunimitsu",
+  "name": "Kunimitsu",
+  "short": "Kunimitsu",
+  "color": "hsl(314 70% 62%)",
+  "overview": "Kunimitsu is a fast, evasive, poking oriented character with excellent pressure tools and mixup options. Her pokes in neutral are fast and difficult to deal with, since most of them have multiple extensions, making it difficult to challenge her. This \"death by a thousand cuts\" playstyle is supplemented by her 3 main stances (Setsunagake, Katon, and Backturn), as well as strong crouching and standing low attacks.",
+  "playstyle": "Fast, evasive and pressure-heavy. Poke with quick strings that have many extensions, so the opponent is scared to press, then mix them up from back-turned (BT), Katon (KAT) and Setsunagake (SET). Wavu warns most of her moves lose to sidesteps to her right.",
+  "strengths": [
+   "Strong pressure: She has poke strings with a million different extensions, making her very risky to press into should she choose to finish any of them.",
+   "Stance Macabre: Plethora of mixup options from 3 different stances, as well as full crouch.",
+   "Unparriable: Most of her key moves cannot be parried due to them being weapon attacks.",
+   "Hard to punish: Her pokes recover extremely quickly on whiff, and despite her string enders being punishable on block, it's very hard to react with the appropriate punish since she can delay or cancel most of them.",
+   "Evasive: A surprising amount of her moves have high and/or low crushing properties.",
+   "God-tier punishment: She has a wide variety of punishment options for every situation (most of which transition into her stances), including a bufferable i14 instant tornado launcher (CD2), and a high-execution wallsplatting i10 punish (ff+4,2).",
+   "A menace at any range: Her f+3 is essentially a neutral skip, and her qcf+1 still hits from full screen.",
+   "Her school outfit looks really cool"
+  ],
+  "weaknesses": [
+   "Steppable: Most of her moves are weak to sidestep right, and the select few options that do cover that side can usually be stepped the left.",
+   "Weak backdash: While her head still moves decently far back and many of her safe moves have pushback, her backdash overall is weaker than most characters.",
+   "Tricky to learn: It takes a lot of practice to properly navigate all of her stances without becoming predictable.",
+   "Mediocre damage: Her pokes aren't too damaging by themselves, meaning she has to win a lot more interactions to keep a life lead."
+  ],
+  "stances": [
+   {
+    "code": "BT",
+    "name": "Backturn",
+    "entry": "b+3+4, and moves like 4,2",
+    "note": "BT.4 is +6 on block; BT.1,4 is a Heat Engager and +3; BT.4,F goes into SET."
+   },
+   {
+    "code": "KAT",
+    "name": "Katon",
+    "entry": "1+2",
+    "note": "KAT.1,2 is a Heat Engager; KAT.2 leads to qcf+2 (Wavu mini-combo)."
+   },
+   {
+    "code": "SET",
+    "name": "Setsunagake",
+    "entry": "f+3, or F after BT.4",
+    "note": "SET.2 is i12 and launches on counter hit; SET.1,2,1 tornadoes; SET.1+2 is a Heat Engager."
+   }
+  ],
+  "heat": [
+   "Can use Flame Dance moves (H.db+1+2, H.KAT.d+1+2, H.u+1+2"
+  ],
+  "heatEngagers": [
+   "f+1+2",
+   "ws2,1",
+   "BT.1,4",
+   "KAT.1,2",
+   "SET.1+2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "f,d,df+2",
+   "ws3",
+   "BT.f+1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Kunimitsu",
+    "url": "https://wavu.wiki/t/Kunimitsu",
+    "revision": 63350,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Kunimitsu_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62066,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Kunimitsu_combos",
+    "revision": 59982,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Kunimitsu_punishers",
+    "revision": 60313,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check and the start of 1,2,2.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string (Wavu), -12 if it all finishes on block.",
+   "purpose": "Her i10 punish.",
+   "use": "After -10 moves.",
+   "avoid": "Finishing it raw: -12.",
+   "counterplay": "Block, punish the last hit.",
+   "afterBlock": "-12.",
+   "afterHit": "+5.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -2 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "4,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i12 string that goes back-turned, -3 on block.",
+   "purpose": "Her i12 punish and a BT entry.",
+   "use": "Punish -12; start BT pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into stance."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i17 high, +1 on block; can continue into db+3.",
+   "purpose": "A plus high that keeps the turn.",
+   "use": "To keep pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+7.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launcher, launches crouchers too. -14 on block.",
+   "purpose": "Her i15 launch punisher.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+30a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "f,d,df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i14 tornado launcher, -17 on block.",
+   "purpose": "An i14 punisher (Wavu).",
+   "use": "After -14 moves, standing or crouching.",
+   "avoid": "Raw: -17.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-17.",
+   "afterHit": "Tornado (+73a).",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Kaede: i15 while-standing launcher, -13 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Fox Toe Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Sakumaishi: i19 mid, +3c on block.",
+   "purpose": "A plus mid.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+3c.",
+   "afterHit": "+6c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Turn keeper."
+  },
+  {
+   "id": "b+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Hakkouen: i17 mid, -9 on block, +57 on counter hit.",
+   "purpose": "A CH tool.",
+   "use": "When they press.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+5.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read-based damage."
+  },
+  {
+   "id": "d+1+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Seneizan: i20 low, -14 on block, +15g on counter hit.",
+   "purpose": "Her main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-14.",
+   "afterHit": "+0; +15g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Opens up turtles."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "i17 mid Heat Engager, -6 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+9a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "b+1+3",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Secret Flower: parries mid and high punches and kicks.",
+   "purpose": "Her parry.",
+   "use": "As a read on attacks.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low her.",
+   "afterBlock": "-.",
+   "afterHit": "+3a.",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "Defensive tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Mizore: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "+0 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "kunimitsu-tornado",
+   "name": "Instant tornado: ws2,1 f3+4 BT.4,F SET.1 qcf+1",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [],
+   "situation": "After an instant tornado such as a low parry (Wavu).",
+   "route": "ws2,1 f+3+4 BT.4,F SET.1 qcf+1",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Holding F too late after BT.4: SET has to start straight away.",
+    "Doing f+3+4 slowly: it turns her back-turned for BT.4."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Kunimitsu",
+    "url": "https://wavu.wiki/t/Kunimitsu_combos",
+    "revision": 59982,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,d,df+2",
+  "ws3"
+ ],
+ "lessons": []
+}

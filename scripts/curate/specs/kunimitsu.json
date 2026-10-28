@@ -1,0 +1,31 @@
+{
+ "short": "Kunimitsu",
+ "playstyle": "Fast, evasive and pressure-heavy. Poke with quick strings that have many extensions, so the opponent is scared to press, then mix them up from back-turned (BT), Katon (KAT) and Setsunagake (SET). Wavu warns most of her moves lose to sidesteps to her right.",
+ "stances": [
+  {"code": "BT", "name": "Backturn", "entry": "b+3+4, and moves like 4,2", "note": "BT.4 is +6 on block; BT.1,4 is a Heat Engager and +3; BT.4,F goes into SET."},
+  {"code": "KAT", "name": "Katon", "entry": "1+2", "note": "KAT.1,2 is a Heat Engager; KAT.2 leads to qcf+2 (Wavu mini-combo)."},
+  {"code": "SET", "name": "Setsunagake", "entry": "f+3, or F after BT.4", "note": "SET.2 is i12 and launches on counter hit; SET.1,2,1 tornadoes; SET.1+2 is a Heat Engager."}
+ ],
+ "keyLaunchers": ["df+2", "f,d,df+2", "ws3", "BT.f+1+2"],
+ "whiffPunishers": ["df+2", "f,d,df+2", "ws3"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check and the start of 1,2,2.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2,2", "punisher", "i10 punish string (Wavu), -12 if it all finishes on block.", "Her i10 punish.", "After -10 moves.", "Finishing it raw: -12.", "Block, punish the last hit.", "-12.", "+5.", "Moderate.", "Fast punish."],
+  ["df+1", "poke", "i13 mid, -2 on block.", "Her safe mid check.", "To stop ducking.", "Little risk.", "Block.", "-2.", "+5.", "Low risk.", "Basic mid."],
+  ["4,2", "punisher,poke", "i12 string that goes back-turned, -3 on block.", "Her i12 punish and a BT entry.", "Punish -12; start BT pressure.", "Against crouchers.", "Duck it.", "-3.", "+6.", "Low risk.", "Punish into stance."],
+  ["b+1", "poke", "i17 high, +1 on block; can continue into db+3.", "A plus high that keeps the turn.", "To keep pressure.", "Against crouchers.", "Duck it.", "+1.", "+7.", "Moderate.", "Pressure tool."],
+  ["df+2", "launcher,punisher", "i15 launcher, launches crouchers too. -14 on block.", "Her i15 launch punisher.", "Punish -15 and whiff punish.", "Raw: -14.", "Block.", "-14.", "Launch (+30a).", "Risky.", "Main punish (Wavu BnB starter)."],
+  ["f,d,df+2", "launcher,punisher", "i14 tornado launcher, -17 on block.", "An i14 punisher (Wavu).", "After -14 moves, standing or crouching.", "Raw: -17.", "Block and launch.", "-17.", "Tornado (+73a).", "Very risky raw.", "Punish only."],
+  ["ws3", "launcher,punisher", "Kaede: i15 while-standing launcher, -13 on block.", "Her crouch launch punish.", "After -15 lows.", "Raw: -13.", "Block.", "-13.", "Launch (+32a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "Fox Toe Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["d+1", "poke", "Sakumaishi: i19 mid, +3c on block.", "A plus mid.", "To keep the turn.", "As an interrupt.", "Interrupt or step.", "+3c.", "+6c.", "Moderate.", "Turn keeper."],
+  ["b+2", "counter-hit", "Hakkouen: i17 mid, -9 on block, +57 on counter hit.", "A CH tool.", "When they press.", "-9 on block.", "Block.", "-9.", "+5.", "Moderate.", "Read-based damage."],
+  ["d+1+2", "low", "Seneizan: i20 low, -14 on block, +15g on counter hit.", "Her main low.", "Against standing block.", "When they block low.", "Block low.", "-14.", "+0; +15g on CH.", "Moderate.", "Opens up turtles."],
+  ["f+1+2", "heat", "i17 mid Heat Engager, -6 on block.", "A safe Heat Engager.", "To start Heat.", "Little risk.", "Block.", "-6.", "+9a.", "Moderate.", "Safe Heat start."],
+  ["b+1+3", "evasion", "Secret Flower: parries mid and high punches and kicks.", "Her parry.", "As a read on attacks.", "Against lows and throws.", "Throw or low her.", "-.", "+3a.", "Bad if read.", "Defensive tool."],
+  ["2+4", "throw", "Mizore: i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "+0 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "kunimitsu-tornado", "name": "Instant tornado: ws2,1 f3+4 BT.4,F SET.1 qcf+1", "difficulty": 4, "section": "Bread n' butter", "starters": [], "situation": "After an instant tornado such as a low parry (Wavu).", "route": "ws2,1 f+3+4 BT.4,F SET.1 qcf+1", "tags": ["bnb"], "mistakes": ["Holding F too late after BT.4: SET has to start straight away.", "Doing f+3+4 slowly: it turns her back-turned for BT.4."]}
+ ]
+}

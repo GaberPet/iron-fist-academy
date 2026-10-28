@@ -1,0 +1,29 @@
+{
+ "short": "Lee",
+ "playstyle": "Stylish counter-hit fishing that rewards mastery. Keep the opponent scared with strong mid checks and the oppressive running 3,4 (wr3,4), fish for counter hits with fast strings, and use Hitman (HMS) and Mist Step (MS). In Heat, his just-frame Cardinal moves can be done without the timing. Wavu notes his lows deal little damage.",
+ "stances": [
+  {"code": "HMS", "name": "Hitman Stance", "entry": "3+4, or 3 after moves like ws4, b+4 and 1,2,4", "note": "HMS.1,1,1 is a Heat Engager. HMS also parries some attacks."},
+  {"code": "MS", "name": "Mist Step", "entry": "f~n, or F after b+2 and f,F+2", "note": "A fast forward step; Sway is MS.b~n (Wavu)."}
+ ],
+ "keyLaunchers": ["df+2", "uf+4", "ws2,3", "f,F+2"],
+ "whiffPunishers": ["df+2", "uf+4", "f,F+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check; 1,2,4 and 1,3:3:3 are his i10 punishes (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2,4", "punisher,counter-hit", "i10 string, -12 on block, launches on counter hit (+58a).", "His i10 punish and CH fishing tool.", "After -10 moves, or as a fishing string.", "Finishing it raw: -12.", "Block, punish the last hit.", "-12.", "-1; launch on CH.", "Moderate.", "Fish and punish with one string."],
+  ["df+1", "poke", "i13 mid, -1 on block.", "His safe mid check.", "To stop ducking.", "Little risk.", "Block.", "-1.", "+5.", "Low risk.", "Use it constantly."],
+  ["df+2", "launcher,punisher", "Silver Uppercut: i15 launcher, -7 on block, launches on counter hit.", "His i15 launch punisher, safe on block.", "Punish -15, whiff punish.", "Against crouchers: only +4s on normal hit.", "Duck it.", "-7.", "Launch (+34a).", "Moderate.", "Main punish (Wavu BnB starter)."],
+  ["uf+4", "launcher,punisher", "Silver Arrow: i15 knee launcher, -13 on block.", "His other i15 launcher (Wavu).", "Punish -15.", "Raw: -13.", "Block.", "-13.", "Launch (+31a).", "Risky.", "Alternative punish."],
+  ["ws2,3", "launcher,punisher", "i14 while-standing launch string that wall-splats, -13 on block.", "His crouch launch punish (Wavu: i14 splat).", "After -14 lows.", "Raw: -13.", "Block.", "-13.", "Tornado (+32a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "i11 while-standing kick, -6 on block, can enter HMS.", "Fast crouch punish and crouching mid check.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["b+4", "counter-hit", "Silver Heel: i20 mid, -3 on block, launches on counter hit (+64a).", "A safe mid CH launcher.", "When they press.", "Little risk.", "Block.", "-3.", "+7c; launch on CH.", "Low risk.", "Safe fishing."],
+  ["f,F+2", "counter-hit", "Jostle Wolf: i15 high, +2 on block, tornadoes on counter hit (+69a).", "A plus high with a huge CH reward.", "To keep the turn and fish.", "Against crouchers.", "Duck it.", "+2.", "+18cg; tornado on CH.", "Moderate.", "Pressure and fishing."],
+  ["f,f,F+3,4", "poke", "wr3,4: i20 mid string, +3 on block.", "Wavu's 'oppressive' running pressure tool.", "From range to close distance and keep the turn.", "Linear.", "Sidestep it.", "+3.", "+19a.", "Moderate.", "His signature approach."],
+  ["d+3", "low", "Silver Low: i16 low, -15 on block, launches on counter hit.", "His fast low.", "Against standing block.", "When they block low.", "Block low.", "-15.", "-1; +17a on CH.", "Moderate.", "Low with a CH reward."],
+  ["db+3", "low", "Bump Kick: i20 low, -12 on block.", "A low poke.", "Against standing block.", "When they block low.", "Block low.", "-12.", "-1.", "Moderate.", "Chip damage."],
+  ["f,F+3", "heat", "Pulse Blast: i14 mid Heat Engager, -9 on block.", "A fast Heat Engager.", "To start Heat and punish.", "-9 on block.", "Block.", "-9.", "+21a.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side swap.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "lee-1333", "name": "1,3:3:3 → qcf+4", "difficulty": 3, "section": "Mini-combos", "starters": ["1,3:3:3"], "situation": "After the just-frame 1,3:3:3 hits (Wavu mini-combo, 47 damage).", "route": "qcf+4", "tags": ["mini-combo", "just-frame"], "mistakes": ["Missing the just-frame timing on the 3s: in Heat it is not needed.", "Following up on block."]}
+ ]
+}

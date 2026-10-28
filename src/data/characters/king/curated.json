@@ -1,0 +1,318 @@
+{
+ "profile": {
+  "id": "king",
+  "name": "King",
+  "short": "King",
+  "color": "hsl(358 70% 62%)",
+  "overview": "King is Tekken's iconic implementation of a grappler, having access to a wide variety of very strong and very useful throws.",
+  "playstyle": "The grappler. Wavu calls his throw game the strongest of all: make the opponent block, then throw them with command throws that each break differently. Mix throws with mids and lows so they cannot just duck or break. His big body, slow movement and weak panic options make defence hard, so take the initiative.",
+  "strengths": [
+   "Suplex City: Strongest throw game among all characters, with all the mixup potential and damage one can ask for.",
+   "Backstage Brawler: Devastating mids like uf+4, db+2, f+4, f+2,1, and f,F+1 compliment his throws, punishing those who prefer to duck throws instead of breaking them.",
+   "Tank: Very abusable power crushing moves. Muscle Armor also comes out 1f faster than usual, allowing for retaliation where typical power crushes may not work.",
+   "Turn Stealer: Great CH tools like b+1,2 and df+2,1. He also possesses a faster than average low crush with JGS.",
+   "AS GOD IS MY WITNESS, HE IS BROKEN IN HALF: Heat makes his JGR fully armored and JGR moves perform better. His Heat Smash deals the most damage in the game, and can even hit grounded opponents & break hard floors for a full combo."
+  ],
+  "weaknesses": [
+   "The Big Show: Large hurtbox with below average movement, and his backdash cancel is awkwardly slow.",
+   "Remain Calm: Panic moves are quite risky.",
+   "Worked Into a Shoot: Whiff recovery is quite prominent."
+  ],
+  "stances": [
+   {
+    "code": "JGR",
+    "name": "Jaguar Step",
+    "entry": "From dashes and transitions (see the Move Library)",
+    "note": "JGR.1+3 is an unbreakable throw and Heat Engager; in Heat Jaguar Step becomes armoured and its moves are powered up (Wavu)."
+   }
+  ],
+  "heat": [
+   "Certain throws become homing (WR2+4, f,hcf+1, f,hcf+2, qcb+1+2)",
+   "JGR becomes armored",
+   "JGR moves are powered up (JGR.1, JGR.2, JGR.3, JGR.4)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "uf+4",
+   "FC.df+1",
+   "ws1+2",
+   "d+1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: King",
+    "url": "https://wavu.wiki/t/King",
+    "revision": 62096,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/King_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61905,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/King_combos",
+    "revision": 59521,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/King_punishers",
+    "revision": 30989,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 elbow mid, -1 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To make crouchers respect mids before you throw.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Mid check that sets up throws."
+  },
+  {
+   "id": "f+1+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Body Check: i17 mid, +3 on block.",
+   "purpose": "A plus mid that keeps the turn.",
+   "use": "To keep pressure before a throw.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+3.",
+   "afterHit": "+7.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Turn keeper before a throw."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Jumping Knee Lift: i15 launcher, -13 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "After -15 moves and to whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Toe Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "ws1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Snap Uppercut: i18 while-standing launcher, -10 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After lows that are -18 or worse.",
+   "avoid": "Raw: -10.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "Launch (+35a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish big lows."
+  },
+  {
+   "id": "FC.df+1",
+   "roles": [
+    "low",
+    "launcher"
+   ],
+   "summary": "Leg Breaker: i32 low that instantly tornadoes, -12 on block.",
+   "purpose": "His big low.",
+   "use": "As a read on standing block.",
+   "avoid": "Slow: i32.",
+   "counterplay": "Block low; it is slow enough to react.",
+   "afterBlock": "-12.",
+   "afterHit": "Tornado (+73a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low threat next to throws."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Stomp: i17 low, -12 on block.",
+   "purpose": "A quick low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip damage."
+  },
+  {
+   "id": "f+2+3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Shoulder Tackle: i20 mid Heat Engager, -5 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+8a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "When they block up close.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "The simplest throw."
+  },
+  {
+   "id": "f,hcf+1",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Giant Swing: i10 command throw, break with 1, side switch.",
+   "purpose": "A big-damage command throw (homing in Heat).",
+   "use": "Against blockers who break 2.",
+   "avoid": "When they break 1.",
+   "counterplay": "Break with 1.",
+   "afterBlock": "-13 on break.",
+   "afterHit": "Big knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "A 1-break threat."
+  },
+  {
+   "id": "f,hcf+2",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Tijuana Twister: i12 command throw, break with 2.",
+   "purpose": "A 2-break command throw (homing in Heat).",
+   "use": "Against blockers who break 1.",
+   "avoid": "When they break 2.",
+   "counterplay": "Break with 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Big knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Pair with Giant Swing."
+  },
+  {
+   "id": "qcb+1+2",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Muscle Buster: i11 command throw, break with 1+2, side switch.",
+   "purpose": "A 1+2-break command throw.",
+   "use": "To mix up break buttons.",
+   "avoid": "When they break 1+2.",
+   "counterplay": "Break with 1+2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Third break option."
+  },
+  {
+   "id": "f,f,F+2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Tomahawk: i10 throw from a run, break with 1+2.",
+   "purpose": "A fast running throw (homing in Heat).",
+   "use": "To catch the opponent from a dash.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1+2.",
+   "afterBlock": "-5 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Combo ender too (Wavu BnB)."
+  }
+ ],
+ "combos": [
+  {
+   "id": "king-bnb",
+   "name": "Launch BnB: 4 b+3 T! f,f,F+2+4",
+   "difficulty": 2,
+   "section": "Bread n' Butter",
+   "starters": [
+    "uf+4"
+   ],
+   "situation": "After a regular launch such as uf+4.",
+   "route": "4 b+3 T! f,f,F+2+4",
+   "tags": [
+    "bnb",
+    "beginner"
+   ],
+   "mistakes": [
+    "Running too late for the Tomahawk ender.",
+    "Pressing b+3 before 4 has hit."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: King",
+    "url": "https://wavu.wiki/t/King_combos",
+    "revision": 59521,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "f,F+4",
+  "uf+1"
+ ],
+ "lessons": []
+}
