@@ -171,6 +171,9 @@ export function SettingsPage() {
       <div className="card small dim">
         Iron Fist Academy is an unofficial fan tool, not affiliated with or endorsed by Bandai Namco. TEKKEN is a trademark of Bandai Namco Entertainment Inc. Code: MIT. Lessons and coach notes: CC BY-SA 4.0. Frame data: Wavu Wiki contributors, CC0. Source: github.com/GaberPet/iron-fist-academy.
       </div>
+      <p className="small muted">
+        All credit for the combos, frame data and punisher tables goes to the contributors of <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a>, the community Tekken wiki they come from. Thank you!
+      </p>
     </div>
   );
 }
