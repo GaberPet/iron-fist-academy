@@ -403,13 +403,18 @@ a:hover { color: var(--red); }
 .consent-table th, .consent-table td { text-align: left; vertical-align: top; padding: var(--space-xs); border-bottom: var(--rule-hair) solid var(--line); }
 .consent-table th { color: var(--muted); font-weight: 600; }
 
-/* Arcade theme: dark navy sidebar instead of the inverted one */
-[data-theme="arcade"] .sidebar { background: var(--surface); color: var(--ink); border-right: var(--rule-hair) solid var(--line); }
-[data-theme="arcade"] .sidebar .nav-btn { color: var(--ink); border-color: var(--line); }
-[data-theme="arcade"] .sidebar .nav-btn:hover:not(.active) { background: var(--paper); color: var(--ink); }
-[data-theme="arcade"] .sidebar .nav-btn.active { color: var(--on-red); }
-[data-theme="arcade"] .sidebar-foot a { color: var(--ink); }
-[data-theme="arcade"] .sidebar .badge { background: var(--red); border-color: var(--red); color: var(--on-red); }
+/* Sidebar matches the page: white in light, black in dark (navy in arcade), with red outlines in light and dark */
+.sidebar { background: var(--paper); color: var(--ink); border-right: var(--rule-hair) solid var(--line); }
+.brand, .brand-name, .sidebar-foot a { color: var(--ink); }
+.brand-sub, .sidebar-foot { color: var(--muted); }
+.sidebar .nav-btn { color: var(--ink); border-color: var(--red); }
+.sidebar .nav-btn:hover:not(.active) { background: var(--surface); color: var(--ink); }
+.sidebar .nav-btn.active { color: var(--on-red); }
+.sidebar .badge { background: var(--red); border-color: var(--red); color: var(--on-red); }
+@media (hover: none) { .sidebar .nav-btn:hover:not(.active) { background: transparent; color: var(--ink); } }
+[data-theme="arcade"] .sidebar { background: var(--surface); }
+[data-theme="arcade"] .sidebar .nav-btn { border-color: var(--line); }
+[data-theme="arcade"] .sidebar .nav-btn:hover:not(.active) { background: var(--paper); }
 [data-theme="arcade"] h1, [data-theme="arcade"] h2, [data-theme="arcade"] .display { font-weight: 600; letter-spacing: 0.01em; }
 [data-theme="arcade"] h1 { font-size: 3rem; line-height: 1; }
 [data-theme="arcade"] .brand-name b, [data-theme="arcade"] .brand-name span { font-family: var(--font-display); }
