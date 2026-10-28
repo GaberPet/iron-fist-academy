@@ -130,7 +130,7 @@ export function ControllerPage() {
 
       <div className="grid g2">
         <div className="card stack">
-          <h3>Directions & calibration</h3>
+          <h3>Directions and calibration</h3>
           <label className="row"><input type="checkbox" checked={cfg.useDpad} onChange={(e) => setCfg({ useDpad: e.target.checked })} /> Use D-pad</label>
           <label className="row"><input type="checkbox" checked={cfg.useLeftStick} onChange={(e) => setCfg({ useLeftStick: e.target.checked })} /> Use left stick</label>
           <label className="field">Left stick deadzone: {cfg.stickDeadzone.toFixed(2)} (current tilt {stickMag.toFixed(2)})

@@ -45,8 +45,19 @@ export function HomePage() {
   const recent = stats.days.slice(-7);
   const recentAttempts = recent.reduce((s, d) => s + d.attempts, 0);
   const recentOk = recent.reduce((s, d) => s + d.successes, 0);
+  const { roster } = useStore();
   return (
     <div className="stack">
+      <section className="home-hero" aria-labelledby="home-title">
+        <div className="diamond-device" aria-hidden />
+        <p className="eyebrow">Tekken 8 training · a Level Academy programme</p>
+        <h1 id="home-title" className="display">Train Tekken 8, one skill at a time.</h1>
+        <p>Frame data, combos and punishers for all {roster.length} characters, with lessons, drills and a practice opponent. Your progress stays on this device.</p>
+        <div className="row" style={{ marginTop: 'var(--space-lg)' }}>
+          <button className="btn primary" onClick={() => (recs[0] ? go(recs[0]) : navigate('academy'))}>Continue training</button>
+          <button className="btn" onClick={() => navigate('fight')}>Open free fight</button>
+        </div>
+      </section>
       <div className="home-lead">
         <button className="char-card home-portrait" onClick={() => navigate('characters')} aria-label={`${char.profile.name}: change character`}>
           <div className="char-info">
@@ -56,7 +67,7 @@ export function HomePage() {
         </button>
         <div className="stack">
           <div>
-            <h1>{char.profile.name} training</h1>
+            <h2>{char.profile.name} training</h2>
             <p className="dim" style={{ maxWidth: '70ch' }}>{char.profile.playstyle}</p>
           </div>
           {recs[0] && recs[0].type !== 'done' && (

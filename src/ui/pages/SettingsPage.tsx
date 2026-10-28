@@ -27,14 +27,14 @@ export function SettingsPage() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Settings & data</h1>
+          <h1>Settings and data</h1>
           <p>All data stays on this computer. No account or subscription is needed.</p>
         </div>
       </div>
 
       <div className="grid g2">
         <div className="card stack">
-          <h3>Mastery & progression</h3>
+          <h3>Mastery and progression</h3>
           <Num label="Mastery threshold (%)" value={Math.round(settings.masteryThreshold * 100)} min={50} max={100} step={5} onChange={(v) => set({ masteryThreshold: v / 100 })} help="Accuracy needed to pass input exercises and quizzes." />
           <Num label="Combo consistency (clean runs in a row)" value={settings.comboConsistency} min={2} max={15} onChange={(v) => set({ comboConsistency: v })} help="Required to mark a combo mastered in Combo Lab." />
           <Num label="Stage unlock requirement (%)" value={Math.round(settings.unlockRequirement * 100)} min={50} max={100} step={10} onChange={(v) => set({ unlockRequirement: v / 100 })} help="Share of the previous stage that must be mastered (its stage test is always required)." />

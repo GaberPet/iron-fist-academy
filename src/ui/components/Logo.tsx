@@ -1,19 +1,30 @@
-// Iron Fist Academy mark: a clenched fist in a hexagon badge (original design, concept A).
-export function Logo({ size = 40, title = 'Iron Fist Academy' }: { size?: number; title?: string }) {
+// Iron Fist Academy logo, option C: nested diamonds with a rising chevron ("level up"), drawn
+// in one stroke weight. Black or white only (Level Academy brand rules): `tone` picks which.
+// The mark alone is used in small spaces; the full logo adds the heavy / light wordmark.
+export function LogoMark({ size = 40, tone = 'white', title = 'Iron Fist Academy' }: { size?: number; tone?: 'white' | 'black'; title?: string }) {
+  const ink = tone === 'white' ? '#ffffff' : '#000000';
   return (
-    <svg className="brand-mark" width={size} height={size} viewBox="0 0 512 512" role="img" aria-label={title}>
-      <rect width="512" height="512" rx="72" fill="var(--color-paper)" />
-      <path d="M256 44 L452 156 V356 L256 468 L60 356 V156 Z" fill="none" stroke="var(--color-accent)" strokeWidth="18" />
-      <g fill="var(--color-ink)">
-        <rect x="150" y="168" width="52" height="92" rx="12" />
-        <rect x="208" y="150" width="52" height="110" rx="12" />
-        <rect x="266" y="156" width="52" height="104" rx="12" />
-        <rect x="324" y="176" width="44" height="84" rx="12" />
-        <path d="M150 268 H368 V318 Q368 372 314 372 H206 Q150 372 150 318 Z" />
-        <path d="M150 268 L132 236 Q124 214 146 210 L196 246 Z" />
+    <svg className="brand-mark" width={size} height={size} viewBox="0 0 100 100" role="img" aria-label={title}>
+      <g fill="none" strokeWidth="5.5">
+        <path d="M50 4 L96 50 L50 96 L4 50 Z" stroke={ink} />
+        <path d="M50 26 L74 50 L50 74 L26 50 Z" stroke="#8a8a8a" />
+        <path d="M34 58 L50 42 L66 58" stroke={ink} strokeLinecap="square" />
       </g>
-      <rect x="166" y="282" width="140" height="18" rx="9" fill="var(--color-paper)" />
-      <rect x="190" y="390" width="132" height="14" rx="7" fill="var(--color-accent)" />
     </svg>
+  );
+}
+
+/** Kept for existing imports: the white mark (on the black sidebar). */
+export function Logo({ size = 40, title = 'Iron Fist Academy' }: { size?: number; title?: string }) {
+  return <LogoMark size={size} tone="white" title={title} />;
+}
+
+/** Wordmark: IRONFIST heavy caps, ACADEMY light caps (the heavy / light contrast of the brand). */
+export function Wordmark() {
+  return (
+    <span className="brand-name" aria-hidden>
+      <b>IRONFIST</b>
+      <span>ACADEMY</span>
+    </span>
   );
 }

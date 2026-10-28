@@ -33,7 +33,7 @@ export function MovesPage({ moveId }: { moveId?: string }) {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Move Library · {char.profile.name}</h1>
+          <h1>Move library · {char.profile.name}</h1>
           <p>{char.frames.moves.length} moves with frame data from {char.frames.source.name} (fetched {char.frames.source.fetchedAt?.slice(0, 10)}). Coach notes are labelled separately as strategic advice. Found a wrong value? Correct it in the detail panel: your edit is stored locally and marked as yours.</p>
         </div>
       </div>

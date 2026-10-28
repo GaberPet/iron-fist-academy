@@ -24,7 +24,7 @@ export function DojoPage({ drill }: { drill?: string }) {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Bot Dojo</h1>
+          <h1>Bot dojo</h1>
           <p>A standalone training simulation. The bot uses real moves and frame data (startup, block advantage, recovery) and judges you with Tekken's frame rules. It does <b>not</b> reproduce Tekken 8's animations, hitboxes, range, pushback, tracking or AI, and cannot replace practice against the real game.</p>
           <p>The bot is drawn as the character whose move it is using. A session has three stages: first <b>basic moves</b>, then each character's <b>signature moves</b> (launchers, Heat Engagers, power crushes, string enders), and in the last third its <b>stance and Heat moves</b>. Want a full match instead? Try <a href="#/fight">Free Fight</a>.</p>
         </div>

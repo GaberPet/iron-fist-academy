@@ -76,7 +76,7 @@ export function CompanionPage() {
           </tbody>
         </table>
       </div>
-      <h2>Tekken 8 Practice mode recipes</h2>
+      <h2>Tekken 8 practice mode recipes</h2>
       <div className="notice warn">These are general Practice-mode workflows. Exact menu names and options can differ between game versions and patches; the app cannot check your game's menus.</div>
       <div className="grid g2">
         {RECIPES.map((r) => (

@@ -28,7 +28,7 @@ export function AcademyPage({ lessonId }: { lessonId?: string }) {
       )}
       <div className="page-head">
         <div>
-          <h1>Learning Academy · {char.profile.name}</h1>
+          <h1>Learning academy · {char.profile.name}</h1>
           <p>Five stages from foundations to competitive preparation. Each lesson needs a passed guided exercise and a passed challenge. Stages unlock through mastery (currently {Math.round(settings.unlockRequirement * 100)}% of the previous stage plus its stage test), not by opening lessons.</p>
         </div>
       </div>

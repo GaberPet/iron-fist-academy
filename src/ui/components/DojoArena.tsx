@@ -224,21 +224,15 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
 // ---------- drawing ----------
 
 /** Theme colours for the canvas, read from the CSS tokens so the arena follows the site theme. */
-let tokenCache: Record<string, string> | null = null;
+// The arena is a dark 3D scene (imagery): its overlay text and meter are white and greys only.
 function tokens() {
-  if (tokenCache) return tokenCache;
-  const cs = getComputedStyle(document.documentElement);
-  const v = (n: string, fb: string) => cs.getPropertyValue(n).trim() || fb;
-  tokenCache = {
-    paper: v('--color-paper', '#0d0f1a'), paper2: v('--color-paper-2', '#141827'), rule: v('--color-rule', '#2a3145'),
-    ink: v('--color-ink', '#f2f3f8'), ink2: v('--color-ink-2', '#c9cfdd'), muted: v('--color-muted', '#9aa1b5'),
-    accent: v('--color-accent', '#ffad00'), info: v('--color-info', '#5aa9ff'), warn: v('--color-warn', '#f2b33d'),
-    error: v('--color-error', '#ff5d6c'), success: v('--color-success', '#3ccf8e'),
+  return {
+    paper: '#000000', paper2: '#2a2a2a', rule: '#5c5c5c', ink: '#ffffff', ink2: '#d6d6d6', muted: '#d6d6d6',
+    accent: '#ffffff', info: '#ffffff', warn: '#ffffff', error: '#ffffff', success: '#ffffff',
   };
-  return tokenCache;
 }
-const DISPLAY = '"Teko Variable", "Teko", sans-serif';
-const BODY = '"Metropolis", sans-serif';
+const DISPLAY = '"Montserrat", Arial, sans-serif';
+const BODY = '"Source Sans 3", Arial, sans-serif';
 
 /** Animation state kept between frames (poses blend towards their target). */
 export interface ArenaAnim {
@@ -356,7 +350,7 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
     const label = a.kind === 'throw' ? (a.throwBreak === 1 ? 'THROW, LEFT ARM' : a.throwBreak === 2 ? 'THROW, RIGHT ARM' : 'THROW, BOTH ARMS') : a.level.toUpperCase();
     const col = a.level === 'low' ? T.info : a.level === 'mid' ? T.warn : a.level === 'high' ? T.error : T.accent;
     ctx.fillStyle = col;
-    ctx.font = `600 34px ${DISPLAY}`;
+    ctx.font = `700 24px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.85)';
     ctx.shadowBlur = 8;
@@ -367,7 +361,7 @@ function drawScene(ctx: CanvasRenderingContext2D, e: DrillEngine, f: Frame | nul
   // result text
   if (e.result) {
     ctx.textAlign = 'center';
-    ctx.font = `600 40px ${DISPLAY}`;
+    ctx.font = `800 28px ${DISPLAY}`;
     ctx.fillStyle = e.result.success ? T.success : T.error;
     ctx.shadowColor = 'rgba(0,0,0,0.85)';
     ctx.shadowBlur = 10;
@@ -389,25 +383,25 @@ function drawFrameMeter(ctx: CanvasRenderingContext2D, e: DrillEngine, frame: nu
   ctx.font = `400 11px ${BODY}`;
   ctx.textAlign = 'left';
   ctx.fillStyle = tokens().muted;
-  ctx.fillText('FRAME METER (60 fps): green = startup · red = active · blue = recovery · yellow = blockstun · white = your move', x0, y0 - 8);
+  ctx.fillText('FRAME METER (60 fps): light grey = startup · white = active · dark grey = recovery · mid grey = blockstun · white = your move', x0, y0 - 8);
   if (!a || !tl) return;
   const start = tl.t0;
   const botActEnd = a.kind === 'whiff' ? tl.impact + a.recovery : tl.botActionable;
   for (let i = 0; i < n; i++) {
     const fr = start + i;
     // bot row
-    let c = '#1b2030';
-    if (fr < tl.impact) c = '#2fae6b';
-    else if (fr === tl.impact) c = '#ff5d6c';
-    else if (fr < botActEnd) c = '#3d7be0';
+    let c = '#2a2a2a';
+    if (fr < tl.impact) c = '#d6d6d6';
+    else if (fr === tl.impact) c = '#ffffff';
+    else if (fr < botActEnd) c = '#5c5c5c';
     if (fr > frame) c = shade(c);
     ctx.fillStyle = c;
     ctx.fillRect(x0 + i * cell, y0, cell - 1, 16);
     // player row
-    let pc = '#1b2030';
-    if (e.blocked && fr > tl.impact && fr < tl.playerActionable) pc = '#e0b23a';
+    let pc = '#2a2a2a';
+    if (e.blocked && fr > tl.impact && fr < tl.playerActionable) pc = '#8a8a8a';
     const pm = e.playerMove;
-    if (pm && fr >= pm.frame && fr < pm.frame + (pm.move.startupFrame ?? 10)) pc = '#eef0f6';
+    if (pm && fr >= pm.frame && fr < pm.frame + (pm.move.startupFrame ?? 10)) pc = '#ffffff';
     if (fr > frame) pc = shade(pc);
     ctx.fillStyle = pc;
     ctx.fillRect(x0 + i * cell, y0 + 20, cell - 1, 16);

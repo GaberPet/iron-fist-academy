@@ -12,8 +12,8 @@ import { playEvents, playFall, setSfxMuted, sfxMuted, unlockAudio } from '../thr
 import { NotationView } from '../components/Notation';
 import { InputLog } from '../components/InputLog';
 
-const DISPLAY = '"Teko Variable", "Teko", sans-serif';
-const BODY = '"Metropolis", system-ui, sans-serif';
+const DISPLAY = '"Montserrat", Arial, sans-serif';
+const BODY = '"Source Sans 3", Arial, sans-serif';
 
 export function FightPage() {
   const { char, roster, opponents, ensureLoaded, settings, updateSettings } = useStore();
@@ -35,7 +35,7 @@ export function FightPage() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Free Fight</h1>
+          <h1>Free fight</h1>
           <p>A 3D match against a bot that plays a real character. Every move uses its imported frame data (startup, damage, hit level, block / hit / counter-hit advantage, launch, tornado, homing, crush and power-crush frames, Heat Engagers, Heat Dash, Rage Art) and the bot punishes and juggles with the character's real punishers and combo routes. Tekken 8's documented systems are built in: 180 HP with recoverable health, Heat (2+3 or a Heat Engager), Rage at 45 HP, air-combo scaling, walls, throws, sidesteps, dashes and tech rolls. This is a <b>simulation</b>, not Tekken 8: reach, movement speeds, tracking, juggle gravity and string timing are approximations, and the fighters are original models, not the game's characters.</p>
         </div>
       </div>
@@ -209,34 +209,34 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
     const lines: string[] = [];
     const pop = (text: string, at: { x: number; z: number } | undefined, y: number, color: string) => at && h.popups.push({ text, at: { x: at.x / 100, y: y / 100, z: at.z / 100 }, age: 0, color });
     for (const e of ev) {
-      if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#ff5d6c');
+      if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#ffffff');
       // frame advantage readout (attacker's), like the in-game frame meter
       if ((e.type === 'hit' || e.type === 'counter' || e.type === 'block') && e.adv && e.by !== undefined) {
         const n = Number(e.adv);
-        const color = Number.isNaN(n) ? '#ffd36a' : n >= 0 ? '#3ccf8e' : n <= -10 ? '#ff5d6c' : '#f2b33d';
+        const color = Number.isNaN(n) ? '#ffffff' : n >= 0 ? '#ffffff' : n <= -10 ? '#ffffff' : '#d6d6d6';
         pop(e.adv, engine.f[e.by].pos, 205, color);
         setAdv({ who: e.by, text: e.adv, kind: e.type, move: engine.f[e.by].move?.id ?? '' });
       }
       if ((e.type === 'hit' || e.type === 'counter') && e.by === 0 && settings.rumble) inputManager.rumble(60, 0.5);
-      if (e.type === 'launch') pop('LAUNCH', e.at, 210, '#5aa9ff');
-      if (e.type === 'tornado') pop('TORNADO', e.at, 220, '#ffd36a');
+      if (e.type === 'launch') pop('LAUNCH', e.at, 210, '#ffffff');
+      if (e.type === 'tornado') pop('TORNADO', e.at, 220, '#ffffff');
       if (e.type === 'wall') pop('WALL SPLAT', e.at, 200, '#ffffff');
       if (e.type === 'balcony') {
-        pop('BALCONY BREAK', e.at, 220, '#ffd36a');
+        pop('BALCONY BREAK', e.at, 220, '#ffffff');
         lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: balcony break`);
       }
-      if (e.type === 'throw' || e.type === 'break') pop(e.type === 'break' ? 'THROW BREAK' : 'THROW', e.at, 200, '#f2f3f8');
-      if (e.type === 'crush' || e.type === 'armor') pop(e.type === 'armor' ? 'ARMOR' : 'CRUSH', e.at, 200, '#3ccf8e');
-      if (e.type === 'step-evade') pop('SIDESTEP', e.at, 200, '#c9d6ea');
-      if (e.type === 'tech') pop('TECH', e.at, 120, '#c9d6ea');
+      if (e.type === 'throw' || e.type === 'break') pop(e.type === 'break' ? 'THROW BREAK' : 'THROW', e.at, 200, '#ffffff');
+      if (e.type === 'crush' || e.type === 'armor') pop(e.type === 'armor' ? 'ARMOR' : 'CRUSH', e.at, 200, '#ffffff');
+      if (e.type === 'step-evade') pop('SIDESTEP', e.at, 200, '#d6d6d6');
+      if (e.type === 'tech') pop('TECH', e.at, 120, '#d6d6d6');
       if (e.type === 'parry') {
-        pop('LOW PARRY', e.at, 180, '#ffd36a');
+        pop('LOW PARRY', e.at, 180, '#ffffff');
         lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: low parry`);
       }
       if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'heat-dash' || e.type === 'rage' || e.type === 'rage-art') {
         const who = engine.f[e.by ?? 0];
         const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'heat-dash' ? 'HEAT DASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';
-        pop(label, who.pos, 230, e.type.startsWith('heat') ? '#5aa9ff' : '#ff3b3b');
+        pop(label, who.pos, 230, e.type.startsWith('heat') ? '#ffffff' : '#ffffff');
         if (e.text) lines.push(e.text);
       }
       if (e.type === 'punish' && e.text) lines.push(e.text);
@@ -367,7 +367,7 @@ function drawPopups(ctx: CanvasRenderingContext2D, a: Arena3D, h: Hud, W: number
     const s = a.projectXYZ(pu.at.x, pu.at.y, pu.at.z, W, H);
     if (!s.visible) continue;
     ctx.globalAlpha = Math.max(0, 1 - pu.age / 55);
-    ctx.font = `600 28px ${DISPLAY}`;
+    ctx.font = `800 18px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.9)';
     ctx.shadowBlur = 8;
@@ -389,25 +389,25 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     if (a.trail[i] > a.shown[i]) a.trail[i] -= 0.6;
     if (a.trail[i] < a.shown[i]) a.trail[i] = a.shown[i];
     const x0 = i === 0 ? W / 2 - 52 - barW : W / 2 + 52;
-    ctx.fillStyle = 'rgba(8,8,14,0.75)';
+    ctx.fillStyle = 'rgba(0,0,0,0.75)';
     ctx.fillRect(x0 - 3, top - 3, barW + 6, barH + 6);
-    ctx.fillStyle = '#2a1015';
+    ctx.fillStyle = '#2a2a2a';
     ctx.fillRect(x0, top, barW, barH);
     // bars fill from the outside in: P1 drains towards the left edge, P2 towards the right edge
     const fillFrom = (w: number) => (i === 0 ? x0 + barW - w : x0);
     const wTrail = (a.trail[i] / MAX_HP) * barW;
-    ctx.fillStyle = '#ff5d6c';
+    ctx.fillStyle = '#5c5c5c';
     ctx.fillRect(fillFrom(wTrail), top, wTrail, barH);
     // recoverable health (white) sits next to the current health
     const wRec = ((hp + f.recov) / MAX_HP) * barW;
-    ctx.fillStyle = 'rgba(235,235,240,0.85)';
+    ctx.fillStyle = '#8a8a8a';
     ctx.fillRect(fillFrom(wRec), top, wRec, barH);
     const wHp = (a.shown[i] / MAX_HP) * barW;
     const low = inRage(f);
     const g = ctx.createLinearGradient(0, top, 0, top + barH);
-    g.addColorStop(0, low ? '#ff9a7a' : '#ffe39a');
-    g.addColorStop(0.5, low ? '#ff3b3b' : '#ffad00');
-    g.addColorStop(1, low ? '#a01818' : '#c47e00');
+    g.addColorStop(0, low ? '#d6d6d6' : '#ffffff');
+    g.addColorStop(0.5, low ? '#ffffff' : '#ffffff');
+    g.addColorStop(1, low ? '#8a8a8a' : '#d6d6d6');
     ctx.fillStyle = g;
     ctx.fillRect(fillFrom(wHp), top, wHp, barH);
     ctx.fillStyle = 'rgba(255,255,255,0.25)';
@@ -421,45 +421,45 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     ctx.lineTo(notch + 4, top);
     ctx.stroke();
     if (low) {
-      ctx.strokeStyle = `rgba(255,48,48,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
+      ctx.strokeStyle = `rgba(255,255,255,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
       ctx.lineWidth = 3;
       ctx.strokeRect(x0 - 3, top - 3, barW + 6, barH + 6);
     }
     // heat gauge
     const hw = 160, hx = i === 0 ? x0 + barW - hw : x0, hy = top + barH + 30;
     const share = heatShare(f);
-    ctx.fillStyle = 'rgba(8,8,14,0.7)';
+    ctx.fillStyle = 'rgba(0,0,0,0.7)';
     ctx.fillRect(hx - 2, hy - 2, hw + 4, 10);
     const hg = ctx.createLinearGradient(hx, 0, hx + hw, 0);
-    hg.addColorStop(0, '#1f6fd6');
-    hg.addColorStop(1, '#7cc4ff');
+    hg.addColorStop(0, '#8a8a8a');
+    hg.addColorStop(1, '#ffffff');
     ctx.fillStyle = hg;
     const hwNow = hw * share;
     ctx.fillRect(i === 0 ? hx + hw - hwNow : hx, hy, hwNow, 6);
-    ctx.font = `600 15px ${DISPLAY}`;
+    ctx.font = `300 11px ${DISPLAY}`;
     ctx.textAlign = i === 0 ? 'right' : 'left';
-    ctx.fillStyle = f.heat === 'active' ? '#7cc4ff' : f.heat === 'ready' ? '#c9d6ea' : '#6a7080';
+    ctx.fillStyle = f.heat === 'active' ? '#ffffff' : f.heat === 'ready' ? '#d6d6d6' : '#5c5c5c';
     ctx.fillText(f.heat === 'active' ? 'HEAT ACTIVE' : f.heat === 'ready' ? 'HEAT' : 'HEAT USED', i === 0 ? hx - 8 : hx + hw + 8, hy + 7);
     if (low) {
-      ctx.fillStyle = '#ff3b3b';
+      ctx.fillStyle = '#ffffff';
       ctx.fillText('RAGE', i === 0 ? hx - 8 : hx + hw + 8, hy + 26);
     }
     // name + round wins
     const c = i === 0 ? me : opp;
-    ctx.font = `600 22px ${DISPLAY}`;
+    ctx.font = `700 15px ${DISPLAY}`;
     ctx.textAlign = i === 0 ? 'left' : 'right';
     ctx.shadowColor = 'rgba(0,0,0,0.9)';
     ctx.shadowBlur = 6;
-    ctx.fillStyle = '#f2f3f8';
+    ctx.fillStyle = '#ffffff';
     ctx.fillText(`${c.profile.name.toUpperCase()}${i === 0 ? '  (YOU)' : ''}`, i === 0 ? x0 : x0 + barW, top + barH + 24);
     ctx.shadowBlur = 0;
     for (let r = 0; r < e.roundsToWin; r++) {
       const cx = i === 0 ? x0 + barW - 10 - r * 22 : x0 + 10 + r * 22;
       ctx.beginPath();
       ctx.arc(cx, top + barH + 16, 7, 0, Math.PI * 2);
-      ctx.fillStyle = r < e.wins[i] ? '#ffad00' : 'rgba(8,8,14,0.7)';
+      ctx.fillStyle = r < e.wins[i] ? '#ffffff' : 'rgba(0,0,0,0.7)';
       ctx.fill();
-      ctx.strokeStyle = '#ffad00';
+      ctx.strokeStyle = '#ffffff';
       ctx.lineWidth = 1.5;
       ctx.stroke();
     }
@@ -468,34 +468,34 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     if (victim.combo.hits >= 2) {
       ctx.textAlign = i === 0 ? 'left' : 'right';
       const cx = i === 0 ? 24 : W - 24;
-      ctx.font = `600 38px ${DISPLAY}`;
-      ctx.fillStyle = '#ffad00';
+      ctx.font = `800 26px ${DISPLAY}`;
+      ctx.fillStyle = '#ffffff';
       ctx.shadowColor = 'rgba(0,0,0,0.9)';
       ctx.shadowBlur = 8;
       ctx.fillText(`${victim.combo.hits} HITS`, cx, 150);
       ctx.font = `500 18px ${BODY}`;
-      ctx.fillStyle = '#f2f3f8';
+      ctx.fillStyle = '#ffffff';
       ctx.fillText(`${victim.combo.damage} DAMAGE`, cx, 174);
       ctx.shadowBlur = 0;
     }
   }
   // timer
-  ctx.fillStyle = 'rgba(8,8,14,0.8)';
+  ctx.fillStyle = 'rgba(0,0,0,0.8)';
   ctx.fillRect(W / 2 - 40, top - 8, 80, 50);
-  ctx.strokeStyle = '#ffad00';
+  ctx.strokeStyle = '#ffffff';
   ctx.lineWidth = 2;
   ctx.strokeRect(W / 2 - 40, top - 8, 80, 50);
-  ctx.font = `600 44px ${DISPLAY}`;
+  ctx.font = `700 30px ${DISPLAY}`;
   ctx.textAlign = 'center';
-  ctx.fillStyle = e.secondsLeft <= 10 && e.phase === 'fight' ? '#ff5d6c' : '#f2f3f8';
+  ctx.fillStyle = e.secondsLeft <= 10 && e.phase === 'fight' ? '#ffffff' : '#ffffff';
   ctx.fillText(e.cfg.practice ? '∞' : String(Math.max(0, e.secondsLeft)), W / 2, top + 34);
   // banners
   if (e.banner && e.frame < e.banner.until) {
-    ctx.font = `600 96px ${DISPLAY}`;
+    ctx.font = `800 64px ${DISPLAY}`;
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.95)';
     ctx.shadowBlur = 18;
-    ctx.fillStyle = e.banner.text === 'YOU LOSE' || e.banner.text === 'K.O.' ? '#ff5d6c' : '#ffad00';
+    ctx.fillStyle = e.banner.text === 'YOU LOSE' || e.banner.text === 'K.O.' ? '#ffffff' : '#ffffff';
     ctx.fillText(e.banner.text, W / 2, H * 0.45);
     ctx.shadowBlur = 0;
   }

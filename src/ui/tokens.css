@@ -1,20 +1,53 @@
+/* Level Academy brand system (Brand guidelines v1, October 2026), applied to Iron Fist Academy.
+ * Monochrome only: Ink, Paper, Graphite, Line, Steel (never text), Surface, Muted. No accent colour.
+ * Montserrat for headings, Source Sans 3 for running text. Square-cut: cards 0 px, buttons 4 px,
+ * inputs and tags 2 px. One spacing scale: 4 8 16 24 40 64. */
 :root {
-  --space-3xs: 2px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 12px; --space-md: 16px; --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 96px; --space-4xl: 144px;
-  --text-xs: 0.75rem; --text-sm: 0.875rem; --text-md: 1rem; --text-lg: 1.2rem; --text-xl: 1.44rem; --text-2xl: 1.728rem; --text-3xl: 2.074rem;
-  --text-display-s: 1.44rem; --text-display: 1.728rem; --text-section: 1.2rem; --text-title: 1rem; --text-lead: 1rem;
-  --ease-out: cubic-bezier(0.16, 1, 0.3, 1); --ease-in: cubic-bezier(0.7, 0, 0.84, 0); --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
-  --dur-micro: 120ms; --dur-short: 220ms; --dur-long: 420ms;
-  --color-error: oklch(66% 0.2 27); --color-success: oklch(76% 0.15 155);
-  --container: 1440px; --gutter: 64px; --gap-columns: 32px; --section-gap-s: 120px; --section-gap: 144px; --section-gap-l: 176px;
-  --z-base: 1; --z-raised: 10; --z-dropdown: 100; --z-sticky: 200; --z-sticky-nav: 300; --z-modal: 400; --z-toast: 500; --z-tooltip: 600;
-  --color-paper: oklch(13.5% 0.025 275); --color-paper-2: oklch(18% 0.035 275); --color-paper-3: oklch(23% 0.045 275);
-  --color-ink: oklch(96% 0.008 275); --color-ink-2: oklch(84% 0.02 275); --color-muted: oklch(70% 0.025 275);
-  --color-rule: oklch(32% 0.04 275); --color-rule-strong: oklch(45% 0.05 275);
-  --color-accent: oklch(80% 0.165 75); --color-accent-ink: oklch(19% 0.04 75); --color-focus: oklch(86% 0.15 85);
-  --color-heat: oklch(55% 0.215 27); --color-warn: oklch(80% 0.14 85); --color-info: oklch(78% 0.1 235);
-  --color-overlay: oklch(9% 0.02 275 / 0.85);
-  --font-display: "Teko Variable", "Teko", ui-sans-serif, sans-serif; --font-body: "Metropolis", ui-sans-serif, system-ui, sans-serif; --font-outlier: "JetBrains Mono Variable", ui-monospace, monospace;
-  --display-weight: 600;
-  --radius-card: 2px; --radius-control: 2px; --radius-pill: 999px; --rule-hair: 1px; --shadow-card: none;
-  --tracking-display: 0.005em;
+  /* colour */
+  --ink: #000000;       /* brand colour: logo, headings, text on white */
+  --paper: #ffffff;     /* page ground; pair with ink only */
+  --graphite: #2a2a2a;  /* solid secondary blocks; hover on black buttons */
+  --line: #d6d6d6;      /* hairline rules and card borders */
+  --steel: #8a8a8a;     /* blocks, diagrams, charts only. never text */
+  --surface: #f3f3f2;   /* quiet panels, table headers, form fields */
+  --muted: #5c5c5c;     /* captions and secondary text (6.7:1 on white) */
+
+  /* semantic aliases used by the components (all monochrome) */
+  --color-paper: var(--paper); --color-paper-2: var(--paper); --color-paper-3: var(--surface);
+  --color-ink: var(--ink); --color-ink-2: var(--graphite); --color-muted: var(--muted);
+  --color-rule: var(--line); --color-rule-strong: var(--steel);
+  --color-accent: var(--ink); --color-accent-ink: var(--paper); --color-focus: var(--ink);
+  --color-success: var(--ink); --color-error: var(--ink); --color-heat: var(--ink); --color-warn: var(--graphite); --color-info: var(--muted);
+  --color-overlay: rgba(0, 0, 0, 0.72);
+
+  /* type */
+  --font-display: "Montserrat", Arial, sans-serif;
+  --font-body: "Source Sans 3", Arial, sans-serif;
+  --font-outlier: "Source Sans 3", Arial, sans-serif; /* figures: tabular numerals, no separate mono face */
+  --display-weight: 700;
+  --tracking-display: 0;
+  --tracking-eyebrow: 0.24em;
+  --text-xs: 0.8125rem;   /* small 13 / 20 */
+  --text-sm: 1rem;        /* body 16 / 26 */
+  --text-md: 1rem;
+  --text-lg: 1.25rem;     /* heading 3: 20 / 28 */
+  --text-xl: 1.75rem;     /* heading 2: 28 / 34 */
+  --text-2xl: 2.5rem;     /* heading 1: 40 / 46 */
+  --text-3xl: 3.5rem;     /* display: 56 / 60 */
+  --text-eyebrow: 0.75rem; /* 12, light, caps, +0.24em */
+
+  /* spacing: 4 8 16 24 40 64 */
+  --space-3xs: 4px; --space-2xs: 4px; --space-xs: 8px; --space-sm: 16px; --space-md: 16px;
+  --space-lg: 24px; --space-xl: 40px; --space-2xl: 64px; --space-3xl: 64px; --space-4xl: 64px;
+
+  /* shape */
+  --radius-card: 0; --radius-control: 4px; --radius-input: 2px; --radius-tag: 2px; --radius-pill: 2px;
+  --rule-hair: 1px; --shadow-card: none;
+  --stroke-mark: 2px; /* diamond device: drawn at the stroke weight of the mark */
+
+  /* motion and layers */
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --dur-micro: 120ms; --dur-short: 200ms;
+  --container: 1280px;
+  --z-base: 1; --z-raised: 10; --z-modal: 400;
 }

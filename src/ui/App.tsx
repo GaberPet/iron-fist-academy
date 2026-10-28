@@ -15,7 +15,7 @@ import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
 import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
-import { Logo } from './components/Logo';
+import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
 import { RosterTiles } from './components/RosterTiles';
 import { isRecent } from '../data';
@@ -25,16 +25,16 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'home', label: 'Dashboard', icon: '⌂' },
   { id: 'characters', label: 'Characters', icon: '♛' },
   { id: 'academy', label: 'Academy', icon: '◈' },
-  { id: 'moves', label: 'Move Library', icon: '☰' },
-  { id: 'combos', label: 'Combo Lab', icon: '⚡' },
+  { id: 'moves', label: 'Move library', icon: '☰' },
+  { id: 'combos', label: 'Combo lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
-  { id: 'dojo', label: 'Bot Dojo', icon: '⚔' },
-  { id: 'fight', label: 'Free Fight', icon: '✊' },
+  { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
+  { id: 'fight', label: 'Free fight', icon: '✊' },
   { id: 'updates', label: "What's new", icon: '✧', sep: true },
   { id: 'companion', label: 'In Tekken 8', icon: '⎚' },
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
-  { id: 'settings', label: 'Settings & Data', icon: '⚙' },
+  { id: 'settings', label: 'Settings and data', icon: '⚙' },
 ];
 
 class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string }, { error: Error | null }> {
@@ -107,7 +107,7 @@ function TopBar() {
 
 export function App() {
   const route = useRoute();
-  const { char, changelog, data } = useStore();
+  const { changelog, data } = useStore();
   const page = route[0];
   const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
@@ -129,7 +129,7 @@ export function App() {
     }
   })();
   return (
-    <div className="app" style={{ ['--char' as string]: char.profile.color }}>
+    <div className="app">
       <a
         className="skip-link"
         href="#main"
@@ -138,15 +138,13 @@ export function App() {
           document.getElementById('main')?.focus();
         }}
       >
-        Skip to Content
+        Skip to content
       </a>
       <nav className="sidebar" aria-label="Main">
         <div className="brand">
           <Logo />
-          <div>
-            <div className="brand-name">Iron Fist Academy</div>
-            <div className="brand-sub">Unofficial Tekken 8 coach</div>
-          </div>
+          <Wordmark />
+          <span className="brand-sub">A Level Academy programme</span>
         </div>
         {NAV.map((n) => (
           <div key={n.id}>

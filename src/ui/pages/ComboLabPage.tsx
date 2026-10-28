@@ -32,7 +32,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Combo Lab · {char.profile.name}</h1>
+          <h1>Combo lab · {char.profile.name}</h1>
           <p>{char.combos.length} routes from the Wavu Wiki combo page{imported.length !== char.combos.length ? ` (${char.combos.length - imported.length} curated with coaching tips)` : ''}, refreshed automatically when the wiki changes. Damage is shown exactly as listed there; difficulty stars are coach estimates on curated combos only. Your controller input is checked live.</p>
         </div>
       </div>

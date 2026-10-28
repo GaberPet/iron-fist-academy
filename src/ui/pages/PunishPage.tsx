@@ -34,7 +34,7 @@ export function PunishPage() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Punishment Trainer · {char.profile.name}</h1>
+          <h1>Punishment trainer · {char.profile.name}</h1>
           <p>Know your punisher for every frame window, then execute it. Opponent moves and frame values come from the imported data; {char.profile.short}'s punisher list comes from Wavu's punisher table.</p>
         </div>
         <div className="row">
