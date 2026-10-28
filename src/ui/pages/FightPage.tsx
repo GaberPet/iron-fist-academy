@@ -209,7 +209,7 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
     const lines: string[] = [];
     const pop = (text: string, at: { x: number; z: number } | undefined, y: number, color: string) => at && h.popups.push({ text, at: { x: at.x / 100, y: y / 100, z: at.z / 100 }, age: 0, color });
     for (const e of ev) {
-      if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#ffffff');
+      if (e.type === 'counter') pop('COUNTER HIT', e.at, (e.y ?? 100) + 50, '#e4002b');
       // frame advantage readout (attacker's), like the in-game frame meter
       if ((e.type === 'hit' || e.type === 'counter' || e.type === 'block') && e.adv && e.by !== undefined) {
         const n = Number(e.adv);
@@ -236,7 +236,7 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
       if (e.type === 'heat' || e.type === 'heat-smash' || e.type === 'heat-dash' || e.type === 'rage' || e.type === 'rage-art') {
         const who = engine.f[e.by ?? 0];
         const label = e.type === 'heat' ? 'HEAT' : e.type === 'heat-smash' ? 'HEAT SMASH' : e.type === 'heat-dash' ? 'HEAT DASH' : e.type === 'rage' ? 'RAGE' : 'RAGE ART';
-        pop(label, who.pos, 230, e.type.startsWith('heat') ? '#ffffff' : '#ffffff');
+        pop(label, who.pos, 230, e.type.startsWith('heat') ? '#ffffff' : '#e4002b');
         if (e.text) lines.push(e.text);
       }
       if (e.type === 'punish' && e.text) lines.push(e.text);
@@ -405,9 +405,9 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     const wHp = (a.shown[i] / MAX_HP) * barW;
     const low = inRage(f);
     const g = ctx.createLinearGradient(0, top, 0, top + barH);
-    g.addColorStop(0, low ? '#d6d6d6' : '#ffffff');
-    g.addColorStop(0.5, low ? '#ffffff' : '#ffffff');
-    g.addColorStop(1, low ? '#8a8a8a' : '#d6d6d6');
+    g.addColorStop(0, low ? '#ff3355' : '#ffffff');
+    g.addColorStop(0.5, low ? '#e4002b' : '#ffffff');
+    g.addColorStop(1, low ? '#b80023' : '#d6d6d6');
     ctx.fillStyle = g;
     ctx.fillRect(fillFrom(wHp), top, wHp, barH);
     ctx.fillStyle = 'rgba(255,255,255,0.25)';
@@ -421,7 +421,7 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     ctx.lineTo(notch + 4, top);
     ctx.stroke();
     if (low) {
-      ctx.strokeStyle = `rgba(255,255,255,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
+      ctx.strokeStyle = `rgba(228,0,43,${0.6 + Math.sin(e.frame / 6) * 0.4})`;
       ctx.lineWidth = 3;
       ctx.strokeRect(x0 - 3, top - 3, barW + 6, barH + 6);
     }
@@ -487,7 +487,7 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
   ctx.strokeRect(W / 2 - 40, top - 8, 80, 50);
   ctx.font = `700 30px ${DISPLAY}`;
   ctx.textAlign = 'center';
-  ctx.fillStyle = e.secondsLeft <= 10 && e.phase === 'fight' ? '#ffffff' : '#ffffff';
+  ctx.fillStyle = e.secondsLeft <= 10 && e.phase === 'fight' ? '#e4002b' : '#ffffff';
   ctx.fillText(e.cfg.practice ? '∞' : String(Math.max(0, e.secondsLeft)), W / 2, top + 34);
   // banners
   if (e.banner && e.frame < e.banner.until) {
@@ -495,7 +495,7 @@ function drawHud(ctx: CanvasRenderingContext2D, e: FightEngine, a: Hud, me: Char
     ctx.textAlign = 'center';
     ctx.shadowColor = 'rgba(0,0,0,0.95)';
     ctx.shadowBlur = 18;
-    ctx.fillStyle = e.banner.text === 'YOU LOSE' || e.banner.text === 'K.O.' ? '#ffffff' : '#ffffff';
+    ctx.fillStyle = e.banner.text === 'YOU LOSE' || e.banner.text === 'K.O.' ? '#e4002b' : '#ffffff';
     ctx.fillText(e.banner.text, W / 2, H * 0.45);
     ctx.shadowBlur = 0;
   }
