@@ -173,7 +173,7 @@ export function App() {
           <span className="brand-sub">A Level Academy programme</span>
         </div>
         {NAV_HERE.map((n) => (
-          <div key={n.id}>
+          <div key={n.id} className={`nav-item-${n.id}`}>
             {n.sep && <div className="nav-sep" />}
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
               <Icon name={n.id} />

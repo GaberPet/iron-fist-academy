@@ -453,3 +453,5 @@ a:hover { color: var(--red); }
 .import-dialog { max-width: 560px; width: calc(100% - 32px); color: var(--ink); background: var(--paper); border: var(--rule-hair) solid var(--line); padding: var(--space-lg); }
 .import-dialog::backdrop { background: var(--color-overlay); }
 .import-dialog ol { padding-left: 1.2em; display: grid; gap: var(--space-xs); }
+/* Phones and small touch tablets: there is no phone app, so no "Install the app" tab */
+@media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .nav-item-install { display: none; } }
