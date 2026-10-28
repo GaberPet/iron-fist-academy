@@ -32,6 +32,7 @@ code { font-family: var(--font-body); background: var(--surface); padding: 0 var
 .nav-btn:hover { background: var(--graphite); color: var(--paper); }
 .nav-btn.active { background: var(--paper); color: var(--ink); font-weight: 600; }
 .nav-btn:focus-visible { outline-color: var(--paper); }
+.sidebar .nav-btn:hover { background: var(--graphite); color: var(--paper); }
 .nav-ico { width: 18px; height: 18px; flex: none; color: currentColor; }
 .nav-sep { height: var(--rule-hair); background: var(--graphite); margin: var(--space-xs); }
 .sidebar .badge { color: var(--paper); border-color: var(--muted); background: transparent; }
@@ -315,7 +316,7 @@ table.data tr.sel td { background: var(--surface); box-shadow: inset 0 -2px 0 va
 }
 
 /* ---------- interface guidelines ---------- */
-html { -webkit-tap-highlight-color: rgba(0, 0, 0, 0.08); }
+html { -webkit-tap-highlight-color: rgba(255, 255, 255, 0.12); }
 @media (pointer: fine) { html { overscroll-behavior: none; } }
 a, button, input, select, textarea, label, summary, [role="button"] { touch-action: manipulation; }
 select { background-color: var(--surface); color: var(--ink); }

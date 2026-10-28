@@ -1,6 +1,6 @@
 *, *::before, *::after { box-sizing: border-box; }
 html, body { overflow-x: clip; }
-html { color-scheme: light; scrollbar-color: var(--steel) var(--paper); }
+html { color-scheme: dark; scrollbar-color: var(--steel) var(--paper); }
 body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--font-body); font-size: 1rem; line-height: 1.625; font-weight: 400; -webkit-font-smoothing: antialiased; }
 ::selection { background: var(--ink); color: var(--paper); }
 :focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }

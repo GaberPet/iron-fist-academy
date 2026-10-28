@@ -4,13 +4,15 @@
  * inputs and tags 2 px. One spacing scale: 4 8 16 24 40 64. */
 :root {
   /* colour */
-  --ink: #000000;       /* brand colour: logo, headings, text on white */
-  --paper: #ffffff;     /* page ground; pair with ink only */
-  --graphite: #2a2a2a;  /* solid secondary blocks; hover on black buttons */
-  --line: #d6d6d6;      /* hairline rules and card borders */
+  /* Reversed layout: black ground, white type (white logo on black). Same seven brand values,
+   * roles swapped for the dark ground. */
+  --ink: #ffffff;       /* text, headings and the logo on black */
+  --paper: #000000;     /* page ground */
+  --graphite: #d6d6d6;  /* hover on white buttons, secondary blocks on black */
+  --line: #5c5c5c;      /* hairline rules and card borders on black */
   --steel: #8a8a8a;     /* blocks, diagrams, charts only. never text */
-  --surface: #f3f3f2;   /* quiet panels, table headers, form fields */
-  --muted: #5c5c5c;     /* captions and secondary text (6.7:1 on white) */
+  --surface: #2a2a2a;   /* quiet panels, table headers, form fields on black */
+  --muted: #d6d6d6;     /* captions and secondary text on black */
 
   /* semantic aliases used by the components (all monochrome) */
   --color-paper: var(--paper); --color-paper-2: var(--paper); --color-paper-3: var(--surface);
@@ -18,7 +20,7 @@
   --color-rule: var(--line); --color-rule-strong: var(--steel);
   --color-accent: var(--ink); --color-accent-ink: var(--paper); --color-focus: var(--ink);
   --color-success: var(--ink); --color-error: var(--ink); --color-heat: var(--ink); --color-warn: var(--graphite); --color-info: var(--muted);
-  --color-overlay: rgba(0, 0, 0, 0.72);
+  --color-overlay: rgba(0, 0, 0, 0.8);
 
   /* type */
   --font-display: "Montserrat", Arial, sans-serif;

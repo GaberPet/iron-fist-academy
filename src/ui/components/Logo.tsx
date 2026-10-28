@@ -14,9 +14,9 @@ export function LogoMark({ size = 40, tone = 'white', title = 'Iron Fist Academy
   );
 }
 
-/** Kept for existing imports: the white mark (on the black sidebar). */
-export function Logo({ size = 40, title = 'Iron Fist Academy' }: { size?: number; title?: string }) {
-  return <LogoMark size={size} tone="white" title={title} />;
+/** The sidebar is white, so the mark is black there (black logo on white ground). */
+export function Logo({ size = 40, title = 'Iron Fist Academy', tone = 'black' }: { size?: number; title?: string; tone?: 'white' | 'black' }) {
+  return <LogoMark size={size} tone={tone} title={title} />;
 }
 
 /** Wordmark: IRONFIST heavy caps, ACADEMY light caps (the heavy / light contrast of the brand). */
