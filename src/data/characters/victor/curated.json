@@ -1,0 +1,310 @@
+{
+ "profile": {
+  "id": "victor",
+  "name": "Victor",
+  "short": "Victor",
+  "color": "hsl(270 70% 62%)",
+  "overview": "Victor is a stylish Jacques of All Trades and one of the most accessible characters in the roster. With access to a good selection of solid pokes, counter hit utility, pressure moves, stance mixups, and defensive options, he is able to express any playstyle.",
+  "playstyle": "Stylish and accessible. Use some of the fastest and safest counter-hit tools in the game (Wavu), strong pokes and his sword and gun stances, Iai (IAI) and Perfumer (PRF). His key moves track poorly, so you need good timing and movement against opponents who step a lot.",
+  "strengths": [
+   "Counter Hit Arsenal: Access to some of the fastest, safest, and/or most effective counter hit tools in the entire game.",
+   "Strong Neutral: Excellent approach tools coupled with overall strong safe mids and good keepout tools make Victor good at controlling the neutral.",
+   "Punishing: Remarkable block & whiff punishment coupled with consistent damaging comboes and some of the best wall carry in the roster.",
+   "Iaijutsu Master: At the wall, Victor's Iai stance grants him some of the strongest okizeme and wall pressure in the game, especially during Heat.",
+   "Accessibility: Very low execution requirements as well as an overall very simple gameplan make Victor one of the most accessible characters.",
+   "Super Spy CQB: As a weapons specialist and CQB expert, Victor is one of the most difficult characters to successfully parry."
+  ],
+  "weaknesses": [
+   "Poor Tracking: Most of his key moves suffer from having pretty bad tracking, requiring good timing and movement against aware opponents.",
+   "Lackluster Lows: Low attacks are mostly not rewarding enough to match the risk, and if they are rewarding at all, they are often launch punishable on block.",
+   "Old Man Recovery: Recovery is quite high overall, making whiff punishment much easier for the opponent.",
+   "Risky Defensive Options: While overall good, his defensive options are very committal and can be heavily punished if the opponent is ready to call them out.",
+   "French"
+  ],
+  "stances": [
+   {
+    "code": "IAI",
+    "name": "Iai Stance",
+    "entry": "f,f,F+2 and f,f,F+1+2 transition into it",
+    "note": "IAI.d+1 is a Heat Engager; IAI.4,2 and IAI.2 appear in his combos. In Heat, IAI.d+2 gets better frames (Wavu)."
+   },
+   {
+    "code": "PRF",
+    "name": "Perfumer",
+    "entry": "F after db+1,1 and other moves",
+    "note": "PRF.3 is a Heat Engager; PRF.2,2 is a combo filler."
+   }
+  ],
+  "heat": [
+   "u+1+2 and IAI.d+2 get significantly better frames and additional hits",
+   "Gains new move: \"Monsieur Samurai\" H.db+1+2",
+   "Sword moves other than u+1+2, IAI.d+2, and b,b+2+3 recover Heat on hit"
+  ],
+  "heatEngagers": [
+   "f+4,1",
+   "f+1+2",
+   "d+2",
+   "PRF.3",
+   "IAI.d+1"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "ws1",
+   "uf+4",
+   "db+3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Victor",
+    "url": "https://wavu.wiki/t/Victor",
+    "revision": 63069,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Victor_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62128,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Victor_combos",
+    "revision": 60825,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Victor_punishers",
+    "revision": 37570,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1,2 is his i10 punish (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -2 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "b+2",
+   "roles": [
+    "counter-hit",
+    "poke"
+   ],
+   "summary": "Strobing Memories: i10 high, -6 on block.",
+   "purpose": "One of the fastest counter-hit tools in the game.",
+   "use": "To interrupt.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-6.",
+   "afterHit": "+5; +14 on CH, with Wavu follow-ups.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast interrupt."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "i18 homing high, -2 on block.",
+   "purpose": "A safe homing CH tool (Wavu mini-combos follow CH b+4).",
+   "use": "When they press or step.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-2.",
+   "afterHit": "+14.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "heat",
+    "poke"
+   ],
+   "summary": "Llawfrodedd: i18 mid, +0 on block, Heat Engager.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat and keep the turn.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0.",
+   "afterHit": "+4c.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Durandal: i24 mid, +3 on block, Heat Engager.",
+   "purpose": "A plus Heat Engager.",
+   "use": "To keep the turn and start Heat.",
+   "avoid": "Slow.",
+   "counterplay": "Interrupt it.",
+   "afterBlock": "+3.",
+   "afterHit": "+1a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure into Heat."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Asterism of Virtue: i18 mid from a run, +2 on block, launches on counter hit; enters IAI.",
+   "purpose": "A plus approach into Iai.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+2.",
+   "afterHit": "+8cg; +61a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Arcadia: i15 launcher, -14 on block.",
+   "purpose": "His i15 launch punisher (Wavu BnB starter).",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Oval Cut: i15 while-standing launcher, -16 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -16.",
+   "counterplay": "Block.",
+   "afterBlock": "-16.",
+   "afterHit": "Launch (+53a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "counter-hit",
+    "punisher"
+   ],
+   "summary": "Baguette Cut: i14 while-standing mid, -8 on block, launches on counter hit.",
+   "purpose": "A safe crouch option.",
+   "use": "After -14 lows, or from crouch.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+6; +35a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong crouching option."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "d+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Fine Salute: i16 low, -13 on block; turns into a throw on counter hit.",
+   "purpose": "His fast low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "-2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Polite Greetings: i19 high that crushes lows and tornadoes (+67a), -11 on block.",
+   "purpose": "A low-crushing launcher.",
+   "use": "Against lows.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-11.",
+   "afterHit": "Tornado.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Answer to lows."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+2",
+  "uf+4"
+ ],
+ "lessons": []
+}

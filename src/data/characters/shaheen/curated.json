@@ -1,0 +1,319 @@
+{
+ "profile": {
+  "id": "shaheen",
+  "name": "Shaheen",
+  "short": "Shaheen",
+  "color": "hsl(293 70% 62%)",
+  "overview": "Shaheen is a simple, \"back-to-basics\" character. His game-plan revolves almost entirely around his extremely potent full crouch (FC) mix-up and controlling space through an abundance of great pokes. He has a strong punishment kit, and both a generic df+2 and a hopkick to whiff punish with. He has several strong counterhit tools to dissuade mashing and decent plus frame mids to pressure a defensive opponent.",
+  "playstyle": "Back to basics with a deadly full-crouch mix-up. Get into a crouch and threaten his Slide (FC.df,d,DF+3), arguably the best power low in the game (Wavu), against his crouching mids. Use Stealth Step (SNK) transitions to keep the turn. From standing his lows are only average, so keep-out characters can give him trouble.",
+  "strengths": [
+   "Powerful full crouch mixup: Slide (FC.df,d,df+3) is arguably the best power low in the game, allowing for a long range mixup that has much more reward than risk.",
+   "Consistency is Key: Shaheen's gameplan is very simple, his moves are intuitive, and he has great block and whiff punishment tools.",
+   "Heat Wall Pressure: Al-Ghul Master into f+2,3 along with f,f,F+2 and df+3 can turn Shaheen into a menace at the wall while he's in Heat.",
+   "Strong Panic Tools: Has the second best hopkick in the game, as well as a powerful safe powercrush.",
+   "Grey Health Deletion: Has the rare ability to erase opponent's grey health with easy setups.",
+   "Combo Artist: Has very lenient and varied combo routes that allow for good damage, wall carry, or decent okizeme. Also has the ability to easily switch sides during combos, giving him great control over stage positioning.",
+   "Agile: Great movement and approach tools.",
+   "Solid Counter-hit Tools: Has reliable CH tools in a game where CH tools tend to be weak and risky."
+  ],
+  "weaknesses": [
+   "Average standing lows: Since he lacks threatening lows from standing, he struggles against keepout due to his reliance on his full crouch mixup to get significant damage.",
+   "Low Combo Damage: Shaheen's combos do somewhat less damage than average, and require high execution for good wall carry."
+  ],
+  "stances": [
+   {
+    "code": "SNK",
+    "name": "Stealth Step",
+    "entry": "DF after 3, 2,3, d+3 and others; the Slide transitions on hit",
+    "note": "SNK.2 and SNK.df+1,2 are used in his combos; SNK.1 is a counter-hit tool (Wavu)."
+   }
+  ],
+  "heat": [
+   "Partially restores Heat time when performing certain knife-hand moves.",
+   "Al-Ghul Master can be used."
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "db+3,4",
+   "ws3,3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Shaheen",
+    "url": "https://wavu.wiki/t/Shaheen",
+    "revision": 62112,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Shaheen_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62465,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Shaheen_combos",
+    "revision": 61820,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Shaheen_punishers",
+    "revision": 32799,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "2,3",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string (Wavu), -8 on block, can enter SNK with DF.",
+   "purpose": "His i10 punish.",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-8.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish into stance."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block, tracks sidesteps right completely.",
+   "purpose": "His safe, tracking mid check.",
+   "use": "To stop ducking and steps.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Piercing Talon: i15 homing high, +0 on block.",
+   "purpose": "A safe homing high.",
+   "use": "To catch steps.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+0.",
+   "afterHit": "+13g; Wavu lists b+4 after it.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Mini-combo starter."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Heel Strike: i19 mid, +1c on block.",
+   "purpose": "A plus mid with a counter-hit follow-up.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+1c.",
+   "afterHit": "+3c; CH leads to db+2,1 (Wavu).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Antares: i17 mid from a run, +5 on block.",
+   "purpose": "A plus approach.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+5.",
+   "afterHit": "+13c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rising Falcon: i15 launcher, -7 on block; launches standing opponents only.",
+   "purpose": "His i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launcher, -13 on block.",
+   "purpose": "Another i15 launcher, also from crouch (Wavu).",
+   "use": "After -15 moves, standing or crouching.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Jaw Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Albireo: i14 while-standing mid, -2 on block.",
+   "purpose": "A safe crouching mid with a CH follow-up.",
+   "use": "The mid half of his crouch mix-up.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+4; CH leads to db+2,1 (Wavu).",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Crouch mix-up mid."
+  },
+  {
+   "id": "FC.df,d,DF+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Slide: i16 low from full crouch, -23a on block, enters SNK on hit.",
+   "purpose": "His power low (Wavu: arguably the best in the game).",
+   "use": "Against standing block from a crouch.",
+   "avoid": "Getting blocked: -23a.",
+   "counterplay": "Block low and punish.",
+   "afterBlock": "-23a.",
+   "afterHit": "+7a into SNK.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "The low half of his crouch mix-up."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Silent Rigel: i16 low, -14 on block, can enter SNK.",
+   "purpose": "A standing low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-14.",
+   "afterHit": "+0.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Average standing low."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Achernar: i19 mid Heat Engager, +0c on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0c.",
+   "afterHit": "+6c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "shaheen-f4",
+   "name": "f+4 → b+4",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "f+4"
+   ],
+   "situation": "After f+4 hits (Wavu mini-combo).",
+   "route": "b+4",
+   "tags": [
+    "mini-combo",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up on block."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Shaheen",
+    "url": "https://wavu.wiki/t/Shaheen_combos",
+    "revision": 61820,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,f,F+2"
+ ],
+ "lessons": []
+}

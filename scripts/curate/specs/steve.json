@@ -1,0 +1,32 @@
+{
+ "short": "Steve",
+ "playstyle": "An unorthodox boxer built on counter hits and rushdown. His kick buttons are weaves and stance moves, not kicks. Duck and weave (LWV, RWV, DCK) under the opponent's attacks, catch their buttons with some of the best counter-hit tools in the game (Wavu), and stay compact so you are hard to whiff punish. He has no standard i15 launcher and a steep learning curve.",
+ "stances": [
+  {"code": "LWV", "name": "Ducking Left (weave)", "entry": "3, or 3 after df+1 and df+2", "note": "LWV.1,2 is homing and +3 on block; it is also his combo ender."},
+  {"code": "RWV", "name": "Ducking Right (weave)", "entry": "4", "note": "RWV.1,2 mirrors LWV.1,2: homing and +3 on block."},
+  {"code": "DCK", "name": "Ducking", "entry": "f+3 or f+4", "note": "DCK.1 is used in his launch combos; DCK.F+3_4 goes into EXD."},
+  {"code": "ALB", "name": "Quick Spin (Albatross)", "entry": "3+4", "note": "ALB.2 is a Heat Engager."},
+  {"code": "FLK", "name": "Flicker", "entry": "B after b+1 and other moves", "note": "Flicker stance: FLK.u+2 tornadoes, FLK.1 appears in his combos."},
+  {"code": "LNH", "name": "Lionheart", "entry": "After moves like f+2,2 in combos", "note": "LNH.1 is a Heat Engager; LNH.2 is his combo filler."}
+ ],
+ "heatEngagers": ["1+2", "qcf+1", "f,f,F+2", "ALB.2", "LNH.1"],
+ "keyLaunchers": ["u+2", "FC.df+2", "uf+2", "b+1"],
+ "whiffPunishers": ["u+2", "uf+2", "b+1"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check; 1,1,2 is his i10 punish (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["df+1", "poke", "Left Uppercut: i13 mid, -2 on block, can weave with 3 or 4.", "His safe mid check into weaves.", "To stop ducking and start weaves.", "Little risk.", "Block.", "-2.", "+5.", "Low risk.", "Core poke."],
+  ["2,1", "punisher", "i12 punish string (Wavu: 2,1 and 2,2 at -12), -5 on block.", "His i12 punish.", "After -12 moves.", "Against crouchers.", "Duck it.", "-5.", "+6.", "Low risk.", "Fast punish."],
+  ["b+1", "counter-hit", "Quick Hook: i13 high, launches on counter hit (+61a), -14 on block.", "One of the best counter-hit tools in the game.", "To interrupt the opponent's pressure.", "-14 on block; it is a high.", "Duck it.", "-14.", "+2; launch on CH.", "Moderate.", "Wavu BnB: CH b+1 into a 56-damage combo."],
+  ["b+1,2", "poke", "Quick Draw: homing high string, +3 on block.", "A plus homing follow-up.", "To keep the turn.", "Against crouchers.", "Duck it.", "+3.", "+8.", "Moderate.", "Pressure tool."],
+  ["ub+2", "poke", "Bounty Hunter: i17 homing high, +5 on block.", "A very plus homing high.", "To keep the turn and catch steps.", "Against crouchers.", "Duck it.", "+5.", "+14c.", "Moderate.", "Pressure tool."],
+  ["1+2", "heat,punisher", "Sonic Fang: i14 mid Heat Engager, -12 on block.", "An i14 punish that starts Heat.", "After -14 moves.", "-12 on block.", "Block.", "-12.", "+18a.", "Moderate.", "Punish into Heat."],
+  ["u+2", "launcher,punisher", "Dreadnought Uppercut: i17 tornado with jab evasion, -15 on block.", "His standing launcher (he has no i15 one, Wavu).", "After -17 moves and to duck jabs.", "Raw: -15.", "Block and punish.", "-15.", "Tornado (+34a).", "Risky.", "Main launch punish."],
+  ["FC.df+2", "launcher,punisher", "Finishing Blow: i16 tornado from crouch, -15 on block.", "His crouch launch punish.", "After -16 lows.", "Raw: -15.", "Block.", "-15.", "Tornado (+34a).", "Risky.", "Punish lows."],
+  ["uf+2", "launcher", "i22 spike that launches (+52a), -14 on block.", "His BnB starter (Wavu).", "As a read or whiff punish.", "Raw: -14.", "Block.", "-14.", "Big combo.", "Risky.", "Combo starter."],
+  ["d+1", "low", "Knee Blaster: i16 low, -13 on block.", "His quick low.", "Against standing block.", "When they block low.", "Block low.", "-13.", "-2.", "Moderate.", "Low poke."],
+  ["qcf+2", "low", "Low Cross Blaster: i19 low, -18 on block.", "A low that can go into Peekaboo (PAB).", "Against standing block.", "When they block low.", "Block low.", "-18.", "+2c.", "Risky.", "Read low."],
+  ["f,f,F+2", "heat", "Eraser: i20 mid from a run, +6 on block, Heat Engager.", "A plus Heat Engager approach.", "To close distance and start Heat.", "Linear.", "Sidestep it.", "+6.", "+10d.", "Moderate.", "Approach tool."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": []
+}

@@ -1,0 +1,28 @@
+{
+ "short": "Shaheen",
+ "playstyle": "Back to basics with a deadly full-crouch mix-up. Get into a crouch and threaten his Slide (FC.df,d,DF+3), arguably the best power low in the game (Wavu), against his crouching mids. Use Stealth Step (SNK) transitions to keep the turn. From standing his lows are only average, so keep-out characters can give him trouble.",
+ "stances": [
+  {"code": "SNK", "name": "Stealth Step", "entry": "DF after 3, 2,3, d+3 and others; the Slide transitions on hit", "note": "SNK.2 and SNK.df+1,2 are used in his combos; SNK.1 is a counter-hit tool (Wavu)."}
+ ],
+ "keyLaunchers": ["df+2", "uf+4", "db+3,4", "ws3,3"],
+ "whiffPunishers": ["df+2", "uf+4", "f,f,F+2"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["2,3", "punisher", "i10 punish string (Wavu), -8 on block, can enter SNK with DF.", "His i10 punish.", "After -10 moves.", "Against crouchers.", "Duck it.", "-8.", "+3.", "Low risk.", "Fast punish into stance."],
+  ["df+1", "poke", "i13 mid, -1 on block, tracks sidesteps right completely.", "His safe, tracking mid check.", "To stop ducking and steps.", "Little risk.", "Block.", "-1.", "+5.", "Low risk.", "Use it constantly."],
+  ["f+4", "poke", "Piercing Talon: i15 homing high, +0 on block.", "A safe homing high.", "To catch steps.", "Against crouchers.", "Duck it.", "+0.", "+13g; Wavu lists b+4 after it.", "Low risk.", "Mini-combo starter."],
+  ["b+3", "poke,counter-hit", "Heel Strike: i19 mid, +1c on block.", "A plus mid with a counter-hit follow-up.", "To keep the turn.", "As an interrupt.", "Interrupt or step.", "+1c.", "+3c; CH leads to db+2,1 (Wavu).", "Moderate.", "Pressure tool."],
+  ["f,f,F+2", "poke", "Antares: i17 mid from a run, +5 on block.", "A plus approach.", "To close distance and keep the turn.", "Linear.", "Sidestep it.", "+5.", "+13c.", "Moderate.", "Approach tool."],
+  ["df+2", "launcher,punisher", "Rising Falcon: i15 launcher, -7 on block; launches standing opponents only.", "His i15 launch punisher, safe on block.", "Punish -15 and whiff punish.", "Against crouchers.", "Duck it.", "-7.", "Launch (+34a).", "Moderate.", "Main punish (Wavu BnB starter)."],
+  ["uf+4", "launcher,punisher", "i15 launcher, -13 on block.", "Another i15 launcher, also from crouch (Wavu).", "After -15 moves, standing or crouching.", "Raw: -13.", "Block.", "-13.", "Launch (+33).", "Risky.", "Alternative punish."],
+  ["ws4", "punisher", "Jaw Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["ws1", "poke,counter-hit", "Albireo: i14 while-standing mid, -2 on block.", "A safe crouching mid with a CH follow-up.", "The mid half of his crouch mix-up.", "Little risk.", "Block.", "-2.", "+4; CH leads to db+2,1 (Wavu).", "Low risk.", "Crouch mix-up mid."],
+  ["FC.df,d,DF+3", "low", "Slide: i16 low from full crouch, -23a on block, enters SNK on hit.", "His power low (Wavu: arguably the best in the game).", "Against standing block from a crouch.", "Getting blocked: -23a.", "Block low and punish.", "-23a.", "+7a into SNK.", "Very risky.", "The low half of his crouch mix-up."],
+  ["d+3", "low", "Silent Rigel: i16 low, -14 on block, can enter SNK.", "A standing low.", "Against standing block.", "When they block low.", "Block low.", "-14.", "+0.", "Moderate.", "Average standing low."],
+  ["b+1", "heat", "Achernar: i19 mid Heat Engager, +0c on block.", "A safe Heat Engager.", "To start Heat.", "Little risk.", "Block.", "+0c.", "+6c.", "Moderate.", "Safe Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "shaheen-f4", "name": "f+4 → b+4", "difficulty": 1, "section": "Mini-combos", "starters": ["f+4"], "situation": "After f+4 hits (Wavu mini-combo).", "route": "b+4", "tags": ["mini-combo", "beginner"], "mistakes": ["Following up on block."]}
+ ]
+}

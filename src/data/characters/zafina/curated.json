@@ -1,0 +1,310 @@
+{
+ "profile": {
+  "id": "zafina",
+  "name": "Zafina",
+  "short": "Zafina",
+  "color": "hsl(120 70% 62%)",
+  "overview": "Zafina is a stance-based character with strong movement and space control. Her toolkit allows for stylish play, with some tricky moves and stance transitions, while still retaining the ability to play in a solid, fundamental way thanks to her backdash and spacing options.",
+  "playstyle": "Stance-based space control with strong movement. Keep the opponent out with long, evasive moves and a good backdash and sidestep, then mix them up from Scarecrow (SCR), Mantis (MNT) and Tarantula (TRT). Wavu warns her moves are slow and committal, easy to whiff punish, and her fast punishes deal little damage.",
+  "strengths": [
+   "Many evasive options",
+   "Good backdash and sidestep",
+   "Strong keepout",
+   "Good stance pressure and mixups",
+   "Azazel moves are highly damaging and many deal heavy chip damage and plus frames on block"
+  ],
+  "weaknesses": [
+   "Slow, committal moves; easy to whiff punish",
+   "Lows outside of her stances deal little damage",
+   "Has the lowest damaging i11-i14 punishment from crouch in the game",
+   "No standing launcher until i16",
+   "Azazel moves consume health when not in heat"
+  ],
+  "stances": [
+   {
+    "code": "SCR",
+    "name": "Scarecrow",
+    "entry": "From moves like 3, ws3 and db+3 (their SCR transition)",
+    "note": "SCR.2,1 is a Heat Engager; SCR.4 is a tornado power crush; SCR.d+3,3 is +3 on block."
+   },
+   {
+    "code": "MNT",
+    "name": "Mantis",
+    "entry": "2+4 on hit, ws2 and other transitions",
+    "note": "A grounded stance with its own mix-ups (see the Move Library)."
+   },
+   {
+    "code": "TRT",
+    "name": "Tarantula",
+    "entry": "From transitions (see the Move Library)",
+    "note": "A low stance for mix-ups."
+   }
+  ],
+  "heat": [
+   "Azazel moves cost no health",
+   "Can use Anathema moves"
+  ],
+  "heatEngagers": [
+   "f+1+2",
+   "df+4,1",
+   "SCR.2,1"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "ws1,2",
+   "SCR.4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Zafina",
+    "url": "https://wavu.wiki/t/Zafina",
+    "revision": 62117,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Zafina_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62027,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Zafina_combos",
+    "revision": 61689,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Zafina_punishers",
+    "revision": 53760,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,3 and 1,4 are her i10 punishes (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,3",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string, -2 on block.",
+   "purpose": "Her i10 punish.",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-2.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -5 on block.",
+   "purpose": "Her mid check.",
+   "use": "To stop ducking.",
+   "avoid": "-5 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Sharur: i13 high, +0 on block, can enter SCR.",
+   "purpose": "A fast high into stance.",
+   "use": "To start Scarecrow pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+0.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Stance starter."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Scarecrow Side Kick: i17 high, +3 on block, tracks left sidesteps.",
+   "purpose": "A plus high.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3.",
+   "afterHit": "+14.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f,f+2",
+   "roles": [
+    "launcher",
+    "counter-hit"
+   ],
+   "summary": "Gilgamesh Blast: i15 homing high, +1 on block, launches (+21a).",
+   "purpose": "A safe homing launcher.",
+   "use": "Whiff punish and pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+21a; +38a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Key neutral tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Lamashtu Claw: i16 launcher, launches crouchers, -12 on block.",
+   "purpose": "Her launch punisher (Wavu BnB starter).",
+   "use": "After -16 moves; whiff punish.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rahab: i17 launcher, -13 on block.",
+   "purpose": "Another launcher.",
+   "use": "Punish and whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws1,2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "While-standing launch string, -13 on block.",
+   "purpose": "Her crouch launch punish (Wavu BnB starter).",
+   "use": "After lows that are -15 or worse.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+36a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Shargaz: i12 while-standing mid, +0 on block, can enter SCR.",
+   "purpose": "A fast, safe crouch option.",
+   "use": "From crouch to take the turn.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong crouching option."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Bashmu: i11 while-standing kick, -7 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Acinaces: i18 low, -8 on block, can enter SCR.",
+   "purpose": "A safe low into stance.",
+   "use": "Against standing block.",
+   "avoid": "Little risk.",
+   "counterplay": "Block low.",
+   "afterBlock": "-8.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Good low poke."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Malicious Nail: i19 mid Heat Engager, -9 on block.",
+   "purpose": "A Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+5a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, enters Mantis on hit.",
+   "purpose": "Generic throw into stance.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-4 on break.",
+   "afterHit": "Knockdown into MNT.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,f+2"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,331 @@
+{
+ "profile": {
+  "id": "steve",
+  "name": "Steve",
+  "short": "Steve",
+  "color": "hsl(52 70% 62%)",
+  "overview": "Steve is an unorthodox counterhit and rushdown character. As a boxer, he does not use kicks, with the kick buttons instead acting as evasive boxing weaves. He excels at suffocating his opponent with endless pokes and strings, chipping them down if they freeze up, and counterhitting them if they swing back in desperation. His infamous Quick Hook (b+1) is the best counterhit tool in Tekken 8, which combined with his many other counterhits off of strings and other moves, allow him to greatly benefit from getting a beat on his opponent's timing.",
+  "playstyle": "An unorthodox boxer built on counter hits and rushdown. His kick buttons are weaves and stance moves, not kicks. Duck and weave (LWV, RWV, DCK) under the opponent's attacks, catch their buttons with some of the best counter-hit tools in the game (Wavu), and stay compact so you are hard to whiff punish. He has no standard i15 launcher and a steep learning curve.",
+  "strengths": [
+   "Counter-Punching Paragon: Some of the best counter hit tools in the game.",
+   "Compact: Very difficult to whiff punish overall.",
+   "Float Like a Butterfly, Sting Like a Bee: Plethora of stances and strings to confuse and outwit opponents.",
+   "Flame On! Great set of Heat Engagers.",
+   "You Wanna Try Me, Guv? Heat makes his strings even more oppressive with chip damage, and temporarily makes him a bonafide grappler."
+  ],
+  "weaknesses": [
+   "Auto-pilot Disabled: Beginner unfriendly with a deep learning curve.",
+   "Stiff to Use: No standard i15 launcher (i16 crouch, i17 standing) makes for a fairly rigid counter hit fishing gameplan and allows other characters to be more liberal with their unsafe moves.",
+   "Parry Spam Hater: Susceptible to punch-exclusive parries or sabakis.",
+   "Doesn't Hit Below The Belt: Weak set of lows.",
+   "British"
+  ],
+  "stances": [
+   {
+    "code": "LWV",
+    "name": "Ducking Left (weave)",
+    "entry": "3, or 3 after df+1 and df+2",
+    "note": "LWV.1,2 is homing and +3 on block; it is also his combo ender."
+   },
+   {
+    "code": "RWV",
+    "name": "Ducking Right (weave)",
+    "entry": "4",
+    "note": "RWV.1,2 mirrors LWV.1,2: homing and +3 on block."
+   },
+   {
+    "code": "DCK",
+    "name": "Ducking",
+    "entry": "f+3 or f+4",
+    "note": "DCK.1 is used in his launch combos; DCK.F+3_4 goes into EXD."
+   },
+   {
+    "code": "ALB",
+    "name": "Quick Spin (Albatross)",
+    "entry": "3+4",
+    "note": "ALB.2 is a Heat Engager."
+   },
+   {
+    "code": "FLK",
+    "name": "Flicker",
+    "entry": "B after b+1 and other moves",
+    "note": "Flicker stance: FLK.u+2 tornadoes, FLK.1 appears in his combos."
+   },
+   {
+    "code": "LNH",
+    "name": "Lionheart",
+    "entry": "After moves like f+2,2 in combos",
+    "note": "LNH.1 is a Heat Engager; LNH.2 is his combo filler."
+   }
+  ],
+  "heat": [
+   "Allows the use of Five Fox Fury (b+1+2,H.1+2)",
+   "Access to an instant EXD (H.df+3+4)",
+   "Access to an unbreakable grab after EXD (EXD.1+3_2+4).",
+   "LNH will automatically parry mids (H.LNH.P)"
+  ],
+  "heatEngagers": [
+   "1+2",
+   "qcf+1",
+   "f,f,F+2",
+   "ALB.2",
+   "LNH.1"
+  ],
+  "keyLaunchers": [
+   "u+2",
+   "FC.df+2",
+   "uf+2",
+   "b+1"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Steve",
+    "url": "https://wavu.wiki/t/Steve",
+    "revision": 62401,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Steve_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63098,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Steve_combos",
+    "revision": 59439,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Steve_punishers",
+    "revision": 60968,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1,2 is his i10 punish (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Left Uppercut: i13 mid, -2 on block, can weave with 3 or 4.",
+   "purpose": "His safe mid check into weaves.",
+   "use": "To stop ducking and start weaves.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Core poke."
+  },
+  {
+   "id": "2,1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i12 punish string (Wavu: 2,1 and 2,2 at -12), -5 on block.",
+   "purpose": "His i12 punish.",
+   "use": "After -12 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Quick Hook: i13 high, launches on counter hit (+61a), -14 on block.",
+   "purpose": "One of the best counter-hit tools in the game.",
+   "use": "To interrupt the opponent's pressure.",
+   "avoid": "-14 on block; it is a high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-14.",
+   "afterHit": "+2; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu BnB: CH b+1 into a 56-damage combo."
+  },
+  {
+   "id": "b+1,2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Quick Draw: homing high string, +3 on block.",
+   "purpose": "A plus homing follow-up.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3.",
+   "afterHit": "+8.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "ub+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Bounty Hunter: i17 homing high, +5 on block.",
+   "purpose": "A very plus homing high.",
+   "use": "To keep the turn and catch steps.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+5.",
+   "afterHit": "+14c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Sonic Fang: i14 mid Heat Engager, -12 on block.",
+   "purpose": "An i14 punish that starts Heat.",
+   "use": "After -14 moves.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+18a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "u+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Dreadnought Uppercut: i17 tornado with jab evasion, -15 on block.",
+   "purpose": "His standing launcher (he has no i15 one, Wavu).",
+   "use": "After -17 moves and to duck jabs.",
+   "avoid": "Raw: -15.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-15.",
+   "afterHit": "Tornado (+34a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main launch punish."
+  },
+  {
+   "id": "FC.df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Finishing Blow: i16 tornado from crouch, -15 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -16 lows.",
+   "avoid": "Raw: -15.",
+   "counterplay": "Block.",
+   "afterBlock": "-15.",
+   "afterHit": "Tornado (+34a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "uf+2",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "i22 spike that launches (+52a), -14 on block.",
+   "purpose": "His BnB starter (Wavu).",
+   "use": "As a read or whiff punish.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Big combo.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Combo starter."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "low"
+   ],
+   "summary": "Knee Blaster: i16 low, -13 on block.",
+   "purpose": "His quick low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "-2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "qcf+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Low Cross Blaster: i19 low, -18 on block.",
+   "purpose": "A low that can go into Peekaboo (PAB).",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-18.",
+   "afterHit": "+2c.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Read low."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Eraser: i20 mid from a run, +6 on block, Heat Engager.",
+   "purpose": "A plus Heat Engager approach.",
+   "use": "To close distance and start Heat.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+6.",
+   "afterHit": "+10d.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "u+2",
+  "uf+2",
+  "b+1"
+ ],
+ "lessons": []
+}

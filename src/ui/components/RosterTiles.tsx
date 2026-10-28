@@ -10,7 +10,7 @@ function initials(name: string) {
 }
 
 export function RosterTiles({ onPicked, autoFocusSearch }: { onPicked?(id: string): void; autoFocusSearch?: boolean }) {
-  const { roster, char, setActiveChar, progress, isCurated } = useStore();
+  const { roster, char, setActiveChar, progress } = useStore();
   const [q, setQ] = useState('');
   const mastered = useMemo(() => {
     const m = new Map<string, number>();
@@ -31,7 +31,6 @@ export function RosterTiles({ onPicked, autoFocusSearch }: { onPicked?(id: strin
             <span className="char-tile-glyph" aria-hidden>{initials(c.name)}</span>
             <span className="char-name">{c.name}</span>
             <span className="char-tags">
-              {isCurated(c.id) && <span className="badge char">Curriculum</span>}
               {isRecent(c.addedAt) && <span className="badge good">New</span>}
               <span className="badge">{c.counts.moves} moves</span>
               <span className="badge">{c.counts.combos} combos</span>

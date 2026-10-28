@@ -1,0 +1,31 @@
+{
+ "short": "Yoshimitsu",
+ "playstyle": "The most unorthodox character in the game (Wavu): a defensive stance specialist. Soul Stealer (Flash, 1+4) is a blazing i6 mid that punishes almost anything, his parries stop attacks cold, and his many stances make him hard to read. His defensive tools are strong but very unsafe when guessed wrong, so use them as reads, not habits.",
+ "stances": [
+  {"code": "KIN", "name": "Kincho", "entry": "1+2 (also his parry)", "note": "KIN.f+2 is a Heat Engager."},
+  {"code": "IND", "name": "Indian Stance", "entry": "d+3+4", "note": "A meditation-style stance; check the Move Library for its options."},
+  {"code": "NSS", "name": "No Sword Stance", "entry": "From sword-sheathing transitions", "note": "NSS.1+4 is an i8 launch (situational, Wavu). In Heat, powered-up NSS moves come out in 1SS."},
+  {"code": "DGF", "name": "Manji Dragonfly", "entry": "1SS.u+1+2", "note": "A flying stance; DGF.4 is a Heat Engager."},
+  {"code": "FLE", "name": "Flea", "entry": "1SS.d+1+2", "note": "A crouching hop stance for evasive mix-ups."}
+ ],
+ "keyLaunchers": ["df+2", "uf+3", "f,n,d,df+2", "4~3"],
+ "whiffPunishers": ["df+2", "uf+3", "1+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1+4", "punisher", "Soul Stealer (Flash): i6 mid, -20 on block, recovers 12 frames faster on hit.", "His signature, blazing-fast punish.", "After blocking almost anything that is -6 or worse, and as a panic answer.", "Raw on block: -20.", "Block it and launch.", "-20.", "+14c, with Wavu mini-combos after it.", "Very risky raw.", "His most important move: punish with it."],
+  ["df+1", "poke", "i13 mid, -4 on block.", "His mid check.", "To stop ducking.", "Little risk.", "Block.", "-4.", "+5.", "Low risk.", "Basic mid."],
+  ["b+1", "poke", "i17 high, +1 on block.", "A plus high.", "To keep the turn.", "Against crouchers.", "Duck it.", "+1.", "+7.", "Low risk.", "Wavu: b+1 leads into 1SS.1+4."],
+  ["3,1", "heat,poke", "Enma's Flame: high string, +7 on block, Heat Engager.", "A very plus Heat Engager.", "To keep the turn and start Heat.", "Against crouchers.", "Duck it.", "+7.", "+18g.", "Moderate.", "Pressure into Heat."],
+  ["df+2", "launcher,punisher", "Basic Uppercut: i15 launcher, launches crouchers, -7 on block.", "His i15 launch punisher, safe on block.", "Punish -15 and whiff punish.", "Little risk.", "Block.", "-7.", "Launch (+34a).", "Moderate.", "Main punish (Wavu BnB starter)."],
+  ["uf+3", "launcher,punisher", "Rising Knee: i15 knee launcher that evades jabs, -13 on block.", "Another i15 launcher.", "Punish -15.", "Raw: -13.", "Block.", "-13.", "Launch (+32a).", "Risky.", "Alternative punish."],
+  ["f,n,d,df+2", "counter-hit,wall", "Flashing Steel: i14 mid, -13 on block, launches on counter hit; wall-splats (Wavu).", "A crouching-and-standing splat and CH launcher.", "When they press, or near the wall.", "-13 on block.", "Block.", "-13.", "+6g; +58a on CH.", "Moderate.", "Fishing and wall tool."],
+  ["ws1,2", "punisher,wall", "While-standing string that wall-splats (Wavu: i13), -4 on block.", "His crouch punish.", "After -13 lows.", "Little risk.", "Block.", "-4.", "+14g; +39a on CH.", "Low risk.", "Safe crouch punish."],
+  ["db+4", "low", "Nozuchi Fumi: i17 low, -12 on block.", "His low poke.", "Against standing block.", "When they block low.", "Block low.", "-12.", "-1.", "Moderate.", "Low poke."],
+  ["1+2", "evasion", "Kincho: parries all highs and mids except throws, unblockables and charge moves (Wavu).", "His main parry.", "As a read on the opponent's attacks.", "Against lows and throws.", "Throw or low.", "-.", "Parry follow-up.", "Bad if read.", "A strong defensive read."],
+  ["f+1+2", "heat", "Kuzuryu: i20 mid Heat Engager, -12 on block.", "A Heat Engager.", "To start Heat.", "-12 on block.", "Block.", "-12.", "+8a.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "+0 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with stances."]
+ ],
+ "combos": [
+  {"id": "yoshi-flash", "name": "1+4 → b+2,2", "difficulty": 2, "section": "Mini-combos", "starters": ["1+4"], "situation": "After Soul Stealer (1+4) hits (Wavu mini-combo).", "route": "b+2,2", "tags": ["mini-combo"], "mistakes": ["Following up after a blocked Flash: it is -20."]}
+ ]
+}

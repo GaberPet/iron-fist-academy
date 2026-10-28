@@ -18,7 +18,7 @@ function Num({ label, value, min, max, step = 1, onChange, help }: { label: stri
 }
 
 export function SettingsPage() {
-  const { settings, updateSettings, roster, data, isCurated, checkForDataUpdate, overrides, setOverride, storageInfo } = useStore();
+  const { settings, updateSettings, roster, data, checkForDataUpdate, overrides, setOverride, storageInfo } = useStore();
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<Record<string, string>>({});
   const set = (p: Partial<Settings>) => updateSettings(p);
@@ -117,7 +117,7 @@ export function SettingsPage() {
                 const ov = Object.entries(overrides[e.id] ?? {});
                 return (
                   <tr key={e.id}>
-                    <td><b>{e.name}</b> {isCurated(e.id) && <span className="badge char">Curated</span>}</td>
+                    <td><b>{e.name}</b></td>
                     <td className="mono">{e.counts.moves}</td>
                     <td className="mono">{e.counts.combos} ({e.counts.combosParsed})</td>
                     <td className="mono">{e.counts.punishers}</td>

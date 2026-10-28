@@ -1,0 +1,336 @@
+{
+ "profile": {
+  "id": "yoshimitsu",
+  "name": "Yoshimitsu",
+  "short": "Yoshimitsu",
+  "color": "hsl(345 70% 62%)",
+  "overview": "Yoshimitsu is an extremely unorthodox stance-based defensive character. He is easily the most idiosyncratic character in the roster, with weird stances like Flea or Manji Dragonfly, a lot of spinning around, and the ability to rob his opponents blind with various rule-breaking tools. His movelist is a double edged sword - confusing and unintuitive for the straight-laced, and an infinite color palette for the clinically insane.",
+  "playstyle": "The most unorthodox character in the game (Wavu): a defensive stance specialist. Soul Stealer (Flash, 1+4) is a blazing i6 mid that punishes almost anything, his parries stop attacks cold, and his many stances make him hard to read. His defensive tools are strong but very unsafe when guessed wrong, so use them as reads, not habits.",
+  "strengths": [
+   "Soul Stealer (Flash): Yoshimitsu's infamous signature move. Soul Stealer (aka Flash) is a blazing fast i6 startup mid attack that allows him to punish normally safe moves and act as an effective and frustrating panic button.",
+   "Defensive Options: Access to a wide array of very effective defensive options in order to make your opponent terrified of ever pressing a button.",
+   "Usable Unblockables: Unusual amount of usable unblockables, most notably Sword Windmill, Seppuku, Poison Breath, and the infamous Samurai Cutter, an unblockable low launcher.",
+   "Strong Okizeme: Yoshimitsu has access to some of the strongest Okizeme setups in the game thanks to very good OTG moves and the ability to catch your opponents getting up with unblockable attacks.",
+   "Irritating Keepout: Meditation cancel, safe long-range power mids, and his notoriously annoying Poison Breath, all make it difficult for opponents to close the distance.",
+   "Infinite Options: With 7 stances and over 200 moves of varying weirdness, Yoshimitsu's toolkit is so vast and unconventional that it becomes a huge boon if mastered. Even the most dedicated of opponents can be confused by hundreds of potential setups and situations.",
+   "Can commit seppuku."
+  ],
+  "weaknesses": [
+   "Stop Hitting Yourself: Yoshimitsu's defensive options, while being very strong, are also very unsafe. Stances, mixups, and pressure tools, are quite risky, and are often prone to being ducked, launched, or floated.",
+   "Subpar Pressure: Most pokes either end his turn, or don't give enough advantage on hit. Most of his pressure isn't real and involves conditioning the opponent not to press via defensive options or string extensions, requiring successive correct guesses to enforce pressure.",
+   "Requires Knowledge: Being a defensive character in a very offensive game, on top of having a 30-year old movelist, weird moves, ambiguous offense, and dozens of setups and matchup-specific interactions, he can be overwhelming to pick up and learn.",
+   "Bad Movement: His below average backdash and medicore sidestep force him to lean more on his strong but unsafe defensive tools.",
+   "Weak Lows: His best lows are either locked behind stance or serviceable at best, and he lacks the ability to generate any kind of real pressure from a low.",
+   "Can commit seppuku."
+  ],
+  "stances": [
+   {
+    "code": "KIN",
+    "name": "Kincho",
+    "entry": "1+2 (also his parry)",
+    "note": "KIN.f+2 is a Heat Engager."
+   },
+   {
+    "code": "IND",
+    "name": "Indian Stance",
+    "entry": "d+3+4",
+    "note": "A meditation-style stance; check the Move Library for its options."
+   },
+   {
+    "code": "NSS",
+    "name": "No Sword Stance",
+    "entry": "From sword-sheathing transitions",
+    "note": "NSS.1+4 is an i8 launch (situational, Wavu). In Heat, powered-up NSS moves come out in 1SS."
+   },
+   {
+    "code": "DGF",
+    "name": "Manji Dragonfly",
+    "entry": "1SS.u+1+2",
+    "note": "A flying stance; DGF.4 is a Heat Engager."
+   },
+   {
+    "code": "FLE",
+    "name": "Flea",
+    "entry": "1SS.d+1+2",
+    "note": "A crouching hop stance for evasive mix-ups."
+   }
+  ],
+  "heat": [
+   "Can perform powered up NSS moves in 1SS."
+  ],
+  "heatEngagers": [
+   "3,1",
+   "f+1+2",
+   "b+2,2",
+   "KIN.f+2",
+   "DGF.4"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "uf+3",
+   "f,n,d,df+2",
+   "4~3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Yoshimitsu",
+    "url": "https://wavu.wiki/t/Yoshimitsu",
+    "revision": 62116,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Yoshimitsu_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62125,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Yoshimitsu_combos",
+    "revision": 59572,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Yoshimitsu_punishers",
+    "revision": 59246,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1+4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Soul Stealer (Flash): i6 mid, -20 on block, recovers 12 frames faster on hit.",
+   "purpose": "His signature, blazing-fast punish.",
+   "use": "After blocking almost anything that is -6 or worse, and as a panic answer.",
+   "avoid": "Raw on block: -20.",
+   "counterplay": "Block it and launch.",
+   "afterBlock": "-20.",
+   "afterHit": "+14c, with Wavu mini-combos after it.",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "His most important move: punish with it."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -4 on block.",
+   "purpose": "His mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i17 high, +1 on block.",
+   "purpose": "A plus high.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Wavu: b+1 leads into 1SS.1+4."
+  },
+  {
+   "id": "3,1",
+   "roles": [
+    "heat",
+    "poke"
+   ],
+   "summary": "Enma's Flame: high string, +7 on block, Heat Engager.",
+   "purpose": "A very plus Heat Engager.",
+   "use": "To keep the turn and start Heat.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+7.",
+   "afterHit": "+18g.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure into Heat."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Basic Uppercut: i15 launcher, launches crouchers, -7 on block.",
+   "purpose": "His i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rising Knee: i15 knee launcher that evades jabs, -13 on block.",
+   "purpose": "Another i15 launcher.",
+   "use": "Punish -15.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "f,n,d,df+2",
+   "roles": [
+    "counter-hit",
+    "wall"
+   ],
+   "summary": "Flashing Steel: i14 mid, -13 on block, launches on counter hit; wall-splats (Wavu).",
+   "purpose": "A crouching-and-standing splat and CH launcher.",
+   "use": "When they press, or near the wall.",
+   "avoid": "-13 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "+6g; +58a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fishing and wall tool."
+  },
+  {
+   "id": "ws1,2",
+   "roles": [
+    "punisher",
+    "wall"
+   ],
+   "summary": "While-standing string that wall-splats (Wavu: i13), -4 on block.",
+   "purpose": "His crouch punish.",
+   "use": "After -13 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+14g; +39a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe crouch punish."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Nozuchi Fumi: i17 low, -12 on block.",
+   "purpose": "His low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "-1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Kincho: parries all highs and mids except throws, unblockables and charge moves (Wavu).",
+   "purpose": "His main parry.",
+   "use": "As a read on the opponent's attacks.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low.",
+   "afterBlock": "-.",
+   "afterHit": "Parry follow-up.",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "A strong defensive read."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Kuzuryu: i20 mid Heat Engager, -12 on block.",
+   "purpose": "A Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+8a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "+0 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with stances."
+  }
+ ],
+ "combos": [
+  {
+   "id": "yoshi-flash",
+   "name": "1+4 → b+2,2",
+   "difficulty": 2,
+   "section": "Mini-combos",
+   "starters": [
+    "1+4"
+   ],
+   "situation": "After Soul Stealer (1+4) hits (Wavu mini-combo).",
+   "route": "b+2,2",
+   "tags": [
+    "mini-combo"
+   ],
+   "mistakes": [
+    "Following up after a blocked Flash: it is -20."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Yoshimitsu",
+    "url": "https://wavu.wiki/t/Yoshimitsu_combos",
+    "revision": 59572,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+3",
+  "1+4"
+ ],
+ "lessons": []
+}

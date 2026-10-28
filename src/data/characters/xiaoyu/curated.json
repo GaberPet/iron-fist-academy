@@ -1,0 +1,320 @@
+{
+ "profile": {
+  "id": "xiaoyu",
+  "name": "Xiaoyu",
+  "short": "Xiaoyu",
+  "color": "hsl(244 70% 62%)",
+  "overview": "Xiaoyu is a tricky and evasive stance-based mixup character who excels in slipping past her opponent's attacks in order to land powerful mixups. She is a specialist character who thrives in the hands of players who love spending time in the lab, discovering setups with her many evasive stances and unique move properties.",
+  "playstyle": "Tricky and evasive stance mix-ups. Phoenix (AOP) shrinks her hurtbox so she slips under highs and some mids (Wavu), back-turned (BT) and Hypnotist (HYP) add more mix-ups, and she wins by making the opponent whiff and launching them. She is tiny with short range, so long-limbed characters can wall her out: play compact and close the gap carefully.",
+  "strengths": [
+   "Queen of Evasion: Phoenix stance shrinks Xiaoyu's hurtbox down to almost comical levels, allowing her to slip under highs and even some mids. Her other stance Hypnotist automatically walks left to bait responses in pressure, and in RDS she has access to a suite of powerful movement options. Effective Xiaoyu players can slip through just about anything.",
+   "Godlike Okizeme: Xiaoyu's evasion is even effective against opponent wakeup, and she has many moves with properties useful for rewarding setups. If she pays attention to her opponent's choices, then she can blow them up.",
+   "Confusing: Xiaoyu has a lot of moves, and many of them have large decision trees with cancels or stance choices. Opponents can easily lose track of what's about to happen.",
+   "Versatile Pokes: Xiaoyu is blessed with an armada of annoying lows and excellent mids. Many of these options are relatively safe on block, while leaving the opponent standing for further pressure.",
+   "Great Standing Punishment: Xiaoyu has an excellent standing punishment suite, boasting a wall splatting mid at i12, a heat engager at i13, and she's blessed with the coveted i14 launcher."
+  ],
+  "weaknesses": [
+   "Range: Xiaoyu is tiny, and thus needs to play very compact. She can be effectively walled out by characters with longer limbs, like Bryan or Dragunov.",
+   "Linear: Xiaoyu's moves don't track lateral movement very well. An agile opponent with good movement can make many of her options more difficult to use safely.",
+   "Confusing: Xiaoyu has a lot of moves. Without steady practice, she can lose track of herself and get into trouble of her own making.",
+   "Subpar Crouching Punishment: While Xiaoyu's early crouching punishment is good, with a knockdown at i11 and a wall splat at i12, it isn't good enough to make up for her lack of an i13 punish and an i15 launcher."
+  ],
+  "stances": [
+   {
+    "code": "AOP",
+    "name": "Art of Phoenix",
+    "entry": "d+1 transitions, ub+3 and others",
+    "note": "Her low-profile stance that ducks under highs and some mids."
+   },
+   {
+    "code": "BT",
+    "name": "Back-turned",
+    "entry": "b+3, b+1 on hit and other moves",
+    "note": "BT.1,2 tornadoes and is a combo staple."
+   },
+   {
+    "code": "HYP",
+    "name": "Hypnotist",
+    "entry": "ub+1+2",
+    "note": "A spinning stance; HYP.3+4 and HYP.2 end her combos. In Heat it skips its first step (Wavu)."
+   }
+  ],
+  "heat": [
+   "f,F+1 and f+2,1 gain extensions",
+   "Hypnotist stance skips the first step"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "b+1+2",
+   "uf+3",
+   "ws4",
+   "df+3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Xiaoyu",
+    "url": "https://wavu.wiki/t/Xiaoyu",
+    "revision": 62115,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Xiaoyu_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63091,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Xiaoyu_combos",
+    "revision": 61068,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Xiaoyu_punishers",
+    "revision": 47950,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,d+2 is her i10 punish (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "Great Wall Left: i8 mid, -12 on block.",
+   "purpose": "One of the fastest moves in the game: her i8 punish (Wavu).",
+   "use": "After -8 moves and to interrupt.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+1 to +6.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Her fastest answer."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Belly Chop: i14 mid, -2 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid, -6 on block.",
+   "purpose": "Another quick mid.",
+   "use": "To check.",
+   "avoid": "-6 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Mix with df+1."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Peacock Kick: i18 high, +3 on block, turns her back-turned.",
+   "purpose": "A plus high into BT.",
+   "use": "To keep the turn and start BT mix-ups.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3.",
+   "afterHit": "+8c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f,F+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Soaring Blaze: i20 high, +9 on block, launches on counter hit.",
+   "purpose": "A very plus high.",
+   "use": "To keep pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+9.",
+   "afterHit": "+13cg; +58a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Clouded Peak: i12 mid, -16 on block.",
+   "purpose": "Her i12 punisher (Wavu).",
+   "use": "After -12 moves.",
+   "avoid": "Raw: -16.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-16.",
+   "afterHit": "+15d.",
+   "afterEvade": "Risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "b+1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Cross Lifting Palms: i15 launcher, -13 on block.",
+   "purpose": "Her i15 launch punisher (Wavu BnB starter).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "uf+3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Bolting Rabbit: i16 launcher, -13 on block.",
+   "purpose": "Another launcher (Wavu BnB starter).",
+   "use": "Punish and whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Skyscraper Kick: i11 while-standing kick, -10 on block, juggles on hit (+20a).",
+   "purpose": "Fast crouch punish with a combo.",
+   "use": "After -11 lows.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+20a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Rewarding crouch punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Sunflower: i13 while-standing mid, -3 on block, launches on counter hit.",
+   "purpose": "A safe crouching CH tool.",
+   "use": "From crouch when they press.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+7; +38a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong crouching option."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Knee Cracker: i15 low, +2c on block.",
+   "purpose": "A plus-on-block low.",
+   "use": "To keep pressure low.",
+   "avoid": "Little risk.",
+   "counterplay": "Block low.",
+   "afterBlock": "+2c.",
+   "afterHit": "+2c.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Excellent low poke."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "low",
+    "launcher"
+   ],
+   "summary": "Phoenix Tail: i29 homing low, instant tornado, -23 on block.",
+   "purpose": "Her big low launcher.",
+   "use": "As a read.",
+   "avoid": "Slow and -23 on block.",
+   "counterplay": "Block low and launch.",
+   "afterBlock": "-23.",
+   "afterHit": "Instant tornado (+71a).",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Hard read."
+  },
+  {
+   "id": "db+1",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Storming Flower: i18 mid Heat Engager, -9 on block.",
+   "purpose": "A Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+14a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side swap.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with stance pressure."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+3",
+  "b+1+2",
+  "f,F+4"
+ ],
+ "lessons": []
+}

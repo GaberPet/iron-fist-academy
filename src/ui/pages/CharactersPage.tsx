@@ -14,7 +14,7 @@ export function CharactersPage() {
       <div className="page-head">
         <div>
           <h1>Characters</h1>
-          <p>The full Tekken 8 roster from Wavu Wiki ({roster.length} characters, data from {fmtDate(data.manifest.generatedAt)}). Every character has frame data, combos, punishers, quizzes and bot drills. Characters marked <span className="badge char">Curriculum</span> also have a full lesson path and coach notes. Progress is stored per character.</p>
+          <p>The full Tekken 8 roster from Wavu Wiki ({roster.length} characters, data from {fmtDate(data.manifest.generatedAt)}). Every character has frame data, combos, punishers, quizzes, bot drills, a full lesson path and coach notes. Progress is stored per character.</p>
         </div>
       </div>
       <RosterTiles />

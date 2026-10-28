@@ -1,0 +1,29 @@
+{
+ "short": "Xiaoyu",
+ "playstyle": "Tricky and evasive stance mix-ups. Phoenix (AOP) shrinks her hurtbox so she slips under highs and some mids (Wavu), back-turned (BT) and Hypnotist (HYP) add more mix-ups, and she wins by making the opponent whiff and launching them. She is tiny with short range, so long-limbed characters can wall her out: play compact and close the gap carefully.",
+ "stances": [
+  {"code": "AOP", "name": "Art of Phoenix", "entry": "d+1 transitions, ub+3 and others", "note": "Her low-profile stance that ducks under highs and some mids."},
+  {"code": "BT", "name": "Back-turned", "entry": "b+3, b+1 on hit and other moves", "note": "BT.1,2 tornadoes and is a combo staple."},
+  {"code": "HYP", "name": "Hypnotist", "entry": "ub+1+2", "note": "A spinning stance; HYP.3+4 and HYP.2 end her combos. In Heat it skips its first step (Wavu)."}
+ ],
+ "keyLaunchers": ["b+1+2", "uf+3", "ws4", "df+3"],
+ "whiffPunishers": ["uf+3", "b+1+2", "f,F+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check; 1,d+2 is her i10 punish (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["b+1", "punisher,poke", "Great Wall Left: i8 mid, -12 on block.", "One of the fastest moves in the game: her i8 punish (Wavu).", "After -8 moves and to interrupt.", "-12 on block.", "Block.", "-12.", "+1 to +6.", "Moderate.", "Her fastest answer."],
+  ["df+1", "poke", "Belly Chop: i14 mid, -2 on block.", "Her safe mid check.", "To stop ducking.", "Little risk.", "Block.", "-2.", "+9.", "Low risk.", "Basic mid."],
+  ["df+2", "poke", "i14 mid, -6 on block.", "Another quick mid.", "To check.", "-6 on block.", "Block.", "-6.", "+7.", "Low risk.", "Mix with df+1."],
+  ["b+3", "poke", "Peacock Kick: i18 high, +3 on block, turns her back-turned.", "A plus high into BT.", "To keep the turn and start BT mix-ups.", "Against crouchers.", "Duck it.", "+3.", "+8c.", "Moderate.", "Pressure tool."],
+  ["f,F+4", "counter-hit", "Soaring Blaze: i20 high, +9 on block, launches on counter hit.", "A very plus high.", "To keep pressure.", "Against crouchers.", "Duck it.", "+9.", "+13cg; +58a on CH.", "Moderate.", "Pressure tool."],
+  ["f+1+2", "punisher", "Clouded Peak: i12 mid, -16 on block.", "Her i12 punisher (Wavu).", "After -12 moves.", "Raw: -16.", "Block and punish.", "-16.", "+15d.", "Risky raw.", "Punish only."],
+  ["b+1+2", "launcher,punisher", "Cross Lifting Palms: i15 launcher, -13 on block.", "Her i15 launch punisher (Wavu BnB starter).", "After -15 moves.", "Raw: -13.", "Block.", "-13.", "Launch (+29a).", "Risky.", "Main punish."],
+  ["uf+3", "launcher,punisher", "Bolting Rabbit: i16 launcher, -13 on block.", "Another launcher (Wavu BnB starter).", "Punish and whiff punish.", "Raw: -13.", "Block.", "-13.", "Launch (+29a).", "Risky.", "Alternative punish."],
+  ["ws4", "punisher", "Skyscraper Kick: i11 while-standing kick, -10 on block, juggles on hit (+20a).", "Fast crouch punish with a combo.", "After -11 lows.", "-10 on block.", "Block.", "-10.", "+20a.", "Moderate.", "Rewarding crouch punish."],
+  ["ws2", "counter-hit", "Sunflower: i13 while-standing mid, -3 on block, launches on counter hit.", "A safe crouching CH tool.", "From crouch when they press.", "Little risk.", "Block.", "-3.", "+7; +38a on CH.", "Low risk.", "Strong crouching option."],
+  ["db+3", "low", "Knee Cracker: i15 low, +2c on block.", "A plus-on-block low.", "To keep pressure low.", "Little risk.", "Block low.", "+2c.", "+2c.", "Low risk.", "Excellent low poke."],
+  ["df+3", "low,launcher", "Phoenix Tail: i29 homing low, instant tornado, -23 on block.", "Her big low launcher.", "As a read.", "Slow and -23 on block.", "Block low and launch.", "-23.", "Instant tornado (+71a).", "Very risky.", "Hard read."],
+  ["db+1", "heat", "Storming Flower: i18 mid Heat Engager, -9 on block.", "A Heat Engager.", "To start Heat.", "-9 on block.", "Block.", "-9.", "+14a.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side swap.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with stance pressure."]
+ ],
+ "combos": []
+}
