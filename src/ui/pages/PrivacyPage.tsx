@@ -25,11 +25,13 @@ export function PrivacyPage() {
           <li><b>Your storage choice:</b> stored even if you choose “Don't save anything”, so you aren't asked on every visit.</li>
         </ul>
         <p>If you choose “Don't save anything”, the site still works, but everything is held in memory and lost when you close the tab. Player names are not passwords. Anyone using the same browser can open any player.</p>
+        <p>On a phone, the website also keeps an offline copy of its own files and frame data (no personal data) so the installed app works without internet.</p>
         <p>The desktop app saves the same data as files in its data folder on your computer instead (see Settings and data). It doesn't ask for consent because the files never leave your computer.</p>
       </section>
 
       <section className="card stack">
         <h2>What leaves your device</h2>
+        <p><b>Send to phone</b> puts your progress (lessons, combos, recent attempts and your player name) inside a QR code. The phone reads it from the link's # part, which browsers never send to the website's server.</p>
         <p>Nothing you enter or practise is sent anywhere. Controller and keyboard input is read in your browser and never transmitted.</p>
         <p>The website is hosted on GitHub Pages. Like any web host, GitHub receives standard request details when your browser loads the site, such as your IP address and browser type, and may log them for security. That is covered by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer">GitHub's privacy statement</a>. Fonts, frame data and 3D models all come from the same site, with no third-party services. The desktop app checks the same site for frame data updates.</p>
       </section>

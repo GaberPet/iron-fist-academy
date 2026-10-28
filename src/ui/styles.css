@@ -456,3 +456,7 @@ a:hover { color: var(--red); }
 /* Phones and small touch tablets: there is no phone app, so no "Install the app" tab */
 /* Phones: no app, and the fight modes need a controller or keyboard, so hide them there */
 @media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .nav-item-install, .nav-item-dojo, .nav-item-fight, .desktop-only { display: none !important; } }
+.qr-box { background: #ffffff; padding: var(--space-xs); width: min(320px, 100%); margin-inline: auto; }
+.qr-box svg { display: block; width: 100%; height: auto; }
+.phone-only { display: none; }
+@media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .phone-only { display: flex; } }

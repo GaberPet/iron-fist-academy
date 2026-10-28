@@ -19,6 +19,7 @@ import { CreditsPage } from './pages/CreditsPage';
 import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
+import { ImportPage } from './pages/ImportPage';
 import { ImportProgressButton } from './components/ImportProgress';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
@@ -141,6 +142,7 @@ export function App() {
       case 'punish': return <PunishPage />;
       case 'matchup': return <MatchupPage />;
       case 'install': return <InstallPage />;
+      case 'import': return <ImportPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'fight': return <Suspense fallback={<div className="empty">Loading the 3D arena…</div>}><FightPage /></Suspense>;
       case 'companion': return <CompanionPage />;

@@ -4,6 +4,7 @@ import { computeStats, lessonState, recommend, type Recommendation } from '../..
 import { navigate } from '../hooks';
 import { useStore } from '../store';
 import { Ring } from '../components/Charts';
+import { InstallPhone } from '../components/InstallPhone';
 
 function go(r: Recommendation) {
   if (r.type === 'focus-step') navigate('combos', r.comboId, String(r.stepIndex));
@@ -58,6 +59,7 @@ export function HomePage() {
           <button className="btn desktop-only" onClick={() => navigate('fight')}>Open free fight</button>
         </div>
       </section>
+      <InstallPhone />
       <label className="field favourite-pick">
         <span>Favourite character</span>
         <select

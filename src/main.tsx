@@ -21,6 +21,11 @@ import './ui/styles.css';
 
 inputManager.start();
 
+// Website only: offline cache for the installed phone app (the desktop app has its files built in).
+if (import.meta.env.PROD && 'serviceWorker' in navigator && !window.ifaApi) {
+  navigator.serviceWorker.register('./sw.js').catch(() => undefined);
+}
+
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
     <LoginGate>

@@ -1,3 +1,4 @@
+import { SendToPhone } from '../components/SendToPhone';
 import { useMemo, useState } from 'react';
 import { lessonsFor, STAGE_NAMES } from '../../data';
 import { computeStats, lessonState, migrateProgress } from '../../core/progress';
@@ -43,10 +44,13 @@ export function ProgressPage() {
       <div className="page-head">
         <div>
           <h1>Progress · {char.profile.name}</h1>
-          <p>Everything here is computed from attempts you actually recorded on this computer. Nothing is estimated or pre-filled.</p>
+          <p>Everything here is computed from attempts you actually recorded on this device. Nothing is estimated or pre-filled.</p>
         </div>
-        <div className="seg">
-          {[7, 14, 30].map((d) => <button key={d} className={days === d ? 'on' : ''} onClick={() => setDays(d)}>{d} days</button>)}
+        <div className="row">
+          <SendToPhone />
+          <div className="seg">
+            {[7, 14, 30].map((d) => <button key={d} className={days === d ? 'on' : ''} onClick={() => setDays(d)}>{d} days</button>)}
+          </div>
         </div>
       </div>
 
