@@ -389,4 +389,16 @@ describe('FightEngine', () => {
     run(e, f, 60, () => ({}));
     if (e.f[1].hp < MAX_HP) expect(e.f[0].pos.x).toBeGreaterThan(before);
   });
+
+  it('the bot learns a repeated high and starts ducking it', () => {
+    let seed = 3;
+    const rng = () => ((seed = (seed * 16807) % 2147483647) / 2147483647);
+    const e = new FightEngine({ player: jin, bot: anna, difficulty: 'hard', rng, practice: { dummy: 'fight' } });
+    const f = closeIn(e);
+    // jab-spam: 1 every 40 frames for 40 jabs
+    const ev = run(e, f, 40 * 40, (x) => ((x - f) % 40 < 2 ? { press: [1] } : {}));
+    expect(e.seen.get('1')).toBeGreaterThanOrEqual(5);
+    const ducks = ev.filter((x) => x.type === 'whiff' && x.by === 0 && x.text === 'ducked').length;
+    expect(ducks).toBeGreaterThan(0);
+  });
 });

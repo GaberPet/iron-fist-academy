@@ -249,6 +249,8 @@ export interface MoveSet {
   running: Move[];
   powerCrush: Move[];
   homing: Move[];
+  /** While-standing moves (usable when rising from a crouch). */
+  ws: Move[];
   groundHits: Move[];
   heatBurst: Move | null;
   heatMoves: Move[];
@@ -309,6 +311,7 @@ export function moveSet(c: CharacterData): MoveSet {
     fast: normal.filter((m) => !m.isThrow && lv(m) !== 'low' && sf(m) <= 13).sort((a, b) => sf(a) - sf(b)),
     running: normal.filter((m) => !m.isThrow && isRunning(m)),
     powerCrush: normal.filter((m) => crushRanges(m).some((r) => r.kind === 'pc')),
+    ws: c.frames.moves.filter((m) => !m.parent && /^ws[1-4]/.test(m.id) && m.startupFrame !== null),
     homing: normal.filter((m) => /Homing/.test(m.notes) && sf(m) <= 20),
     groundHits: normal.filter((m) => (lv(m) === 'low' || /Spike/.test(m.notes)) && sf(m) <= 24),
     heatBurst: roots.find((m) => /Heat Burst/.test(m.notes)) ?? null,
@@ -373,8 +376,11 @@ export class FightEngine {
   private botPlan: Move[] = [];
   private botBlocked: { adv: number; free: number; crouch: boolean } | null = null;
   private botAdv = { adv: 0, until: -1 };
+  private duckedAt = -999;
   /** What the player tends to do, for the bot's reads. */
   habits = { stand: 1, crouch: 1, mash: 1, patient: 1, step: 1 };
+  /** How often the player has used each move (the bot learns to guard the ones you repeat). */
+  seen = new Map<string, number>();
 
   constructor(cfg: FightConfig) {
     this.cfg = cfg;
@@ -714,6 +720,7 @@ export class FightEngine {
   }
 
   startMove(x: Fighter, m: Move, now: number) {
+    if (x.side === 0) this.seen.set(m.id, (this.seen.get(m.id) ?? 0) + 1);
     this.setState(x, 'attack', now);
     this.beginSegment(x, m, now, true);
     if (/Heat Burst/.test(m.notes) && x.heat === 'ready') {
@@ -1339,6 +1346,14 @@ export class FightEngine {
     this.botPlan = [];
     // 3. okizeme: hit a grounded opponent who did not tech
     if (p.state === 'down' && now - p.stateAt > TECH_WINDOW && dist < 170 && rng() < S.combo * 0.6 && go(this.pick(set.groundHits), [], true)) return;
+    // 4a. ducked a high: rise with a while-standing launcher / punisher
+    if (b.crouching && now - this.duckedAt < 40 && p.state === 'attack' && p.outcome === 'whiff' && set.ws.length) {
+      const ws = set.ws.filter((m) => dist <= moveRange(m) + 10).sort((x, y) => Number(/\d+a/.test(y.hit)) - Number(/\d+a/.test(x.hit)));
+      if (go(ws[0])) {
+        ev.push({ type: 'punish', by: 1, text: `${b.char.profile.short} ducks the high and punishes with ${ws[0].id}` });
+        return;
+      }
+    }
     // 4. whiff punish
     if (p.state === 'attack' && p.outcome === 'whiff' && p.endAt - now > 12 && dist < 200 && rng() < S.punish * 0.7) {
       const reach = (m: Move) => dist <= moveRange(m) + (isRunning(m) ? 100 : 8);
@@ -1347,7 +1362,8 @@ export class FightEngine {
     // 5. an attack is coming: guard (after reaction time), sidestep a slow linear move, or armour through
     if (p.state === 'attack' && p.move && now < p.hitAt) {
       b.walking = 0;
-      if (this.botGuardSet !== p.moveStart && now - p.moveStart >= S.react) {
+      const used0 = this.seen.get(p.move.id) ?? 0;
+      if (this.botGuardSet !== p.moveStart && now - p.moveStart >= Math.max(4, S.react - 3 * Math.min(3, used0 - 1))) {
         this.botGuardSet = p.moveStart;
         const lv = moveLevel(p.move);
         const slow = (p.move.startupFrame ?? 0) >= 15 && !isHoming(p.move);
@@ -1368,9 +1384,18 @@ export class FightEngine {
           b.guard = 'crouch';
           return;
         }
+        // a high it has seen before: duck it and get a while-standing punish
+        const used = this.seen.get(p.move.id) ?? 0;
+        if (lv === 'high' && rng() < S.guard * (0.25 + 0.1 * Math.min(3, used))) {
+          b.guard = 'crouch';
+          b.crouching = true;
+          this.duckedAt = now;
+          return;
+        }
         const right = lv === 'low' ? 'crouch' : 'stand';
         const wrong = right === 'crouch' ? 'stand' : 'crouch';
-        b.guard = rng() < S.guard ? right : rng() < 0.5 ? wrong : 'stand';
+        const skill = Math.min(0.97, S.guard + 0.08 * Math.min(4, used - 1));
+        b.guard = rng() < skill ? right : rng() < 0.5 ? wrong : 'stand';
         b.crouching = b.guard === 'crouch';
       }
       return;
