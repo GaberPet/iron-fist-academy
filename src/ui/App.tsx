@@ -19,6 +19,7 @@ import { CreditsPage } from './pages/CreditsPage';
 import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
+import { ImportProgressButton } from './components/ImportProgress';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
@@ -184,6 +185,7 @@ export function App() {
           <a href="#/credits">Credits</a> · <a href="#/privacy">Privacy</a>
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
         </div>
+        {storage.isElectron() && <ImportProgressButton />}
         {storage.isElectron() && (
           <button className="btn uninstall-btn" onClick={() => storage.uninstall()} title="Remove Iron Fist Academy from this computer">
             <span aria-hidden>✕</span> <span className="lbl">Uninstall</span>

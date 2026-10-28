@@ -299,7 +299,7 @@ table.data tr.sel td { background: var(--surface); box-shadow: inset 0 -2px 0 va
 }
 @media (max-width: 60rem) {
   .app { grid-template-columns: 64px minmax(0, 1fr); }
-  .nav-btn .lbl, .brand-name, .brand-sub, .sidebar-foot { display: none; }
+  .nav-btn .lbl, .brand-name, .brand-sub, .sidebar-foot, .import-btn .lbl, .uninstall-btn .lbl { display: none; }
   .nav-btn { justify-content: center; padding: var(--space-xs); }
   .brand { padding: 0 0 var(--space-lg); align-items: center; }
   .g2 { grid-template-columns: minmax(0, 1fr); }
@@ -428,3 +428,7 @@ a:hover { color: var(--red); }
 .uninstall-btn { margin-top: var(--space-sm); width: 100%; justify-content: center; background: var(--red); border-color: var(--red); color: #ffffff; font-weight: 700; }
 .uninstall-btn:hover:not(:disabled) { background: var(--red-dark); border-color: var(--red-dark); color: #ffffff; }
 .download-grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(240px, 1fr)); gap: var(--space-md); }
+.import-btn { margin-top: var(--space-sm); width: 100%; justify-content: center; font-weight: 700; }
+.import-dialog { max-width: 560px; width: calc(100% - 32px); color: var(--ink); background: var(--paper); border: var(--rule-hair) solid var(--line); padding: var(--space-lg); }
+.import-dialog::backdrop { background: var(--color-overlay); }
+.import-dialog ol { padding-left: 1.2em; display: grid; gap: var(--space-xs); }
