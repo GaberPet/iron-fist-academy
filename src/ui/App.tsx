@@ -67,7 +67,7 @@ class ErrorBoundary extends Component<{ children: ReactNode; resetKey: string },
   }
 }
 
-function TopBar() {
+function TopBar({ onMenu }: { onMenu: () => void }) {
   const { char, saveError, loadingIds, dataNotice, dismissDataNotice } = useStore();
   const { pads, active } = useControllerStatus();
   const pad = pads.find((p) => p.index === active);
@@ -81,6 +81,9 @@ function TopBar() {
   return (
     <>
       <div className="topbar">
+        <button className="btn menu-btn" onClick={onMenu} aria-label="Open menu" aria-controls="main-nav">
+          <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" aria-hidden><path d="M4 7h16M4 12h16M4 17h16" /></svg>
+        </button>
         <button className="btn char-switch" onClick={() => setPicking(true)} aria-haspopup="dialog">
           <span className="char-switch-name">{char.profile.name}</span>
           <span className="small muted">Change character</span>
@@ -119,6 +122,9 @@ export function App() {
   const route = useRoute();
   const { changelog, data, settings } = useStore();
   const page = route[0];
+  // Phone: the sidebar is a slide-in menu; it closes whenever the page changes.
+  const [menuOpen, setMenuOpen] = useState(false);
+  useEffect(() => setMenuOpen(false), [route.join('/')]); // eslint-disable-line react-hooks/exhaustive-deps
   useEffect(() => {
     document.documentElement.dataset.theme = settings.theme;
     document.documentElement.dataset.text = settings.textSize;
@@ -148,7 +154,8 @@ export function App() {
     }
   })();
   return (
-    <div className="app">
+    <div className={`app${menuOpen ? ' menu-open' : ''}`}>
+      {menuOpen && <button className="menu-scrim" aria-label="Close menu" onClick={() => setMenuOpen(false)} />}
       <a
         className="skip-link"
         href="#main"
@@ -159,7 +166,7 @@ export function App() {
       >
         Skip to content
       </a>
-      <nav className="sidebar" aria-label="Main">
+      <nav className="sidebar" id="main-nav" aria-label="Main">
         <div className="brand">
           <Logo tone="current" />
           <Wordmark />
@@ -193,7 +200,7 @@ export function App() {
         )}
       </nav>
       <div className="main">
-        <TopBar />
+        <TopBar onMenu={() => setMenuOpen(true)} />
         <main className="content" id="main" tabIndex={-1}>
           <div className="page">
             <ErrorBoundary resetKey={route.join('/')}>{content}</ErrorBoundary>

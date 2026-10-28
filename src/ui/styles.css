@@ -299,13 +299,34 @@ table.data tr.sel td { background: var(--surface); box-shadow: inset 0 -2px 0 va
 }
 @media (max-width: 60rem) {
   .app { grid-template-columns: 64px minmax(0, 1fr); }
-  .nav-btn .lbl, .brand-name, .brand-sub, .sidebar-foot, .import-btn .lbl, .uninstall-btn .lbl { display: none; }
-  .nav-btn { justify-content: center; padding: var(--space-xs); }
-  .brand { padding: 0 0 var(--space-lg); align-items: center; }
   .g2 { grid-template-columns: minmax(0, 1fr); }
   .content { padding: var(--space-lg) var(--space-sm); }
   .home-hero { margin: calc(-1 * var(--space-lg)) calc(-1 * var(--space-sm)) var(--space-lg); padding: var(--space-xl) var(--space-sm); }
   .topbar { padding: var(--space-xs) var(--space-sm); }
+  /* wide tables scroll inside their box instead of being cut off */
+  table.data { display: block; max-width: 100%; overflow-x: auto; }
+}
+/* tablet: icon-only sidebar */
+@media (max-width: 60rem) and (min-width: 40.01rem) {
+  .nav-btn .lbl, .brand-name, .brand-sub, .sidebar-foot, .import-btn .lbl, .uninstall-btn .lbl { display: none; }
+  .nav-btn { justify-content: center; padding: var(--space-xs); }
+  .brand { padding: 0 0 var(--space-lg); align-items: center; }
+}
+.menu-btn, .menu-scrim { display: none; }
+/* phone: the sidebar becomes a slide-in menu opened from the top bar */
+@media (max-width: 40rem) {
+  .app { grid-template-columns: minmax(0, 1fr); }
+  .sidebar { position: fixed; inset: 0 auto 0 0; width: min(300px, 85vw); z-index: var(--z-modal); transform: translateX(-100%); transition: transform var(--dur-short) var(--ease-out); overscroll-behavior: contain; padding-bottom: calc(var(--space-lg) + env(safe-area-inset-bottom)); }
+  .menu-open .sidebar { transform: none; box-shadow: 0 0 0 100vmax rgba(0, 0, 0, 0.5); }
+  .menu-scrim { display: block; position: fixed; inset: 0; z-index: calc(var(--z-modal) - 1); background: transparent; border: 0; }
+  .menu-btn { display: inline-flex; align-items: center; justify-content: center; min-width: 44px; min-height: 44px; padding: 0; }
+  .topbar { gap: var(--space-xs); }
+  .content { padding: var(--space-md) var(--space-sm); }
+  .home-hero { margin: calc(-1 * var(--space-md)) calc(-1 * var(--space-sm)) var(--space-lg); }
+  .page-head h1, h1 { font-size: 1.875rem; }
+  .display { font-size: 2.25rem; }
+  .page-head { margin-bottom: var(--space-lg); }
+  .btn { min-height: 44px; }
 }
 @media (max-width: 40rem) {
   .topbar select { min-width: 0; max-width: 60vw; }
