@@ -53,7 +53,7 @@ export function MovesPage({ moveId }: { moveId?: string }) {
         <label className="row small dim"><input type="checkbox" checked={keyOnly} onChange={(e) => setKeyOnly(e.target.checked)} /> Key moves only</label>
         <span className="right small muted">{list.length} shown</span>
       </div>
-      <div className="split" style={{ gridTemplateColumns: 'minmax(0, 1.25fr) minmax(0, 1fr)' }}>
+      <div className="split moves-split">
         <div className="card tight scroll" style={{ maxHeight: 'calc(100vh - 260px)' }}>
           {list.length ? (
             <div className="list combo-list" role="list">
