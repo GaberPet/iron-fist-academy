@@ -56,7 +56,7 @@ export function ControllerDiagram({ pressed, axes = [0, 0, 0, 0], labels = {} }:
         <g key={b}>
           <circle className={on(b)} cx={x} cy={y} r="18" />
           <text x={x} y={y + 6} textAnchor="middle" fontSize="18" fill={pressed.includes(b) ? '#fff' : col}>{sym}</text>
-          {labels[b] && <text x={x + 24} y={y - 12} textAnchor="middle" fontSize="12" fill="#1b2130">{labels[b]}</text>}
+          {labels[b] && <text x={x + 24} y={y - 12} textAnchor="middle" fontSize="12" fill="#d6d6d6">{labels[b]}</text>}
         </g>
       ))}
       {/* sticks */}

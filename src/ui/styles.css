@@ -222,7 +222,7 @@ table.data tr.sel td { background: var(--surface); box-shadow: inset 0 -2px 0 va
 .pad-svg .grip { fill: var(--line); }
 .pad-svg .btn-shape { fill: var(--paper); stroke: var(--ink); stroke-width: 1.5; transition: fill var(--dur-micro) var(--ease-out); }
 .pad-svg .btn-shape.on { fill: var(--ink); stroke: var(--ink); }
-.pad-svg text { font-family: var(--font-body); font-weight: 700; pointer-events: none; fill: var(--ink); }
+.pad-svg text { font-family: var(--font-body); font-weight: 700; pointer-events: none; }
 .test-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(96px, 1fr)); gap: var(--space-2xs); }
 .test-cell { padding: var(--space-2xs) var(--space-xs); border-radius: var(--radius-tag); border: var(--rule-hair) solid var(--line); font-size: var(--text-xs); color: var(--muted); background: var(--paper); }
 .test-cell.seen { color: var(--ink); border-color: var(--ink); }
@@ -368,3 +368,12 @@ table.data tr.sel td { box-shadow: inset 0 -2px 0 var(--red); }
 .home-next { border-color: var(--red); }
 a:hover { color: var(--red); }
 .btn.active { background: var(--red); border-color: var(--red); color: #ffffff; }
+
+/* ---------- controller face-button colours (PlayStation style) ---------- */
+:root { --ps-triangle: #2ec4a4; --ps-circle: #ff5a6a; --ps-cross: #6fa0ff; --ps-square: #f08ac2; }
+.pbtn.tr { color: var(--ps-triangle); border-color: var(--ps-triangle); }
+.pbtn.ci { color: var(--ps-circle); border-color: var(--ps-circle); }
+.pbtn.cr { color: var(--ps-cross); border-color: var(--ps-cross); }
+.pbtn.sq { color: var(--ps-square); border-color: var(--ps-square); }
+.pbtn.tr, .pbtn.ci, .pbtn.cr, .pbtn.sq { border-width: 2px; background: #000000; }
+.pad-svg .btn-shape.on { fill: var(--red); stroke: var(--red); }
