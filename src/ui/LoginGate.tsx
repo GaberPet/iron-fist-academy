@@ -20,6 +20,49 @@ function readConsent(): Consent | null {
   }
 }
 
+const PLAYER_KEYS = ['settings', 'progress', 'overrides'];
+const loadPlayers = async () => (await storage.loadShared<Player[]>('profiles')) ?? [];
+
+export const listPlayers = loadPlayers;
+
+export async function renamePlayer(id: string, name: string): Promise<string | null> {
+  const n = name.trim().slice(0, 32);
+  const list = await loadPlayers();
+  if (!n) return 'Enter a player name.';
+  if (list.some((p) => p.id !== id && p.name.toLowerCase() === n.toLowerCase())) return 'Another player already has that name.';
+  await storage.saveShared('profiles', list.map((p) => (p.id === id ? { ...p, name: n } : p)));
+  if (current?.id === id) current = { ...current, name: n };
+  return null;
+}
+
+/** Deletes a player and all their saved data. Deleting yourself signs you out. */
+export async function deletePlayer(id: string) {
+  const list = await loadPlayers();
+  // The first player also owns data saved before profiles existed; drop it so the next first player starts clean.
+  const keys = PLAYER_KEYS.map((k) => `p-${id}-${k}`).concat(list[0]?.id === id ? PLAYER_KEYS : []);
+  for (const k of keys) await storage.remove(k);
+  await storage.saveShared('profiles', list.filter((p) => p.id !== id));
+  if (current?.id === id) leave();
+}
+
+/** Deletes every player, all progress and the storage choice on this device. */
+export async function deleteAllData() {
+  for (const p of await loadPlayers()) for (const k of PLAYER_KEYS) await storage.remove(`p-${p.id}-${k}`);
+  for (const k of [...PLAYER_KEYS, 'profiles']) await storage.remove(k);
+  try {
+    for (const k of Object.keys(localStorage)) if (k.startsWith('ironfist:') || k.startsWith('ifa.')) localStorage.removeItem(k);
+  } catch { /* storage blocked: nothing saved there */ }
+  leave();
+}
+
+function leave() {
+  // Route any save still pending in the app into memory so nothing is written back after the delete.
+  setProfile(null);
+  setPersist(false);
+  try { sessionStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }
+  location.reload();
+}
+
 /** Forget the storage choice and ask again. */
 export function changeConsent() {
   try { localStorage.removeItem(CONSENT_KEY); sessionStorage.removeItem(SESSION_KEY); } catch { /* ignore */ }

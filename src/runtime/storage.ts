@@ -58,6 +58,14 @@ export const storage = {
     return v === null && profile?.legacy ? rawLoad<T>(key) : v;
   },
 
+  /** Delete a stored item (unscoped key). */
+  async remove(key: string): Promise<void> {
+    const a = api();
+    if (a) await a.save(key, null); // the desktop app reads a null file as "nothing saved"
+    else if (persist) localStorage.removeItem(LS_PREFIX + key);
+    else mem.delete(LS_PREFIX + key);
+  },
+
   /** Unscoped: data shared by every player on this device (the profile list). */
   loadShared: rawLoad,
 

@@ -70,10 +70,15 @@ export interface Settings {
   keyboardEnabled: boolean;
   rumble: boolean;
   sound: boolean;
+  theme: Theme;
 }
+
+export type Theme = 'dark' | 'light' | 'arcade';
+export const THEMES: Theme[] = ['light', 'dark', 'arcade'];
 
 export const DEFAULT_SETTINGS: Settings = {
   version: 1,
+  theme: 'dark',
   activeChar: 'anna',
   masteryThreshold: 0.8,
   comboConsistency: 5,
@@ -119,6 +124,7 @@ export function migrateSettings(raw: unknown): Settings {
     ...DEFAULT_SETTINGS,
     ...r,
     version: 1,
+    theme: THEMES.includes(r.theme as Theme) ? (r.theme as Theme) : 'dark',
     recognizer: { ...DEFAULT_SETTINGS.recognizer, ...(r.recognizer ?? {}) },
     controller: {
       ...DEFAULT_SETTINGS.controller,

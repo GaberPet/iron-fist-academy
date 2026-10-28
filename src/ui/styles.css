@@ -343,16 +343,16 @@ h1, h2, h3, [id] { scroll-margin-top: var(--space-xl); }
 }
 
 /* ---------- Tekken red accent (owner's exception to the brand's no-accent rule) ---------- */
-:root { --red: #e4002b; --red-dark: #b80023; }
-.sidebar .nav-btn.active { background: var(--red); border-color: var(--red); color: #ffffff; }
-.btn.primary { background: var(--red); border-color: var(--red); color: #ffffff; }
+:root { --red: #e4002b; --red-dark: #b80023; --on-red: #ffffff; }
+.sidebar .nav-btn.active { background: var(--red); border-color: var(--red); color: var(--on-red); }
+.btn.primary { background: var(--red); border-color: var(--red); color: var(--on-red); }
 .btn.primary:hover:not(:disabled) { background: var(--red-dark); border-color: var(--red-dark); }
-.home-hero .btn.primary { background: var(--red); color: #ffffff; border-color: var(--red); }
+.home-hero .btn.primary { background: var(--red); color: var(--on-red); border-color: var(--red); }
 .home-hero .btn.primary:hover:not(:disabled) { background: var(--red-dark); }
 .diamond-device::after { border-color: var(--red); }
 .home-hero .eyebrow::before { content: ''; display: inline-block; width: 24px; height: 2px; background: var(--red); vertical-align: middle; margin-right: var(--space-xs); }
 .page-head h1::after { content: ''; display: block; width: 40px; height: 4px; background: var(--red); margin-top: var(--space-xs); }
-.seg button.on { background: var(--red); color: #ffffff; }
+.seg button.on { background: var(--red); color: var(--on-red); }
 .progress > i { background: var(--red); }
 table.data tr.sel td { box-shadow: inset 0 -2px 0 var(--red); }
 .list-item.sel { box-shadow: inset 3px 0 0 var(--red); }
@@ -364,10 +364,10 @@ table.data tr.sel td { box-shadow: inset 0 -2px 0 var(--red); }
 .attempt-panel.no { border-left-color: var(--red); }
 .quiz-opt.wrong { border-color: var(--red); }
 .badge.bad { border-color: var(--red); }
-.stage-num { background: var(--red); color: #ffffff; }
+.stage-num { background: var(--red); color: var(--on-red); }
 .home-next { border-color: var(--red); }
 a:hover { color: var(--red); }
-.btn.active { background: var(--red); border-color: var(--red); color: #ffffff; }
+.btn.active { background: var(--red); border-color: var(--red); color: var(--on-red); }
 
 /* ---------- controller face-button colours (PlayStation style) ---------- */
 :root { --ps-triangle: #2ec4a4; --ps-circle: #ff5a6a; --ps-cross: #6fa0ff; --ps-square: #f08ac2; }
@@ -402,3 +402,17 @@ a:hover { color: var(--red); }
 .consent-table { width: 100%; border-collapse: collapse; font-size: var(--text-xs); }
 .consent-table th, .consent-table td { text-align: left; vertical-align: top; padding: var(--space-xs); border-bottom: var(--rule-hair) solid var(--line); }
 .consent-table th { color: var(--muted); font-weight: 600; }
+
+/* Arcade theme: dark navy sidebar instead of the inverted one */
+[data-theme="arcade"] .sidebar { background: var(--surface); color: var(--ink); border-right: var(--rule-hair) solid var(--line); }
+[data-theme="arcade"] .sidebar .nav-btn { color: var(--ink); border-color: var(--line); }
+[data-theme="arcade"] .sidebar .nav-btn:hover:not(.active) { background: var(--paper); color: var(--ink); }
+[data-theme="arcade"] .sidebar .nav-btn.active { color: var(--on-red); }
+[data-theme="arcade"] .sidebar-foot a { color: var(--ink); }
+[data-theme="arcade"] .sidebar .badge { background: var(--red); border-color: var(--red); color: var(--on-red); }
+[data-theme="arcade"] h1, [data-theme="arcade"] h2, [data-theme="arcade"] .display { font-weight: 600; letter-spacing: 0.01em; }
+[data-theme="arcade"] h1 { font-size: 3rem; line-height: 1; }
+[data-theme="arcade"] .brand-name b, [data-theme="arcade"] .brand-name span { font-family: var(--font-display); }
+.player-row { justify-content: space-between; flex-wrap: wrap; cursor: default; }
+.player-row form { flex: 1; }
+.player-row input { flex: 1; min-width: 0; }

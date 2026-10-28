@@ -1,8 +1,9 @@
 // Iron Fist Academy logo, option C: nested diamonds with a rising chevron ("level up"), drawn
 // in one stroke weight. Black or white only (Level Academy brand rules): `tone` picks which.
 // The mark alone is used in small spaces; the full logo adds the heavy / light wordmark.
-export function LogoMark({ size = 40, tone = 'white', title = 'Iron Fist Academy' }: { size?: number; tone?: 'white' | 'black'; title?: string }) {
-  const ink = tone === 'white' ? '#ffffff' : '#000000';
+type Tone = 'white' | 'black' | 'current';
+export function LogoMark({ size = 40, tone = 'white', title = 'Iron Fist Academy' }: { size?: number; tone?: Tone; title?: string }) {
+  const ink = tone === 'white' ? '#ffffff' : tone === 'black' ? '#000000' : 'currentColor'; // current: follows the theme's text colour
   return (
     <svg className="brand-mark" width={size} height={size} viewBox="0 0 100 100" role="img" aria-label={title}>
       <g fill="none" strokeWidth="5.5">
@@ -15,7 +16,7 @@ export function LogoMark({ size = 40, tone = 'white', title = 'Iron Fist Academy
 }
 
 /** The sidebar is white, so the mark is black there (black logo on white ground). */
-export function Logo({ size = 40, title = 'Iron Fist Academy', tone = 'black' }: { size?: number; title?: string; tone?: 'white' | 'black' }) {
+export function Logo({ size = 40, title = 'Iron Fist Academy', tone = 'black' }: { size?: number; title?: string; tone?: Tone }) {
   return <LogoMark size={size} tone={tone} title={title} />;
 }
 

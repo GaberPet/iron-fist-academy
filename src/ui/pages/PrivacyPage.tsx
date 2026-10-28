@@ -39,7 +39,7 @@ export function PrivacyPage() {
         <ul>
           <li>Change your storage choice any time in <a href="#/settings">Settings and data</a>.</li>
           <li>Download your progress as a file from the <a href="#/progress">Progress</a> page.</li>
-          <li>Delete everything by clearing this site's data in your browser settings. Turning saving off does not delete what is already saved.</li>
+          <li>Delete one player, or everything, in <a href="#/settings">Settings and data</a>. Clearing this site's data in your browser settings does the same. Turning saving off does not delete what is already saved.</li>
         </ul>
       </section>
 

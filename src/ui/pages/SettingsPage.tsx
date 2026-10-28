@@ -1,11 +1,11 @@
-import { useState } from 'react';
-import { DEFAULT_SETTINGS, type Settings } from '../../core/progress';
+import { useEffect, useState } from 'react';
+import { DEFAULT_SETTINGS, THEMES, type Settings, type Theme } from '../../core/progress';
 import { DEFAULT_OPTIONS } from '../../core/recognizer';
 import { useStore } from '../store';
 import { storage, canPersist } from '../../runtime/storage';
 import { navigate } from '../hooks';
 import { fmtDate } from '../format';
-import { currentPlayer, switchPlayer, changeConsent } from '../LoginGate';
+import { currentPlayer, switchPlayer, changeConsent, listPlayers, renamePlayer, deletePlayer, deleteAllData } from '../LoginGate';
 
 function Num({ label, value, min, max, step = 1, onChange, help }: { label: string; value: number; min: number; max: number; step?: number; onChange(v: number): void; help?: string }) {
   return (
@@ -33,17 +33,32 @@ export function SettingsPage() {
         </div>
       </div>
 
-      <div className="card row">
-        <p>Signed in as <b>{currentPlayer()?.name}</b>. Each player's progress is saved separately on this device.</p>
-        <button className="btn sm" onClick={switchPlayer}>Switch player</button>
+      <div className="grid g2">
+        <div className="card stack">
+          <h3>Appearance</h3>
+          <div className="seg" role="radiogroup" aria-label="Theme">
+            {THEMES.map((t) => (
+              <button key={t} role="radio" aria-checked={settings.theme === t} className={settings.theme === t ? 'on' : ''} onClick={() => set({ theme: t })}>{THEME_LABEL[t]}</button>
+            ))}
+          </div>
+          <p className="small muted">Light: white pages, black text. Dark: black pages, white text. Arcade: the night-navy and gold look from before the redesign. Saved for this player.</p>
+        </div>
+        <PlayersCard />
       </div>
 
-      {!storage.isElectron() && (
-        <div className="card row">
-          <p>{canPersist() ? 'Saving is on: your progress is kept in this browser.' : "Saving is off: your progress is lost when you close this tab."} No cookies or trackers are used. <a href="#/privacy">Privacy policy</a></p>
-          <button className="btn sm" onClick={changeConsent}>Change storage choice</button>
+      <div className="card stack">
+        <h3>Your data</h3>
+        {!storage.isElectron() && (
+          <div className="row">
+            <p>{canPersist() ? 'Saving is on: your progress is kept in this browser.' : 'Saving is off: your progress is lost when you close this tab.'} No cookies or trackers are used. <a href="#/privacy">Privacy policy</a></p>
+            <button className="btn sm" onClick={changeConsent}>Change storage choice</button>
+          </div>
+        )}
+        <div className="row">
+          <p>Delete every player, all progress and settings on this device. This can't be undone. Download your progress first from the Progress page if you want a copy.</p>
+          <button className="btn sm danger" onClick={() => window.confirm('Delete all players, progress and settings on this device? This cannot be undone.') && deleteAllData()}>Delete all data</button>
         </div>
-      )}
+      </div>
 
       <div className="grid g2">
         <div className="card stack">
@@ -136,6 +151,59 @@ export function SettingsPage() {
       <div className="card small dim">
         Iron Fist Academy is an unofficial fan tool, not affiliated with or endorsed by Bandai Namco. TEKKEN is a trademark of Bandai Namco Entertainment Inc. Code: MIT. Lessons and coach notes: CC BY-SA 4.0. Frame data: Wavu Wiki contributors, CC0. Source: github.com/GaberPet/iron-fist-academy.
       </div>
+    </div>
+  );
+}
+
+const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade' };
+
+function PlayersCard() {
+  const me = currentPlayer();
+  const [players, setPlayers] = useState<{ id: string; name: string }[]>([]);
+  const [editing, setEditing] = useState<string | null>(null);
+  const [name, setName] = useState('');
+  const [error, setError] = useState('');
+  const reload = () => listPlayers().then(setPlayers);
+  useEffect(() => { reload(); }, []);
+
+  const save = async (id: string) => {
+    const err = await renamePlayer(id, name);
+    setError(err ?? '');
+    if (!err) { setEditing(null); reload(); }
+  };
+  const remove = async (p: { id: string; name: string }) => {
+    const self = p.id === me?.id;
+    if (!window.confirm(`Delete player “${p.name}” and all their progress? This cannot be undone.${self ? ' You will be signed out.' : ''}`)) return;
+    await deletePlayer(p.id);
+    reload();
+  };
+
+  return (
+    <div className="card stack">
+      <div className="card-title"><h3>Players</h3><button className="btn sm" onClick={switchPlayer}>Switch player</button></div>
+      <p className="small muted">Signed in as <b>{me?.name}</b>. Each player's progress is saved separately on this device.</p>
+      <div className="list" role="list">
+        {players.map((p) => (
+          <div key={p.id} role="listitem" className="list-item player-row">
+            {editing === p.id ? (
+              <form className="row" onSubmit={(e) => { e.preventDefault(); save(p.id); }}>
+                <input aria-label="Player name" name="player" autoComplete="off" spellCheck={false} maxLength={32} value={name} onChange={(e) => setName(e.target.value)} autoFocus />
+                <button className="btn sm primary" type="submit">Save</button>
+                <button className="btn sm" type="button" onClick={() => { setEditing(null); setError(''); }}>Cancel</button>
+              </form>
+            ) : (
+              <>
+                <span><b>{p.name}</b>{p.id === me?.id && <span className="muted"> (you)</span>}</span>
+                <span className="row">
+                  <button className="btn sm" onClick={() => { setEditing(p.id); setName(p.name); setError(''); }}>Rename</button>
+                  <button className="btn sm danger" onClick={() => remove(p)}>Delete</button>
+                </span>
+              </>
+            )}
+          </div>
+        ))}
+      </div>
+      {error && <p className="notice warn" role="alert">{error}</p>}
     </div>
   );
 }

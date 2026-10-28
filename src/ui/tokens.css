@@ -53,3 +53,22 @@
   --container: 1280px;
   --z-base: 1; --z-raised: 10; --z-modal: 400;
 }
+
+/* Light theme: white pages with black type, black sidebar with the white logo. */
+:root[data-theme="light"] {
+  color-scheme: light;
+  --ink: #000000; --paper: #ffffff; --graphite: #2a2a2a; --line: #d6d6d6;
+  --surface: #f3f3f2; --muted: #5c5c5c; --steel: #8a8a8a;
+  --color-overlay: rgba(255, 255, 255, 0.85);
+}
+
+/* Arcade theme: the look from before the brand guidelines. Night navy, gold accent, Teko headings. */
+:root[data-theme="arcade"] {
+  --ink: oklch(96% 0.008 275); --paper: oklch(13.5% 0.025 275); --surface: oklch(18% 0.035 275);
+  --graphite: oklch(84% 0.02 275); --muted: oklch(70% 0.025 275); --line: oklch(32% 0.04 275); --steel: oklch(45% 0.05 275);
+  --red: oklch(80% 0.165 75); --red-dark: oklch(72% 0.16 70); --on-red: oklch(19% 0.04 75);
+  --color-overlay: oklch(9% 0.02 275 / 0.85);
+  --font-display: "Teko Variable", "Teko", sans-serif; --font-body: "Metropolis", system-ui, sans-serif; --font-outlier: "JetBrains Mono Variable", ui-monospace, monospace;
+  --display-weight: 600; --tracking-display: 0.005em;
+  --radius-card: 2px; --radius-control: 2px;
+}

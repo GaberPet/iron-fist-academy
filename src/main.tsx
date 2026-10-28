@@ -11,6 +11,12 @@ import '@fontsource/montserrat/800.css';
 import '@fontsource/source-sans-3/400.css';
 import '@fontsource/source-sans-3/600.css';
 import '@fontsource/source-sans-3/700.css';
+// Arcade theme fonts (only downloaded when that theme is on)
+import '@fontsource-variable/teko';
+import '@fontsource/metropolis/400.css';
+import '@fontsource/metropolis/600.css';
+import '@fontsource/metropolis/700.css';
+import '@fontsource-variable/jetbrains-mono';
 import './ui/styles.css';
 
 inputManager.start();

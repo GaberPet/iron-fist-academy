@@ -109,8 +109,12 @@ function TopBar() {
 
 export function App() {
   const route = useRoute();
-  const { changelog, data } = useStore();
+  const { changelog, data, settings } = useStore();
   const page = route[0];
+  useEffect(() => {
+    document.documentElement.dataset.theme = settings.theme;
+    document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(document.body).backgroundColor);
+  }, [settings.theme]);
   const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
@@ -145,7 +149,7 @@ export function App() {
       </a>
       <nav className="sidebar" aria-label="Main">
         <div className="brand">
-          <Logo />
+          <Logo tone="current" />
           <Wordmark />
           <span className="brand-sub">A Level Academy programme</span>
         </div>
