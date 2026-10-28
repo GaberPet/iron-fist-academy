@@ -53,11 +53,14 @@ const clothMat = (c: string, rough = 0.85) => mat(c, rough, 0, { sheen: 0.6, she
 export class Fighter3D {
   readonly root = new THREE.Group();
   readonly joints = {} as Record<Joint, THREE.Object3D>;
-  private body = new THREE.Group(); // tilt / lift container
+  readonly body = new THREE.Group(); // tilt / lift container
   private current: Pose3 = { j: {} };
   readonly look: FighterLook;
   readonly H: number;
   private hipHeight: number;
+  get restHipHeight() {
+    return this.hipHeight;
+  }
   private aura: THREE.Points;
   private auraMat: THREE.PointsMaterial;
   private auraBase: Float32Array;

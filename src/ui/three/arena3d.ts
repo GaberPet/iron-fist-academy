@@ -8,6 +8,14 @@ import type { FightEngine, FightEvent, Vec } from '../../core/fight';
 import { inRage } from '../../core/fight';
 import type { FighterLook } from '../components/arenaRenderer';
 import { Fighter3D, glowTexture } from './fighter3d';
+import { HumanFighter, MODEL_IDS } from './human3d';
+
+type AnyFighter = Fighter3D | HumanFighter;
+
+export function makeFighter(look: FighterLook): AnyFighter {
+  if (look.id && MODEL_IDS.has(look.id)) return new HumanFighter(look, new URL(`models/${look.id}.glb`, document.baseURI).href);
+  return new Fighter3D(look);
+}
 import { poseFor, STANCE, strikeKind } from './anim3d';
 import { buildStage, type Stage } from './stage3d';
 
@@ -63,7 +71,7 @@ export class Arena3D {
   readonly renderer: THREE.WebGLRenderer;
   readonly camera = new THREE.PerspectiveCamera(36, 16 / 9, 0.1, 900);
   readonly stage: Stage;
-  fighters: [Fighter3D, Fighter3D];
+  fighters: [AnyFighter, AnyFighter];
   private particles: Particle[] = [];
   private shake = 0;
   private camAngle: number | null = null;
@@ -85,7 +93,7 @@ export class Arena3D {
     this.renderer.toneMappingExposure = 1.05;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
     this.stage = buildStage(this.renderer);
-    this.fighters = [new Fighter3D(looks[0]), new Fighter3D(looks[1])];
+    this.fighters = [makeFighter(looks[0]), makeFighter(looks[1])];
     for (const f of this.fighters) {
       f.snap(STANCE);
       this.stage.scene.add(f.root);
@@ -106,7 +114,7 @@ export class Arena3D {
     const old = this.fighters[i];
     this.stage.scene.remove(old.root);
     old.dispose();
-    const f = new Fighter3D(look);
+    const f = makeFighter(look);
     f.snap(STANCE);
     this.fighters[i] = f;
     this.stage.scene.add(f.root);

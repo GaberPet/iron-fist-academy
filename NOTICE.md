@@ -20,13 +20,15 @@ Iron Fist Academy is an unofficial fan project. It is not affiliated with, endor
 approved by Bandai Namco Entertainment Inc. TEKKEN and all related names and characters are
 trademarks of Bandai Namco Entertainment Inc. Character and move names are used only to describe
 what the training material refers to. The project contains no game assets (art, audio, models or
-video). The 3D fighters, arena, animations and sound effects in Free Fight and the Bot Dojo are
-original and generated in code; they are generic martial-art figures, not models of the game's
-characters.
+video). The 3D fighters are original, generic people built from CC0 MakeHuman assets (Kuma, Panda
+and Jack-8 use simple models made in code); the arena, animations and sound effects are generated in
+code. None of them are models of the game's characters.
 
 ## Third-party libraries
 
 - [three.js](https://threejs.org) (MIT): 3D rendering, including its post-processing examples.
+- 3D fighter models (`public/models`): generated from [MakeHuman](http://www.makehumancommunity.org)
+  system assets with MPFB2; exported MakeHuman characters are CC0. See `scripts/fighters/README.md`.
 - Fonts: Teko and JetBrains Mono (SIL Open Font License), Metropolis (Unlicense).
 
 ## Game mechanics references

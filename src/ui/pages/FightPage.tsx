@@ -120,6 +120,7 @@ function VsPreview({ me, opp }: { me: CharacterData; opp: CharacterData }) {
     }
     arena.current = a;
     const view = new DrillView();
+    if ((import.meta as unknown as { env?: { DEV?: boolean } }).env?.DEV) (window as unknown as { __vs: unknown }).__vs = { arena: a, view };
     view.p.pos.x = -75;
     view.b.pos.x = 75;
     const fit = () => a.resize(ref.current?.clientWidth ?? 960, ref.current?.clientHeight ?? 465);

@@ -84,6 +84,7 @@ export function lookFor(charId: string | undefined, color: string, role: 'you' |
   const beast = l.build === 'beast' || l.build === 'robot';
   const body = (charId && BODY[charId]) || ['tank', 1];
   return {
+    id: charId,
     outfit: body[0],
     style: (charId && STYLE[charId]) || 'karate',
     height: body[1],

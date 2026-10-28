@@ -48,6 +48,8 @@ export function lerpPose(a: Pose, b: Pose, t: number): Pose {
 export type FightStyle = 'boxer' | 'mishima' | 'wrestler' | 'capoeira' | 'muaythai' | 'kungfu' | 'kicker' | 'wingchun' | 'ninja' | 'elegant' | 'beast' | 'robot' | 'karate' | 'grappler';
 
 export interface FighterLook {
+  /** Character id (3D: picks the realistic model when one exists). */
+  id?: string;
   build: 'male' | 'female' | 'beast' | 'robot';
   hairStyle: 'short' | 'spiky' | 'bob' | 'ponytail' | 'long' | 'buns' | 'bald';
   /** 3D only: outfit cut, height and width scale. */
