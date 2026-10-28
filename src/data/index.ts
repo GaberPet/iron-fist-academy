@@ -1,20 +1,20 @@
+/// <reference types="vite/client" />
 // Character data = generated file (public/data/characters/<id>.json, imported nightly from Wavu Wiki)
 // + optional curated content (src/data/characters/<id>/curated.json: lessons, coach notes, combo tips).
 //
 // Every character in the manifest works out of the box (move library, combos, punishers, quizzes,
-// drills). To add a curriculum for one: create curated.json and add it to CURATED below.
+// drills). To add a curriculum for one: create characters/<id>/curated.json (found automatically).
 // `npm test` validates every curated reference against the generated frame data.
 import type { CharacterCurated, CharacterData, CharacterFile, CharacterProfile, ComboDef, Lesson, Move } from '../types';
-import annaCurated from './characters/anna/curated.json';
-import akCurated from './characters/armor-king/curated.json';
 import general from './general.json';
 import { parseFrame, parseFrameRange, parseStartup } from './wavuNormalize.js';
 import { generateCurriculum } from './autoCurriculum';
 
-export const CURATED: Record<string, CharacterCurated> = {
-  anna: annaCurated as unknown as CharacterCurated,
-  'armor-king': akCurated as unknown as CharacterCurated,
-};
+// Every src/data/characters/<id>/curated.json is picked up automatically.
+const curatedFiles = import.meta.glob<{ default: unknown }>('./characters/*/curated.json', { eager: true });
+export const CURATED: Record<string, CharacterCurated> = Object.fromEntries(
+  Object.entries(curatedFiles).map(([path, mod]) => [path.split('/')[2], mod.default as CharacterCurated]),
+);
 
 export const GENERAL_LESSONS: Lesson[] = (general as unknown as { lessons: Lesson[] }).lessons;
 
@@ -36,6 +36,8 @@ export function normalizeNotation(s: string): string {
     .replace(/^(i?)WS\+?(?=[1-4])/, '$1ws')
     .replace(/^ws\+/, 'ws')
     .replace(/^(?:SS|ss)\+?(?=[1-4])/, 'SS.')
+    .replace(/^([udfb]{1,2})(?=[1-4])/, '$1+') // Wavu shorthand: db1,4 = db+1,4
+    .replace(/^wr\+?(?=[1-4])/, 'f,f,F+') // while running
     .replace(/\s+/g, '');
 }
 
@@ -85,8 +87,9 @@ export function importedCombos(f: CharacterFile, curated: ComboDef[] = []): Comb
     curated.some((cc) => {
       if (routeKey(cc.route) !== routeKey(route)) return false;
       if (!cc.starters.length || !starters.length) return true;
-      const mine = new Set(cc.starters.map(routeKey));
-      return starters.some((s) => mine.has(routeKey(s)));
+      const mine = cc.starters.map(routeKey);
+      // Wavu often writes starters as prose ("Regular launch (e.g. df+2 or uf+4,4)"): a mention counts.
+      return starters.some((s) => mine.some((m) => routeKey(s) === m || (m.length >= 3 && routeKey(s).includes(m))));
     });
   const counter = new Map<string, number>();
   const out: ComboDef[] = [];
@@ -125,14 +128,15 @@ export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, ove
   const profile = curated?.profile ?? autoProfile(f);
   const punishers = curated?.punishers?.length ? curated.punishers : f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) }));
   // Characters without a hand-written curriculum get one generated from their own data.
-  const generated = curated ? null : generateCurriculum({ ...f, frames: { ...f.frames, moves } }, combos, punishers, profile.heatEngagers, profile.stances.map((s) => s.code));
+  // Characters without hand-written lessons get them built from their coach notes (if any) and their own data.
+  const generated = curated?.lessons?.length ? null : generateCurriculum({ ...f, frames: { ...f.frames, moves } }, combos, punishers, profile.heatEngagers, profile.stances.map((s) => s.code), curated?.keyMoves);
   return {
     profile,
-    keyMoves: curated?.keyMoves ?? generated!.keyMoves,
+    keyMoves: generated?.keyMoves ?? curated!.keyMoves,
     combos,
     punishers,
     whiffPunishers: curated?.whiffPunishers ?? [],
-    lessons: curated?.lessons ?? generated!.lessons,
+    lessons: generated?.lessons ?? curated!.lessons,
     frames: { ...f.frames, moves, source: { ...f.frames.source, fetchedAt: f.updatedAt } },
     moveIndex,
   };

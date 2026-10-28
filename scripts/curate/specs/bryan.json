@@ -1,0 +1,270 @@
+{
+ "short": "Bryan",
+ "playstyle": "Keep-out and counter hits. Stand at mid range, make the opponent scared to press with his counter-hit launchers (b+1, f+3, 3+4, ws3, qcb+1), and punish hard. His backdash is poor, so control space with spacing and his long pokes rather than running away.",
+ "stances": [
+  {
+   "code": "SLS",
+   "name": "Slither Step",
+   "entry": "qcf (d,df,f)",
+   "note": "SLS.1+2 is a Heat Engager; SLS.2,4 and SLS.4,1,4 tornado. b+3 can enter it with f."
+  },
+  {
+   "code": "SWA",
+   "name": "Sway",
+   "entry": "qcb (d,db,b)",
+   "note": "SWA.1 (qcb+1) is an i13 high that is +1 on block and launches on counter hit (+72a); it also wall-splats."
+  },
+  {
+   "code": "SNE",
+   "name": "Snake Eyes",
+   "entry": "1+3+4, Heat, or moves like uf+3+4 on hit",
+   "note": "Wavu: Heat gives access to Snake Eyes moves."
+  }
+ ],
+ "keyLaunchers": [
+  "f,n,b+2",
+  "ws1",
+  "b+4",
+  "ws3"
+ ],
+ "whiffPunishers": [
+  "f,n,b+2",
+  "f,F+2",
+  "ws1"
+ ],
+ "keyMoves": [
+  [
+   "1",
+   "poke",
+   "Jab: i10, +1 on block.",
+   "Fast check that recovers quickly.",
+   "Up close.",
+   "Against crouchers.",
+   "Duck it.",
+   "+1.",
+   "+8.",
+   "Low risk.",
+   "Close-range glue."
+  ],
+  [
+   "2,3",
+   "punisher",
+   "i10 punish string.",
+   "One of his i10 punishers (Wavu).",
+   "After blocking -10 moves.",
+   "Nothing major.",
+   "Block it.",
+   "Safe as a punish.",
+   "Damage.",
+   "Low risk.",
+   "Your fast punish; Wavu notes his i10-i13 punishes are middling."
+  ],
+  [
+   "df+2",
+   "poke,punisher",
+   "i13 elbow mid, -6 on block.",
+   "His mid check and the start of df+2,1 (i13 punish).",
+   "To check crouchers and punish -13.",
+   "Little risk.",
+   "Block.",
+   "-6.",
+   "+5.",
+   "Low risk.",
+   "His main mid check."
+  ],
+  [
+   "d+2",
+   "poke",
+   "i14 mid elbow, -2 on block, spikes.",
+   "A safe mid that spikes and can transition to crouch.",
+   "Close range when the opponent ducks.",
+   "Little risk.",
+   "Block.",
+   "-2.",
+   "+8c.",
+   "Low risk.",
+   "A strong, safe mid."
+  ],
+  [
+   "f,n,b+2",
+   "launcher,punisher",
+   "Jet Uppercut: i14 tornado launcher, -7 on block.",
+   "His i14 launch punisher, safe on block.",
+   "Punish -14 and whiff punish.",
+   "Against crouchers: it is high.",
+   "Duck it.",
+   "-7: safe.",
+   "Launch (+43a).",
+   "Moderate.",
+   "His best punisher: practise the input until it is automatic."
+  ],
+  [
+   "ws1",
+   "launcher,punisher",
+   "i15 while-standing launcher, -14 on block.",
+   "His while-standing launch punish.",
+   "After lows that are -15 or worse.",
+   "Raw: -14.",
+   "Block.",
+   "-14.",
+   "Launch.",
+   "Risky.",
+   "Punish big lows."
+  ],
+  [
+   "ws3",
+   "counter-hit,punisher",
+   "i12 while-standing knee, launches on counter hit.",
+   "A fast crouch punisher with a CH launch.",
+   "After -12 lows, or when they press.",
+   "-10 on block.",
+   "Block.",
+   "-10.",
+   "+4; launch on CH (+33a).",
+   "Moderate.",
+   "Fast and rewarding."
+  ],
+  [
+   "b+1",
+   "counter-hit",
+   "Chopping Elbow: i20 mid, +4 on block, launches on counter hit (+78a).",
+   "His famous CH launcher that is plus on block.",
+   "At range when you expect the opponent to press or step in.",
+   "As a fast interrupt: i20.",
+   "Do not press into it; sidestep or wait.",
+   "+4: keep the turn.",
+   "+7c; huge launch on CH.",
+   "Moderate.",
+   "The heart of his keep-out game."
+  ],
+  [
+   "f+3",
+   "counter-hit,poke",
+   "Knee Strike: i16 mid, +0 to +2 on block, launches on CH (+50a).",
+   "A safe, plus mid with a CH launch.",
+   "To keep the turn and punish presses.",
+   "Little risk.",
+   "Block it and do not press after.",
+   "+0 to +2.",
+   "+4 to +6; launch on CH.",
+   "Low risk.",
+   "A key pressure tool."
+  ],
+  [
+   "3+4",
+   "counter-hit",
+   "Middle Side Kick: i18 mid, launches on counter hit (+59a).",
+   "Long-range CH launcher.",
+   "At mid range against people who step in.",
+   "-13 on block.",
+   "Block and punish.",
+   "-13.",
+   "+8; launch on CH.",
+   "Moderate.",
+   "Keep-out tool."
+  ],
+  [
+   "b+4",
+   "punisher,wall",
+   "Knee Break: i16 mid, wall splat (Wavu).",
+   "An i16 punisher that splats at the wall.",
+   "Punish -16; near the wall.",
+   "-10 on block.",
+   "Block.",
+   "-10.",
+   "+15.",
+   "Moderate.",
+   "Wavu mini-combos: b+4 then f,F+2."
+  ],
+  [
+   "d+4",
+   "low",
+   "i15 low kick, -11 on block.",
+   "Fast, fairly safe low.",
+   "To chip at standing opponents.",
+   "When they block low.",
+   "Block low, punish -11.",
+   "-11.",
+   "+0.",
+   "Low risk.",
+   "His safe low poke."
+  ],
+  [
+   "df+3",
+   "low,launcher",
+   "Snake Edge: i29 homing low, launches (+70a), -26 on block.",
+   "His big low launcher.",
+   "As a read on standing block.",
+   "Getting blocked: -26.",
+   "Block low and launch.",
+   "-26.",
+   "Launch.",
+   "Very risky.",
+   "Use it sparingly."
+  ],
+  [
+   "f,F+2",
+   "heat,wall",
+   "Mach Breaker: i13 high, Heat Engager, wall splat.",
+   "Fast long-range Heat Engager.",
+   "To whiff punish and start Heat.",
+   "Against crouchers.",
+   "Duck it.",
+   "-9.",
+   "+15cg, Heat Engager.",
+   "Moderate.",
+   "His best long-range punish starter."
+  ],
+  [
+   "2+4",
+   "throw",
+   "Guillotine: i12 throw, break with 1 or 2, side switch.",
+   "Generic throw.",
+   "Against blockers.",
+   "When they break.",
+   "Break with 1 or 2.",
+   "-6 on break.",
+   "Knockdown.",
+   "Whiffs if ducked.",
+   "Mix with his mids."
+  ]
+ ],
+ "combos": [
+  {
+   "id": "bryan-tornado-bnb",
+   "name": "Tornado BnB: 4,1 1 b+2,1~F SLS.2,4",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+3"
+   ],
+   "situation": "After a tornado launch such as df+3 or a counter-hit qcb+1 (Wavu).",
+   "route": "4,1 1 b+2,1~F SLS.2,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Holding F too late after b+2,1: SLS has to start straight away.",
+    "Pressing 4,1 before the opponent has turned in the air."
+   ]
+  },
+  {
+   "id": "bryan-b4",
+   "name": "b+4 → f,F+2",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "b+4"
+   ],
+   "situation": "After b+4 hits (Wavu mini-combo).",
+   "route": "f,F+2",
+   "tags": [
+    "mini-combo",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up on block."
+   ]
+  }
+ ]
+}

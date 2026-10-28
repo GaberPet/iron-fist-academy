@@ -1,0 +1,380 @@
+{
+ "profile": {
+  "id": "bryan",
+  "name": "Bryan",
+  "short": "Bryan",
+  "color": "hsl(267 70% 62%)",
+  "overview": "Bryan is Tekken's keep-out and counter hit monster. It is scary to press buttons against Bryan due to his plethora of CH-launching attacks and high combo damage. It is scary to not press buttons against Bryan due to his strong pressure tools, lows and the infamous Taunt Jet Upper, an unblockable launcher. Playing Bryan requires demanding execution, a mastery of Tekken fundamentals, and an understanding of how to stoke tension in your opponent. The reward is one of the scariest characters to press a button against in the entire game.",
+  "playstyle": "Keep-out and counter hits. Stand at mid range, make the opponent scared to press with his counter-hit launchers (b+1, f+3, 3+4, ws3, qcb+1), and punish hard. His backdash is poor, so control space with spacing and his long pokes rather than running away.",
+  "strengths": [
+   "The REAL Counter Hitting Paragon: Strong counterhit moves and strings (e.g., 3+4, 1,2,1, b+1, f+3) that reward timing and punish aggression.",
+   "A literal truck: High damage from combos and mixups, tremendous wall carry.",
+   "\"Die!\" Can launch punish -14 moves from standing with Jet Upper.",
+   "True Zoning: Very strong moves to play keepout (e.g., 3+4, qcb+1, d+4)",
+   "Suffocating: Devastating okizeme at the wall with taunt and its follow-ups.",
+   "He's on fire: Snake Eyes moves are incredibly powerful, especially in Heat where they can be used with impunity."
+  ],
+  "weaknesses": [
+   "Slow: Possesses a bad backdash cancel, on top of needing proper inputs due to backsway.",
+   "Surprisingly soft: His standing i10-i13 punishes are middling at best.",
+   "Rigid: His panic moves leave a little bit to be desired.",
+   "Inconsistent: Awkward hitboxes on some key moves, and Jet Upper being a high is sometimes detrimental.",
+   "Technical: Requires difficult execution to optimize, especially when it comes to Taunt followups."
+  ],
+  "stances": [
+   {
+    "code": "SLS",
+    "name": "Slither Step",
+    "entry": "qcf (d,df,f)",
+    "note": "SLS.1+2 is a Heat Engager; SLS.2,4 and SLS.4,1,4 tornado. b+3 can enter it with f."
+   },
+   {
+    "code": "SWA",
+    "name": "Sway",
+    "entry": "qcb (d,db,b)",
+    "note": "SWA.1 (qcb+1) is an i13 high that is +1 on block and launches on counter hit (+72a); it also wall-splats."
+   },
+   {
+    "code": "SNE",
+    "name": "Snake Eyes",
+    "entry": "1+3+4, Heat, or moves like uf+3+4 on hit",
+    "note": "Wavu: Heat gives access to Snake Eyes moves."
+   }
+  ],
+  "heat": [
+   "Gains access to Snake Eyes moves."
+  ],
+  "heatEngagers": [
+   "1,2,4",
+   "db+1+2",
+   "f,F+2",
+   "ss2,1",
+   "SLS.1+2"
+  ],
+  "keyLaunchers": [
+   "f,n,b+2",
+   "ws1",
+   "b+4",
+   "ws3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Bryan",
+    "url": "https://wavu.wiki/t/Bryan",
+    "revision": 62081,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Bryan_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62021,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Bryan_combos",
+    "revision": 59619,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Bryan_punishers",
+    "revision": 58423,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check that recovers quickly.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "2,3",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string.",
+   "purpose": "One of his i10 punishers (Wavu).",
+   "use": "After blocking -10 moves.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block it.",
+   "afterBlock": "Safe as a punish.",
+   "afterHit": "Damage.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Your fast punish; Wavu notes his i10-i13 punishes are middling."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "i13 elbow mid, -6 on block.",
+   "purpose": "His mid check and the start of df+2,1 (i13 punish).",
+   "use": "To check crouchers and punish -13.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His main mid check."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid elbow, -2 on block, spikes.",
+   "purpose": "A safe mid that spikes and can transition to crouch.",
+   "use": "Close range when the opponent ducks.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+8c.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A strong, safe mid."
+  },
+  {
+   "id": "f,n,b+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Jet Uppercut: i14 tornado launcher, -7 on block.",
+   "purpose": "His i14 launch punisher, safe on block.",
+   "use": "Punish -14 and whiff punish.",
+   "avoid": "Against crouchers: it is high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7: safe.",
+   "afterHit": "Launch (+43a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best punisher: practise the input until it is automatic."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 while-standing launcher, -14 on block.",
+   "purpose": "His while-standing launch punish.",
+   "use": "After lows that are -15 or worse.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish big lows."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "counter-hit",
+    "punisher"
+   ],
+   "summary": "i12 while-standing knee, launches on counter hit.",
+   "purpose": "A fast crouch punisher with a CH launch.",
+   "use": "After -12 lows, or when they press.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+4; launch on CH (+33a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fast and rewarding."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Chopping Elbow: i20 mid, +4 on block, launches on counter hit (+78a).",
+   "purpose": "His famous CH launcher that is plus on block.",
+   "use": "At range when you expect the opponent to press or step in.",
+   "avoid": "As a fast interrupt: i20.",
+   "counterplay": "Do not press into it; sidestep or wait.",
+   "afterBlock": "+4: keep the turn.",
+   "afterHit": "+7c; huge launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "The heart of his keep-out game."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "counter-hit",
+    "poke"
+   ],
+   "summary": "Knee Strike: i16 mid, +0 to +2 on block, launches on CH (+50a).",
+   "purpose": "A safe, plus mid with a CH launch.",
+   "use": "To keep the turn and punish presses.",
+   "avoid": "Little risk.",
+   "counterplay": "Block it and do not press after.",
+   "afterBlock": "+0 to +2.",
+   "afterHit": "+4 to +6; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A key pressure tool."
+  },
+  {
+   "id": "3+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Middle Side Kick: i18 mid, launches on counter hit (+59a).",
+   "purpose": "Long-range CH launcher.",
+   "use": "At mid range against people who step in.",
+   "avoid": "-13 on block.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "+8; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Keep-out tool."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "punisher",
+    "wall"
+   ],
+   "summary": "Knee Break: i16 mid, wall splat (Wavu).",
+   "purpose": "An i16 punisher that splats at the wall.",
+   "use": "Punish -16; near the wall.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+15.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu mini-combos: b+4 then f,F+2."
+  },
+  {
+   "id": "d+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "i15 low kick, -11 on block.",
+   "purpose": "Fast, fairly safe low.",
+   "use": "To chip at standing opponents.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low, punish -11.",
+   "afterBlock": "-11.",
+   "afterHit": "+0.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His safe low poke."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "low",
+    "launcher"
+   ],
+   "summary": "Snake Edge: i29 homing low, launches (+70a), -26 on block.",
+   "purpose": "His big low launcher.",
+   "use": "As a read on standing block.",
+   "avoid": "Getting blocked: -26.",
+   "counterplay": "Block low and launch.",
+   "afterBlock": "-26.",
+   "afterHit": "Launch.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Use it sparingly."
+  },
+  {
+   "id": "f,F+2",
+   "roles": [
+    "heat",
+    "wall"
+   ],
+   "summary": "Mach Breaker: i13 high, Heat Engager, wall splat.",
+   "purpose": "Fast long-range Heat Engager.",
+   "use": "To whiff punish and start Heat.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-9.",
+   "afterHit": "+15cg, Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best long-range punish starter."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Guillotine: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "bryan-tornado-bnb",
+   "name": "Tornado BnB: 4,1 1 b+2,1~F SLS.2,4",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+3"
+   ],
+   "situation": "After a tornado launch such as df+3 or a counter-hit qcb+1 (Wavu).",
+   "route": "4,1 1 b+2,1~F SLS.2,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Holding F too late after b+2,1: SLS has to start straight away.",
+    "Pressing 4,1 before the opponent has turned in the air."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Bryan",
+    "url": "https://wavu.wiki/t/Bryan_combos",
+    "revision": 59619,
+    "verified": "source"
+   }
+  },
+  {
+   "id": "bryan-b4",
+   "name": "b+4 → f,F+2",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "b+4"
+   ],
+   "situation": "After b+4 hits (Wavu mini-combo).",
+   "route": "f,F+2",
+   "tags": [
+    "mini-combo",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up on block."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Bryan",
+    "url": "https://wavu.wiki/t/Bryan_combos",
+    "revision": 59619,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,n,b+2",
+  "f,F+2",
+  "ws1"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,318 @@
+{
+ "profile": {
+  "id": "azucena",
+  "name": "Azucena",
+  "short": "Azucena",
+  "color": "hsl(40 70% 62%)",
+  "overview": "Azucena, the Peruvian coffee queen, is a simple, stance-oriented mixup character who thrives off of entering her Libertador (LIB) and Backturn (BT) stances to attack her opponents. Both stances have a diverse set of mixup options, frame traps and pressure tools that allow Azucena to maximize her damage from stance entries in a variety of ways. She can also trick her opponent using the stances' parries and built-in movement options to dance around them.",
+  "playstyle": "Stance mix-ups with simple inputs. Get into Libertador (LIB) or Backturn (BT) and force guesses, use her i10 wall-splat punisher (1,2) to start pressure, and watch for LIB's auto-parry. Her strings mostly end in duckable highs, so do not finish them every time.",
+  "strengths": [
+   "Simple inputs and easy to use stance moves.",
+   "Amazing 10 frame wallsplating punisher to setup stance mixups or keep pressure going.",
+   "Vast amount of wallsplating moves giving easy access to her devastating oki setups at the wall.",
+   "Various CH launchers (e.g., ws1, 1+2)",
+   "Great heat engagers that can be used in multiple ways; punishment, mixups, pressure, counter hits and to shut down sidestepping.",
+   "Good set of panic and evasive moves to escape pressure and stance mixups (e.g., f+1+2, db+3+4)"
+  ],
+  "weaknesses": [
+   "Weak punishment from crouch.",
+   "Strings have very limited follow-ups, with most exclusively only having duckable highs.",
+   "Slow and telling recovery makes her keepout risky and an easy target for whiff punishment."
+  ],
+  "stances": [
+   {
+    "code": "LIB",
+    "name": "Libertador",
+    "entry": "f+3+4 (also 3,2,F and b+2,F)",
+    "note": "Her main stance: LIB.2 is a Heat Engager, LIB.1+2 tornadoes, LIB.4,1,2 is her combo ender. Libertador auto-parries some attacks while you move in, more in Heat (Wavu)."
+   },
+   {
+    "code": "BT",
+    "name": "Backturn",
+    "entry": "b+3+4",
+    "note": "Backturned mix-ups: BT.1,2 is another i10 splat punisher and BT.1+2 launches on counter hit (Wavu)."
+   }
+  ],
+  "heat": [
+   "Libertador Revolución can be used. (f+3+4), (3,2,F)",
+   "Nuevo Libertador can be used. (b+2,F), (b+1,1,2,F), (LIB.1,2,F)",
+   "During libertador in heat: Powered up auto-parries, new move (LIB.d+3+4), parries and walking forwards or sideways regains heat"
+  ],
+  "heatEngagers": [
+   "3,3",
+   "f+4,4",
+   "b+3",
+   "LIB.2",
+   "d+1+3/d+2+4"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "ws2",
+   "f,F+3",
+   "1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Azucena",
+    "url": "https://wavu.wiki/t/Azucena",
+    "revision": 62079,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Azucena_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62002,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Azucena_combos",
+    "revision": 61095,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Azucena_punishers",
+    "revision": 47087,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher",
+    "wall"
+   ],
+   "summary": "i10 punisher that wall-splats (Wavu: i10 splat).",
+   "purpose": "Her best fast punish: damage plus wall splat.",
+   "use": "After blocking -10 moves, especially near the wall.",
+   "avoid": "Nothing major as a punisher.",
+   "counterplay": "Duck the second hit if it is high when you are not being punished.",
+   "afterBlock": "Safe as a string.",
+   "afterHit": "Combo at the wall.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Learn this first: Wavu calls it an amazing 10-frame punisher."
+  },
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10 high, +1 on block.",
+   "purpose": "Fast interrupt that recovers 2 frames faster.",
+   "use": "To check and keep the turn up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Mid check: i13, -3 on block.",
+   "purpose": "Her safe mid poke.",
+   "use": "To stop ducking and low pokes.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it so the opponent cannot duck her highs."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Mount Rainier: i15 launcher, launches crouching too. -13 on block.",
+   "purpose": "Her i15 launch punisher.",
+   "use": "Punish -15 moves; whiff punish.",
+   "avoid": "Raw in neutral: -13.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13: punishable.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Your main launch punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 while-standing launcher, -13 on block.",
+   "purpose": "Fast while-standing launch punish.",
+   "use": "After blocking lows that are -15 or worse.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish every big low you block."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing mid, -6 on block.",
+   "purpose": "Fast while-standing check.",
+   "use": "After -11 lows; to poke from crouch.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Wavu notes her crouch punishes are weak: use what is fast."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "counter-hit",
+    "power-crush"
+   ],
+   "summary": "Boomerang Scythe: i15 high, launches on counter hit (+56a), crushes some lows.",
+   "purpose": "A fast counter-hit launcher.",
+   "use": "When you expect the opponent to press.",
+   "avoid": "Against crouchers: high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-8.",
+   "afterHit": "+13g; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Big reward against mashing."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Rodilla Shot: i17 knee, launches on counter hit (+59a), -5 on block.",
+   "purpose": "A safe mid counter-hit launcher.",
+   "use": "At mid range when they press.",
+   "avoid": "Expecting damage on normal hit: only +5.",
+   "counterplay": "Block it.",
+   "afterBlock": "-5.",
+   "afterHit": "Launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Her safest CH launcher."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Hand Drip Hammer: i20 mid, +4 on block.",
+   "purpose": "A plus-on-block mid that spikes on counter hit.",
+   "use": "To keep the turn and set up stance mix-ups.",
+   "avoid": "As a fast interrupt: it is i20.",
+   "counterplay": "Interrupt it or step it.",
+   "afterBlock": "+4: keep attacking.",
+   "afterHit": "+7c; launches on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Her pressure starter."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Bitter Low Kick: i19 low, -14 on block, +12g on counter hit.",
+   "purpose": "Her main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low and punish.",
+   "afterBlock": "-14.",
+   "afterHit": "-3; +12g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Keeps standing block honest."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Tacón Plunger: i19 mid Heat Engager, +2c on block.",
+   "purpose": "A plus-on-block Heat Engager.",
+   "use": "To start Heat safely.",
+   "avoid": "As a fast interrupt.",
+   "counterplay": "Block it, then expect pressure.",
+   "afterBlock": "+2c.",
+   "afterHit": "Heat Engager (+67a with Heat Dash).",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Her best safe Heat start."
+  },
+  {
+   "id": "LIB.2",
+   "roles": [
+    "heat",
+    "mixup"
+   ],
+   "summary": "Golpe Cappuccino: i14 mid from LIB, Heat Engager, -8 on block.",
+   "purpose": "Her fast LIB mid and Heat Engager.",
+   "use": "From Libertador when the opponent presses.",
+   "avoid": "When blocked you are -8.",
+   "counterplay": "Block it.",
+   "afterBlock": "-8.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "The mid side of her LIB mix-up."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "El Dorado Neck Snap: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "A throw with a side switch.",
+   "use": "Up close against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with her mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "azucena-bnb",
+   "name": "Launch BnB: d+2,3 LIB.4,1,2 T! f+2,1,4",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2 (Wavu: 61 damage).",
+   "route": "d+2,3 LIB.4,1,2 T! f+2,1,4",
+   "damage": "[61]",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing LIB.4 before the stance has started after d+2,3.",
+    "Rushing f+2,1,4 after the tornado: let them fall a little."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Azucena",
+    "url": "https://wavu.wiki/t/Azucena_combos",
+    "revision": 61095,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+3",
+  "f+1+2"
+ ],
+ "lessons": []
+}

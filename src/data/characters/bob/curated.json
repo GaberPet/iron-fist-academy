@@ -1,0 +1,351 @@
+{
+ "profile": {
+  "id": "bob",
+  "name": "Bob",
+  "short": "Bob",
+  "color": "hsl(220 70% 62%)",
+  "overview": "Bob is a fast and explosive Mishima-style character. His toolkit appeals to a lot of different playstyles; a crouchdash giving him good mobility and mixup options, strong counter hit tools, a plethora of string extensions, and some powerful moves in heat.",
+  "playstyle": "A heavyweight Mishima-style fighter. Crouch dash (f,n,d,df) into the Electric-style Langue Washer, hellsweep and mids; use his Balance (BAL) stance and big counter-hit tools. Fast and explosive, but his big hurtbox and execution demands mean you must stay sharp on the inputs.",
+  "strengths": [
+   "The Biggest Mishima: Sports all the tools of a Mishima despite not actually being one: 1,1,2, crouchdash, hellsweep, electric wind bob fist, demon paw heat engager",
+   "Jabber: Very strong pokes with good range, including some of the best lows in the game",
+   "Burn My Fat!: Has some extremely powerful heat moves, including a counter hit launching low hatchet kick, a 12 frame punish that floor breaks, and a just frame heat smash that deals 60 damage",
+   "Roar My Fists!: Excellent block and whiff punishment up until i15",
+   "Can finally be shirtless"
+  ],
+  "weaknesses": [
+   "Big Boy: His perfect physique comes at the cost of a bigger-than-average hurtbox",
+   "Tough To Digest: As with any Mishima, he requires quite a bit of skill to use effectively",
+   "Slow Cooker: His fastest standing launcher (not counting perfect CD1) starts at i17",
+   "Combo Breaker: His combos are pretty inconsistent overall, and his optimal routes require precise micro-dashes, crouch cancels and blue spark inputs"
+  ],
+  "stances": [
+   {
+    "code": "CD",
+    "name": "Crouch Dash",
+    "entry": "f,n,d,df",
+    "note": "His Mishima-style dash: CD.1 (f,n,d,df+1) is an i13 high that instantly tornadoes on hit, CD.4-style hellsweep (f,n,d,DF+4) is a stagger low."
+   },
+   {
+    "code": "BAL",
+    "name": "Balance",
+    "entry": "1+2,F or u+1+2 (on hit or block)",
+    "note": "BAL.1,2 is a Heat Engager and +1 on block; BAL.3 is +4 on block. Several moves transition here with F."
+   }
+  ],
+  "heat": [
+   "Can use à la Carte moves (f+2,H.1+2,1, H.df+3+4, uf+1,2,H.2, BAL.1,H.4)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "db+1+2",
+   "f,n,d,df+1",
+   "ws2,1",
+   "uf+3"
+  ],
+  "stanceAliases": {
+   "CD.": "f,n,d,df+"
+  },
+  "sources": [
+   {
+    "name": "Wavu Wiki: Bob",
+    "url": "https://wavu.wiki/t/Bob",
+    "revision": 62080,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Bob_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62023,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Bob_combos",
+    "revision": 61877,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Bob_punishers",
+    "revision": 61867,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,1,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i10 jab string, -12 on block if all three finish.",
+   "purpose": "His i10 punisher, Mishima style.",
+   "use": "After blocking -10 moves.",
+   "avoid": "Finishing it on block: -12.",
+   "counterplay": "Block, then punish the last hit.",
+   "afterBlock": "1,1 alone is safer; the full string is -12.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His basic fast punish."
+  },
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Interrupt and keep the turn.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range pressure."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid, -2 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To make the opponent respect mids.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His main mid poke."
+  },
+  {
+   "id": "db+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Bite Uppercut: i14 mid, -8 on block, slight jab evasion.",
+   "purpose": "A mid that can duck under jabs.",
+   "use": "When the opponent likes to jab you.",
+   "avoid": "Expecting it to keep the turn.",
+   "counterplay": "Block it.",
+   "afterBlock": "-8.",
+   "afterHit": "+6.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His tool against button presses up close."
+  },
+  {
+   "id": "f,n,d,df+1",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Langue Washer (CD.1): i13 high, -4 on block, instant tornado on hit.",
+   "purpose": "His electric-style launcher: fast, safe and huge.",
+   "use": "In neutral and as a whiff punish from crouch dash.",
+   "avoid": "Against crouchers: it is high.",
+   "counterplay": "Duck it and punish.",
+   "afterBlock": "-4: safe.",
+   "afterHit": "Instant tornado: go into his tornado BnB.",
+   "afterEvade": "Fast recovery for its reward.",
+   "gamePlan": "The move to practise: it is his best tool."
+  },
+  {
+   "id": "db+1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Abats Snipe: i17 mid launcher, strong jab evasion, -13 on block.",
+   "purpose": "His evasive launcher and i17 punisher.",
+   "use": "Punish -17 moves; duck under jabs and launch.",
+   "avoid": "Raw: -13 on block.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Launch the opponent's jabs."
+  },
+  {
+   "id": "ws2,1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Spinach Upper: while-standing tornado string.",
+   "purpose": "His while-standing launch punish (Wavu: c-14).",
+   "use": "After blocking lows that are -14 or worse.",
+   "avoid": "On block the second hit is -20.",
+   "counterplay": "Block.",
+   "afterBlock": "-20 if blocked fully.",
+   "afterHit": "Tornado: combo.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows hard."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -6 on block.",
+   "purpose": "Fast while-standing punisher.",
+   "use": "After -11 lows.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Shrimp Turnover: i19 mid, instant tornado on counter hit (+73a).",
+   "purpose": "A mid counter-hit launcher.",
+   "use": "When you expect a button.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block it.",
+   "afterBlock": "-9.",
+   "afterHit": "+19a, tornado on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Rewards reads on mashers."
+  },
+  {
+   "id": "3,2",
+   "roles": [
+    "counter-hit",
+    "heat"
+   ],
+   "summary": "Gaufrettes Punch: high string, +1 on block, launches on counter hit.",
+   "purpose": "A plus-on-block high string with a CH launch.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+19cg; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A strong pressure tool."
+  },
+  {
+   "id": "f,n,d,DF+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Hellsweep: i18 stagger low, -28 on block.",
+   "purpose": "His big Mishima low.",
+   "use": "Out of crouch dash once the opponent respects CD.1.",
+   "avoid": "Getting blocked: -28.",
+   "counterplay": "Block low and launch.",
+   "afterBlock": "-28: launch punishable.",
+   "afterHit": "-1 stagger, leading to more mix-ups.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "The low half of his crouch-dash mix-up."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Liaison Spike: i20 low, -12 on block, +14g on counter hit.",
+   "purpose": "His safer low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low, punish with i12.",
+   "afterBlock": "-12.",
+   "afterHit": "+2; +14g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Keeps standing block honest."
+  },
+  {
+   "id": "df+4,4",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Spicy Ring: Heat Engager string, -13 on block.",
+   "purpose": "One of his Heat Engagers and an i13 punisher.",
+   "use": "Punish -13 and start Heat.",
+   "avoid": "Raw on block: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Use as a punish to start Heat."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Cooler Shaker: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "bob-tornado-bnb",
+   "name": "CD.1 tornado BnB",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "CD.1"
+   ],
+   "situation": "After a tornado launch such as CD.1 (f,n,d,df+1).",
+   "route": "T! f,F+3~DF CD.1 df+1 b+4,3~F BAL.1,2",
+   "tags": [
+    "bnb",
+    "advanced"
+   ],
+   "mistakes": [
+    "Doing the crouch dash too slowly: f,n,d,df is one smooth motion.",
+    "Pressing BAL.1,2 before the F input has put him in Balance."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Bob",
+    "url": "https://wavu.wiki/t/Bob_combos",
+    "revision": 61877,
+    "verified": "source"
+   }
+  },
+  {
+   "id": "bob-ffw3",
+   "name": "f,F+3 → b+3",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "f,F+3"
+   ],
+   "situation": "After f,F+3 hits (Wavu mini-combo).",
+   "route": "b+3",
+   "tags": [
+    "mini-combo",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up when f,F+3 was blocked."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Bob",
+    "url": "https://wavu.wiki/t/Bob_combos",
+    "revision": 61877,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,n,d,df+1",
+  "db+1+2",
+  "f,F+3"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,31 @@
+{
+ "short": "Bob",
+ "playstyle": "A heavyweight Mishima-style fighter. Crouch dash (f,n,d,df) into the Electric-style Langue Washer, hellsweep and mids; use his Balance (BAL) stance and big counter-hit tools. Fast and explosive, but his big hurtbox and execution demands mean you must stay sharp on the inputs.",
+ "stances": [
+  {"code": "CD", "name": "Crouch Dash", "entry": "f,n,d,df", "note": "His Mishima-style dash: CD.1 (f,n,d,df+1) is an i13 high that instantly tornadoes on hit, CD.4-style hellsweep (f,n,d,DF+4) is a stagger low."},
+  {"code": "BAL", "name": "Balance", "entry": "1+2,F or u+1+2 (on hit or block)", "note": "BAL.1,2 is a Heat Engager and +1 on block; BAL.3 is +4 on block. Several moves transition here with F."}
+ ],
+ "stanceAliases": {"CD.": "f,n,d,df+"},
+ "keyLaunchers": ["db+1+2", "f,n,d,df+1", "ws2,1", "uf+3"],
+ "whiffPunishers": ["f,n,d,df+1", "db+1+2", "f,F+3"],
+ "keyMoves": [
+  ["1,1,2", "punisher,poke", "i10 jab string, -12 on block if all three finish.", "His i10 punisher, Mishima style.", "After blocking -10 moves.", "Finishing it on block: -12.", "Block, then punish the last hit.", "1,1 alone is safer; the full string is -12.", "+3.", "Low risk.", "His basic fast punish."],
+  ["1", "poke", "Jab: i10, +1 on block.", "Interrupt and keep the turn.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range pressure."],
+  ["df+1", "poke", "i14 mid, -2 on block.", "His safe mid check.", "To make the opponent respect mids.", "Little risk.", "Block.", "-2.", "+5.", "Low risk.", "His main mid poke."],
+  ["db+2", "poke", "Bite Uppercut: i14 mid, -8 on block, slight jab evasion.", "A mid that can duck under jabs.", "When the opponent likes to jab you.", "Expecting it to keep the turn.", "Block it.", "-8.", "+6.", "Moderate.", "His tool against button presses up close."],
+  ["f,n,d,df+1", "launcher", "Langue Washer (CD.1): i13 high, -4 on block, instant tornado on hit.", "His electric-style launcher: fast, safe and huge.", "In neutral and as a whiff punish from crouch dash.", "Against crouchers: it is high.", "Duck it and punish.", "-4: safe.", "Instant tornado: go into his tornado BnB.", "Fast recovery for its reward.", "The move to practise: it is his best tool."],
+  ["db+1+2", "launcher,punisher", "Abats Snipe: i17 mid launcher, strong jab evasion, -13 on block.", "His evasive launcher and i17 punisher.", "Punish -17 moves; duck under jabs and launch.", "Raw: -13 on block.", "Block and punish.", "-13.", "Launch (+33a).", "Moderate.", "Launch the opponent's jabs."],
+  ["ws2,1", "launcher,punisher", "Spinach Upper: while-standing tornado string.", "His while-standing launch punish (Wavu: c-14).", "After blocking lows that are -14 or worse.", "On block the second hit is -20.", "Block.", "-20 if blocked fully.", "Tornado: combo.", "Risky.", "Punish lows hard."],
+  ["ws4", "punisher", "i11 while-standing kick, -6 on block.", "Fast while-standing punisher.", "After -11 lows.", "Nothing major.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["df+3", "counter-hit", "Shrimp Turnover: i19 mid, instant tornado on counter hit (+73a).", "A mid counter-hit launcher.", "When you expect a button.", "-9 on block.", "Block it.", "-9.", "+19a, tornado on CH.", "Moderate.", "Rewards reads on mashers."],
+  ["3,2", "counter-hit,heat", "Gaufrettes Punch: high string, +1 on block, launches on counter hit.", "A plus-on-block high string with a CH launch.", "To keep the turn.", "Against crouchers.", "Duck it.", "+1.", "+19cg; launch on CH.", "Low risk.", "A strong pressure tool."],
+  ["f,n,d,DF+4", "low", "Hellsweep: i18 stagger low, -28 on block.", "His big Mishima low.", "Out of crouch dash once the opponent respects CD.1.", "Getting blocked: -28.", "Block low and launch.", "-28: launch punishable.", "-1 stagger, leading to more mix-ups.", "Very risky.", "The low half of his crouch-dash mix-up."],
+  ["db+3", "low", "Liaison Spike: i20 low, -12 on block, +14g on counter hit.", "His safer low.", "Against standing block.", "When they block low.", "Block low, punish with i12.", "-12.", "+2; +14g on CH.", "Moderate.", "Keeps standing block honest."],
+  ["df+4,4", "heat", "Spicy Ring: Heat Engager string, -13 on block.", "One of his Heat Engagers and an i13 punisher.", "Punish -13 and start Heat.", "Raw on block: -13.", "Block.", "-13.", "Heat Engager.", "Moderate.", "Use as a punish to start Heat."],
+  ["2+4", "throw", "Cooler Shaker: i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with his mids."]
+ ],
+ "combos": [
+  {"id": "bob-tornado-bnb", "name": "CD.1 tornado BnB", "difficulty": 4, "section": "Bread n' butter", "starters": ["CD.1"], "situation": "After a tornado launch such as CD.1 (f,n,d,df+1).", "route": "T! f,F+3~DF CD.1 df+1 b+4,3~F BAL.1,2", "tags": ["bnb", "advanced"], "mistakes": ["Doing the crouch dash too slowly: f,n,d,df is one smooth motion.", "Pressing BAL.1,2 before the F input has put him in Balance."]},
+  {"id": "bob-ffw3", "name": "f,F+3 → b+3", "difficulty": 1, "section": "Mini-combos", "starters": ["f,F+3"], "situation": "After f,F+3 hits (Wavu mini-combo).", "route": "b+3", "tags": ["mini-combo", "beginner"], "mistakes": ["Following up when f,F+3 was blocked."]}
+ ]
+}

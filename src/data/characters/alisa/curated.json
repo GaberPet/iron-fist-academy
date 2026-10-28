@@ -1,0 +1,390 @@
+{
+ "profile": {
+  "id": "alisa",
+  "name": "Alisa",
+  "short": "Alisa",
+  "color": "hsl(283 70% 62%)",
+  "overview": "Alisa is a fast and evasive poking character who excels at darting around her opponent while peppering them quick moves. Her strong movement allows her to gracefully step around her opponent's attacks, making it difficult to pin her down. On the offense, her frustrating array of pokes can whittle down an opponent or provoke them into doing something stupid. She can also mixup her opponent with dual chainsaws, that in Heat, will quickly rip apart an opponent's grey life. She's great for players looking to play a fast, hit-and-run playstyle that emphasizes movement.",
+  "playstyle": "Hit-and-run. Poke with fast, hard-to-punish mids and highs, step and backdash out of the opponent's answers, and punish whiffs from far away. When you need damage, go into Destructive Form (DES) for chainsaw pressure, which gets nastier in Heat.",
+  "strengths": [
+   "Pokes are quick, have good range, and are safe or difficult to punish",
+   "excellent long-range punishment",
+   "Excellent basic movement with sidesteps, sidewalks, and backdashes all being among the best",
+   "Suffocating offense in Destructive Form",
+   "Features a highly accessible baseline execution"
+  ],
+  "weaknesses": [
+   "Pokes have low damage; she struggles on a life deficit",
+   "Most of her primary poking tools and flying stance transitions are heavily linear, you can consistently shut down her approach by sidestepping or side-walking to her right (SSR)",
+   "Many of her primary strings and pressure tools rely on a high-hitting second extension that can be easily ducked and launch-punished",
+   "Bigger comeback tools like DES.d+2 are slow",
+   "Can't Wave-Dash"
+  ],
+  "stances": [
+   {
+    "code": "DES",
+    "name": "Destructive Form",
+    "entry": "d+1+2",
+    "note": "Chainsaws out. Many moves enter it with 1+2 (4, f+2, f+4, f,f,F+2, d+3+4). DES.f+1 is +3 on block and DES.1+2 is +4; DES.d+2 is her low."
+   },
+   {
+    "code": "SBT",
+    "name": "Boot",
+    "entry": "f+3+4",
+    "note": "Flying stance. f+1+2, uf+1, b+4,4 and ws2 can transition into it with 3 or 4. Linear: sidestep it to her right."
+   },
+   {
+    "code": "DBT",
+    "name": "Dual Boot",
+    "entry": "DES.f+3",
+    "note": "Two-boot flight. DBT.1 is +9 on block. The same moves enter it with f+3 or f+4 instead of 3 or 4."
+   },
+   {
+    "code": "BKP",
+    "name": "Backup",
+    "entry": "db+1",
+    "note": "Backsway. BKP.2 and BKP.4 tornado on hit; you can also do while-standing moves out of it."
+   }
+  ],
+  "heat": [
+   "Increased chip damage when chainsaw attacks are blocked",
+   "New Dual Boot shift moves can be used (H.f+1+4, f+2,1,H.3_4)",
+   "New power-up Destructive Form shift moves can be used (H.d+1+2, f,F+2,H.1+2)"
+  ],
+  "heatEngagers": [
+   "1+2",
+   "3,2",
+   "f+2,1",
+   "uf+2",
+   "DES.f+2,1,2"
+  ],
+  "keyLaunchers": [
+   "uf+4,4",
+   "df+2",
+   "ws2",
+   "b+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Alisa",
+    "url": "https://wavu.wiki/t/Alisa",
+    "revision": 62074,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Alisa_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62775,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Alisa_combos",
+    "revision": 60854,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Alisa_punishers",
+    "revision": 59229,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "Jab: i10 high, +1 on block.",
+   "purpose": "Her fastest button: interrupt, check and start i10 punishes (1,1 and 1,2,2 on Wavu's punisher table).",
+   "use": "Point blank when you are minus or neutral; it recovers 2 frames faster than usual.",
+   "avoid": "Against crouchers: it is a high.",
+   "counterplay": "Duck it and punish with a while-standing move.",
+   "afterBlock": "+1: keep the turn with another fast poke.",
+   "afterHit": "+8: free to continue pressure.",
+   "afterEvade": "Short recovery; low risk.",
+   "gamePlan": "The glue of her close-range game."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid check, -6 on block.",
+   "purpose": "Her main mid poke: hits crouching opponents and is safe.",
+   "use": "When the opponent likes to duck your highs or crouch after blocking.",
+   "avoid": "Expecting it to keep your turn: -6 on block hands the turn over.",
+   "counterplay": "Block it; it is safe, so just take your turn back.",
+   "afterBlock": "-6: defend or backdash.",
+   "afterHit": "+5, and +5c against crouching opponents.",
+   "afterEvade": "Small whiff, small risk.",
+   "gamePlan": "Mix it with jab and df+4 so the opponent can never duck for free."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "i12 mid kick, -7 on block.",
+   "purpose": "A fast mid that doubles as an i12 standing punisher.",
+   "use": "Up close to stop low-crushing and ducking habits; punish -12 moves.",
+   "avoid": "At range: it is short.",
+   "counterplay": "Block; it is safe.",
+   "afterBlock": "-7: you lose the turn.",
+   "afterHit": "+4, and +4c against crouchers.",
+   "afterEvade": "Small risk.",
+   "gamePlan": "Your second mid check next to df+1."
+  },
+  {
+   "id": "4",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "i13 homing high, launches on counter hit (+38a).",
+   "purpose": "A fast, homing high that turns an opponent's button press into a full combo.",
+   "use": "When you expect the opponent to press after being minus or to sidestep.",
+   "avoid": "Against crouching or ducking players: it is a high.",
+   "counterplay": "Duck it and launch.",
+   "afterBlock": "-5: fine, but stop pressing.",
+   "afterHit": "+14g normal, launch on CH: Wavu lists f,f d+1+2 and d+3 follow-ups.",
+   "afterEvade": "Homing, so it rarely whiffs to a sidestep.",
+   "gamePlan": "Her best tool against people who keep pressing."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit",
+    "launcher"
+   ],
+   "summary": "i15 knee, launches on counter hit (+54a). -13 on block.",
+   "purpose": "Her counter-hit launcher at mid range.",
+   "use": "As a read when the opponent presses or steps forward.",
+   "avoid": "On block you are punished: -13.",
+   "counterplay": "Block it and punish with your i13 or faster punisher.",
+   "afterBlock": "-13: punishable.",
+   "afterHit": "Normal hit is only -4; CH launches.",
+   "afterEvade": "A whiff is dangerous.",
+   "gamePlan": "Use it sparingly on players who mash."
+  },
+  {
+   "id": "uf+4,4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launch punisher (Wavu: i15 launch).",
+   "purpose": "Her standard launch punisher for -15 and worse.",
+   "use": "After blocking moves that are -15 or worse.",
+   "avoid": "Raw in neutral: -13 on block.",
+   "counterplay": "Block and punish the second hit.",
+   "afterBlock": "-13: punishable.",
+   "afterHit": "Launch: go into her bread-and-butter (u+1 T! f,F u+1).",
+   "afterEvade": "Airborne startup, but a whiff is still risky.",
+   "gamePlan": "Learn this punish first; it is your biggest guaranteed damage."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i16 uppercut, launches standing opponents.",
+   "purpose": "A whiff punisher and i16 launch punish.",
+   "use": "Whiff punish at close range and punish -16 moves.",
+   "avoid": "Raw in neutral (-9 on block) and against crouchers: it does not launch them except on CH.",
+   "counterplay": "Block, and duck it if they throw it a lot.",
+   "afterBlock": "-9: you lose the turn but are safe from most launches.",
+   "afterHit": "Launch on standing hit.",
+   "afterEvade": "Big recovery on whiff.",
+   "gamePlan": "Your second launcher for punishing whiffed buttons."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -5 on block.",
+   "purpose": "Fastest while-standing punisher.",
+   "use": "After blocking a low that is -11 to -14.",
+   "avoid": "Nothing major; it is safe.",
+   "counterplay": "Block it.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Your answer to blocked lows that do not launch."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i17 while-standing tornado, splats at the wall (Wavu: i17 ws splat).",
+   "purpose": "Her while-standing launch punish.",
+   "use": "After blocking lows that are -17 or worse.",
+   "avoid": "Throwing it out raw: -13 on block.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13: punishable.",
+   "afterHit": "Launch (+33a): combo, or transition to SBT/DBT.",
+   "afterEvade": "Risky.",
+   "gamePlan": "The reward for blocking her opponents' big lows."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "i16 low, -13 on block, crushes highs.",
+   "purpose": "Her fast low poke.",
+   "use": "When the opponent stands and blocks your mids.",
+   "avoid": "When they are ready to block low: -13 on block.",
+   "counterplay": "Block low and punish.",
+   "afterBlock": "-13: punishable.",
+   "afterHit": "-2: no combo, but chip damage adds up.",
+   "afterEvade": "Small whiff.",
+   "gamePlan": "The low half of her poke game."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "i20 low, +12g on counter hit. -14 on block.",
+   "purpose": "A low with a guaranteed follow-up on hit (Wavu mini-combo: db+4 cc d+3).",
+   "use": "From mid range when the opponent blocks standing.",
+   "avoid": "Getting blocked: -14.",
+   "counterplay": "Block low, punish with a while-standing move.",
+   "afterBlock": "-14: punishable.",
+   "afterHit": "+2c normal: Wavu lists cc d+3; on CH +12g.",
+   "afterEvade": "Moderate risk.",
+   "gamePlan": "Mix with uf+4,4 and df+1 so standing block is never safe."
+  },
+  {
+   "id": "d+3+4",
+   "roles": [
+    "low",
+    "launcher"
+   ],
+   "summary": "Harpoon Sweep: i27 low that tornadoes (instant tornado, +67a on hit).",
+   "purpose": "Her big-damage low.",
+   "use": "As a hard read on someone who always blocks standing.",
+   "avoid": "On block it is -37: you will be launched.",
+   "counterplay": "Block low and launch her.",
+   "afterBlock": "-37: launch punishable.",
+   "afterHit": "Tornado: Wavu BnB 'T! u+1'.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Use it once they respect your mids."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Uninstall: i19 mid, Heat Engager, -4 on block.",
+   "purpose": "Starts Heat and launches into a combo on hit (+67a with Heat Dash).",
+   "use": "As a safe mid to start Heat.",
+   "avoid": "Nothing serious: -4 is safe.",
+   "counterplay": "Block it.",
+   "afterBlock": "-4.",
+   "afterHit": "Heat Engager: combo with Heat Dash.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Her safest way into Heat."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Linear Punch: i13 high from a run, +5 to +7 on block.",
+   "purpose": "A plus-on-block approach that also enters DES with 1+2.",
+   "use": "From range to close the gap and keep the turn.",
+   "avoid": "Against crouching or sidestepping opponents: high and linear.",
+   "counterplay": "Duck it or sidestep to her right.",
+   "afterBlock": "Plus: keep attacking.",
+   "afterHit": "+28a: big hit.",
+   "afterEvade": "Linear: sidestep beats it.",
+   "gamePlan": "Her best way to start pressure from range."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Back Door: i12 throw, break with 1 or 2.",
+   "purpose": "A throw that can transition to DES.",
+   "use": "Against opponents who block a lot up close.",
+   "avoid": "When they are ready to break or duck.",
+   "counterplay": "Break with 1 or 2, or duck.",
+   "afterBlock": "-5 on break.",
+   "afterHit": "Knockdown with a side switch.",
+   "afterEvade": "Whiffs if they duck.",
+   "gamePlan": "Mix throws with her mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "alisa-bnb",
+   "name": "Launch BnB: u+1 T! f,F u+1",
+   "difficulty": 2,
+   "section": "Bread n' butter",
+   "starters": [
+    "uf+4,4"
+   ],
+   "situation": "After any regular launch (Wavu lists df+2 or uf+4,4).",
+   "route": "u+1 T! f,F u+1",
+   "tags": [
+    "bnb",
+    "beginner"
+   ],
+   "mistakes": [
+    "Pressing u+1 too early after the launcher: wait until they are high in the air.",
+    "Missing the dash: tap f,F quickly before the last u+1."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Alisa",
+    "url": "https://wavu.wiki/t/Alisa_combos",
+    "revision": 60854,
+    "verified": "source"
+   }
+  },
+  {
+   "id": "alisa-ch4",
+   "name": "CH 4 → d+3",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "CH 4"
+   ],
+   "situation": "Your 4 lands as a counter hit (+38a per frame data).",
+   "route": "d+3",
+   "tags": [
+    "mini-combo",
+    "counter-hit",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up when 4 only hit normally: only on the counter-hit animation."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Alisa",
+    "url": "https://wavu.wiki/t/Alisa_combos",
+    "revision": 60854,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,f,F+2",
+  "uf+4,4",
+  "df+2",
+  "f+1+2"
+ ],
+ "lessons": []
+}

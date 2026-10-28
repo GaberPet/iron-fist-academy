@@ -1,0 +1,312 @@
+{
+ "profile": {
+  "id": "claudio",
+  "name": "Claudio",
+  "short": "Claudio",
+  "color": "hsl(148 70% 62%)",
+  "overview": "Claudio, the flamboyant Italian exorcist, is a simple, straightforward and no-nonsense character who relies on controlling space in order to lock his opponents down, allowing him to setup mixups or pressure. He possesses a limited but effective set of tools to implement this gameplan, allowing the player to quickly achieve character fluency with him and focus on developing their fundamentals and match-up knowledge. In Heat, his mixups become deadlier, with a low Heat Smash and a safe mid launcher.",
+  "playstyle": "Simple and solid space control. Use homing, safe mids (b+1, b+3, f+3) to lock the opponent down, whiff punish them for moving, and cash in Starburst (STB) for bigger damage and wall splats. His lows are risky or slow, so most of your damage comes from punishing and keep-out.",
+  "strengths": [
+   "Coverage: b+1 does triple duty as keepout, homing move, and wall splat all in one while being safe",
+   "Reliable Punishment: Whiff punishment is incredibly strong thanks to his Heat Engagers and launching options",
+   "Locked On: Easy approach with WR2 and f,F+4, the former of which can chip opponents unwilling to duck it",
+   "Emergency Buttons: Has access to some of the strongest panic tools in the game under pressure, with db+1+2 and his famous hopkick",
+   "Like the Candy: Once attained, Starburst enhances many of his attacks, either making those select moves wall splat or launch, and increases his combo damage via 2,1,2 aerial tailspin",
+   "Blue-hot: During Heat, Starburst is always active and he gains a one-time use power low in Heat Smash"
+  ],
+  "weaknesses": [
+   "Ankle Biter: Lows are either risky (db+4,3, db+3) or slow (SS4), and Heat Smash can still be launched by a few characters",
+   "Weak Throw Game: None of his throws break any hazards",
+   "Overreliant On Blue Stuff: Below-average combo damage without Starburst or walls",
+   "Subpar jabs: Pays for his excellent range with a poor i10 punish and lack of jab extensions"
+  ],
+  "stances": [
+   {
+    "code": "STB",
+    "name": "Starburst",
+    "entry": "Gained on counter-hit df+2, ws2 on hit, and others; always available in Heat",
+    "note": "A power-up, not a stance you hold: STB versions of moves (4,STB.2, d+1,STB.2, ws1,STB.2) become plus or splat. Wavu: in Heat he can always use Starburst moves."
+   }
+  ],
+  "heat": [
+   "Can always use Starburst (STB) moves"
+  ],
+  "heatEngagers": [
+   "3,2",
+   "2,1,2",
+   "b+4,2",
+   "uf+2",
+   "wr2"
+  ],
+  "keyLaunchers": [
+   "uf+4",
+   "df+1,2",
+   "ws2",
+   "df+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Claudio",
+    "url": "https://wavu.wiki/t/Claudio",
+    "revision": 62082,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Claudio_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63089,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Claudio_combos",
+    "revision": 60974,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Claudio_punishers",
+    "revision": 61366,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i10 jab string (Wavu punisher).",
+   "purpose": "His i10 punish.",
+   "use": "After blocking -10 moves.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "Safe.",
+   "afterHit": "Damage.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic fast punish."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Burning Core: i13 knee, -4 on block, homing to sidesteps.",
+   "purpose": "His best mid check.",
+   "use": "To stop ducking and sidestepping.",
+   "avoid": "Little risk.",
+   "counterplay": "Block it.",
+   "afterBlock": "-4.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it a lot: fast, safe and tracking."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "poke",
+    "wall"
+   ],
+   "summary": "Vanishing Storm: i18 homing mid, -8 on block.",
+   "purpose": "Keep-out, homing and wall splat in one (Wavu).",
+   "use": "At mid range against people who step or walk in.",
+   "avoid": "Expecting to keep the turn: -8.",
+   "counterplay": "Block it; it is safe.",
+   "afterBlock": "-8.",
+   "afterHit": "+9a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "The backbone of his space control."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Sacred Edge: i18 homing high, +1 on block.",
+   "purpose": "A plus-on-block homing high.",
+   "use": "To keep the turn and catch sidesteps.",
+   "avoid": "Against crouchers: high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+15g; Wavu lists CH f+3 follow-ups.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A key pressure tool."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid kick, -8 on block.",
+   "purpose": "Another fast mid (Wavu lists it as a standing mid check).",
+   "use": "When the opponent ducks.",
+   "avoid": "Expecting to keep the turn: -8.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Mix with b+3."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Sky Slash Nova: i15 launcher, -13 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "Punish -15; whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a): go into his BnB.",
+   "afterEvade": "Risky on whiff.",
+   "gamePlan": "Your main launch punish."
+  },
+  {
+   "id": "df+1,2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launch punisher (Wavu).",
+   "purpose": "An alternative i15 launcher.",
+   "use": "After -15 moves; the second hit only comes out as a punish or combo.",
+   "avoid": "Raw on block: -15, launch punishable.",
+   "counterplay": "Block.",
+   "afterBlock": "-15.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Use when uf+4 is awkward."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Sylvia: i15 while-standing launcher, gives STB on hit.",
+   "purpose": "His while-standing launch punish.",
+   "use": "After lows that are -15 or worse.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "+26a and Starburst.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows and gain Starburst."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Holy Smash: i11 while-standing mid, -6 on block.",
+   "purpose": "Fast crouch punisher.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Chaos Fist: i14 mid, launches on counter hit (+57a) and gives STB.",
+   "purpose": "His counter-hit launcher.",
+   "use": "When you expect a button.",
+   "avoid": "-13 on block.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "+5; launch and STB on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read-based damage."
+  },
+  {
+   "id": "db+1+2",
+   "roles": [
+    "low",
+    "counter-hit"
+   ],
+   "summary": "Blue Moon: i17 high-crushing move, launches on counter hit (+62a).",
+   "purpose": "Crushes highs and launches on CH.",
+   "use": "Against highs and jabs.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+8a; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Answer to high pressure."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Ira: i13 high, +6 on block, Heat Engager.",
+   "purpose": "A plus-on-block Heat Engager from a run.",
+   "use": "To close distance and start Heat.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+6: keep attacking.",
+   "afterHit": "+24a.",
+   "afterEvade": "Linear: sidestep it.",
+   "gamePlan": "His strongest approach."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Roche Limit: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Wavu notes his throws are weak: use them as a mix-up only."
+  }
+ ],
+ "combos": [
+  {
+   "id": "claudio-bnb",
+   "name": "Launch BnB: f,F+4 b+3 uf+3+4 db+1+2 T! wr2",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "uf+4"
+   ],
+   "situation": "After a regular launch such as uf+4.",
+   "route": "f,F+4 b+3 uf+3+4 db+1+2 T! wr2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing b+3 before f,F+4 has hit.",
+    "Running too late for wr2 after the tornado."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Claudio",
+    "url": "https://wavu.wiki/t/Claudio_combos",
+    "revision": 60974,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "f,f,F+2",
+  "f,F+4"
+ ],
+ "lessons": []
+}

@@ -69,7 +69,7 @@ for (const id of Object.keys(CURATED)) {
         for (const s of [...combo.starters.slice(0, 1), combo.route]) {
           for (const tok of s.split(/\s+/)) {
             const clean = tok.replace(/[A-Za-z]{1,4}!$/, '').replace(/~[A-Z]+$/, '');
-            if (!clean || /^(CH|CJM|dash|run|ssr|ssl|SSL|SSR)$/.test(clean) || clean.startsWith('~')) continue;
+            if (!clean || /^(CH|CJM|dash|run|ssr|ssl|SSL|SSR|f,F|f,f|b,b|f,f,F|b,B)$/.test(clean) || clean.startsWith('~')) continue;
             if (!lookupMove(c, clean)) unresolved.push(`${combo.id}: ${clean}`);
           }
         }

@@ -1,0 +1,323 @@
+{
+ "profile": {
+  "id": "asuka",
+  "name": "Asuka",
+  "short": "Asuka",
+  "color": "hsl(296 70% 62%)",
+  "overview": "Asuka Kazama is a solid defensive character that is a good pick for beginner players looking to punish their opponent's habits. Her basic combos are straightforward, and she has good keep-out tools, safe counter hit launchers, and good panic buttons that are all fairly easy to understand and use.",
+  "playstyle": "Defensive and patient. Keep the opponent out with safe mids, make them whiff with sidesteps and spacing, then punish hard. Her reversal (b+1+3) and counter-hit tools punish people who press too much. Her offence is risky, so let the opponent come to you.",
+  "strengths": [
+   "Highly rewarding whiff punish tools",
+   "Good arsenal of panic moves and heat engagers to close rounds and turn the tide",
+   "Strong keepout with mid-range pokes and sabakis",
+   "Plethora of powerful and relatively safe counter hit tools",
+   "Evasive tools and parries make her scary to approach",
+   "Many strings that can be either delayed to punish the opponent's retaliation or canceled to take advantage of their hesitation to retaliate",
+   "Naniwa Gusto changes the properties on certain moves in ways that boost Asuka's strengths while also giving her access to stronger offensive opportunities",
+   "Damaging attacks, potent okizeme, and various ways to access Naniwa Gusto mean that this character's hits can quickly snowball into a lot of damage if the opponent is not careful approaching her"
+  ],
+  "weaknesses": [
+   "No plus jab, generally risky and flawed offense",
+   "Subpar backdash, forcing her to rely more on sidesteps and spacing traps to make things whiff",
+   "Very weak i10-11 frame punishes",
+   "Non-generic standing lows are slow and can be risky, low reward, or both unless her opponent is at the wall",
+   "Struggles vs. defensive players",
+   "Short neck, poor girl :(",
+   "No interaction between her family"
+  ],
+  "stances": [
+   {
+    "code": "NWG",
+    "name": "Naniwa Gusto",
+    "entry": "Heat activation, or f+2 then 1 on hit",
+    "note": "A power-up: NWG.f,F+1+2 and NWG.f,f,F+1+2 get stronger, and NWG.f,f,F+1+2 is +7 on block. Wavu: in Heat she can always use it."
+   },
+   {
+    "code": "DST",
+    "name": "Destabilizer",
+    "entry": "f+1+3",
+    "note": "A stance after her f+1+3 throw-like move. DST.2 is a Heat Engager. Leaving it with no input is -3."
+   }
+  ],
+  "heat": [
+   "Can always utilise Naniwa Gusto"
+  ],
+  "heatEngagers": [
+   "d+2",
+   "db+1,2",
+   "f,F+2,1",
+   "SS.2",
+   "f+1+3,2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "1+2",
+   "ws3",
+   "b+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Asuka",
+    "url": "https://wavu.wiki/t/Asuka",
+    "revision": 62078,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Asuka_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62778,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Asuka_combos",
+    "revision": 59716,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Asuka_punishers",
+    "revision": 59231,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "Jab: i10 high, -2 on block.",
+   "purpose": "Fast interrupt and the start of her i10 punish (1,2).",
+   "use": "Close range when you need the fastest answer.",
+   "avoid": "Expecting to keep the turn: Wavu notes she has no plus jab.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-2: you are slightly minus.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it to interrupt, not to pressure."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block.",
+   "purpose": "Her safest mid check.",
+   "use": "To stop the opponent ducking and to poke at mid range.",
+   "avoid": "Nothing serious: -3 on block.",
+   "counterplay": "Block it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Small whiff.",
+   "gamePlan": "Your main way to make the opponent respect mids."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rising Palm: i15 launch on standing opponents, -6 on block.",
+   "purpose": "Her i15 launch punisher and a safe whiff punisher.",
+   "use": "Punish -15 moves; whiff punish at close range.",
+   "avoid": "Expecting it to launch crouchers: on crouch hit it is only +5s.",
+   "counterplay": "Duck it when you expect it.",
+   "afterBlock": "-6: safe.",
+   "afterHit": "Launch: go into her BnB.",
+   "afterEvade": "Recovers reasonably.",
+   "gamePlan": "A safe launcher: the heart of her punish game."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Inner Strength: i16 mid launcher, -9 on block.",
+   "purpose": "Her i16 punisher (Wavu: i16 launch).",
+   "use": "After blocking moves that are -16 or worse.",
+   "avoid": "Raw in neutral: -9 hands over the turn.",
+   "counterplay": "Block it.",
+   "afterBlock": "-9.",
+   "afterHit": "Launch (+27a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Use it when df+2 is too short."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Moon Scent: i18 while-standing tornado, -16 on block.",
+   "purpose": "Her while-standing launch punish.",
+   "use": "After blocking lows that are -18 or worse.",
+   "avoid": "Raw: -16.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-16: punishable.",
+   "afterHit": "Launch (+35a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "The payoff for blocking big lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i11 while-standing kick, -3 on block.",
+   "purpose": "Fastest while-standing punisher and a crouching mid check.",
+   "use": "After blocking -11 lows; to poke from crouch.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Your basic while-standing answer."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "i15 knee, launches on counter hit (+56a), -7 on block.",
+   "purpose": "Her safe counter-hit launcher.",
+   "use": "When you expect the opponent to press.",
+   "avoid": "Expecting damage on normal hit: only +8.",
+   "counterplay": "Block it; it is safe.",
+   "afterBlock": "-7.",
+   "afterHit": "+8 normal, launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Her best reward against people who mash after blocking."
+  },
+  {
+   "id": "4",
+   "roles": [
+    "counter-hit",
+    "poke"
+   ],
+   "summary": "i11 high kick, launches on counter hit (+32a).",
+   "purpose": "A fast high that launches on CH.",
+   "use": "To interrupt at close range.",
+   "avoid": "Against crouchers: it is high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-9: careful, punishable by i9 or faster only.",
+   "afterHit": "+7, launch on CH.",
+   "afterEvade": "Small whiff.",
+   "gamePlan": "A fast interrupt with a big reward."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "i20 low, -12 on block, +14g on counter hit.",
+   "purpose": "Her safe-ish low poke.",
+   "use": "When the opponent blocks standing.",
+   "avoid": "When they block low: -12.",
+   "counterplay": "Block low, punish with an i12 or faster move.",
+   "afterBlock": "-12: punishable.",
+   "afterHit": "+4c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Keeps standing block honest."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Heaven's Hammer: i18 mid Heat Engager, -4c on block.",
+   "purpose": "A safe mid that starts Heat and spikes.",
+   "use": "As a safe Heat start or to hit crouching opponents.",
+   "avoid": "Little risk: -4c.",
+   "counterplay": "Block it.",
+   "afterBlock": "-4c.",
+   "afterHit": "Heat Engager (+67a with Heat Dash).",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Her safest Heat Engager."
+  },
+  {
+   "id": "f,F+4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Leaping Spin Kick: i20 high, -3 on block, launches (+66a).",
+   "purpose": "A long-range launcher that is safe on block.",
+   "use": "Whiff punish at range or to close distance.",
+   "avoid": "Against crouchers: it is high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3: safe.",
+   "afterHit": "Launch.",
+   "afterEvade": "Airborne startup.",
+   "gamePlan": "Her long-range whiff punisher."
+  },
+  {
+   "id": "b+1+3",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Reversal: reverses high or mid attacks.",
+   "purpose": "Her sabaki/reversal against buttons.",
+   "use": "As a read when the opponent will press a high or mid.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low her when you expect it.",
+   "afterBlock": "-.",
+   "afterHit": "Knockdown (opponent recovers FUFT).",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "A strong tool against impatient opponents."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Katanuki: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Her generic throw with a side switch.",
+   "use": "Against opponents who block a lot.",
+   "avoid": "When they are ready to break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-2 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if they duck.",
+   "gamePlan": "Use it to put opponents near the wall with the side switch."
+  }
+ ],
+ "combos": [
+  {
+   "id": "asuka-bnb",
+   "name": "Launch BnB: f,F+2,3 db1,4 T!",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a standing df+2 launch (or 1+2, f+2 per Wavu staples).",
+   "route": "f,F+2,3 db1,4 T! f,F+4 f,F+2 1+2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Doing db+1 too slowly after f,F+2,3: keep the rhythm.",
+    "Forgetting the dash before f,F+4."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Asuka",
+    "url": "https://wavu.wiki/t/Asuka_combos",
+    "revision": 59716,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f+2",
+  "1+2",
+  "f,F+4"
+ ],
+ "lessons": []
+}

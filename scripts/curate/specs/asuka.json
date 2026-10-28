@@ -1,0 +1,28 @@
+{
+ "short": "Asuka",
+ "playstyle": "Defensive and patient. Keep the opponent out with safe mids, make them whiff with sidesteps and spacing, then punish hard. Her reversal (b+1+3) and counter-hit tools punish people who press too much. Her offence is risky, so let the opponent come to you.",
+ "stances": [
+  {"code": "NWG", "name": "Naniwa Gusto", "entry": "Heat activation, or f+2 then 1 on hit", "note": "A power-up: NWG.f,F+1+2 and NWG.f,f,F+1+2 get stronger, and NWG.f,f,F+1+2 is +7 on block. Wavu: in Heat she can always use it."},
+  {"code": "DST", "name": "Destabilizer", "entry": "f+1+3", "note": "A stance after her f+1+3 throw-like move. DST.2 is a Heat Engager. Leaving it with no input is -3."}
+ ],
+ "keyLaunchers": ["df+2", "1+2", "ws3", "b+4"],
+ "whiffPunishers": ["df+2", "f+2", "1+2", "f,F+4"],
+ "keyMoves": [
+  ["1", "poke,punisher", "Jab: i10 high, -2 on block.", "Fast interrupt and the start of her i10 punish (1,2).", "Close range when you need the fastest answer.", "Expecting to keep the turn: Wavu notes she has no plus jab.", "Duck it.", "-2: you are slightly minus.", "+9.", "Low risk.", "Use it to interrupt, not to pressure."],
+  ["df+1", "poke", "i13 mid, -3 on block.", "Her safest mid check.", "To stop the opponent ducking and to poke at mid range.", "Nothing serious: -3 on block.", "Block it.", "-3.", "+8.", "Small whiff.", "Your main way to make the opponent respect mids."],
+  ["df+2", "launcher,punisher", "Rising Palm: i15 launch on standing opponents, -6 on block.", "Her i15 launch punisher and a safe whiff punisher.", "Punish -15 moves; whiff punish at close range.", "Expecting it to launch crouchers: on crouch hit it is only +5s.", "Duck it when you expect it.", "-6: safe.", "Launch: go into her BnB.", "Recovers reasonably.", "A safe launcher: the heart of her punish game."],
+  ["1+2", "launcher,punisher", "Inner Strength: i16 mid launcher, -9 on block.", "Her i16 punisher (Wavu: i16 launch).", "After blocking moves that are -16 or worse.", "Raw in neutral: -9 hands over the turn.", "Block it.", "-9.", "Launch (+27a).", "Moderate.", "Use it when df+2 is too short."],
+  ["ws3", "launcher,punisher", "Moon Scent: i18 while-standing tornado, -16 on block.", "Her while-standing launch punish.", "After blocking lows that are -18 or worse.", "Raw: -16.", "Block and punish.", "-16: punishable.", "Launch (+35a).", "Risky.", "The payoff for blocking big lows."],
+  ["ws4", "punisher,poke", "i11 while-standing kick, -3 on block.", "Fastest while-standing punisher and a crouching mid check.", "After blocking -11 lows; to poke from crouch.", "Nothing major.", "Block.", "-3.", "+8.", "Low risk.", "Your basic while-standing answer."],
+  ["b+4", "counter-hit", "i15 knee, launches on counter hit (+56a), -7 on block.", "Her safe counter-hit launcher.", "When you expect the opponent to press.", "Expecting damage on normal hit: only +8.", "Block it; it is safe.", "-7.", "+8 normal, launch on CH.", "Moderate.", "Her best reward against people who mash after blocking."],
+  ["4", "counter-hit,poke", "i11 high kick, launches on counter hit (+32a).", "A fast high that launches on CH.", "To interrupt at close range.", "Against crouchers: it is high.", "Duck it.", "-9: careful, punishable by i9 or faster only.", "+7, launch on CH.", "Small whiff.", "A fast interrupt with a big reward."],
+  ["db+3", "low", "i20 low, -12 on block, +14g on counter hit.", "Her safe-ish low poke.", "When the opponent blocks standing.", "When they block low: -12.", "Block low, punish with an i12 or faster move.", "-12: punishable.", "+4c.", "Moderate.", "Keeps standing block honest."],
+  ["d+2", "heat", "Heaven's Hammer: i18 mid Heat Engager, -4c on block.", "A safe mid that starts Heat and spikes.", "As a safe Heat start or to hit crouching opponents.", "Little risk: -4c.", "Block it.", "-4c.", "Heat Engager (+67a with Heat Dash).", "Low risk.", "Her safest Heat Engager."],
+  ["f,F+4", "launcher", "Leaping Spin Kick: i20 high, -3 on block, launches (+66a).", "A long-range launcher that is safe on block.", "Whiff punish at range or to close distance.", "Against crouchers: it is high.", "Duck it.", "-3: safe.", "Launch.", "Airborne startup.", "Her long-range whiff punisher."],
+  ["b+1+3", "evasion", "Reversal: reverses high or mid attacks.", "Her sabaki/reversal against buttons.", "As a read when the opponent will press a high or mid.", "Against lows and throws.", "Throw or low her when you expect it.", "-.", "Knockdown (opponent recovers FUFT).", "Bad if read.", "A strong tool against impatient opponents."],
+  ["2+4", "throw", "Katanuki: i12 throw, break with 1 or 2, side switch.", "Her generic throw with a side switch.", "Against opponents who block a lot.", "When they are ready to break.", "Break with 1 or 2.", "-2 on break.", "Knockdown.", "Whiffs if they duck.", "Use it to put opponents near the wall with the side switch."]
+ ],
+ "combos": [
+  {"id": "asuka-bnb", "name": "Launch BnB: f,F+2,3 db1,4 T!", "difficulty": 3, "section": "Bread n' butter", "starters": ["df+2"], "situation": "After a standing df+2 launch (or 1+2, f+2 per Wavu staples).", "route": "f,F+2,3 db1,4 T! f,F+4 f,F+2 1+2", "tags": ["bnb"], "mistakes": ["Doing db+1 too slowly after f,F+2,3: keep the rhythm.", "Forgetting the dash before f,F+4."]}
+ ]
+}

@@ -1,0 +1,28 @@
+{
+ "short": "Azucena",
+ "playstyle": "Stance mix-ups with simple inputs. Get into Libertador (LIB) or Backturn (BT) and force guesses, use her i10 wall-splat punisher (1,2) to start pressure, and watch for LIB's auto-parry. Her strings mostly end in duckable highs, so do not finish them every time.",
+ "stances": [
+  {"code": "LIB", "name": "Libertador", "entry": "f+3+4 (also 3,2,F and b+2,F)", "note": "Her main stance: LIB.2 is a Heat Engager, LIB.1+2 tornadoes, LIB.4,1,2 is her combo ender. Libertador auto-parries some attacks while you move in, more in Heat (Wavu)."},
+  {"code": "BT", "name": "Backturn", "entry": "b+3+4", "note": "Backturned mix-ups: BT.1,2 is another i10 splat punisher and BT.1+2 launches on counter hit (Wavu)."}
+ ],
+ "keyLaunchers": ["df+2", "ws2", "f,F+3", "1+2"],
+ "whiffPunishers": ["df+2", "f,F+3", "f+1+2"],
+ "keyMoves": [
+  ["1,2", "punisher,wall", "i10 punisher that wall-splats (Wavu: i10 splat).", "Her best fast punish: damage plus wall splat.", "After blocking -10 moves, especially near the wall.", "Nothing major as a punisher.", "Duck the second hit if it is high when you are not being punished.", "Safe as a string.", "Combo at the wall.", "Low risk.", "Learn this first: Wavu calls it an amazing 10-frame punisher."],
+  ["1", "poke", "Jab: i10 high, +1 on block.", "Fast interrupt that recovers 2 frames faster.", "To check and keep the turn up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["df+1", "poke", "Mid check: i13, -3 on block.", "Her safe mid poke.", "To stop ducking and low pokes.", "Nothing major.", "Block it.", "-3.", "+8.", "Low risk.", "Use it so the opponent cannot duck her highs."],
+  ["df+2", "launcher,punisher", "Mount Rainier: i15 launcher, launches crouching too. -13 on block.", "Her i15 launch punisher.", "Punish -15 moves; whiff punish.", "Raw in neutral: -13.", "Block and punish.", "-13: punishable.", "Launch (+28a).", "Risky.", "Your main launch punish."],
+  ["ws2", "launcher,punisher", "i15 while-standing launcher, -13 on block.", "Fast while-standing launch punish.", "After blocking lows that are -15 or worse.", "Raw: -13.", "Block and punish.", "-13.", "Launch (+32a).", "Risky.", "Punish every big low you block."],
+  ["ws4", "punisher", "i11 while-standing mid, -6 on block.", "Fast while-standing check.", "After -11 lows; to poke from crouch.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Wavu notes her crouch punishes are weak: use what is fast."],
+  ["1+2", "counter-hit,power-crush", "Boomerang Scythe: i15 high, launches on counter hit (+56a), crushes some lows.", "A fast counter-hit launcher.", "When you expect the opponent to press.", "Against crouchers: high.", "Duck it.", "-8.", "+13g; launch on CH.", "Moderate.", "Big reward against mashing."],
+  ["df+3", "counter-hit", "Rodilla Shot: i17 knee, launches on counter hit (+59a), -5 on block.", "A safe mid counter-hit launcher.", "At mid range when they press.", "Expecting damage on normal hit: only +5.", "Block it.", "-5.", "Launch on CH.", "Low risk.", "Her safest CH launcher."],
+  ["d+1", "poke", "Hand Drip Hammer: i20 mid, +4 on block.", "A plus-on-block mid that spikes on counter hit.", "To keep the turn and set up stance mix-ups.", "As a fast interrupt: it is i20.", "Interrupt it or step it.", "+4: keep attacking.", "+7c; launches on CH.", "Moderate.", "Her pressure starter."],
+  ["db+4", "low", "Bitter Low Kick: i19 low, -14 on block, +12g on counter hit.", "Her main low.", "Against standing block.", "When they block low.", "Block low and punish.", "-14.", "-3; +12g on CH.", "Moderate.", "Keeps standing block honest."],
+  ["b+3", "heat", "Tacón Plunger: i19 mid Heat Engager, +2c on block.", "A plus-on-block Heat Engager.", "To start Heat safely.", "As a fast interrupt.", "Block it, then expect pressure.", "+2c.", "Heat Engager (+67a with Heat Dash).", "Low risk.", "Her best safe Heat start."],
+  ["LIB.2", "heat,mixup", "Golpe Cappuccino: i14 mid from LIB, Heat Engager, -8 on block.", "Her fast LIB mid and Heat Engager.", "From Libertador when the opponent presses.", "When blocked you are -8.", "Block it.", "-8.", "Heat Engager.", "Moderate.", "The mid side of her LIB mix-up."],
+  ["2+4", "throw", "El Dorado Neck Snap: i12 throw, break with 1 or 2, side switch.", "A throw with a side switch.", "Up close against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with her mids."]
+ ],
+ "combos": [
+  {"id": "azucena-bnb", "name": "Launch BnB: d+2,3 LIB.4,1,2 T! f+2,1,4", "difficulty": 3, "section": "Bread n' butter", "starters": ["df+2"], "situation": "After a regular launch such as df+2 (Wavu: 61 damage).", "route": "d+2,3 LIB.4,1,2 T! f+2,1,4", "damage": "[61]", "tags": ["bnb"], "mistakes": ["Pressing LIB.4 before the stance has started after d+2,3.", "Rushing f+2,1,4 after the tornado: let them fall a little."]}
+ ]
+}

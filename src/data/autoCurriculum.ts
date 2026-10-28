@@ -109,11 +109,30 @@ function pickMoves(f: CharacterFile, punishers: PunisherEntry[], engagers: strin
 }
 
 const ids = (ms: (Move | undefined)[]) => uniq(ms.filter((m): m is Move => !!m).map((m) => m.id));
-const lines = (ms: Move[]) => ms.map((m) => `- ${describe(m)}`).join('\n');
 
-export function generateCurriculum(f: CharacterFile, combos: ComboDef[], punishers: PunisherEntry[], engagers: string[], stanceCodes: string[]): { keyMoves: KeyMoveNote[]; lessons: Lesson[] } {
+/** Hand-written coach notes choose the moves: each role list replaces the frame-data pick when it has any. */
+function pickFromNotes(p: Pick, f: CharacterFile, hand: KeyMoveNote[]): Pick {
+  const byId = new Map(f.frames.moves.map((m) => [m.id, m]));
+  const role = (r: MoveRole) => hand.filter((k) => k.roles.includes(r)).map((k) => byId.get(k.id)).filter((m): m is Move => !!m && parses(m.id));
+  const or = (xs: Move[], fallback: Move[]) => (xs.length ? xs : fallback);
+  return {
+    ...p,
+    pokes: or(role('poke').filter((m) => m.id !== '1'), p.pokes).slice(0, 5),
+    lows: or(role('low'), p.lows).slice(0, 4),
+    launchers: or(role('launcher'), p.launchers).slice(0, 4),
+    ch: or(role('counter-hit'), p.ch).slice(0, 4),
+    throws: uniq([...p.throws.filter((m) => ['1+3', '2+4'].includes(m.id)), ...role('throw')]).slice(0, 4),
+    heat: or(role('heat'), p.heat).slice(0, 4),
+  };
+}
+
+export function generateCurriculum(f: CharacterFile, combos: ComboDef[], punishers: PunisherEntry[], engagers: string[], stanceCodes: string[], hand?: KeyMoveNote[]): { keyMoves: KeyMoveNote[]; lessons: Lesson[] } {
   const name = f.name;
-  const p = pickMoves(f, punishers, engagers, stanceCodes);
+  const auto = pickMoves(f, punishers, engagers, stanceCodes);
+  const p = hand?.length ? pickFromNotes(auto, f, hand) : auto;
+  const coach = new Map((hand ?? []).map((k) => [k.id, k]));
+  // With coach notes, each listed move carries its hand-written advice.
+  const lines = (ms: Move[]) => ms.map((m) => `- ${describe(m)}${coach.get(m.id) ? `. ${coach.get(m.id)!.use}` : ''}`).join('\n');
   const trainable = combos.filter((c) => c.parseOk !== false && (c.starters.length === 0 || parses(c.starters[0]) || c.starters.some(parses)));
   const inSection = (re: RegExp) => trainable.filter((c) => re.test(c.section ?? ''));
   const bnb = inSection(/^bread/i)[0] ?? inSection(/^staple/i)[0] ?? trainable[0];
@@ -127,7 +146,9 @@ export function generateCurriculum(f: CharacterFile, combos: ComboDef[], punishe
   const launcherIds = ids(p.launchers);
   const keyIds = ids([p.jab, ...p.pokes, ...p.lows, ...p.launchers, ...p.ch]);
   const id = (s: string) => `x-${s}`;
-  const src = `Generated from ${name}'s frame data, punisher table and Wavu combos. It updates whenever the data does.`;
+  const src = hand?.length
+    ? `Built from ${name}'s coach notes, frame data, punisher table and Wavu combos. Numbers update whenever the data does.`
+    : `Generated from ${name}'s frame data, punisher table and Wavu combos. It updates whenever the data does.`;
 
   const keyMoves: KeyMoveNote[] = [];
   const add = (m: Move | undefined, role: MoveRole) => {
@@ -152,7 +173,7 @@ export function generateCurriculum(f: CharacterFile, combos: ComboDef[], punishe
   const crouching = punishers.filter((x) => x.stance === 'crouching').sort((a, b) => b.window - a.window);
   const punList = (xs: PunisherEntry[]) => xs.map((x) => `- **${x.window}**: \`${x.moveId}\``).join('\n');
 
-  const L = (l: Omit<Lesson, 'generated'>): Lesson => ({ ...l, generated: true });
+  const L = (l: Omit<Lesson, 'generated'>): Lesson => (hand?.length ? l : { ...l, generated: true });
   const lessons: Lesson[] = [
     L({
       id: id('overview'), stage: 1, title: `Who is ${name}?`,
@@ -405,5 +426,5 @@ export function generateCurriculum(f: CharacterFile, combos: ComboDef[], punishe
       related: { lessons: [id('scenarios')] },
     }),
   ];
-  return { keyMoves, lessons };
+  return { keyMoves: hand?.length ? hand : keyMoves, lessons };
 }
