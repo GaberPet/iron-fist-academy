@@ -34,6 +34,10 @@ export interface Stage {
   update(t: number): void;
   /** Crack the wall where a fighter splatted (world position, metres). */
   crack(x: number, z: number): void;
+  /** Show which railing sections are broken (0 = -x, 1 = +x, 2 = -z, 3 = +z). Returns sections that just broke. */
+  setBroken(flags: boolean[]): number[];
+  /** World centre of a railing section. */
+  railCenter(i: number): THREE.Vector3;
 }
 
 export function buildStage(renderer?: THREE.WebGLRenderer): Stage {
@@ -201,7 +205,13 @@ export function buildStage(renderer?: THREE.WebGLRenderer): Stage {
   const capMat = new THREE.MeshStandardMaterial({ color: '#8a7a78', roughness: 0.7 });
   const railMat = new THREE.MeshStandardMaterial({ color: '#2a2a32', roughness: 0.35, metalness: 0.85 });
   const wallH = 1.0;
+  const rails: THREE.Group[] = [new THREE.Group(), new THREE.Group(), new THREE.Group(), new THREE.Group()];
+  rails.forEach((g) => scene.add(g));
+  const railCenters = [new THREE.Vector3(-A - 0.15, 1.5, 0), new THREE.Vector3(A + 0.15, 1.5, 0), new THREE.Vector3(0, 1.5, -A - 0.15), new THREE.Vector3(0, 1.5, A + 0.15)];
+  const sideOf = [2, 3, 0, 1];
+  let wi = 0;
   for (const [x, z, w, d] of [[0, -A - 0.15, A * 2 + 0.6, 0.3], [0, A + 0.15, A * 2 + 0.6, 0.3], [-A - 0.15, 0, 0.3, A * 2], [A + 0.15, 0, 0.3, A * 2]] as const) {
+    const rail = rails[sideOf[wi++]];
     const wall = new THREE.Mesh(new THREE.BoxGeometry(w, wallH, d), wallMat);
     wall.position.set(x, wallH / 2, z);
     wall.castShadow = wall.receiveShadow = true;
@@ -217,14 +227,14 @@ export function buildStage(renderer?: THREE.WebGLRenderer): Stage {
       const post = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.9, 8), railMat);
       post.position.set(long ? x + k : x, wallH + 0.5, long ? z : z + k);
       post.castShadow = true;
-      scene.add(post);
+      rail.add(post);
     }
     for (const yy of [wallH + 0.95, wallH + 0.5]) {
       const bar = new THREE.Mesh(new THREE.CylinderGeometry(0.03, 0.03, span, 8), railMat);
       bar.rotation.z = long ? Math.PI / 2 : 0;
       bar.rotation.x = long ? 0 : Math.PI / 2;
       bar.position.set(x, yy, z);
-      scene.add(bar);
+      rail.add(bar);
     }
   }
   // props outside the fighting area (corners): AC units, a water tank, an antenna
@@ -305,9 +315,22 @@ export function buildStage(renderer?: THREE.WebGLRenderer): Stage {
   const crackMat = new THREE.MeshBasicMaterial({ map: crackTex, transparent: true, depthWrite: false });
   const cracks: THREE.Mesh[] = [];
 
+  const broken = [false, false, false, false];
   return {
     scene,
     sun,
+    setBroken(flags: boolean[]) {
+      const now: number[] = [];
+      flags.forEach((b, i) => {
+        if (b && !broken[i]) now.push(i);
+        broken[i] = b;
+        rails[i].visible = !b;
+      });
+      return now;
+    },
+    railCenter(i: number) {
+      return railCenters[i].clone();
+    },
     update(t: number) {
       const on = Math.floor(t / 900) % 2 === 0;
       mastLight.visible = on;

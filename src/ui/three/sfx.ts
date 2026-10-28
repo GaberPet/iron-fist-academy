@@ -175,6 +175,7 @@ export function playEvents(ev: FightEvent[]) {
         sounds.launch();
         break;
       case 'wall':
+      case 'balcony':
         sounds.wall();
         break;
       case 'throw':

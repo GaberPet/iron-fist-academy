@@ -352,4 +352,41 @@ describe('FightEngine', () => {
     run(e, 120, 30, (x) => ({ dir: x < 122 ? 'b' : x < 124 ? 'n' : 'b' }));
     expect(e.distance).toBeGreaterThan(d0 + 80);
   });
+
+  it('a Balcony Break move breaks the railing once and relaunches; the next one splats', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const bb = jin.frames.moves.find((m) => !m.parent && /Balcony Break/.test(m.notes) && /^[a-z0-9]/.test(m.id) && !m.id.includes('.') && (m.startupFrame ?? 99) <= 16)!;
+    expect(bb).toBeTruthy();
+    const setup = () => {
+      const d = e.f[1];
+      d.pos = { x: ARENA - 10, z: 0 };
+      e.f[0].pos = { x: ARENA - 95, z: 0 };
+      e['setState'](d, 'air', e.frame);
+      d.y = 80;
+      d.vy = 4;
+    };
+    setup();
+    e.startMove(e.f[0], bb, e.frame + 1);
+    const ev = run(e, e.frame + 1, 30, () => ({}));
+    expect(ev.some((x) => x.type === 'balcony')).toBe(true);
+    expect(e.broken[1]).toBe(true);
+    run(e, e.frame + 1, 200, () => ({}));
+    setup();
+    e.startMove(e.f[0], bb, e.frame + 1);
+    const ev2 = run(e, e.frame + 1, 30, () => ({}));
+    expect(ev2.some((x) => x.type === 'balcony')).toBe(false);
+    void f;
+  });
+
+  it('side-switch throws swap the fighters', () => {
+    const e = engine();
+    const f = closeIn(e);
+    const sw = jin.frames.moves.find((m) => m.isThrow && /Side switch/i.test(m.notes) && !m.parent);
+    if (!sw) return;
+    const before = e.f[0].pos.x;
+    e.startMove(e.f[0], sw, f);
+    run(e, f, 60, () => ({}));
+    if (e.f[1].hp < MAX_HP) expect(e.f[0].pos.x).toBeGreaterThan(before);
+  });
 });

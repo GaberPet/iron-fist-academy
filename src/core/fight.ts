@@ -121,7 +121,7 @@ export interface FightEvent {
   type:
     | 'hit' | 'counter' | 'block' | 'whiff' | 'launch' | 'throw' | 'break' | 'ko' | 'round-start' | 'fight'
     | 'time-up' | 'round-end' | 'match-end' | 'punish' | 'crush' | 'heat' | 'heat-smash' | 'heat-dash' | 'rage'
-    | 'rage-art' | 'tornado' | 'wall' | 'tech' | 'step-evade' | 'armor' | 'parry';
+    | 'rage-art' | 'tornado' | 'wall' | 'tech' | 'step-evade' | 'armor' | 'parry' | 'balcony';
   by?: 0 | 1;
   at?: Vec;
   y?: number; // height of the impact (cm)
@@ -365,6 +365,8 @@ export class FightEngine {
   private pending: FightEvent[] = [];
   private started = false;
   private rageShown: [boolean, boolean] = [false, false];
+  /** Wall sections broken this round (0 = -x, 1 = +x, 2 = -z, 3 = +z). */
+  broken = [false, false, false, false];
   // bot memory
   private botNext = 0;
   private botGuardSet = -1;
@@ -427,6 +429,7 @@ export class FightEngine {
     this.botBlocked = null;
     this.buffered = null;
     this.rageShown = [false, false];
+    this.broken = [false, false, false, false];
     const final = this.wins[0] === this.roundsToWin - 1 && this.wins[1] === this.roundsToWin - 1;
     this.banner = { text: final ? 'FINAL ROUND' : `ROUND ${this.round}`, until: at + 70 };
   }
@@ -951,6 +954,7 @@ export class FightEngine {
       this.push(a, d, 18, now, ev);
     }
     if (a.side === 1) this.botAdv = { adv: res.launch ? 30 : res.adv, until: attackerEnd + 20 };
+    if (/Side switch on hit/i.test(m.notes)) this.sideSwitch(a, d);
     this.freeze = Math.max(this.freeze, counter ? 5 : dmg >= 20 ? 4 : 2);
     const adv = juggle ? undefined : res.launch ? 'LAUNCH' : res.knockdown ? 'KND' : `${res.adv >= 0 ? '+' : ''}${res.adv}`;
     ev.push({ type: counter ? 'counter' : 'hit', by: a.side, at: mid, y: hitY, level: lv, damage: dmg, text: counter ? 'COUNTER HIT' : undefined, adv });
@@ -1027,6 +1031,21 @@ export class FightEngine {
     const dir = this.forward(a.side);
     const target = add(d.pos, dir, px);
     if (Math.abs(target.x) > ARENA || Math.abs(target.z) > ARENA) {
+      const side = Math.abs(target.x) > ARENA ? (target.x < 0 ? 0 : 1) : target.z < 0 ? 2 : 3;
+      // Balcony Break: the railing gives way and the opponent is relaunched (once per wall per round)
+      if (a.move && /Balcony Break/.test(a.move.notes) && (d.state === 'air' || d.state === 'hitstun') && !this.broken[side]) {
+        this.broken[side] = true;
+        d.pos = v(Math.max(-ARENA, Math.min(ARENA, target.x)), Math.max(-ARENA, Math.min(ARENA, target.z)));
+        this.setState(d, 'air', now);
+        d.y = Math.max(d.y, 40);
+        d.vy = LAUNCH_VY * 1.05;
+        d.airHits++;
+        d.tornadoUsed = false;
+        this.freeze = Math.max(this.freeze, 10);
+        ev.push({ type: 'balcony', by: a.side, at: d.pos, y: 110, text: 'BALCONY BREAK' });
+        a.pos = add(a.pos, dir, -20);
+        return;
+      }
       // wall: clamp the defender; airborne / knocked-down defenders splat
       d.pos = v(Math.max(-ARENA, Math.min(ARENA, target.x)), Math.max(-ARENA, Math.min(ARENA, target.z)));
       a.pos = add(a.pos, dir, -Math.max(0, px - 6) * 0.6);
@@ -1054,8 +1073,15 @@ export class FightEngine {
     a.outcome = 'hit';
     a.endAt = now + 30;
     a.hitAt = now - 1;
+    if (/Side switch/i.test(m.notes)) this.sideSwitch(a, d);
     this.push(a, d, 45, now, ev);
     ev.push({ type: 'hit', by: a.side, at: d.pos, y: 40, level: 'throw', damage: dmg, text: 'THROW' });
+  }
+
+  private sideSwitch(a: Fighter, d: Fighter) {
+    const pa = a.pos;
+    a.pos = d.pos;
+    d.pos = pa;
   }
 
   private tryBreak(a: Fighter, d: Fighter, mask: number, now: number, ev: FightEvent[]) {

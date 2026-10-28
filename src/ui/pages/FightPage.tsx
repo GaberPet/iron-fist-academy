@@ -220,6 +220,10 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
       if (e.type === 'launch') pop('LAUNCH', e.at, 210, '#5aa9ff');
       if (e.type === 'tornado') pop('TORNADO', e.at, 220, '#ffd36a');
       if (e.type === 'wall') pop('WALL SPLAT', e.at, 200, '#ffffff');
+      if (e.type === 'balcony') {
+        pop('BALCONY BREAK', e.at, 220, '#ffd36a');
+        lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: balcony break`);
+      }
       if (e.type === 'throw' || e.type === 'break') pop(e.type === 'break' ? 'THROW BREAK' : 'THROW', e.at, 200, '#f2f3f8');
       if (e.type === 'crush' || e.type === 'armor') pop(e.type === 'armor' ? 'ARMOR' : 'CRUSH', e.at, 200, '#3ccf8e');
       if (e.type === 'step-evade') pop('SIDESTEP', e.at, 200, '#c9d6ea');

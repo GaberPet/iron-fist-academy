@@ -188,6 +188,13 @@ export class Arena3D {
         case 'break':
           if (at) this.ring(at, '#ffffff', 0.7);
           break;
+        case 'balcony':
+          if (at) {
+            this.burst(at, '#ffffff', 40, 2);
+            this.ring(at, '#ffd36a', 1.6);
+          }
+          this.shake = 0.22;
+          break;
         case 'parry':
           if (at) {
             this.ring(at, '#ffd36a', 1);
@@ -238,6 +245,19 @@ export class Arena3D {
       this.particles.push({ sprite: s, vel: new THREE.Vector3((Math.random() - 0.5) * 0.03, 0.006, (Math.random() - 0.5) * 0.03), life: 0, max: 30, grow: 0.015, gravity: 0 });
     }
   }
+
+  private debris(at: THREE.Vector3) {
+    const mat = new THREE.MeshStandardMaterial({ color: '#2a2a32', metalness: 0.8, roughness: 0.4 });
+    for (let i = 0; i < 14; i++) {
+      const m = new THREE.Mesh(new THREE.CylinderGeometry(0.025, 0.025, 0.4 + Math.random() * 0.8, 6), mat);
+      m.position.copy(at).add(new THREE.Vector3((Math.random() - 0.5) * 3, Math.random() * 0.5, (Math.random() - 0.5) * 3));
+      m.rotation.set(Math.random() * 3, Math.random() * 3, Math.random() * 3);
+      this.stage.scene.add(m);
+      const vel = at.clone().setY(0).normalize().multiplyScalar(0.05 + Math.random() * 0.06).add(new THREE.Vector3(0, 0.08 + Math.random() * 0.06, 0));
+      this.pieces.push({ mesh: m, vel, age: 0 });
+    }
+  }
+  private pieces: { mesh: THREE.Mesh; vel: THREE.Vector3; age: number }[] = [];
 
   private shockwave(at: THREE.Vector3, color: string) {
     const m = new THREE.Mesh(new THREE.RingGeometry(0.4, 0.55, 48), new THREE.MeshBasicMaterial({ color, transparent: true, opacity: 0.9, blending: THREE.AdditiveBlending, side: THREE.DoubleSide, depthWrite: false }));
@@ -327,6 +347,10 @@ export class Arena3D {
     this.stage.sun.target.position.copy(mid);
     this.stage.sun.target.updateMatrixWorld();
 
+    // broken railings (and their debris)
+    const broke = (e as { broken?: boolean[] }).broken;
+    if (broke) for (const i of this.stage.setBroken(broke)) this.debris(this.stage.railCenter(i));
+
     // ----- effects -----
     for (const pt of this.particles) {
       pt.life++;
@@ -350,6 +374,18 @@ export class Arena3D {
       s.mesh.geometry.dispose();
     }
     this.shocks = this.shocks.filter((x) => x.age <= 30);
+    for (const pc of this.pieces) {
+      pc.age++;
+      pc.vel.y -= 0.006;
+      pc.mesh.position.add(pc.vel);
+      pc.mesh.rotation.x += 0.2;
+      pc.mesh.rotation.z += 0.13;
+    }
+    for (const pc of this.pieces.filter((x) => x.age > 90)) {
+      this.stage.scene.remove(pc.mesh);
+      pc.mesh.geometry.dispose();
+    }
+    this.pieces = this.pieces.filter((x) => x.age <= 90);
 
     this.stage.update(performance.now());
     if (this.composer) this.composer.render();
