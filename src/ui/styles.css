@@ -336,3 +336,8 @@ h1, h2, h3, [id] { scroll-margin-top: var(--space-xl); }
 .sidebar { gap: var(--space-xs); }
 .sidebar .nav-btn { border: var(--rule-hair) solid var(--paper); border-radius: var(--radius-control); color: var(--paper); }
 .sidebar .nav-btn.active { color: var(--ink); }
+/* touch screens: no sticky hover colour after a tap */
+@media (hover: none) {
+  .sidebar .nav-btn:hover:not(.active) { background: transparent; color: var(--paper); }
+  .nav-btn:hover:not(.active) { background: transparent; }
+}
