@@ -71,7 +71,14 @@ export interface Settings {
   rumble: boolean;
   sound: boolean;
   theme: Theme;
+  /** Character every tab opens on after sign-in ('' = keep the last used one). */
+  favoriteChar: string;
+  textSize: TextSize;
+  reduceMotion: boolean;
 }
+
+export type TextSize = 'normal' | 'large' | 'xlarge';
+export const TEXT_SIZES: TextSize[] = ['normal', 'large', 'xlarge'];
 
 export type Theme = 'dark' | 'light' | 'arcade';
 export const THEMES: Theme[] = ['light', 'dark', 'arcade'];
@@ -79,6 +86,9 @@ export const THEMES: Theme[] = ['light', 'dark', 'arcade'];
 export const DEFAULT_SETTINGS: Settings = {
   version: 1,
   theme: 'dark',
+  favoriteChar: '',
+  textSize: 'normal',
+  reduceMotion: false,
   activeChar: 'anna',
   masteryThreshold: 0.8,
   comboConsistency: 5,
@@ -125,6 +135,9 @@ export function migrateSettings(raw: unknown): Settings {
     ...r,
     version: 1,
     theme: THEMES.includes(r.theme as Theme) ? (r.theme as Theme) : 'dark',
+    favoriteChar: typeof r.favoriteChar === 'string' ? r.favoriteChar : '',
+    textSize: TEXT_SIZES.includes(r.textSize as TextSize) ? (r.textSize as TextSize) : 'normal',
+    reduceMotion: r.reduceMotion === true,
     recognizer: { ...DEFAULT_SETTINGS.recognizer, ...(r.recognizer ?? {}) },
     controller: {
       ...DEFAULT_SETTINGS.controller,

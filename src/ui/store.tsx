@@ -111,6 +111,8 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
           locateData(),
         ]);
         const st = migrateSettings(s);
+        // The favourite is where every tab starts after sign-in; switching later lasts for the session.
+        if (loc.manifest.characters.some((c) => c.id === st.favoriteChar)) st.activeChar = st.favoriteChar;
         if (!loc.manifest.characters.some((c) => c.id === st.activeChar)) st.activeChar = loc.manifest.characters.find((c) => c.id === 'anna')?.id ?? loc.manifest.characters[0].id;
         setSettings(st);
         setProgress(migrateProgress(p));

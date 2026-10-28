@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { DEFAULT_SETTINGS, THEMES, type Settings, type Theme } from '../../core/progress';
+import { DEFAULT_SETTINGS, TEXT_SIZES, THEMES, type Settings, type TextSize, type Theme } from '../../core/progress';
 import { DEFAULT_OPTIONS } from '../../core/recognizer';
 import { useStore } from '../store';
 import { storage, canPersist } from '../../runtime/storage';
@@ -18,7 +18,8 @@ function Num({ label, value, min, max, step = 1, onChange, help }: { label: stri
 }
 
 export function SettingsPage() {
-  const { settings, updateSettings, roster, data, checkForDataUpdate, overrides, setOverride, storageInfo } = useStore();
+  const { settings, updateSettings, roster, data, checkForDataUpdate, overrides, setOverride, storageInfo, reset } = useStore();
+  const [resetId, setResetId] = useState('');
   const [busy, setBusy] = useState<string | null>(null);
   const [msg, setMsg] = useState<Record<string, string>>({});
   const set = (p: Partial<Settings>) => updateSettings(p);
@@ -42,6 +43,12 @@ export function SettingsPage() {
             ))}
           </div>
           <p className="small muted">Light: white pages, black text. Dark: black pages, white text. Arcade: the night-navy and gold look from before the redesign. Saved for this player.</p>
+          <div className="seg" role="radiogroup" aria-label="Text size">
+            {TEXT_SIZES.map((t) => (
+              <button key={t} role="radio" aria-checked={settings.textSize === t} className={settings.textSize === t ? 'on' : ''} onClick={() => set({ textSize: t })}>{TEXT_LABEL[t]}</button>
+            ))}
+          </div>
+          <label className="row"><input type="checkbox" checked={settings.reduceMotion} onChange={(e) => set({ reduceMotion: e.target.checked })} /> Reduce motion (no animations or fight screen shake)</label>
         </div>
         <PlayersCard />
       </div>
@@ -54,6 +61,19 @@ export function SettingsPage() {
             <button className="btn sm" onClick={changeConsent}>Change storage choice</button>
           </div>
         )}
+        <div className="row">
+          <label className="field">
+            <span>Reset one character's progress</span>
+            <select name="reset-char" value={resetId} onChange={(e) => setResetId(e.target.value)}>
+              <option value="">Choose a character…</option>
+              {roster.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+            </select>
+          </label>
+          <button className="btn sm danger" disabled={!resetId} onClick={() => {
+            const name = roster.find((c) => c.id === resetId)?.name ?? resetId;
+            if (window.confirm(`Reset ${name}'s Academy progress, combos and stats? Other characters and the shared fundamentals stay.`)) { reset(resetId); setResetId(''); }
+          }}>Reset progress</button>
+        </div>
         <div className="row">
           <p>Delete every player, all progress and settings on this device. This can't be undone. Download your progress first from the Progress page if you want a copy.</p>
           <button className="btn sm danger" onClick={() => window.confirm('Delete all players, progress and settings on this device? This cannot be undone.') && deleteAllData()}>Delete all data</button>
@@ -156,6 +176,7 @@ export function SettingsPage() {
 }
 
 const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade' };
+const TEXT_LABEL: Record<TextSize, string> = { normal: 'Normal text', large: 'Large', xlarge: 'Extra large' };
 
 function PlayersCard() {
   const me = currentPlayer();

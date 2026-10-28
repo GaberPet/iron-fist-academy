@@ -35,7 +35,7 @@ function SessionTimer({ minutes }: { minutes: number }) {
 }
 
 export function HomePage() {
-  const { char, progress, settings } = useStore();
+  const { char, progress, settings, updateSettings, setActiveChar } = useStore();
   const lessons = useMemo(() => lessonsFor(char), [char]);
   const stats = useMemo(() => computeStats(progress, char.profile.id), [progress, char]);
   const recs = useMemo(() => recommend(lessons, progress, settings, char.profile.id), [lessons, progress, settings, char]);
@@ -58,6 +58,22 @@ export function HomePage() {
           <button className="btn" onClick={() => navigate('fight')}>Open free fight</button>
         </div>
       </section>
+      <label className="field favourite-pick">
+        <span>Favourite character</span>
+        <select
+          name="favourite"
+          value={settings.favoriteChar}
+          onChange={(e) => {
+            const id = e.target.value;
+            updateSettings({ favoriteChar: id });
+            if (id) setActiveChar(id);
+          }}
+        >
+          <option value="">None (keep the last one used)</option>
+          {roster.map((c) => <option key={c.id} value={c.id}>{c.name}</option>)}
+        </select>
+        <span className="small muted">Every tab opens on this character when you sign in.</span>
+      </label>
       <div className="home-lead">
         <button className="char-card home-portrait" onClick={() => navigate('characters')} aria-label={`${char.profile.name}: change character`}>
           <div className="char-info">

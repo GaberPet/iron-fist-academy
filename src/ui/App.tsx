@@ -113,8 +113,10 @@ export function App() {
   const page = route[0];
   useEffect(() => {
     document.documentElement.dataset.theme = settings.theme;
+    document.documentElement.dataset.text = settings.textSize;
+    document.documentElement.dataset.motion = settings.reduceMotion ? 'reduce' : 'full';
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(document.body).backgroundColor);
-  }, [settings.theme]);
+  }, [settings.theme, settings.textSize, settings.reduceMotion]);
   const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {

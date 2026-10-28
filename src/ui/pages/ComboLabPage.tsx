@@ -52,7 +52,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
                 <button key={c.id} className={`list-item ${combo?.id === c.id && mode !== 'challenge' ? 'sel' : ''}`} onClick={() => { if (mode === 'challenge') setMode('step'); navigate('combos', c.id); }} style={{ flexDirection: 'column', alignItems: 'flex-start' }}>
                   <div className="row" style={{ width: '100%' }}>
                     <b>{c.name}</b>
-                    {c.curated && <span className="badge char">Curated</span>}
+                    
                     {isRecent(c.firstSeen) && <span className="badge good" title={`Added to the wiki on or before ${c.firstSeen}`}>New</span>}
                     {c.parseOk === false && <span className="badge" title="The trainer can't read this notation yet">View only</span>}
                     <span className="right">{st?.mastered ? <span className="badge good">Mastered</span> : st ? <span className="badge">{st.successes}/{st.attempts}</span> : null}</span>
@@ -100,7 +100,7 @@ function ComboDetail({ combo, mode, focusStep, required }: { combo: ComboDef; mo
         <div className="row">
           <h2 style={{ margin: 0 }}>{combo.name}</h2>
           {combo.difficulty ? <span className="badge" title="Coach estimate">{'★'.repeat(combo.difficulty)} difficulty</span> : <span className="badge" title="Imported routes aren't rated">Not rated</span>}
-          {combo.curated && <span className="badge char">Curated</span>}
+          
           {combo.tags.map((t) => <span key={t} className="badge">{t}</span>)}
         </div>
         <p className="dim" style={{ margin: 0 }}>{combo.situation}</p>

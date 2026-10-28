@@ -345,6 +345,7 @@ export class Arena3D {
     this.camPos.lerp(target, 0.12);
     this.camLook.lerp(look, 0.15);
     this.camera.position.copy(this.camPos);
+    if (this.shake > 0.001 && document.documentElement.dataset.motion === 'reduce') this.shake = 0; // Settings: reduce motion
     if (this.shake > 0.001) {
       this.camera.position.x += (Math.random() - 0.5) * this.shake;
       this.camera.position.y += (Math.random() - 0.5) * this.shake;

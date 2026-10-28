@@ -421,3 +421,5 @@ a:hover { color: var(--red); }
 .player-row { justify-content: space-between; flex-wrap: wrap; cursor: default; }
 .player-row form { flex: 1; }
 .player-row input { flex: 1; min-width: 0; }
+.favourite-pick { max-width: 360px; }
+.favourite-pick select { width: 100%; }
