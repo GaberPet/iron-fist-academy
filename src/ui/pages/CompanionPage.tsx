@@ -81,7 +81,7 @@ export function CompanionPage() {
       <div className="grid g2">
         {RECIPES.map((r) => (
           <div key={r.title} className="card stack">
-            <div className="card-title"><h3>{r.title}</h3>{r.drill && <button className="btn sm" onClick={() => navigate('dojo', r.drill!)}>App drill →</button>}</div>
+            <div className="card-title"><h3>{r.title}</h3>{r.drill && <button className="btn sm desktop-only" onClick={() => navigate('dojo', r.drill!)}>App drill →</button>}</div>
             <ol className="dim" style={{ paddingLeft: 18, margin: 0 }}>{r.steps.map((s) => <li key={s}>{s}</li>)}</ol>
           </div>
         ))}

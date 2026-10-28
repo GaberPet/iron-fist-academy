@@ -55,7 +55,7 @@ export function HomePage() {
         <p>Frame data, combos and punishers for all {roster.length} characters, with lessons, drills and a practice opponent. Your progress stays on this device.</p>
         <div className="row" style={{ marginTop: 'var(--space-lg)' }}>
           <button className="btn primary" onClick={() => (recs[0] ? go(recs[0]) : navigate('academy'))}>Continue training</button>
-          <button className="btn" onClick={() => navigate('fight')}>Open free fight</button>
+          <button className="btn desktop-only" onClick={() => navigate('fight')}>Open free fight</button>
         </div>
       </section>
       <label className="field favourite-pick">

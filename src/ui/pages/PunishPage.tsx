@@ -38,8 +38,8 @@ export function PunishPage() {
           <p>Know your punisher for every frame window, then execute it. Opponent moves and frame values come from the imported data; {char.profile.short}'s punisher list comes from Wavu's punisher table.</p>
         </div>
         <div className="row">
-          <button className="btn" onClick={() => navigate('dojo', 'punish-standing')}>Timing drill (standing) →</button>
-          <button className="btn" onClick={() => navigate('dojo', 'punish-crouching')}>Timing drill (crouching) →</button>
+          <button className="btn desktop-only" onClick={() => navigate('dojo', 'punish-standing')}>Timing drill (standing) →</button>
+          <button className="btn desktop-only" onClick={() => navigate('dojo', 'punish-crouching')}>Timing drill (crouching) →</button>
         </div>
       </div>
 

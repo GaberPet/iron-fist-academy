@@ -94,7 +94,7 @@ export function SettingsPage() {
           <Num label="Daily goal (minutes)" value={settings.dailyGoalMinutes} min={5} max={180} step={5} onChange={(v) => set({ dailyGoalMinutes: v })} />
           <Num label="Practice session length (minutes)" value={settings.sessionMinutes} min={5} max={180} step={5} onChange={(v) => set({ sessionMinutes: v })} help="Used by the session timer on the dashboard." />
           <Num label="Throw break window (frames)" value={settings.throwBreakWindow} min={8} max={30} onChange={(v) => set({ throwBreakWindow: v })} help="Simulation approximation; default 20. Verify the real window in Tekken 8." />
-          <div className="row"><span className="small dim">Drill difficulty: <b>{settings.drillDifficulty}</b> (change it in Bot Dojo)</span><button className="btn sm" onClick={() => navigate('dojo')}>Open Bot Dojo</button></div>
+          <div className="row desktop-only"><span className="small dim">Drill difficulty: <b>{settings.drillDifficulty}</b> (change it in Bot Dojo)</span><button className="btn sm" onClick={() => navigate('dojo')}>Open Bot Dojo</button></div>
         </div>
       </div>
 
