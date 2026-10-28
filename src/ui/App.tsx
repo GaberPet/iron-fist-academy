@@ -16,6 +16,7 @@ import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
 import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
+import { MatchupPage } from './pages/MatchupPage';
 import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
@@ -30,6 +31,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'moves', label: 'Move library', icon: '☰' },
   { id: 'combos', label: 'Combo lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
+  { id: 'matchup', label: 'How to beat…', icon: '◎' },
   { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
   { id: 'fight', label: 'Free fight', icon: '✊' },
   { id: 'updates', label: "What's new", icon: '✧', sep: true },
@@ -125,6 +127,7 @@ export function App() {
       case 'moves': return <MovesPage moveId={route[1]} />;
       case 'combos': return <ComboLabPage comboId={route[1]} focusStep={route[2] !== undefined ? Number(route[2]) : undefined} />;
       case 'punish': return <PunishPage />;
+      case 'matchup': return <MatchupPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'fight': return <Suspense fallback={<div className="empty">Loading the 3D arena…</div>}><FightPage /></Suspense>;
       case 'companion': return <CompanionPage />;
