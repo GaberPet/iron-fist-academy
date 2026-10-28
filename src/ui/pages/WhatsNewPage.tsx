@@ -2,7 +2,7 @@
 import { useState } from 'react';
 import type { ChangelogCharacter } from '../../types';
 import { isRecent } from '../../data';
-import { navigate } from '../hooks';
+import { hrefTo, navigate, rowClick } from '../hooks';
 import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 
@@ -72,8 +72,8 @@ function CharacterChange({ c }: { c: ChangelogCharacter }) {
                 <thead><tr><th>Move</th><th>Field</th><th>Before</th><th>After</th></tr></thead>
                 <tbody>
                   {c.movesChanged.flatMap((m) => Object.entries(m.fields).map(([f, [a, b]]) => (
-                    <tr key={`${m.id}-${f}`} className="clickable" onClick={() => go('moves', m.id)}>
-                      <td className="mono">{m.id}</td><td>{f}</td><td className="mono">{a || '—'}</td><td className="mono">{b || '—'}</td>
+                    <tr key={`${m.id}-${f}`} className="clickable" onClick={rowClick('moves', m.id)}>
+                      <td className="mono"><a className="row-link" href={hrefTo('moves', m.id)} onClick={(e) => { e.preventDefault(); go('moves', m.id); }}>{m.id}</a></td><td>{f}</td><td className="mono">{a || '—'}</td><td className="mono">{b || '—'}</td>
                     </tr>
                   )))}
                 </tbody>

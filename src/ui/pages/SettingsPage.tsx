@@ -4,6 +4,7 @@ import { DEFAULT_OPTIONS } from '../../core/recognizer';
 import { useStore } from '../store';
 import { storage } from '../../runtime/storage';
 import { navigate } from '../hooks';
+import { fmtDate } from '../format';
 
 function Num({ label, value, min, max, step = 1, onChange, help }: { label: string; value: number; min: number; max: number; step?: number; onChange(v: number): void; help?: string }) {
   return (
@@ -77,7 +78,7 @@ export function SettingsPage() {
           }}>{busy === 'check' ? 'Checking…' : 'Check for updates'}</button>
         </div>
         <p className="small dim" style={{ margin: 0 }}>
-          The whole roster is imported from <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a> (CC0) by an automatic job that runs every day and republishes the site when anything changed, so new patches, characters and combos arrive without an app update. Data set: <b>{data.manifest.generatedAt.slice(0, 10)}</b> ({data.origin === 'remote' ? 'downloaded from the website' : storageInfo?.kind === 'electron' ? 'bundled with this app' : 'served with this site'}). The app also re-checks every few hours while it's open.
+          The whole roster is imported from <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a> (CC0) by an automatic job that runs every day and republishes the site when anything changed, so new patches, characters and combos arrive without an app update. Data set: <b>{fmtDate(data.manifest.generatedAt)}</b> ({data.origin === 'remote' ? 'downloaded from the website' : storageInfo?.kind === 'electron' ? 'bundled with this app' : 'served with this site'}). The app also re-checks every few hours while it's open.
         </p>
         {msg.check && <div className="notice info">{msg.check}</div>}
         <div className="scroll" style={{ maxHeight: 420 }}>
@@ -93,7 +94,7 @@ export function SettingsPage() {
                     <td className="mono">{e.counts.combos} ({e.counts.combosParsed})</td>
                     <td className="mono">{e.counts.punishers}</td>
                     <td className="small muted mono">{Object.entries(e.revisions).filter(([, v]) => v).map(([k, v]) => `${k} ${v}`).join(' · ')}</td>
-                    <td className="small">{e.updatedAt.slice(0, 10)}</td>
+                    <td className="small">{fmtDate(e.updatedAt)}</td>
                     <td className="small">
                       {ov.length ? ov.map(([mid, o]) => (
                         <div key={mid} className="row"><code>{mid}</code> <span className="muted">{Object.keys(o.fields).join(', ')}</span> <button className="btn sm ghost" onClick={() => setOverride(e.id, mid, null)}>Revert</button></div>

@@ -11,6 +11,7 @@ import { InputLog } from './InputLog';
 import { ControllerDiagram } from './ControllerDiagram';
 import { inputManager } from '../../runtime/inputManager';
 import { navigate } from '../hooks';
+import { fmtTime } from '../format';
 
 const errText = (e: InputErrorType | 'self-reported') => (e === 'self-reported' ? 'Self-reported drop' : ERROR_TEXT[e]);
 
@@ -357,7 +358,7 @@ function LastAttemptPanel({ history, steps, comboId }: { history: LastResult[]; 
     <div className={`attempt-panel card ${last.ok ? 'ok' : 'no'}`} aria-live="polite">
       <div className="card-title">
         <div className="section-label" style={{ margin: 0 }}>Last attempt</div>
-        <span className="small muted">{new Date(last.at).toLocaleTimeString()}</span>
+        <span className="small muted">{fmtTime(last.at)}</span>
       </div>
       {last.ok ? (
         <p style={{ margin: 0 }}><b>Clean.</b> Every input in order{last.seconds !== undefined ? `, in ${last.seconds.toFixed(2)} s` : ''}. Keep the streak going.</p>

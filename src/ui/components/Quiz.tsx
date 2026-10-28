@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import type { QuizQuestion } from '../../core/quiz';
 import { useStore } from '../store';
+import { finePointer } from '../hooks';
 
 export function Quiz({ questions, lessonId, onDone }: { questions: QuizQuestion[]; lessonId?: string; onDone(score: number): void }) {
   const { record } = useStore();
@@ -42,7 +43,7 @@ export function Quiz({ questions, lessonId, onDone }: { questions: QuizQuestion[
           {q.dataNote && <div className="source-line" style={{ marginTop: 4 }}>{q.dataNote}</div>}
         </div>
       )}
-      {picked !== null && <button className="btn primary" onClick={next} autoFocus>{i + 1 >= questions.length ? 'Finish' : 'Next question'}</button>}
+      {picked !== null && <button className="btn primary" onClick={next} autoFocus={finePointer()}>{i + 1 >= questions.length ? 'Finish' : 'Next question'}</button>}
     </div>
   );
 }

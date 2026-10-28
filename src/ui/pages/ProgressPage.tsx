@@ -3,7 +3,7 @@ import { lessonsFor, STAGE_NAMES } from '../../data';
 import { computeStats, lessonState, migrateProgress } from '../../core/progress';
 import { ERROR_TEXT, type InputErrorType } from '../../core/recognizer';
 import { OUTCOME_TEXT, type Outcome } from '../../core/sim';
-import { navigate } from '../hooks';
+import { hrefTo, navigate, rowClick } from '../hooks';
 import { useStore } from '../store';
 import { BarChart, LineChart } from '../components/Charts';
 import { storage } from '../../runtime/storage';
@@ -116,7 +116,7 @@ export function ProgressPage() {
             <thead><tr><th>Combo</th><th>Runs</th><th>Clean</th><th>Best streak</th><th /></tr></thead>
             <tbody>{char.combos.map((c) => {
               const s = progress.combos[`${char.profile.id}:${c.id}`];
-              return <tr key={c.id} className="clickable" onClick={() => navigate('combos', c.id)}><td>{c.name}</td><td className="mono">{s?.attempts ?? 0}</td><td className="mono">{s ? `${Math.round((s.successes / s.attempts) * 100)}%` : '—'}</td><td className="mono">{s?.bestStreak ?? 0}</td><td>{s?.mastered && <span className="badge good">Mastered</span>}</td></tr>;
+              return <tr key={c.id} className="clickable" onClick={rowClick('combos', c.id)}><td><a className="row-link" href={hrefTo('combos', c.id)}>{c.name}</a></td><td className="mono">{s?.attempts ?? 0}</td><td className="mono">{s ? `${Math.round((s.successes / s.attempts) * 100)}%` : '—'}</td><td className="mono">{s?.bestStreak ?? 0}</td><td>{s?.mastered && <span className="badge good">Mastered</span>}</td></tr>;
             })}</tbody>
           </table>
         </div>

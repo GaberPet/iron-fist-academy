@@ -44,7 +44,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
             {newCount > 0 && <option value="new">New this week ({newCount})</option>}
             {tags.map((t) => <option key={t} value={t}>{t}</option>)}
           </select>
-          <div className="list scroll" style={{ maxHeight: 'calc(100vh - 290px)' }}>
+          <div className="list scroll combo-list" style={{ maxHeight: 'calc(100vh - 290px)' }}>
             {!shown.length && <div className="empty">No combos match.</div>}
             {shown.map((c) => {
               const st = progress.combos[`${char.profile.id}:${c.id}`];

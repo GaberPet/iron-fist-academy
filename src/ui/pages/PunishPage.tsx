@@ -1,7 +1,7 @@
 import { useEffect, useMemo, useState } from 'react';
 import { punisherQuestions, type QuizQuestion } from '../../core/quiz';
 import { lookupMove } from '../../data';
-import { navigate } from '../hooks';
+import { finePointer, hrefTo, navigate, rowClick } from '../hooks';
 import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 import { InputDrill } from '../components/InputDrill';
@@ -78,7 +78,7 @@ export function PunishPage() {
               {phase === 'done' && (
                 <div className="row">
                   {execOk !== null && <span className={`badge ${execOk ? 'good' : 'bad'}`}>{execOk ? 'Executed cleanly' : 'Execution missed'}</span>}
-                  <button className="btn primary" onClick={next} autoFocus>Next situation</button>
+                  <button className="btn primary" onClick={next} autoFocus={finePointer()}>Next situation</button>
                 </div>
               )}
             </>
@@ -95,8 +95,8 @@ export function PunishPage() {
                   {(list as typeof standing).map((p) => {
                     const m = lookupMove(char, p.moveId);
                     return (
-                      <tr key={p.moveId + p.window} className="clickable" onClick={() => navigate('moves', m?.id ?? p.moveId)}>
-                        <td className="mono">{p.window}</td>
+                      <tr key={p.moveId + p.window} className="clickable" onClick={rowClick('moves', m?.id ?? p.moveId)}>
+                        <td className="mono"><a className="row-link" href={hrefTo('moves', m?.id ?? p.moveId)} aria-label={`${p.moveId}, punishes ${p.window}`}>{p.window}</a></td>
                         <td><NotationView notation={p.moveId} />{p.note && <div className="small muted">{p.note}</div>}</td>
                         <td className="mono">{m?.startup ?? '—'}</td>
                         <td className="mono">{m?.damage ?? '—'}</td>

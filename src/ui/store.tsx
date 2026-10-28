@@ -9,6 +9,7 @@ import {
 import { storage, type StorageInfo } from '../runtime/storage';
 import { inputManager } from '../runtime/inputManager';
 import { checkForUpdate, loadChangelog, loadCharacterFile, locateData, type DataLocation } from '../runtime/dataService';
+import { fmtDate } from './format';
 
 const UPDATE_CHECK_MS = 6 * 60 * 60 * 1000;
 
@@ -151,14 +152,14 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
     const changed = Object.keys(files).filter((id) => next.manifest.characters.find((c) => c.id === id)?.hash !== prev?.manifest.characters.find((c) => c.id === id)?.hash);
     await loadInto(next, changed);
     const added = next.manifest.characters.length - (prev?.manifest.characters.length ?? 0);
-    return `Character data updated (${next.manifest.generatedAt.slice(0, 10)})${changed.length ? `: ${changed.length} loaded character(s) refreshed` : ''}${added > 0 ? `, ${added} new character(s)` : ''}.`;
+    return `Character data updated (${fmtDate(next.manifest.generatedAt)})${changed.length ? `: ${changed.length} loaded character(s) refreshed` : ''}${added > 0 ? `, ${added} new character(s)` : ''}.`;
   }, [data, files, loadInto]);
 
   const checkForDataUpdate = useCallback(async () => {
     if (!data) return 'Data not loaded yet.';
     lastCheck.current = Date.now();
     const next = await checkForUpdate(data);
-    if (!next) return `Up to date (data from ${data.manifest.generatedAt.slice(0, 10)}).`;
+    if (!next) return `Up to date (data from ${fmtDate(data.manifest.generatedAt)}).`;
     const msg = await applyUpdate(next);
     setDataNotice(msg);
     return msg;

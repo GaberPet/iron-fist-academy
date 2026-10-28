@@ -19,6 +19,7 @@ import { Logo } from './components/Logo';
 import { Icon } from './components/Icon';
 import { RosterTiles } from './components/RosterTiles';
 import { isRecent } from '../data';
+import { fmtShortDate } from './format';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'home', label: 'Dashboard', icon: '⌂' },
@@ -76,7 +77,7 @@ function TopBar() {
         </button>
         {loadingIds.length > 0 && <span className="small muted">Loading {loadingIds.length} character{loadingIds.length > 1 ? 's' : ''}…</span>}
         <span className="spacer" />
-        {saveError && <span className="badge bad" title={saveError}>Save failed</span>}
+        {saveError && <span className="badge bad" title={saveError} role="alert">Save failed: your progress could not be stored. Free some disk space or check Settings → Storage.</span>}
         <button className="pill" onClick={() => navigate('controller')} style={{ cursor: 'pointer', color: 'var(--text)' }}>
           <span className={`dot ${pad ? 'on' : 'off'}`} />
           {pad ? pad.label : 'No controller'}
@@ -93,6 +94,7 @@ function TopBar() {
           </div>
         </div>
       )}
+      <div aria-live="polite" className="sr-only">{dataNotice ?? ''}</div>
       {dataNotice && (
         <div className="notice info row" style={{ margin: '12px 24px 0', borderRadius: 10 }}>
           <span>{dataNotice}</span>
@@ -128,6 +130,16 @@ export function App() {
   })();
   return (
     <div className="app" style={{ ['--char' as string]: char.profile.color }}>
+      <a
+        className="skip-link"
+        href="#main"
+        onClick={(e) => {
+          e.preventDefault(); // hash routing: focus the content instead of changing the route
+          document.getElementById('main')?.focus();
+        }}
+      >
+        Skip to Content
+      </a>
       <nav className="sidebar" aria-label="Main">
         <div className="brand">
           <Logo />
@@ -148,7 +160,7 @@ export function App() {
         ))}
         <div className="sidebar-foot">
           <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
-            Data updated {data.manifest.generatedAt.slice(5, 10)}
+            Data updated {fmtShortDate(data.manifest.generatedAt)}
           </button>
           <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).{' '}
           <a href="#/credits">Credits</a>
@@ -157,7 +169,7 @@ export function App() {
       </nav>
       <div className="main">
         <TopBar />
-        <main className="content">
+        <main className="content" id="main" tabIndex={-1}>
           <div className="page">
             <ErrorBoundary resetKey={route.join('/')}>{content}</ErrorBoundary>
           </div>

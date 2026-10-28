@@ -2,13 +2,14 @@ import { useMemo } from 'react';
 import type { Lesson } from '../../types';
 import { lessonsFor, lookupMove, STAGE_NAMES } from '../../data';
 import { lessonState, lessonUnlocked, stageUnlock } from '../../core/progress';
-import { navigate } from '../hooks';
+import { hrefTo, navigate, rowClick } from '../hooks';
 import { useStore } from '../store';
 import { Markup } from '../components/Markup';
 import { MoveCard } from '../components/MoveCard';
 import { ExerciseRunner, describeExercise } from '../components/ExerciseRunner';
 import { ControllerDiagram } from '../components/ControllerDiagram';
 import { NotationView } from '../components/Notation';
+import { fmtDate, fmtDateTime } from '../format';
 
 export function AcademyPage({ lessonId }: { lessonId?: string }) {
   const { char, progress, settings, roster, isCurated } = useStore();
@@ -84,7 +85,7 @@ function LessonView({ lesson, lessons }: { lesson: Lesson; lessons: Lesson[] }) 
         <button className="btn sm ghost" onClick={() => navigate('academy')}>← Academy</button>
         <span className="badge">Stage {lesson.stage}: {STAGE_NAMES[lesson.stage]}</span>
         {lesson.isStageTest && <span className="badge warn">Stage test</span>}
-        {s.mastered && <span className="badge good">Mastered {s.masteredAt?.slice(0, 10)}</span>}
+        {s.mastered && <span className="badge good">Mastered {fmtDate(s.masteredAt)}</span>}
       </div>
       <h1>{lesson.title}</h1>
       {!u.unlocked && (
@@ -118,15 +119,15 @@ function LessonView({ lesson, lessons }: { lesson: Lesson; lessons: Lesson[] }) 
                   {lesson.visual.moveIds.map((mid) => {
                     const m = lookupMove(char, mid);
                     return m ? (
-                      <tr key={mid} className="clickable" onClick={() => navigate('moves', m.id)}>
-                        <td><NotationView notation={mid} /><div className="small muted">{m.name}</div></td>
+                      <tr key={mid} className="clickable" onClick={rowClick('moves', m.id)}>
+                        <td><a className="row-link" href={hrefTo('moves', m.id)}><NotationView notation={mid} /><div className="small muted">{m.name}</div></a></td>
                         <td className="mono">{m.startup}</td><td className="mono">{m.block}</td><td className="mono">{m.hit}</td>
                       </tr>
                     ) : null;
                   })}
                 </tbody>
               </table>
-              <div className="source-line">Frame data: {char.frames.source.name}, fetched {char.frames.source.fetchedAt?.slice(0, 10)}.</div>
+              <div className="source-line">Frame data: {char.frames.source.name}, fetched {fmtDate(char.frames.source.fetchedAt)}.</div>
             </div>
           )}
           {lesson.related.moves?.slice(0, 1).map((mid) => {
@@ -154,7 +155,7 @@ function LessonView({ lesson, lessons }: { lesson: Lesson; lessons: Lesson[] }) 
           <h4 style={{ marginTop: 10 }}>Your recent misses in this lesson</h4>
           {reviewAttempts.length ? (
             <table className="data">
-              <tbody>{reviewAttempts.map((a, i) => <tr key={i}><td className="small muted">{new Date(a.at).toLocaleString()}</td><td className="mono small">{a.itemId}</td><td className="small">{a.errorType ?? 'incorrect'}{a.errorStepText ? ` at ${a.errorStepText}` : ''}</td></tr>)}</tbody>
+              <tbody>{reviewAttempts.map((a, i) => <tr key={i}><td className="small muted">{fmtDateTime(a.at)}</td><td className="mono small">{a.itemId}</td><td className="small">{a.errorType ?? 'incorrect'}{a.errorStepText ? ` at ${a.errorStepText}` : ''}</td></tr>)}</tbody>
             </table>
           ) : <div className="small muted">No misses recorded yet.</div>}
         </div>

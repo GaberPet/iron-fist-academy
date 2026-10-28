@@ -2,7 +2,7 @@ import { useMemo, useState } from 'react';
 import type { CharacterData, Move } from '../../types';
 import { classifySafety, firstHitLevel, SAFETY_TEXT, type Safety } from '../../core/frames';
 import { lookupMove } from '../../data';
-import { navigate } from '../hooks';
+import { hrefTo, rowClick } from '../hooks';
 import { useStore } from '../store';
 import { MoveCard, SafetyBadge } from '../components/MoveCard';
 
@@ -59,8 +59,8 @@ export function MovesPage({ moveId }: { moveId?: string }) {
               <thead><tr><th>Input</th><th>Name</th><th>Lvl</th><th>Startup</th><th>Block</th><th>Hit</th><th>Dmg</th></tr></thead>
               <tbody>
                 {list.map((m) => (
-                  <tr key={m.id} className={`clickable ${selected?.id === m.id ? 'sel' : ''}`} onClick={() => navigate('moves', m.id)}>
-                    <td className="mono">{keyIds.has(m.id) && <span title="Key move" style={{ color: 'var(--char)' }}>★ </span>}{m.id}</td>
+                  <tr key={m.id} className={`clickable ${selected?.id === m.id ? 'sel' : ''}`} onClick={rowClick('moves', m.id)}>
+                    <td className="mono">{keyIds.has(m.id) && <span title="Key move" aria-label="Key move" style={{ color: 'var(--char)' }}>★ </span>}<a className="row-link" href={hrefTo('moves', m.id)} aria-current={selected?.id === m.id ? 'true' : undefined}>{m.id}</a></td>
                     <td>{m.name || <span className="muted">—</span>}</td>
                     <td className="mono">{m.hitLevels.join(',')}</td>
                     <td className="mono">{m.startup}</td>

@@ -197,7 +197,7 @@ export function DojoArena({ drill, reps, difficulty, opponentIds, lessonId, onDo
       </div>
       <DojoHud action={current} yourMove={yourMove} drill={drill} />
       {last ? (
-        <div className={`result-banner ${last.result.success ? 'ok' : 'no'}`}>
+        <div className={`result-banner ${last.result.success ? 'ok' : 'no'}`} aria-live="polite">
           <div>
             <div>{last.result.success ? '✔' : '✖'} {OUTCOME_TEXT[last.result.outcome]}</div>
             <div className="small" style={{ fontWeight: 500 }}>{last.action.label} · {last.result.detail}</div>

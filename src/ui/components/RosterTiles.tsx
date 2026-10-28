@@ -2,6 +2,7 @@
 import { useMemo, useState } from 'react';
 import { isRecent } from '../../data';
 import { useStore } from '../store';
+import { finePointer } from '../hooks';
 
 function initials(name: string) {
   const parts = name.split(/[\s-]+/).filter(Boolean);
@@ -23,7 +24,7 @@ export function RosterTiles({ onPicked, autoFocusSearch }: { onPicked?(id: strin
   };
   return (
     <div className="stack">
-      <input type="search" placeholder="Find a character" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Find a character" autoFocus={autoFocusSearch} style={{ maxWidth: 320 }} />
+      <input type="search" placeholder="Find a character" value={q} onChange={(e) => setQ(e.target.value)} aria-label="Find a character" autoFocus={autoFocusSearch && finePointer()} style={{ maxWidth: 320 }} />
       <div className="roster">
         {shown.map((c) => (
           <button key={c.id} className={`char-tile ${c.id === char.profile.id ? 'sel' : ''}`} onClick={() => pick(c.id)} aria-pressed={c.id === char.profile.id}>

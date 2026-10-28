@@ -314,7 +314,7 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
         </div>
       </div>
       {over && (
-        <div className={`result-banner ${over.winner === 0 ? 'ok' : 'no'}`}>
+        <div className={`result-banner ${over.winner === 0 ? 'ok' : 'no'}`} role="status">
           <div>
             <div>{over.winner === 0 ? `You beat ${opp.profile.name}` : over.winner === 1 ? `${opp.profile.name} wins` : 'Draw'} · rounds {engine.wins[0]}–{engine.wins[1]}</div>
             <div className="small" style={{ fontWeight: 500 }}>Damage dealt in the last round: you {over.dealt[0]}, {opp.profile.short} {over.dealt[1]}. Press Rematch to go again.</div>
@@ -335,7 +335,7 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
           {adv ? <div className="small"><b className="mono" style={{ fontSize: '1.4rem' }}>{adv.text}</b> for {adv.who === 0 ? 'you' : opp.profile.short} after {adv.move} {adv.kind === 'block' ? 'was blocked' : 'hit'}{adv.text.startsWith('-') && Number(adv.text) <= -10 ? ' (punishable)' : ''}</div> : <span className="dim small">Shows the attacker's advantage after every hit or block, from the frame data.</span>}
         </div>
         <div className="card tight stack">
-          <div className="section-label">Fight log</div>
+          <div className="section-label" id="fightlog">Fight log</div>
           {feed.length ? feed.map((l, i) => <div key={i} className={`small ${i ? 'dim' : ''}`}>{l}</div>) : <span className="dim small">Punishes, counter hits, crushes, wall splats and throws show up here.</span>}
         </div>
         <div className="card tight">

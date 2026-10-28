@@ -2,6 +2,7 @@ import { useStore } from '../store';
 import { NotationView } from '../components/Notation';
 import { navigate } from '../hooks';
 import { RosterTiles } from '../components/RosterTiles';
+import { fmtDate } from '../format';
 
 export function CharactersPage() {
   const { roster, char, isCurated, data } = useStore();
@@ -13,7 +14,7 @@ export function CharactersPage() {
       <div className="page-head">
         <div>
           <h1>Characters</h1>
-          <p>The full Tekken 8 roster from Wavu Wiki ({roster.length} characters, data from {data.manifest.generatedAt.slice(0, 10)}). Every character has frame data, combos, punishers, quizzes and bot drills. Characters marked <span className="badge char">Curriculum</span> also have a full lesson path and coach notes. Progress is stored per character.</p>
+          <p>The full Tekken 8 roster from Wavu Wiki ({roster.length} characters, data from {fmtDate(data.manifest.generatedAt)}). Every character has frame data, combos, punishers, quizzes and bot drills. Characters marked <span className="badge char">Curriculum</span> also have a full lesson path and coach notes. Progress is stored per character.</p>
         </div>
       </div>
       <RosterTiles />

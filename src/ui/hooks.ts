@@ -17,6 +17,20 @@ export function navigate(...parts: string[]) {
   window.location.hash = '/' + parts.map(encodeURIComponent).join('/');
 }
 
+/** True on mouse / trackpad devices: only there is autofocus welcome (no surprise keyboard on phones). */
+export const finePointer = () => typeof window !== 'undefined' && window.matchMedia('(pointer: fine)').matches;
+
+/** href for an in-app route (real links: keyboard, Cmd/Ctrl+click, middle-click). */
+export const hrefTo = (...parts: string[]) => '#/' + parts.map(encodeURIComponent).join('/');
+
+/** Mouse clicks anywhere on a row follow its link; the link itself handles keyboard and new-tab clicks. */
+export function rowClick(...parts: string[]) {
+  return (e: { target: EventTarget | null }) => {
+    if (e.target instanceof Element && e.target.closest('a, button, input, select')) return;
+    navigate(...parts);
+  };
+}
+
 // ---------- input ----------
 /** Subscribe to the 60 Hz input stream. The callback is kept fresh without resubscribing. */
 export function useInputFrames(cb: (f: Frame, snap: InputSnapshot) => void, active = true) {
