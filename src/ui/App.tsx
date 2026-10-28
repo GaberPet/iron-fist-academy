@@ -1,3 +1,4 @@
+import { currentPlayer, switchPlayer } from './LoginGate';
 import { Component, Suspense, lazy, useEffect, useState, type ReactNode } from 'react';
 import { navigate, useControllerStatus, useRoute } from './hooks';
 import { useStore } from './store';
@@ -157,6 +158,8 @@ export function App() {
           </div>
         ))}
         <div className="sidebar-foot">
+          <span className="player-line">Player: <b>{currentPlayer()?.name}</b> · <button className="link-btn" onClick={switchPlayer}>Switch player</button></span>
+          <br />
           <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
             Data updated {fmtShortDate(data.manifest.generatedAt)}
           </button>

@@ -389,3 +389,12 @@ a:hover { color: var(--red); }
 .move-input, .move-meta { max-width: 100%; min-width: 0; }
 .move-input .notation, .move-input .nstep, .moves-split .notation, .moves-split .nstep { flex-wrap: wrap; max-width: 100%; }
 .page select { max-width: 100%; }
+
+/* Login: player picker shown before the app loads */
+.login { min-height: 100%; display: grid; place-items: center; padding: var(--space-lg) var(--space-sm); }
+.login-card { width: 100%; max-width: 420px; border: var(--rule-hair) solid var(--line); padding: var(--space-xl) var(--space-lg); }
+.login-card h1::after { content: ""; display: block; width: 40px; height: 4px; margin-top: var(--space-xs); background: var(--red); }
+.login-brand { display: flex; align-items: center; gap: var(--space-xs); }
+.login .list { border-top: var(--rule-hair) solid var(--line); }
+.login input { width: 100%; }
+.link-btn { background: none; border: 0; padding: 0; color: inherit; text-decoration: underline; cursor: pointer; font: inherit; }

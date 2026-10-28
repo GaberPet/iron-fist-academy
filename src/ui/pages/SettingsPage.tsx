@@ -5,6 +5,7 @@ import { useStore } from '../store';
 import { storage } from '../../runtime/storage';
 import { navigate } from '../hooks';
 import { fmtDate } from '../format';
+import { currentPlayer, switchPlayer } from '../LoginGate';
 
 function Num({ label, value, min, max, step = 1, onChange, help }: { label: string; value: number; min: number; max: number; step?: number; onChange(v: number): void; help?: string }) {
   return (
@@ -28,8 +29,13 @@ export function SettingsPage() {
       <div className="page-head">
         <div>
           <h1>Settings and data</h1>
-          <p>All data stays on this computer. No account or subscription is needed.</p>
+          <p>All data stays on this device. No account or subscription is needed.</p>
         </div>
+      </div>
+
+      <div className="card row">
+        <p>Signed in as <b>{currentPlayer()?.name}</b>. Each player's progress is saved separately on this device.</p>
+        <button className="btn sm" onClick={switchPlayer}>Switch player</button>
       </div>
 
       <div className="grid g2">

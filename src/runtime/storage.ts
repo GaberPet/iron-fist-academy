@@ -24,17 +24,42 @@ declare global {
 const api = () => (typeof window !== 'undefined' ? window.ifaApi : undefined);
 const LS_PREFIX = 'ironfist:';
 
+// Player profiles: each player's data lives under its own keys. The first player adopts data saved before profiles existed.
+let profile: { id: string; legacy: boolean } | null = null;
+export function setProfile(id: string | null, legacy = false) {
+  profile = id ? { id, legacy } : null;
+}
+const scoped = (key: string) => (profile ? `p-${profile.id}-${key}` : key);
+
+async function rawLoad<T>(key: string): Promise<T | null> {
+  const a = api();
+  if (a) return (await a.load(key)) as T | null;
+  const raw = localStorage.getItem(LS_PREFIX + key);
+  return raw ? (JSON.parse(raw) as T) : null;
+}
+
 export const storage = {
   isElectron: () => !!api(),
 
   async load<T>(key: string): Promise<T | null> {
+    const v = await rawLoad<T>(scoped(key));
+    return v === null && profile?.legacy ? rawLoad<T>(key) : v;
+  },
+
+  /** Unscoped: data shared by every player on this device (the profile list). */
+  loadShared: rawLoad,
+
+  async saveShared(key: string, value: unknown): Promise<void> {
     const a = api();
-    if (a) return (await a.load(key)) as T | null;
-    const raw = localStorage.getItem(LS_PREFIX + key);
-    return raw ? (JSON.parse(raw) as T) : null;
+    if (a) {
+      await a.save(key, value);
+      return;
+    }
+    localStorage.setItem(LS_PREFIX + key, JSON.stringify(value));
   },
 
   async save(key: string, value: unknown): Promise<void> {
+    key = scoped(key);
     const a = api();
     if (a) {
       await a.save(key, value);

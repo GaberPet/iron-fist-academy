@@ -1,6 +1,7 @@
 import { StrictMode } from 'react';
 import { createRoot } from 'react-dom/client';
 import { App } from './ui/App';
+import { LoginGate } from './ui/LoginGate';
 import { StoreProvider } from './ui/store';
 import { inputManager } from './runtime/inputManager';
 import '@fontsource/montserrat/300.css';
@@ -16,6 +17,7 @@ inputManager.start();
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>
+    <LoginGate>
     <StoreProvider
       fallback={<div className="loading"><div><div className="spinner" />Loading your training data…</div></div>}
       errorView={(e) => (
@@ -24,5 +26,6 @@ createRoot(document.getElementById('root')!).render(
     >
       <App />
     </StoreProvider>
+    </LoginGate>
   </StrictMode>,
 );
