@@ -1,0 +1,28 @@
+{
+ "short": "Eddy",
+ "playstyle": "Capoeira stance mix-ups. Control the mid range with long legs, safe mids and lows, then flow into Handstand (HSP) and Relaxed (RLX) for 50/50s. Wavu warns his combos can be very specific and his counter-hit launches need fast reactions, so drill the routes.",
+ "stances": [
+  {"code": "HSP", "name": "Handstand", "entry": "Many strings (e.g. 1,2) and f,F+4 transition into it", "note": "HSP.3,3,3 and HSP.4,2 tornado; HSP.3,3,3 then flows into RLX."},
+  {"code": "RLX", "name": "Relaxed", "entry": "ws1,3, b+3,3, HSP.3,3,3 and others", "note": "RLX.2 is -2 on block and a combo filler; RLX.4,3 is a Heat Engager; RLX.3+4 tornadoes."}
+ ],
+ "keyLaunchers": ["df+3", "ws2", "ws1,3", "f,F+4"],
+ "whiffPunishers": ["df+3", "f,F+4", "b+3+4"],
+ "keyMoves": [
+  ["1,2", "punisher,poke", "i10 jab string, -3 on block, can enter HSP.", "His i10 punish and a stance entry.", "After blocking -10; to start HSP pressure.", "Against crouchers.", "Duck it.", "-3.", "+8.", "Low risk.", "Fast punish into stance."],
+  ["df+1", "poke", "i13 mid, -3 on block.", "His safe mid check.", "To stop ducking.", "Little risk.", "Block.", "-3.", "+6.", "Low risk.", "Basic mid."],
+  ["b+3", "poke", "i13 knee, -9 on block.", "A fast mid that starts b+3,3.", "Up close.", "-9 hands over the turn.", "Block.", "-9.", "+8.", "Moderate.", "b+3,3 launches and enters RLX."],
+  ["1+2", "poke", "Faisão: i20 mid elbow, +3c on block.", "A plus-on-block mid.", "To keep the turn.", "As an interrupt.", "Interrupt or step it.", "+3c.", "+5c.", "Moderate.", "Turn keeper."],
+  ["df+3", "launcher,punisher", "Mirage: i15 tornado launcher, -18 on block.", "His i15 launch punisher (Wavu: regular launcher).", "After -15 moves.", "Raw: -18, launch punishable.", "Block and launch.", "-18.", "Launch (+31a).", "Very risky.", "Only as a punish."],
+  ["ws2", "launcher,punisher", "Machado: i15 while-standing elbow, -18 on block.", "His alternative launcher (Wavu).", "After -15 lows.", "Raw: -18.", "Block.", "-18.", "+51.", "Risky.", "Punish lows."],
+  ["ws1,3", "launcher,punisher", "i19 while-standing launcher that enters RLX.", "Launch into Relaxed (Wavu BnB).", "After lows that are -19 or worse.", "-15 on block.", "Block.", "-15.", "Launch (+38a) into RLX.", "Risky.", "A Relaxed combo starter."],
+  ["df+2", "counter-hit", "Elbow Uppercut: i14 mid, -5 on block.", "A safe, fast mid with a counter-hit bonus.", "To check and catch presses.", "Little risk.", "Block.", "-5.", "+6; +21a on CH.", "Low risk.", "Safe mid with a reward."],
+  ["df+4", "low", "Kneecap Crusher: i18 low, -12 on block, +14g on counter hit.", "His main low poke.", "Against standing block.", "When they block low.", "Block low.", "-12.", "+0; +14g on CH.", "Moderate.", "Part of his ankle game."],
+  ["f+3+4", "heat", "Xangô: i19 mid Heat Engager, -9 on block.", "A Heat Engager.", "To start Heat.", "-9 on block.", "Block.", "-9.", "Heat Engager.", "Moderate.", "Heat start."],
+  ["f,F+4", "launcher", "Folha Ataque: i19 mid tornado that transitions to HSP, -12 on block.", "A long-range launcher.", "Whiff punish at range.", "Raw on block: -12.", "Block it.", "-12.", "Launch (+37a).", "Risky.", "His long whiff punisher."],
+  ["b+3+4", "power-crush", "Lunging Brush Fire: i20 high power crush, -9 on block.", "Armoured attack through mids and highs.", "When the opponent pressures.", "Against lows and crouchers.", "Duck it or low it.", "-9.", "+21a.", "Moderate.", "A panic button."],
+  ["2+4", "throw", "Rio Special: i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with stance pressure."]
+ ],
+ "combos": [
+  {"id": "eddy-ws13", "name": "ws1,3 → RLX.2 b+1 ws1,4", "difficulty": 4, "section": "Bread n' Butter", "starters": ["ws1,3"], "situation": "After launching with ws1,3, which goes straight into Relaxed.", "route": "RLX.2 b+1 ws1,4 qcf+3 T! db+4,4", "tags": ["bnb"], "mistakes": ["Pressing RLX.2 before RLX has started.", "b+1 has to go into crouch so ws1,4 comes out: hold back-down only briefly."]}
+ ]
+}

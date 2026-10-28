@@ -1,0 +1,26 @@
+{
+ "short": "Fahkumram",
+ "playstyle": "Long-range powerhouse. Poke from outside the opponent's reach with his long legs (3, uf+4, b+3+4), break their guard with string mix-ups and charged knees, and win big when Garuda Force (GRF) powers him up in Heat. He is slow up close, so do not let the opponent get inside for free.",
+ "stances": [
+  {"code": "GRF", "name": "Garuda Force", "entry": "Heat activation, or a counter-hit d+4 throw", "note": "A power-up install: GRF powers up specific moves and gives string extensions (Wavu)."},
+  {"code": "RAM", "name": "Rama Stance", "entry": "Landing from GRF.1+2, df+3+4,GRF.3, GRF.4* and GRF.3*", "note": "A landing stance only reachable through Garuda Force moves."}
+ ],
+ "keyLaunchers": ["df+2,3", "uf+4", "ws2,4", "b,f+4"],
+ "whiffPunishers": ["uf+4", "b,f+4", "3+4"],
+ "keyMoves": [
+  ["1,2", "punisher", "i10 jab string, -3 on block.", "His i10 punish.", "After -10 moves.", "Against crouchers.", "Duck it.", "-3.", "+5.", "Low risk.", "Fast punish."],
+  ["3", "poke", "Ayutthaya: i13 long mid, -9 on block.", "One of the longest pokes in the game (Wavu).", "At range to poke and start strings.", "-9 hands over the turn.", "Block.", "-9.", "+2.", "Low risk.", "His main long poke."],
+  ["df+1", "poke", "Aiyara: i15 mid, -3 on block.", "A safe mid check.", "To stop ducking.", "Slow for a check: i15.", "Interrupt with faster moves.", "-3.", "+6.", "Low risk.", "His safest mid."],
+  ["b+4", "poke", "i14 knee, -5 on block.", "A quick, safe mid.", "Up close.", "Little risk.", "Block.", "-5.", "+6.", "Low risk.", "A fast option, which he lacks elsewhere."],
+  ["df+2,3", "launcher,punisher", "i15 punish string that crumples on hit (+52cs).", "His launch punish (Wavu BnB starter).", "After -15 moves.", "Raw on block: -13.", "Block.", "-13.", "Big combo.", "Risky.", "Your main punish."],
+  ["uf+4", "launcher", "i20 instant tornado, -16 on block.", "A long-range launcher.", "Whiff punish at range.", "Raw: -16.", "Block and launch.", "-16.", "Instant tornado (+66a).", "Risky.", "His long-range payoff."],
+  ["b+1", "punisher,evasion", "Surging Elbow: i14 mid, evades jabs, launches (+34a). -13 on block.", "An evasive i14 punisher.", "Punish -14; duck jabs.", "Raw: -13.", "Block.", "-13.", "Launch.", "Moderate.", "Answer to jab pressure."],
+  ["ws2,4", "launcher,punisher", "While-standing launcher string, -13 on block.", "His while-standing launch punish.", "After lows that are -15 or worse.", "Raw on block.", "Block.", "-13.", "Launch (+34a).", "Risky.", "Punish lows."],
+  ["3+4", "counter-hit", "Heavy Middle Kick: i18 mid, launches on counter hit (+58a).", "A long CH launcher with good sidestep tracking.", "At range when they step in.", "-9 on block.", "Block.", "-9.", "+18a; launch on CH.", "Moderate.", "Keep-out tool."],
+  ["b,f+4", "launcher", "Lashing Squall: i18 high, +6 on block, launches on hit (+47a).", "A plus-on-block launcher.", "To keep the turn at range.", "Against crouchers.", "Duck it.", "+6.", "Launch.", "Moderate.", "A scary high: make them duck, then mid them."],
+  ["d+4", "low", "Rumbling Thunder: i14 low, -15 on block; shifts to a throw and GRF on counter hit.", "His fast low.", "Against standing block.", "When they block low.", "Block low.", "-15.", "-4; throw on CH.", "Moderate.", "Low with a big CH reward."],
+  ["b+3", "heat", "Thundershock Kick: i16 homing high, Heat Engager.", "A homing Heat Engager.", "To start Heat and catch steps.", "Against crouchers.", "Duck it.", "-7.", "+15a; Heat Engager.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "Raging Knee: i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with his long mids."]
+ ],
+ "combos": []
+}

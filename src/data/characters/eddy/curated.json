@@ -1,0 +1,311 @@
+{
+ "profile": {
+  "id": "eddy",
+  "name": "Eddy",
+  "short": "Eddy",
+  "color": "hsl(123 70% 62%)",
+  "overview": "Eddy is a mid-ranged stance-based mixup character. His long legs come with good pokes, lows and plus frames to control the mid range. His strings allow him to play mindgames with his opponent by threatening extensions while transitioning into stance. He can flow into and out of his two stances, Negativa (RLX) and Bananeira (HSP), quite freely, while enforcing powerful mixups from each, allowing players to layer their mixups and keep their opponents guessing constantly.",
+  "playstyle": "Capoeira stance mix-ups. Control the mid range with long legs, safe mids and lows, then flow into Handstand (HSP) and Relaxed (RLX) for 50/50s. Wavu warns his combos can be very specific and his counter-hit launches need fast reactions, so drill the routes.",
+  "strengths": [
+   "Casino Rama: With his plethora of stances and easy entries into said stances, Eddy is perhaps the embodiment of the 50/50 mixup.",
+   "Ankle Guardian: Shares the fastest WS launcher in the game at i13. While it is a high, he can cover such lows with a Heat Engaging crouch throw or a decent WS4,4 as well.",
+   "One Moment He's There... RLX and sidestep HSP stances make Eddy very evasive and tricky to pin down. uf+2 also returns and even grants a free grounded followup.",
+   "Buttons Galore: Eddy has a surprising amount of CH tools, including a fast, low-mid launcher, fast CH mid launchers both in neutral and in stance, and a jab CH wall splat. This makes retaliating against him tricky overall, leaving him room to deal free chip with otherwise interruptible moves.",
+   "Installation Complete: Mandinga install gives Eddy more utility out of his HSP stance, including a powerful spiking mid and low.",
+   "Super Hot: Heat automatically gives him an MD stack and grants access to more plus on block moves with which to enter stance. His Heat Smash also notably enters RLX automatically if it is blocked."
+  ],
+  "weaknesses": [
+   "Inconsistent: Often requires some very specific combos, even with the realignment change introduced in Season 2.",
+   "Think Fast: His CH launching moves require some level of commitment, as they are borderline unconfirmable strings rather than single hits; misuse of these tools results in a huge punish in most cases.",
+   "Low Crutch: While he has many effective lows, almost all of them are -14 on block or worse. The most rewarding of these are also on the slow side.",
+   "Lab Rat: Some strings are exploitable and do not have meaningful secondary coverage options other than simply not overextending.",
+   "Go Big or Go Home: While Eddy can play it relatively safe, it is not rewarding to do so. However, being wrong on a big read (even for his standing and crouching natural launchers) can exact equal devastation."
+  ],
+  "stances": [
+   {
+    "code": "HSP",
+    "name": "Handstand",
+    "entry": "Many strings (e.g. 1,2) and f,F+4 transition into it",
+    "note": "HSP.3,3,3 and HSP.4,2 tornado; HSP.3,3,3 then flows into RLX."
+   },
+   {
+    "code": "RLX",
+    "name": "Relaxed",
+    "entry": "ws1,3, b+3,3, HSP.3,3,3 and others",
+    "note": "RLX.2 is -2 on block and a combo filler; RLX.4,3 is a Heat Engager; RLX.3+4 tornadoes."
+   }
+  ],
+  "heat": [
+   "Can use Guerreiro Explosivo (H.3+4)",
+   "Can use Rabo de Arraia Liberado (H.qcf+4)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+3",
+   "ws2",
+   "ws1,3",
+   "f,F+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Eddy",
+    "url": "https://wavu.wiki/t/Eddy",
+    "revision": 63357,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Eddy_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61870,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Eddy_combos",
+    "revision": 59573,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Eddy_punishers",
+    "revision": 60971,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i10 jab string, -3 on block, can enter HSP.",
+   "purpose": "His i10 punish and a stance entry.",
+   "use": "After blocking -10; to start HSP pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish into stance."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 knee, -9 on block.",
+   "purpose": "A fast mid that starts b+3,3.",
+   "use": "Up close.",
+   "avoid": "-9 hands over the turn.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+8.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "b+3,3 launches and enters RLX."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Faisão: i20 mid elbow, +3c on block.",
+   "purpose": "A plus-on-block mid.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step it.",
+   "afterBlock": "+3c.",
+   "afterHit": "+5c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Turn keeper."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Mirage: i15 tornado launcher, -18 on block.",
+   "purpose": "His i15 launch punisher (Wavu: regular launcher).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -18, launch punishable.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-18.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Only as a punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Machado: i15 while-standing elbow, -18 on block.",
+   "purpose": "His alternative launcher (Wavu).",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -18.",
+   "counterplay": "Block.",
+   "afterBlock": "-18.",
+   "afterHit": "+51.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws1,3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i19 while-standing launcher that enters RLX.",
+   "purpose": "Launch into Relaxed (Wavu BnB).",
+   "use": "After lows that are -19 or worse.",
+   "avoid": "-15 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-15.",
+   "afterHit": "Launch (+38a) into RLX.",
+   "afterEvade": "Risky.",
+   "gamePlan": "A Relaxed combo starter."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Elbow Uppercut: i14 mid, -5 on block.",
+   "purpose": "A safe, fast mid with a counter-hit bonus.",
+   "use": "To check and catch presses.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+6; +21a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe mid with a reward."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Kneecap Crusher: i18 low, -12 on block, +14g on counter hit.",
+   "purpose": "His main low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+0; +14g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Part of his ankle game."
+  },
+  {
+   "id": "f+3+4",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Xangô: i19 mid Heat Engager, -9 on block.",
+   "purpose": "A Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "f,F+4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Folha Ataque: i19 mid tornado that transitions to HSP, -12 on block.",
+   "purpose": "A long-range launcher.",
+   "use": "Whiff punish at range.",
+   "avoid": "Raw on block: -12.",
+   "counterplay": "Block it.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+37a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "His long whiff punisher."
+  },
+  {
+   "id": "b+3+4",
+   "roles": [
+    "power-crush"
+   ],
+   "summary": "Lunging Brush Fire: i20 high power crush, -9 on block.",
+   "purpose": "Armoured attack through mids and highs.",
+   "use": "When the opponent pressures.",
+   "avoid": "Against lows and crouchers.",
+   "counterplay": "Duck it or low it.",
+   "afterBlock": "-9.",
+   "afterHit": "+21a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A panic button."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Rio Special: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with stance pressure."
+  }
+ ],
+ "combos": [
+  {
+   "id": "eddy-ws13",
+   "name": "ws1,3 → RLX.2 b+1 ws1,4",
+   "difficulty": 4,
+   "section": "Bread n' Butter",
+   "starters": [
+    "ws1,3"
+   ],
+   "situation": "After launching with ws1,3, which goes straight into Relaxed.",
+   "route": "RLX.2 b+1 ws1,4 qcf+3 T! db+4,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing RLX.2 before RLX has started.",
+    "b+1 has to go into crouch so ws1,4 comes out: hold back-down only briefly."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Eddy",
+    "url": "https://wavu.wiki/t/Eddy_combos",
+    "revision": 59573,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+3",
+  "f,F+4",
+  "b+3+4"
+ ],
+ "lessons": []
+}

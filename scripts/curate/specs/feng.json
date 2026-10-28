@@ -1,0 +1,30 @@
+{
+ "short": "Feng",
+ "playstyle": "Unconventional and evasive. Control neutral with great jabs, mid pokes (b+4, df+1) and many lows, dodge with evasive moves, and mix the opponent up from Kenpo (KNP), Shifting Clouds (STC) and back-turned. Wavu notes he is weak to sidesteps and sidewalks to his left.",
+ "stances": [
+  {"code": "KNP", "name": "Kenpo", "entry": "b+3+4", "note": "KNP.2 is an i14 Heat Engager; KNP.3 tornadoes (+77a)."},
+  {"code": "STC", "name": "Shifting Clouds", "entry": "f+3+4", "note": "STC.3 is a homing high that is +6 on block."},
+  {"code": "BT", "name": "Back-turned", "entry": "SS.2 and other moves transition to BT", "note": "BT.2 is a Heat Engager; Wavu lists BT.3 and BT.d+3 as combo follow-ups."},
+  {"code": "CD", "name": "Crouch Dash", "entry": "f,n,d,df", "note": "CD.2 tornadoes; CD+1+2 is +0c on block."}
+ ],
+ "keyLaunchers": ["uf+4", "ws3", "df+3", "CD.2"],
+ "whiffPunishers": ["uf+4", "df+3", "f,F+2"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "One of his great jabs (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["df+1", "poke,counter-hit", "Stunning Palm: i14 mid, +0 on block, +36g on counter hit.", "His key mid poke.", "To check ducking and keep neutral.", "Little risk.", "Block.", "+0.", "+6; big on CH.", "Low risk.", "Use it constantly."],
+  ["b+4", "poke", "Fish Hook: i12 mid, -10 on block.", "A fast mid poke.", "To interrupt and poke.", "-10 on block.", "Block.", "-10.", "+2.", "Low risk.", "One of his core pokes."],
+  ["b+1", "counter-hit", "Iron Palm: i10 high, launches on counter hit (+36a). -12 on block.", "A very fast CH launcher.", "To interrupt the opponent's pressure.", "-12 on block; it is a high.", "Duck it.", "-12.", "+1; launch on CH.", "Moderate.", "A fast, rewarding interrupt."],
+  ["uf+4", "launcher,punisher", "Soaring Eagle: i15 launcher, -13 on block.", "His i15 launch punisher; launches crouchers too (Wavu).", "Punish -15 standing or crouching.", "Raw: -13.", "Block.", "-13.", "Launch (+33a).", "Risky on whiff.", "Your main punish."],
+  ["ws3", "launcher,punisher", "Bow Kick: i15 while-standing launcher, -12 on block.", "Crouching launch punish.", "After -15 lows.", "Raw: -12.", "Block.", "-12.", "Launch (+33a).", "Risky.", "Punish lows; Wavu notes its range can be awkward."],
+  ["ws4", "punisher", "Rising Heel Kick: i11 while-standing mid, -7 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-7.", "+7.", "Low risk.", "Basic crouch punish."],
+  ["ws2", "counter-hit", "Adamantine Uppercut: i15 while-standing mid, -7 on block, tornado on counter hit.", "A safe while-standing CH launcher.", "Out of crouch when they press.", "Little risk.", "Block.", "-7.", "+29g; launch on CH.", "Low risk.", "Strong crouching option."],
+  ["d+2", "low", "Heavy Hammer: i20 low, -12 on block.", "A low poke.", "Against standing block.", "When they block low.", "Block low.", "-12.", "-1.", "Moderate.", "One of his many lows."],
+  ["db+3", "low", "Piercing Arrow: i17 low, -15 on block; becomes a throw on front counter hit.", "A quick low with a CH reward.", "Against standing block.", "When they block low.", "Block low.", "-15.", "+4c.", "Moderate.", "Low pressure."],
+  ["b+1+2", "heat,punisher", "Iron Fortress: i13 mid Heat Engager, -19 on block.", "His i13 punisher and Heat start.", "Punish -13.", "Raw: -19.", "Block.", "-19.", "Heat Engager (+18a).", "Very risky raw.", "Punish only."],
+  ["KNP.2", "heat", "Fei He Zhang: i14 high from Kenpo, Heat Engager.", "A fast stance Heat Engager.", "From KNP.", "Against crouchers.", "Duck it.", "-9.", "Heat Engager.", "Moderate.", "Stance Heat start."],
+  ["2+4", "throw", "Serpent Slayer: i12 throw, break with 1 or 2.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with his pokes."]
+ ],
+ "combos": [
+  {"id": "feng-offaxis", "name": "Off-axis launch: f+4,2 T! uf+3 db+1,2,4", "difficulty": 3, "section": "Bread n' butter", "starters": ["uf+4"], "situation": "After an off-axis launch such as uf+4 (Wavu: 48 damage).", "route": "f+4,2 T! uf+3 db+1,2,4", "damage": "[+48]", "tags": ["bnb"], "mistakes": ["Using this route when the opponent is straight in front: it is for off-axis launches.", "Rushing uf+3 after the tornado."]}
+ ]
+}

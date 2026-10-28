@@ -1,0 +1,301 @@
+{
+ "profile": {
+  "id": "dragunov",
+  "name": "Dragunov",
+  "short": "Dragunov",
+  "color": "hsl(293 70% 62%)",
+  "overview": "Dragunov is an oppressive pressure and rushdown character who excels at freezing his opponents cold with powerful, plus-on-block mids, and then slicing them open with hard-hitting mixups, and a complete throw game. He combines strong poking and above-average movement and whiff punishment, making his \"small Tekken\" also difficult to deal with. In Heat, Dragunov's pressure becomes even more chilling due to the constant chip damage, which when coupled with his pokes, will punish you even for blocking.",
+  "playstyle": "Oppressive rushdown. Freeze the opponent with plus-on-block mids (d+1, f,f,F+2, SNK.4, f,F+3), then open them up with throws, Feint & Catch and his lows. His pressure tools are fairly slow, so watch for interrupts and do not be predictable.",
+  "strengths": [
+   "Rushdown: Excellent pressure mids (wr2, b+1+2 etc.) that punish opponents both for getting hit or blocking.",
+   "Hard-hitting: High damage output and decent wall carry.",
+   "Dancer's legs: Long range on some pokes.",
+   "Geared for success: Great Heat Engagers, including ws1+2, an i12 punish from crouch, and 1,2,1, an i10 CH wall splatting string.",
+   "Sambo master: Access to a complete throw game, along with unbreakable tackles in Heat, and throws that remove recoverable health.",
+   "Fear of pigeons: Amazing oki at the wall with the addition of Pigeon Roll 2 and 3."
+  ],
+  "weaknesses": [
+   "Interruptible: His primary pressure tools are fairly slow, and he has very few ways to compensate for them outside of his pokes.",
+   "Side-switcher: Has to give up wall position to deal optimal damage with b+1+2 and uf+1, and most of his throws also side switch to some degree.",
+   "Linear: Most - if not all - of his key moves have little to no tracking, making him very vulnerable against lateral movement.",
+   "Lack of CH-utility: His counterhit tools are below average and fairly risky, so he has to rely mostly on movement and fairly low-reward parries against offensive opponents."
+  ],
+  "stances": [
+   {
+    "code": "SNK",
+    "name": "Sneak",
+    "entry": "qcf (d,df,f)",
+    "note": "SNK.4 is a Heat Engager and +7 on block; SNK.2 tornadoes on hit."
+   }
+  ],
+  "heat": [
+   "Feint & Catch and Ambush Tackle become unbreakable.",
+   "Can perform Ambush Tackle after additional moves."
+  ],
+  "heatEngagers": [
+   "1,2,1",
+   "f+3,1+2",
+   "b+4,3",
+   "SNK.4",
+   "ws1+2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "ws2",
+   "uf+1",
+   "qcb+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Dragunov",
+    "url": "https://wavu.wiki/t/Dragunov",
+    "revision": 62085,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Dragunov_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61304,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Dragunov_combos",
+    "revision": 59565,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Dragunov_punishers",
+    "revision": 59234,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close to keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "2,1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string (Wavu).",
+   "purpose": "His i10 punish.",
+   "use": "After blocking -10 moves.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "Safe.",
+   "afterHit": "Damage.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "i13 mid, -2 on block; can enter Prowl (PGR) with 3+4.",
+   "purpose": "His mid check.",
+   "use": "To stop ducking; punish -13.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His basic mid."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Bunker-buster Elbow: i18 mid, +1c on block.",
+   "purpose": "A plus-on-block mid.",
+   "use": "To keep the turn after a blocked string.",
+   "avoid": "As a fast interrupt.",
+   "counterplay": "Interrupt with a fast move or step.",
+   "afterBlock": "+1c.",
+   "afterHit": "+8c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "One of his core pressure moves."
+  },
+  {
+   "id": "f,f,F+2",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Russian Assault: i15 mid from a run, +4 on block, launches on counter hit (+44a).",
+   "purpose": "Rushdown mid that is plus and launches on CH (Wavu: wr2).",
+   "use": "To close distance and keep the turn.",
+   "avoid": "When the opponent is ready to step: it is linear-ish.",
+   "counterplay": "Sidestep or interrupt the run.",
+   "afterBlock": "+4.",
+   "afterHit": "+6cg; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His signature pressure tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Scimitar: i15 launcher, launches crouchers too. -12 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Risky on whiff.",
+   "gamePlan": "Your main launch punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Ballistic Upper: i15 while-standing launcher, -12 on block.",
+   "purpose": "His while-standing launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Gelid Smash: i11 while-standing mid, -5 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "ub+2",
+   "roles": [
+    "counter-hit",
+    "evasion"
+   ],
+   "summary": "Counterstrike: i20 high that sidesteps left, launches on counter hit (+53a).",
+   "purpose": "An evasive CH launcher.",
+   "use": "Against linear pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+9; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Steps and punishes."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Razer: i18 low, -13 on block, +13g on counter hit.",
+   "purpose": "His main low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low, punish -13.",
+   "afterBlock": "-13.",
+   "afterHit": "-1c; +13g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Opens up turtles."
+  },
+  {
+   "id": "SNK.4",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Ignition Switch: Heat Engager from Sneak, +7 on block.",
+   "purpose": "A very plus Heat Engager.",
+   "use": "From SNK to keep the turn and start Heat.",
+   "avoid": "Getting interrupted on the way into SNK.",
+   "counterplay": "Interrupt the stance entry.",
+   "afterBlock": "+7.",
+   "afterHit": "+8c; Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A huge pressure move."
+  },
+  {
+   "id": "ws1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Frost Tackle: i12 while-standing Heat Engager.",
+   "purpose": "Fast while-standing Heat start.",
+   "use": "After blocking lows.",
+   "avoid": "-14 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish and start Heat."
+  },
+  {
+   "id": "1,3,2~1+2",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Feint & Catch: an attack throw at the end of 1,3,2, unbreakable in Heat (Wavu).",
+   "purpose": "His mix-up between strings and a throw.",
+   "use": "Against people who block the whole string.",
+   "avoid": "When they interrupt early.",
+   "counterplay": "Interrupt before it comes out.",
+   "afterBlock": "+5.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A key part of his pressure."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Purge Slam: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-2 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Throws are a big part of his game."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+2",
+  "f+1+2"
+ ],
+ "lessons": []
+}

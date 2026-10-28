@@ -1,0 +1,208 @@
+{
+ "short": "Dragunov",
+ "playstyle": "Oppressive rushdown. Freeze the opponent with plus-on-block mids (d+1, f,f,F+2, SNK.4, f,F+3), then open them up with throws, Feint & Catch and his lows. His pressure tools are fairly slow, so watch for interrupts and do not be predictable.",
+ "stances": [
+  {
+   "code": "SNK",
+   "name": "Sneak",
+   "entry": "qcf (d,df,f)",
+   "note": "SNK.4 is a Heat Engager and +7 on block; SNK.2 tornadoes on hit."
+  }
+ ],
+ "keyLaunchers": [
+  "df+2",
+  "ws2",
+  "uf+1",
+  "qcb+2"
+ ],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+2",
+  "f+1+2"
+ ],
+ "keyMoves": [
+  [
+   "1",
+   "poke",
+   "Jab: i10, +1 on block.",
+   "Fast check.",
+   "Up close to keep the turn.",
+   "Against crouchers.",
+   "Duck it.",
+   "+1.",
+   "+8.",
+   "Low risk.",
+   "Close-range glue."
+  ],
+  [
+   "2,1",
+   "punisher",
+   "i10 punish string (Wavu).",
+   "His i10 punish.",
+   "After blocking -10 moves.",
+   "Nothing major.",
+   "Block.",
+   "Safe.",
+   "Damage.",
+   "Low risk.",
+   "Fast punish."
+  ],
+  [
+   "df+1",
+   "poke,punisher",
+   "i13 mid, -2 on block; can enter Prowl (PGR) with 3+4.",
+   "His mid check.",
+   "To stop ducking; punish -13.",
+   "Little risk.",
+   "Block.",
+   "-2.",
+   "+7.",
+   "Low risk.",
+   "His basic mid."
+  ],
+  [
+   "d+1",
+   "poke",
+   "Bunker-buster Elbow: i18 mid, +1c on block.",
+   "A plus-on-block mid.",
+   "To keep the turn after a blocked string.",
+   "As a fast interrupt.",
+   "Interrupt with a fast move or step.",
+   "+1c.",
+   "+8c.",
+   "Moderate.",
+   "One of his core pressure moves."
+  ],
+  [
+   "f,f,F+2",
+   "poke,counter-hit",
+   "Russian Assault: i15 mid from a run, +4 on block, launches on counter hit (+44a).",
+   "Rushdown mid that is plus and launches on CH (Wavu: wr2).",
+   "To close distance and keep the turn.",
+   "When the opponent is ready to step: it is linear-ish.",
+   "Sidestep or interrupt the run.",
+   "+4.",
+   "+6cg; launch on CH.",
+   "Moderate.",
+   "His signature pressure tool."
+  ],
+  [
+   "df+2",
+   "launcher,punisher",
+   "Scimitar: i15 launcher, launches crouchers too. -12 on block.",
+   "His i15 launch punisher.",
+   "Punish -15 and whiff punish.",
+   "Raw: -12.",
+   "Block and punish.",
+   "-12.",
+   "Launch (+28a).",
+   "Risky on whiff.",
+   "Your main launch punish."
+  ],
+  [
+   "ws2",
+   "launcher,punisher",
+   "Ballistic Upper: i15 while-standing launcher, -12 on block.",
+   "His while-standing launch punish.",
+   "After -15 lows.",
+   "Raw: -12.",
+   "Block.",
+   "-12.",
+   "Launch.",
+   "Risky.",
+   "Punish lows."
+  ],
+  [
+   "ws4",
+   "punisher",
+   "Gelid Smash: i11 while-standing mid, -5 on block.",
+   "Fast crouch punish.",
+   "After -11 lows.",
+   "Little risk.",
+   "Block.",
+   "-5.",
+   "+6.",
+   "Low risk.",
+   "Basic crouch punish."
+  ],
+  [
+   "ub+2",
+   "counter-hit,evasion",
+   "Counterstrike: i20 high that sidesteps left, launches on counter hit (+53a).",
+   "An evasive CH launcher.",
+   "Against linear pressure.",
+   "Against crouchers.",
+   "Duck it.",
+   "-5.",
+   "+9; launch on CH.",
+   "Moderate.",
+   "Steps and punishes."
+  ],
+  [
+   "d+2",
+   "low",
+   "Razer: i18 low, -13 on block, +13g on counter hit.",
+   "His main low poke.",
+   "Against standing block.",
+   "When they block low.",
+   "Block low, punish -13.",
+   "-13.",
+   "-1c; +13g on CH.",
+   "Moderate.",
+   "Opens up turtles."
+  ],
+  [
+   "SNK.4",
+   "heat",
+   "Ignition Switch: Heat Engager from Sneak, +7 on block.",
+   "A very plus Heat Engager.",
+   "From SNK to keep the turn and start Heat.",
+   "Getting interrupted on the way into SNK.",
+   "Interrupt the stance entry.",
+   "+7.",
+   "+8c; Heat Engager.",
+   "Moderate.",
+   "A huge pressure move."
+  ],
+  [
+   "ws1+2",
+   "heat",
+   "Frost Tackle: i12 while-standing Heat Engager.",
+   "Fast while-standing Heat start.",
+   "After blocking lows.",
+   "-14 on block.",
+   "Block.",
+   "-14.",
+   "Heat Engager.",
+   "Moderate.",
+   "Punish and start Heat."
+  ],
+  [
+   "1,3,2~1+2",
+   "throw",
+   "Feint & Catch: an attack throw at the end of 1,3,2, unbreakable in Heat (Wavu).",
+   "His mix-up between strings and a throw.",
+   "Against people who block the whole string.",
+   "When they interrupt early.",
+   "Interrupt before it comes out.",
+   "+5.",
+   "Knockdown.",
+   "Moderate.",
+   "A key part of his pressure."
+  ],
+  [
+   "2+4",
+   "throw",
+   "Purge Slam: i12 throw, break with 1 or 2, side switch.",
+   "Generic throw.",
+   "Against blockers.",
+   "When they break.",
+   "Break with 1 or 2.",
+   "-2 on break.",
+   "Knockdown.",
+   "Whiffs if ducked.",
+   "Throws are a big part of his game."
+  ]
+ ],
+ "combos": []
+}

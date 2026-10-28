@@ -1,0 +1,29 @@
+{
+ "short": "Jack-8",
+ "playstyle": "Mid-range monster. Stop the opponent's approach with safe neutral tools (b+2, df+1, b+3), use the huge range of his lows and launchers, and build Gamma Charge for armoured, guard-breaking hits. Wavu warns he has no i10 jab and a huge, slow body, so he struggles when pressured up close.",
+ "stances": [
+  {"code": "GMH", "name": "Gamma Howl", "entry": "3+4, or D after f,F+1 and ss2", "note": "GMH.4 and GMH.3+4 are Heat Engagers; GMH.2 is +11g on block."},
+  {"code": "GMC", "name": "Gamma Charge", "entry": "3+4 while absorbing a hit, or landing hold moves on hit or block", "note": "Charged versions: GMC.2 guard-breaks and is +11 on block. In Heat, Gamma Charge moves are always active (Wavu)."}
+ ],
+ "keyLaunchers": ["df+2", "ws1", "1+2", "u+1+2"],
+ "whiffPunishers": ["df+2", "f,F+2", "u+1+2"],
+ "keyMoves": [
+  ["2", "poke", "i11 high, +1 on block.", "His fastest standing button (no i10 jab, Wavu).", "Up close to interrupt.", "Against crouchers.", "Duck it.", "+1.", "+9.", "Low risk.", "Use it to interrupt."],
+  ["f+2", "punisher,counter-hit", "Pinpoint Assault: i10 high, -12 on block, launches on counter hit.", "His i10 punisher (Wavu).", "After -10 moves.", "Raw: -12.", "Duck it.", "-12.", "+5; launch on CH.", "Moderate.", "Your fast punish."],
+  ["df+1", "poke", "i14 mid, -4 on block.", "A neutral stop sign (Wavu).", "To stop approaches and check ducking.", "Little risk.", "Block.", "-4.", "+3.", "Low risk.", "A core neutral tool."],
+  ["b+2", "heat,poke", "Piston Gun Assault: i19 mid, +2 on block, Heat Engager.", "A plus, long mid and Heat Engager.", "To stop approaches and start Heat.", "As a fast interrupt.", "Do not walk into it.", "+2.", "+2a; Heat Engager.", "Moderate.", "His best neutral tool."],
+  ["b+3", "poke", "i16 mid, -9 on block.", "Another neutral stop sign.", "At mid range.", "-9 on block.", "Block.", "-9.", "+2.", "Low risk.", "Keep-out tool."],
+  ["df+4", "poke", "Mimesis Wrench Kick: i15 mid, -9 on block.", "A mid poke.", "To check.", "-9 on block.", "Block.", "-9.", "+5; +14c on CH.", "Low risk.", "Another mid."],
+  ["df+2", "launcher,punisher", "Programmed Uppercut: i15 launcher, -14 on block.", "His i15 launch punisher.", "After -15 moves.", "Raw: -14.", "Block.", "-14.", "Launch (+31a).", "Risky.", "Main punish (Wavu BnB starter)."],
+  ["ws1", "launcher,punisher", "Killing Uppercut: i15 while-standing launcher, -13 on block.", "His crouch launch punish.", "After -15 lows.", "Raw: -13.", "Block.", "-13.", "Launch (+34a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "Toe Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["1+2", "launcher", "Tornado Punch: i15 homing instant tornado, -13 on block.", "A homing launcher with high evasion.", "Against highs and sidesteps.", "Raw: -13.", "Block.", "-13.", "Instant tornado (+67a).", "Risky.", "Big reward read."],
+  ["d+1", "poke", "i10 special-mid crouch jab, -5 on block.", "His fastest crouching button.", "To interrupt from crouch.", "Expecting damage.", "Block.", "-5.", "+6.", "Low risk.", "His real i10 option."],
+  ["db+4", "low", "Big Boot: i16 low, -13 on block.", "A long low poke.", "Against standing block.", "When they block low.", "Block low.", "-13.", "-2.", "Moderate.", "Wavu: incredible range on his lows."],
+  ["b+1+2", "heat,punisher", "Tyulpan Blast: i14 Heat Engager, -19 on block.", "A punisher that starts Heat.", "Punish -14.", "Raw: -19.", "Block.", "-19.", "Heat Engager.", "Very risky raw.", "Punish only."],
+  ["1+3", "throw", "Rotary Catapult: i12 throw, break with 1 or 2.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "+0 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with his mids."]
+ ],
+ "combos": [
+  {"id": "jack8-ch-f2", "name": "CH f+2 → f,F+4", "difficulty": 1, "section": "Mini-combos", "starters": ["CH f+2"], "situation": "Your f+2 lands as a counter hit (+32a).", "route": "f,F+4", "tags": ["mini-combo", "counter-hit", "beginner"], "mistakes": ["Following up on a normal hit: only on the counter-hit animation."]}
+ ]
+}

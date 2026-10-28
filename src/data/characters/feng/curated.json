@@ -1,0 +1,332 @@
+{
+ "profile": {
+  "id": "feng",
+  "name": "Feng",
+  "short": "Feng",
+  "color": "hsl(267 70% 62%)",
+  "overview": "Feng Wei is, in a word, unconventional. Whatever he lacks in traditional Tekken tools, he makes up for it with incredible evasion, a full kit of very frustrating lows, and a great suite of back turn tools, including a 50/50 coin-flip throw mixup. His crouch dash (qcf or d,df) gives him the ability to make deep approaches by canceling into his safe ws1 (d,df,n,1) and also gives him access to his qcf+1+2 and qcf+1. The former is a +0 on block headbutt that forces the opponent into crouch. The latter is a low, unparryable shoulder. Both wreak havoc on counter hit.",
+  "playstyle": "Unconventional and evasive. Control neutral with great jabs, mid pokes (b+4, df+1) and many lows, dodge with evasive moves, and mix the opponent up from Kenpo (KNP), Shifting Clouds (STC) and back-turned. Wavu notes he is weak to sidesteps and sidewalks to his left.",
+  "strengths": [
+   "Strong neutral control with great jabs, mid pokes (b+4, df+1) and low pokes (d+2, db+3, FC.df+4,1)",
+   "Highly evasive with moves like uf+2, b,f+1, and qcf+1, and stances like Deceptive Step",
+   "Good early block punishment",
+   "Can keepout in a pinch with f+4 and get big whiff punishes with moves like KNP 3, f+3,4 or df+3",
+   "Very good wall carry on combos even with instant tornados",
+   "Tricky extended movelist can throw opponents off guard",
+   "Heat temporarily makes his b+1 knock down for more damage, and gives him a lockdown mid (3+4) into backturn as well as a guard break"
+  ],
+  "weaknesses": [
+   "Weak to sidestep/sidewalk left",
+   "Wonky range and hitbox on his hopkick and ws3 can make it hard to launch punish some specific moves",
+   "Big lows are locked to stance or clean hit",
+   "Heat Smash is among the slowest in the game at i20",
+   "The oldest 27 year old man of all time"
+  ],
+  "stances": [
+   {
+    "code": "KNP",
+    "name": "Kenpo",
+    "entry": "b+3+4",
+    "note": "KNP.2 is an i14 Heat Engager; KNP.3 tornadoes (+77a)."
+   },
+   {
+    "code": "STC",
+    "name": "Shifting Clouds",
+    "entry": "f+3+4",
+    "note": "STC.3 is a homing high that is +6 on block."
+   },
+   {
+    "code": "BT",
+    "name": "Back-turned",
+    "entry": "SS.2 and other moves transition to BT",
+    "note": "BT.2 is a Heat Engager; Wavu lists BT.3 and BT.d+3 as combo follow-ups."
+   },
+   {
+    "code": "CD",
+    "name": "Crouch Dash",
+    "entry": "f,n,d,df",
+    "note": "CD.2 tornadoes; CD+1+2 is +0c on block."
+   }
+  ],
+  "heat": [
+   "Enhanced b+1",
+   "Enhanced f,F+1+2",
+   "New move: 3+4"
+  ],
+  "heatEngagers": [
+   "f+1+2",
+   "b+1+2",
+   "f,F+2",
+   "BT.2",
+   "KNP.2"
+  ],
+  "keyLaunchers": [
+   "uf+4",
+   "ws3",
+   "df+3",
+   "CD.2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Feng",
+    "url": "https://wavu.wiki/t/Feng",
+    "revision": 62089,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Feng_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62032,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Feng_combos",
+    "revision": 60621,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Feng_punishers",
+    "revision": 60205,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "One of his great jabs (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Stunning Palm: i14 mid, +0 on block, +36g on counter hit.",
+   "purpose": "His key mid poke.",
+   "use": "To check ducking and keep neutral.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0.",
+   "afterHit": "+6; big on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Fish Hook: i12 mid, -10 on block.",
+   "purpose": "A fast mid poke.",
+   "use": "To interrupt and poke.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "One of his core pokes."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Iron Palm: i10 high, launches on counter hit (+36a). -12 on block.",
+   "purpose": "A very fast CH launcher.",
+   "use": "To interrupt the opponent's pressure.",
+   "avoid": "-12 on block; it is a high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-12.",
+   "afterHit": "+1; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A fast, rewarding interrupt."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Soaring Eagle: i15 launcher, -13 on block.",
+   "purpose": "His i15 launch punisher; launches crouchers too (Wavu).",
+   "use": "Punish -15 standing or crouching.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky on whiff.",
+   "gamePlan": "Your main punish."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Bow Kick: i15 while-standing launcher, -12 on block.",
+   "purpose": "Crouching launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows; Wavu notes its range can be awkward."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Rising Heel Kick: i11 while-standing mid, -7 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Adamantine Uppercut: i15 while-standing mid, -7 on block, tornado on counter hit.",
+   "purpose": "A safe while-standing CH launcher.",
+   "use": "Out of crouch when they press.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "+29g; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong crouching option."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Heavy Hammer: i20 low, -12 on block.",
+   "purpose": "A low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "-1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "One of his many lows."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Piercing Arrow: i17 low, -15 on block; becomes a throw on front counter hit.",
+   "purpose": "A quick low with a CH reward.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-15.",
+   "afterHit": "+4c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low pressure."
+  },
+  {
+   "id": "b+1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Iron Fortress: i13 mid Heat Engager, -19 on block.",
+   "purpose": "His i13 punisher and Heat start.",
+   "use": "Punish -13.",
+   "avoid": "Raw: -19.",
+   "counterplay": "Block.",
+   "afterBlock": "-19.",
+   "afterHit": "Heat Engager (+18a).",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "KNP.2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Fei He Zhang: i14 high from Kenpo, Heat Engager.",
+   "purpose": "A fast stance Heat Engager.",
+   "use": "From KNP.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-9.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Stance Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Serpent Slayer: i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "feng-offaxis",
+   "name": "Off-axis launch: f+4,2 T! uf+3 db+1,2,4",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "uf+4"
+   ],
+   "situation": "After an off-axis launch such as uf+4 (Wavu: 48 damage).",
+   "route": "f+4,2 T! uf+3 db+1,2,4",
+   "damage": "[+48]",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Using this route when the opponent is straight in front: it is for off-axis launches.",
+    "Rushing uf+3 after the tornado."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Feng",
+    "url": "https://wavu.wiki/t/Feng_combos",
+    "revision": 60621,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "df+3",
+  "f,F+2"
+ ],
+ "lessons": []
+}

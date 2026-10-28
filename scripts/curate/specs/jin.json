@@ -1,0 +1,29 @@
+{
+ "short": "Jin",
+ "playstyle": "The all-rounder. Wavu calls him an answer for every situation: strong punishes, space control, great lows and a parry. Poke with safe mids, flow into Zenshin (ZEN) for mix-ups, and use his Mishima tools (EWHF, crouch dash) to punish. His backdash cancel is sluggish, so rely on sidesteps and parries on defence.",
+ "stances": [
+  {"code": "ZEN", "name": "Zenshin", "entry": "f+3+4 or b+3+4, and F after b+3 or f+4", "note": "ZEN.2 is a homing power crush and Heat Engager; ZEN.u+1 tornadoes; ZEN.1 and ZEN.1,3 are his combo tools."},
+  {"code": "CD", "name": "Crouch Dash", "entry": "f,n,d,df or ZEN.df", "note": "CD.df+1 tornadoes and evades jabs; in Heat it becomes the electric version (Wavu)."}
+ ],
+ "keyLaunchers": ["d+3+4", "uf+4", "ws2", "CD.df+1"],
+ "whiffPunishers": ["uf+4", "f,F+2", "f+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["2,4", "punisher,wall", "i10 punish string that wall-splats (Wavu: i10 splat). -13 on block if both hits finish.", "His i10 punish.", "After -10 moves, especially near the wall.", "Finishing it raw: -13.", "Block the second hit and punish.", "-13 if both hits are blocked.", "+7; splat at the wall.", "Moderate.", "Best fast punish."],
+  ["df+1", "poke", "i13 mid, -3 on block.", "His main mid check.", "To stop ducking.", "Little risk.", "Block.", "-3.", "+4.", "Low risk.", "Basic mid."],
+  ["b+2,1", "poke", "i14 mid string, -9 on block.", "A mid check string (Wavu).", "To check and push the opponent back.", "-9 on block.", "Block.", "-9.", "+2.", "Low risk.", "Another safe mid."],
+  ["b+3", "poke", "i16 knee, -6 on block, can enter ZEN with F.", "Safe mid into stance.", "Mid range pressure and combo filler.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Core move in his combos too."],
+  ["f+4", "counter-hit,poke", "Front Thrust Kick: i16 mid, -8 on block, launches on counter hit (+42a).", "A long CH launcher that can enter ZEN.", "At range when they press or step in.", "Little risk.", "Block.", "-8.", "+4; launch on CH.", "Low risk.", "A key neutral tool."],
+  ["d+3+4", "launcher,punisher", "Double Lift Kick: i15 launcher, -19 on block.", "His i15 launch punisher.", "After -15 moves.", "Raw: -19.", "Block and launch.", "-19.", "Launch (+32a).", "Very risky raw.", "Punish only."],
+  ["uf+4", "launcher,punisher", "Front Jump Kick: i15 launcher, -13 on block.", "Another i15 launcher.", "Punish and whiff punish.", "Raw: -13.", "Block.", "-13.", "Launch (+33a).", "Risky.", "A safer i15 option."],
+  ["ws2", "launcher,punisher", "Crouching Uppercut: i14 while-standing launcher, -12 on block.", "His crouch launch punish.", "After -14 lows.", "Raw: -12.", "Block.", "-12.", "Launch (+39a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "i11 while-standing kick, -3 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-3.", "+8.", "Low risk.", "Basic crouch punish."],
+  ["d+4", "low", "Right Sweep: i16 low, -12 on block.", "One of his outstanding lows (Wavu).", "Against standing block.", "When they block low.", "Block low.", "-12.", "-1.", "Moderate.", "Chip and mix-ups."],
+  ["db+4", "low", "Right Low Roundhouse: i20 low, -13 on block, +13g on counter hit.", "A low with a CH reward.", "Against standing block.", "When they block low.", "Block low.", "-13.", "+3; +13g on CH.", "Moderate.", "Low pressure."],
+  ["f,F+2", "heat", "Demon's Paw: i14 mid Heat Engager, -8 on block.", "A safe Heat Engager.", "To start Heat and whiff punish.", "Little risk.", "Block.", "-8.", "+15a.", "Moderate.", "Safe Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with his mids."]
+ ],
+ "combos": [
+  {"id": "jin-bnb", "name": "Launch BnB: b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T!", "difficulty": 4, "section": "Bread n' butter", "starters": ["d+3+4"], "situation": "After a regular launch such as d+3+4 or uf+4.", "route": "b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T! b+3~F ZEN.1,3", "tags": ["bnb"], "mistakes": ["Not holding F after b+3, so Zenshin never starts.", "Rushing ZEN.u+1 before the stance is ready."]}
+ ]
+}

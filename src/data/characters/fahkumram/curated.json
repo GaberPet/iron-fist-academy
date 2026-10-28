@@ -1,0 +1,290 @@
+{
+ "profile": {
+  "id": "fahkumram",
+  "name": "Fahkumram",
+  "short": "Fahkumram",
+  "color": "hsl(353 70% 62%)",
+  "overview": "Fahkumram is a long range powerhouse with many ways to power through the opponent's defenses with his strong string mix ups or using his install: Garuda Force, which leads to his new Rama Stance by guard crushing with his charged moves.",
+  "playstyle": "Long-range powerhouse. Poke from outside the opponent's reach with his long legs (3, uf+4, b+3+4), break their guard with string mix-ups and charged knees, and win big when Garuda Force (GRF) powers him up in Heat. He is slow up close, so do not let the opponent get inside for free.",
+  "strengths": [
+   "Long Legs: Fahkumram sports some of the longest range in the game with moves such as 3, uf+4, df3, and the mighty b+3+4.",
+   "Hard Hitting: Fahkumram has consistent high damage on both his combos and his single hit pokes.",
+   "High Mix Potential: Many of Fahkumram's strings have multiple enders, and can lead to charged kicks that guard break with his Garuda Force install.",
+   "Garuda Force: Fahkumram's install makes his mixups more potent, adding a power low sweep and a guard break to his charged moves that on hit enters Rama stance. This makes you guess between a fast mid, a jailing mid high string, an unreactable low, a grab, or an unblockable mid.",
+   "Aura Farmer: Extremely cool"
+  ],
+  "weaknesses": [
+   "Slow: Has slow start up on many of his moves, with many of his key moves being at least i13, meaning he's prone to interruption if not properly spaced or has not properly conditioned his opponent.",
+   "Tall Fighter: His range comes at a downside, in that his opponents can get longer combos against him and some moves that other characters could step normally clip his wide body. His jabs and even his standing 3 are more prone to getting evaded than other characters due to his sheer height.",
+   "Turn based: Plus frames are relegated to his okizeme and slower moves, so the \"safe\" mid options you have from his string mix ups give up your turn.",
+   "Linear: Many of Fahkumram's fast pokes and GRF mixups can be sidestepped, requiring conditioning of the opponent to stand still.",
+   "Bruce is never coming back"
+  ],
+  "stances": [
+   {
+    "code": "GRF",
+    "name": "Garuda Force",
+    "entry": "Heat activation, or a counter-hit d+4 throw",
+    "note": "A power-up install: GRF powers up specific moves and gives string extensions (Wavu)."
+   },
+   {
+    "code": "RAM",
+    "name": "Rama Stance",
+    "entry": "Landing from GRF.1+2, df+3+4,GRF.3, GRF.4* and GRF.3*",
+    "note": "A landing stance only reachable through Garuda Force moves."
+   }
+  ],
+  "heat": [
+   "Gets Garuda Force install.",
+   "Garuda Force powers up specific moves and gives string extensions."
+  ],
+  "heatEngagers": [
+   "f+1+2",
+   "df+1,4",
+   "b+3",
+   "uf+3",
+   "ws1,2"
+  ],
+  "keyLaunchers": [
+   "df+2,3",
+   "uf+4",
+   "ws2,4",
+   "b,f+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Fahkumram",
+    "url": "https://wavu.wiki/t/Fahkumram",
+    "revision": 62087,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Fahkumram_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63097,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Fahkumram_combos",
+    "revision": 60558,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Fahkumram_punishers",
+    "revision": 59236,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 jab string, -3 on block.",
+   "purpose": "His i10 punish.",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Ayutthaya: i13 long mid, -9 on block.",
+   "purpose": "One of the longest pokes in the game (Wavu).",
+   "use": "At range to poke and start strings.",
+   "avoid": "-9 hands over the turn.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His main long poke."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Aiyara: i15 mid, -3 on block.",
+   "purpose": "A safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Slow for a check: i15.",
+   "counterplay": "Interrupt with faster moves.",
+   "afterBlock": "-3.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His safest mid."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 knee, -5 on block.",
+   "purpose": "A quick, safe mid.",
+   "use": "Up close.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A fast option, which he lacks elsewhere."
+  },
+  {
+   "id": "df+2,3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 punish string that crumples on hit (+52cs).",
+   "purpose": "His launch punish (Wavu BnB starter).",
+   "use": "After -15 moves.",
+   "avoid": "Raw on block: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Big combo.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Your main punish."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "i20 instant tornado, -16 on block.",
+   "purpose": "A long-range launcher.",
+   "use": "Whiff punish at range.",
+   "avoid": "Raw: -16.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-16.",
+   "afterHit": "Instant tornado (+66a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "His long-range payoff."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "punisher",
+    "evasion"
+   ],
+   "summary": "Surging Elbow: i14 mid, evades jabs, launches (+34a). -13 on block.",
+   "purpose": "An evasive i14 punisher.",
+   "use": "Punish -14; duck jabs.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Answer to jab pressure."
+  },
+  {
+   "id": "ws2,4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "While-standing launcher string, -13 on block.",
+   "purpose": "His while-standing launch punish.",
+   "use": "After lows that are -15 or worse.",
+   "avoid": "Raw on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "3+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Heavy Middle Kick: i18 mid, launches on counter hit (+58a).",
+   "purpose": "A long CH launcher with good sidestep tracking.",
+   "use": "At range when they step in.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+18a; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Keep-out tool."
+  },
+  {
+   "id": "b,f+4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Lashing Squall: i18 high, +6 on block, launches on hit (+47a).",
+   "purpose": "A plus-on-block launcher.",
+   "use": "To keep the turn at range.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+6.",
+   "afterHit": "Launch.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A scary high: make them duck, then mid them."
+  },
+  {
+   "id": "d+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Rumbling Thunder: i14 low, -15 on block; shifts to a throw and GRF on counter hit.",
+   "purpose": "His fast low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-15.",
+   "afterHit": "-4; throw on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low with a big CH reward."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Thundershock Kick: i16 homing high, Heat Engager.",
+   "purpose": "A homing Heat Engager.",
+   "use": "To start Heat and catch steps.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "+15a; Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Raging Knee: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his long mids."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "b,f+4",
+  "3+4"
+ ],
+ "lessons": []
+}

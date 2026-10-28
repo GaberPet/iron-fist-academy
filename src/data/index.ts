@@ -38,6 +38,7 @@ export function normalizeNotation(s: string): string {
     .replace(/^(?:SS|ss)\+?(?=[1-4])/, 'SS.')
     .replace(/^([udfb]{1,2})(?=[1-4])/, '$1+') // Wavu shorthand: db1,4 = db+1,4
     .replace(/^wr\+?(?=[1-4])/, 'f,f,F+') // while running
+    .replace(/#(?=[1-4])/g, '+') // just-frame mark: df#2 = df+2
     .replace(/\s+/g, '');
 }
 

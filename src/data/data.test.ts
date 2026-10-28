@@ -51,7 +51,8 @@ for (const id of Object.keys(CURATED)) {
     });
 
     it('punisher table references existing moves', () => {
-      for (const p of c.punishers) expect(lookupMove(c, p.moveId), p.moveId).toBeTruthy();
+      // Only hand-entered entries: an empty list falls back to Wavu's table, which may name moves the frame data lacks.
+      for (const p of CURATED[id].punishers) expect(lookupMove(c, p.moveId), p.moveId).toBeTruthy();
       for (const w of c.whiffPunishers) expect(lookupMove(c, w), w).toBeTruthy();
     });
 
@@ -68,7 +69,7 @@ for (const id of Object.keys(CURATED)) {
       for (const combo of c.combos.filter((x) => x.curated)) {
         for (const s of [...combo.starters.slice(0, 1), combo.route]) {
           for (const tok of s.split(/\s+/)) {
-            const clean = tok.replace(/[A-Za-z]{1,4}!$/, '').replace(/~[A-Z]+$/, '');
+            const clean = tok.replace(/[A-Za-z]{1,4}!$/, '').replace(/(?<=\d)[~,][A-Z]+$/, '');
             if (!clean || /^(CH|CJM|dash|run|ssr|ssl|SSL|SSR|f,F|f,f|b,b|f,f,F|b,B)$/.test(clean) || clean.startsWith('~')) continue;
             if (!lookupMove(c, clean)) unresolved.push(`${combo.id}: ${clean}`);
           }

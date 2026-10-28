@@ -1,0 +1,336 @@
+{
+ "profile": {
+  "id": "heihachi",
+  "name": "Heihachi",
+  "short": "Heihachi",
+  "color": "hsl(128 70% 62%)",
+  "overview": "Heihachi is a rushdown Mishima-style character who excels at pressuring opponents and wearing down their defense with some of the strongest mid attacks in the game. His combo damage is extremely high, he has tremendous chip damage potential in Heat, and his new stance options grant amazing mixup opportunities. The classic Mishima staple moves such as Electric Wind God Fist and Flash Punch Combo (1,1,2) are as strong as ever, and his new i18 Indra's Kick (b+4) is a devastating long-range safe-on-block counter hit launcher. These tools grant him an extremely potent defensive capability that synergizes perfectly with his aggressive gameplan.",
+  "playstyle": "Classic Mishima rushdown. Use the Flash Punch Combo and Wind God Fist to punish, wavedash into Fujin (FUJ) and the hellsweep, and pressure with plus moves like f+4 and the Raijin stance. Heat builds Ultimate Counts towards Warrior Instinct (WAR). Wavu warns his generic pokes are linear and most lows are launch punishable.",
+  "strengths": [
+   "Classic Mishima toolkit, such as wavedash, EWGF, hellsweep, Left/Right Splits Kick, and his iconic Flash Punch Combo as a i10 hit-confirmable wallsplat.",
+   "Explosive damage potential with great wall carry to boot",
+   "Powerful stance mixups, is not forced to use stance pressure in neutral to create opportunities",
+   "Warrior Instinct turns him into a boss character",
+   "f+1+2 becomes an i12 launch punish with Warrior Instinct, guaranteeing df+2,1 as a tornado follow-up",
+   "Heaven's Merciless Wrath (b+1+2) Heat Engager parry has lots of utility, works against most mid/high kicks and punches, active from frames 5~25",
+   "He has cool hair"
+  ],
+  "weaknesses": [
+   "Generic pokes are worse than other Mishimas, with linearity and bad frame data being the main culprits",
+   "Most lows are launch punishable, with below average damage or frame advantage on hit",
+   "Moves that enter stance (f+3, f+4, 1,b+2) have high coverage option selects when blocked, with downjab/generic d+4 beating almost all options",
+   "Relies entirely on Heat to access Warrior Instinct, making Heat usage more predictable",
+   "Requires good execution to get the most out of punish opportunities",
+   "He's really old"
+  ],
+  "stances": [
+   {
+    "code": "CD",
+    "name": "Wind God Step",
+    "entry": "f,n,d,df",
+    "note": "Mishima crouch dash: Wind God Fist and Thunder God Fist come from here."
+   },
+   {
+    "code": "FUJ",
+    "name": "Fujin",
+    "entry": "d+1+2, or D after f+3, f+4",
+    "note": "FUJ.1,1 is a Heat Engager; FUJ.2 (Hidden Wind God Fist) tornadoes. In Heat, Fujin auto-parries mids and highs (Wavu)."
+   },
+   {
+    "code": "RAI",
+    "name": "Raijin",
+    "entry": "f+3+4, or f,f,F+1+2 with F",
+    "note": "RAI.2 is a homing high that guard-breaks and is +10 on block."
+   },
+   {
+    "code": "WAR",
+    "name": "Warrior Instinct",
+    "entry": "1+4, or three Ultimate Counts in Heat",
+    "note": "Powers up moves: df+2,WAR.1 tornadoes, WAR.f,F+2 has more range."
+   }
+  ],
+  "heat": [
+   "Gain one Ultimate Count per heat activation",
+   "Enter WAR (Warrior Instinct) after gaining three stacks",
+   "Auto-parry mids and highs from FUJ stance",
+   "New move: b,b,n,3+4",
+   "New move: db+1+2",
+   "New move: uf+4,1",
+   "New move: d+3,2"
+  ],
+  "heatEngagers": [
+   "b+1+2",
+   "uf+2,1",
+   "f,F+1+2",
+   "qcf+2",
+   "FUJ.1,1"
+  ],
+  "keyLaunchers": [
+   "f,n,d,df+2",
+   "f,F+1+2",
+   "FC.df+2",
+   "f,F+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Heihachi",
+    "url": "https://wavu.wiki/t/Heihachi",
+    "revision": 62090,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Heihachi_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62119,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Heihachi_combos",
+    "revision": 59753,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Heihachi_punishers",
+    "revision": 58167,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1,2,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Flash Punch Combo-style i10 string, -12 on block if all three finish.",
+   "purpose": "His i10 punish that can be hit-confirmed.",
+   "use": "After blocking -10 moves.",
+   "avoid": "Finishing it on block: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12 when the whole string is blocked.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A classic Mishima punish."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Demon Breath: i12 mid, -10 on block, launches on hit (+24a).",
+   "purpose": "His i12 punisher.",
+   "use": "After -12 moves.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "Launch.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Strong i12 punish."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "punisher",
+    "launcher"
+   ],
+   "summary": "Chrome Dome: i12 high headbutt, -14 on block.",
+   "purpose": "An i12 punisher that leads to a follow-up launch in Heat or Warrior Instinct (Wavu).",
+   "use": "Punish -12.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-14.",
+   "afterHit": "+14c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish, then cash in with Heat."
+  },
+  {
+   "id": "f,n,d,df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Wind God Fist: i11 high, -10 on block; becomes the EWGF in Heat (Wavu).",
+   "purpose": "Fast launch punisher and whiff punisher.",
+   "use": "Punish, whiff punish and neutral.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-10 (EWGF +5).",
+   "afterHit": "Launch (+39a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Practise the input until it is automatic."
+  },
+  {
+   "id": "f,F+1+2",
+   "roles": [
+    "heat",
+    "launcher"
+   ],
+   "summary": "Raoh Thrust: i13 mid Heat Engager, -8 on block.",
+   "purpose": "A fast, safe mid that starts Heat.",
+   "use": "Punish -13 and start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "Launch (+22a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His safest Heat start."
+  },
+  {
+   "id": "FC.df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Ascension Upper: i15 tornado from crouch, -14 on block.",
+   "purpose": "His crouching launch punish.",
+   "use": "After blocking lows that are -15 or worse.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+37a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Quick Iron Fist: i13 while-standing mid, -14 on block.",
+   "purpose": "A fast crouch punisher.",
+   "use": "After -13 lows.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "+35d.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Faster crouch punish."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Right Splits Kick: i19 mid, +4 on block, can enter FUJ.",
+   "purpose": "A plus-on-block mid.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+4.",
+   "afterHit": "+7c; +26d on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His key pressure mid."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Lightning Crush: i18 knee, -5 on block, can enter FUJ.",
+   "purpose": "A safe mid with a stance follow-up.",
+   "use": "Mid range pressure.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Pressure starter."
+  },
+  {
+   "id": "4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Otoko Geri: i15 high, tornadoes on counter hit (+52a).",
+   "purpose": "A CH launcher that can be charged.",
+   "use": "When they press.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-9.",
+   "afterHit": "+16cg; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read-based damage."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Sacred Tree Fell: i16 low, -13 on block.",
+   "purpose": "His quick low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "-2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu: most of his lows are risky."
+  },
+  {
+   "id": "RAI.2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Thunder Cutter: i17 homing high from Raijin, +10 on block.",
+   "purpose": "A guard-breaking pressure move.",
+   "use": "From Raijin to keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+10.",
+   "afterHit": "+51a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Huge pressure."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch on break.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "+0 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "heihachi-bnb",
+   "name": "Launch BnB: 4 T! uf+3,4 1,b+2,4",
+   "difficulty": 3,
+   "section": "Bread n' Butter",
+   "starters": [
+    "f,F+3"
+   ],
+   "situation": "After a regular launch such as f,F+3 (Left Splits Kick).",
+   "route": "4 T! uf+3,4 1,b+2,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing 4 too late: it must hit before they fall.",
+    "Missing the 1,b+2,4 ender timing."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Heihachi",
+    "url": "https://wavu.wiki/t/Heihachi_combos",
+    "revision": 59753,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,n,d,df+2",
+  "f,F+2",
+  "uf+4"
+ ],
+ "lessons": []
+}

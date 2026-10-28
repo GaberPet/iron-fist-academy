@@ -1,0 +1,321 @@
+{
+ "profile": {
+  "id": "hwoarang",
+  "name": "Hwoarang",
+  "short": "Hwoarang",
+  "color": "hsl(22 70% 62%)",
+  "overview": "Hwoarang is a heavy-hitting rush down character, using strong plus frames and multitude of stances to force opponents into a torrent of snap defensive decisions - many of them granting Hwoarang huge damage potential.",
+  "playstyle": "Heavy-hitting rushdown through four stances. Use plus-on-block moves and stance transitions (RFF, LFS, RFS) to keep a torrent of pressure going and make sidestepping hard. Wavu warns his stances take time to learn, and almost every attack is a punch or kick, so parries and power crushes can hurt him.",
+  "strengths": [
+   "Overwhelming offensive pressure with his multiple stances, rapid attacks, and plus on block transitions, making sidestepping against him tricky to pull off",
+   "Can armor through pressure with an assortment of armor moves and strings",
+   "Can approach the opponent while armored with his df3 cancel",
+   "Multiple tricky and effective strings to stack chip damage",
+   "Not a grappler, yet has full throw game, an 11 frame throw and even an air-throw, arguably the best throw game for any non-grappler in the game",
+   "One of the best 11 frame punishers in the game in his 4,3, and an alternative 4,4 which can go into stance",
+   "Plasma Blade is one of the best whiff punishers in the game",
+   "Has arguably the best mid launcher in the game in Just Frame Skyrocket (JFSR), safe on block and 16 frame startup"
+  ],
+  "weaknesses": [
+   "Learning the ins and outs of his four stances can be challenging",
+   "Almost all of his attacks are punches or kicks, making him weak to parries and reversals",
+   "Loses his throw game almost completely in stances (all stance throws are 1+2 breaks)",
+   "Cannot block during Flamingo stance",
+   "Must use unsafe lows to condition opponents to crouch to make mids effective",
+   "Requires above average execution on tools like the Just Frame Skyrocket (JFSR) and his wavedash, which does not have a conventional built-in mixup"
+  ],
+  "stances": [
+   {
+    "code": "RFF",
+    "name": "Right Foot Forward",
+    "entry": "3+4, and many moves transition to it (f+2, df+4, f,F+3)",
+    "note": "RFF.2,3 is an i10 wall-splat punish (Wavu); RFF.3~4 is a homing power crush; RFF.df+3 is a Heat Engager."
+   },
+   {
+    "code": "LFS",
+    "name": "Left Flamingo Stance",
+    "entry": "f+3, or 2 then 3",
+    "note": "LFS.f+3 is a Heat Engager and +4 on block; LFS.uf+4 tornadoes."
+   },
+   {
+    "code": "RFS",
+    "name": "Right Flamingo Stance",
+    "entry": "f,n,4, and transitions like f+4~RFS",
+    "note": "RFS.b+3 is a Heat Engager; RFS.uf+4 tornadoes. In Heat, several RFS strings become natural combos (Wavu)."
+   },
+   {
+    "code": "LFF",
+    "name": "Left Foot Forward",
+    "entry": "His default stance",
+    "note": "The standing stance most of his moves come from."
+   }
+  ],
+  "heat": [
+   "RFS.f+4,4, RFS 4,3, and RFS.d+4,3,4 become natural combos."
+  ],
+  "heatEngagers": [
+   "df+3+4",
+   "f,F+4",
+   "RFF.df+3",
+   "LFS.f+3",
+   "RFS.b+3"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "b+3",
+   "ws2,3",
+   "CD.4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Hwoarang",
+    "url": "https://wavu.wiki/t/Hwoarang",
+    "revision": 63349,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Hwoarang_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61929,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Hwoarang_combos",
+    "revision": 59624,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Hwoarang_punishers",
+    "revision": 59238,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Right Jab: i10, +0 on block, can transition to LFS with 3.",
+   "purpose": "Fast check and stance entry.",
+   "use": "Up close to start pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+0.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His jab goes into stance pressure."
+  },
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 jab string, the start of his i10 punishes (Wavu lists 1,2,3 and 1,2,4).",
+   "purpose": "His i10 punish.",
+   "use": "After blocking -10 moves.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "Safe as a punish.",
+   "afterHit": "Damage.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block (also from RFF).",
+   "purpose": "His basic mid.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "f+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Rusty Knife: i16 mid, -2 on block, transitions to RFF.",
+   "purpose": "A safe mid into stance pressure.",
+   "use": "To check and enter RFF.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Pressure starter."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Right Hook Kick: i17 high, +7 to +13 on block.",
+   "purpose": "A very plus high that keeps the turn.",
+   "use": "To keep pressure up close.",
+   "avoid": "Against crouchers: it is high.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+7 to +13.",
+   "afterHit": "+18g to +24g.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "A key pressure tool: mix it with mids."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Right Uppercut: i15 launcher, -7 on block.",
+   "purpose": "His i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers: only +4s on normal hit.",
+   "counterplay": "Duck it if they spam it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Your main launcher (Wavu BnB starter)."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i16 tornado launcher, -19 on block.",
+   "purpose": "His i16 punisher.",
+   "use": "After -16 moves.",
+   "avoid": "Raw: -19, launch punishable.",
+   "counterplay": "Block.",
+   "afterBlock": "-19.",
+   "afterHit": "Launch (+35a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Second launch punish."
+  },
+  {
+   "id": "ws2,3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Chonsan Spin: while-standing tornado string, +3 on block.",
+   "purpose": "His while-standing launch punish (Wavu: i15).",
+   "use": "After -15 lows.",
+   "avoid": "Little risk: +3 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "+3.",
+   "afterHit": "Tornado (+72a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Iron Heel: i14 while-standing mid, -12 on block.",
+   "purpose": "A crouch punisher.",
+   "use": "After -14 lows.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+14c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Crouch punish."
+  },
+  {
+   "id": "d+4,4",
+   "roles": [
+    "low",
+    "counter-hit"
+   ],
+   "summary": "Firecracker: i20 low into a high that tornadoes, -13 on block.",
+   "purpose": "A low with a launch follow-up.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low, duck the second hit.",
+   "afterBlock": "-13.",
+   "afterHit": "Tornado (+69a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His big low."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Sweep Kick: i19 low, -13 on block.",
+   "purpose": "A low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "-1; +17g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip damage."
+  },
+  {
+   "id": "f,F+4",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Peacekeeper: i17 mid Heat Engager, -7 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "+19a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "CD.4",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Sky Rocket: i16 tornado from a crouch dash. The just-frame version is -8 on block.",
+   "purpose": "His big launcher.",
+   "use": "Whiff punish.",
+   "avoid": "Plain version: -18 on block.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-18 (just frame -8).",
+   "afterHit": "Tornado (+53a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Practise the just-frame input."
+  },
+  {
+   "id": "1+3",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Pickpocket: i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his pressure."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+4",
+  "CD.4"
+ ],
+ "lessons": []
+}

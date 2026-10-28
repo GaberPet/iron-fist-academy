@@ -1,0 +1,232 @@
+{
+ "short": "Heihachi",
+ "playstyle": "Classic Mishima rushdown. Use the Flash Punch Combo and Wind God Fist to punish, wavedash into Fujin (FUJ) and the hellsweep, and pressure with plus moves like f+4 and the Raijin stance. Heat builds Ultimate Counts towards Warrior Instinct (WAR). Wavu warns his generic pokes are linear and most lows are launch punishable.",
+ "stances": [
+  {
+   "code": "CD",
+   "name": "Wind God Step",
+   "entry": "f,n,d,df",
+   "note": "Mishima crouch dash: Wind God Fist and Thunder God Fist come from here."
+  },
+  {
+   "code": "FUJ",
+   "name": "Fujin",
+   "entry": "d+1+2, or D after f+3, f+4",
+   "note": "FUJ.1,1 is a Heat Engager; FUJ.2 (Hidden Wind God Fist) tornadoes. In Heat, Fujin auto-parries mids and highs (Wavu)."
+  },
+  {
+   "code": "RAI",
+   "name": "Raijin",
+   "entry": "f+3+4, or f,f,F+1+2 with F",
+   "note": "RAI.2 is a homing high that guard-breaks and is +10 on block."
+  },
+  {
+   "code": "WAR",
+   "name": "Warrior Instinct",
+   "entry": "1+4, or three Ultimate Counts in Heat",
+   "note": "Powers up moves: df+2,WAR.1 tornadoes, WAR.f,F+2 has more range."
+  }
+ ],
+ "keyLaunchers": [
+  "f,n,d,df+2",
+  "f,F+1+2",
+  "FC.df+2",
+  "f,F+2"
+ ],
+ "whiffPunishers": [
+  "f,n,d,df+2",
+  "f,F+2",
+  "uf+4"
+ ],
+ "keyMoves": [
+  [
+   "1,2,2",
+   "punisher",
+   "Flash Punch Combo-style i10 string, -12 on block if all three finish.",
+   "His i10 punish that can be hit-confirmed.",
+   "After blocking -10 moves.",
+   "Finishing it on block: -12.",
+   "Block.",
+   "-12 when the whole string is blocked.",
+   "+4.",
+   "Low risk.",
+   "A classic Mishima punish."
+  ],
+  [
+   "1+2",
+   "punisher",
+   "Demon Breath: i12 mid, -10 on block, launches on hit (+24a).",
+   "His i12 punisher.",
+   "After -12 moves.",
+   "-10 on block.",
+   "Block.",
+   "-10.",
+   "Launch.",
+   "Moderate.",
+   "Strong i12 punish."
+  ],
+  [
+   "f+1+2",
+   "punisher,launcher",
+   "Chrome Dome: i12 high headbutt, -14 on block.",
+   "An i12 punisher that leads to a follow-up launch in Heat or Warrior Instinct (Wavu).",
+   "Punish -12.",
+   "Raw: -14.",
+   "Duck it.",
+   "-14.",
+   "+14c.",
+   "Moderate.",
+   "Punish, then cash in with Heat."
+  ],
+  [
+   "f,n,d,df+2",
+   "launcher,punisher",
+   "Wind God Fist: i11 high, -10 on block; becomes the EWGF in Heat (Wavu).",
+   "Fast launch punisher and whiff punisher.",
+   "Punish, whiff punish and neutral.",
+   "Against crouchers.",
+   "Duck it.",
+   "-10 (EWGF +5).",
+   "Launch (+39a).",
+   "Moderate.",
+   "Practise the input until it is automatic."
+  ],
+  [
+   "f,F+1+2",
+   "heat,launcher",
+   "Raoh Thrust: i13 mid Heat Engager, -8 on block.",
+   "A fast, safe mid that starts Heat.",
+   "Punish -13 and start Heat.",
+   "Little risk.",
+   "Block.",
+   "-8.",
+   "Launch (+22a).",
+   "Moderate.",
+   "His safest Heat start."
+  ],
+  [
+   "FC.df+2",
+   "launcher,punisher",
+   "Ascension Upper: i15 tornado from crouch, -14 on block.",
+   "His crouching launch punish.",
+   "After blocking lows that are -15 or worse.",
+   "Raw: -14.",
+   "Block.",
+   "-14.",
+   "Launch (+37a).",
+   "Risky.",
+   "Punish lows."
+  ],
+  [
+   "ws1",
+   "punisher",
+   "Quick Iron Fist: i13 while-standing mid, -14 on block.",
+   "A fast crouch punisher.",
+   "After -13 lows.",
+   "Raw: -14.",
+   "Block.",
+   "-14.",
+   "+35d.",
+   "Moderate.",
+   "Faster crouch punish."
+  ],
+  [
+   "f+4",
+   "poke",
+   "Right Splits Kick: i19 mid, +4 on block, can enter FUJ.",
+   "A plus-on-block mid.",
+   "To keep the turn.",
+   "As an interrupt.",
+   "Interrupt or step.",
+   "+4.",
+   "+7c; +26d on CH.",
+   "Moderate.",
+   "His key pressure mid."
+  ],
+  [
+   "f+3",
+   "poke",
+   "Lightning Crush: i18 knee, -5 on block, can enter FUJ.",
+   "A safe mid with a stance follow-up.",
+   "Mid range pressure.",
+   "Little risk.",
+   "Block.",
+   "-5.",
+   "+9.",
+   "Low risk.",
+   "Pressure starter."
+  ],
+  [
+   "4",
+   "counter-hit",
+   "Otoko Geri: i15 high, tornadoes on counter hit (+52a).",
+   "A CH launcher that can be charged.",
+   "When they press.",
+   "Against crouchers.",
+   "Duck it.",
+   "-9.",
+   "+16cg; launch on CH.",
+   "Moderate.",
+   "Read-based damage."
+  ],
+  [
+   "db+3",
+   "low",
+   "Sacred Tree Fell: i16 low, -13 on block.",
+   "His quick low.",
+   "Against standing block.",
+   "When they block low.",
+   "Block low.",
+   "-13.",
+   "-2.",
+   "Moderate.",
+   "Wavu: most of his lows are risky."
+  ],
+  [
+   "RAI.2",
+   "poke",
+   "Thunder Cutter: i17 homing high from Raijin, +10 on block.",
+   "A guard-breaking pressure move.",
+   "From Raijin to keep the turn.",
+   "Against crouchers.",
+   "Duck it.",
+   "+10.",
+   "+51a.",
+   "Moderate.",
+   "Huge pressure."
+  ],
+  [
+   "2+4",
+   "throw",
+   "i12 throw, break with 1 or 2, side switch on break.",
+   "Generic throw.",
+   "Against blockers.",
+   "When they break.",
+   "Break with 1 or 2.",
+   "+0 on break.",
+   "Knockdown.",
+   "Whiffs if ducked.",
+   "Mix with his mids."
+  ]
+ ],
+ "combos": [
+  {
+   "id": "heihachi-bnb",
+   "name": "Launch BnB: 4 T! uf+3,4 1,b+2,4",
+   "difficulty": 3,
+   "section": "Bread n' Butter",
+   "starters": [
+    "f,F+3"
+   ],
+   "situation": "After a regular launch such as f,F+3 (Left Splits Kick).",
+   "route": "4 T! uf+3,4 1,b+2,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Pressing 4 too late: it must hit before they fall.",
+    "Missing the 1,b+2,4 ender timing."
+   ]
+  }
+ ]
+}

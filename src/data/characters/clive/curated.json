@@ -1,0 +1,334 @@
+{
+ "profile": {
+  "id": "clive",
+  "name": "Clive",
+  "short": "Clive",
+  "color": "hsl(184 70% 62%)",
+  "overview": "Clive Rosfield, the guest fighter from Final Fantasy XVI, fights with a sword and Eikon powers. Wavu Wiki highlights his long range: f+2, f+1+2 and b+1+2 reach far enough to beat most backsways. His lows are risky, and some key pokes such as df+1 barely track.",
+  "playstyle": "Long-range swordplay. Control the space just outside the opponent's reach with long mids, enter Phoenix (PHX) off many strings to keep the pressure going, and spend Heat on Ifrit-powered follow-ups. Be careful with lows: Wavu notes they are all -13 or worse.",
+  "strengths": [
+   "Long Range Many of Clive's attacks such as f2, f1+2, and b1+2 travel far enough to nullify most backsways entirely. F1+2 is an excellent 17-frame heat-engaging punisher for moves with long pushback.",
+   "Master Swordsman: Most of Clive's attacks utilize his sword, rendering many of his moves unparriable to most characters.",
+   "Anti-Masher: Great counter-hit potential with strings such as f+2,2,2, which activates heat and grants a combo on heat dash, and 2,2,1, which is an i12 NCC wall-splat.",
+   "Easy-Access Nuke: A built-up Zantetsuken meter lends itself to huge damage, either as a whiff punish or a combo ender. At full strength (Level 5), it does similar damage comparable to your average combo by itself.",
+   "Mixup Potential: WR.2, mostly used as an approach tool, grants Clive +8 on block if he opts to transition to Phoenix Shift, where most characters have no counters to his fastest options.",
+   "Dominant of Fire: Heat allows Clive access to exclusive strings, which can easily stack chip damage, as well as transition to Phoenix Shift early to make unaware opponents hesitate or press on the string extensions.",
+   "The game will play the classic Final Fantasy victory fanfare, if you finish a sucessful set with Clive's Rage Art!"
+  ],
+  "weaknesses": [
+   "Small Tekken: Key pokes such as df+1 have little to no tracking.",
+   "Risky Lows: All lows are either -13 or launch punishable, and stand a little on the slower side.",
+   "Limited Stancing: Most Phoenix Shift transitions start from a duckable high or at sizeable minus frames on block, where most options are beat out by a generic mid poke.",
+   "Unsafe: Only one safe launcher in SS.1+2, which comes out at i25 (despite being +2 on block), the rest being -13 or greater.",
+   "Is not Tifa: Italy does not approve."
+  ],
+  "stances": [
+   {
+    "code": "PHX",
+    "name": "Phoenix",
+    "entry": "F or 4 after 1,1, 2,2, 4,4, b+2, ws1, ws4, f,f,F+2 (on hit or block)",
+    "note": "His main follow-up stance: PHX.2,1 tornadoes, PHX.1+2 is a Heat Engager, PHX.3+4 is +7 on block. b+2 into PHX is +4 on block."
+   },
+   {
+    "code": "GAR",
+    "name": "Garuda",
+    "entry": "db+1+2,1 on airborne hit",
+    "note": "A combo stance: GAR.2,2 is used in his launch combos."
+   },
+   {
+    "code": "WOL",
+    "name": "Wolf (Torgal)",
+    "entry": "From combo enders (see the Move Library)",
+    "note": "WOL.2 and WOL.3 appear in his combos; WOL.3 is an instant tornado."
+   }
+  ],
+  "heat": [
+   "Can use fiery Ifrit abilities (f+2,2,H.1, f+2,2,H.1*, df+1,H.1,1, df+1,H.1,2, H.u+1+2, PHX.2,H.1+2)",
+   "Torgal's attack rush is powered up (2,2,2, 3,2, ws3, PHX.3,2)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "f+3",
+   "ws2",
+   "d+1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Clive",
+    "url": "https://wavu.wiki/t/Clive",
+    "revision": 62083,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Clive_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61570,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Clive_combos",
+    "revision": 61417,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Clive_punishers",
+    "revision": 59233,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke",
+    "punisher"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1 is an i10 punisher that can enter Phoenix.",
+   "use": "Up close and to punish -10.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid, -3 on block.",
+   "purpose": "His safe mid check.",
+   "use": "To make the opponent respect mids.",
+   "avoid": "Against sidesteps: Wavu says it has little tracking.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "-3.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A safe mid, but watch for sidesteps."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Door Knocker: i14 mid, -9 on block.",
+   "purpose": "Another quick mid.",
+   "use": "Mid range checks.",
+   "avoid": "-9 hands over the turn.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Mix with df+1."
+  },
+  {
+   "id": "2,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i12 string that can enter Phoenix with F or 4.",
+   "purpose": "His i12 punisher into stance pressure.",
+   "use": "Punish -12; keep pressure with PHX.",
+   "avoid": "Against crouchers on the first hit.",
+   "counterplay": "Duck it.",
+   "afterBlock": "Check the Move Library; PHX entry changes the frames.",
+   "afterHit": "PHX follow-ups.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Learn the PHX entry from this string."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Wyrm Killer: i15 launcher, -13 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "Punish -15; whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+30a): go into his BnB.",
+   "afterEvade": "Risky on whiff.",
+   "gamePlan": "Your main launch punish."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Knight's Gambit: i20 spike that launches (+37a), -14 on block.",
+   "purpose": "His staple combo starter (Wavu staples).",
+   "use": "As a whiff punish and in neutral reads.",
+   "avoid": "Raw on block: -14.",
+   "counterplay": "Block it.",
+   "afterBlock": "-14.",
+   "afterHit": "Big combo: Wavu lists several 54 to 82 damage routes.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Most of his staple combos start here."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Echo Breaker: i15 while-standing launcher.",
+   "purpose": "His while-standing launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: about -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+53a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish big lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Sabaton Smash: i11 while-standing mid, -5 on block, can enter PHX.",
+   "purpose": "Fast crouch punisher.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Blue Bolt: i17 homing mid, launches on counter hit (+57a).",
+   "purpose": "A homing CH launcher.",
+   "use": "When the opponent steps or presses.",
+   "avoid": "-13 on block.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-13.",
+   "afterHit": "+10g; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read-based damage that tracks."
+  },
+  {
+   "id": "d+1+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Pile Driver: i22 mid, -6 on block, launches on counter hit (+63a).",
+   "purpose": "A safe CH launcher.",
+   "use": "At mid range when they press.",
+   "avoid": "As a fast interrupt.",
+   "counterplay": "Block it.",
+   "afterBlock": "-6.",
+   "afterHit": "+9a; tornado on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe reward against mashing."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "low"
+   ],
+   "summary": "Scorching Sweep: i18 low, -13 on block.",
+   "purpose": "His main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low: -13.",
+   "counterplay": "Block low, punish -13.",
+   "afterBlock": "-13.",
+   "afterHit": "+2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu notes all his lows are risky: use them sparingly."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Flame Bash: i13 mid Heat Engager, -9 on block.",
+   "purpose": "A fast Heat Engager and i13 punisher.",
+   "use": "Punish -13 and start Heat.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fast Heat start."
+  },
+  {
+   "id": "f+1+2",
+   "roles": [
+    "heat",
+    "poke"
+   ],
+   "summary": "Prominence: i16 long-range mid, Heat Engager.",
+   "purpose": "Long-range poke (Wavu: excellent range) and Heat Engager.",
+   "use": "At range to stop backsways and start Heat.",
+   "avoid": "-12 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best long-range tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Punisher: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-5 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "clive-bnb",
+   "name": "Launch BnB: db+1+2,1 GAR.2,2 T! dash b+2,F PHX.2,2",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "db+1+2,1 GAR.2,2 T! dash b+2,F PHX.2,2",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Missing the GAR transition: db+1+2,1 has to hit an airborne opponent.",
+    "Not holding F after b+2, so PHX never starts."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Clive",
+    "url": "https://wavu.wiki/t/Clive_combos",
+    "revision": 61417,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f+3",
+  "f,F+2"
+ ],
+ "lessons": []
+}

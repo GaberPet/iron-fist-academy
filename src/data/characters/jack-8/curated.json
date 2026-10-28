@@ -1,0 +1,329 @@
+{
+ "profile": {
+  "id": "jack-8",
+  "name": "Jack-8",
+  "short": "Jack-8",
+  "color": "hsl(7 70% 62%)",
+  "overview": "Jack-8 is arguably Tekken's most potent character in the midrange. Through strong pokes, incredible range on lows and launchers, and great whiff punish options, Jack allows you to dominate the neutral game and force your opponent to take risks to come to you.",
+  "playstyle": "Mid-range monster. Stop the opponent's approach with safe neutral tools (b+2, df+1, b+3), use the huge range of his lows and launchers, and build Gamma Charge for armoured, guard-breaking hits. Wavu warns he has no i10 jab and a huge, slow body, so he struggles when pressured up close.",
+  "strengths": [
+   "Neutral Stop Signs: b+2, df+1, and b+3 are all extremely effective and safe ways to stop opponents from approaching in neutral. Jack also has riskier options like df+2, db+2, and f+2 that lead to huge damage if they land.",
+   "Excellent Pressure: Jack has good ways to access scary plus frames, and many of Jack's pressure moves can transition into Gamma Howl for either stopping mashes or forcing a mixup.",
+   "Easy Bake Mixups: Gamma Howl gives Jack several highly rewarding mixup options. Outside of Gamma Howl, Jack has a complete throw game and several devastating power mids to play around with.",
+   "Absurd Damage: Jack's combos and power mids hits like a truck",
+   "Heat Smash: Jack has the fastest Heat Smash in the game at i10, making it a very powerful block/whiff punisher. It also has good range and chip on block."
+  ],
+  "weaknesses": [
+   "Huge and Slow: Jack lacks an i10 jab from both standing and crouch, making it difficult to press when he's being pressured. He also has a bad sidestep which makes it hard for him to evade attacks at close ranges. Proper use of his new Gamma Howl armor can help with this issue.",
+   "Mediocre Lows: Jack's low pokes give middling reward, and his bigger lows are slow and/or launch punishable."
+  ],
+  "stances": [
+   {
+    "code": "GMH",
+    "name": "Gamma Howl",
+    "entry": "3+4, or D after f,F+1 and ss2",
+    "note": "GMH.4 and GMH.3+4 are Heat Engagers; GMH.2 is +11g on block."
+   },
+   {
+    "code": "GMC",
+    "name": "Gamma Charge",
+    "entry": "3+4 while absorbing a hit, or landing hold moves on hit or block",
+    "note": "Charged versions: GMC.2 guard-breaks and is +11 on block. In Heat, Gamma Charge moves are always active (Wavu)."
+   }
+  ],
+  "heat": [
+   "Gamma Charge moves are always active."
+  ],
+  "heatEngagers": [
+   "b+2",
+   "b+1+2",
+   "GMH.4",
+   "GMH.3+4",
+   "d+2+4"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "ws1",
+   "1+2",
+   "u+1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Jack-8",
+    "url": "https://wavu.wiki/t/Jack-8",
+    "revision": 62092,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Jack-8_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62055,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Jack-8_combos",
+    "revision": 61148,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Jack-8_punishers",
+    "revision": 60808,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i11 high, +1 on block.",
+   "purpose": "His fastest standing button (no i10 jab, Wavu).",
+   "use": "Up close to interrupt.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it to interrupt."
+  },
+  {
+   "id": "f+2",
+   "roles": [
+    "punisher",
+    "counter-hit"
+   ],
+   "summary": "Pinpoint Assault: i10 high, -12 on block, launches on counter hit.",
+   "purpose": "His i10 punisher (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-12.",
+   "afterHit": "+5; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Your fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid, -4 on block.",
+   "purpose": "A neutral stop sign (Wavu).",
+   "use": "To stop approaches and check ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A core neutral tool."
+  },
+  {
+   "id": "b+2",
+   "roles": [
+    "heat",
+    "poke"
+   ],
+   "summary": "Piston Gun Assault: i19 mid, +2 on block, Heat Engager.",
+   "purpose": "A plus, long mid and Heat Engager.",
+   "use": "To stop approaches and start Heat.",
+   "avoid": "As a fast interrupt.",
+   "counterplay": "Do not walk into it.",
+   "afterBlock": "+2.",
+   "afterHit": "+2a; Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best neutral tool."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i16 mid, -9 on block.",
+   "purpose": "Another neutral stop sign.",
+   "use": "At mid range.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Keep-out tool."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Mimesis Wrench Kick: i15 mid, -9 on block.",
+   "purpose": "A mid poke.",
+   "use": "To check.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+5; +14c on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Another mid."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Programmed Uppercut: i15 launcher, -14 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Killing Uppercut: i15 while-standing launcher, -13 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Toe Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Tornado Punch: i15 homing instant tornado, -13 on block.",
+   "purpose": "A homing launcher with high evasion.",
+   "use": "Against highs and sidesteps.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Instant tornado (+67a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Big reward read."
+  },
+  {
+   "id": "d+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i10 special-mid crouch jab, -5 on block.",
+   "purpose": "His fastest crouching button.",
+   "use": "To interrupt from crouch.",
+   "avoid": "Expecting damage.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+6.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "His real i10 option."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Big Boot: i16 low, -13 on block.",
+   "purpose": "A long low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "-2.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu: incredible range on his lows."
+  },
+  {
+   "id": "b+1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Tyulpan Blast: i14 Heat Engager, -19 on block.",
+   "purpose": "A punisher that starts Heat.",
+   "use": "Punish -14.",
+   "avoid": "Raw: -19.",
+   "counterplay": "Block.",
+   "afterBlock": "-19.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "1+3",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Rotary Catapult: i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "+0 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "jack8-ch-f2",
+   "name": "CH f+2 → f,F+4",
+   "difficulty": 1,
+   "section": "Mini-combos",
+   "starters": [
+    "CH f+2"
+   ],
+   "situation": "Your f+2 lands as a counter hit (+32a).",
+   "route": "f,F+4",
+   "tags": [
+    "mini-combo",
+    "counter-hit",
+    "beginner"
+   ],
+   "mistakes": [
+    "Following up on a normal hit: only on the counter-hit animation."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Jack-8",
+    "url": "https://wavu.wiki/t/Jack-8_combos",
+    "revision": 61148,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+2",
+  "u+1+2"
+ ],
+ "lessons": []
+}

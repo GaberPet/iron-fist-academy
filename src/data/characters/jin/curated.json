@@ -1,0 +1,330 @@
+{
+ "profile": {
+  "id": "jin",
+  "name": "Jin",
+  "short": "Jin",
+  "color": "hsl(294 70% 62%)",
+  "overview": "Jin is an incredibly versatile character, having an answer for every situation. His strengths include powerful punishment, space control with long-ranged keep-out attacks, and excellent close-ranged pressure thanks to his pokes and wavedash mix-ups. His execution requirements are strict in high-level play, but he can be played effectively by beginners and masters alike.",
+  "playstyle": "The all-rounder. Wavu calls him an answer for every situation: strong punishes, space control, great lows and a parry. Poke with safe mids, flow into Zenshin (ZEN) for mix-ups, and use his Mishima tools (EWHF, crouch dash) to punish. His backdash cancel is sluggish, so rely on sidesteps and parries on defence.",
+  "strengths": [
+   "All Rounder Supreme: Combines outstanding generic tools with a supplementary Mishima moveset",
+   "Outstanding Lows: Possesses one of the best low arsenals in the game",
+   "Great Defense and Keepout: Amazing keepout with EWHF, standing 4, and f+4, with an i3 strong parry makes him very difficult to pressure",
+   "Punishment for everything: Arguably the best punishment suite in the entire game, can launch at i13 and i14 from standing and crouch, respectively",
+   "Potent Heat: Gets strong chip potential and one of the scariest Heat Smashes in the game with insane wallsplat potential"
+  ],
+  "weaknesses": [
+   "Sluggish BDC: One of few characters with a bad backdash cancel",
+   "Not a \"true\" Mishima: Wavedash mixup and d+2 are somewhat reactable",
+   "Naughty Boy: Started WWIII in Tekken 6 and still hasn't gone to the Hague for it"
+  ],
+  "stances": [
+   {
+    "code": "ZEN",
+    "name": "Zenshin",
+    "entry": "f+3+4 or b+3+4, and F after b+3 or f+4",
+    "note": "ZEN.2 is a homing power crush and Heat Engager; ZEN.u+1 tornadoes; ZEN.1 and ZEN.1,3 are his combo tools."
+   },
+   {
+    "code": "CD",
+    "name": "Crouch Dash",
+    "entry": "f,n,d,df or ZEN.df",
+    "note": "CD.df+1 tornadoes and evades jabs; in Heat it becomes the electric version (Wavu)."
+   }
+  ],
+  "heat": [
+   "Gains access to new follow-ups to his Power Stance (db+1+2)",
+   "EWHF can be performed without just frame input."
+  ],
+  "heatEngagers": [
+   "1+2",
+   "df+4",
+   "f,f+2",
+   "f+3,1",
+   "ZEN.2"
+  ],
+  "keyLaunchers": [
+   "d+3+4",
+   "uf+4",
+   "ws2",
+   "CD.df+1"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Jin",
+    "url": "https://wavu.wiki/t/Jin",
+    "revision": 62093,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Jin_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62015,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Jin_combos",
+    "revision": 62005,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Jin_punishers",
+    "revision": 59239,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "2,4",
+   "roles": [
+    "punisher",
+    "wall"
+   ],
+   "summary": "i10 punish string that wall-splats (Wavu: i10 splat). -13 on block if both hits finish.",
+   "purpose": "His i10 punish.",
+   "use": "After -10 moves, especially near the wall.",
+   "avoid": "Finishing it raw: -13.",
+   "counterplay": "Block the second hit and punish.",
+   "afterBlock": "-13 if both hits are blocked.",
+   "afterHit": "+7; splat at the wall.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Best fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block.",
+   "purpose": "His main mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "b+2,1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid string, -9 on block.",
+   "purpose": "A mid check string (Wavu).",
+   "use": "To check and push the opponent back.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Another safe mid."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i16 knee, -6 on block, can enter ZEN with F.",
+   "purpose": "Safe mid into stance.",
+   "use": "Mid range pressure and combo filler.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Core move in his combos too."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "counter-hit",
+    "poke"
+   ],
+   "summary": "Front Thrust Kick: i16 mid, -8 on block, launches on counter hit (+42a).",
+   "purpose": "A long CH launcher that can enter ZEN.",
+   "use": "At range when they press or step in.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+4; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "A key neutral tool."
+  },
+  {
+   "id": "d+3+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Double Lift Kick: i15 launcher, -19 on block.",
+   "purpose": "His i15 launch punisher.",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -19.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-19.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Front Jump Kick: i15 launcher, -13 on block.",
+   "purpose": "Another i15 launcher.",
+   "use": "Punish and whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "A safer i15 option."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Crouching Uppercut: i14 while-standing launcher, -12 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -14 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+39a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -3 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "d+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Right Sweep: i16 low, -12 on block.",
+   "purpose": "One of his outstanding lows (Wavu).",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "-1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip and mix-ups."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Right Low Roundhouse: i20 low, -13 on block, +13g on counter hit.",
+   "purpose": "A low with a CH reward.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "+3; +13g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low pressure."
+  },
+  {
+   "id": "f,F+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Demon's Paw: i14 mid Heat Engager, -8 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat and whiff punish.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+15a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with his mids."
+  }
+ ],
+ "combos": [
+  {
+   "id": "jin-bnb",
+   "name": "Launch BnB: b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T!",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "d+3+4"
+   ],
+   "situation": "After a regular launch such as d+3+4 or uf+4.",
+   "route": "b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T! b+3~F ZEN.1,3",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Not holding F after b+3, so Zenshin never starts.",
+    "Rushing ZEN.u+1 before the stance is ready."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Jin",
+    "url": "https://wavu.wiki/t/Jin_combos",
+    "revision": 62005,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "f,F+2",
+  "f+4"
+ ],
+ "lessons": []
+}
