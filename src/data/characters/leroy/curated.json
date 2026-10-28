@@ -1,0 +1,317 @@
+{
+ "profile": {
+  "id": "leroy",
+  "name": "Leroy",
+  "short": "Leroy",
+  "color": "hsl(356 70% 62%)",
+  "overview": "Leroy Smith is an aggressive fighter defined by his stance mix-ups, parries, and lightning fast counter hit moves.",
+  "playstyle": "Aggressive Wing Chun: lightning-fast counter-hit strings, parries and Hermit (HRM) stance mix-ups. Fish with his CH jab and mid strings, parry the opponent's answers, and use Hermit's auto low parry. Wavu notes his normal-stance lows mostly exist to get into Hermit, not for damage.",
+  "strengths": [
+   "Fast Counter Hits: Leroy has both a CH jab string, a CH df+1 string and a very strong i14 CH mid string. He also has an i12 mid CH launcher and a safe i13 CH high.",
+   "Strong Pokes: Chain punches are powerful poking strings as Leroy recovers quickly enough on block to maintain many options, such as sidestepping. 1+2,1+2,1 is especially rewarding and hit-confirmable.",
+   "Turn Stealer: Armed with multiple parries, a Heat Engager sabaki, and a high-crushing CH low, Leroy is quite risky to challenge.",
+   "Stance Mix-ups: Hermit stance provides many powerful mix-up options including a knockdown low and a hit-confirmable Heat Engager.",
+   "Grandmaster of Chip: Leroy deals high chip damage, most notably from ss1+2 and 1+2,1+2,1 Heat Dash.",
+   "Combo Master: Leroy's combo damage is quite high, both with and without resources to spend. Additionally, his df+2,1+2 launcher turns the opponent to directly face him, making his sidewalk punishment especially strong. For wall combos, Leroy's HRM f+4 spike into a grounded follow-up allows for great okizeme and damage.",
+   "My Last Resort: Leroy's one-use per match cane gives him access to a long range, high damage launcher that's both safe on block and doesn't extend Leroy's hurtbox. Leroy also gains access to a -14 on block low that tornado launches; a very powerful low.",
+   "Fashion: He's called the Grandmaster of Drip for a reason."
+  ],
+  "weaknesses": [
+   "Unrewarding Mix-up Lows: The purpose of his mix-up lows in normal stance is mostly to enter Hermit stance for more threatening mix-ups. This two-step gameplan makes multiple correct guesses required when mixing the opponent up.",
+   "Weak Power Mids: His power mids are underwhelming as they are either quite slow or disproportionately risky for their reward. Even when the opponent is conditioned to duck, Leroy needs to take big risks when mixing them up or settle for safe pokes. Also lacks a fast, safe mid wall-splat.",
+   "Old Man Movement: His generic movement options are on the weaker side, and he struggles to approach as his approach attacks are mediocre at best. He's quite reliant on turn-stealing as a result.",
+   "Please Press Into Me: Struggles against players who mix up their offensive timing, as his reversals are heavily punishable if baited."
+  ],
+  "stances": [
+   {
+    "code": "HRM",
+    "name": "Hermit",
+    "entry": "3+4, and moves like 1,2,4, ws1,4, db+3",
+    "note": "Hermit auto-parries lows and can stay in stance; HRM.1 is a Heat Engager. HRM.1,2 and HRM.2,3 appear in his combos."
+   }
+  ],
+  "heat": [
+   "Chain punches deal increased chip damage on block",
+   "Chain punches restore heat on hit",
+   "Parries restore heat"
+  ],
+  "heatEngagers": [
+   "1+2,1+2,1",
+   "f+4,4",
+   "d+1+2",
+   "db+1+2",
+   "HRM.1"
+  ],
+  "keyLaunchers": [
+   "df+2,1+2",
+   "ws2",
+   "b+1+2",
+   "qcf+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Leroy",
+    "url": "https://wavu.wiki/t/Leroy",
+    "revision": 62103,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Leroy_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61970,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Leroy_combos",
+    "revision": 62149,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Leroy_punishers",
+    "revision": 33306,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,2,4 is his i10 punish (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2,4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 string into Hermit, -9 on block.",
+   "purpose": "His i10 punish and a stance entry.",
+   "use": "After -10 moves.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+3.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into Hermit."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "i13 mid, -6 on block; the df+1 string is a counter-hit tool (Wavu).",
+   "purpose": "His mid check.",
+   "use": "To stop ducking and fish.",
+   "avoid": "-6 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "b+1+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Outcast Arrow: i12 mid, launches on counter hit (+60a), -10 on block.",
+   "purpose": "A fast mid CH launcher (Wavu).",
+   "use": "To interrupt the opponent's pressure.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+2; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "His best fast CH tool."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Hermit's Fist: i13 high, -6 on block; becomes Knee Snap on a grounded counter hit.",
+   "purpose": "A fast high with a CH throw.",
+   "use": "To interrupt.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast interrupt."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Beheading Back Kick: i22 homing high, +9 on block.",
+   "purpose": "A very plus high.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+9.",
+   "afterHit": "+16c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "qcf+2",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Chakra Elbow: i16 high, -6 on block, launches (+29a).",
+   "purpose": "A safe launcher and combo starter.",
+   "use": "Whiff punish and in combos.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-6.",
+   "afterHit": "Launch.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe reward."
+  },
+  {
+   "id": "df+2,1+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launch string, -18 on block.",
+   "purpose": "His i15 launch punisher (Wavu).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -18.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-18.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Arrow Shower: i15 while-standing launcher, -14 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+51a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Amputation Kick: i20 low, -8 on block, enters Hermit.",
+   "purpose": "A safe low into stance.",
+   "use": "To start Hermit pressure.",
+   "avoid": "Little risk.",
+   "counterplay": "Block low.",
+   "afterBlock": "-8.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Hermit entry."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Fan Sweep: i17 low, -15 on block, knocks down on counter hit.",
+   "purpose": "A faster low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-15.",
+   "afterHit": "-4c; +36d on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "b+2",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Parry against highs and mids (Wavu); perfect timing gives a stronger follow-up.",
+   "purpose": "His main parry.",
+   "use": "As a read on the opponent's attacks.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low.",
+   "afterBlock": "-.",
+   "afterHit": "Parry follow-up.",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "Parries also restore Heat in Heat (Wavu)."
+  },
+  {
+   "id": "d+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Chanhui Zhang: i17 mid Heat Engager, -4 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+6c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "qcf+2",
+  "df+2,1+2",
+  "f,F+4,2"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,29 @@
+{
+ "short": "Nina",
+ "playstyle": "The queen of rushdown with the most suffocating poke pressure (Wavu). Stay up close, keep the turn with plus moves and fast strings, and punish everything, even high-pushback moves. Her pressure only works up close and she has a steep learning curve, so drill the basics before the fancy strings.",
+ "stances": [
+  {"code": "CD", "name": "Ducking Step", "entry": "qcf, or F after 1+4 and 3+4", "note": "CD.2 is a Heat Engager. Several moves flow into Ducking Step for more pressure."},
+  {"code": "SS", "name": "Sway", "entry": "qcb, or D/U after 1,2", "note": "An evasive stance for pressure resets."}
+ ],
+ "keyLaunchers": ["df+2", "b+1+4", "ws2", "db+3+4"],
+ "whiffPunishers": ["df+2", "f,F+2", "b+1+4"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2", "punisher,poke", "i10 jab string, -3 on block, can enter Sway with D or U.", "Her i10 punish (Wavu).", "After -10 moves; pressure resets.", "Against crouchers.", "Duck it.", "-3.", "+8.", "Low risk.", "Fast punish."],
+  ["df+1", "poke", "i13 mid, -1 on block.", "Her safe mid check.", "To stop ducking.", "Little risk.", "Block.", "-1.", "+5.", "Low risk.", "Use it constantly."],
+  ["1+2", "poke", "Ray Hands: i16 homing mid, -3 on block.", "A safe homing mid.", "To catch steps.", "Little risk.", "Block.", "-3.", "+8.", "Low risk.", "Anti-step poke."],
+  ["f+3", "poke,counter-hit", "Siren's Kiss: i14 high, +3 to +4 on block, launches on counter hit.", "A plus high that keeps the turn.", "To keep pressure up close.", "Against crouchers.", "Duck it.", "+3 to +4.", "+24a; +54a on CH.", "Moderate.", "Core pressure tool."],
+  ["f,F+2", "launcher", "Sunset Strike: i14 high, -4 on block, launches (+32a).", "A safe launcher from a dash.", "Whiff punish and pressure.", "Against crouchers.", "Duck it.", "-4.", "Launch.", "Moderate.", "Safe reward."],
+  ["df+2", "launcher,punisher", "Silent Uppercut: i15 launcher, -7 on block; does not launch crouchers.", "Her i15 launch punisher.", "Punish -15 and whiff punish.", "Against crouchers.", "Duck it.", "-7.", "Launch (+34a).", "Moderate.", "Main punish."],
+  ["b+1+4", "launcher,punisher", "Reverse Ivory Cutter: i15 tornado, -15 on block.", "Another i15 launcher (Wavu).", "After -15 moves.", "Raw: -15.", "Block and launch.", "-15.", "Tornado (+34a).", "Risky.", "Punish only."],
+  ["ws2", "launcher,punisher", "i15 while-standing launcher, -13 on block.", "Her crouch launch punish.", "After -15 lows.", "Raw: -13.", "Block.", "-13.", "Launch (+28a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "i11 while-standing kick, -4 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-4.", "+7.", "Low risk.", "Basic crouch punish."],
+  ["db+3", "low", "Stiletto Heel: i20 low, -13 on block.", "Her main low.", "Against standing block.", "When they block low.", "Block low.", "-13.", "+4c; +13a on CH.", "Moderate.", "Low pressure."],
+  ["db+2", "counter-hit", "Right Backhand Body Blow: i24 homing mid, -5 on block, crumples on counter hit.", "A safe homing CH tool.", "When they press or step.", "Slow.", "Block.", "-5.", "+8; +61a on CH.", "Low risk.", "Fishing tool."],
+  ["db+1+2", "heat,punisher", "i11 Heat Engager, -14 on block.", "A fast punish that starts Heat.", "After -11 moves.", "Raw: -14.", "Block.", "-14.", "Heat Engager.", "Moderate.", "Punish into Heat."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch; Nina ends up back-turned.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "+0 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "nina-b34", "name": "b+3,4 → f,F+1+2", "difficulty": 2, "section": "Mini-combos", "starters": ["b+3,4"], "situation": "After b+3,4 hits (Wavu mini-combo, 47 damage).", "route": "f,F+1+2", "tags": ["mini-combo"], "mistakes": ["Dashing too slowly before 1+2."]}
+ ]
+}

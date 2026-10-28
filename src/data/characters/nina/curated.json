@@ -1,0 +1,331 @@
+{
+ "profile": {
+  "id": "nina",
+  "name": "Nina",
+  "short": "Nina",
+  "color": "hsl(225 70% 62%)",
+  "overview": "Nina is the queen of rushdown, with arguably the most suffocating poke pressure in the game. She has relentless block pressure from her many fast poke strings and sidestep cancels, and can make it unwise for her opponents to challenge with her fast counterhit tools. Once she gets her opponents in the air, she can very easily carry them to the wall with her Butterfly Loops, where she boasts a strong wall game. She has a complete set of throws that can open up defensive opponents as well as erase their grey health. Heat makes her poke pressure even more terrifying, with high chip damage if you just block, and the threat of an extremely fast i11 Heat Dash if you decide to challenge. On defense, she is surprisingly evasive through her Hayashida Step, which, along with a strong power crush and a reversal, means she can punish aggressive opponents hard.",
+  "playstyle": "The queen of rushdown with the most suffocating poke pressure (Wavu). Stay up close, keep the turn with plus moves and fast strings, and punish everything, even high-pushback moves. Her pressure only works up close and she has a steep learning curve, so drill the basics before the fancy strings.",
+  "strengths": [
+   "Queenly Damage: Great mix of damage and wall carry.",
+   "No Escape: Exemplary punish game with answers to even most high pushback moves.",
+   "Eat This Mix: Great strings for pressure which cover most retaliation options.",
+   "Well-rounded: Very flexible playstyle as she can resort to repeated backsways to create space for massive whiff punishes.",
+   "Annoying to Pressure: Retains fast CH launching tools from i11-14.",
+   "\"You're Finished.\" Excellent set of Heat Engagers.",
+   "Bone-cracking Extraordinaire: Chips massively during Heat and has the most options to delete grey health."
+  ],
+  "weaknesses": [
+   "T-rex Arms: Pressure is only effective up close.",
+   "Keep Up the Pace: High APM and deep learning curve make her quite difficult to pilot."
+  ],
+  "stances": [
+   {
+    "code": "CD",
+    "name": "Ducking Step",
+    "entry": "qcf, or F after 1+4 and 3+4",
+    "note": "CD.2 is a Heat Engager. Several moves flow into Ducking Step for more pressure."
+   },
+   {
+    "code": "SS",
+    "name": "Sway",
+    "entry": "qcb, or D/U after 1,2",
+    "note": "An evasive stance for pressure resets."
+   }
+  ],
+  "heat": [
+   "Enhanced Handgun moves to have more pushback and frame advantage on block",
+   "Enhanced b+1+2"
+  ],
+  "heatEngagers": [
+   "f+4,2",
+   "f+3+4,2",
+   "db+1+2",
+   "f,f,F+1+2",
+   "CD.2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "b+1+4",
+   "ws2",
+   "db+3+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Nina",
+    "url": "https://wavu.wiki/t/Nina",
+    "revision": 62107,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Nina_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62022,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Nina_combos",
+    "revision": 60807,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Nina_punishers",
+    "revision": 61917,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher",
+    "poke"
+   ],
+   "summary": "i10 jab string, -3 on block, can enter Sway with D or U.",
+   "purpose": "Her i10 punish (Wavu).",
+   "use": "After -10 moves; pressure resets.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Ray Hands: i16 homing mid, -3 on block.",
+   "purpose": "A safe homing mid.",
+   "use": "To catch steps.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Anti-step poke."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "Siren's Kiss: i14 high, +3 to +4 on block, launches on counter hit.",
+   "purpose": "A plus high that keeps the turn.",
+   "use": "To keep pressure up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3 to +4.",
+   "afterHit": "+24a; +54a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Core pressure tool."
+  },
+  {
+   "id": "f,F+2",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Sunset Strike: i14 high, -4 on block, launches (+32a).",
+   "purpose": "A safe launcher from a dash.",
+   "use": "Whiff punish and pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-4.",
+   "afterHit": "Launch.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Safe reward."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Silent Uppercut: i15 launcher, -7 on block; does not launch crouchers.",
+   "purpose": "Her i15 launch punisher.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "b+1+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Reverse Ivory Cutter: i15 tornado, -15 on block.",
+   "purpose": "Another i15 launcher (Wavu).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -15.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-15.",
+   "afterHit": "Tornado (+34a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 while-standing launcher, -13 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -4 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Stiletto Heel: i20 low, -13 on block.",
+   "purpose": "Her main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-13.",
+   "afterHit": "+4c; +13a on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low pressure."
+  },
+  {
+   "id": "db+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Right Backhand Body Blow: i24 homing mid, -5 on block, crumples on counter hit.",
+   "purpose": "A safe homing CH tool.",
+   "use": "When they press or step.",
+   "avoid": "Slow.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+8; +61a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "db+1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "i11 Heat Engager, -14 on block.",
+   "purpose": "A fast punish that starts Heat.",
+   "use": "After -11 moves.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch; Nina ends up back-turned.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "+0 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "nina-b34",
+   "name": "b+3,4 → f,F+1+2",
+   "difficulty": 2,
+   "section": "Mini-combos",
+   "starters": [
+    "b+3,4"
+   ],
+   "situation": "After b+3,4 hits (Wavu mini-combo, 47 damage).",
+   "route": "f,F+1+2",
+   "tags": [
+    "mini-combo"
+   ],
+   "mistakes": [
+    "Dashing too slowly before 1+2."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Nina",
+    "url": "https://wavu.wiki/t/Nina_combos",
+    "revision": 60807,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "f,F+2",
+  "b+1+4"
+ ],
+ "lessons": []
+}

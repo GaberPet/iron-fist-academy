@@ -1,0 +1,355 @@
+{
+ "profile": {
+  "id": "lidia",
+  "name": "Lidia",
+  "short": "Lidia",
+  "color": "hsl(252 70% 62%)",
+  "overview": "Lidia Sobieska, the Polish prime minister, fights with traditional karate. Wavu Wiki highlights her punishment: she has a punisher for almost every frame window. Her best mix-ups are launch punishable on a wrong guess, and her stance transitions are a required part of her game.",
+  "playstyle": "Precise punishment and stance flow. Punish everything with the right tool, keep pressure with plus moves (df+4~3, f,f,F+1, qcf+4) and flow between Horse (HRS), Cat (CAT) and Wolf (WLF) stances. Her mix-ups commit hard, so pick your moments. In Heat she gains Heaven and Earth (HAE).",
+  "strengths": [
+   "Politically Punishing. Having punishers for almost every frame advantage and situation, Lidia rewards precisely punishing the opposition's poor preference for improperly placed pokes.",
+   "Tenacious Tactics. Stance situations are quickly and easily enforced and can't be escaped.",
+   "Runaway Freight Train. Can win rounds clean in under 10 seconds, even against strong defense.",
+   "Blue Spark Queen. Has the highest number of blue spark inputs in the game.",
+   "Reversal Toolbox. With a strong powercrush and two varieties of parry, Lidia has many options to struggle out of sticky situations."
+  ],
+  "weaknesses": [
+   "High Commitment. Her best mixup options are all launchable on a wrong guess. Stance transitions are not optional.",
+   "Slow Starter. Needs to build up HAE stacks to truly take off. Losing early rounds without getting any stacks makes it difficult to mount a comeback.",
+   "One-Track Mind. The good moves are good. Your opponents' round and fleshy bodies may start looking a lot like nails for your f,F+2's hammer.",
+   "Low Reward CHs. Her counter hit options mostly give a single free hit. The best counter hit launchers are either unsafe or heavily scaled."
+  ],
+  "stances": [
+   {
+    "code": "HRS",
+    "name": "Horse",
+    "entry": "qcf+4, f+3,4 and others",
+    "note": "HRS.1 is homing and +1 on block; HRS.2 is a Heat Engager; Wavu lists HRS follow-ups after a counter-hit f,F+2."
+   },
+   {
+    "code": "CAT",
+    "name": "Cat",
+    "entry": "1,2,2 on hit or block, and others",
+    "note": "Wavu mini-combo: counter-hit df+2 into CAT.3."
+   },
+   {
+    "code": "WLF",
+    "name": "Wolf",
+    "entry": "qcf+1+2,2 on hit or block, HRS.1",
+    "note": "Another stance in her flow; check the Move Library for its moves."
+   },
+   {
+    "code": "HAE",
+    "name": "Heaven and Earth",
+    "entry": "Heat (for example the enhanced 1+2)",
+    "note": "A Heat-only stance (Wavu)."
+   }
+  ],
+  "heat": [
+   "Access Heaven and Earth (HAE)",
+   "Enhanced 1+2 – reversal break, enter HAE",
+   "Enhanced f,F+2 – reversal break, CH property on normal hit",
+   "Enhanced wr1 – reversal break, enter HAE",
+   "Enhanced WLF.1 – enter HAE"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "uf+4",
+   "ws2",
+   "ws3",
+   "f,F+3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Lidia",
+    "url": "https://wavu.wiki/t/Lidia",
+    "revision": 62104,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Lidia_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62026,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Lidia_combos",
+    "revision": 62147,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Lidia_punishers",
+    "revision": 31703,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,2,2 and 1,4 are her i10 punishes (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -5 on block.",
+   "purpose": "Her mid check.",
+   "use": "To stop ducking.",
+   "avoid": "-5 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Coiled Elbow Slam: i15 mid, +0 on block.",
+   "purpose": "A safe mid that can transition to stance.",
+   "use": "To keep the turn.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0.",
+   "afterHit": "+11; CH leads to CAT.3 (Wavu).",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Pressure starter."
+  },
+  {
+   "id": "df+4~3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Rapture: i20 high, +8 on block.",
+   "purpose": "A very plus high.",
+   "use": "To keep pressure.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+8.",
+   "afterHit": "+57a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f,f,F+1",
+   "roles": [
+    "poke",
+    "launcher"
+   ],
+   "summary": "Swift High Seikenzuki: i13 high from a run, +6 on block, tornadoes on hit.",
+   "purpose": "A plus, launching approach.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+6.",
+   "afterHit": "+24a tornado.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Her best approach."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Cleaving Spirit: i15 launcher, -5 on block.",
+   "purpose": "Her i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-5.",
+   "afterHit": "Tornado (+69a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "3,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Gankaku: i15 punish string (Wavu: s-15), tornadoes on hit.",
+   "purpose": "Another i15 punisher.",
+   "use": "After -15 moves.",
+   "avoid": "-4 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+58a.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Upward Thrust: i15 while-standing tornado, -12 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Tornado (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Bridging the Gap: i14 while-standing knee, -12 on block.",
+   "purpose": "A faster crouch launcher.",
+   "use": "After -14 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+32a; +71a on CH.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "FC.df+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Flash Elbow: i12 Heat Engager from crouch, -14 on block.",
+   "purpose": "A fast crouch punish that starts Heat.",
+   "use": "After -12 lows.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Back Spin Kick: i16 homing high, -3 on block, launches on counter hit (+31a).",
+   "purpose": "A safe CH launcher.",
+   "use": "When they press or step.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+6; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Lame Duck: i18 low, -14 on block.",
+   "purpose": "Her low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-14.",
+   "afterHit": "-4.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Adjourning Sweep: i16 homing low, -11 on block, can transition to stance.",
+   "purpose": "A safer low.",
+   "use": "Against standing block and steps.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-11.",
+   "afterHit": "+7.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Good low."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Stalwart Governance: i18 mid Heat Engager, +2 on block.",
+   "purpose": "A plus Heat Engager.",
+   "use": "To start Heat and keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+2.",
+   "afterHit": "+22cg.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Her best Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "lidia-ch-ff2",
+   "name": "CH f,F+2 → HRS.2",
+   "difficulty": 2,
+   "section": "Mini-combos",
+   "starters": [
+    "CH f,F+2"
+   ],
+   "situation": "Your f,F+2 lands as a counter hit (Wavu mini-combo).",
+   "route": "HRS.2",
+   "tags": [
+    "mini-combo",
+    "counter-hit"
+   ],
+   "mistakes": [
+    "Following up after a normal hit outside Heat: it needs the counter hit."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Lidia",
+    "url": "https://wavu.wiki/t/Lidia_combos",
+    "revision": 62147,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "uf+4",
+  "f,F+3",
+  "f,f,F+1"
+ ],
+ "lessons": []
+}

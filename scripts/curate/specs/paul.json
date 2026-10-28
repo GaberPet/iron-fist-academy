@@ -1,0 +1,29 @@
+{
+ "short": "Paul",
+ "playstyle": "Fundamentally sound with explosive damage. Wavu stresses he is more than a damage machine: win with solid pokes and punishes, then turn a single read into a huge combo or a Phoenix Smasher. His moves track poorly, especially to his right, so time your attacks instead of throwing them out.",
+ "stances": [
+  {"code": "CS", "name": "Cormorant Step", "entry": "From a crouch dash (see the Move Library)", "note": "CS.2 (Phoenix Smasher) is his famous punisher and a Heat Engager; CS.3+4 tornadoes."},
+  {"code": "SWA", "name": "Sway", "entry": "b during df+1 and other moves", "note": "SWA.2 is a Heat Engager; SWA.4 is homing and +1 on block; SWA.1+2 tornadoes."},
+  {"code": "DPD", "name": "Deep Dive", "entry": "Transitions in his combos (e.g. 3,2~b~DF)", "note": "DPD.2,1 and DPD.1 are his combo tools; DPD.df+2,1 is +4 on block."}
+ ],
+ "keyLaunchers": ["df+2", "uf+4", "ws2", "CS.3+4"],
+ "whiffPunishers": ["df+2", "uf+4", "CS.2"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2", "punisher", "i10 jab string, -3 on block.", "His i10 punish (Wavu).", "After -10 moves.", "Against crouchers.", "Duck it.", "-3.", "+8.", "Low risk.", "Fast punish."],
+  ["df+1", "poke", "i14 mid, -2 on block, can sway with b.", "One of his few reliable strings and pokes (Wavu).", "To stop ducking.", "Little risk.", "Block.", "-2.", "+4.", "Low risk.", "Core poke."],
+  ["df+4", "poke", "Tiger Claw: i17 knee, -2 on block.", "A safe mid.", "Mid range checks.", "Little risk.", "Block.", "-2.", "+8.", "Low risk.", "Safe mid."],
+  ["f+2", "heat,punisher", "Phoenix Hook: i13 high Heat Engager, -5 on block.", "An i13 punisher and Heat start.", "Punish -13.", "Against crouchers.", "Duck it.", "-5.", "+9; Heat Engager.", "Low risk.", "Punish into Heat."],
+  ["d+1+2", "punisher", "Shoulder Smash: i12 mid, -18 on block.", "His i12 punisher (Wavu).", "After -12 moves.", "Raw: -18.", "Block and punish.", "-18.", "+16d.", "Very risky raw.", "Punish only."],
+  ["CS.2", "punisher,heat,wall", "Phoenix Smasher: i13 mid, -17 on block, Heat Engager.", "His famous punisher with huge damage and wall carry.", "Punish -15 moves (Wavu) and at range.", "Raw: -17.", "Block and punish.", "-17.", "+26a; splats from far away in Heat.", "Very risky raw.", "His signature punish."],
+  ["df+2", "launcher,punisher", "Kurenai: i15 launcher with high evasion, -8 on block.", "His i15 launch punisher (Wavu BnB starter).", "Punish -15 and duck highs.", "Against crouchers: only +4s on normal hit.", "Duck it.", "-8.", "Launch (+33a).", "Moderate.", "Main punish."],
+  ["uf+4", "launcher,punisher", "Rising Toe Kick: i15 launcher, -13 on block.", "Another i15 launcher.", "Punish -15.", "Raw: -13.", "Block.", "-13.", "Launch (+33a).", "Risky.", "Alternative punish."],
+  ["ws2", "launcher,punisher", "Thunder Palm: i15 while-standing launcher, -14 on block.", "His crouch launch punish (Wavu: 77-damage route).", "After -15 lows.", "Raw: -14.", "Block.", "-14.", "Launch (+27a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "Toe Smash: i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["b+3", "punisher", "Lights Out: i14 high knee, -6 on block, launches on hit.", "An i14 punisher (Wavu).", "After -14 moves.", "Against crouchers.", "Duck it.", "-6.", "+31a.", "Low risk.", "Safe punish."],
+  ["b+4", "low", "Leg Sweep: i20 low, -12c on block, +17g on counter hit.", "His main low.", "Against standing block.", "When they block low.", "Block low.", "-12c.", "+4; +17g on CH.", "Moderate.", "Low poke."],
+  ["uf+2", "heat", "Moonfall: i22 high Heat Engager, +5 on block.", "A plus Heat Engager.", "To keep the turn and start Heat.", "Against crouchers.", "Duck it.", "+5.", "+17a.", "Moderate.", "Pressure into Heat."],
+  ["2+4", "throw", "Shoulder Pop: i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": []
+}

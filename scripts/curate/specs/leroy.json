@@ -1,0 +1,28 @@
+{
+ "short": "Leroy",
+ "playstyle": "Aggressive Wing Chun: lightning-fast counter-hit strings, parries and Hermit (HRM) stance mix-ups. Fish with his CH jab and mid strings, parry the opponent's answers, and use Hermit's auto low parry. Wavu notes his normal-stance lows mostly exist to get into Hermit, not for damage.",
+ "stances": [
+  {"code": "HRM", "name": "Hermit", "entry": "3+4, and moves like 1,2,4, ws1,4, db+3", "note": "Hermit auto-parries lows and can stay in stance; HRM.1 is a Heat Engager. HRM.1,2 and HRM.2,3 appear in his combos."}
+ ],
+ "heatEngagers": ["1+2,1+2,1", "f+4,4", "d+1+2", "db+1+2", "HRM.1"],
+ "keyLaunchers": ["df+2,1+2", "ws2", "b+1+2", "qcf+2"],
+ "whiffPunishers": ["qcf+2", "df+2,1+2", "f,F+4,2"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check; 1,2,4 is his i10 punish (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2,4", "punisher", "i10 string into Hermit, -9 on block.", "His i10 punish and a stance entry.", "After -10 moves.", "-9 on block.", "Block.", "-9.", "+3.", "Low risk.", "Punish into Hermit."],
+  ["df+1", "poke,counter-hit", "i13 mid, -6 on block; the df+1 string is a counter-hit tool (Wavu).", "His mid check.", "To stop ducking and fish.", "-6 on block.", "Block.", "-6.", "+5.", "Low risk.", "Basic mid."],
+  ["b+1+2", "counter-hit", "Outcast Arrow: i12 mid, launches on counter hit (+60a), -10 on block.", "A fast mid CH launcher (Wavu).", "To interrupt the opponent's pressure.", "-10 on block.", "Block.", "-10.", "+2; launch on CH.", "Moderate.", "His best fast CH tool."],
+  ["b+1", "counter-hit", "Hermit's Fist: i13 high, -6 on block; becomes Knee Snap on a grounded counter hit.", "A fast high with a CH throw.", "To interrupt.", "Against crouchers.", "Duck it.", "-6.", "+5.", "Low risk.", "Fast interrupt."],
+  ["b+3", "poke", "Beheading Back Kick: i22 homing high, +9 on block.", "A very plus high.", "To keep the turn.", "Against crouchers.", "Duck it.", "+9.", "+16c.", "Moderate.", "Pressure tool."],
+  ["qcf+2", "launcher", "Chakra Elbow: i16 high, -6 on block, launches (+29a).", "A safe launcher and combo starter.", "Whiff punish and in combos.", "Against crouchers.", "Duck it.", "-6.", "Launch.", "Moderate.", "Safe reward."],
+  ["df+2,1+2", "launcher,punisher", "i15 launch string, -18 on block.", "His i15 launch punisher (Wavu).", "After -15 moves.", "Raw: -18.", "Block and launch.", "-18.", "Launch (+33a).", "Very risky raw.", "Main punish."],
+  ["ws2", "launcher,punisher", "Arrow Shower: i15 while-standing launcher, -14 on block.", "His crouch launch punish.", "After -15 lows.", "Raw: -14.", "Block.", "-14.", "Launch (+51a).", "Risky.", "Punish lows."],
+  ["ws4", "punisher", "i11 while-standing kick, -6 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-6.", "+5.", "Low risk.", "Basic crouch punish."],
+  ["db+3", "low", "Amputation Kick: i20 low, -8 on block, enters Hermit.", "A safe low into stance.", "To start Hermit pressure.", "Little risk.", "Block low.", "-8.", "+5.", "Low risk.", "Hermit entry."],
+  ["db+4", "low", "Fan Sweep: i17 low, -15 on block, knocks down on counter hit.", "A faster low.", "Against standing block.", "When they block low.", "Block low.", "-15.", "-4c; +36d on CH.", "Moderate.", "Low poke."],
+  ["b+2", "evasion", "Parry against highs and mids (Wavu); perfect timing gives a stronger follow-up.", "His main parry.", "As a read on the opponent's attacks.", "Against lows and throws.", "Throw or low.", "-.", "Parry follow-up.", "Bad if read.", "Parries also restore Heat in Heat (Wavu)."],
+  ["d+1+2", "heat", "Chanhui Zhang: i17 mid Heat Engager, -4 on block.", "A safe Heat Engager.", "To start Heat.", "Little risk.", "Block.", "-4.", "+6c.", "Moderate.", "Safe Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": []
+}

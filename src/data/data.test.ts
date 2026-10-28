@@ -1,6 +1,6 @@
 // Content integrity: generated data for every character must be well-formed; every curated reference
 // must resolve against the imported frame data; every notation must parse.
-import { CURATED, GENERAL_LESSONS, lookupMove, lessonsFor } from './index';
+import { CURATED, GENERAL_LESSONS, buildCharacter, lookupMove, lessonsFor } from './index';
 import { loadCharacter, loadFile, loadManifest } from './testData';
 import { parseNotation } from '../core/notation';
 import type { Exercise } from '../types';
@@ -127,9 +127,9 @@ for (const entry of manifest.characters) {
   });
 }
 
-describe('non-curated characters still work', () => {
+describe('characters without coaching still work', () => {
   it('builds an auto profile, imported combos and punishers', () => {
-    const paul = loadCharacter('paul');
+    const paul = buildCharacter(loadFile('paul'));
     expect(paul.profile.name).toBe('Paul');
     expect(paul.combos.length).toBeGreaterThan(50);
     expect(paul.punishers.length).toBeGreaterThan(5);

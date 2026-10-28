@@ -1,0 +1,207 @@
+{
+ "short": "Leo",
+ "playstyle": "An all-rounder with strong fundamentals and big wall pressure. Win neutral with good pokes and parries, then push the opponent to the wall and mix them up from Jin Ji Du Li (KNK), Fo Bu (BOK) and Jin Bu (CD). Wavu warns many of Leo's best moves track poorly, so sidesteps are a real threat.",
+ "stances": [
+  {
+   "code": "KNK",
+   "name": "Jin Ji Du Li",
+   "entry": "f+4, or b after 1,2",
+   "note": "KNK.1,2 is a Heat Engager; KNK.3,4 and KNK.1+2 tornado."
+  },
+  {
+   "code": "BOK",
+   "name": "Fo Bu",
+   "entry": "d+1+2, or d after f+3",
+   "note": "BOK.1,2 tornadoes (used in the BnB); BOK.1+2 is a Heat Engager."
+  },
+  {
+   "code": "CD",
+   "name": "Jin Bu",
+   "entry": "qcf",
+   "note": "CD.3+4 is homing and safe; CD.2,4 ends combos."
+  }
+ ],
+ "keyLaunchers": [
+  "df+2",
+  "ws2",
+  "uf+4",
+  "f+3+4"
+ ],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,F+2"
+ ],
+ "keyMoves": [
+  [
+   "1",
+   "poke",
+   "Jab: i10, +1 on block.",
+   "Fast check.",
+   "Up close.",
+   "Against crouchers.",
+   "Duck it.",
+   "+1.",
+   "+8.",
+   "Low risk.",
+   "Close-range glue."
+  ],
+  [
+   "1,2",
+   "punisher",
+   "i10 jab string, -3 on block, can enter KNK with b.",
+   "Leo's i10 punish (Wavu).",
+   "After -10 moves.",
+   "Against crouchers.",
+   "Duck it.",
+   "-3.",
+   "+8.",
+   "Low risk.",
+   "Punish into stance."
+  ],
+  [
+   "df+1",
+   "poke",
+   "i13 mid, -1 to +0 on block.",
+   "Leo's mid check (Wavu).",
+   "To stop ducking.",
+   "Little risk.",
+   "Block.",
+   "-1 to +0.",
+   "+7.",
+   "Low risk.",
+   "Use it constantly."
+  ],
+  [
+   "d+2",
+   "poke,counter-hit",
+   "i21 mid, +4c on block, launches on counter hit (+56a).",
+   "A plus mid with a CH launch.",
+   "To keep the turn and fish.",
+   "As an interrupt: i21.",
+   "Interrupt or step.",
+   "+4c.",
+   "+9c; launch on CH.",
+   "Moderate.",
+   "Pressure tool."
+  ],
+  [
+   "f+3+4",
+   "counter-hit",
+   "Yellow Crane: i17 high, -1 to +0 on block, tornadoes on counter hit.",
+   "A safe CH launcher.",
+   "When they press.",
+   "Against crouchers.",
+   "Duck it.",
+   "-1 to +0.",
+   "+8; tornado on CH.",
+   "Low risk.",
+   "Fishing tool."
+  ],
+  [
+   "df+2",
+   "launcher,punisher",
+   "Sheng Pao: i15 launcher, -13 on block.",
+   "Leo's i15 launch punisher.",
+   "Punish -15 and whiff punish.",
+   "Raw: -13.",
+   "Block.",
+   "-13.",
+   "Launch (+28a).",
+   "Risky.",
+   "Main punish (Wavu BnB starter)."
+  ],
+  [
+   "uf+4",
+   "launcher,punisher",
+   "i15 launcher, -13 on block.",
+   "Another i15 launcher.",
+   "Punish -15.",
+   "Raw: -13.",
+   "Block.",
+   "-13.",
+   "Launch (+33a).",
+   "Risky.",
+   "Alternative punish."
+  ],
+  [
+   "ws2",
+   "launcher,punisher",
+   "i15 while-standing launcher, -13 on block.",
+   "Leo's crouch launch punish.",
+   "After -15 lows.",
+   "Raw: -13.",
+   "Block.",
+   "-13.",
+   "Launch (+28a).",
+   "Risky.",
+   "Punish lows."
+  ],
+  [
+   "uf+1,2",
+   "punisher,wall",
+   "i13 string that wall-splats (Wavu), -14 on block.",
+   "A punish that sets up wall pressure.",
+   "After -13 moves near the wall.",
+   "Raw: -14.",
+   "Block.",
+   "-14.",
+   "+37d.",
+   "Moderate.",
+   "Wall punish."
+  ],
+  [
+   "d+3",
+   "low",
+   "i16 low, -17 on block.",
+   "A fast low.",
+   "Against standing block.",
+   "When they block low.",
+   "Block low.",
+   "-17.",
+   "-6.",
+   "Moderate.",
+   "Low poke."
+  ],
+  [
+   "db+2,4",
+   "heat,wall",
+   "i24 Heat Engager string that wall-splats, -9 on block.",
+   "Heat start and wall splat.",
+   "Near the wall.",
+   "-9 on block.",
+   "Block.",
+   "-9.",
+   "+12a.",
+   "Moderate.",
+   "Wall pressure tool."
+  ],
+  [
+   "b+2+4",
+   "evasion",
+   "Parry against high and mid attacks (Wavu).",
+   "One of Leo's parries.",
+   "As a read on attacks.",
+   "Against lows and throws.",
+   "Throw or low.",
+   "-.",
+   "Parry follow-up.",
+   "Bad if read.",
+   "Defensive tool."
+  ],
+  [
+   "2+4",
+   "throw",
+   "i12 throw, break with 1 or 2, side switch.",
+   "Generic throw.",
+   "Against blockers.",
+   "When they break.",
+   "Break with 1 or 2.",
+   "-6 on break.",
+   "Knockdown.",
+   "Whiffs if ducked.",
+   "Mix with pokes."
+  ]
+ ],
+ "combos": []
+}

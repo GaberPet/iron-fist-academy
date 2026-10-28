@@ -1,0 +1,334 @@
+{
+ "profile": {
+  "id": "paul",
+  "name": "Paul",
+  "short": "Paul",
+  "color": "hsl(339 70% 62%)",
+  "overview": "Paul Phoenix is a strong, fundamentally sound character who is often mistaken as an overpowering damage output machine. While he is capable of eye-watering damage, his greatest strength is in his ability to shutdown aggression, due to his toolkit being both extremely compact while also being built around blowing up opponents for mashing or not being precise with their dashblocking.",
+  "playstyle": "Fundamentally sound with explosive damage. Wavu stresses he is more than a damage machine: win with solid pokes and punishes, then turn a single read into a huge combo or a Phoenix Smasher. His moves track poorly, especially to his right, so time your attacks instead of throwing them out.",
+  "strengths": [
+   "The Strongest in the Universe. Explosive damage potential. Life deficits are meaningless against Paul, especially when he's in Rage and/or in Heat.",
+   "Danger, Will Robinson. Paul has several ways to abuse stage hazards, as he has an excellent combo ender in WR2 that can floor break, a qcb+1 that floor breaks upon any regular hit (a new trait usually only found in fully charged moves or as a counter-hit property), multiple wall splatting options, and consistently good oki enders to make Paul fearsome at any part of the stage.",
+   "\"I'll Show You!\" Great punishment suite, wall splatting at i12 standing or i13 crouching, can launch from standing at i14. When optimized, Paul really makes you wish you played it safer.",
+   "Stalwart Defense. Excellent keepout with qcb+4, qcb+2, and df+2.",
+   "Disruptive. Several panic moves in f+1+4, d+1+2, u+1, db+1+2, uf+3,4, and parry. Also retains qcb+4 and qcb+1 as CH launchers that don't give up his turn.",
+   "50/50. Incredible mixup potential in df+1 and WS1,2 and their extensions/stance transitions, as well as pressuring at the wall.",
+   "Judo. Complete throw game that allows him to play with all kinds of stage hazards, making him benefit more from punishing parries or armor moves with throws than the average character.",
+   "Deadly Heat Offense. Paul has some of the best Heat Engagers in the game. Furthermore, Heat gives him farther wallsplats, reversal and armor break, and relative safety for Deathfisting moves, as well as the ability to guard break on certain fully charged moves. His Heat Smash is a slightly safer and slower version of Demoman that can hard wall break without any extra wall hits."
+  ],
+  "weaknesses": [
+   "Linear. Weak tracking, especially to SSR, demanding good reads on timing.",
+   "Stale Cheese. Exploitable strings outside df+1, WS1,2, and the f+3 series.",
+   "Can't Close the Distance. Struggles against characters with solid midrange offense; Characters with decent enough range will have an easier time punishing or launching a non-Heat Deathfist.",
+   "Technical. Requires decent execution for optimal damage-- particularly on moves with pushback-- and movement due to motion inputs, especially for backdash-cancelling.",
+   "Inconsistent. Some combo routes are finicky to land, and wall splatting without Heat is a toss-up.",
+   "Can't do a backflip. :("
+  ],
+  "stances": [
+   {
+    "code": "CS",
+    "name": "Cormorant Step",
+    "entry": "From a crouch dash (see the Move Library)",
+    "note": "CS.2 (Phoenix Smasher) is his famous punisher and a Heat Engager; CS.3+4 tornadoes."
+   },
+   {
+    "code": "SWA",
+    "name": "Sway",
+    "entry": "b during df+1 and other moves",
+    "note": "SWA.2 is a Heat Engager; SWA.4 is homing and +1 on block; SWA.1+2 tornadoes."
+   },
+   {
+    "code": "DPD",
+    "name": "Deep Dive",
+    "entry": "Transitions in his combos (e.g. 3,2~b~DF)",
+    "note": "DPD.2,1 and DPD.1 are his combo tools; DPD.df+2,1 is +4 on block."
+   }
+  ],
+  "heat": [
+   "Gains guard breaking moves.",
+   "Phoenix Smasher and other related moves wall splat from further away and are safer on block.",
+   "A charged Hammer of the Gods and Crushing Wind launch on regular hit."
+  ],
+  "heatEngagers": [
+   "uf+2",
+   "qcf+2",
+   "f+4",
+   "qcb+2",
+   "f+2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "ws2",
+   "CS.3+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Paul",
+    "url": "https://wavu.wiki/t/Paul",
+    "revision": 62109,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Paul_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62131,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Paul_combos",
+    "revision": 60911,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Paul_punishers",
+    "revision": 58529,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 jab string, -3 on block.",
+   "purpose": "His i10 punish (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 mid, -2 on block, can sway with b.",
+   "purpose": "One of his few reliable strings and pokes (Wavu).",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Core poke."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Tiger Claw: i17 knee, -2 on block.",
+   "purpose": "A safe mid.",
+   "use": "Mid range checks.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe mid."
+  },
+  {
+   "id": "f+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Phoenix Hook: i13 high Heat Engager, -5 on block.",
+   "purpose": "An i13 punisher and Heat start.",
+   "use": "Punish -13.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+9; Heat Engager.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "d+1+2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Shoulder Smash: i12 mid, -18 on block.",
+   "purpose": "His i12 punisher (Wavu).",
+   "use": "After -12 moves.",
+   "avoid": "Raw: -18.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-18.",
+   "afterHit": "+16d.",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "Punish only."
+  },
+  {
+   "id": "CS.2",
+   "roles": [
+    "punisher",
+    "heat",
+    "wall"
+   ],
+   "summary": "Phoenix Smasher: i13 mid, -17 on block, Heat Engager.",
+   "purpose": "His famous punisher with huge damage and wall carry.",
+   "use": "Punish -15 moves (Wavu) and at range.",
+   "avoid": "Raw: -17.",
+   "counterplay": "Block and punish.",
+   "afterBlock": "-17.",
+   "afterHit": "+26a; splats from far away in Heat.",
+   "afterEvade": "Very risky raw.",
+   "gamePlan": "His signature punish."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Kurenai: i15 launcher with high evasion, -8 on block.",
+   "purpose": "His i15 launch punisher (Wavu BnB starter).",
+   "use": "Punish -15 and duck highs.",
+   "avoid": "Against crouchers: only +4s on normal hit.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-8.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rising Toe Kick: i15 launcher, -13 on block.",
+   "purpose": "Another i15 launcher.",
+   "use": "Punish -15.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Thunder Palm: i15 while-standing launcher, -14 on block.",
+   "purpose": "His crouch launch punish (Wavu: 77-damage route).",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+27a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Toe Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "b+3",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Lights Out: i14 high knee, -6 on block, launches on hit.",
+   "purpose": "An i14 punisher (Wavu).",
+   "use": "After -14 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-6.",
+   "afterHit": "+31a.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Safe punish."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Leg Sweep: i20 low, -12c on block, +17g on counter hit.",
+   "purpose": "His main low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12c.",
+   "afterHit": "+4; +17g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "uf+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Moonfall: i22 high Heat Engager, +5 on block.",
+   "purpose": "A plus Heat Engager.",
+   "use": "To keep the turn and start Heat.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+5.",
+   "afterHit": "+17a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure into Heat."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Shoulder Pop: i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "CS.2"
+ ],
+ "lessons": []
+}

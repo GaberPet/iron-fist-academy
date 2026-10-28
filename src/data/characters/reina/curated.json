@@ -1,0 +1,298 @@
+{
+ "profile": {
+  "id": "reina",
+  "name": "Reina",
+  "short": "Reina",
+  "color": "hsl(138 70% 62%)",
+  "overview": "Reina is an aggressive, rushdown-oriented Mishima who can quickly overwhelm an opponent's defense with her fast pokes and rapid transitions into mix-up stances. She boasts a surprising number of evasive moves, stances and parries to keep her turn, and has a strong punishment kit - either leading into more mixups or Heat. Heat amplifies all aspects of Reina's game, giving her scarier pressure and deadlier mixups. Her combo damage is also nothing to scoff at, and she can easily carry you to the wall on all but the largest stages.",
+  "playstyle": "Aggressive Mishima rushdown. Overwhelm the opponent with fast pokes and quick transitions into Sentai (SEN) and Wrath of Raijin (WRA), backed by the wave dash and Electric Wind God Fist. Wavu warns her lows are committal (mostly launch punishable) and most moves are linear, so keep mids and transitions at the heart of your offence.",
+  "strengths": [
+   "Mishima: Reina's heritage gives her access to classic techniques like the wave dash, Electric Wind God Fist, and hellsweep, making her highly versatile.",
+   "Stance Trickster: Reina can weave through multiple stances from her moves and also from each other. She can frequently and persistently overwhelm her opponent's mental stack.",
+   "Fast Approach: Reina can approach from full-screen (f,F+2), from the air (3+4) or by rolling on the ground (f+3+4). Basically, if she wants to get in your space, she will.",
+   "Versatile: Reina has a tool for everything. She can play both offense or defense, rushdown or keepout, solid or wild."
+  ],
+  "weaknesses": [
+   "Committal Lows: Most of Reina's lows are launch punishable on block, and their reward does not match the risk.",
+   "Linear: Most of Reina's toolkit lacks tracking, and it can get complicated to maintain pressure against an opponent with good lateral movement.",
+   "Demanding: Reina is a very approachable Mishima, but extracting the maximum out of her requires good execution."
+  ],
+  "stances": [
+   {
+    "code": "SEN",
+    "name": "Sentai",
+    "entry": "F after df+1, f,F+2 and others; ws1 on hit",
+    "note": "SEN.3 is an i12 homing high, +1 on block, and a Heat Engager; SEN.2 tornadoes; SEN.1+2 goes into WRA."
+   },
+   {
+    "code": "WRA",
+    "name": "Wrath of Raijin",
+    "entry": "uf+1 on hit, D after SEN.2, SEN.1+2",
+    "note": "A follow-up stance after her transitions."
+   }
+  ],
+  "heat": [
+   "Allows Lethal Fury (,4) follow up to 3,4, 3+4,4, and f+3+4.",
+   "EWGF and EWGK can be performed without just-frame input (at the cost of heat).",
+   "Heaven's Wrath stance automatically parries mids and highs."
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4",
+   "b+4",
+   "1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Reina",
+    "url": "https://wavu.wiki/t/Reina",
+    "revision": 62111,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Reina_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61909,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Reina_combos",
+    "revision": 60661,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Reina_punishers",
+    "revision": 37395,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1,2 and 1,2,2 are her i10 punishes (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -3 on block, can enter SEN with F.",
+   "purpose": "Her mid check and a stance entry.",
+   "use": "To stop ducking and start SEN pressure.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Core poke."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Tecchuu-ate: i15 mid, +0c on block, spikes on counter hit.",
+   "purpose": "A safe, fast mid.",
+   "use": "To check up close.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "+0c.",
+   "afterHit": "+3c.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Pressure mid."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Kamadhatu Splits Kick: i19 mid, +2c on block.",
+   "purpose": "A plus mid.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+2c.",
+   "afterHit": "+5c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "punisher",
+    "launcher"
+   ],
+   "summary": "Demon Breath: i12 mid, -10 on block, launches (+24a).",
+   "purpose": "Her i12 punisher (Wavu).",
+   "use": "After -12 moves.",
+   "avoid": "-10 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-10.",
+   "afterHit": "+24a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Strong i12 punish."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Queen Bee Stinger: i15 launcher, -12 on block.",
+   "purpose": "Her i15 launch punisher (Wavu BnB starter).",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+30a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Silver Gleam: i17 tornado launcher, -13 on block.",
+   "purpose": "Her i17 punisher (Wavu).",
+   "use": "After -17 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Tornado (+70a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Big punish."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Jewel Snatcher: i13 while-standing mid, -13 on block, enters SEN on hit.",
+   "purpose": "A crouch punisher into stance.",
+   "use": "After -13 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "+13 into SEN.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Crouch punish into pressure."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Nobility Hunter: i13 high, -8 on block, launches on counter hit (+35a).",
+   "purpose": "A fast CH launcher.",
+   "use": "When they press.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-8.",
+   "afterHit": "+11g; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "launcher",
+    "counter-hit"
+   ],
+   "summary": "Ebi-geri: i18 high that tornadoes on hit, crushes lows, -8 on block.",
+   "purpose": "A low-crushing launcher.",
+   "use": "Against lows.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-8.",
+   "afterHit": "Tornado (+35a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Answer to low pressure."
+  },
+  {
+   "id": "db+2",
+   "roles": [
+    "low"
+   ],
+   "summary": "Eisaimon: i20 double low, -16 on block.",
+   "purpose": "One of her committal lows (Wavu).",
+   "use": "As a read on standing block.",
+   "avoid": "When they block low: -16.",
+   "counterplay": "Block low and punish.",
+   "afterBlock": "-16.",
+   "afterHit": "-3.",
+   "afterEvade": "Risky.",
+   "gamePlan": "Use sparingly."
+  },
+  {
+   "id": "SEN.3",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Sen Kaijo-geri: i12 homing high from SEN, +1 on block, Heat Engager.",
+   "purpose": "A fast, plus Heat Engager.",
+   "use": "From Sentai to keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+7.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Stance pressure."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,F+3+4"
+ ],
+ "lessons": []
+}

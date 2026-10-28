@@ -1,0 +1,28 @@
+{
+ "short": "Raven",
+ "playstyle": "Versatile mid-range control. Hold the mid range with solid, tracking pokes, close the gap with his loopable Shadow Sprint and crouch step, and mix up from back-turned (BT) and Soulzone (SZN). Wavu notes his lows are reactable or low damage, so most of your damage comes from mids, counter hits and punishes.",
+ "stances": [
+  {"code": "BT", "name": "Labyrinth / Back-turned", "entry": "b+3+4, and moves that leave him back-turned", "note": "BT.4 is a Heat Engager; BT.b+3 is a homing high, +4 on block."},
+  {"code": "SZN", "name": "Soulzone", "entry": "3+4, or after 1,2 with 3+4", "note": "SZN.2 is a Heat Engager; SZN.1+2 is homing, +0 to +1 on block, and launches on counter hit."},
+  {"code": "CD", "name": "Crouch Dash", "entry": "qcf", "note": "His crouch step: qcf+4 tornadoes, qcf+2~1 is safe."}
+ ],
+ "heatEngagers": ["1+2", "f,F+2", "SZN.2", "BT.4", "ws3+4"],
+ "keyLaunchers": ["df+2", "f+4", "ws1", "4~3"],
+ "whiffPunishers": ["f+4", "df+2", "f,F+3"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check.", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["1,2", "punisher", "i10 jab string, -3 on block, can enter SZN with 3+4.", "His i10 punish (Wavu).", "After -10 moves.", "Against crouchers.", "Duck it.", "-3.", "+7.", "Low risk.", "Punish into stance."],
+  ["df+1", "poke", "i14 pseudo-homing mid, -2 to -1 on block.", "His key tracking mid (Wavu: only sidewalkable left at range).", "To stop ducking and steps.", "Little risk.", "Block.", "-2 to -1.", "+8 to +9.", "Low risk.", "Use it constantly."],
+  ["b+1", "poke", "Elbow Strike: i16 high, +7c to +8c on block.", "A very plus high.", "To keep the turn.", "Against crouchers.", "Duck it.", "+7c.", "+10c.", "Moderate.", "Pressure tool."],
+  ["f+4", "launcher,punisher", "Lance Kick: i15 high, instant tornado on hit, -12 on block.", "His i15 launch punisher (Wavu).", "Punish -15 and whiff punish.", "Against crouchers.", "Duck it.", "-12.", "Instant tornado (+67a).", "Risky.", "Main punish."],
+  ["df+2", "launcher,punisher", "i16 launcher, launches crouchers too, -13 on block.", "His i16 punisher (Wavu BnB starter).", "After -16 moves.", "Raw: -13.", "Block.", "-13.", "Launch (+30a).", "Risky.", "Alternative punish."],
+  ["ws1", "launcher,punisher", "Rising Uppercut: i14 while-standing launcher, -14 on block.", "His crouch launch punish.", "After -14 lows.", "Raw: -14.", "Block.", "-14.", "Launch (+35a).", "Risky.", "Punish lows."],
+  ["ws2", "counter-hit,punisher", "Jackknife Elbow: i13 while-standing mid, -8 on block, launches on counter hit.", "A safe crouch punish with a CH launch.", "After -13 lows, or from crouch.", "Little risk.", "Block.", "-8.", "+8; +37a on CH.", "Low risk.", "Strong crouching option."],
+  ["ws4", "punisher", "i11 while-standing kick, -7 on block.", "Fast crouch punish.", "After -11 lows.", "Little risk.", "Block.", "-7.", "+7.", "Low risk.", "Basic crouch punish."],
+  ["d+3", "low", "Stinging Low: i15 low, -11 on block.", "His fast low poke.", "Against standing block.", "When they block low.", "Block low.", "-11.", "+0.", "Moderate.", "Wavu: his lows are mostly pokes."],
+  ["db+3", "low", "i28 low, -12 on block, knocks down on counter hit.", "A slower, damaging low.", "As a read.", "Slow: reactable.", "Block low.", "-12.", "+5; +39d on CH.", "Moderate.", "Read low."],
+  ["1+2", "heat", "i14 mid Heat Engager, -9 on block.", "A fast Heat Engager.", "To start Heat and punish -14.", "-9 on block.", "Block.", "-9.", "+15a.", "Moderate.", "Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2, side switch.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-3 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": []
+}

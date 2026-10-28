@@ -1,0 +1,340 @@
+{
+ "profile": {
+  "id": "lili",
+  "name": "Lili",
+  "short": "Lili",
+  "color": "hsl(141 70% 62%)",
+  "overview": "Lili is a versatile character with good generics, ample plus frame pressure, and the best sidestep in the game. Her strong movement and space control make her extremely difficult to pin down, and she can punish all kinds of situations with her array of damaging whiff punish launchers and quick punishment tools. With these things in mind, opponents will hesitate to press mindlessly, allowing her to approach with plus frames or mixups out of her Feisty Rabbit and backturn (BT) stances. Heat makes her pressure and mixups even more threatening, with access to arguably the best low Heat Smash in the game if she's able to get into BT. She also has good mid checks, strong oki and a terrifying wall game with many safe wall splats.",
+  "playstyle": "Versatile with plus-frame pressure and the best sidestep in the game (Wavu). Make the opponent whiff with movement, then punish, and keep the turn with plus moves. Use back-turned (BT) and Dew Glide (DEW) for mix-ups. Her offence is very linear and weak to sidewalks to her left, so mix in homing moves.",
+  "strengths": [
+   "3D Defense: Lili has the best sidestep in the game, allowing her to consistently make moves whiff and escape specific situations that no other character can.",
+   "Versatile Toolkit: Strong poking, punishment, generic tools, and confirmable strings that let her play small and smart, while also having riskier launchers to punish opponents that don't respect her.",
+   "Class Oppression: Good plus moves, wallsplats, and counter-hit tools that greatly aid her pressure. Multiple moves that hit grounded to continue her offense once she lands a hit.",
+   "Feisty Mixes: Her evasive Feisty Rabbit stance & the mixups therein match well with her backturn offense, which features the safest low Heat Smash in the game."
+  ],
+  "weaknesses": [
+   "2D Offense: Highly linear moves and flawed homing attacks. Very few moves will beat SWL.",
+   "Poor Blockstrings: While her pokes are largely safe, moves with follow-ups tend to be easily ducked or interrupted on block with basic knowledge.",
+   "Punishment Blindspot: Lacks a -14 punish, and her -13 punish leaves her at disadvantage.",
+   "No Reason to Duck: Lows do little damage, limited mix without BT setups and/or Heat.",
+   "Heat troubles: Lacks a safe Heat Engager outside of stances. No character specific benefit to her Heat outside of Feisty Rabbit."
+  ],
+  "stances": [
+   {
+    "code": "BT",
+    "name": "Back-turned",
+    "entry": "B after moves like df+2, ws2, f+1+2",
+    "note": "BT.1,4 is a Heat Engager; BT.1,2 tornadoes and is used in her BnB."
+   },
+   {
+    "code": "DEW",
+    "name": "Dew Glide",
+    "entry": "F after moves like b+1, 3,2 and f,F+3",
+    "note": "DEW.1,4 ends her combos; DEW.3 and DEW.2,1 are Wavu mini-combo follow-ups."
+   }
+  ],
+  "heat": [
+   "Empowered Feisty Rabbit low",
+   "Empowered f,F+3+4 (and other Piercing Thorn moves)",
+   "White Swan Mezzo Piano can be used (3+4,H.3+4) (Lili-3+4,H.3+4|startup, Lili-3+4,H.3+4|block)"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2",
+   "uf+3",
+   "ws2",
+   "d+3+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Lili",
+    "url": "https://wavu.wiki/t/Lili",
+    "revision": 62105,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Lili_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61966,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Lili_combos",
+    "revision": 59747,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Lili_punishers",
+    "revision": 59242,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1 and 2,4 are her i10 punishes (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Submissive Heel: i20 mid, +3c on block.",
+   "purpose": "A plus mid.",
+   "use": "To keep the turn.",
+   "avoid": "As an interrupt.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+3c.",
+   "afterHit": "+8c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure mid."
+  },
+  {
+   "id": "f+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Circle Knee: i20 homing mid, -3 on block.",
+   "purpose": "A safe homing mid.",
+   "use": "To catch steps.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+17a.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Covers her linearity."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Bélier Attaque: i17 mid, tornadoes on counter hit (+57a).",
+   "purpose": "A mid CH launcher.",
+   "use": "When they press.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+7; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Broken Heart: i12 mid, -12 on block, launches on hit (+20a).",
+   "purpose": "Her i12 punisher (Wavu).",
+   "use": "After -12 moves.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "+20a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Strong i12 punish."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Orleans Sword: i16 launcher, -11 on block.",
+   "purpose": "Her launch punisher (Wavu BnB starter).",
+   "use": "After -16 moves; whiff punish.",
+   "avoid": "Raw: -11.",
+   "counterplay": "Block.",
+   "afterBlock": "-11.",
+   "afterHit": "Launch (+31a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "uf+3",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Capricorn Kick: i15 launcher, -13 on block.",
+   "purpose": "Her i15 punisher (Wavu).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+30a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Faster punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Delicate Uprising: i16 while-standing launcher, -12 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -16 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+39a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Cane Smash: i11 while-standing kick, -9 on block, juggles on hit.",
+   "purpose": "Fast crouch punish with a combo.",
+   "use": "After -11 lows.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+20a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Rewarding crouch punish."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Thorn Whip: i19 low, -12 on block.",
+   "purpose": "Her low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low",
+    "launcher"
+   ],
+   "summary": "Edelweiss: i30 homing low that instantly tornadoes, -24 on block.",
+   "purpose": "Her big low.",
+   "use": "As a read on standing block.",
+   "avoid": "Slow and -24 on block.",
+   "counterplay": "Block low.",
+   "afterBlock": "-24.",
+   "afterHit": "Instant tornado (+76a).",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Hard read."
+  },
+  {
+   "id": "3+4",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Black Swan: i23 high Heat Engager, -2 on block.",
+   "purpose": "A safe Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-2.",
+   "afterHit": "+20a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "f,f,F+1+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Zephyranthes: i13 high from a run, +4 on block.",
+   "purpose": "A plus approach.",
+   "use": "To close distance and keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+4.",
+   "afterHit": "+33d.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "lili-bnb",
+   "name": "Launch BnB: 4 f+2,3 df+3+4 BT.1,2 T!",
+   "difficulty": 4,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2.",
+   "route": "4 f+2,3 df+3+4 BT.1,2 T! SSR f,F+3,F~DEW.1,4",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Missing the turn-around: df+3+4 leaves Lili back-turned for BT.1,2.",
+    "Forgetting the sidestep right before f,F+3."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Lili",
+    "url": "https://wavu.wiki/t/Lili_combos",
+    "revision": 59747,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+3",
+  "f,F+2"
+ ],
+ "lessons": []
+}

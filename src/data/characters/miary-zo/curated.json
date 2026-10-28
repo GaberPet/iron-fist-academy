@@ -1,0 +1,330 @@
+{
+ "profile": {
+  "id": "miary-zo",
+  "name": "Miary Zo",
+  "short": "Miary Zo",
+  "color": "hsl(206 70% 62%)",
+  "overview": "Miary Zo is the latest addition to Tekken 8's roster. She excels in up close pressure and rushdown, with quite a few great counter-hit moves to boot, but she also has strong neutral tools that can hit from far away, making her a very versatile character.",
+  "playstyle": "Up-close pressure and rushdown with great counter-hit tools. Poke from range with d+3 and df+3, catch presses with safe counter-hit launchers (df+4, b+4), and flow into Morondava (MOR) and Bao (BAO) stances. Wavu warns her backdash is one of the worst and getting in can be risky, so earn your way in with safe pokes.",
+  "strengths": [
+   "Strong Neutral Tools: Miary is gifted with pokes that can connect near Range 3 (d+3, df+3), has safe counter hitting launchers (df+4, SS2) and is one of the only newcomers to have a safe (df+2).",
+   "Enviromentally Friendly: Miary's tools compliment any map that has interactible elements nearby. Her strongest combo ender will break the floor, and she can throw herself off of walls. Breaking her (1+3) throw will stick her to the wall and both (1+3) and (2+4) floor break. Her (uf+1+2) throw also breaks walls, allowing her to easily trigger Balcony Breaks, and Wall Blasts.",
+   "Beginner Friendly: With her straightforward movelist, strong pokes and easy inputs, she's a great pick for beginners."
+  ],
+  "weaknesses": [
+   "Painful Backdash: She has one of the worst backdashes in the game.",
+   "Risky Approach: Miary has a hard time getting up close, with moves that are either too risky (WR2,1), or too slow to use without conditioning beforehand (WR3, f,F+3).",
+   "Weaker Stance Mix: BAO's stance mix can be challenged at all times, even after being hit by the moves that put her into it.",
+   "Subpar Combo Game: Compared to the rest of the cast, her overall combo damage is quite mediocre, even with heat."
+  ],
+  "stances": [
+   {
+    "code": "MOR",
+    "name": "Morondava",
+    "entry": "F after df+4 and other moves",
+    "note": "MOR.1,2 is a Heat Engager; MOR.2 follows f,f,F+2,1~F (Wavu)."
+   },
+   {
+    "code": "BAO",
+    "name": "Bao",
+    "entry": "4,4 and u+4 transition automatically; F after some combos",
+    "note": "BAO.3 is a Heat Engager; BAO.4 tornadoes in her BnB."
+   }
+  ],
+  "heat": [
+   "Allows the use of u+3,H.2 uf+3,H2 and MOR.3,4,H.1+2",
+   "Allows the use of WAL even without wall contact",
+   "Some moves using Fighting God Power are powered up"
+  ],
+  "heatEngagers": [
+   "3,2",
+   "1+2 / WS.1+2",
+   "WS.1,4",
+   "MOR.1,2",
+   "BAO.3"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "uf+4,4",
+   "ws2",
+   "d+1+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Miary Zo",
+    "url": "https://wavu.wiki/t/Miary_Zo",
+    "revision": 62106,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Miary_Zo_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 61932,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Miary_Zo_combos",
+    "revision": 60973,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Miary_Zo_punishers",
+    "revision": 58661,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check; 1,1,2 is her i10 punish (Wavu).",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -2 on block.",
+   "purpose": "Her safe mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "df+3",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i20 homing mid with long reach, -9 on block.",
+   "purpose": "A long-range poke (Wavu: near range 3).",
+   "use": "At range and against steps.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+4.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Neutral tool."
+  },
+  {
+   "id": "df+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Daka Varatra: i16 knee, -4 on block, launches on counter hit (+57a), can enter MOR.",
+   "purpose": "A safe counter-hit launcher (Wavu).",
+   "use": "When they press.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+5; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Her best fishing tool."
+  },
+  {
+   "id": "b+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Daka Rahona: i19 mid, -2 on block, launches on counter hit (+39a).",
+   "purpose": "Another safe CH launcher with good right sidestep tracking.",
+   "use": "When they press or step.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2.",
+   "afterHit": "+22a; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "db+1+2",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Maritoa Afo: i18 high, +3 on block.",
+   "purpose": "A plus high.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+3.",
+   "afterHit": "+13c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Sifaka An'ala: i15 launcher, -7 on block.",
+   "purpose": "Her i15 launch punisher, safe on block.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers: only +4s on normal hit.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-7.",
+   "afterHit": "Launch (+34a).",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+4,4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launch string, -13 on block.",
+   "purpose": "Another i15 punisher (Wavu).",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Tornado (+67a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 while-standing launcher, -13 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+32a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -4 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-4.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Diavolana: i20 long low, -14 on block, +12g on counter hit.",
+   "purpose": "A long-range low (Wavu: near range 3).",
+   "use": "Against standing block at range.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-14.",
+   "afterHit": "+1; +12g on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Long low poke."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low"
+   ],
+   "summary": "Daka Tany: i18 low, -12 on block.",
+   "purpose": "A faster low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Manafika: i15 Heat Engager, -9 on block.",
+   "purpose": "A Heat Engager.",
+   "use": "To start Heat.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+4.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "miary-bnb",
+   "name": "Launch BnB: 4,4,F BAO.4 T! f+4,4,4",
+   "difficulty": 2,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2"
+   ],
+   "situation": "After a regular launch such as df+2 (Wavu: 47 damage).",
+   "route": "4,4,F BAO.4 T! f+4,4,4",
+   "damage": "[+47]",
+   "tags": [
+    "bnb",
+    "beginner"
+   ],
+   "mistakes": [
+    "Pressing BAO.4 before 4,4 has put her into Bao.",
+    "Rushing the final string."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Miary Zo",
+    "url": "https://wavu.wiki/t/Miary_Zo_combos",
+    "revision": 60973,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4,4",
+  "qcf+1"
+ ],
+ "lessons": []
+}

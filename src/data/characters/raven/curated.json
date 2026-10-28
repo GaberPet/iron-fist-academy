@@ -1,0 +1,299 @@
+{
+ "profile": {
+  "id": "raven",
+  "name": "Raven",
+  "short": "Raven",
+  "color": "hsl(333 70% 62%)",
+  "overview": "Raven is a versatile, well-rounded character with a strong grip over the mid range thanks to an array of solid, tracking pokes and keepout moves. His unique Shadow Sprint is a highly versatile movement-based stance that gives him a variety of approach options and powerful mixups, such as the character-defining iWS2. This synergizes with his pokes and backturned stance, which give him access to strong counter hit tools, unique defensive options, and good mixups. Raven is an unorthodox character to play, but an expressive and rewarding one to master.",
+  "playstyle": "Versatile mid-range control. Hold the mid range with solid, tracking pokes, close the gap with his loopable Shadow Sprint and crouch step, and mix up from back-turned (BT) and Soulzone (SZN). Wavu notes his lows are reactable or low damage, so most of your damage comes from mids, counter hits and punishes.",
+  "strengths": [
+   "Strong Approach: With a cancellable & loopable Shadow Sprint and a loopable Crouch Step, Raven has the means to quickly get close to the opponent and apply his strong 50/50 pressure with a diverse array of lows and deadly mids.",
+   "Heat: Raven has Heat Engagers in all of his stances. His clone attacks become completely safe on block at -3. His Heat Smash is a projectile that guarantees a stance mixup at +14 on block, and he gains a new tornado-launcher with Typhoon Fang Phantom (wr3,4).",
+   "Defensive Tools: He has a plethora of parries and high-value defensive moves that an opponent must keep in mind before pressing a button.",
+   "High Damage: Raven boasts very decent combo damage and excellent wall carry tools, which can also impose very tricky okizeme situations for the opponent.",
+   "Space Control: Raven excels at whiff punishing and generally dominating at mid-range. He also has an elite backdash, so players who are proficient at backdash-cancelling will find Raven to be a great choice for defensive/keepout playstyles.",
+   "GO NINJA, GO NINJA, GO!: Raven's new stance, Soulzone (SZN), gives you access to instant teleports that can put you back in neutral, backturn, or into crouching, instantly accessing his deadly full-crouch offense. As of Season 2, these same teleports can now be accessed from various strings on hit. When all of this is matched with his aforementioned parries, multiple unorthodox launchers from neutral, backturn, crouch step, Shadow Sprint cancels, Raven has many cool-looking tools to keep opponents guessing & do so in style."
+  ],
+  "weaknesses": [
+   "Can't Breach Through: His low attacks are either reactable or have poor damage and often leave Raven minus on hit. He also lacks a 2-break throw, and can be pretty linear at times - most notably with his Heat Smash, which is the most steppable HS in the game. It can be difficult to open up defensive or patient players who rely on punishment and/or movement.",
+   "Weak Plus Frames: The attacks that grant Raven significant and unconditional plus frames on block are either highs, slow, or have very poor range.",
+   "Early Punishment: His jab-punishes either end his turn on block, leave him very punishable, or forces stance on hit.",
+   "Dexterity Required: Raven's 3 stances & various teleports flow into each other through a plethora of moves whose frame data must be studied extensively before playing him correctly. His movement tools also require solid execution & are practically essential to make up for Raven's otherwise lacking ability to build true pressure in the neutral.",
+   "High Risk: Most of Raven's clone attacks are punishable when not in Heat. When combined with his very risky lows, dependence on his backturn stance, and lack of unconditional plus frames, Raven has to decide between playing safe & constantly losing his turn when he's not in Heat, or commit to taking big swings & leaving himself open to potentially severe punishment.",
+   "Has been wrong about Heihachi Mishima being dead twice now."
+  ],
+  "stances": [
+   {
+    "code": "BT",
+    "name": "Labyrinth / Back-turned",
+    "entry": "b+3+4, and moves that leave him back-turned",
+    "note": "BT.4 is a Heat Engager; BT.b+3 is a homing high, +4 on block."
+   },
+   {
+    "code": "SZN",
+    "name": "Soulzone",
+    "entry": "3+4, or after 1,2 with 3+4",
+    "note": "SZN.2 is a Heat Engager; SZN.1+2 is homing, +0 to +1 on block, and launches on counter hit."
+   },
+   {
+    "code": "CD",
+    "name": "Crouch Dash",
+    "entry": "qcf",
+    "note": "His crouch step: qcf+4 tornadoes, qcf+2~1 is safe."
+   }
+  ],
+  "heat": [
+   "Clones become -3 instead of -13",
+   "Gets a running launcher in WR3,4."
+  ],
+  "heatEngagers": [
+   "1+2",
+   "f,F+2",
+   "SZN.2",
+   "BT.4",
+   "ws3+4"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "f+4",
+   "ws1",
+   "4~3"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Raven",
+    "url": "https://wavu.wiki/t/Raven",
+    "revision": 62110,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Raven_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62124,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Raven_combos",
+    "revision": 61046,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Raven_punishers",
+    "revision": 59636,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 jab string, -3 on block, can enter SZN with 3+4.",
+   "purpose": "His i10 punish (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into stance."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i14 pseudo-homing mid, -2 to -1 on block.",
+   "purpose": "His key tracking mid (Wavu: only sidewalkable left at range).",
+   "use": "To stop ducking and steps.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-2 to -1.",
+   "afterHit": "+8 to +9.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "b+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Elbow Strike: i16 high, +7c to +8c on block.",
+   "purpose": "A very plus high.",
+   "use": "To keep the turn.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+7c.",
+   "afterHit": "+10c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Lance Kick: i15 high, instant tornado on hit, -12 on block.",
+   "purpose": "His i15 launch punisher (Wavu).",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-12.",
+   "afterHit": "Instant tornado (+67a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i16 launcher, launches crouchers too, -13 on block.",
+   "purpose": "His i16 punisher (Wavu BnB starter).",
+   "use": "After -16 moves.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+30a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Rising Uppercut: i14 while-standing launcher, -14 on block.",
+   "purpose": "His crouch launch punish.",
+   "use": "After -14 lows.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "Launch (+35a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "counter-hit",
+    "punisher"
+   ],
+   "summary": "Jackknife Elbow: i13 while-standing mid, -8 on block, launches on counter hit.",
+   "purpose": "A safe crouch punish with a CH launch.",
+   "use": "After -13 lows, or from crouch.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-8.",
+   "afterHit": "+8; +37a on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong crouching option."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i11 while-standing kick, -7 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-7.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Stinging Low: i15 low, -11 on block.",
+   "purpose": "His fast low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-11.",
+   "afterHit": "+0.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wavu: his lows are mostly pokes."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "i28 low, -12 on block, knocks down on counter hit.",
+   "purpose": "A slower, damaging low.",
+   "use": "As a read.",
+   "avoid": "Slow: reactable.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+5; +39d on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Read low."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "i14 mid Heat Engager, -9 on block.",
+   "purpose": "A fast Heat Engager.",
+   "use": "To start Heat and punish -14.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+15a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Heat start."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-3 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "f+4",
+  "df+2",
+  "f,F+3"
+ ],
+ "lessons": []
+}

@@ -1,0 +1,332 @@
+{
+ "profile": {
+  "id": "panda",
+  "name": "Panda",
+  "short": "Panda",
+  "color": "hsl(179 70% 62%)",
+  "overview": "Panda (and Kuma, often just referred to as bears) is an oddball character specializing in ranged poking and whiff punishment.",
+  "playstyle": "An oddball bear built on ranged poking and whiff punishment, sharing Kuma's moveset. Use her massive range and damage to punish every mistake, and go into Hunting Bear Stance (HBS) and her roll and sit stances for odd mix-ups. Her huge, wonky hurtbox makes her take bigger combos, so avoid getting launched.",
+  "strengths": [
+   "Hits Like a Bear: Massive range and damage which allows for easy, punishing sequences.",
+   "Disruptive: Possesses an i10 CH launch to keep opponents on their toes.",
+   "Bear Essentials: Wonky hurtbox makes her much harder to hit with lows and gives her surprising evasion with HBS and moves like WR1+2.",
+   "Circus Tricks: Can be tricky to play against with a plethora of strings.",
+   "Run. Unapologetically strong in Heat, dealing loads of chip damage with nearly uncontestable pressure; gains free pressure with Shooting Star, Heat Smash on block can go into either stance, and So Shoe Me is an unbreakable throw that switches sides. She can even hellsweep with H.db4,1 to floor break and have decent oki."
+  ],
+  "weaknesses": [
+   "Massive: Wonky hurtbox makes her more susceptible to unique, higher damage combos for nearly the entire cast, as well as making evading moves harder.",
+   "One-trick Bear: Somewhat hinges on players not knowing Panda's strings very well, requiring stronger fundamentals once defensive counterplay is established.",
+   "Physics-defying: Several launch punishable moves, including most of her lows and some of her key moves.",
+   "Slows: Her strong lows are also slow, making them unusable on savvy opponents.",
+   "Not Kuma: Heat Smash isn't as fast or long ranged as Kuma's, and Shooting Star is prone to getting floated or stepped without a proper entry. Though subtle, she also has slightly less range than Kuma due to being marginally smaller, while still suffering all of the same issues of being a big target."
+  ],
+  "stances": [
+   {
+    "code": "HBS",
+    "name": "Hunting Bear Stance",
+    "entry": "D or 3+4 after moves like db+2 and u+1+2",
+    "note": "HBS.3+4 is a power crush and Heat Engager; HBS.df+2 and HBS.1+2 tornado; HBS.d+1+2 launches on counter hit."
+   },
+   {
+    "code": "ROL",
+    "name": "Roll",
+    "entry": "From transitions (see the Move Library)",
+    "note": "ROL.1 is +4 on block and guard-breaks in Heat. Heat enhances the roll stance (Wavu)."
+   },
+   {
+    "code": "SIT",
+    "name": "Sit",
+    "entry": "From transitions (see the Move Library)",
+    "note": "SIT.2 tornadoes on hit."
+   }
+  ],
+  "heat": [
+   "Shortens charge time of hold attacks",
+   "Enhances ROLL stance",
+   "Allows use of Panda Shooting Star and So Shoe Me"
+  ],
+  "heatEngagers": [],
+  "keyLaunchers": [
+   "df+2,1",
+   "ws2",
+   "f,F+2",
+   "HBS.df+2"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Panda",
+    "url": "https://wavu.wiki/t/Panda",
+    "revision": 62108,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Panda_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 63252,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Panda_combos",
+    "revision": 61880,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Panda_punishers",
+    "revision": 59244,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "2,1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 punish string (Wavu).",
+   "purpose": "Her i10 punish.",
+   "use": "After -10 moves.",
+   "avoid": "Nothing major.",
+   "counterplay": "Block.",
+   "afterBlock": "-3.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fast punish."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i15 mid, -6 on block.",
+   "purpose": "Her mid check.",
+   "use": "To stop ducking.",
+   "avoid": "Slow-ish for a check.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+2.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic mid."
+  },
+  {
+   "id": "f+2,1",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i12 high string (Wavu punisher), -5 on block.",
+   "purpose": "Her i12 punish with a launch on hit.",
+   "use": "After -12 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+36a.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Strong i12 punish."
+  },
+  {
+   "id": "df+2,1",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launch string (Wavu BnB starter), -16 on block.",
+   "purpose": "Her i15 launch punisher.",
+   "use": "After -15 moves.",
+   "avoid": "Raw: -16.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-16.",
+   "afterHit": "Launch (+35a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Mad Angler: i15 while-standing launcher, -12 on block.",
+   "purpose": "Her crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -12.",
+   "counterplay": "Block.",
+   "afterBlock": "-12.",
+   "afterHit": "Launch (+29a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "ws4",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "Paw Smash: i11 while-standing kick, -6 on block.",
+   "purpose": "Fast crouch punish.",
+   "use": "After -11 lows.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-6.",
+   "afterHit": "+5.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Basic crouch punish."
+  },
+  {
+   "id": "f,F+2",
+   "roles": [
+    "launcher"
+   ],
+   "summary": "Demon Uppercut: i19 launcher that crushes lows, -19 on block.",
+   "purpose": "A long whiff punisher.",
+   "use": "Whiff punish at range.",
+   "avoid": "Raw: -19.",
+   "counterplay": "Block and launch.",
+   "afterBlock": "-19.",
+   "afterHit": "Launch (+45a).",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Whiff punish only."
+  },
+  {
+   "id": "b,f+2",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Anger Hook: i15 high, -5 on block, launches on counter hit (+62a).",
+   "purpose": "A safe CH launcher.",
+   "use": "When they press.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-5.",
+   "afterHit": "+17a; launch on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Read-based damage."
+  },
+  {
+   "id": "db+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "Bear Pump in Pedal: i18 low, -12 on block.",
+   "purpose": "Her low poke.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-12.",
+   "afterHit": "+1.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Chip."
+  },
+  {
+   "id": "db+4",
+   "roles": [
+    "low",
+    "counter-hit"
+   ],
+   "summary": "Spinning Kuma: i21 low, -23 on block, tornadoes on counter hit.",
+   "purpose": "A big-reward low.",
+   "use": "As a read.",
+   "avoid": "Getting blocked: -23.",
+   "counterplay": "Block low and launch.",
+   "afterBlock": "-23.",
+   "afterHit": "+6; tornado on CH.",
+   "afterEvade": "Very risky.",
+   "gamePlan": "Use sparingly."
+  },
+  {
+   "id": "1+2",
+   "roles": [
+    "heat",
+    "punisher"
+   ],
+   "summary": "Demon Bear Breath: i13 mid Heat Engager, -13 on block.",
+   "purpose": "Her i13 punisher and Heat start.",
+   "use": "Punish -13.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "+18cg; Heat Engager.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Punish into Heat."
+  },
+  {
+   "id": "f,f,F+1+2",
+   "roles": [
+    "heat"
+   ],
+   "summary": "Rabid Bear: i20 mid from a run, +3 on block, Heat Engager.",
+   "purpose": "A plus Heat Engager from range.",
+   "use": "To close distance and start Heat.",
+   "avoid": "Linear.",
+   "counterplay": "Sidestep it.",
+   "afterBlock": "+3.",
+   "afterHit": "+9c.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Approach tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "Bear Hug: i12 throw, break with 1 or 2.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [
+  {
+   "id": "panda-bnb",
+   "name": "Launch BnB: u+1+2,3+4 HBS.1 b+2,2,1 T! uf+2 b+1",
+   "difficulty": 3,
+   "section": "Bread n' butter",
+   "starters": [
+    "df+2,1"
+   ],
+   "situation": "After a regular launch such as df+2,1.",
+   "route": "u+1+2,3+4 HBS.1 b+2,2,1 T! uf+2 b+1",
+   "tags": [
+    "bnb"
+   ],
+   "mistakes": [
+    "Missing the 3+4 transition into HBS after u+1+2.",
+    "Pressing uf+2 too early after the tornado."
+   ],
+   "source": {
+    "name": "Wavu Wiki combos: Panda",
+    "url": "https://wavu.wiki/t/Panda_combos",
+    "revision": 61880,
+    "verified": "source"
+   }
+  }
+ ],
+ "punishers": [],
+ "whiffPunishers": [
+  "f,F+2",
+  "df+2,1",
+  "b,f+2"
+ ],
+ "lessons": []
+}

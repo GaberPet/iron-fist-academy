@@ -1,0 +1,33 @@
+{
+ "short": "Lidia",
+ "overview": "Lidia Sobieska, the Polish prime minister, fights with traditional karate. Wavu Wiki highlights her punishment: she has a punisher for almost every frame window. Her best mix-ups are launch punishable on a wrong guess, and her stance transitions are a required part of her game.",
+ "playstyle": "Precise punishment and stance flow. Punish everything with the right tool, keep pressure with plus moves (df+4~3, f,f,F+1, qcf+4) and flow between Horse (HRS), Cat (CAT) and Wolf (WLF) stances. Her mix-ups commit hard, so pick your moments. In Heat she gains Heaven and Earth (HAE).",
+ "stances": [
+  {"code": "HRS", "name": "Horse", "entry": "qcf+4, f+3,4 and others", "note": "HRS.1 is homing and +1 on block; HRS.2 is a Heat Engager; Wavu lists HRS follow-ups after a counter-hit f,F+2."},
+  {"code": "CAT", "name": "Cat", "entry": "1,2,2 on hit or block, and others", "note": "Wavu mini-combo: counter-hit df+2 into CAT.3."},
+  {"code": "WLF", "name": "Wolf", "entry": "qcf+1+2,2 on hit or block, HRS.1", "note": "Another stance in her flow; check the Move Library for its moves."},
+  {"code": "HAE", "name": "Heaven and Earth", "entry": "Heat (for example the enhanced 1+2)", "note": "A Heat-only stance (Wavu)."}
+ ],
+ "keyLaunchers": ["uf+4", "ws2", "ws3", "f,F+3"],
+ "whiffPunishers": ["uf+4", "f,F+3", "f,f,F+1"],
+ "keyMoves": [
+  ["1", "poke", "Jab: i10, +1 on block.", "Fast check; 1,2,2 and 1,4 are her i10 punishes (Wavu).", "Up close.", "Against crouchers.", "Duck it.", "+1.", "+8.", "Low risk.", "Close-range glue."],
+  ["df+1", "poke", "i13 mid, -5 on block.", "Her mid check.", "To stop ducking.", "-5 on block.", "Block.", "-5.", "+2.", "Low risk.", "Basic mid."],
+  ["df+2", "poke", "Coiled Elbow Slam: i15 mid, +0 on block.", "A safe mid that can transition to stance.", "To keep the turn.", "Little risk.", "Block.", "+0.", "+11; CH leads to CAT.3 (Wavu).", "Low risk.", "Pressure starter."],
+  ["df+4~3", "poke", "Rapture: i20 high, +8 on block.", "A very plus high.", "To keep pressure.", "Against crouchers.", "Duck it.", "+8.", "+57a.", "Moderate.", "Pressure tool."],
+  ["f,f,F+1", "poke,launcher", "Swift High Seikenzuki: i13 high from a run, +6 on block, tornadoes on hit.", "A plus, launching approach.", "To close distance and keep the turn.", "Against crouchers.", "Duck it.", "+6.", "+24a tornado.", "Moderate.", "Her best approach."],
+  ["uf+4", "launcher,punisher", "Cleaving Spirit: i15 launcher, -5 on block.", "Her i15 launch punisher, safe on block.", "Punish -15 and whiff punish.", "Little risk.", "Block.", "-5.", "Tornado (+69a).", "Moderate.", "Main punish."],
+  ["3,2", "punisher", "Gankaku: i15 punish string (Wavu: s-15), tornadoes on hit.", "Another i15 punisher.", "After -15 moves.", "-4 on block.", "Block.", "-4.", "+58a.", "Low risk.", "Safe punish."],
+  ["ws2", "launcher,punisher", "Upward Thrust: i15 while-standing tornado, -12 on block.", "Her crouch launch punish.", "After -15 lows.", "Raw: -12.", "Block.", "-12.", "Tornado (+29a).", "Risky.", "Punish lows."],
+  ["ws3", "launcher,punisher", "Bridging the Gap: i14 while-standing knee, -12 on block.", "A faster crouch launcher.", "After -14 lows.", "Raw: -12.", "Block.", "-12.", "+32a; +71a on CH.", "Risky.", "Punish lows."],
+  ["FC.df+2", "heat,punisher", "Flash Elbow: i12 Heat Engager from crouch, -14 on block.", "A fast crouch punish that starts Heat.", "After -12 lows.", "Raw: -14.", "Block.", "-14.", "Heat Engager.", "Moderate.", "Punish into Heat."],
+  ["b+4", "counter-hit", "Back Spin Kick: i16 homing high, -3 on block, launches on counter hit (+31a).", "A safe CH launcher.", "When they press or step.", "Against crouchers.", "Duck it.", "-3.", "+6; launch on CH.", "Low risk.", "Fishing tool."],
+  ["d+2", "low", "Lame Duck: i18 low, -14 on block.", "Her low poke.", "Against standing block.", "When they block low.", "Block low.", "-14.", "-4.", "Moderate.", "Low."],
+  ["db+3", "low", "Adjourning Sweep: i16 homing low, -11 on block, can transition to stance.", "A safer low.", "Against standing block and steps.", "When they block low.", "Block low.", "-11.", "+7.", "Moderate.", "Good low."],
+  ["b+1", "heat", "Stalwart Governance: i18 mid Heat Engager, +2 on block.", "A plus Heat Engager.", "To start Heat and keep the turn.", "As an interrupt.", "Interrupt or step.", "+2.", "+22cg.", "Moderate.", "Her best Heat start."],
+  ["2+4", "throw", "i12 throw, break with 1 or 2.", "Generic throw.", "Against blockers.", "When they break.", "Break with 1 or 2.", "-6 on break.", "Knockdown.", "Whiffs if ducked.", "Mix with pokes."]
+ ],
+ "combos": [
+  {"id": "lidia-ch-ff2", "name": "CH f,F+2 → HRS.2", "difficulty": 2, "section": "Mini-combos", "starters": ["CH f,F+2"], "situation": "Your f,F+2 lands as a counter hit (Wavu mini-combo).", "route": "HRS.2", "tags": ["mini-combo", "counter-hit"], "mistakes": ["Following up after a normal hit outside Heat: it needs the counter hit."]}
+ ]
+}

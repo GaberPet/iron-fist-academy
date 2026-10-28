@@ -1,0 +1,296 @@
+{
+ "profile": {
+  "id": "leo",
+  "name": "Leo",
+  "short": "Leo",
+  "color": "hsl(127 70% 62%)",
+  "overview": "Leo is an all-rounder with strong fundamental tools. Leo's primary focuses are wall pressure, through mixups involving moves like their hellsweep db+4 and KNK stance moves, as well as whiff punishing through moves like df+2. Leo's damage at the wall is extremely high, and they can take their opponent to the wall easily. Leo also has great block and while standing punishment with a decent 1 jab and ws4, a safe-on-block i11 mid with a Heat Engager followup. However, Leo has a fairly weak CH game, with few moves providing great reward, and their low game tends to falter outside of close range.",
+  "playstyle": "An all-rounder with strong fundamentals and big wall pressure. Win neutral with good pokes and parries, then push the opponent to the wall and mix them up from Jin Ji Du Li (KNK), Fo Bu (BOK) and Jin Bu (CD). Wavu warns many of Leo's best moves track poorly, so sidesteps are a real threat.",
+  "strengths": [
+   "Jack Of All Trades, Master Of A Few. Leo's basic tools range from decent to amazing, allowing them to rely on fundamentals in most scenarios.",
+   "Whiff Punish Machine. Leo's df+2 launcher reaches from range 2.5, allowing them to easily whiff punish a lot of moves. Also, f,F+2 reaches from range 3.75, leading to insane reward at the wall.",
+   "Wall Monster. Leo gets great mixup potential at the wall, where a lot of good reward moves turn into great reward.",
+   "Stances. Leo's BOK and KNK stances give great pressure, with a lot of moves that lead into them being at least slightly plus, and decently fast moves out of stance can make the opponent think twice before they try to punish.",
+   "Sky's The Limit. Leo's qcf crouch dash, an already great mobility tool, can be cancelled, leading into amazing wall carry and mobility with good execution.",
+   "Heat Smash. Leo's standing Heat Smash hits from range 2.5, is i16, jails into the +8 on block finisher, and can be cancelled into crouch dash by holding df, making you +16. If the opponent throws out a stubby move, you get a free chunk of damage, and on block, you get a free mixup."
+  ],
+  "weaknesses": [
+   "Linear. A lot of Leo's good moves have poor tracking, making them susceptible to sidestep/walk.",
+   "Heat Engagers. Leo is the only character without a single hit Heat Engager without being in a stance or from a string. Leo's Heat Engagers are all unsafe except for one that can be ducked on reaction but is hit confirmable."
+  ],
+  "stances": [
+   {
+    "code": "KNK",
+    "name": "Jin Ji Du Li",
+    "entry": "f+4, or b after 1,2",
+    "note": "KNK.1,2 is a Heat Engager; KNK.3,4 and KNK.1+2 tornado."
+   },
+   {
+    "code": "BOK",
+    "name": "Fo Bu",
+    "entry": "d+1+2, or d after f+3",
+    "note": "BOK.1,2 tornadoes (used in the BnB); BOK.1+2 is a Heat Engager."
+   },
+   {
+    "code": "CD",
+    "name": "Jin Bu",
+    "entry": "qcf",
+    "note": "CD.3+4 is homing and safe; CD.2,4 ends combos."
+   }
+  ],
+  "heat": [
+   "Allows the use of moves during Lightning Glare"
+  ],
+  "heatEngagers": [
+   "db+2,4",
+   "b+2,1+2",
+   "ws4,1+2",
+   "KNK.1,2",
+   "BOK.1+2"
+  ],
+  "keyLaunchers": [
+   "df+2",
+   "ws2",
+   "uf+4",
+   "f+3+4"
+  ],
+  "sources": [
+   {
+    "name": "Wavu Wiki: Leo",
+    "url": "https://wavu.wiki/t/Leo",
+    "revision": 62102,
+    "license": "CC0 1.0"
+   },
+   {
+    "name": "Wavu Wiki",
+    "url": "https://wavu.wiki/t/Leo_movelist",
+    "license": "CC0 1.0 (public domain)",
+    "revision": 62756,
+    "note": "Community-maintained frame data. Values can lag behind the latest patch; verify in Practice mode frame display."
+   },
+   {
+    "name": "Wavu Wiki combos",
+    "url": "https://wavu.wiki/t/Leo_combos",
+    "revision": 60603,
+    "license": "CC0 1.0 (public domain)"
+   },
+   {
+    "name": "Wavu Wiki punishers",
+    "url": "https://wavu.wiki/t/Leo_punishers",
+    "revision": 31741,
+    "license": "CC0 1.0"
+   }
+  ]
+ },
+ "keyMoves": [
+  {
+   "id": "1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "Jab: i10, +1 on block.",
+   "purpose": "Fast check.",
+   "use": "Up close.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "+1.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Close-range glue."
+  },
+  {
+   "id": "1,2",
+   "roles": [
+    "punisher"
+   ],
+   "summary": "i10 jab string, -3 on block, can enter KNK with b.",
+   "purpose": "Leo's i10 punish (Wavu).",
+   "use": "After -10 moves.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-3.",
+   "afterHit": "+8.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Punish into stance."
+  },
+  {
+   "id": "df+1",
+   "roles": [
+    "poke"
+   ],
+   "summary": "i13 mid, -1 to +0 on block.",
+   "purpose": "Leo's mid check (Wavu).",
+   "use": "To stop ducking.",
+   "avoid": "Little risk.",
+   "counterplay": "Block.",
+   "afterBlock": "-1 to +0.",
+   "afterHit": "+7.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Use it constantly."
+  },
+  {
+   "id": "d+2",
+   "roles": [
+    "poke",
+    "counter-hit"
+   ],
+   "summary": "i21 mid, +4c on block, launches on counter hit (+56a).",
+   "purpose": "A plus mid with a CH launch.",
+   "use": "To keep the turn and fish.",
+   "avoid": "As an interrupt: i21.",
+   "counterplay": "Interrupt or step.",
+   "afterBlock": "+4c.",
+   "afterHit": "+9c; launch on CH.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Pressure tool."
+  },
+  {
+   "id": "f+3+4",
+   "roles": [
+    "counter-hit"
+   ],
+   "summary": "Yellow Crane: i17 high, -1 to +0 on block, tornadoes on counter hit.",
+   "purpose": "A safe CH launcher.",
+   "use": "When they press.",
+   "avoid": "Against crouchers.",
+   "counterplay": "Duck it.",
+   "afterBlock": "-1 to +0.",
+   "afterHit": "+8; tornado on CH.",
+   "afterEvade": "Low risk.",
+   "gamePlan": "Fishing tool."
+  },
+  {
+   "id": "df+2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "Sheng Pao: i15 launcher, -13 on block.",
+   "purpose": "Leo's i15 launch punisher.",
+   "use": "Punish -15 and whiff punish.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Main punish (Wavu BnB starter)."
+  },
+  {
+   "id": "uf+4",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 launcher, -13 on block.",
+   "purpose": "Another i15 launcher.",
+   "use": "Punish -15.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+33a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Alternative punish."
+  },
+  {
+   "id": "ws2",
+   "roles": [
+    "launcher",
+    "punisher"
+   ],
+   "summary": "i15 while-standing launcher, -13 on block.",
+   "purpose": "Leo's crouch launch punish.",
+   "use": "After -15 lows.",
+   "avoid": "Raw: -13.",
+   "counterplay": "Block.",
+   "afterBlock": "-13.",
+   "afterHit": "Launch (+28a).",
+   "afterEvade": "Risky.",
+   "gamePlan": "Punish lows."
+  },
+  {
+   "id": "uf+1,2",
+   "roles": [
+    "punisher",
+    "wall"
+   ],
+   "summary": "i13 string that wall-splats (Wavu), -14 on block.",
+   "purpose": "A punish that sets up wall pressure.",
+   "use": "After -13 moves near the wall.",
+   "avoid": "Raw: -14.",
+   "counterplay": "Block.",
+   "afterBlock": "-14.",
+   "afterHit": "+37d.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wall punish."
+  },
+  {
+   "id": "d+3",
+   "roles": [
+    "low"
+   ],
+   "summary": "i16 low, -17 on block.",
+   "purpose": "A fast low.",
+   "use": "Against standing block.",
+   "avoid": "When they block low.",
+   "counterplay": "Block low.",
+   "afterBlock": "-17.",
+   "afterHit": "-6.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Low poke."
+  },
+  {
+   "id": "db+2,4",
+   "roles": [
+    "heat",
+    "wall"
+   ],
+   "summary": "i24 Heat Engager string that wall-splats, -9 on block.",
+   "purpose": "Heat start and wall splat.",
+   "use": "Near the wall.",
+   "avoid": "-9 on block.",
+   "counterplay": "Block.",
+   "afterBlock": "-9.",
+   "afterHit": "+12a.",
+   "afterEvade": "Moderate.",
+   "gamePlan": "Wall pressure tool."
+  },
+  {
+   "id": "b+2+4",
+   "roles": [
+    "evasion"
+   ],
+   "summary": "Parry against high and mid attacks (Wavu).",
+   "purpose": "One of Leo's parries.",
+   "use": "As a read on attacks.",
+   "avoid": "Against lows and throws.",
+   "counterplay": "Throw or low.",
+   "afterBlock": "-.",
+   "afterHit": "Parry follow-up.",
+   "afterEvade": "Bad if read.",
+   "gamePlan": "Defensive tool."
+  },
+  {
+   "id": "2+4",
+   "roles": [
+    "throw"
+   ],
+   "summary": "i12 throw, break with 1 or 2, side switch.",
+   "purpose": "Generic throw.",
+   "use": "Against blockers.",
+   "avoid": "When they break.",
+   "counterplay": "Break with 1 or 2.",
+   "afterBlock": "-6 on break.",
+   "afterHit": "Knockdown.",
+   "afterEvade": "Whiffs if ducked.",
+   "gamePlan": "Mix with pokes."
+  }
+ ],
+ "combos": [],
+ "punishers": [],
+ "whiffPunishers": [
+  "df+2",
+  "uf+4",
+  "f,F+2"
+ ],
+ "lessons": []
+}
