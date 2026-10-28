@@ -84,7 +84,7 @@ export class Arena3D {
     this.renderer.toneMapping = THREE.ACESFilmicToneMapping;
     this.renderer.toneMappingExposure = 1.05;
     this.renderer.outputColorSpace = THREE.SRGBColorSpace;
-    this.stage = buildStage();
+    this.stage = buildStage(this.renderer);
     this.fighters = [new Fighter3D(looks[0]), new Fighter3D(looks[1])];
     for (const f of this.fighters) {
       f.snap(STANCE);

@@ -42,9 +42,13 @@ function organ(length: number, radii: number[], seg = 14): THREE.BufferGeometry 
   return g;
 }
 
-function mat(color: string, rough = 0.75, metal = 0, extra: Partial<THREE.MeshStandardMaterialParameters> = {}) {
-  return new THREE.MeshStandardMaterial({ color: new THREE.Color(color), roughness: rough, metalness: metal, ...extra });
+function mat(color: string, rough = 0.75, metal = 0, extra: Partial<THREE.MeshPhysicalMaterialParameters> = {}) {
+  return new THREE.MeshPhysicalMaterial({ color: new THREE.Color(color), roughness: rough, metalness: metal, ...extra });
 }
+/** Skin: soft sheen and a faint warm glow, a cheap stand-in for subsurface scattering. */
+const skinMat = (c: string) => mat(c, 0.52, 0, { sheen: 0.35, sheenRoughness: 0.6, sheenColor: new THREE.Color('#ffc8a8'), emissive: new THREE.Color(c).multiplyScalar(0.05) });
+/** Fabric: sheen for cloth. */
+const clothMat = (c: string, rough = 0.85) => mat(c, rough, 0, { sheen: 0.6, sheenRoughness: 0.8, sheenColor: new THREE.Color(c).lerp(new THREE.Color('#ffffff'), 0.3) });
 
 export class Fighter3D {
   readonly root = new THREE.Group();
@@ -66,7 +70,7 @@ export class Fighter3D {
     const beast = look.build === 'beast';
     const robot = look.build === 'robot';
     const o = look.outfit ?? 'tank';
-    const skin = robot ? mat(look.skin, 0.35, 0.8) : beast ? mat(look.skin, 0.95) : mat(look.skin, 0.55, 0, { emissive: new THREE.Color(look.skin).multiplyScalar(0.04) });
+    const skin = robot ? mat(look.skin, 0.35, 0.8) : beast ? clothMat(look.skin, 0.95) : skinMat(look.skin);
     // character colours are UI pastels: deepen them into believable fabric dyes
     const dye = (c: string) => {
       const col = new THREE.Color(c);
@@ -74,10 +78,10 @@ export class Fighter3D {
       col.getHSL(hsl);
       return new THREE.Color().setHSL(hsl.h, Math.min(0.62, hsl.s), Math.min(0.36, hsl.l * 0.62)).getStyle();
     };
-    const top = robot ? mat(look.top, 0.4, 0.7) : mat(beast ? look.top : dye(look.top), o === 'suit' ? 0.55 : 0.85);
-    const pants = robot ? mat(look.pants, 0.45, 0.7) : beast ? skin : mat(look.pants, 0.9);
-    const shoes = mat(look.shoes, 0.5);
-    const gloves = mat(look.gloves, 0.42, 0.05);
+    const top = robot ? mat(look.top, 0.4, 0.7) : beast ? skin : clothMat(dye(look.top), o === 'suit' ? 0.55 : 0.85);
+    const pants = robot ? mat(look.pants, 0.45, 0.7) : beast ? skin : clothMat(look.pants, 0.9);
+    const shoes = mat(look.shoes, 0.5, 0, { clearcoat: 0.3 });
+    const gloves = mat(look.gloves, 0.38, 0.05, { clearcoat: 0.7, clearcoatRoughness: 0.25 });
     const belt = mat(look.belt, 0.5, 0.2);
     const hair = mat(look.hair, 0.65);
     const dark = mat('#141010', 0.4);
@@ -209,7 +213,8 @@ export class Fighter3D {
     add(new THREE.ConeGeometry(0.018 * S, 0.045 * S, 8), skin, [0, 0.11 * S, 0.105 * S], [1, 1, 1], [Math.PI / 2.2, 0, 0]); // nose
     for (const s of [-1, 1]) {
       add(new THREE.SphereGeometry(0.022 * S, 10, 8), skin, [s * 0.093 * S, 0.11 * S, -0.01 * S], [0.5, 1, 0.8]); // ears
-      add(new THREE.SphereGeometry(0.012 * S, 10, 8), dark, [s * 0.036 * S, 0.135 * S, 0.088 * S], [1.2, 0.8, 0.6]); // eyes
+      add(new THREE.SphereGeometry(0.013 * S, 12, 10), mat('#f2eee8', 0.3), [s * 0.036 * S, 0.135 * S, 0.086 * S], [1.25, 0.75, 0.55]); // eye white
+      add(new THREE.SphereGeometry(0.0075 * S, 10, 8), mat('#3a2a1e', 0.2, 0, { clearcoat: 1 }), [s * 0.036 * S, 0.135 * S, 0.092 * S], [1, 1, 0.5]); // iris
       add(new THREE.BoxGeometry(0.035 * S, (fem ? 0.005 : 0.008) * S, 0.01 * S), mat(look.hair, 0.8), [s * 0.037 * S, 0.158 * S, 0.092 * S], [1, 1, 1], [0, 0, s * (fem ? -0.15 : 0.08)]); // brows
     }
     if (fem) add(new THREE.SphereGeometry(0.014 * S, 10, 8), mat('#b5524f', 0.5), [0, 0.06 * S, 0.1 * S], [1.6, 0.6, 0.6]); // lips

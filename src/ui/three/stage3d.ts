@@ -2,6 +2,7 @@
 import * as THREE from 'three';
 import { ARENA } from '../../core/fight';
 import { glowTexture } from './fighter3d';
+import { RoomEnvironment } from 'three/examples/jsm/environments/RoomEnvironment.js';
 
 function rng(seed: number) {
   return () => {
@@ -35,8 +36,15 @@ export interface Stage {
   crack(x: number, z: number): void;
 }
 
-export function buildStage(): Stage {
+export function buildStage(renderer?: THREE.WebGLRenderer): Stage {
   const scene = new THREE.Scene();
+  if (renderer) {
+    // soft image-based lighting so skin, cloth and metal pick up believable reflections
+    const pmrem = new THREE.PMREMGenerator(renderer);
+    scene.environment = pmrem.fromScene(new RoomEnvironment(), 0.04).texture;
+    scene.environmentIntensity = 0.28;
+    pmrem.dispose();
+  }
   const r = rng(8128);
   const A = ARENA / 100; // walls at +-A metres
 
