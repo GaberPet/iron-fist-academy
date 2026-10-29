@@ -10,7 +10,8 @@ import { storage, type StorageInfo } from '../runtime/storage';
 import { inputManager } from '../runtime/inputManager';
 import { checkForUpdate, loadChangelog, loadCharacterFile, locateData, type DataLocation } from '../runtime/dataService';
 import { fmtDate } from './format';
-import { pull, push } from '../runtime/sync';
+import { boardSubmit, pull, push } from '../runtime/sync';
+import { rankPoints } from '../core/rank';
 import { mergeProgress } from '../core/transfer';
 import { currentPlayer } from './LoginGate';
 
@@ -173,6 +174,12 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
       window.removeEventListener('focus', onFocus);
     };
   }, [ready, settings.syncCode, syncNow]);
+  // Joined the public leaderboard: send the current points a few seconds after progress changes.
+  useEffect(() => {
+    if (!ready || !settings.boardKey || !settings.boardName) return;
+    const id = window.setTimeout(() => boardSubmit(settings.boardKey, settings.boardName, rankPoints(progress).total).catch(() => undefined), 5000);
+    return () => window.clearTimeout(id);
+  }, [ready, progress, settings.boardKey, settings.boardName]);
   useEffect(() => {
     if (!ready || !settings.syncCode) return;
     const id = window.setTimeout(syncNow, 4000); // new progress reaches the other devices within seconds

@@ -164,7 +164,7 @@ interface Hud {
 const SIZE = { w: 1280, h: 620 };
 
 function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterData; opp: CharacterData; rounds: number; difficulty: Difficulty; practice: DummyMode | null }) {
-  const { settings } = useStore();
+  const { settings, record } = useStore();
   useCaptureInput();
   const gl = useRef<HTMLCanvasElement>(null);
   const hudCanvas = useRef<HTMLCanvasElement>(null);
@@ -244,7 +244,11 @@ function FightArena({ me, opp, rounds, difficulty, practice }: { me: CharacterDa
       if ((e.type === 'crush' || e.type === 'armor' || e.type === 'throw') && e.text) lines.push(e.text);
       if (e.type === 'wall') lines.push(`${e.by === 0 ? 'You' : opp.profile.short}: wall splat`);
       if (e.type === 'round-end') lines.push(e.by === 0 ? 'You take the round' : e.by === 1 ? `${opp.profile.short} takes the round` : 'Draw round');
-      if (e.type === 'match-end') setOver({ winner: engine.winner, dealt: [engine.f[0].dealt, engine.f[1].dealt] });
+      if (e.type === 'match-end') {
+        setOver({ winner: engine.winner, dealt: [engine.f[0].dealt, engine.f[1].dealt] });
+        // Matches (not practice) count towards the rank: a win is a successful 'fight' attempt.
+        if (!practice) record({ kind: 'drill', itemId: `fight:${opp.profile.id}`, success: engine.winner === 0, mode: difficulty, char: me.profile.id });
+      }
     }
     if (lines.length) setFeed((f) => [...lines.reverse(), ...f].slice(0, 6));
   }

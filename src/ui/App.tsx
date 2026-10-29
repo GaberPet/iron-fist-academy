@@ -20,6 +20,8 @@ import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
 import { HelpPage } from './pages/HelpPage';
+import { RankingPage } from './pages/RankingPage';
+import { RankUp } from './components/RankUp';
 import { ImportPage } from './pages/ImportPage';
 import { SyncJoinPage } from './pages/SyncJoinPage';
 import { ImportProgressButton } from './components/ImportProgress';
@@ -38,6 +40,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'combos', label: 'Combo lab', icon: '⚡' },
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'matchup', label: 'How to beat…', icon: '◎' },
+  { id: 'ranking', label: 'Ranking', icon: '♔' },
   { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
   { id: 'fight', label: 'Free fight', icon: '✊' },
   { id: 'updates', label: "What's new", icon: '✧', sep: true },
@@ -146,6 +149,7 @@ export function App() {
       case 'matchup': return <MatchupPage />;
       case 'install': return <InstallPage />;
       case 'help': return <HelpPage />;
+      case 'ranking': return <RankingPage />;
       case 'import': return <ImportPage />;
       case 'sync': return <SyncJoinPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
@@ -208,6 +212,7 @@ export function App() {
       </nav>
       <div className="main">
         <TopBar onMenu={() => setMenuOpen(true)} />
+        <RankUp />
         <main className="content" id="main" tabIndex={-1}>
           <div className="page">
             <ErrorBoundary resetKey={route.join('/')}>{content}</ErrorBoundary>

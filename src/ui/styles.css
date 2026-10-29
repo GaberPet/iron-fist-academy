@@ -479,3 +479,18 @@ a:hover { color: var(--red); }
 [data-theme="neon"] .sidebar, [data-theme="devil"] .sidebar { background: var(--surface); }
 [data-theme="dojo"] .sidebar { background: var(--surface); }
 [data-theme="contrast"] a, [data-theme="contrast"] .link-btn { text-decoration-thickness: 2px; }
+/* Ranks */
+.rank-badge path { fill: var(--surface); stroke: var(--line); stroke-width: 5; }
+.rank-badge text { fill: var(--ink); font-family: var(--font-display); }
+.rank-badge.silver path { stroke: var(--steel); }
+.rank-badge.red path { stroke: var(--red); }
+.rank-badge.gold path { fill: #2a2100; stroke: #f5c400; }
+.rank-badge.gold text { fill: #f5c400; }
+.rank-ladder { display: grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap: var(--space-xs); }
+.rank-step { display: grid; grid-template-columns: 28px 1fr auto; align-items: center; gap: var(--space-xs); padding: var(--space-2xs) var(--space-xs); border: var(--rule-hair) solid var(--line); }
+.rank-step.done { opacity: 0.6; }
+.rank-step.now { border-color: var(--red); box-shadow: inset 3px 0 0 var(--red); }
+table.board tr.sel td { color: var(--red); font-weight: 700; }
+.rank-up { text-align: center; }
+.rank-up .rank-badge { margin: 0 auto; }
+.rank-chip { display: flex; align-items: center; gap: var(--space-xs); background: none; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer; font: inherit; }

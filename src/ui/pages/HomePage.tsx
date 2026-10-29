@@ -4,6 +4,8 @@ import { computeStats, lessonState, recommend, type Recommendation } from '../..
 import { navigate } from '../hooks';
 import { useStore } from '../store';
 import { InstallPhone } from '../components/InstallPhone';
+import { RankBadge } from './RankingPage';
+import { rankFor, rankPoints } from '../../core/rank';
 
 function go(r: Recommendation) {
   if (r.type === 'focus-step') navigate('combos', r.comboId, String(r.stepIndex));
@@ -46,6 +48,7 @@ export function HomePage() {
   const recentAttempts = recent.reduce((s, d) => s + d.attempts, 0);
   const recentOk = recent.reduce((s, d) => s + d.successes, 0);
   const { roster } = useStore();
+  const rank = useMemo(() => rankFor(rankPoints(progress).total), [progress]);
   const today = stats.days[stats.days.length - 1];
   const trainedToday = stats.todaySeconds > 0 || (today?.attempts ?? 0) > 0;
   // The plan is the top three suggestions; finishing one makes the next suggestion move up.
@@ -117,6 +120,10 @@ export function HomePage() {
             </ol>
           </section>
           <dl className="stat-strip">
+            <button className="rank-chip" onClick={() => navigate('ranking')} title="See your rank and the leaderboard">
+              <RankBadge index={rank.index} size={40} />
+              <span><dt>Rank</dt><dd>{rank.name}</dd></span>
+            </button>
             <div><dt>Lessons mastered</dt><dd>{mastered} of {lessons.length}</dd></div>
             <div><dt>Last 7 days</dt><dd>{recentAttempts ? `${Math.round((recentOk / recentAttempts) * 100)}% of ${recentAttempts}` : 'No attempts'}</dd></div>
           </dl>

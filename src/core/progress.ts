@@ -81,6 +81,11 @@ export interface Settings {
   padStyle: PadStyle;
   /** Private code that syncs this player's progress between devices ('' = sync off). */
   syncCode: string;
+  /** Highest rank index already celebrated (-1 = not set yet), so a rank-up shows once. */
+  lastRank: number;
+  /** Public leaderboard: display name and private key ('' = not joined). */
+  boardName: string;
+  boardKey: string;
 }
 
 export type TextSize = 'normal' | 'large' | 'xlarge';
@@ -97,6 +102,9 @@ export const DEFAULT_SETTINGS: Settings = {
   reduceMotion: false,
   padStyle: 'ps',
   syncCode: '',
+  lastRank: -1,
+  boardName: '',
+  boardKey: '',
   activeChar: 'anna',
   masteryThreshold: 0.8,
   comboConsistency: 5,
@@ -148,6 +156,9 @@ export function migrateSettings(raw: unknown): Settings {
     textSize: TEXT_SIZES.includes(r.textSize as TextSize) ? (r.textSize as TextSize) : 'normal',
     reduceMotion: r.reduceMotion === true,
     syncCode: typeof r.syncCode === 'string' ? r.syncCode : '',
+    lastRank: typeof r.lastRank === 'number' ? r.lastRank : -1,
+    boardName: typeof r.boardName === 'string' ? r.boardName : '',
+    boardKey: typeof r.boardKey === 'string' ? r.boardKey : '',
     padStyle: PAD_STYLES.includes(r.padStyle as PadStyle) ? (r.padStyle as PadStyle) : 'ps',
     recognizer: { ...DEFAULT_SETTINGS.recognizer, ...(r.recognizer ?? {}) },
     controller: {
