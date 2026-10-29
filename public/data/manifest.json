@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-27T17:28:27.303Z",
+ "generatedAt": "2026-10-29T11:32:46.322Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -11,8 +11,8 @@
    "id": "alisa",
    "name": "Alisa",
    "file": "characters/alisa.json",
-   "hash": "d9nld1",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "18xa8kr",
+   "updatedAt": "2026-10-29T11:32:46.322Z",
    "addedAt": null,
    "counts": {
     "moves": 188,
@@ -21,7 +21,7 @@
     "punishers": 20
    },
    "revisions": {
-    "movelist": 62775,
+    "movelist": 63369,
     "combos": 60854,
     "punishers": 59229,
     "page": 62074
@@ -751,8 +751,8 @@
    "id": "steve",
    "name": "Steve",
    "file": "characters/steve.json",
-   "hash": "ke1w4c",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "gn5skp",
+   "updatedAt": "2026-10-29T11:32:46.322Z",
    "addedAt": null,
    "counts": {
     "moves": 171,
@@ -761,7 +761,7 @@
     "punishers": 15
    },
    "revisions": {
-    "movelist": 63098,
+    "movelist": 63366,
     "combos": 59439,
     "punishers": 60968,
     "page": 62401
