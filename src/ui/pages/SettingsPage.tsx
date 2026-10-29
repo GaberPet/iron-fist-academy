@@ -5,6 +5,7 @@ import { useStore } from '../store';
 import { storage, canPersist } from '../../runtime/storage';
 import { navigate } from '../hooks';
 import { fmtDate } from '../format';
+import { SyncCard } from '../components/SyncCard';
 import { currentPlayer, switchPlayer, changeConsent, listPlayers, renamePlayer, deletePlayer, deleteAllData } from '../LoginGate';
 
 function Num({ label, value, min, max, step = 1, onChange, help }: { label: string; value: number; min: number; max: number; step?: number; onChange(v: number): void; help?: string }) {
@@ -52,6 +53,8 @@ export function SettingsPage() {
         </div>
         <PlayersCard />
       </div>
+
+      <SyncCard />
 
       <div className="card stack">
         <h3>Your data</h3>

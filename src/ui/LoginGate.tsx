@@ -94,7 +94,7 @@ function ConsentForm({ onChoose }: { onChoose: (c: Consent) => void }) {
       <div className="login-card stack">
         <div className="login-brand"><Logo tone="white" /></div>
         <h1>Your data on this device</h1>
-        <p>Iron Fist Academy uses no cookies, no trackers and no adverts. To save your training it keeps a few items in this browser's storage. Nothing is sent to us or anyone else.</p>
+        <p>Iron Fist Academy uses no cookies, no trackers and no adverts. To save your training it keeps a few items in this browser's storage. Nothing is sent to us unless you turn on sync between devices.</p>
         <table className="consent-table">
           <thead><tr><th scope="col">What</th><th scope="col">Why</th><th scope="col">How long</th></tr></thead>
           <tbody>
@@ -103,6 +103,7 @@ function ConsentForm({ onChoose }: { onChoose: (c: Consent) => void }) {
             <tr><td>Signed-in player</td><td>Keeps you signed in while the tab is open</td><td>Until the tab closes</td></tr>
             <tr><td>Sound on or off</td><td>Remembers your fight sound choice</td><td>Until you clear site data</td></tr>
             <tr><td>This choice</td><td>So we don't ask every visit</td><td>Until you change it in Settings</td></tr>
+            <tr><td>Sync (optional, off by default)</td><td>Only if you turn it on in Settings: a player's progress is copied to our database so your devices match</td><td>Until you turn it off</td></tr>
           </tbody>
         </table>
         <p className="small muted">Frame data and 3D models are loaded from this same site. If you choose not to save, everything works but your progress is lost when you close the tab. You can change your choice any time in Settings and data.</p>

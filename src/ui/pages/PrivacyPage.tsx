@@ -5,13 +5,13 @@ export function PrivacyPage() {
       <div className="page-head">
         <div>
           <h1>Privacy policy</h1>
-          <p>Last updated 28 October 2026.</p>
+          <p>Last updated 29 October 2026.</p>
         </div>
       </div>
 
       <section className="card stack">
         <h2>The short version</h2>
-        <p>Iron Fist Academy has no accounts, no cookies, no analytics, no trackers and no adverts. Your players and training progress stay on your own device. We never receive them, so we can't see, sell or share them.</p>
+        <p>Iron Fist Academy has no accounts, no cookies, no analytics, no trackers and no adverts. Your players and training progress stay on your own device, unless you turn on sync between devices. We never sell or share them.</p>
       </section>
 
       <section className="card stack">
@@ -32,7 +32,8 @@ export function PrivacyPage() {
       <section className="card stack">
         <h2>What leaves your device</h2>
         <p><b>Send to phone</b> puts your progress (lessons, combos, recent attempts and your player name) inside a QR code. The phone reads it from the link's # part, which browsers never send to the website's server.</p>
-        <p>Nothing you enter or practise is sent anywhere. Controller and keyboard input is read in your browser and never transmitted.</p>
+        <p><b>Sync between devices (only if you turn it on in Settings):</b> that player's progress (lessons, combos, attempts and practice time) and player name are stored in our database at Supabase, under a private random sync code. There is no email or account. The database cannot be listed or searched; it only answers a device that has the exact code. Turning sync off on every device stops it; ask through the project's GitHub page if you want the stored copy deleted.</p>
+        <p>Apart from sync and Send to phone, nothing you enter or practise is sent anywhere. Controller and keyboard input is read in your browser and never transmitted.</p>
         <p>The website is hosted on GitHub Pages. Like any web host, GitHub receives standard request details when your browser loads the site, such as your IP address and browser type, and may log them for security. That is covered by <a href="https://docs.github.com/en/site-policy/privacy-policies/github-general-privacy-statement" target="_blank" rel="noreferrer">GitHub's privacy statement</a>. Fonts, frame data and 3D models all come from the same site, with no third-party services. The desktop app checks the same site for frame data updates.</p>
       </section>
 

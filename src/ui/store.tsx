@@ -10,6 +10,11 @@ import { storage, type StorageInfo } from '../runtime/storage';
 import { inputManager } from '../runtime/inputManager';
 import { checkForUpdate, loadChangelog, loadCharacterFile, locateData, type DataLocation } from '../runtime/dataService';
 import { fmtDate } from './format';
+import { pull, push } from '../runtime/sync';
+import { mergeProgress } from '../core/transfer';
+import { currentPlayer } from './LoginGate';
+
+export interface SyncState { state: 'off' | 'syncing' | 'ok' | 'error'; at?: string; error?: string }
 
 const UPDATE_CHECK_MS = 6 * 60 * 60 * 1000;
 
@@ -41,6 +46,8 @@ interface Store {
   addPractice(seconds: number): void;
   reset(char: string | 'all'): void;
   replaceProgress(p: ProgressData): void;
+  sync: SyncState;
+  syncNow(): Promise<void>;
   setOverride(charId: string, moveId: string, o: MoveOverride | null): void;
 }
 
@@ -133,6 +140,46 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
   useDebouncedSave('progress', progress, ready, setSaveError);
   useDebouncedSave('overrides', overrides, ready, setSaveError);
 
+  // Live sync (optional): pull the other devices' progress, merge it in, push the result back.
+  // shortcut: merging keeps the best of both sides, so a progress reset on one device comes back
+  // from the others; upgrade to tombstones if resets must sync too.
+  const [sync, setSync] = useState<SyncState>({ state: 'off' });
+  const progressRef = useRef(progress);
+  progressRef.current = progress;
+  const syncNow = useCallback(async () => {
+    const code = settings.syncCode;
+    if (!code) return setSync({ state: 'off' });
+    setSync((s) => ({ ...s, state: 'syncing' }));
+    try {
+      const remote = await pull(code);
+      const mine = progressRef.current;
+      const merged = remote ? mergeProgress(mine, migrateProgress(remote.data)) : mine;
+      if (JSON.stringify(merged) !== JSON.stringify(mine)) setProgress(merged);
+      if (!remote || JSON.stringify(merged) !== JSON.stringify(migrateProgress(remote.data))) await push(code, currentPlayer()?.name ?? '', merged);
+      setSync({ state: 'ok', at: new Date().toISOString() });
+    } catch (e) {
+      setSync({ state: 'error', error: (e as Error).message });
+    }
+  }, [settings.syncCode]);
+  useEffect(() => {
+    if (!ready || !settings.syncCode) return void setSync({ state: 'off' });
+    syncNow();
+    const id = window.setInterval(syncNow, 30000);
+    const onFocus = () => document.visibilityState === 'visible' && syncNow();
+    document.addEventListener('visibilitychange', onFocus);
+    window.addEventListener('focus', onFocus);
+    return () => {
+      window.clearInterval(id);
+      document.removeEventListener('visibilitychange', onFocus);
+      window.removeEventListener('focus', onFocus);
+    };
+  }, [ready, settings.syncCode, syncNow]);
+  useEffect(() => {
+    if (!ready || !settings.syncCode) return;
+    const id = window.setTimeout(syncNow, 4000); // new progress reaches the other devices within seconds
+    return () => window.clearTimeout(id);
+  }, [progress]); // eslint-disable-line react-hooks/exhaustive-deps
+
   useEffect(() => {
     inputManager.setConfig(settings.controller, settings.keyboardEnabled);
   }, [settings.controller, settings.keyboardEnabled]);
@@ -219,10 +266,10 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
         ? {
             settings, progress, overrides, roster: data.manifest.characters, data, changelog, characters, char, opponents: characters, loadingIds,
             storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice,
-            updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride,
+            updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow,
           }
         : null,
-    [settings, progress, overrides, data, changelog, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride],
+    [settings, progress, overrides, data, changelog, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow],
   );
 
   if (loadError) return <>{errorView(loadError)}</>;

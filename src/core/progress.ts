@@ -77,6 +77,8 @@ export interface Settings {
   reduceMotion: boolean;
   /** Which controller's button names and diagram to show. */
   padStyle: PadStyle;
+  /** Private code that syncs this player's progress between devices ('' = sync off). */
+  syncCode: string;
 }
 
 export type TextSize = 'normal' | 'large' | 'xlarge';
@@ -92,6 +94,7 @@ export const DEFAULT_SETTINGS: Settings = {
   textSize: 'normal',
   reduceMotion: false,
   padStyle: 'ps',
+  syncCode: '',
   activeChar: 'anna',
   masteryThreshold: 0.8,
   comboConsistency: 5,
@@ -141,6 +144,7 @@ export function migrateSettings(raw: unknown): Settings {
     favoriteChar: typeof r.favoriteChar === 'string' ? r.favoriteChar : '',
     textSize: TEXT_SIZES.includes(r.textSize as TextSize) ? (r.textSize as TextSize) : 'normal',
     reduceMotion: r.reduceMotion === true,
+    syncCode: typeof r.syncCode === 'string' ? r.syncCode : '',
     padStyle: PAD_STYLES.includes(r.padStyle as PadStyle) ? (r.padStyle as PadStyle) : 'ps',
     recognizer: { ...DEFAULT_SETTINGS.recognizer, ...(r.recognizer ?? {}) },
     controller: {
