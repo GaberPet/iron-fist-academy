@@ -49,6 +49,8 @@ export interface ProgressData {
   combos: Record<string, ComboState>;
   /** seconds of active practice per local date (YYYY-MM-DD) */
   practiceSeconds: Record<string, number>;
+  /** When each character (or 'all') was last reset, so synced devices drop the older progress too. */
+  resets?: Record<string, string>;
 }
 
 export type Difficulty = 'easy' | 'normal' | 'hard';
@@ -130,6 +132,7 @@ export function migrateProgress(raw: unknown): ProgressData {
     lessons: r.lessons && typeof r.lessons === 'object' ? r.lessons : {},
     combos: r.combos && typeof r.combos === 'object' ? r.combos : {},
     practiceSeconds: r.practiceSeconds && typeof r.practiceSeconds === 'object' ? r.practiceSeconds : {},
+    ...(r.resets && typeof r.resets === 'object' ? { resets: r.resets } : {}),
   };
 }
 
@@ -402,11 +405,26 @@ export function addPracticeSeconds(p: ProgressData, seconds: number, now = new D
 }
 
 /** Remove one character's progress (general lessons are kept unless `all`). */
-export function resetProgress(p: ProgressData, char: string | 'all'): ProgressData {
-  if (char === 'all') return emptyProgress();
+export function resetProgress(p: ProgressData, char: string | 'all', now = new Date()): ProgressData {
+  const resets = { ...p.resets, [char]: now.toISOString() };
+  if (char === 'all') return { ...emptyProgress(now), resets };
   const lessons = Object.fromEntries(Object.entries(p.lessons).filter(([k]) => !k.startsWith(`${char}:`)));
   const combos = Object.fromEntries(Object.entries(p.combos).filter(([k]) => !k.startsWith(`${char}:`)));
-  return { ...p, attempts: p.attempts.filter((a) => a.char !== char), lessons, combos };
+  return { ...p, attempts: p.attempts.filter((a) => a.char !== char), lessons, combos, resets };
+}
+
+/** Drops everything older than the given resets (char or 'all' → time). Progress made after a reset stays. */
+export function applyResets(p: ProgressData, resets: Record<string, string>): ProgressData {
+  let { attempts, lessons, combos, practiceSeconds } = p;
+  for (const [c, at] of Object.entries(resets)) {
+    const hit = (key: string) => c === 'all' || key.startsWith(`${c}:`);
+    const old = (t?: string) => (t ?? '') < at;
+    attempts = attempts.filter((a) => !((c === 'all' || a.char === c) && old(a.at)));
+    lessons = Object.fromEntries(Object.entries(lessons).filter(([k, v]) => !(hit(k) && old(v.lastPracticed))));
+    combos = Object.fromEntries(Object.entries(combos).filter(([k, v]) => !(hit(k) && old(v.lastPracticed))));
+    if (c === 'all') practiceSeconds = Object.fromEntries(Object.entries(practiceSeconds).filter(([day]) => day >= at.slice(0, 10)));
+  }
+  return { ...p, attempts, lessons, combos, practiceSeconds, resets };
 }
 
 /** Score of an exercise run: share of successful items. */

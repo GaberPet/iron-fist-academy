@@ -74,7 +74,7 @@ export function SettingsPage() {
           </label>
           <button className="btn sm danger" disabled={!resetId} onClick={() => {
             const name = roster.find((c) => c.id === resetId)?.name ?? resetId;
-            if (window.confirm(`Reset ${name}'s Academy progress, combos and stats? Other characters and the shared fundamentals stay.`)) { reset(resetId); setResetId(''); }
+            if (window.confirm(`Reset ${name}'s Academy progress, combos and stats? Other characters and the shared fundamentals stay. With sync on, this also resets it on your other devices.`)) { reset(resetId); setResetId(''); }
           }}>Reset progress</button>
         </div>
         <div className="row">

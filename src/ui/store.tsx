@@ -141,8 +141,7 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
   useDebouncedSave('overrides', overrides, ready, setSaveError);
 
   // Live sync (optional): pull the other devices' progress, merge it in, push the result back.
-  // shortcut: merging keeps the best of both sides, so a progress reset on one device comes back
-  // from the others; upgrade to tombstones if resets must sync too.
+  // Resets carry a timestamp, so a reset on one device clears the older progress on all of them.
   const [sync, setSync] = useState<SyncState>({ state: 'off' });
   const progressRef = useRef(progress);
   progressRef.current = progress;

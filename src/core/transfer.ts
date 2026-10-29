@@ -2,7 +2,7 @@
 // Packing: JSON → deflate-raw → base64url. Lessons, combos and practice time always fit; recent
 // attempts (which drive the charts) are added newest first while they still fit.
 import type { AttemptRecord, ComboState, LessonState, ProgressData } from './progress';
-import { migrateProgress } from './progress';
+import { applyResets, migrateProgress } from './progress';
 
 /** Characters of packed data a QR code still scans reliably from a screen (QR byte capacity is ~2950). */
 export const MAX_PACKED = 2500;
@@ -83,7 +83,12 @@ function mergeCombo(a: ComboState | undefined, b: ComboState): ComboState {
 }
 
 /** Combines progress from another device. Scanning the same code twice changes nothing. */
-export function mergeProgress(mine: ProgressData, theirs: ProgressData): ProgressData {
+export function mergeProgress(mineIn: ProgressData, theirsIn: ProgressData): ProgressData {
+  // A reset on any device wins over older progress everywhere: apply the newest reset of each character to both sides first.
+  const resets = { ...mineIn.resets };
+  for (const [c, at] of Object.entries(theirsIn.resets ?? {})) if (!resets[c] || at > resets[c]) resets[c] = at;
+  const mine = applyResets(mineIn, resets);
+  const theirs = applyResets(theirsIn, resets);
   const lessons = { ...mine.lessons };
   for (const [k, v] of Object.entries(theirs.lessons)) lessons[k] = mergeLesson(lessons[k], v);
   const combos = { ...mine.combos };

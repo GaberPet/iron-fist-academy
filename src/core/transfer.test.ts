@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest';
 import { MAX_PACKED, decodeTransfer, encodeTransfer, mergeProgress } from './transfer';
-import { emptyProgress, type ProgressData } from './progress';
+import { emptyProgress, resetProgress, type ProgressData } from './progress';
 
 function sample(n: number): ProgressData {
   const p = emptyProgress();
@@ -36,5 +36,25 @@ describe('send to phone', () => {
 
   it('rejects a code that is not ours', async () => {
     await expect(decodeTransfer('not-a-code')).rejects.toThrow();
+  });
+
+  it('a reset on one device reaches the others, but progress made after the reset stays', () => {
+    const old = '2026-10-01T10:00:00.000Z';
+    const base = emptyProgress();
+    base.lessons['anna:l1'] = { guidedPassed: true, challengePassed: true, mastered: true, lastPracticed: old };
+    base.lessons['jin:l1'] = { guidedPassed: true, challengePassed: true, mastered: true, lastPracticed: old };
+    base.attempts.push({ at: old, char: 'anna', kind: 'combo', itemId: 'c1', success: true });
+    const phone = structuredClone(base);
+    const pc = resetProgress(structuredClone(base), 'anna', new Date('2026-10-02T10:00:00Z'));
+    // The phone trains Anna again after the reset, then syncs.
+    phone.lessons['anna:l2'] = { guidedPassed: true, challengePassed: false, mastered: false, lastPracticed: '2026-10-03T10:00:00.000Z' };
+    const synced = mergeProgress(phone, pc);
+    expect(synced.lessons['anna:l1']).toBeUndefined(); // reset reached the phone
+    expect(synced.attempts.filter((a) => a.char === 'anna')).toHaveLength(0);
+    expect(synced.lessons['anna:l2']).toBeDefined(); // newer progress kept
+    expect(synced.lessons['jin:l1']).toBeDefined(); // other characters untouched
+    expect(mergeProgress(pc, synced).lessons['anna:l1']).toBeUndefined(); // and it does not come back to the PC
+    const wiped = mergeProgress(phone, resetProgress(structuredClone(base), 'all', new Date('2026-10-02T10:00:00Z')));
+    expect(Object.keys(wiped.lessons)).toEqual(['anna:l2']);
   });
 });
