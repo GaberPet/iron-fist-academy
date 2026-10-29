@@ -12,7 +12,6 @@ const PATHS: Record<string, string> = {
   matchup: 'M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18zm0-4a5 5 0 1 0 0-10 5 5 0 0 0 0 10zm0-4a1 1 0 1 0 0-2 1 1 0 0 0 0 2z',
   dojo: 'M5 19 19 5M9 5H5v4m10 10h4v-4M5 5l5 5m4 4 5 5',
   fight: 'M7 11V7a2 2 0 0 1 4 0v4m0-1V6a2 2 0 0 1 4 0v5m0-2a2 2 0 0 1 4 0v4a7 7 0 0 1-7 7h-1a6 6 0 0 1-6-6v-2a2 2 0 0 1 4 0',
-  updates: 'M12 3v4m0 10v4M3 12h4m10 0h4M6 6l2.5 2.5m7 7L18 18M6 18l2.5-2.5m7-7L18 6',
   companion: 'M3 5h18v11H3zM8 20h8m-4-4v4',
   controller: 'M7 9h10a4 4 0 0 1 3.9 4.8l-.7 3.4a2 2 0 0 1-3.5.8L15 16H9l-1.7 2a2 2 0 0 1-3.5-.8l-.7-3.4A4 4 0 0 1 7 9zm1 2.5v3M6.5 13h3M15.5 12.5h.01M17.5 14.5h.01',
   progress: 'M4 20V10m6 10V4m6 16v-7m4 7H2',

@@ -22,7 +22,7 @@ export function HelpPage() {
       </div>
       <section className="card stack">
         <h2>The beginner's guide</h2>
-        <p>32 pages: words explained, how to install the apps, every tab step by step, controllers, sync, fixes and a first-week training plan.</p>
+        <p>About 30 pages: words explained, how to install the apps, every tab step by step, controllers, sync, fixes and a first-week training plan.</p>
         <div className="row">
           <a className="btn primary" href={GUIDE} target="_blank" rel="noreferrer">Open the guide (PDF)</a>
           <a className="btn" href={GUIDE} download="Iron-Fist-Academy-Guide.pdf">Download it</a>

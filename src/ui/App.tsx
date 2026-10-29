@@ -14,7 +14,6 @@ import { ControllerPage } from './pages/ControllerPage';
 import { ProgressPage } from './pages/ProgressPage';
 import { SettingsPage } from './pages/SettingsPage';
 import { CompanionPage } from './pages/CompanionPage';
-import { WhatsNewPage } from './pages/WhatsNewPage';
 import { CreditsPage } from './pages/CreditsPage';
 import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
@@ -29,7 +28,6 @@ import { PrivacyPage } from './pages/PrivacyPage';
 import { Logo, Wordmark } from './components/Logo';
 import { Icon } from './components/Icon';
 import { RosterTiles } from './components/RosterTiles';
-import { isRecent } from '../data';
 import { fmtShortDate } from './format';
 
 const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
@@ -43,8 +41,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'ranking', label: 'Ranking', icon: '♔' },
   { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
   { id: 'fight', label: 'Free fight', icon: '✊' },
-  { id: 'updates', label: "What's new", icon: '✧', sep: true },
-  { id: 'companion', label: 'In Tekken 8', icon: '⎚' },
+  { id: 'companion', label: 'In Tekken 8', icon: '⎚', sep: true },
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
   { id: 'settings', label: 'Settings and data', icon: '⚙' },
@@ -127,7 +124,7 @@ function TopBar({ onMenu }: { onMenu: () => void }) {
 
 export function App() {
   const route = useRoute();
-  const { changelog, data, settings } = useStore();
+  const { data, settings } = useStore();
   const page = route[0];
   // Phone: the sidebar is a slide-in menu; it closes whenever the page changes.
   const [menuOpen, setMenuOpen] = useState(false);
@@ -138,7 +135,6 @@ export function App() {
     document.documentElement.dataset.motion = settings.reduceMotion ? 'reduce' : 'full';
     document.querySelector('meta[name="theme-color"]')?.setAttribute('content', getComputedStyle(document.body).backgroundColor);
   }, [settings.theme, settings.textSize, settings.reduceMotion]);
-  const recentUpdates = (changelog?.entries ?? []).filter((e) => !e.initial && isRecent(e.date)).length;
   const content = (() => {
     switch (page) {
       case 'characters': return <CharactersPage />;
@@ -155,7 +151,6 @@ export function App() {
       case 'dojo': return <DojoPage drill={route[1]} />;
       case 'fight': return <Suspense fallback={<div className="empty">Loading the 3D arena…</div>}><FightPage /></Suspense>;
       case 'companion': return <CompanionPage />;
-      case 'updates': return <WhatsNewPage />;
       case 'credits': return <CreditsPage />;
       case 'privacy': return <PrivacyPage />;
       case 'controller': return <ControllerPage />;
@@ -189,16 +184,13 @@ export function App() {
             <button className={`nav-btn ${page === n.id || (page === 'home' && n.id === 'home') ? 'active' : ''}`} onClick={() => navigate(n.id)}>
               <Icon name={n.id} />
               <span className="lbl">{n.label}</span>
-              {n.id === 'updates' && recentUpdates > 0 && <span className="badge good right" title="Data updates in the last 7 days">{recentUpdates}</span>}
             </button>
           </div>
         ))}
         <div className="sidebar-foot">
           <span className="player-line">Player: <b>{currentPlayer()?.name}</b> · <button className="link-btn" onClick={switchPlayer}>Switch player</button></span>
           <br />
-          <button className="btn ghost sm" style={{ padding: '2px 0', fontSize: 11, color: 'var(--text-2)' }} onClick={() => navigate('updates')} title="See what changed">
-            Data updated {fmtShortDate(data.manifest.generatedAt)}
-          </button>
+          Data updated {fmtShortDate(data.manifest.generatedAt)}
           <br />Not affiliated with Bandai Namco. Frame data: Wavu Wiki (CC0).{' '}
           <a href="#/credits">Credits</a> · <a href="#/privacy">Privacy</a>
           <br />Controller: D-pad navigates, ✕ selects, ○ goes back. In trainers, Options goes back.
