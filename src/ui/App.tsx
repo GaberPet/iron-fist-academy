@@ -19,6 +19,7 @@ import { CreditsPage } from './pages/CreditsPage';
 import { storage } from '../runtime/storage';
 import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
+import { HelpPage } from './pages/HelpPage';
 import { ImportPage } from './pages/ImportPage';
 import { SyncJoinPage } from './pages/SyncJoinPage';
 import { ImportProgressButton } from './components/ImportProgress';
@@ -44,6 +45,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'controller', label: 'Controller', icon: '🎮' },
   { id: 'progress', label: 'Progress', icon: '▤' },
   { id: 'settings', label: 'Settings and data', icon: '⚙' },
+  { id: 'help', label: 'Help', icon: '?' },
   { id: 'install', label: 'Install the app', icon: '⬇', sep: true },
 ];
 // The desktop app is the install: it has no "Install the app" tab, and gets an Uninstall button instead.
@@ -143,6 +145,7 @@ export function App() {
       case 'punish': return <PunishPage />;
       case 'matchup': return <MatchupPage />;
       case 'install': return <InstallPage />;
+      case 'help': return <HelpPage />;
       case 'import': return <ImportPage />;
       case 'sync': return <SyncJoinPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;

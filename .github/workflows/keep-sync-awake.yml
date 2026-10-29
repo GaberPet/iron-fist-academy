@@ -1,0 +1,21 @@
+name: Keep sync database awake
+
+# Supabase's free plan pauses a project after about a week without requests, which would stop
+# sync between devices. Ask it something harmless twice a week. The key is the public one the app uses.
+on:
+  schedule:
+    - cron: '17 6 * * 1,4'
+  workflow_dispatch:
+
+permissions: {}
+
+jobs:
+  ping:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Ping the sync database
+        run: |
+          curl -sf -m 30 -X POST https://glqxyghdcindimggnwml.supabase.co/rest/v1/rpc/sync_pull \
+            -H "apikey: sb_publishable_OatiT521MtUNk6gLQIa0yQ_67echjry" \
+            -H "Content-Type: application/json" \
+            -d '{"p_code":"KEEPALIVEKEEPALIVEKEEPALIV"}'
