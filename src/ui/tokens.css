@@ -72,3 +72,32 @@
   --display-weight: 600; --tracking-display: 0.005em;
   --radius-card: 2px; --radius-control: 2px;
 }
+
+/* Neon: dark purple night with hot-pink highlights. */
+:root[data-theme="neon"] {
+  --ink: #f4ecff; --paper: #0c0617; --surface: #1a0f2e; --graphite: #d9c8f5; --muted: #c4b1e8; --line: #3d2a63; --steel: #6e5a99;
+  --red: #ff2fd1; --red-dark: #d81fb0; --on-red: #ffffff;
+  --color-overlay: rgba(12, 6, 23, 0.85);
+}
+
+/* Dojo: warm paper and wood, deep red like a dojo banner. A light theme. */
+:root[data-theme="dojo"] {
+  color-scheme: light;
+  --ink: #2a1c10; --paper: #f5ecdc; --surface: #ebdcc4; --graphite: #3e2d1e; --muted: #5f4a35; --line: #ccb595; --steel: #9b8465;
+  --red: #b3261e; --red-dark: #8f1c16; --on-red: #ffffff;
+  --color-overlay: rgba(245, 236, 220, 0.88);
+}
+
+/* Devil: almost black with violet lightning. */
+:root[data-theme="devil"] {
+  --ink: #f1edff; --paper: #07060c; --surface: #15121f; --graphite: #d3cbf0; --muted: #b9b0d8; --line: #2f2944; --steel: #5f5785;
+  --red: #8b5cf6; --red-dark: #7040e0; --on-red: #ffffff;
+  --color-overlay: rgba(7, 6, 12, 0.85);
+}
+
+/* High contrast: pure black and white with yellow, for easy reading. */
+:root[data-theme="contrast"] {
+  --ink: #ffffff; --paper: #000000; --surface: #1a1a1a; --graphite: #ffffff; --muted: #ffffff; --line: #ffffff; --steel: #bdbdbd;
+  --red: #ffd400; --red-dark: #e6be00; --on-red: #000000;
+  --color-overlay: rgba(0, 0, 0, 0.9);
+}

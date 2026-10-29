@@ -475,3 +475,7 @@ a:hover { color: var(--red); }
 .goal-bar > i { display: block; height: 100%; background: var(--red); }
 .plan-list { list-style: none; padding: 0; margin: 0; display: grid; gap: var(--space-xs); }
 .plan-list .list-item { border: var(--rule-hair) solid var(--line); }
+/* Themes with a tinted side menu, like Arcade */
+[data-theme="neon"] .sidebar, [data-theme="devil"] .sidebar { background: var(--surface); }
+[data-theme="dojo"] .sidebar { background: var(--surface); }
+[data-theme="contrast"] a, [data-theme="contrast"] .link-btn { text-decoration-thickness: 2px; }

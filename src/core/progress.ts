@@ -86,8 +86,8 @@ export interface Settings {
 export type TextSize = 'normal' | 'large' | 'xlarge';
 export const TEXT_SIZES: TextSize[] = ['normal', 'large', 'xlarge'];
 
-export type Theme = 'dark' | 'light' | 'arcade';
-export const THEMES: Theme[] = ['light', 'dark', 'arcade'];
+export type Theme = 'dark' | 'light' | 'arcade' | 'neon' | 'dojo' | 'devil' | 'contrast';
+export const THEMES: Theme[] = ['light', 'dark', 'arcade', 'neon', 'dojo', 'devil', 'contrast'];
 
 export const DEFAULT_SETTINGS: Settings = {
   version: 1,

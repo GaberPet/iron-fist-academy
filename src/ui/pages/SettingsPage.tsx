@@ -43,7 +43,7 @@ export function SettingsPage() {
               <button key={t} role="radio" aria-checked={settings.theme === t} className={settings.theme === t ? 'on' : ''} onClick={() => set({ theme: t })}>{THEME_LABEL[t]}</button>
             ))}
           </div>
-          <p className="small muted">Light: white pages, black text. Dark: black pages, white text. Arcade: the night-navy and gold look from before the redesign. Saved for this player.</p>
+          <p className="small muted">{THEME_INFO[settings.theme]} Saved for this player.</p>
           <div className="seg" role="radiogroup" aria-label="Text size">
             {TEXT_SIZES.map((t) => (
               <button key={t} role="radio" aria-checked={settings.textSize === t} className={settings.textSize === t ? 'on' : ''} onClick={() => set({ textSize: t })}>{TEXT_LABEL[t]}</button>
@@ -181,7 +181,16 @@ export function SettingsPage() {
   );
 }
 
-const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade' };
+const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade', neon: 'Neon', dojo: 'Dojo', devil: 'Devil', contrast: 'High contrast' };
+const THEME_INFO: Record<Theme, string> = {
+  light: 'White pages, black text and a white menu.',
+  dark: 'Black pages, white text and a black menu with red outlines.',
+  arcade: 'The night-navy and gold look from before the redesign.',
+  neon: 'Dark purple night with hot-pink highlights.',
+  dojo: 'Warm paper and wood colours with a deep red, like a dojo banner.',
+  devil: 'Almost black with violet lightning.',
+  contrast: 'Pure black and white with yellow highlights, the easiest to read.',
+};
 const TEXT_LABEL: Record<TextSize, string> = { normal: 'Normal text', large: 'Large', xlarge: 'Extra large' };
 
 function PlayersCard() {
