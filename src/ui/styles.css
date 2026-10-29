@@ -459,7 +459,7 @@ a:hover { color: var(--red); }
 .qr-box { background: #ffffff; padding: var(--space-xs); width: min(320px, 100%); margin-inline: auto; }
 .qr-box svg { display: block; width: 100%; height: auto; }
 .phone-only { display: none; }
-@media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .phone-only { display: flex; } }
+@media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .phone-only { display: block; } }
 /* Xbox face buttons (official colours) and arcade-stick buttons */
 .pbtn.xa, .pbtn.xb, .pbtn.xx, .pbtn.xy { border-width: 2px; background: #000000; font-family: var(--font-display); }
 .pbtn.xa { color: #5dc21e; border-color: #5dc21e; }

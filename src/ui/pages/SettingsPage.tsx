@@ -31,7 +31,7 @@ export function SettingsPage() {
       <div className="page-head">
         <div>
           <h1>Settings and data</h1>
-          <p>All data stays on this device. No account or subscription is needed.</p>
+          <p>Your data stays on this device unless you turn on sync between devices. No account or subscription is needed.</p>
         </div>
       </div>
 

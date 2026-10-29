@@ -46,7 +46,7 @@ export function InstallPhone() {
               : <>Open the browser menu <b>⋮</b> and tap <b>Install app</b> or <b>Add to Home screen</b>.</>}
         </p>
       )}
-      <p className="small muted">To bring your progress over, open <b>Progress</b> on your computer or in the desktop app, tap <b>Send to phone</b> and scan the code with this phone's camera.</p>
+      <p className="small muted">To get your progress here, turn on sync on your computer (<b>Settings → Sync between devices</b>), then type its code in the same place in this app.</p>
     </section>
   );
 }
