@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState } from 'react';
 import type { TekkenButton } from '../../types';
-import { DIR_ARROW, PAD_BUTTONS, PAD_LABEL, STANDARD_INDEX, maskText, type PadButton } from '../../core/input';
+import { DIR_ARROW, PAD_BUTTONS, PAD_STYLES, STANDARD_INDEX, maskText, padLabel, type PadButton, type PadStyle } from '../../core/input';
 import { useCaptureInput, useControllerStatus, useInputFrames, useSnapshot } from '../hooks';
 import { useStore } from '../store';
 import { ControllerDiagram } from '../components/ControllerDiagram';
@@ -15,9 +15,17 @@ const ASSIGN_OPTIONS: { label: string; value: TekkenButton[] }[] = [
 ];
 const ASSIGNABLE: PadButton[] = ['square', 'triangle', 'cross', 'circle', 'l1', 'r1', 'l2', 'r2', 'l3', 'r3'];
 
+const STYLE_NAME: Record<PadStyle, string> = { ps: 'PlayStation', xbox: 'Xbox', stick: 'Arcade stick' };
+const STYLE_INTRO: Record<PadStyle, string> = {
+  ps: "PlayStation controller (DualSense or DualShock), read through the browser's Gamepad API over USB or Bluetooth. Tekken 8's default layout is pre-set: □ = 1, △ = 2, ✕ = 3, ○ = 4.",
+  xbox: "Xbox controller, read through the browser's Gamepad API over USB, Bluetooth or the Xbox wireless adapter. Tekken 8's default layout is pre-set: X = 1, Y = 2, A = 3, B = 4.",
+  stick: 'Arcade stick (fight board) in PS or Xbox (XInput) mode. Buttons are shown as on the panel: top row 1 2, bottom row 3 4, as in Tekken 8\'s default stick layout. The lever works like the D-pad.',
+};
+
 export function ControllerPage() {
   const { settings, updateSettings } = useStore();
   const cfg = settings.controller;
+  const style = settings.padStyle;
   const { pads, active } = useControllerStatus();
   const snap = useSnapshot(40);
   const [seen, setSeen] = useState<Set<PadButton>>(new Set());
@@ -50,8 +58,18 @@ export function ControllerPage() {
       <div className="page-head">
         <div>
           <h1>Controller setup</h1>
-          <p>The app reads your DualSense through the Chromium Gamepad API (USB or Bluetooth, as paired in Windows). Tekken 8's default PlayStation layout is pre-set: □ = 1, △ = 2, ✕ = 3, ○ = 4.</p>
+          <p>{STYLE_INTRO[style]}</p>
         </div>
+      </div>
+
+      <div className="card stack">
+        <h3>Your controller</h3>
+        <div className="seg" role="radiogroup" aria-label="Controller type">
+          {PAD_STYLES.map((t) => (
+            <button key={t} role="radio" aria-checked={style === t} className={style === t ? 'on' : ''} onClick={() => updateSettings({ padStyle: t })}>{STYLE_NAME[t]}</button>
+          ))}
+        </div>
+        <p className="small muted">Changes the button names and pictures everywhere in the app. Your button mapping below stays the same.</p>
       </div>
 
       <div className="grid" style={{ gridTemplateColumns: 'minmax(0, 3fr) minmax(0, 2fr)' }}>
@@ -71,7 +89,10 @@ export function ControllerPage() {
           {pad && <div className="small muted mono" style={{ wordBreak: 'break-all' }}>{pad.id}</div>}
           {!pad && (
             <div className="notice warn">
-              <b>Connect your DualSense.</b> USB: plug it in. Bluetooth: hold <b>PS + Create</b> until the light bar flashes, then pair it in Windows Settings → Bluetooth. Then <b>press any button</b>: browsers only report a controller after the first press. The keyboard works meanwhile (WASD + U I J K).
+              {style === 'ps' && <><b>Connect your DualSense.</b> USB: plug it in. Bluetooth: hold <b>PS + Create</b> until the light bar flashes, then pair it in Windows Settings → Bluetooth.</>}
+              {style === 'xbox' && <><b>Connect your Xbox controller.</b> USB: plug it in. Bluetooth or the Xbox wireless adapter: hold the <b>pair button</b> on top until the Xbox logo flashes, then pair it in Windows Settings → Bluetooth.</>}
+              {style === 'stick' && <><b>Connect your arcade stick</b> with USB. If it has a mode switch, PS4/PS5 or XInput (Xbox) mode both work; avoid old DirectInput or Switch modes.</>}
+              {' '}Then <b>press any button</b>: browsers only report a controller after the first press. The keyboard works meanwhile (WASD + U I J K).
             </div>
           )}
           <ControllerDiagram pressed={snap.pressed} axes={axes} labels={labels} />
@@ -93,7 +114,7 @@ export function ControllerPage() {
           <p className="small dim" style={{ margin: 0 }}>Press every button once. Green = detected at least once. If a button lights the wrong cell, rebind it below.</p>
           <div className="test-grid">
             {PAD_BUTTONS.map((b) => (
-              <div key={b} className={`test-cell ${snap.pressed.includes(b) ? 'now' : seen.has(b) ? 'seen' : ''}`}>{PAD_LABEL[b]}</div>
+              <div key={b} className={`test-cell ${snap.pressed.includes(b) ? 'now' : seen.has(b) ? 'seen' : ''}`}>{padLabel(b, style)}</div>
             ))}
           </div>
           <div className="small muted">{seen.size} / {PAD_BUTTONS.length} detected. The PS and touchpad buttons may be reserved by Windows/Steam and not reach the app; they are not needed for training.</div>
@@ -106,12 +127,12 @@ export function ControllerPage() {
             <tbody>
               {ASSIGNABLE.map((b) => (
                 <tr key={b}>
-                  <td><b>{PAD_LABEL[b]}</b></td>
+                  <td><b>{padLabel(b, style)}</b></td>
                   <td>
                     <select value={(cfg.tekken[b] ?? []).join('+')} onChange={(e) => {
                       const opt = ASSIGN_OPTIONS.find((o) => o.value.join('+') === e.target.value);
                       setCfg({ tekken: { ...cfg.tekken, [b]: opt?.value ?? [] } });
-                    }} aria-label={`Assignment for ${PAD_LABEL[b]}`}>
+                    }} aria-label={`Assignment for ${padLabel(b, style)}`}>
                       {ASSIGN_OPTIONS.map((o) => <option key={o.label} value={o.value.join('+')}>{o.label}</option>)}
                     </select>
                   </td>

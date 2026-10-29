@@ -21,6 +21,24 @@ export const PAD_LABEL: Record<PadButton, string> = {
   left: 'D-pad ←', right: 'D-pad →', ps: 'PS', touchpad: 'Touchpad',
 };
 
+export type PadStyle = 'ps' | 'xbox' | 'stick';
+export const PAD_STYLES: PadStyle[] = ['ps', 'xbox', 'stick'];
+
+// Xbox pads and arcade sticks report the same standard buttons; only the names on them differ.
+const XBOX_LABEL: Partial<Record<PadButton, string>> = {
+  cross: 'A', circle: 'B', square: 'X', triangle: 'Y', l1: 'LB', r1: 'RB', l2: 'LT', r2: 'RT',
+  create: 'View', options: 'Menu', ps: 'Xbox', touchpad: 'Share', l3: 'LS', r3: 'RS',
+};
+/** Arcade stick (Vewlix layout): top row □ △ R1 L1, bottom row ✕ ○ R2 L2, numbered left to right. */
+export const STICK_LABEL: Partial<Record<PadButton, string>> = {
+  square: 'Top 1', triangle: 'Top 2', r1: 'Top 3', l1: 'Top 4', cross: 'Bottom 1', circle: 'Bottom 2', r2: 'Bottom 3', l2: 'Bottom 4',
+  create: 'Select', options: 'Start', ps: 'Home', up: 'Stick ↑', down: 'Stick ↓', left: 'Stick ←', right: 'Stick →',
+};
+
+export function padLabel(b: PadButton, style: PadStyle): string {
+  return (style === 'xbox' ? XBOX_LABEL[b] : style === 'stick' ? STICK_LABEL[b] : undefined) ?? PAD_LABEL[b];
+}
+
 /** W3C "standard" gamepad mapping indices (what Chromium reports for a DualSense). */
 export const STANDARD_INDEX: Record<PadButton, number> = {
   cross: 0, circle: 1, square: 2, triangle: 3, l1: 4, r1: 5, l2: 6, r2: 7,

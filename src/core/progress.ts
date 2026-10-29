@@ -1,7 +1,7 @@
 // Progress tracking, mastery and recommendations. Pure functions over a plain JSON object
 // so it is easy to persist, export and test.
 import type { Lesson } from '../types';
-import { DEFAULT_CONTROLLER, type ControllerConfig } from './input';
+import { DEFAULT_CONTROLLER, PAD_STYLES, type ControllerConfig, type PadStyle } from './input';
 import { DEFAULT_OPTIONS, type RecognizerOptions } from './recognizer';
 
 export type AttemptKind = 'input' | 'combo' | 'quiz' | 'drill' | 'checklist' | 'punish';
@@ -75,6 +75,8 @@ export interface Settings {
   favoriteChar: string;
   textSize: TextSize;
   reduceMotion: boolean;
+  /** Which controller's button names and diagram to show. */
+  padStyle: PadStyle;
 }
 
 export type TextSize = 'normal' | 'large' | 'xlarge';
@@ -89,6 +91,7 @@ export const DEFAULT_SETTINGS: Settings = {
   favoriteChar: '',
   textSize: 'normal',
   reduceMotion: false,
+  padStyle: 'ps',
   activeChar: 'anna',
   masteryThreshold: 0.8,
   comboConsistency: 5,
@@ -138,6 +141,7 @@ export function migrateSettings(raw: unknown): Settings {
     favoriteChar: typeof r.favoriteChar === 'string' ? r.favoriteChar : '',
     textSize: TEXT_SIZES.includes(r.textSize as TextSize) ? (r.textSize as TextSize) : 'normal',
     reduceMotion: r.reduceMotion === true,
+    padStyle: PAD_STYLES.includes(r.padStyle as PadStyle) ? (r.padStyle as PadStyle) : 'ps',
     recognizer: { ...DEFAULT_SETTINGS.recognizer, ...(r.recognizer ?? {}) },
     controller: {
       ...DEFAULT_SETTINGS.controller,

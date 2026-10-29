@@ -460,3 +460,10 @@ a:hover { color: var(--red); }
 .qr-box svg { display: block; width: 100%; height: auto; }
 .phone-only { display: none; }
 @media (pointer: coarse) and (max-width: 60rem), (max-width: 40rem) { .phone-only { display: flex; } }
+/* Xbox face buttons (official colours) and arcade-stick buttons */
+.pbtn.xa, .pbtn.xb, .pbtn.xx, .pbtn.xy { border-width: 2px; background: #000000; font-family: var(--font-display); }
+.pbtn.xa { color: #5dc21e; border-color: #5dc21e; }
+.pbtn.xb { color: #f2463a; border-color: #f2463a; }
+.pbtn.xx { color: #3b8eea; border-color: #3b8eea; }
+.pbtn.xy { color: #f5c400; border-color: #f5c400; }
+.pbtn.stick { background: radial-gradient(circle at 35% 30%, #4a4a4a, #0b0b0b 70%); color: #ffffff; border: 2px solid #8a8a8a; box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.6); font-family: var(--font-display); }
