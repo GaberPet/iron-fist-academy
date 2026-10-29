@@ -15,11 +15,12 @@ const ASSIGN_OPTIONS: { label: string; value: TekkenButton[] }[] = [
 ];
 const ASSIGNABLE: PadButton[] = ['square', 'triangle', 'cross', 'circle', 'l1', 'r1', 'l2', 'r2', 'l3', 'r3'];
 
-const STYLE_NAME: Record<PadStyle, string> = { ps: 'PlayStation', xbox: 'Xbox', stick: 'Arcade stick' };
+const STYLE_NAME: Record<PadStyle, string> = { ps: 'PlayStation', xbox: 'Xbox', stick: 'Arcade stick', hitbox: 'Hit box' };
 const STYLE_INTRO: Record<PadStyle, string> = {
   ps: "PlayStation controller (DualSense or DualShock), read through the browser's Gamepad API over USB or Bluetooth. Tekken 8's default layout is pre-set: □ = 1, △ = 2, ✕ = 3, ○ = 4.",
   xbox: "Xbox controller, read through the browser's Gamepad API over USB, Bluetooth or the Xbox wireless adapter. Tekken 8's default layout is pre-set: X = 1, Y = 2, A = 3, B = 4.",
   stick: 'Arcade stick (fight board) in PS or Xbox (XInput) mode. Buttons are shown as on the panel: top row 1 2, bottom row 3 4, as in Tekken 8\'s default stick layout. The lever works like the D-pad.',
+  hitbox: "Hit box (all-button controller): the directions are buttons too, Left / Down / Right under your left hand and Up under your thumb. Default layout: top row 1 2, bottom row 3 4, and up + down together counts as up, as in Tekken's hit box rule. Every button can be re-assigned below.",
 };
 
 export function ControllerPage() {
@@ -66,10 +67,13 @@ export function ControllerPage() {
         <h3>Your controller</h3>
         <div className="seg" role="radiogroup" aria-label="Controller type">
           {PAD_STYLES.map((t) => (
-            <button key={t} role="radio" aria-checked={style === t} className={style === t ? 'on' : ''} onClick={() => updateSettings({ padStyle: t })}>{STYLE_NAME[t]}</button>
+            <button key={t} role="radio" aria-checked={style === t} className={style === t ? 'on' : ''} onClick={() => updateSettings({ padStyle: t, controller: { ...cfg, socdUpWins: t === 'hitbox' } })}>{STYLE_NAME[t]}</button>
           ))}
         </div>
         <p className="small muted">Changes the button names and pictures everywhere in the app. Your button mapping below stays the same.</p>
+        {style === 'hitbox' && (
+          <label className="small"><input type="checkbox" checked={!!cfg.socdUpWins} onChange={(e) => setCfg({ socdUpWins: e.target.checked })} /> Up + Down pressed together counts as <b>Up</b> (Tekken's hit box rule). Off: they cancel out. Left + Right always cancel out.</label>
+        )}
       </div>
 
       <div className="grid" style={{ gridTemplateColumns: 'minmax(0, 3fr) minmax(0, 2fr)' }}>
@@ -91,6 +95,7 @@ export function ControllerPage() {
             <div className="notice warn">
               {style === 'ps' && <><b>Connect your DualSense.</b> USB: plug it in. Bluetooth: hold <b>PS + Create</b> until the light bar flashes, then pair it in Windows Settings → Bluetooth.</>}
               {style === 'xbox' && <><b>Connect your Xbox controller.</b> USB: plug it in. Bluetooth or the Xbox wireless adapter: hold the <b>pair button</b> on top until the Xbox logo flashes, then pair it in Windows Settings → Bluetooth.</>}
+              {style === 'hitbox' && <><b>Connect your hit box</b> with USB in PS4/PS5 or XInput (Xbox) mode. If your hit box has its own SOCD setting, either works: the app also applies the hit box rule.</>}
               {style === 'stick' && <><b>Connect your arcade stick</b> with USB. If it has a mode switch, PS4/PS5 or XInput (Xbox) mode both work; avoid old DirectInput or Switch modes.</>}
               {' '}Then <b>press any button</b>: browsers only report a controller after the first press. The keyboard works meanwhile (WASD + U I J K).
             </div>

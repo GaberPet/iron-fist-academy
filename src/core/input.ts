@@ -21,8 +21,8 @@ export const PAD_LABEL: Record<PadButton, string> = {
   left: 'D-pad ←', right: 'D-pad →', ps: 'PS', touchpad: 'Touchpad',
 };
 
-export type PadStyle = 'ps' | 'xbox' | 'stick';
-export const PAD_STYLES: PadStyle[] = ['ps', 'xbox', 'stick'];
+export type PadStyle = 'ps' | 'xbox' | 'stick' | 'hitbox';
+export const PAD_STYLES: PadStyle[] = ['ps', 'xbox', 'stick', 'hitbox'];
 
 // Xbox pads and arcade sticks report the same standard buttons; only the names on them differ.
 const XBOX_LABEL: Partial<Record<PadButton, string>> = {
@@ -35,8 +35,13 @@ export const STICK_LABEL: Partial<Record<PadButton, string>> = {
   create: 'Select', options: 'Start', ps: 'Home', up: 'Stick ↑', down: 'Stick ↓', left: 'Stick ←', right: 'Stick →',
 };
 
+/** Hit box: directions are buttons (left hand Left/Down/Right, thumb Up); attacks as on a stick. */
+export const HITBOX_LABEL: Partial<Record<PadButton, string>> = {
+  ...STICK_LABEL, up: 'Up (thumb)', down: 'Down', left: 'Left', right: 'Right',
+};
+
 export function padLabel(b: PadButton, style: PadStyle): string {
-  return (style === 'xbox' ? XBOX_LABEL[b] : style === 'stick' ? STICK_LABEL[b] : undefined) ?? PAD_LABEL[b];
+  return (style === 'xbox' ? XBOX_LABEL[b] : style === 'stick' ? STICK_LABEL[b] : style === 'hitbox' ? HITBOX_LABEL[b] : undefined) ?? PAD_LABEL[b];
 }
 
 /** W3C "standard" gamepad mapping indices (what Chromium reports for a DualSense). */
@@ -56,6 +61,8 @@ export interface ControllerConfig {
   /** Mirror left/right, for practicing from the P2 side. */
   p2Side: boolean;
   triggerThreshold: number; // analog L2/R2 press threshold
+  /** Hit box rule: holding up and down together counts as up (otherwise neutral). */
+  socdUpWins?: boolean;
 }
 
 /** Tekken 8's default PlayStation layout for the four attack buttons. Shoulders are left unmapped:
@@ -88,8 +95,9 @@ export const buttonsOf = (mask: number): TekkenButton[] =>
 export const maskText = (mask: number) => buttonsOf(mask).join('+') || '—';
 
 /** Combine up/down/left/right booleans into a direction (screen-space: right = forward on P1 side). */
-export function dirFromCardinals(up: boolean, down: boolean, left: boolean, right: boolean, p2Side = false): Dir {
-  if (up && down) { up = false; down = false; } // SOCD: neutral vertical
+export function dirFromCardinals(up: boolean, down: boolean, left: boolean, right: boolean, p2Side = false, upWins = false): Dir {
+  // SOCD (both opposite directions held): left + right = neutral; up + down = neutral, or up on a hit box (Tekken's rule).
+  if (up && down) { if (upWins) down = false; else { up = false; down = false; } }
   if (left && right) { left = false; right = false; }
   const fwd = p2Side ? left : right;
   const back = p2Side ? right : left;
@@ -135,7 +143,7 @@ export function pressedPadButtons(state: RawPadState, cfg: ControllerConfig): Pa
 export function readPad(state: RawPadState, cfg: ControllerConfig): TekkenInput {
   const p = (b: PadButton) => isPadPressed(state, cfg, b);
   let dir: Dir = 'n';
-  if (cfg.useDpad) dir = dirFromCardinals(p('up'), p('down'), p('left'), p('right'), cfg.p2Side);
+  if (cfg.useDpad) dir = dirFromCardinals(p('up'), p('down'), p('left'), p('right'), cfg.p2Side, cfg.socdUpWins);
   if (dir === 'n' && cfg.useLeftStick && state.axes.length >= 2) {
     dir = dirFromStick(state.axes[0], state.axes[1], cfg.stickDeadzone, cfg.p2Side);
   }

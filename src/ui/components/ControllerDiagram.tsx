@@ -13,10 +13,12 @@ interface Props {
 export function ControllerDiagram({ pressed, axes = [0, 0, 0, 0], labels = {} }: Props) {
   const { settings } = useStore();
   const style = settings.padStyle;
-  if (style === 'stick') {
+  if (style === 'stick' || style === 'hitbox') {
     // Each arcade button shows the Tekken button(s) it is mapped to, e.g. 1 or 1+2.
     const mapped = Object.fromEntries(Object.entries(settings.controller.tekken).map(([b, tk]) => [b, (tk ?? []).join('+')]));
-    return <StickDiagram pressed={pressed} axes={axes} labels={{ ...mapped, ...labels }} />;
+    return style === 'hitbox'
+      ? <HitboxDiagram pressed={pressed} labels={{ ...mapped, ...labels }} />
+      : <StickDiagram pressed={pressed} axes={axes} labels={{ ...mapped, ...labels }} />;
   }
   const xbox = style === 'xbox';
   const name = (b: PadButton) => padLabel(b, style);
@@ -108,6 +110,41 @@ function StickDiagram({ pressed, axes, labels }: Required<Props>) {
       <circle cx="150" cy="190" r="56" fill="#1d2230" />
       <line x1="150" y1="190" x2={150 + dirs.x * 34} y2={190 + dirs.y * 34} stroke="#8a8a8a" strokeWidth="10" strokeLinecap="round" />
       <circle className={pressed.some((p) => ['up', 'down', 'left', 'right'].includes(p)) ? 'btn-shape on' : 'btn-shape'} cx={150 + dirs.x * 34} cy={190 + dirs.y * 34} r="26" />
+      {top.map((b, i) => btn(b, i, 0))}
+      {bottom.map((b, i) => btn(b, i, 1))}
+      <rect className={on('create')} x="420" y="80" width="40" height="16" rx="6" />
+      <rect className={on('options')} x="476" y="80" width="40" height="16" rx="6" />
+      <text x="468" y="114" textAnchor="middle" fontSize="11" fill="#c9cfdd">Select · Start</text>
+    </svg>
+  );
+}
+
+/** Hit box panel: Left / Down / Right for the left hand, Up under the thumb, 8 attack buttons. */
+function HitboxDiagram({ pressed, labels }: { pressed: PadButton[]; labels: Partial<Record<PadButton, string>> }) {
+  const on = (b: PadButton) => (pressed.includes(b) ? 'btn-shape on' : 'btn-shape');
+  const txt = (b: PadButton) => (pressed.includes(b) ? '#fff' : '#d6d6d6');
+  const dirs: [PadButton, number, number, string][] = [['left', 70, 150, '←'], ['down', 128, 138, '↓'], ['right', 186, 150, '→'], ['up', 250, 262, '↑']];
+  const top: PadButton[] = ['square', 'triangle', 'r1', 'l1'];
+  const bottom: PadButton[] = ['cross', 'circle', 'r2', 'l2'];
+  const btn = (b: PadButton, i: number, row: number) => {
+    const x = 316 + i * 64 + row * 12;
+    const y = row ? 216 : 146;
+    return (
+      <g key={b}>
+        <circle className={on(b)} cx={x} cy={y} r="24" />
+        <text x={x} y={y + 7} textAnchor="middle" fontSize="20" fontWeight="700" fill={txt(b)}>{labels[b] ?? ''}</text>
+      </g>
+    );
+  };
+  return (
+    <svg className="pad-svg" viewBox="0 0 600 360" role="img" aria-label="Hit box diagram">
+      <rect className="body" x="10" y="60" width="580" height="270" rx="18" />
+      {dirs.map(([b, x, y, arrow]) => (
+        <g key={b}>
+          <circle className={on(b)} cx={x} cy={y} r={b === 'up' ? 30 : 24} />
+          <text x={x} y={y + 8} textAnchor="middle" fontSize="22" fontWeight="700" fill={txt(b)}>{arrow}</text>
+        </g>
+      ))}
       {top.map((b, i) => btn(b, i, 0))}
       {bottom.map((b, i) => btn(b, i, 1))}
       <rect className={on('create')} x="420" y="80" width="40" height="16" rx="6" />

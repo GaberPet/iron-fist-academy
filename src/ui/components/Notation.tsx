@@ -29,7 +29,7 @@ export function ButtonGlyph({ b, title }: { b: TekkenButton; title?: string }) {
   const label = pad ? padLabel(pad, style) : '';
   const tip = title ?? `Tekken ${b}${pad ? ` = ${label}` : ' (unmapped)'}`;
   // Arcade stick players read Tekken's own 1-4 numbers: a round arcade button with the number.
-  if (style === 'stick') return <span className="pbtn stick" title={tip}>{b}</span>;
+  if (style === 'stick' || style === 'hitbox') return <span className="pbtn stick" title={tip}>{b}</span>;
   if (style === 'xbox' && pad && XBOX_CLASS[pad]) return <span className={`pbtn ${XBOX_CLASS[pad]}`} title={tip}>{label}</span>;
   const cls = pad ? PAD_CLASS[pad] : undefined;
   if (cls && style === 'ps') return <span className={`pbtn ${cls[0]}`} title={tip}>{cls[1]}</span>;

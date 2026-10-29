@@ -11,6 +11,8 @@ describe('direction mapping', () => {
   it('combines cardinals and resolves SOCD to neutral', () => {
     expect(dirFromCardinals(false, true, false, true)).toBe('df');
     expect(dirFromCardinals(true, true, false, false)).toBe('n');
+    expect(dirFromCardinals(true, true, false, false, false, true)).toBe('u'); // hit box: up wins
+    expect(dirFromCardinals(true, true, true, true, false, true)).toBe('u');
     expect(dirFromCardinals(false, false, true, true)).toBe('n');
   });
 
