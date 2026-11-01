@@ -7,6 +7,8 @@
 // `npm test` validates every curated reference against the generated frame data.
 import type { CharacterCurated, CharacterData, CharacterFile, CharacterProfile, ComboDef, Lesson, Move } from '../types';
 import general from './general.json';
+import applay from './applay.json';
+import { parseNotation } from '../core/notation';
 import { parseFrame, parseFrameRange, parseStartup } from './wavuNormalize.js';
 import { generateCurriculum } from './autoCurriculum';
 
@@ -117,6 +119,37 @@ export function importedCombos(f: CharacterFile, curated: ComboDef[] = []): Comb
   return out;
 }
 
+const parses = (s: string) => {
+  try {
+    parseNotation(s);
+    return true;
+  } catch {
+    return false;
+  }
+};
+
+/** Combo routes from Applay's Tekken 8 Library (scripts/import-applay.py), credited, skipping routes we already have. */
+export function applayCombos(charId: string, have: ComboDef[]): ComboDef[] {
+  const sheet = (applay.characters as Record<string, { gid: string; combos: { section: string; starters: string[]; route: string }[] }>)[charId];
+  if (!sheet) return [];
+  const known = new Set(have.map((c) => routeKey(c.route)));
+  const url = `${applay.source.url}?gid=${sheet.gid}`;
+  return sheet.combos
+    .filter((c) => !known.has(routeKey(c.route)))
+    .map((c, i) => ({
+      id: `applay-${charId}-${i}`,
+      name: `${c.section} · ${c.starters[0]}`,
+      section: c.section,
+      starters: c.starters,
+      situation: `After ${c.starters.join(' / ')}.`,
+      route: c.route,
+      parseOk: parses(c.route),
+      tags: [slugTag(c.section), 'applay'],
+      mistakes: [],
+      source: { name: applay.source.name, url, revision: null, verified: 'source' as const },
+    }));
+}
+
 const slugTag = (s: string) => s.toLowerCase().split(' · ')[0].replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'combo';
 
 export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, overrides: Record<string, MoveOverride> = {}): CharacterData {
@@ -125,7 +158,8 @@ export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, ove
   for (const m of moves) moveIndex.set(m.id, m);
   for (const m of moves) for (const a of m.alt) if (!moveIndex.has(a)) moveIndex.set(a, m);
   const curatedCombos = (curated?.combos ?? []).map((c) => ({ ...c, curated: true, parseOk: true }));
-  const combos = [...curatedCombos, ...importedCombos(f, curatedCombos)];
+  const wavu = [...curatedCombos, ...importedCombos(f, curatedCombos)];
+  const combos = [...wavu, ...applayCombos(f.id, wavu)];
   const profile = curated?.profile ?? autoProfile(f);
   const punishers = curated?.punishers?.length ? curated.punishers : f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) }));
   // Characters without a hand-written curriculum get one generated from their own data.

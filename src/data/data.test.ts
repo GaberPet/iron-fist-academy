@@ -144,3 +144,14 @@ describe('characters without coaching still work', () => {
     for (const r of routes) expect(imported).not.toContain(r);
   });
 });
+
+describe("Applay's combo routes", () => {
+  it('are credited with a link to the right tab and never repeat a route we already have', () => {
+    const anna = loadCharacter('anna');
+    const fromApplay = anna.combos.filter((c) => c.tags.includes('applay'));
+    expect(fromApplay.length).toBeGreaterThan(5);
+    for (const c of fromApplay) expect(c.source.url).toMatch(/docs\.google\.com\/spreadsheets\/.+\?gid=\d+$/);
+    const others = new Set(anna.combos.filter((c) => !c.tags.includes('applay')).map((c) => c.route.replace(/\s+/g, ' ').toLowerCase()));
+    for (const c of fromApplay) expect(others.has(c.route.replace(/\s+/g, ' ').toLowerCase())).toBe(false);
+  });
+});

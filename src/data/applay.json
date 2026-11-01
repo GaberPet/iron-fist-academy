@@ -1,0 +1,5394 @@
+{
+ "source": {
+  "name": "Applay's Tekken 8 Library",
+  "url": "https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgbCJNSTKajMNlJvQleJOl0eTiEcV-PbeU0obDg1lsSqmz0lTtcD2k6NzfTPt7Db9Ua2dz1o_34Sv/pubhtml"
+ },
+ "characters": {
+  "alisa": {
+   "gid": "1419847996",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "df+1,1 f+2 uf+1 T! (run) uf+1",
+     "raw": "df+1,1 ⏵ f+2 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4,4",
+      "u+1+2"
+     ],
+     "route": "ws+1,2,3 uf+1 T! (run) uf+1",
+     "raw": "ws+1,2,3 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2,3"
+     ],
+     "route": "SBT.3 ws+1,2 uf+1 T! (run) uf+1",
+     "raw": "SBT 3 ⏵ ws+1,2 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH d+3"
+     ],
+     "route": "ws+4 uf+1 T! (run) uf+1",
+     "raw": "ws+4 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "against bears and Jack-8"
+     ],
+     "route": "ws+1,2,3 uf+1 T! (run) uf+1",
+     "raw": "ws+1,2,3 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "d+3+4",
+      "LOW PARRY NEW"
+     ],
+     "route": "ws+1,2,3 1 u+3,2",
+     "raw": "ws+1,2,3 ⏵ 1 ⏵ u+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+1,3"
+     ],
+     "route": "(run) df+1,1 uf+1 T! (run) uf+1",
+     "raw": "(run)  df+1,1 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+1,4",
+      "DES.uf+1+2,(1+2)",
+      "CH (2,3),3",
+      "CH (b+2),1"
+     ],
+     "route": "df+1,1 f+2 uf+1 T! (run) uf+1",
+     "raw": "df+1,1 ⏵ f+2 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "ws+3 (wait) 3",
+      "CH b+4",
+      "CH SBT.3",
+      "(1,2),d+2 (hold)",
+      "CH (1,2),d+2"
+     ],
+     "route": "ws+1,2,3 uf+1 T! (run) uf+1",
+     "raw": "ws+1,2,3 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+3,2",
+      "CH d+3,4"
+     ],
+     "route": "df+1,1 uf+3,2",
+     "raw": "df+1,1 ⏵ uf+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "DES.2,1"
+     ],
+     "route": "(2),3,3 df+1,1 u+3,2",
+     "raw": "(2),3,3 ⏵ df+1,1 ⏵ u+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(ws+3),d+3"
+     ],
+     "route": "ws+1,2,3 uf+1",
+     "raw": "ws+1,2,3 ⏵ uf+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (b+1),1+2"
+     ],
+     "route": "db+1,2 T! df+1,1 u+3,2",
+     "raw": "db+1,2 T! ⏵ df+1,1 ⏵ u+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash 1+2~F",
+      "heat dash uf+2~F",
+      "heat dash f+2,1~F",
+      "heat dash DES.f+2,1,2~F"
+     ],
+     "route": "(dash) 4 df+1,1 f+2 2,3,3 uf+1 T! f,f,f+1",
+     "raw": "(dash) 4 ⏵ df+1,1 ⏵ f+2 ⏵ 2,3,3 ⏵ uf+1 T! ⏵ f,f,f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+3,2",
+      "DES.f+1+2"
+     ],
+     "route": "during heat DES.f+2,1,2~F f+2 uf+1 T! (run) uf+1",
+     "raw": "during heat DES f+2,1,2~F ⏵ f+2 ⏵ uf+1 T! ⏵ (run) uf+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1,2 f+1+2",
+     "raw": "1,2 ⏵ f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "db+1,2 T! 1,2 f+1+2",
+     "raw": "db+1,2 T! ⏵ 1,2 ⏵ f+1+2"
+    }
+   ]
+  },
+  "anna": {
+   "gid": "300402052",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws+2",
+      "CJM.uf+4"
+     ],
+     "route": "2,2 HAM.2,1 u+2 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "2,2 ⏵ HCS 2,1 ⏵ u+2 ⏵ HCS 2,2 T! ⏵  (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH qcf+1"
+     ],
+     "route": "uf+3 u+2 HAM.2,1 b+4 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "uf+3 ⏵ u+2 ⏵ HCS 2,1 ⏵ b+4 ⏵ HCS 2,2 T! ⏵  (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "qcf+2,1",
+      "FC.df+2",
+      "heat on FC.df+2,1",
+      "LOW PARRY"
+     ],
+     "route": "u+2 HAM.2,1 u+2 HAM.2,1 f,f,f+3,2",
+     "raw": "u+2 ⏵ HCS 2,1 ⏵ u+2 ⏵ HCS 2,1 ⏵ f,f,f+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+3",
+      "CH 4,2,1+2",
+      "CH uf+1,3,3+4"
+     ],
+     "route": "u+2 HAM.2,1 db+2 PTS.2",
+     "raw": "u+2 ⏵ HCS 2,1 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH uf+2",
+      "CH (1,2),2"
+     ],
+     "route": "HAM.2,1 u+2 HAM.2,1 f,f,f+3,2",
+     "raw": "HCS 2,1 ⏵ u+2 ⏵ HCS 2,1 ⏵ f,f,f+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (1,2),4",
+      "CH (uf+1),3",
+      "CH (d+3,4),1",
+      "CH (df+3,2),4",
+      "CH ROLL.3"
+     ],
+     "route": "uf+2 HAM.2,1 u+2 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "uf+2 ⏵ HCS 2,1 ⏵ u+2 ⏵ HCS 2,2 T! ⏵  (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "ROLL.4",
+      "sidestep 1+2"
+     ],
+     "route": "2,2 HAM.2,1 u+2 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "2,2 ⏵ HCS 2,1 ⏵ u+2 ⏵ HCS 2,2 T! ⏵  (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "ws+3 CJM.d+3,3 u+2 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "ws+3 ⏵ CJM d+3,3 ⏵ u+2 ⏵ HCS 2,2 T!  ⏵ (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4,B"
+     ],
+     "route": "CJM.d+3,3 u+2 HAM.2,2 T! (PTS.3) CJM.uf+3 db+2 PTS.2",
+     "raw": "CJM d+3,3 ⏵ u+2 ⏵ HCS 2,2 T!  ⏵ (PTS 3) ⏵ CJM uf+3 ⏵ db+2 ⏵ PTS 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,f+3+4"
+     ],
+     "route": "CJM.uf+4 T! uf+2 HAM.2,1 f,f,f+3,2",
+     "raw": "CJM uf+4 T! ⏵ uf+2 ⏵ HCS 2,1 ⏵ f,f,f+3,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on 3+4~F",
+      "heat on f,f+3,2~F",
+      "heat on CJM.2,1~F",
+      "heat on FC.df+1~F"
+     ],
+     "route": "db+2 PTS.4 ws+3 CJM.d+3,3 b+4 HAM.2,2 T! CJM.uf+3 db+2 PTS.2",
+     "raw": "db+2 ⏵ PTS 4 ⏵ ws+3 ⏵ CJM d+3,3 ⏵ b+4 ⏵ HCS 2,2 T! CJM uf+3 ⏵ db+2 ⏵ PTS 2 NEW!"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "df+3,2 3+4",
+     "raw": "df+3,2 ⏵ 3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "uf+4 T! df+3,2 3+4",
+     "raw": "uf+4 T! ⏵ df+3,2 ⏵ 3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WALL CARRY OPTIONS",
+      "FLOOR / WALL BREAK"
+     ],
+     "route": "After HAM.2,2 tornado, you can use 3 CJM.2,1 for mid distance",
+     "raw": "After HCS 2,2 tornado, you can use 3⏵CJM 2,1 for mid distance"
+    }
+   ]
+  },
+  "armor-king": {
+   "gid": "1255979928",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "Dark Upper (f,n,d,df+2)"
+     ],
+     "route": "df+3 f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "df+3 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "f,n,d,df+2 f+3,2~DF BST 1 1 f,f,f+2+4",
+     "raw": "f,n,d,df+2 ⏵ f+3,2~DF ⏵ BST 1 ⏵ 1 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f+2"
+     ],
+     "route": "(dash) d+3+4,1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "(dash) d+3+4,1 ⏵ f+3,2,1 T! ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH ws+2 (on hit 2)"
+     ],
+     "route": "f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "f,n,d,df+1 f+3,2~DF BST 1 f+3,2~DF BST 1 db+2,3",
+     "raw": "f,n,d,df+1 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2~DF ⏵ BST 1 ⏵ db+2,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+2"
+     ],
+     "route": "d+3+4,1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "d+3+4,1 ⏵ f+3,2,1 T! ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "BT.3"
+     ],
+     "route": "(dash) d+3+4,1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "(dash) d+3+4,1 ⏵ f+3,2,1 T! ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+2,1",
+      "FC.df+2",
+      "BT.3",
+      "CH df+3",
+      "CH uf+3",
+      "CH uf+1",
+      "CH sidestep 4",
+      "CH BAD.1+2",
+      "heat on ub+1"
+     ],
+     "route": "df+3 f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "df+3 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "u+1+2"
+     ],
+     "route": "df+1 f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "df+1 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,3 NEW"
+     ],
+     "route": "f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH db+3",
+      "CH (f+3,2),1",
+      "heat on ub+1+2 (hold)"
+     ],
+     "route": "f,n,d,df+1 f+3,2~DF BST 1 f+3,2~DF BST 1 db+2,3",
+     "raw": "f,n,d,df+1 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2~DF ⏵ BST 1 ⏵ db+2,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (b+1+3),2 (on hit 2)"
+     ],
+     "route": "f+3,2~DF BST 1 f+3,2,1 T! f+1+2~F BAD.2+4",
+     "raw": "f+3,2~DF ⏵ BST 1 ⏵ f+3,2,1 T!  ⏵ f+1+2~F ⏵ BAD 2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+4~F",
+      "heat on f+2,1~F"
+     ],
+     "route": "f,n,d,df+2 f+3,2~DF BST 1 f+3,2~DF BST 1 f+3,2,1 T! f,f,f+2+4",
+     "raw": "f,n,d,df+2 ⏵ f+3,2~DF ⏵ BST 1 ⏵ f+3,2~DF ⏵ BST 1 ⏵  f+3,2,1 T! ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1+2,2 f+1+4",
+     "raw": "1+2,2 ⏵ f+1+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "df+1,2 T! 3,4,1",
+     "raw": "df+1,2 T! ⏵ 3,4,1"
+    }
+   ]
+  },
+  "asuka": {
+   "gid": "1070483520",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+2,1"
+     ],
+     "route": "df+1 f,f+2,3 db+1,4 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "df+1 ⏵ f,f+2,3 ⏵ db+1,4 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+2",
+      "1+2",
+      "df+2",
+      "ws+3",
+      "CH d+3+4"
+     ],
+     "route": "f,f+2,3 db+1,4 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "f,f+2,3 ⏵ db+1,4 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH uf+3"
+     ],
+     "route": "db+4,3 2,1,2 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "db+4,3 ⏵ 2,1,2 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "b+3,4,3"
+     ],
+     "route": "2,1,2 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "2,1,2 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f,f+1+2 (or NG f,f,f+1+2)"
+     ],
+     "route": "f,f+2,3 1,2,3 f,f+2,1",
+     "raw": "f,f+2,3 ⏵ 1,2,3 ⏵ f,f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "f,f+4 f,f+2,3 db+1,4 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "f,f+4 ⏵ f,f+2,3 ⏵ db+1,4 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+4",
+      "FC.db+1+2 (throw)",
+      "CH db+4,3",
+      "CH ws+1+2",
+      "CH (df+1),4",
+      "CH (2,1),d+1+2",
+      "f+2+3 (after parry)",
+      "db+1+2 (after parry)"
+     ],
+     "route": "f,f+2,3 db+1,4 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "f,f+2,3 ⏵ db+1,4 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "f+4"
+     ],
+     "route": "db+4,3 f+2",
+     "raw": "db+4,3 ⏵ f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "df+3+4",
+      "CH f,f+1+2 (or NG f,f+1+2)"
+     ],
+     "route": "f,f+2,3 1,2,3 f,f+2,1",
+     "raw": "f,f+2,3 ⏵ 1,2,3 ⏵ f,f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "b+2+3 (after parry)",
+      "CH sidestep 4"
+     ],
+     "route": "db+4,3 2,1,2 T! f,f+4 (long dash) f,f+2,1",
+     "raw": "db+4,3 ⏵ 2,1,2 T! ⏵ f,f+4 ⏵ (long dash) f,f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on d+2~F",
+      "heat on f,f+2,1~F",
+      "heat on sidestep 2~F",
+      "heat on f+1+3 2~F"
+     ],
+     "route": "b+2,4,3 f,f+2,3 db+1,4 T! NG u+1+2 f+3+4",
+     "raw": "b+2,4,3 ⏵ f,f+2,3 ⏵ db+1,4 T! ⏵ NG u+1+2 ⏵ f+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "NG f+2,1+2"
+     ],
+     "route": "f,f+2,3 1,2,3 f,f+2,1",
+     "raw": "f,f+2,3 ⏵ 1,2,3 ⏵ f,f+2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "db+2 T! 1+4,2,4",
+     "raw": "db+2 T!⏵ 1+4,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL / FLOOR BREAK",
+      "WALL CARRY OPTIONS"
+     ],
+     "route": "After most combos T! f,f+4 dash Heat Burst ender",
+     "raw": "After most combos T! ⏵ f,f+4 ⏵ dash ⏵ Heat Burst ⏵ ender"
+    }
+   ]
+  },
+  "azucena": {
+   "gid": "369640386",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4"
+     ],
+     "route": "df+3 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "df+3 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2",
+      "db+1+2",
+      "CH 1+2",
+      "CH ws+1",
+      "CH LIB.1+2"
+     ],
+     "route": "f+3,4 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "f+3,4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "f+3,4 d+2,3 LIB.3+4 (dash) db+3,4",
+     "raw": "f+3,4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ (dash) db+3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+1",
+      "CH LIB.d+3 NEW"
+     ],
+     "route": "ws+4 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "ws+4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+3",
+      "(f+4),[ 4~2 ]",
+      "CH df+3",
+      "CH (d+4),[ 1~2 ]",
+      "CH (uf+3),4"
+     ],
+     "route": "f+3,4 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "f+3,4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3,4"
+     ],
+     "route": "f+3,4 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "f+3,4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH LIB.4,1"
+     ],
+     "route": "d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "LIB.(4,1),2",
+      "CH db+3,4",
+      "CH (f+4),[ 4~3 ]"
+     ],
+     "route": "(dash) d+2,3 LIB.3+4 (dash) db+3,4",
+     "raw": "(dash) d+2,3 ⏵ LIB 3+4 ⏵ (dash) db+3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+3~F",
+      "heat on f+4,4~F",
+      "heat on LIB.2~F"
+     ],
+     "route": "f+3,4 d+4,[ 1~2 ] d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "f+3,4 ⏵ d+4,[ 1~2 ] ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+2~F",
+      "heat on LIB.1,2~F"
+     ],
+     "route": "LIB.3+4 d+2,3 LIB.3+4 f,f+3 T! f+2,1,4",
+     "raw": "LIB 3+4 ⏵ d+2,3 ⏵ LIB 3+4 ⏵ f,f+3 T! ⏵ f+2,1,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f,f+3 T! df+1,4,[ 1~2 ]",
+     "raw": "f,f+3 T! ⏵ df+1,4,[ 1~2 ]"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER"
+     ],
+     "route": "For a damage ender using heat burst, you can do heat burst f+4,4~F db+3+4",
+     "raw": "For a damage ender using heat burst, you can do heat burst ⏵ f+4,4~F ⏵ db+3+4"
+    }
+   ]
+  },
+  "bob": {
+   "gid": "1219115645",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3",
+      "db+1+2",
+      "ws+2,1",
+      "CH df+2"
+     ],
+     "route": "db+2 d+2,3 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "db+2 ⏵ d+2,3 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵ cd+3,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,n,d,df+1",
+      "LOW PARRY"
+     ],
+     "route": "f,n,d,df+1 db+2 b+4,3~F BALL.1,2",
+     "raw": "f,n,d,df+1 ⏵ db+2 ⏵ b+4,3~F ⏵ BALL 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,n,d,df+2"
+     ],
+     "route": "f,f+3~DF cd+1 df+1 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "f,f+3~DF ⏵ cd+1 ⏵ df+1 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵cd+3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "u+4",
+      "CH 4,3",
+      "CH b+3"
+     ],
+     "route": "b+2,2 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "b+2,2 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵cd+3,4"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "Ling RDS f+3+4,3+4",
+      "Ling AOP 3+4",
+      "evade Leo's (b+1),4",
+      "Paul's Deathfist",
+      "Demoman (3rd hit)",
+      "Alisa's b+3+4,(3+4)",
+      "Claudio's f+2,2",
+      "Kuma's f,f+2",
+      "Heihachi's f,f+2",
+      "Jack's d+1+2",
+      "Jack's df+1,2,1,2",
+      "King's JGS 4"
+     ],
+     "route": "2,1,4 b+3",
+     "raw": "2,1,4 ⏵ b+3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (d+2),3",
+      "CH ws+1+2",
+      "CH BT.d+2"
+     ],
+     "route": "db+2 d+2,3 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "db+2 ⏵ d+2,3 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵ cd+3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+3",
+      "CH (3),2"
+     ],
+     "route": "f,n,d,df+1 db+2 b+4,3~F BALL.1,2",
+     "raw": "f,n,d,df+1 ⏵ db+2 ⏵ b+4,3~F ⏵ BALL 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH BALL.4"
+     ],
+     "route": "ws+2,1 T! f,f+3 b+4,3~F BALL.1,2",
+     "raw": "ws+2,1 T! ⏵ f,f+3 ⏵ b+4,3~F ⏵ BALL 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+2~F"
+     ],
+     "route": "db+2 d+2,3 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "db+2 ⏵ d+2,3 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵ cd+3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH heat on df+3+4"
+     ],
+     "route": "BALL.2 d+2,3 b+4,3 T! f,f+3~DF cd+3,4",
+     "raw": "BALL 2 ⏵ d+2,3 ⏵ b+4,3 T! ⏵ f,f+3~DF ⏵ cd+3,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "3,2 T! 3+4,4,2",
+     "raw": "3,2 T! ⏵ 3+4,4,2"
+    }
+   ]
+  },
+  "bryan": {
+   "gid": "1575327614",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,b+2 (Jet Upper)"
+     ],
+     "route": "(dash) qcf+3,4 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "(dash) qcf+3,4 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "u+4",
+      "ws+1",
+      "f+4,1",
+      "CH b+1"
+     ],
+     "route": "qcf+3,4 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "qcf+3,4 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2"
+     ],
+     "route": "b+2,1,F 2,4 T! b+2,1,F 2,2",
+     "raw": "b+2,1,F  2,4 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH 3+4"
+     ],
+     "route": "uf+3 db+2 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "uf+3 ⏵ db+2 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH qcb+1"
+     ],
+     "route": "(dash) b+2,4 (dash) 1 b+2,1,F 2,2",
+     "raw": "(dash) b+2,4 ⏵ (dash) 1 ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "b+2,4 (dash) 1 b+2,1,F 2,2",
+     "raw": "b+2,4 ⏵ (dash) 1 ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcb+4"
+     ],
+     "route": "1+2,1 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "1+2,1 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(b+2),1",
+      "CH f+3",
+      "CH (1,2),1",
+      "CH (1+2),2",
+      "CH (d+2),3",
+      "CH (df+2),3"
+     ],
+     "route": "qcf+3,4 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "qcf+3,4 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH ws+3",
+      "CH ws+3,4"
+     ],
+     "route": "db+2 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "db+2 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "df+3",
+      "SE.(3+4),2 (hold)"
+     ],
+     "route": "(dash) b+2,4 (dash) 1 b+2,1,F 2,2",
+     "raw": "(dash) b+2,4 ⏵ (dash) 1 ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (4,3),4 (hold) NEW"
+     ],
+     "route": "uf+3 db+2 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "uf+3 ⏵ db+2 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+2~F",
+      "heat on qcf+1+2~F",
+      "heat on sidestep 2,1~F"
+     ],
+     "route": "qcf+3,4 qcf+3,4 4,1,B 1 T! b+2,1,F 2,2",
+     "raw": "qcf+3,4 ⏵ qcf+3,4 ⏵ 4,1,B  1 T! ⏵ b+2,1,F  2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1+2,1 uf+2,2,2,3 (or SE.uf+2,2,2,2,3)",
+     "raw": "1+2,1 ⏵ uf+2,2,2,3 (or SE uf+2,2,2,2,3)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "uf+3+4 T! 1+2,1 uf+2,2,2,3 (or SE.uf+2,2,2,2,3)",
+     "raw": "uf+3+4 T! ⏵ 1+2,1 ⏵ uf+2,2,2,3 (or SE uf+2,2,2,2,3)"
+    }
+   ]
+  },
+  "claudio": {
+   "gid": "2066867905",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "df+1,2",
+      "CH df+2",
+      "STB.f+1+2,1+2"
+     ],
+     "route": "f,f+4 b+3 df+3,2 b+4,4 T! f,f,f+2",
+     "raw": "f,f+4 ⏵ b+3 ⏵ df+3,2 ⏵ b+4,4 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "during Starburst"
+     ],
+     "route": "f,f+4 b+3 f+2 2,(1),2 STB.d+1,2 T! f,f,f+2",
+     "raw": "f,f+4 ⏵ b+3 ⏵ f+2 ⏵ 2,(1),2 ⏵ STB d+1,2 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2"
+     ],
+     "route": "b+3 b+3 2,(1),2 d+1,2 T! f,f,f+2",
+     "raw": "b+3 ⏵ b+3 ⏵ 2,(1),2 ⏵ d+1,2 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "during Starburst"
+     ],
+     "route": "2,1,2 2,(1),2 STB.d+1,2 T! f,f,f+2",
+     "raw": "2,1,2 ⏵ 2,(1),2 ⏵ STB d+1,2 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+3+4"
+     ],
+     "route": "db+1+2 T! f,f+4 b+3 f+2 b+4,2",
+     "raw": "db+1+2 T! ⏵ f,f+4 ⏵ b+3 ⏵ f+2 ⏵ b+4,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "STB.db+1+2 (or CH db+1+2)"
+     ],
+     "route": "f,f+4 b+3 df+1 f+2 b+4,2",
+     "raw": "f,f+4 ⏵ b+3 ⏵ df+1 ⏵ f+2 ⏵ b+4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH b+4,4"
+     ],
+     "route": "b+3 df+3,2 b+4,4 T! f,f,f+2",
+     "raw": "b+3 ⏵ df+3,2 ⏵ b+4,4 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH STB.4,2"
+     ],
+     "route": "(run) f,f+4 b+3 f+2 b+4,2",
+     "raw": "(run) f,f+4 ⏵ b+3 ⏵ f+2 ⏵ b+4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH STB.4,3"
+     ],
+     "route": "3,2 STB.d+1,2 T! f,f,f+2",
+     "raw": "3,2 ⏵ STB d+1,2 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH STB.(f,f+3),2 (hold)"
+     ],
+     "route": "(run) f,f+4 b+3 df+1 f+2 b+4,2",
+     "raw": "(run) f,f+4 ⏵ b+3 ⏵ df+1 ⏵ f+2 ⏵ b+4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on uf+2~F",
+      "heat on b+4,2~F",
+      "heat on f,f,f+2~F",
+      "heat on (2,1),2~F"
+     ],
+     "route": "f,f+4 b+3 2,1,2 b+3 2,(1),2 STB.d+1,2 T! f,f,f+2",
+     "raw": "f,f+4 ⏵ b+3 ⏵ 2,1,2 ⏵ b+3 ⏵ 2,(1),2 ⏵  STB d+1,2 T! ⏵ f,f,f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "df+3,2 uf+3+4,2",
+     "raw": "df+3,2 ⏵ uf+3+4,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "b+2 T! df+3,2 uf+3+4,2",
+     "raw": "b+2 T! ⏵ df+3,2 ⏵ uf+3+4,2"
+    }
+   ]
+  },
+  "clive": {
+   "gid": "1635195170",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "ws+2",
+      "f+3",
+      "CH f,f+2"
+     ],
+     "route": "d+1 ws+4 db+1+2,1 updraft 2,2 T! df+1,2~F PHX.2,1",
+     "raw": "d+1 ⏵ ws+4 ⏵ db+1+2,1 ⏵ updraft 2,2 T! ⏵  df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH db+4",
+      "3+4 (low parry)",
+      "LOW PARRY"
+     ],
+     "route": "b+2 d+1 ws+4 4,4~F PHX.3,1+2",
+     "raw": "b+2 ⏵ d+1 ⏵ ws+4 ⏵ 4,4~F ⏵ PHX 3,1+2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "sidestep 1+2",
+      "CH b+1",
+      "CH b+4"
+     ],
+     "route": "d+1 ws+4 db+1+2,1 updraft 2,2 T! df+1,2~F PHX.2,1",
+     "raw": "d+1 ⏵ ws+4 ⏵ db+1+2,1 ⏵ updraft 2,2 T! ⏵  df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "CH (3),3",
+      "CH (df+1,4),3"
+     ],
+     "route": "BHT.1 PHS 2,1 T! df+1,2~F PHX.2,1",
+     "raw": "BHT 1 ⏵ PHS 2,1 T! ⏵ df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "BHT.3",
+      "CH db+1,1"
+     ],
+     "route": "db+1+2,1 updraft 2,2",
+     "raw": "db+1+2,1 ⏵ updraft 2,2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "CH d+1+2"
+     ],
+     "route": "b+2 d+1 ws+4 4,4~F PHX.2,1",
+     "raw": "b+2 ⏵ d+1 ⏵ ws+4 ⏵ 4,4~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "CH PHX.2,1"
+     ],
+     "route": "b+2 d+1 ws+4~F PHX.2,1",
+     "raw": "b+2 ⏵ d+1 ⏵ ws+4~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "heat on f+1+2~F",
+      "heat on sidestep 2,1~F",
+      "heat on CH f+2,2,2~F"
+     ],
+     "route": "b+2 db+1+2,1 updraft 2,2 T! df+1,2~F PHX.2,1",
+     "raw": "b+2 ⏵ db+1+2,1 ⏵ updraft 2,2 T! ⏵ df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "heat on (f+2,2),1 (hold)"
+     ],
+     "route": "db+1+2,1 updraft 2,2 T! df+1,2~F PHX.2,1",
+     "raw": "db+1+2,1 ⏵ updraft 2,2 T! ⏵ df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "df+1,2~F PHX.2,1",
+     "raw": "df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "d+1+2 T! df+1,2~F PHX.2,1",
+     "raw": "d+1+2 T! ⏵ df+1,2~F ⏵ PHX 2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY OPTIONS",
+      "WALL / FLOOR BREAK"
+     ],
+     "route": "After T!, you can b+2 Heat Burst ender",
+     "raw": "After T!, you can b+2 ⏵ Heat Burst ⏵ ender"
+    }
+   ]
+  },
+  "devil-jin": {
+   "gid": "522394314",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2"
+     ],
+     "route": "u+1+2 f,n,d,df+3+4~F MCR.4,1 f,n,d,df+3+4~F MCR.2",
+     "raw": "u+1+2 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ f,n,d,df+3+4~F  MCR 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "EWGF (f,n,d,df+2)"
+     ],
+     "route": "EWGF f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "EWGF ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "d+3+4"
+     ],
+     "route": "df+2 1 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "df+2 ⏵ 1 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH b+4",
+      "CH (f+2),4"
+     ],
+     "route": "1+4 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "1+4 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,n,d,df+4,1+2"
+     ],
+     "route": "(f+3) MCR.4,1 (dash) f,n,d,df+3+4~F MCR.4,2,1,U",
+     "raw": "(f+3) MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F MCR 4,2,1,U"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "ws+3~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.4,2,1,U",
+     "raw": "ws+3~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 4,2,1,U"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "sidestep 2"
+     ],
+     "route": "u+1+2 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "u+1+2 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "u+4,U",
+      "CH f+4,3,U"
+     ],
+     "route": "FLY.1 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "FLY 1 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "FLY.1",
+      "MCR.(4),1",
+      "CH f,f+4",
+      "CH (3,1),4"
+     ],
+     "route": "(dash) EWGF 2 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "(dash) EWGF ⏵ 2 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(1,2),3",
+      "f,n,d,df+3"
+     ],
+     "route": "1+4 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "1+4 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(1+4),2",
+      "MCR.3",
+      "heat on f,n,d,df+4,3"
+     ],
+     "route": "u+1+2 f,n,d,df+3+4~F MCR.4,1 f,n,d,df+3+4~F MCR.2",
+     "raw": "u+1+2 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ f,n,d,df+3+4~F  MCR 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on uf+4~F",
+      "heat on f,f+2~F"
+     ],
+     "route": "EWGF 2 f,n,d,df+3+4~F MCR.4,1 (dash) f,n,d,df+3+4~F MCR.3 T! f,n,d,df+3+4~F MCR.2,2",
+     "raw": "EWGF ⏵ 2 ⏵ f,n,d,df+3+4~F  MCR 4,1 ⏵ (dash) f,n,d,df+3+4~F  MCR 3 T! ⏵ f,n,d,df+3+4~F  MCR 2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on [ 4~3 ],1+2",
+      "heat on f,n,d,df+1+2,1+2"
+     ],
+     "route": "(f+3) MCR.4,1 f,n,d,df+3+4~F MCR.4,2,1,U",
+     "raw": "(f+3) MCR 4,1 ⏵ f,n,d,df+3+4~F  MCR 4,2,1,U"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "b,f+2,1,df+2 T! b,f+1+2,2",
+     "raw": "b,f+2,1,df+2 T! ⏵ b,f+1+2,2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH (df+1),4~F",
+      "heat on b+3~F heat on b+2,3~F heat on MCR.2,2~F"
+     ],
+     "route": "MCR.3 b+4",
+     "raw": "MCR 3 ⏵ b+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY OPTIONS"
+     ],
+     "route": "After tornado, u+1+2 (dash) Heat Burst",
+     "raw": "After tornado, u+1+2 ⏵ (dash) Heat Burst"
+    }
+   ]
+  },
+  "dragunov": {
+   "gid": "1782505865",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "ws+2"
+     ],
+     "route": "df+1 4,4 FC.df+1,4 SNK.2 T! (3+4),2 qcf+1+2",
+     "raw": "df+1 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 2 T! ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f,f+2",
+      "CH (df+1),4"
+     ],
+     "route": "qcf+3+4 4,4 FC.df+1,4 SNK.2 T! (3+4),2 qcf+1+2",
+     "raw": "qcf+3+4 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 2 T! ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "qcf+1"
+     ],
+     "route": "(sidestep left) qcf+3+4 4,4 FC.df+1,4 SNK.2 T! (3+4),2 qcf+1+2",
+     "raw": "(sidestep left) qcf+3+4 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 2 T! ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "db+3 (clean hit)",
+      "LOW PARRY"
+     ],
+     "route": "df+3+4 qcf+3+4 4,4 FC.df+1,4 SNK.1+2",
+     "raw": "df+3+4 ⏵ qcf+3+4 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+2",
+      "qcf+2",
+      "(1,3),2",
+      "CH ub+2"
+     ],
+     "route": "qcf+3+4 4,4 FC.df+1,4 SNK.2 T! (3+4),2 qcf+1+2",
+     "raw": "qcf+3+4 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 2 T! ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(db+2,1),2",
+      "CH (f+2),4"
+     ],
+     "route": "d+2 ws+4 b+1,2 T! df+3+4 (3+4),2 qcf+1+2",
+     "raw": "d+2 ⏵ ws+4 ⏵ b+1,2 T! ⏵ df+3+4 ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on ws+1+2~F",
+      "heat on qcf+4~F",
+      "heat on f+3,1+2~F"
+     ],
+     "route": "qcf+3+4 4,4 FC.df+1,4 SNK.2 T! (3+4),2 qcf+1+2",
+     "raw": "qcf+3+4 ⏵ 4,4 ⏵ FC df+1,4 ⏵ SNK 2 T! ⏵ (3+4),2 ⏵ qcf+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "f,f,f+4 T! d+3,2,1+2",
+     "raw": "f,f,f+4 T! ⏵ d+3,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY OPTIONS",
+      "FLOOR / WALL BREAK"
+     ],
+     "route": "After T!, you can df+3+4 Heat Burst f+3,1+2~F b+1+2",
+     "raw": "After T!, you can df+3+4 ⏵ Heat Burst ⏵ f+3,1+2~F ⏵ b+1+2"
+    }
+   ]
+  },
+  "eddy": {
+   "gid": "773892732",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+3"
+     ],
+     "route": "f+2 b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "f+2 ⏵ b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵ db+4,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2"
+     ],
+     "route": "b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵ db+4,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1,3"
+     ],
+     "route": "RLX.3+4 T! uf+4 RLX.2,4~D RLX.3,3",
+     "raw": "RLX 3+4 T! ⏵ uf+4 ⏵RLX 2,4~D ⏵ RLX 3,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "sidestep 3+4"
+     ],
+     "route": "ws+3 T! uf+4 RLX.2,4~D RLX.3,3",
+     "raw": "ws+3 T! ⏵ uf+4 ⏵ RLX 2,4~D ⏵ RLX 3,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+3",
+      "LOW PARRY"
+     ],
+     "route": "uf+4 RLX.2,4~D RLX.2,4,4",
+     "raw": "uf+4 ⏵ RLX 2,4~D ⏵ RLX 2,4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "RLX.2 b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "RLX 2 ⏵ b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T! ⏵ db+4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "u+1+2",
+      "RLX.3+4",
+      "uf+3+4",
+      "df+3+4 (2nd hit only)"
+     ],
+     "route": "b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵ db+4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH FC.df+3",
+      "u+[ 4~3 ]",
+      "(1,2),[ 4~3 ]",
+      "(b+3),3"
+     ],
+     "route": "RLX.3+4 T! uf+4 RLX.2,4~D RLX.2,4,4",
+     "raw": "RLX 3+4 T! ⏵ uf+4 ⏵RLX 2,4~D ⏵ RLX 2,4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH b+3,3"
+     ],
+     "route": "RLX.3+4 T! uf+4 RLX.2,4~D RLX.3,3",
+     "raw": "RLX 3+4 T! ⏵ uf+4 ⏵RLX 2,4~D ⏵ RLX 3,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (2,1),4",
+      "CH HPS b+3"
+     ],
+     "route": "b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵ db+4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH db+2,3",
+      "CH (f+2),4",
+      "CH (uf+3),4",
+      "CH HSP.4,2"
+     ],
+     "route": "uf+4 RLX.2,4~D RLX.2,4,4",
+     "raw": "uf+4 ⏵ RLX 2,4~D ⏵ RLX 2,4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH RLX.3"
+     ],
+     "route": "ws+3 T! uf+4 RLX.2,4~D RLX.2,4,4",
+     "raw": "ws+3 T! ⏵ uf+4 ⏵RLX 2,4~D ⏵ RLX 2,4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f+3+4~F",
+      "heat on RLX.4,3~F",
+      "heat on CH 4,4~F"
+     ],
+     "route": "df+2 df+2 b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "df+2 ⏵ df+2 ⏵ b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵  db+4,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on 3+4"
+     ],
+     "route": "RLX.2 b+3,3 RLX.2,4~D RLX.3,3",
+     "raw": "RLX 2 ⏵ b+3,3 ⏵ RLX 2,4~D ⏵ RLX 3,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "MND lvl 2 HSP.b+4"
+     ],
+     "route": "b+3,3 RLX.2,4~D RLX.2 qcf+3 T! db+4,4",
+     "raw": "b+3,3 ⏵ RLX 2,4~D ⏵ RLX 2 ⏵ qcf+3 T!⏵ db+4,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "qcf+3 T! b+2,3,3",
+     "raw": "qcf+3 T! ⏵ b+2,3,3"
+    }
+   ]
+  },
+  "fahkumram": {
+   "gid": "861365955",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,3",
+      "ws+3",
+      "b,f+4",
+      "f,f+1+2",
+      "CH 3+4"
+     ],
+     "route": "df+[ 3~4 ] 3,[ 4~4 ] 3,[ 4~3 ] T! db+4 df+4,3",
+     "raw": "df+[ 3~4 ] ⏵ 3,[ 4~4 ] ⏵ 3,[ 4~3 ] T! ⏵ db+4 ⏵ df+4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "db+4 3,1 f+3,2,1",
+     "raw": "db+4 ⏵ 3,1 ⏵ f+3,2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+4",
+      "(3),[ 4~3 ] (hold)",
+      "(4),[ 3~4 ] (hold)"
+     ],
+     "route": "(dash) db+4 3,1 f+3,2,1",
+     "raw": "(dash) db+4 ⏵ 3,1 ⏵ f+3,2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "GRF.(3),[ 4~3 ] (hold)",
+      "GRF.(4),[ 3~4 ] (hold)"
+     ],
+     "route": "df+[ 3~4 ] 3,[ 4~4 ] 3,[ 4~3 ] T! db+4 df+4,3",
+     "raw": "df+[ 3~4 ] ⏵ 3,[ 4~4 ] ⏵ 3,[ 4~3 ] T! ⏵ db+4 ⏵ df+4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (4),3"
+     ],
+     "route": "(dash) d+3,4,[ 3~4 ] 3,[ 4~3 ] db+4 df+4,3",
+     "raw": "(dash) d+3,4,[ 3~4 ] ⏵ 3,[ 4~3 ] ⏵ db+4 ⏵ df+4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+3~F",
+      "heat on df+1,4~F"
+     ],
+     "route": "df+[ 3~4 ] 3,[ 4~4 ] 3,[ 4~4 ] 3,[ 4~3 ] T! db+4 df+4,3",
+     "raw": "df+[ 3~4 ] ⏵ 3,[ 4~4 ] ⏵ 3,[ 4~4 ] ⏵ 3,[ 4~3 ] T! ⏵ db+4 ⏵ df+4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f+1+2~F"
+     ],
+     "route": "b+1 d+3,4,[ 4~3 ] 3,[ 4~4 ] 3,[ 4~3 ] T! db+4 df+4,3",
+     "raw": "b+1 ⏵ d+3,4,[ 4~3 ] ⏵ 3,[ 4~4 ] ⏵ 3,[ 4~3 ] T! ⏵ db+4 ⏵ df+4,3"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH f+4"
+     ],
+     "route": "b+1 f,f+1+2 uf+3 (heat)",
+     "raw": "b+1 ⏵ f,f+1+2 uf+3 (heat)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "uf+4 T! b+4,3,2",
+     "raw": "uf+4 T! ⏵ b+4,3,2"
+    }
+   ]
+  },
+  "feng": {
+   "gid": "1999913945",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "ws+3",
+      "f+3,4"
+     ],
+     "route": "df+4,3 b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "df+4,3 ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+4",
+      "FC.df+2"
+     ],
+     "route": "f,f+4,3 (delay 2nd hit) b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "f,f+4,3 (delay 2nd hit) ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+3",
+      "sidestep 4",
+      "CH ws+2",
+      "LOW PARRY"
+     ],
+     "route": "uf+3 b+3 1 db+1,2,4",
+     "raw": "uf+3 ⏵ b+3 ⏵ 1 ⏵ db+1,2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "[ 3~4 ]",
+      "CH db+2,2"
+     ],
+     "route": "df+4,3 b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "df+4,3 ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH [ 4~3 ]"
+     ],
+     "route": "b+4,2~DF 3 b+4,2~DF 2 T! uf+3 (dash) b+1+2",
+     "raw": "b+4,2~DF 3 ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) b+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "STC.1",
+      "CH (1),1"
+     ],
+     "route": "(dash) df+4,3 b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "(dash) df+4,3 ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3+4"
+     ],
+     "route": "df+1 b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "df+1 ⏵ b+4,2~DF 2 T! ⏵ uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+4",
+      "KNP.3",
+      "BT.d+3"
+     ],
+     "route": "uf+3 b+3 1 db+1,2,4",
+     "raw": "uf+3 ⏵ b+3 ⏵ 1 ⏵ db+1,2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+2~F",
+      "heat on BT.2~F",
+      "heat on KNP.2~F"
+     ],
+     "route": "f,f+4,3 (delay 2nd hit) df+4,3 b+4,2~DF 2 T! uf+3 (dash) 3,1+2",
+     "raw": "f,f+4,3 (delay 2nd hit) ⏵ df+4,3 ⏵ b+4,2~DF 2 T! uf+3 ⏵ (dash) 3,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "df+3 T! db+1,2,4",
+     "raw": "df+3 T! ⏵ db+1,2,4"
+    }
+   ]
+  },
+  "heihachi": {
+   "gid": "255476817",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "EWGF.(f,n,d,df+2)"
+     ],
+     "route": "EWGF f+3 df+1 f+3~D FUJ.2 f,n,d,df+4,3",
+     "raw": "EWGF ⏵ f+3 ⏵ df+1 ⏵ f+3~D FUJ.2 ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "wall carry route"
+     ],
+     "route": "EWGF f+3~D (df) 4,4,1 f+3~D FUJ.2 T! f,n,d,df+4,3",
+     "raw": "EWGF ⏵ f+3~D (df) 4,4,1 ⏵ f+3~D FUJ.2 T! ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,f+3",
+      "uf+3,4",
+      "CH b+4"
+     ],
+     "route": "(dash) EWGF f+3 df+1 f+3~D FUJ.2 f,n,d,df+4,3",
+     "raw": "(dash) EWGF ⏵ f+3 ⏵ df+1 ⏵ f+3~D FUJ.2 ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "b+2 (perfect) f,n,d,df+4,4,1 1,b+2,4",
+     "raw": "b+2 (perfect) ⏵ f,n,d,df+4,4,1 ⏵ 1,b+2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "4 (hold)",
+      "(1,2),4 (hold)",
+      "FUJ.2"
+     ],
+     "route": "b+2 (perfect) f,n,d,df+4,4,1 1,b+2,4",
+     "raw": "b+2 (perfect) ⏵ f,n,d,df+4,4,1 ⏵ 1,b+2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "Warrior df+2,1"
+     ],
+     "route": "b:2 (perfect) f,n,d,df+4,4,1 1,b+2,2 OTGF",
+     "raw": "b:2 (perfect) ⏵ f,n,d,df+4,4,1 ⏵ 1,b+2,2 ⏵ OTGF"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "RAI.2",
+      "CH 4",
+      "CH (1,2),4",
+      "CH (b+3),2",
+      "CH (df+4),2",
+      "(f,n,d,df+4),3",
+      "heat on uf+2,1~F"
+     ],
+     "route": "(dash) EWGF f+3 df+1 f+3~D FUJ.2 f,n,d,df+4,3",
+     "raw": "(dash) EWGF ⏵ f+3 ⏵ df+1 ⏵ f+3~D FUJ.2 ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(f,n,d,df+4),4,n,4"
+     ],
+     "route": "f+3 df+1 f+3~D FUJ.2 f,n,d,df+4,3",
+     "raw": "f+3 ⏵ df+1 ⏵ f+3~D FUJ.2 ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,n,d,df+4"
+     ],
+     "route": "f,n,d,df+4,n,4 f+3 df+1 f+3~D FUJ.2 f,n,d,df+4,3",
+     "raw": "f,n,d,df+4,n,4 ⏵ f+3 ⏵ df+1 ⏵ f+3~D FUJ.2 ⏵ f,n,d,df+4,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "b+1,4 T! df+3,1+2,1",
+     "raw": "b+1,4 T! ⏵ df+3,1+2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY",
+      "WALL / FLOOR BREAK",
+      "DURING WARRIOR"
+     ],
+     "route": "after T!, b:2 (perfect) (dash) Heat Burst ender",
+     "raw": "after T!, b:2 (perfect) ⏵ (dash) ⏵ Heat Burst ⏵ ender"
+    }
+   ]
+  },
+  "hwoarang": {
+   "gid": "2063376992",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "b+3"
+     ],
+     "route": "f+4 RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "f+4⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2,3"
+     ],
+     "route": "(whiff LFS.1) u+3 LFS.uf+3+4~F uf+3+4~F uf+3+4",
+     "raw": "(whiff LFS 1) ⏵ u+3 ⏵ LFS uf+3+4~F ⏵ uf+3+4~F ⏵ uf+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "u+3+4"
+     ],
+     "route": "db+4~F RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "db+4~F⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "f+4 RFS [ 3~4 ] uf+3+4~F uf+3+4~F uf+3+4",
+     "raw": "f+4⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ uf+3+4~F ⏵ uf+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "JFSR (f,n,df+4)"
+     ],
+     "route": "3+4 RFF [ 3~4 ] f+4 RFS [ 3~4 ] d+4,4 T! uf+3,4,3",
+     "raw": "3+4  ⏵ RFF [ 3~4 ] ⏵ f+4 ⏵ RFS [ 3~4 ] ⏵ d+4,4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,n,d,df+4"
+     ],
+     "route": "3+4 RFF [ 3~4 ] (dash) 4,4,u+4,4 T! uf+3,4,3",
+     "raw": "3+4 ⏵ RFF [ 3~4 ] ⏵ (dash) 4,4,u+4,4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "u+3"
+     ],
+     "route": "LFS.d+3,4 RFS.1 d+4,4 T! uf+3,4,3",
+     "raw": "LFS d+3,4 ⏵ RFS 1 ⏵ d+4,4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "RFF.f+[ 4~4 ]"
+     ],
+     "route": "u+3 LFS.uf+3+4~F uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "u+3 ⏵ LFS uf+3+4~F ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "LFS.uf+4"
+     ],
+     "route": "f+4 RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "f+4⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "RFS.uf+4",
+      "CH sidestep 4",
+      "CH RFS.df+4"
+     ],
+     "route": "db+4~F RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "db+4~F⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH RFF.b+3"
+     ],
+     "route": "(sidestep left) db+4~F RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "(sidestep left) db+4~F⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+4,4",
+      "CH RFS.f+4,4"
+     ],
+     "route": "u+3 LFS.1 u+3 uf+3+4~F uf+3+4~F uf+3+4",
+     "raw": "u+3 ⏵ LFS 1 ⏵ u+3 ⏵ uf+3+4~F ⏵ uf+3+4~F ⏵ uf+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "RFF [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "RFF [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH sidestep 3,3"
+     ],
+     "route": "LFS.1 uf+3+4~F uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "LFS 1 ⏵ uf+3+4~F ⏵ uf+3+4~F ⏵ LFS uf+4 T! ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash f,f+4~F",
+      "heat dash LFS.f+3~F",
+      "heat dash RFS.b+3~F",
+      "heat dash RFF.df+3~F"
+     ],
+     "route": "db+4~F RFS [ 3~4 ] uf+3+4~F LFS.uf+4 T! uf+3,4,3",
+     "raw": "db+4~F⏵ RFS [ 3~4 ] ⏵ uf+3+4~F ⏵ LFS uf+4 T!  ⏵ uf+3,4,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "during heat RFS.f+4,4"
+     ],
+     "route": "u+3 LFS.1 u+3 uf+3+4~F uf+3+4~F uf+3+4",
+     "raw": "u+3 ⏵ LFS 1 ⏵ u+3 ⏵ uf+3+4~F ⏵ uf+3+4~F ⏵ uf+3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "sidestep 3,3 LFS.3,2",
+     "raw": "sidestep 3,3 ⏵ LFS 3,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "f+4 RFS.uf+4 T! RFF [ 3~4 ] b+3",
+     "raw": "f+4 ⏵ RFS uf+4 T! ⏵ RFF [ 3~4 ] ⏵ b+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "FOR DMG"
+     ],
+     "route": "RFF.f+3 LFS [ 4~3 ]",
+     "raw": "RFF f+3 ⏵ LFS [ 4~3 ]"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WALL CARRY",
+      "WALL BREAK",
+      "FLOOR BREAK"
+     ],
+     "route": "u+3 LFS.uf+3+4",
+     "raw": "u+3 ⏵ LFS uf+3+4"
+    }
+   ]
+  },
+  "jack-8": {
+   "gid": "1837655975",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "f,f+1+2"
+     ],
+     "route": "b+3,2 2,1,uf+1+2 GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "b+3,2 ⏵ 2,1,uf+1+2  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df,df+2+4 (throw)"
+     ],
+     "route": "u+1+2 b+3,2,D GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "u+1+2 ⏵ b+3,2,D  GMH f+1 T! ⏵ (2),1,uf+1+2 ⏵ GMH f+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1",
+      "d+1+2"
+     ],
+     "route": "u+1+2 2 2,1,uf+1+2 GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "u+1+2 ⏵ 2 ⏵ 2,1,uf+1+2  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "1+2",
+      "LOW PARRY"
+     ],
+     "route": "f,f+2 b+1 b+3,2,D GMC.f+1",
+     "raw": "f,f+2 ⏵ b+1 ⏵ b+3,2,D  GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4"
+     ],
+     "route": "b+3,2 df+1,1 2,1,uf+1+2 GMC.f+1",
+     "raw": "b+3,2 ⏵ df+1,1 ⏵ 2,1,uf+1+2 ⏵ GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "sidestep 1",
+      "FC.df+1,2,1",
+      "CH f,f+3",
+      "CH GHM f+3",
+      "CH (b+1),2",
+      "CH (f+3),1+2"
+     ],
+     "route": "b+3,2 2,1,uf+1+2 GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "b+3,2 ⏵ 2,1,uf+1+2  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+2",
+      "1+4,df+1"
+     ],
+     "route": "u+1+2 2 2,1,uf+1+2 GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "u+1+2 ⏵ 2 ⏵ 2,1,uf+1+2  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "GHM f+1",
+      "GMC.1"
+     ],
+     "route": "f,f+2 b+1 b+3,2,D GMC.f+1",
+     "raw": "f,f+2 ⏵ b+1 ⏵ b+3,2,D  GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(2,1),2"
+     ],
+     "route": "ws+2 b+3,2 f+3,D GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "ws+2 ⏵ b+3,2 ⏵ f+3,D  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+1,2,1"
+     ],
+     "route": "df+1 b+3,2,D GMC.f+1 T! 2,1,uf+1+2 GMC.f+1",
+     "raw": "df+1 ⏵ b+3,2,D ⏵ GMH f+1 T! ⏵ 2,1,uf+1+2 ⏵ GMH f+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+2~F",
+      "heat on GMC.4~F",
+      "heat on GMC.3+4~F"
+     ],
+     "route": "f+4 b+3,2 b+3,2 2,1,uf+1+2 GMC.f+1 T! (2),1,uf+1+2 GMC.f+1",
+     "raw": "f+4 ⏵ b+3,2 ⏵ b+3,2 ⏵ 2,1,uf+1+2  GMH f+1 T! ⏵ (2),1,uf+1+2  GMH f+1"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH f+2 CH (2),3 sidestep 2"
+     ],
+     "route": "f,f+4 heat on uf+3 GMC.f+1",
+     "raw": "f,f+4 heat on uf+3 ⏵ GMH f+1"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH db+2"
+     ],
+     "route": "(dash) db+1+2 heat on uf+3 GMC.f+1",
+     "raw": "(dash) db+1+2 heat on uf+3 ⏵ GMH f+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "b+3,2,D GMC.f+2",
+     "raw": "b+3,2,D ⏵ GMH f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f,f+4 T! b+3,2,D GMC.f+2",
+     "raw": "f,f+4 T! ⏵ b+3,2,D ⏵ GMH f+2"
+    }
+   ]
+  },
+  "jin": {
+   "gid": "1608972874",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "ws+2",
+      "d+3+4",
+      "f,n,d,df+1"
+     ],
+     "route": "df+2,4 b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "df+2,4 ⏵ b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f+4"
+     ],
+     "route": "(dash) b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "(dash) b+3~F ⏵ ZEN 1 ⏵ b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "EWHF",
+      "LOW PARRY"
+     ],
+     "route": "EWHF b+3~F ZEN.1 b+3~F ZEN.1,3",
+     "raw": "EWHF ⏵ b+3~F ⏵ ZEN 1 ⏵ b+3~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+3",
+      "f,f+3,1",
+      "CH uf+3",
+      "CH (3,1),4",
+      "CH (1,d+3),4"
+     ],
+     "route": "(dash) b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "(dash) b+3~F ⏵ ZEN 1 ⏵ b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+3,1,2"
+     ],
+     "route": "b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (b,f+2),3~F"
+     ],
+     "route": "ZEN.2 b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "ZEN 2 ⏵ b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH db+2,2"
+     ],
+     "route": "3,1 3,1~F ZEN.u+1 T!",
+     "raw": "3,1 ⏵ 3,1~F ⏵ ZEN u+1 T! ⏵"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH FC.df+4~F"
+     ],
+     "route": "(hold df) BRS.2 b+3~F ZEN.1 b+3~F ZEN.1,3",
+     "raw": "(hold df) BRS 2 ⏵ b+3~F ⏵ ZEN 1 ⏵ b+3~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on df+4~F",
+      "heat on f,f+2~F",
+      "heat on f+3,1~F",
+      "heat on ZEN.1,2~F"
+     ],
+     "route": "EWHF b+3~F ZEN.1 3,1~F ZEN.2 b+3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "EWHF ⏵ b+3~F ⏵ ZEN 1 ⏵ 3,1~F ⏵ ZEN 2 ⏵ b+3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on (db+1+2),1"
+     ],
+     "route": "EWHF b+3~F ZEN.1 b+3~F ZEN.1,3",
+     "raw": "EWHF ⏵ b+3~F ⏵ ZEN 1 ⏵ b+3~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on (db+1+2),2",
+      "heat on (db+1+2),3"
+     ],
+     "route": "df+2,4 b,f+2,3~F ZEN.u+1 T! (2),4~F ZEN.1,3",
+     "raw": "df+2,4 ⏵ b,f+2,3~F ⏵ ZEN u+1 T! ⏵ (2),4~F ⏵ ZEN 1,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1 db+2,2,3",
+     "raw": "1 ⏵ db+2,2,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f,n,d,df+1 T! 1 db+2,2,3",
+     "raw": "f,n,d,df+1 T! ⏵ 1 ⏵ db+2,2,3"
+    }
+   ]
+  },
+  "jun": {
+   "gid": "581366255",
+   "combos": [
+    {
+     "section": "Important combos",
+     "starters": [
+      "f+2"
+     ],
+     "route": "f+4 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "f+4 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "df+2",
+      "ws+3",
+      "CH d+3+4"
+     ],
+     "route": "b+4,2 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "b+4,2 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "df+2,1+2",
+      "ws+3+4"
+     ],
+     "route": "uf+3 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "uf+3 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "uf+4,3"
+     ],
+     "route": "GEN.4 f+3 b+2,1~F GEN.2",
+     "raw": "(hold forward) ⏵ GEN 4 ⏵ f+3 ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "b+3,4~D"
+     ],
+     "route": "ws+2 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "ws+2 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "b+3,2",
+      "LOW PARRY"
+     ],
+     "route": "b+4,2 f+3 b+2,1~F GEN.2",
+     "raw": "b+4,2 ⏵ f+3 ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "FC.db+1+2 (throw)"
+     ],
+     "route": "f+4 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "f+4 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "d+1+2"
+     ],
+     "route": "b+4,2 f+3 b+2,1~F GEN.2",
+     "raw": "b+4,2 ⏵ f+3 ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+2+3"
+     ],
+     "route": "uf+2 T! (f+3+4) GEN.4 f+3,2 IZU.1+2",
+     "raw": "uf+2 T! ⏵ (f+3+4) GEN 4 ⏵ f+3,2 ⏵ IZU 1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH uf+3",
+      "CH df+4",
+      "CH ws+2",
+      "CH ws+1+2",
+      "CH (f,f+2),2"
+     ],
+     "route": "d+1+2 T! (f+3+4) GEN.4 f+3 b+2,1~F GEN.2",
+     "raw": "d+1+2 T! ⏵ (f+3+4) GEN 4 ⏵ f+3 ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+2",
+      "CH IZU.4"
+     ],
+     "route": "FC.df+2 ws+2 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "FC df+2 ⏵ ws+2 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash f+2,1+2~F",
+      "heat dash sidestep 4~F",
+      "heat dash IZU.3~F",
+      "heat dash MIA.2~F"
+     ],
+     "route": "f+2,1+2 b+4,2 f+3,2 IZU.1,1 T! b+2,1~F GEN.2",
+     "raw": "f+2,1+2 ⏵ b+4,2 ⏵ f+3,2 ⏵ IZU 1,1 T! ⏵ b+2,1~F ⏵ GEN 2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "uf+2 T! df+1,2 1+2",
+     "raw": "uf+2 T! ⏵ df+1,2 ⏵ 1+2"
+    }
+   ]
+  },
+  "kazuya": {
+   "gid": "1532707961",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "EWGF.(f,n,d,df+2)"
+     ],
+     "route": "EWGF (short dash) b+2,2 df+1,df+2 T! b+2,2,1+2",
+     "raw": "EWGF ⏵ (short dash)  b+2,2 ⏵ df+1,df+2 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,f+3",
+      "ws+2",
+      "CH df+2"
+     ],
+     "route": "f,n,d,df+1+2 T! (1,2),4,3 (short dash) b+2,2,1+2",
+     "raw": "f,n,d,df+1+2 T! ⏵ (1,2),4,3 ⏵ (short dash)  b+2,2,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f+4"
+     ],
+     "route": "df+3,2,1 (hold) T! b+2,2,1+2",
+     "raw": "df+3,2,1 (hold) T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1,2",
+      "LOW PARRY"
+     ],
+     "route": "ws+1+2 b+2,2 b+2,2,1+2",
+     "raw": "ws+1+2 ⏵ b+2,2 ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+1+2"
+     ],
+     "route": "ws+1+2 b+2,2 df+1,df+2 T! b+2,2,1+2",
+     "raw": "ws+1+2 ⏵ b+2,2 ⏵ df+1,df+2 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (1,2,4),3"
+     ],
+     "route": "f,n,d,df+1+2 T! (1,2),4,3 (short dash) b+2,2,1+2",
+     "raw": "f,n,d,df+1+2 T! ⏵ (1,2),4,3 ⏵ (short dash)  b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (df+1),df+2"
+     ],
+     "route": "EWGF (short dash) b+2,2 df+1,df+2 T! b+2,2,1+2",
+     "raw": "EWGF ⏵ (short dash)  b+2,2 ⏵ df+1,df+2 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (2),2",
+      "CH sidestep 3"
+     ],
+     "route": "(dash) df+3,2,1 T! b+2,2,1+2",
+     "raw": "(dash)  df+3,2,1 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+4~F",
+      "heat on f,f+2~F",
+      "heat on b+1+2~F",
+      "heat on df+1,2~F"
+     ],
+     "route": "EWGF EWGF b+2,2 df+1,2 T! b+2,2,1+2",
+     "raw": "EWGF ⏵ EWGF ⏵ b+2,2 ⏵ df+1,2 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on sidestep 2"
+     ],
+     "route": "u+1+2 (dash) df+3,2,1 T! b+2,2,1+2",
+     "raw": "u+1+2 ⏵ (dash)  df+3,2,1 T! ⏵ b+2,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "df+1,df+2 T! df+3+4,1,2",
+     "raw": "df+1,df+2 T! ⏵ df+3+4,1,2"
+    }
+   ]
+  },
+  "king": {
+   "gid": "888951708",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "ws+1+2",
+      "FC.df+2"
+     ],
+     "route": "f+1+4 df+4,3 b+1,2 T! (3+4),3 f,f,f+2+4",
+     "raw": "f+1+4 ⏵ df+4,3 ⏵ b+1,2 T! ⏵ (3+4),3 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "easier alternative"
+     ],
+     "route": "f+1+4 df+4,3 b+1,2 T! f,f,f+2+4",
+     "raw": "f+1+4 ⏵ df+4,3 ⏵ b+1,2 T! ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH df+2,1"
+     ],
+     "route": "df+4,3 b+1,2 T! (3+4),3 f+2+3",
+     "raw": "df+4,3 ⏵ b+1,2 T! ⏵ (3+4),3 ⏵ f+2+3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "JGS 1 (powered)",
+      "LOW PARRY"
+     ],
+     "route": "df+4,3 b+1,2 T! (dash, then sidewalk right) 1 f,f,f+2+4",
+     "raw": "df+4,3 ⏵ b+1,2 T! ⏵ (dash, then sidewalk right)  1 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "JAG.1"
+     ],
+     "route": "(sidestep right) f+3 df+4,3 b+1,2 T! (3+4),3 f,f,f+2+4",
+     "raw": "(sidestep right) f+3 ⏵ df+4,3 ⏵ b+1,2 T! ⏵ (3+4),3 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+2",
+      "d+1+2",
+      "u+1+2",
+      "(b+2),1+2",
+      "(f+2),d+1,2",
+      "CH BT.3",
+      "CH f,n,d,DF+4"
+     ],
+     "route": "df+4,3 f,f+3 b+1,2 T! (3+4),3 f,f,f+2+4",
+     "raw": "df+4,3 ⏵ f,f+3 ⏵ b+1,2 T! ⏵ (3+4),3 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,n,d,DF+1+2"
+     ],
+     "route": "f+1+2 df+4,3 b+1,2 T! (3+4),3 f,f,f+2+4",
+     "raw": "f+1+2 ⏵ df+4,3 ⏵ b+1,2 T! ⏵ (3+4),3 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f+2,1~F",
+      "heat on f+2+3~F",
+      "heat on (db+1+2),2~F"
+     ],
+     "route": "b+2,4 2 f+1+2 df+4,3 b+1,2 T! (3+4),3 f,f,f+2+4",
+     "raw": "b+2,4 ⏵ 2 ⏵ f+1+2 ⏵ df+4,3 ⏵ b+1,2 T! ⏵  (3+4),3 ⏵ f,f,f+2+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f,f+4 T! 3,2,2 (hold last input)",
+     "raw": "f,f+4 T! ⏵ 3,2,2 (hold last input)"
+    }
+   ]
+  },
+  "kuma": {
+   "gid": "1300144693",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,1",
+      "b+3+4",
+      "f,f+2",
+      "CH b,f+2"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3",
+      "ws+2"
+     ],
+     "route": "b+2,1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "b+2,1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ROLL.2",
+      "CH db+4",
+      "CH 1,1,1",
+      "LOW PARRY"
+     ],
+     "route": "(dash) u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(dash)  u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+1+2"
+     ],
+     "route": "HBS.d+1+2 HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "HBS d+1+2 ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "HBS.df+2",
+      "CH uf+2"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(2,1),2",
+      "(qcf+2),2",
+      "ROLL.1+2",
+      "b+1+4~F,F",
+      "HBS.(1),2 (full hold)"
+     ],
+     "route": "ws+1,2 (short hold) T! b+2,1,(3+4) HBS.d+1+2 HBS.1,2",
+     "raw": "ws+1,2 (short hold) T! ⏵ b+2,1,(3+4) ⏵ HBS d+1+2 ⏵  HBS 1,2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "uf+3,4"
+     ],
+     "route": "db+1+2 df+2,1",
+     "raw": "db+1+2 ⏵ df+2,1"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "f+1+2",
+      "HBS.1+2"
+     ],
+     "route": "db+3 d+1+2",
+     "raw": "db+3 ⏵ d+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "SIT.2",
+      "HBS.d+1+2~U"
+     ],
+     "route": "(dash) u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(dash)  u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+1+2,1+2"
+     ],
+     "route": "(3+4) HBS.df+1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(3+4) HBS df+1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+1+2~F",
+      "heat on f,f,f+1+2~F",
+      "heat on HBS.d+1+2~F"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on df+2+3 (or f,n,d,df+2)"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "b+2,1 d+1+2",
+     "raw": "b+2,1 ⏵ d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "b+3+4 T! b+2,1 d+1+2",
+     "raw": "b+3+4 T! ⏵ b+2,1 ⏵ d+1+2"
+    }
+   ]
+  },
+  "lars": {
+   "gid": "704056810",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+1+2"
+     ],
+     "route": "df+3~DF DEN.2 f+2,1 SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "df+3~DF DEN 2 ⏵ f+2,1 SEN 1+2 T!⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "f,b+2,1",
+      "CH f,f+1+2",
+      "CH FC.df+2",
+      "CH DEN.2"
+     ],
+     "route": "DEN.2 df+3~DF DEN.2 f+2,1 SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "DEN 2 ⏵ df+3~DF DEN 2 ⏵ f+2,1 SEN 1+2 T!⏵  f+2,1 SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1"
+     ],
+     "route": "uf+3 FC.df+2 db+2~F SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "uf+3 ⏵ FC df+2 ⏵ db+2~F SEN 1+2 T! ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1~F"
+     ],
+     "route": "SEN.3 df+3,DF DEN.2 f+2,1 SEN.1+2 f+2,1 SEN.3+4",
+     "raw": "SEN 3 ⏵ df+3,DF DEN 2 ⏵ f+2,1 SEN 1+2 ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "FC.df+2 db+2~F SEN.1+2 T! df+3~DF DEN.2,u+4",
+     "raw": "FC df+2 ⏵ db+2~F SEN 1+2 T! ⏵ df+3~DF DEN 2,u+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+3~D"
+     ],
+     "route": "LEN.2 f+3,2 2 f,f+4,2~F DEN.1 b+3~F SEN.3+4",
+     "raw": "LEN 2 ⏵ f+3,2 ⏵ 2 ⏵ f,f+4,2~F DEN 1 ⏵ b+3~F SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH db+4"
+     ],
+     "route": "FC.df+2 db+2,1 f+2,1 SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "FC df+2 ⏵ db+2,1 ⏵ f+2,1 SEN 1+2 T! ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "DEN.2 df+3,DF DEN.2 f+2,1 SEN.3+4",
+     "raw": "DEN 2 ⏵ df+3,DF DEN 2 ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "SEN.3"
+     ],
+     "route": "df+3~DF DEN.2 f+2,1 SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "df+3~DF DEN 2 ⏵ f+2,1 SEN 1+2 T!⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (b+2),1",
+      "CH (f+1,2),3"
+     ],
+     "route": "DEN.2 df+3~DF DEN.2 f+2,1 SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "DEN 2 ⏵ df+3~DF DEN 2 ⏵ f+2,1 SEN 1+2 T!⏵  f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "DEN.1+2",
+      "CH SEN.2"
+     ],
+     "route": "DEN.2 df+3~DF DEN.2 f+2,1 SEN.3+4",
+     "raw": "DEN 2 ⏵ df+3~DF DEN 2 ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+2"
+     ],
+     "route": "uf+3 FC.df+2 db+2~F SEN.1+2 T! f+2,1 SEN.3+4",
+     "raw": "uf+3 ⏵ FC df+2 ⏵ db+2~F SEN 1+2 T! ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+2~F"
+     ],
+     "route": "SEN.3 df+3,DF DEN.2 f+2,1 SEN.1+2 f+2,1 SEN.3+4",
+     "raw": "SEN 3 ⏵ df+3,DF DEN 2 ⏵ f+2,1 SEN 1+2 ⏵ f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash 3+4~F",
+      "heat dash SEN.1~F",
+      "heat dash DEN.1,2~F"
+     ],
+     "route": "df+3~DF DEN.2 df+3~DF DEN.2 f+1,2,3 DEN.1+2 T! (wait) f+2,1 SEN.3+4",
+     "raw": "df+3~DF DEN 2 ⏵ df+3~DF DEN 2 ⏵ f+1,2,3 DEN 1+2 T! ⏵ (wait) f+2,1 SEN 3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "during heat LEN.2"
+     ],
+     "route": "DEN.2 df+3~DF DEN.2 df+1 b+3~F SEN.1",
+     "raw": "DEN 2 ⏵ df+3~DF DEN 2 ⏵ df+1 ⏵ b+3~F SEN 1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "f,f,f+2+4 f+1+4",
+     "raw": "f,f,f+2+4 ⏵ f+1+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "b+2,3 T! f,f,f+2+4 f+1+4",
+     "raw": "b+2,3 T! ⏵ f,f,f+2+4 ⏵ f+1+4"
+    }
+   ]
+  },
+  "law": {
+   "gid": "2052536430",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws+2",
+      "uf,n,4",
+      "CH f+1+2"
+     ],
+     "route": "4,u+3 f,f+4 2 f,f+2,3 T! 4,3~F DSS.f+4",
+     "raw": "4,u+3 ⏵ f,f+4 ⏵ 2 ⏵ f,f+2,3 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "advanced staple"
+     ],
+     "route": "4,u+3 (dash) 4,3~F uf+2 (dash) 1+2 T! 4,3~F DSS.4",
+     "raw": "4,u+3 ⏵ (dash) 4,3~F ⏵ uf+2 ⏵ (dash) 1+2 T! ⏵  4,3~F ⏵ DSS 4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH 1+2 (or heat on 1+2)"
+     ],
+     "route": "4,u+3 b+2,3,4~F DSS.f+4",
+     "raw": "4,u+3 ⏵ b+2,3,4~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "sidestep 3+4",
+      "CH f+3+4",
+      "CH (d+1),3",
+      "CH DSS.f+2",
+      "f,f+3+4 (throw)"
+     ],
+     "route": "4,u+3 f,f+4 2 f,f+2,3 T! 4,3~F DSS.f+4",
+     "raw": "4,u+3 ⏵ f,f+4 ⏵ 2 ⏵ f,f+2,3 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+4,3",
+      "CH ws+4,3"
+     ],
+     "route": "4,u+3 b+2,3,4~F DSS.f+4",
+     "raw": "4,u+3 ⏵ b+2,3,4~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(b+2,3),4",
+      "CH f+[ 2~1 ]",
+      "CH BT.2"
+     ],
+     "route": "1+2 T! (sidestep left) (d+1+2) DSS.3 b+2,3,4~F DSS.f+4",
+     "raw": "1+2 T! ⏵ (sidestep left) ⏵ (d+1+2) DSS 3 ⏵  b+2,3,4~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "UF+4"
+     ],
+     "route": "uf+1 4,u+3 f,f+4 1+2 T! 4,3~F DSS.f+4",
+     "raw": "uf+1 ⏵ 4,u+3 ⏵ f,f+4 ⏵ 1+2 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "UF+4,3"
+     ],
+     "route": "(sidestep left) (d+1+2) DSS.3 b+2,3,4~F DSS.f+4",
+     "raw": "(sidestep left) ⏵ (d+1+2) DSS 3 ⏵ b+2,3,4~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,3~F"
+     ],
+     "route": "DSS.f+2 df+1,2 1+2 T! 4,3~F DSS.f+4",
+     "raw": "DSS f+2 ⏵ df+1,2 ⏵ 1+2 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,3,4~F"
+     ],
+     "route": "uf+2 f,f+4 1+2 T! 4,3~F DSS.f+4",
+     "raw": "uf+2 ⏵ f,f+4 ⏵ 1+2 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,u+3"
+     ],
+     "route": "2 f,f+4 1+2 T! 4,3~F DSS.f+4",
+     "raw": "2 ⏵ f,f+4 ⏵ 1+2 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on uf+3~F",
+      "heat on CH 1,1,1~F",
+      "heat on CH b+1,2,2~F",
+      "heat on DSS.f+3"
+     ],
+     "route": "4,u+3 df+1,2 df+1,2 f,f+4 1+2 T! 4,3~F DSS.f+4",
+     "raw": "4,u+3 ⏵ df+1,2 ⏵ df+1,2 ⏵ f,f+4 ⏵ 1+2 T! ⏵ 4,3~F ⏵ DSS f+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "4,3~F DSS.f+3",
+     "raw": "4,3~F ⏵ DSS f+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "1+2 4,3~F DSS.f+3",
+     "raw": "1+2 ⏵ 4,3~F ⏵ DSS f+3"
+    }
+   ]
+  },
+  "lee": {
+   "gid": "909199485",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2,3"
+     ],
+     "route": "b+2,4,3~F b+2~F f+2,1",
+     "raw": "b+2,4,3~F ⏵ b+2~F ⏵ f+2,1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4"
+     ],
+     "route": "4,u+3 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "4,u+3 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH b+4,(3)"
+     ],
+     "route": "(f,n) b+3,3~F b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(f,n)  b+3,3~F ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH d+3,(4)",
+      "CH 1+2,(3+4)"
+     ],
+     "route": "(wait) b+3,3~F b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(wait)  b+3,3~F ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+3,3,3,3,3,4",
+      "LOW PARRY"
+     ],
+     "route": "d+2 b+2,4,3~F b+2~F f+2,1",
+     "raw": "d+2 ⏵ b+2,4,3~F ⏵ b+2~F ⏵ f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "FC.uf+4"
+     ],
+     "route": "ws+2,4 (dash) d+2 b+2,4,3~F f+2,1",
+     "raw": "ws+2,4 ⏵ (dash) d+2 ⏵ b+2,4,3~F ⏵ f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcf+4"
+     ],
+     "route": "(d+4),4,u+3 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(d+4),4,u+3 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (2,1),3",
+      "CH (f+4),3"
+     ],
+     "route": "(dash) 4,u+3 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(dash) 4,u+3 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3,4"
+     ],
+     "route": "b+3,3~F b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "b+3,3~F ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4",
+      "b,b+4"
+     ],
+     "route": "(dash) b+3,3~F b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(dash)  b+3,3~F ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,n,3,4",
+      "CH (2,1),1"
+     ],
+     "route": "(wait) b+3,3~F b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(wait)  b+3,3~F ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,4:4 (perfect)"
+     ],
+     "route": "(dash) b+3,3~F f+4,1 T! b+1:1+2",
+     "raw": "(dash) b+3,3~F ⏵ f+4,1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,f+2",
+      "CH ub+3"
+     ],
+     "route": "b,b+4 (dash) d+2 b+2,4,3~F f+2,1",
+     "raw": "b,b+4 ⏵ (dash) d+2 ⏵ b+2,4,3~F ⏵ f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (1,2),4"
+     ],
+     "route": "d+2 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "d+2 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "HMS.2"
+     ],
+     "route": "(dash) 4,u+3 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "(dash) 4,u+3 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH HMS.4"
+     ],
+     "route": "b,b+4 (dash) d+2 b+2,4,3~F f+2,1",
+     "raw": "b,b+4 ⏵ (dash) d+2 ⏵ b+2,4,3~F ⏵ f+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH HMS.(1),4"
+     ],
+     "route": "d+2 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "d+2 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+3~F",
+      "heat on HMS.1,1,1~F",
+      "heat on CH df+3,2,3~F"
+     ],
+     "route": "4,u+3 4,u+3 b+2,4,3~F f+4:1 T! b+1:1+2",
+     "raw": "4,u+3 ⏵ 4,u+3 ⏵ b+2,4,3~F ⏵ f+4:1 T! ⏵ b+1:1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "df+1 f+4,3 d+3",
+     "raw": "df+1 ⏵ f+4,3 ⏵ d+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f+4,1 T! f+4,3 d+3",
+     "raw": "f+4,1 T! ⏵ f+4,3 ⏵ d+3"
+    }
+   ]
+  },
+  "leo": {
+   "gid": "1978796608",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "uf,n,4",
+      "ws+2",
+      "CH d+2"
+     ],
+     "route": "f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "db+3"
+     ],
+     "route": "f+3 f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+3 ⏵ f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH df+2+3"
+     ],
+     "route": "ws+3 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "ws+3 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "4 b+1,4~DF ws+3 f+4~DF 2,4",
+     "raw": "4 ⏵ b+1,4~DF ⏵ ws+3 ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4,3"
+     ],
+     "route": "b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (f,f+4,3),4"
+     ],
+     "route": "qcf+3 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "qcf+3 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH db+4",
+      "CH f+1+2"
+     ],
+     "route": "qcf+3 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "qcf+3 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "BOK.2"
+     ],
+     "route": "f+3 f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+3 ⏵ f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH ub+3"
+     ],
+     "route": "f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "FC.df+3",
+      "uf+2,1",
+      "(df+1),2",
+      "CH df+2+3",
+      "CH 4",
+      "CH (df+1),2",
+      "CH (b+4),1 NEW",
+      "CH (ws+3,1),2",
+      "BOK.3",
+      "CH (f+2),2",
+      "f,f+3~D"
+     ],
+     "route": "d+1+2 BOK.2",
+     "raw": "d+1+2 ⏵ BOK 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "BOK.1,2",
+      "CH f+3+4"
+     ],
+     "route": "4 b+1,4~DF ws+3 f+4~DF 2,4",
+     "raw": "4 ⏵ b+1,4~DF ⏵ ws+3 ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "KNK.3"
+     ],
+     "route": "f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "KNK.3,4"
+     ],
+     "route": "4 b+1,4~DF ws+3 f+4~DF 2,4",
+     "raw": "4 ⏵ b+1,4~DF ⏵ ws+3 ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH KNK.2"
+     ],
+     "route": "qcf+3 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "qcf+3 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH KNK.4~DF"
+     ],
+     "route": "ws+3 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "ws+3 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH KNK.1+2"
+     ],
+     "route": "f+3 f+2 b+1,1+2~D BOK.1,2 T! f+4~DF 2,4",
+     "raw": "f+3 ⏵ f+2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ f+4~DF 2,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash db+2,4~F",
+      "heat dash b+2,1+2~F",
+      "heat dash KNK.1,2~F"
+     ],
+     "route": "b+1,1+2 2 b+1,1+2~D BOK.1,2 T! b+4,[ 1~4 ]~DF 2,4",
+     "raw": "b+1,1+2 ⏵ 2 ⏵ b+1,1+2~D ⏵ BOK 1,2 T! ⏵ b+4,[ 1~4 ]~DF 2,4"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH f+3~D",
+      "CH d+1 NEW",
+      "CH d+1~D NEW",
+      "CH f+4",
+      "CH qcf+1",
+      "CH b+1+4",
+      "ub+1 (parry) 4"
+     ],
+     "route": "BOK.2 df+4",
+     "raw": "BOK 2 ⏵ df+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "b+1,4 KNK.3,4 T! ws+1,4,1",
+     "raw": "b+1,4 ⏵ KNK 3,4 T! ⏵ ws+1,4,1"
+    }
+   ]
+  },
+  "leroy": {
+   "gid": "1311246375",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,1+2 (against Kuma and Panda)"
+     ],
+     "route": "f,f+3 2,2 f+3,1+2,4 T! f,f+3 b+3+4",
+     "raw": "f,f+3 ⏵ 2,2 ⏵ f+3,1+2,4 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,1+2",
+      "ws+2",
+      "f,f+2,2",
+      "CH b+1+2"
+     ],
+     "route": "qcf+2 2,2 f+3,1+2,4 T! f,f+3 b+3+4",
+     "raw": "qcf+2 ⏵ 2,2 ⏵ f+3,1+2,4 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "df+4,3 d+3,2 HRM.2,3 T! f,f+3 b+3+4",
+     "raw": "df+4,3 ⏵ d+3,2 ⏵ HRM 2,3 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "(once per match) f+2+3"
+     ],
+     "route": "f,f+3 2,2 f+3,1+2,4 T! f,f+3 b+3+4",
+     "raw": "f,f+3 ⏵ 2,2 ⏵ f+3,1+2,4 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "(once per match) db+2+3",
+      "df+3+4",
+      "LOW PARRY"
+     ],
+     "route": "f,f+3 2,2 uf+3+4,1+2",
+     "raw": "f,f+3 ⏵ 2,2 ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcf+2",
+      "CH HRM.b+4"
+     ],
+     "route": "df+4,3 d+3,2 HRM.2,3 T! f,f+3 b+3+4",
+     "raw": "df+4,3 ⏵ d+3,2 ⏵ HRM 2,3 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "HRM.f+4",
+      "CH (f,f+4),2",
+      "CH FC.df+4,1",
+      "CH HRM.b+1",
+      "CH HRM.(1),2"
+     ],
+     "route": "qcf+2 2,2 f+3,1+2,4 T! f,f+3 b+3+4",
+     "raw": "qcf+2 ⏵ 2,2 ⏵ f+3,1+2,4 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (db+1),3"
+     ],
+     "route": "d+3,2 HRM.2,3 T! f,f+3 b+3+4",
+     "raw": "d+3,2 ⏵ HRM 2,3 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (db+1),1+2"
+     ],
+     "route": "(dash) df+4,3 d+3,2 HRM.2,3 T! f,f+3 b+3+4",
+     "raw": "(dash) df+4,3 ⏵ d+3,2 ⏵ HRM 2,3 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f+4,4~F",
+      "heat on d+1+2~F",
+      "heat on db+1+2~F",
+      "heat on HRM.1+2,1~F"
+     ],
+     "route": "qcf+2 df+4,3 f+2,3,4 HRM.2,3 T! f,f+3 b+3+4",
+     "raw": "qcf+2 ⏵ df+4,3 ⏵ f+2,3,4 ⏵ HRM 2,3 T! ⏵ f,f+3 ⏵ b+3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "2 uf+3+4,1+2",
+     "raw": "2 ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "df+3+4 T! 2 uf+3+4,1+2",
+     "raw": "df+3+4 T! ⏵ 2 ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "CH (f+2,3),4"
+     ],
+     "route": "HRM.f+4 db+2,1+2",
+     "raw": "HRM f+4 ⏵ db+2,1+2"
+    }
+   ]
+  },
+  "lidia": {
+   "gid": "1468789295",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "(hold back) f,f,f+2 HRS.2 qcf+2,2,1+2",
+     "raw": "(hold back) f,f,f+2 ⏵ HRS 2 ⏵ qcf+2,2,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "3,2",
+      "ws+2",
+      "f,f+3",
+      "CH (db+1+2),2"
+     ],
+     "route": "f,f+2 HRS.2 db+2 qcf+1+2,2~B T! b+3,4,qcf+1+2",
+     "raw": "f,f+2 ⏵ HRS 2 ⏵ db+2 ⏵ qcf+1+2,2~B T! ⏵ b+3,4,qcf+1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH HRS.1+2"
+     ],
+     "route": "df+[ 4~3 ] f,f+2 HRS.2 qcf+2,2,1+2",
+     "raw": "df+[ 4~3 ] ⏵ f,f+2 ⏵ HRS 2 ⏵ qcf+2,2,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "f,f,f+2 HRS.2 qcf+2,2,1+2",
+     "raw": "f,f,f+2 ⏵ HRS 2 ⏵ qcf+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "df+[ 4~3 ]"
+     ],
+     "route": "(b+3+4~F) WLF.2 f,f+2 HRS.2 db+1+2,2~B T! b+3,4,1+2",
+     "raw": "(b+3+4~F) WLF 2 ⏵ f,f+2 ⏵ HRS 2 ⏵ db+1+2,2~B T! ⏵  b+3,4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "1+2 (full hold)",
+      "WLF.1 (full hold)",
+      "CH (b+2),3",
+      "CH (df+1),3"
+     ],
+     "route": "f,f+2 HRS.2 db+2 qcf+1+2,2~B T! b+3,4,qcf+1+2",
+     "raw": "f,f+2 ⏵ HRS 2 ⏵ db+2 ⏵ qcf+1+2,2~B T! ⏵ b+3,4,qcf+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH HRS.4",
+      "CH CAT.4"
+     ],
+     "route": "WLF.2 f,f+2 HRS.2 db+1+2,2~B T! b+3,4,1+2",
+     "raw": "WLF 2 ⏵ f,f+2 ⏵ HRS 2 ⏵ db+1+2,2~B T! ⏵ b+3,4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH ws+3",
+      "CH CAT.(2),2"
+     ],
+     "route": "df+[ 4~3 ] f,f+2 HRS.2 qcf+2,2,1+2",
+     "raw": "df+[ 4~3 ] ⏵ f,f+2 ⏵ HRS 2 ⏵ qcf+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (f+4,3),4"
+     ],
+     "route": "f,f+3 T! f,f+2 HRS.2 qcf+2,2,1+2",
+     "raw": "f,f+3 T! ⏵ f,f+2 ⏵ HRS 2 ⏵ qcf+2,2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on HAE.1"
+     ],
+     "route": "df+[ 4~3 ] f,f+2 HRS.2 qcf+1+2,2~B T! b+3,4,1+2",
+     "raw": "df+[ 4~3 ] ⏵ f,f+2 ⏵ HRS 2 ⏵ qcf+1+2,2~B T! ⏵ b+3,4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+1~F",
+      "heat on HRS.2~F",
+      "heat on CAT.3~F"
+     ],
+     "route": "f,f,f+2 HRS.2 db+2 f,f+2 HRS.2 db+1+2,2~B T! b+3,4,1+2",
+     "raw": "f,f,f+2 ⏵ HRS 2 ⏵ db+2 ⏵ f,f+2 ⏵ HRS 2 ⏵ db+1+2,2~B T! ⏵ b+3,4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "f,f+3 T! b+3,4,qcf+1+2 (delay last hit)",
+     "raw": "f,f+3 T! ⏵ b+3,4,qcf+1+2 (delay last hit)"
+    }
+   ]
+  },
+  "lili": {
+   "gid": "230377724",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+3"
+     ],
+     "route": "f+2,3 f,f+3~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "f+2,3 ⏵ f,f+3~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2",
+      "d+3+4"
+     ],
+     "route": "FC.df+1 f+2,3 f,f+3~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "FC df+1 ⏵ f+2,3 ⏵ f,f+3~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵  qcf+1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+3"
+     ],
+     "route": "(run) f+2,3 f,f+3~F 3+4 f,f,f+1+2 qcf+1,4",
+     "raw": "(run) f+2,3 ⏵ f,f+3~F 3+4 ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "u+3+4",
+      "CH f+4"
+     ],
+     "route": "qcf+3 T! u+3,3~F 3+4 f,f,f+1+2 qcf+1,4",
+     "raw": "qcf+3 T! ⏵ u+3,3~F 3+4 ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+3+4"
+     ],
+     "route": "BT.3,4 b+1~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "BT 3,4 ⏵ b+1~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "FC.df+1 f+2,3 f,f+3~F 3+4 f,f,f+1+2 qcf+1,4",
+     "raw": "FC df+1 ⏵ f+2,3 ⏵ f,f+3~F 3+4 ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "BT.1+2"
+     ],
+     "route": "db+1 ws+1,2~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "db+1 ⏵ ws+1,2~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+2",
+      "(f+3+4),3",
+      "CH FC.df+3"
+     ],
+     "route": "d+1~D ws+1,2~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "d+1~D ⏵ ws+1,2~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (ws+1,2),4"
+     ],
+     "route": "f+2,3 f,f+3~F 3+4 qcf+3 T! f,f,f+1+2 qcf+1,4",
+     "raw": "f+2,3 ⏵ f,f+3~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (1,1),3",
+      "CH (qcf+1),2"
+     ],
+     "route": "qcf+3 T! u+3,3~F 3+4 f,f,f+1+2 qcf+1,4",
+     "raw": "qcf+3 T! ⏵ u+3,3~F 3+4 ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+4",
+      "CH FYR.3",
+      "CH db+3"
+     ],
+     "route": "FC.df+1 f+2,3 f,f+3~F 3+4 f,f,f+1+2 qcf+1,4",
+     "raw": "FC df+1 ⏵ f+2,3 ⏵ f,f+3~F 3+4 ⏵ f,f,f+1+2 ⏵ qcf+1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on 3,1~F",
+      "heat on 3+4~F",
+      "heat on FYR.2~F"
+     ],
+     "route": "f+2,3 f+2,3 f,f+3~F 3+4 qcf+3 T! f,f,f+1+2 qcf+3",
+     "raw": "f+2,3 ⏵ f+2,3 ⏵ f,f+3~F 3+4 ⏵ qcf+3 T! ⏵ f,f,f+1+2 ⏵ qcf+3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on qcf+2,1~F"
+     ],
+     "route": "FC.df+1 f+2,3 f+2,3 f,f+3~F 3+4 qcf+3 T! f,f,f+1+2 qcf+3",
+     "raw": "FC df+1 ⏵ f+2,3 ⏵ f+2,3 ⏵ f,f+3~F 3+4 ⏵ qcf+3 T! ⏵  f,f,f+1+2 ⏵ qcf+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "ws+1,2~F DEW.3",
+     "raw": "ws+1,2~F ⏵ DEW 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "qcf+3 T! ws+1,2~F DEW.3",
+     "raw": "qcf+3 T! ⏵ ws+1,2~F ⏵ DEW 3"
+    }
+   ]
+  },
+  "miary-zo": {
+   "gid": "1211853943",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "ws+2",
+      "d+1+2",
+      "CH df+4",
+      "CH sidestep.2"
+     ],
+     "route": "u+3 df+4~F MOR.u+1+2 4,4 BAO.2 T! (b+3),4,2~F MOR.1,2",
+     "raw": "u+3 ⏵ df+4~F MOR.u+1+2 ⏵ 4,4 ⏵ BAO 2 T! ⏵ (b+3),4,2~F MOR 1,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4,4",
+      "LOW PARRY"
+     ],
+     "route": "(sidestep right) df+4~F MOR.u+1+2 b+3,4,2~F MOR.1,2",
+     "raw": "(sidestep right)  df+4~F MOR.u+1+2 ⏵ b+3,4,2~F MOR.1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+3+4,2",
+      "CH db+3",
+      "CH ws+3"
+     ],
+     "route": "u+3 df+4~F MOR.u+1+2 4,4 BAO.2 T! (b+3),4,2~F MOR.1,2",
+     "raw": "u+3 ⏵ df+4~F MOR.u+1+2 ⏵ 4,4 ⏵ BAO 2 T! ⏵ (b+3),4,2~F MOR 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3+4"
+     ],
+     "route": "df+1 df+4~F MOR.u+1+2 4,4 BAO.2 T! (b+3),4,2~F MOR.1,2",
+     "raw": "df+1 ⏵ df+4~F MOR.u+1+2 ⏵ 4,4 ⏵ BAO 2 T! ⏵ (b+3),4,2~F MOR 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH u+4",
+      "CH (df+1),4",
+      "CH MMO.1+2"
+     ],
+     "route": "BAO.2 T! (sidestep right) df+4~F MOR.u+1+2 b+3,4,2~F MOR.1,2",
+     "raw": "BAO.2 T! ⏵ (sidestep right) df+4~F MOR.u+1+2 ⏵  b+3,4,2~F MOR.1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "BHM.2",
+      "CH (2),2",
+      "CH (1,1),2",
+      "CH MMO.2"
+     ],
+     "route": "(sidestep right) f,f+3 df+4~F MOR.u+1+2 b+3,4,2~F MOR.1,2",
+     "raw": "(sidestep right)  f,f+3 ⏵ df+4~F MOR.u+1+2 ⏵  b+3,4,2~F MOR.1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH b+1,4",
+      "CH BHM.4"
+     ],
+     "route": "(sidestep right) df+4~F MOR.u+1+2 b+3,4,2~F MOR.1,2",
+     "raw": "(sidestep right)  df+4~F MOR.u+1+2 ⏵ b+3,4,2~F MOR.1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on 1+2~F",
+      "heat on MMO.1,2~F",
+      "heat on BMH.3~F"
+     ],
+     "route": "db+3 ws+4 df+4~F MOR.u+1+2 b+3,4,2~F MOR.1,4 BAO.2 T! uf+1",
+     "raw": "db+3 ⏵ ws+4 ⏵ df+4~F MOR.u+1+2 ⏵ b+3,4,2~F MOR.1,4 ⏵ BAO.2 T! ⏵ uf+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on u+3,2"
+     ],
+     "route": "(sidestep right) f,f+3 df+4~F MMO.u+1+2 b+3,4,2~F MMO.1,2",
+     "raw": "(sidestep right)  f,f+3 ⏵ df+4~F MMO.u+1+2 ⏵  b+3,4,2~F MMO.1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1 df+1 f+1+2,1+2,3+4",
+     "raw": "1 ⏵ df+1 ⏵ f+1+2,1+2,3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "d+1+2 df+1,1 MOR.2",
+     "raw": "d+1+2 ⏵ df+1,1 MOR.2"
+    }
+   ]
+  },
+  "nina": {
+   "gid": "89269959",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "b+1+4"
+     ],
+     "route": "uf+4 uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+4 ⏵ uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH qcf+1"
+     ],
+     "route": "(dash) uf+4 uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "(dash)  uf+4 ⏵ uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+1"
+     ],
+     "route": "ws+1 uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "ws+1 ⏵ uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2"
+     ],
+     "route": "uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+2,1"
+     ],
+     "route": "db+2 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "db+2 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH qcf+3"
+     ],
+     "route": "df+3,2 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "df+3,2 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH sidestep 4,2",
+      "LOW PARRY"
+     ],
+     "route": "db+2 df+3,2~F ws+1 qcf+4,3,1,+2",
+     "raw": "db+2 ⏵ df+3,2~F ⏵ ws+1 ⏵ qcf+4,3,1,+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "ws+3+4 ― db+3+4"
+     ],
+     "route": "uf+4 uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+4 ⏵ uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "b+1+4 uf+4 uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "b+1+4 ⏵ uf+4 ⏵ uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f+3",
+      "CH db+2",
+      "CH (1,2),4",
+      "CH (df+1,2),4"
+     ],
+     "route": "db+2 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "db+2 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcb+4",
+      "CH (b+1),4"
+     ],
+     "route": "db+2 df+3,2~F ws+1 qcf+4,3,1,+2",
+     "raw": "db+2 ⏵ df+3,2~F ⏵ ws+1 ⏵ qcf+4,3,1,+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,f+3"
+     ],
+     "route": "qcf+1 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "qcf+1 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+3+4"
+     ],
+     "route": "uf+3 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+3 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "sidestep 2"
+     ],
+     "route": "uf+4 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+4 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵ qcf+4,3,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash f+4,2~F",
+      "heat dash qcf+2~F",
+      "heat dash wr+1+2~F"
+     ],
+     "route": "uf+3 df+3,2~F ws+1 df+3,2 b+3+4,3 T! qcf+4,3,1+2",
+     "raw": "uf+3 ⏵ df+3,2~F ⏵ ws+1 ⏵ df+3,2 ⏵ b+3+4,3 T! ⏵  qcf+4,3,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "2 df+1,2,1+2",
+     "raw": "2 ⏵ df+1,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "AGAINST BEARS"
+     ],
+     "route": "df+3,2 df+1,2,1+2",
+     "raw": "df+3,2 ⏵ df+1,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "db+3+4 2 df+1,2,1+2",
+     "raw": "db+3+4 ⏵ 2 ⏵ df+1,2,1+2"
+    }
+   ]
+  },
+  "panda": {
+   "gid": "1253883386",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,1",
+      "b+3+4",
+      "f,f+2",
+      "CH b,f+2"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3",
+      "ws+2"
+     ],
+     "route": "b+2,1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "b+2,1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ROLL.2",
+      "CH db+4",
+      "CH 1,1,1",
+      "LOW PARRY"
+     ],
+     "route": "(dash) u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(dash)  u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+1+2"
+     ],
+     "route": "HBS.d+1+2 HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "HBS d+1+2 ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "HBS.df+2",
+      "CH uf+2"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(2,1),2",
+      "(qcf+2),2",
+      "ROLL.1+2",
+      "b+1+4~F,F",
+      "HBS.(1),2 (full hold)"
+     ],
+     "route": "ws+1,2 (short hold) T! b+2,1,(3+4) HBS.d+1+2 HBS.1,2",
+     "raw": "ws+1,2 (short hold) T! ⏵ b+2,1,(3+4) ⏵ HBS d+1+2 ⏵  HBS 1,2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "uf+3,4"
+     ],
+     "route": "db+1+2 df+2,1",
+     "raw": "db+1+2 ⏵ df+2,1"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "f+1+2",
+      "HBS.1+2"
+     ],
+     "route": "db+3 d+1+2",
+     "raw": "db+3 ⏵ d+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "SIT.2",
+      "HBS.d+1+2~U"
+     ],
+     "route": "(dash) u+1+2~D HBS.1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(dash)  u+1+2~D ⏵ HBS 1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+1+2,1+2"
+     ],
+     "route": "(3+4) HBS.df+1 b+2,1~D HBS.d+1+2 HBS.1,2",
+     "raw": "(3+4) HBS df+1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵ HBS 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on b+1+2~F",
+      "heat on f,f,f+1+2~F",
+      "heat on HBS.d+1+2~F"
+     ],
+     "route": "u+1+2~D HBS.1 b+2,1 b+2,1~D HBS.d+1+2 HBS.df+2 T! uf+2 b+1",
+     "raw": "u+1+2~D ⏵ HBS 1 ⏵ b+2,1 ⏵ b+2,1~D ⏵ HBS d+1+2 ⏵  HBS df+2 T! ⏵ uf+2 ⏵ b+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "b+2,1 d+1+2",
+     "raw": "b+2,1 ⏵ d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "b+3+4 T! b+2,1 d+1+2",
+     "raw": "b+3+4 T! ⏵ b+2,1 ⏵ d+1+2"
+    }
+   ]
+  },
+  "paul": {
+   "gid": "1982556343",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "CH db+2"
+     ],
+     "route": "4 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "4 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "b+3",
+      "ws+2"
+     ],
+     "route": "3 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "3 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH qcb+4"
+     ],
+     "route": "qcf+1 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "qcf+1 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3,4"
+     ],
+     "route": "df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "df+4 ⏵ 3,2~B backsway 1+2 T! ⏵ (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "qcf+1 df+4 d+4,2:1+2",
+     "raw": "qcf+1 ⏵ df+4 ⏵ d+4,2:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "ws+3 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "ws+3 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(f,f+2),2"
+     ],
+     "route": "3 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "3 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcf+1",
+      "CH (qcb+3,2),3"
+     ],
+     "route": "4 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "4 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcb+1+2",
+      "CH qcb+1",
+      "CH (b+1),2 (full hold)",
+      "CH (ws+3),2"
+     ],
+     "route": "qcf+1 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "qcf+1 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵  (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "qcf+1+2",
+      "DPD.df+1",
+      "CH qcf+3+4"
+     ],
+     "route": "qcf+1 df+4 d+4,2:1+2",
+     "raw": "qcf+1 ⏵ df+4 ⏵ d+4,2:1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (df+3),4"
+     ],
+     "route": "(dash) qcb+3,2,1 T! (df+3+4) DPD.df+1 qcf+2",
+     "raw": "(dash) qcb+3,2,1 T! ⏵ (df+3+4) DPD df+1 ⏵ qcf+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on uf+2~F",
+      "heat on qcf+2~F",
+      "heat on qcb+2~F"
+     ],
+     "route": "qcf+1 df+4 3,2 df+4 3,2~B backsway 1+2 T! (df+3+4) DPD.df+1 f,f,f+2",
+     "raw": "qcf+1 ⏵ df+4 ⏵ 3,2 ⏵ df+4 ⏵ 3,2~B  backsway 1+2 T! ⏵ (df+3+4) DPD df+1 ⏵ f,f,f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "3,2 d+1+2",
+     "raw": "3,2 ⏵ d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "qcf+3+4 T! 3,2 d+1+2",
+     "raw": "qcf+3+4 T! ⏵ 3,2 ⏵ d+1+2"
+    }
+   ]
+  },
+  "raven": {
+   "gid": "1970071769",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2,3"
+     ],
+     "route": "f,f+4 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "f,f+4 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "qcf+4"
+     ],
+     "route": "BT.f+3 f,f+4 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "BT f+3 ⏵ f,f+4 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,f+3",
+      "ws+1",
+      "CH ws+2"
+     ],
+     "route": "df+2,3 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "df+2,3 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f+4",
+      "ws+3,2",
+      "BT.d+3",
+      "LOW PARRY"
+     ],
+     "route": "f,f+4 4,1 BT.2,1~F 1,2",
+     "raw": "f,f+4 ⏵ 4,1 ⏵ BT 2,1~F 1,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "[ 3~4 ]"
+     ],
+     "route": "BT.3 db+2,1 b+2,4,2 T! b+2,4,2",
+     "raw": "BT 3 ⏵ db+2,1⏵ b+2,4,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3+4,4"
+     ],
+     "route": "db+2,1 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "db+2,1 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "uf+3",
+      "[ 4~3 ]",
+      "BT.f,f+3+4 (far)",
+      "BT.f,f+3+4 (close)"
+     ],
+     "route": "df+2,3 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "df+2,3 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH df+3"
+     ],
+     "route": "f,f+3 f,f+4 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "f,f+3 ⏵ f,f+4 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH SZN.4"
+     ],
+     "route": "f,f+4 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "f,f+4 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (3,3),4"
+     ],
+     "route": "f,f+3 db+2,1 b+2,4,2",
+     "raw": "f,f+3 ⏵ db+2,1 ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (b+2,2),3"
+     ],
+     "route": "4,1 BT.1 b+2,4,2 T! b+2,4,2",
+     "raw": "4,1 ⏵ BT 1 ⏵ b+2,4,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH qcf+1,3~4"
+     ],
+     "route": "SZN.3,2 T! db+2,1 b+2,4,2",
+     "raw": "SZN 3,2 T! ⏵ db+2,1 ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash 1+2~F",
+      "heat dash BT.4~F",
+      "heat dash SZN.2~F",
+      "heat dash ws+3+4~F"
+     ],
+     "route": "f,f+3 f,f+4 df+2,3 db+2,1~D SZN.3,2 T! b+2,4,2",
+     "raw": "f,f+3 ⏵ f,f+4 ⏵ df+2,3 ⏵ db+2,1~D SZN 3,2 T! ⏵ b+2,4,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "during heat f,f,f+3,4"
+     ],
+     "route": "b+3+4 f,f+3 db+2,1 b+2,4,2",
+     "raw": "b+3+4 ⏵ f,f+3 ⏵ db+2,1 ⏵ b+2,4,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "db+2,1 1+2",
+     "raw": "db+2,1 ⏵ 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "qcf+1,2 T! (b+3+4) BT.3+4 1,2,4",
+     "raw": "qcf+1,2 T! ⏵ (b+3+4) ⏵ BT 3+4 ⏵ 1,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "FOR DMG",
+      "WALL CARRY",
+      "WALL BREAK",
+      "FLOOR BREAK"
+     ],
+     "route": "SNZ 1+2 f,f+2",
+     "raw": "SNZ 1+2 ⏵ f,f+2"
+    }
+   ]
+  },
+  "reina": {
+   "gid": "646015324",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "EWGF.(f,n,d,df+2)"
+     ],
+     "route": "f,f+2~F SEN.3 df+2 df+1 f+2,3~F SEN.2 T! uf+3+4,1+2",
+     "raw": "f,f+2~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 2 T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "FC.df+4",
+      "CH (3),4 (and similar launchers)"
+     ],
+     "route": "(f+2),3~F SEN.3 df+2 df+1 f+2,3~F SEN.2 T! uf+3+4,1+2",
+     "raw": "(f+2),3~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 2 T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "easier alternative all above"
+     ],
+     "route": "b+4 T! f,f+3+4 df+2 df+1 f+2,3~F SEN.1,qcf+2",
+     "raw": "b+4 T! ⏵ f,f+3+4 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 1,qcf+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "CH b+4",
+      "LOW PARRY"
+     ],
+     "route": "f,f+2~F SEN.3 df+2 df+1 f+2,3~F SEN.1,qcf+2",
+     "raw": "f,f+2~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 1,qcf+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 3,2"
+     ],
+     "route": "f,f+3+4 df+2 df+1 f+2,3~F SEN.1,qcf+2",
+     "raw": "f,f+3+4 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 1,qcf+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,n,d,df+3"
+     ],
+     "route": "ws+3 df+1,1 f+2,3~F SEN.2 T! uf+3+4,1+2",
+     "raw": "ws+3 ⏵ df+1,1 ⏵ f+2,3~F ⏵ SEN 2 T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+3+4 (fully hold)",
+      "CH f,n,3",
+      "CH (f,n,d,df+4),4"
+     ],
+     "route": "f,f+2~F SEN.3 df+2 df+1 f+2,3~F SEN.2 T! uf+3+4,1+2",
+     "raw": "f,f+2~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 2 T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,f+3+4"
+     ],
+     "route": "(sidestep right) (f+2),3~F SEN.3 df+2 df+1 f+2,3~F SEN.2 T! uf+3+4,1+2",
+     "raw": "(sidestep right) (f+2),3~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵  f+2,3~F ⏵ SEN 2 T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on f,f+3~F",
+      "heat on WRA.2~F",
+      "heat on UNS.4~F"
+     ],
+     "route": "f,f+2~F SEN.3 df+2 df+1 f+2,3~F SEN.2T! uf+3+4,1+2",
+     "raw": "f,f+2~F ⏵ SEN 3 ⏵ df+2 ⏵ df+1 ⏵ f+2,3~F ⏵ SEN 2T! ⏵ uf+3+4,1+2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "f,f+2~F"
+     ],
+     "route": "Long range attack that can shift to SEN.for mindgames _can be hit-confirmed into f,f+2~F SEN.3",
+     "raw": "Long range attack that can shift to SEN for mindgames _can be hit-confirmed into f,f+2~F⏵SEN 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "df+1,1 1+2",
+     "raw": "df+1,1 ⏵ 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "b+4 T! df+1,1 1+2",
+     "raw": "b+4 T! ⏵ df+1,1 ⏵ 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY OPTIONS",
+      "FLOOR / WALL BREAK"
+     ],
+     "route": "After T!, follow with f,f,f+4 Heat Burst d+2,1+2",
+     "raw": "After T!, follow with f,f,f+4 ⏵ Heat Burst ⏵ d+2,1+2"
+    },
+    {
+     "section": "Combos",
+     "starters": [
+      "df+1,2 (heat) f+2,3 (range)"
+     ],
+     "route": "ws+1 SEN.2 ws+1 SEN.3",
+     "raw": "ws+1 ⏵ SEN 2 ws+1 ⏵ SEN 3"
+    }
+   ]
+  },
+  "shaheen": {
+   "gid": "1288773701",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws+2"
+     ],
+     "route": "3,DF SNK.2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "3,DF SNK 2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "intermediate route"
+     ],
+     "route": "3,DF SNK.2 df+4,1,DF (db cancel) ws+3,3 T! FC.df+2 f,f+3",
+     "raw": "3,DF SNK 2 ⏵ df+4,1,DF (db cancel)  ws+3,3 T! ⏵ FC df+2 ⏵ f,f+3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "db+2,DF SNK.2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "db+2,DF SNK 2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "d+3,DF SNK.2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "d+3,DF SNK 2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "3,DF SNK.2 df+4,1,DF SNK.3",
+     "raw": "3,DF SNK 2 ⏵ df+4,1,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 4,1"
+     ],
+     "route": "d+2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "d+2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (4),3",
+      "CH FC.(df+4),1"
+     ],
+     "route": "3,DF df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "3,DF ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f+3"
+     ],
+     "route": "d+3,DF df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "d+3,DF ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+4",
+      "CH (1,2),2"
+     ],
+     "route": "db+2,DF df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "db+2,DF ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+3 (or SNK.3)",
+      "CH db+3,4"
+     ],
+     "route": "3,DF SNK.2 df+4,1,DF SNK.3",
+     "raw": "3,DF SNK 2 ⏵ df+4,1,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (f+2),4"
+     ],
+     "route": "d+3,DF SNK.2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "d+3,DF SNK 2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (f+2),4,4"
+     ],
+     "route": "db+2,DF df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "db+2,DF ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (f+2,4),4"
+     ],
+     "route": "d+2 df+4,1,DF SNK.df+1,2 T! db+2,DF SNK.3",
+     "raw": "d+2 ⏵ df+4,1,DF SNK df+1,2 T! ⏵ db+2,DF SNK 3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on d*u+2"
+     ],
+     "route": "3,DF SNK.2 df+4,1,DF SNK.3",
+     "raw": "3,DF SNK 2 ⏵ df+4,1,DF SNK 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "db+4 T! df+4,1,3 (delay last hit)",
+     "raw": "db+4 T! ⏵ df+4,1,3 (delay last hit)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "HEAT BURST ENDER",
+      "WALL CARRY OPTIONS",
+      "FLOOR / WALL BREAK"
+     ],
+     "route": "After T!, follow with FC.df+2 Heat Burst b+3+4~F f,f,f+2",
+     "raw": "After T!, follow with FC df+2 ⏵ Heat Burst ⏵ b+3+4~F ⏵ f,f,f+2"
+    }
+   ]
+  },
+  "steve": {
+   "gid": "822375764",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+2",
+      "CH b+1"
+     ],
+     "route": "f+3,1 df+1,[ 2~1 ] f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "f+3,1 ⏵ df+1,[ 2~1 ] ⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "FC.df+2"
+     ],
+     "route": "ub+2 f+3,1 df+1 f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "ub+2 ⏵ f+3,1 ⏵ df+1⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "PAB.df+2"
+     ],
+     "route": "PAB.f+1+2 df+1 f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "PAB f+1+2 ⏵ df+1⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LNH.2",
+      "LOW PARRY"
+     ],
+     "route": "EXT DCK.1 df+1,[ 2~1 ] f+2,2 LNH.2",
+     "raw": "EXT DKC 1 ⏵ df+1,[ 2~1 ] ⏵ f+2,2 ⏵ LNH 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (df+1),[ 2~1 ]"
+     ],
+     "route": "3,1,1 f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "3,1,1 ⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH ub+[ 2~1 ]",
+      "EXT DCK.2",
+      "EXT DCK.f+2",
+      "LNH.1+2",
+      "CH FLK.2",
+      "CH PAB.2",
+      "CH PAB.(1,2),1"
+     ],
+     "route": "f+3,1 df+1,[ 2~1 ] f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "f+3,1 ⏵ df+1,[ 2~1 ] ⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH PAB.d+2"
+     ],
+     "route": "ws+1 df+1,[ 2~1 ] f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "ws+1 ⏵ df+1,[ 2~1 ] ⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 LNH 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "DCK.2",
+      "CH DCK.1",
+      "PAB.uf+2"
+     ],
+     "route": "ub+2 f+3,1 df+1 f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "ub+2 ⏵ f+3,1 ⏵ df+1⏵ f+2,2 ⏵ LNH 2 T! ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash wr+2~F",
+      "heat dash 3+4,2~F",
+      "heat dash qcf+1~F"
+     ],
+     "route": "f+3,1 df+1,[ 2~1 ] df+1,[ 2~1 ] f+2,2 LNH.2 T! 3,1,2 LNH.2",
+     "raw": "f+3,1 ⏵ df+1,[ 2~1 ] ⏵ df+1,[ 2~1 ] ⏵ f+2,2 ⏵ LNH 2 T!    ⏵ 3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "PAB.uf+2 T! 2,1~B SWY.1",
+     "raw": "PAB uf+2 T! ⏵ 2,1~B SWY 1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "FOR DMG"
+     ],
+     "route": "3,1,2 LNH.2",
+     "raw": "3,1,2 ⏵ LNH 2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WALL CARRY",
+      "WALL BREAK",
+      "FLOOR BREAK"
+     ],
+     "route": "3,1,2 f+3,1",
+     "raw": "3,1,2 ⏵ f+3,1"
+    }
+   ]
+  },
+  "victor": {
+   "gid": "653376276",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "ws+1",
+      "CH 1+2"
+     ],
+     "route": "df+4,2 IAI.2 T! df+4,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "df+4,2 ⏵ IAI 2 T! ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH db+4"
+     ],
+     "route": "ws+3,2 T! df+4,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "ws+3,2 T! ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f,f+2"
+     ],
+     "route": "df+4,2 IAI.4,2 db+1,1~F PRF.2,2 IAI.1,2,2",
+     "raw": "df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 2,2 ⏵ IAI 1,2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH f,f,f+2~D"
+     ],
+     "route": "IAI.4,2 db+1,1~F PRF.2,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "IAI 4,2 ⏵ db+1,1~F ⏵ PRF 2,2 ⏵ IAI 4,2 ⏵  db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "LOW PARRY"
+     ],
+     "route": "ws+2 df+4,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "ws+2 ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+2",
+      "PRF.(2,2),1",
+      "CH ws+2"
+     ],
+     "route": "df+4,2 IAI.2 T! df+4,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "df+4,2 ⏵ IAI 2 T! ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH IAI.(4),2"
+     ],
+     "route": "df+4,2 IAI.4,2 db+1,1~F PRF.2,2 IAI.1,2,2",
+     "raw": "df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 2,2 ⏵ IAI 1,2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+3",
+      "CH (1,2),1"
+     ],
+     "route": "ws+2 df+4,2 IAI.4,2 db+1,1~F PRF.1+2",
+     "raw": "ws+2 ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on d+2~F",
+      "heat on f+1+2~F",
+      "heat on PRF.3~F",
+      "heat on IAI.d+1~F"
+     ],
+     "route": "db+1,1 df+4,2 IAI.4,2 db+1,1~F PRF.2,2 IAI.2 T! b+3,1",
+     "raw": "db+1,1 ⏵ df+4,2 ⏵ IAI 4,2 ⏵ db+1,1~F ⏵ PRF 2,2 ⏵  IAI 2 T! ⏵ b+3,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "d+1+2 f+2,2,1,1",
+     "raw": "d+1+2 ⏵ f+2,2,1,1"
+    }
+   ]
+  },
+  "xiaoyu": {
+   "gid": "835262040",
+   "combos": [
+    {
+     "section": "Important combos",
+     "starters": [
+      "3"
+     ],
+     "route": "f,f+3 RDS.d+3,4 ub+3 AOP.uf,n,3 (dash) df+2,1+2",
+     "raw": "f,f+3 ⏵ RDS d+3,4 ⏵ ub+3 ⏵ AOP uf,n,3 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "b+1+2",
+      "uf+3",
+      "RDS.4",
+      "ws+2~B (hold)",
+      "CH ws+2~B"
+     ],
+     "route": "df+2 f+2 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "df+2 ⏵ f+2 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "f,f,f+3"
+     ],
+     "route": "AOP.1 ws+2 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "AOP 1 ⏵ ws+2 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "Important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "b+3 RDS.d+3,4 (run) f+2 f+2,1,4",
+     "raw": "b+3 ⏵ RDS d+3,4 ⏵ (run) f+2 ⏵ f+2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f,f+1,4"
+     ],
+     "route": "f,f+3 RDS.d+3,4 ub+3 AOP.uf,n,3 (dash) df+2,1+2",
+     "raw": "f,f+3 ⏵ RDS d+3,4 ⏵ ub+3 ⏵ AOP uf,n,3 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "1+2",
+      "CH sidestep 4"
+     ],
+     "route": "f,f+3 RDS.d+3,4 (dash) ub+3 AOP.uf,n,3 (dash) df+2,1+2",
+     "raw": "f,f+3 ⏵ RDS d+3,4 ⏵ (dash) ub+3 ⏵ AOP uf,n,3 ⏵  (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 3+4",
+      "CH (f,f+1+2),1+2"
+     ],
+     "route": "df+2 f+2 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "df+2 ⏵ f+2 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "HYP.4",
+      "HYP.3 (after 3 steps)",
+      "CH ws+3",
+      "CH uf+4~D",
+      "CH AOP.1+2"
+     ],
+     "route": "ws+2~B (hold) f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "ws+2~B (hold) ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "ub+3"
+     ],
+     "route": "AOP.uf,n,4 f+2 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 f,f+4 HYP.2",
+     "raw": "AOP uf,n,4 ⏵ f+2 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵  (ub+1+2) HYP 3+4 ⏵ f,f+4 ⏵ HYP 2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "RDS.f+3+4,3+4"
+     ],
+     "route": "RDS.f+3+4,3+4 RDS.d+3,4 (dash) ub+3 T! AOP.uf,n,3 (dash) df+2,1+2",
+     "raw": "RDS f+3+4,3+4 ⏵ RDS d+3,4 ⏵ (dash) ub+3 T! ⏵ AOP uf,n,3 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH uf+2"
+     ],
+     "route": "RDS.b+3 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "RDS b+3 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH f,f+4"
+     ],
+     "route": "HYP.3+4",
+     "raw": "HYP 3+4 ⏵"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on db+1~F",
+      "heat on HYP.2~F",
+      "heat on RDS.1+2,4~F"
+     ],
+     "route": "df+2 f+2 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "df+2 ⏵ f+2 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat on CH (f,f+1),2",
+      "heat on CH (f+2,1),2"
+     ],
+     "route": "RDS.b+3 f+3,1 RDS.1,2 T! (ub+1+2) HYP.3+4 (dash) df+2,1+2",
+     "raw": "RDS b+3 ⏵ f+3,1 ⏵ RDS 1,2 T! ⏵ (ub+1+2) HYP 3+4 ⏵ (dash) df+2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1,2 f+1+2",
+     "raw": "1,2 ⏵ f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TAILSPIN"
+     ],
+     "route": "ub+4 1,2 f+1+2",
+     "raw": "ub+4 ⏵ 1,2 ⏵ f+1+2"
+    }
+   ]
+  },
+  "yoshimitsu": {
+   "gid": "455982320",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2",
+      "uf+3",
+      "u+3+4",
+      "f,n,d,df+1"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+2,1"
+     ],
+     "route": "DGF.2~D d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "DGF 2~D ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵  (dash) d+2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH FC.df+4"
+     ],
+     "route": "ws+4 d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "ws+4 ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "BT.2,1 T! [ 3~4 ]~U DGF.f+1+2",
+     "raw": "BT 2,1 T! ⏵ [ 3~4 ]~U ⏵ DGF f+1+2"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "FC.df+1",
+      "LOW PARRY"
+     ],
+     "route": "f+2,1 [ 3~4 ]~U DGF.f+1+2",
+     "raw": "f+2,1 ⏵ [ 3~4 ]~U ⏵ DGF f+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "[ 4~3 ]"
+     ],
+     "route": "f,n,d,df+1 d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "f,n,d,df+1 ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵  (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "sidestep 2"
+     ],
+     "route": "4 d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "4 ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH uf+2"
+     ],
+     "route": "ws+4 d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "ws+4 ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH uf+1",
+      "CH f,n,d,df+2",
+      "CH sidestep 1"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "DGF.2,4"
+     ],
+     "route": "f+2,1 [ 3~4 ]~U DGF.f+1+2",
+     "raw": "f+2,1 ⏵ [ 3~4 ]~U ⏵ DGF f+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH DGF.1",
+      "CH DGF.3"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "KIN.b+2,1"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH KIN.3",
+      "CH IND.4"
+     ],
+     "route": "ws+4 d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "ws+4 ⏵ d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH BT.2,1"
+     ],
+     "route": "f+2,1 [ 3~4 ]~U DGF.f+1+2",
+     "raw": "f+2,1 ⏵ [ 3~4 ]~U ⏵ DGF f+1+2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "NSS.1+4",
+      "CH NSS.(1),1",
+      "CH NSS.(df+3),1"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "NSS.FC.df+3"
+     ],
+     "route": "(dash) NSS.1+4 df+1,2,1 b+2,1",
+     "raw": "(dash) NSS 1+4 ⏵ df+1,2,1 ⏵ b+2,1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash 3,1~F",
+      "heat dash f+1+2~F",
+      "heat dash b+2,2~F",
+      "heat dash DGF.4~F"
+     ],
+     "route": "d+2,2~B 1 f+3+4 d+2,2,2 T! NSS.1+4 (dash) d+2,2,1 (delay last hit)",
+     "raw": "d+2,2~B ⏵ 1 ⏵ f+3+4 ⏵ d+2,2,2 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2,1 (delay last hit)"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "during heat DGF.1"
+     ],
+     "route": "d+2,2~B df+1,2,1 T! NSS.1+4 (dash) d+2,2",
+     "raw": "d+2,2~B ⏵ df+1,2,1 T! ⏵ NSS 1+4 ⏵ (dash) d+2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "GENERAL"
+     ],
+     "route": "1 [ 3~4 ]~U DGF.4",
+     "raw": "1 ⏵ [ 3~4 ]~U ⏵ DGF 4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "[ 4~3 ] T! 1 [ 3~4 ]~U DGF.4",
+     "raw": "[ 4~3 ] T! ⏵ 1 ⏵ [ 3~4 ]~U ⏵ DGF 4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WALL CARRY",
+      "WALL BREAK",
+      "FLOOR BREAK"
+     ],
+     "route": "b+1 d+2,2",
+     "raw": "b+1 ⏵ d+2,2"
+    }
+   ]
+  },
+  "zafina": {
+   "gid": "219886330",
+   "combos": [
+    {
+     "section": "Most important combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "uf+1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "uf+1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "uf+4",
+      "ws+2"
+     ],
+     "route": "df+2 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "df+2 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "ws+1,2"
+     ],
+     "route": "uf+1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "uf+1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH d+3"
+     ],
+     "route": "ws+3 SCR.4 T! 2,1,3",
+     "raw": "ws+3 ⏵ SCR 4 T! ⏵ 2,1,3"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "CH d+3~D"
+     ],
+     "route": "MNT.4,3 T! MNT.1 f+2,3,4",
+     "raw": "MNT 4,3 T! ⏵ MNT 1 ⏵ f+2,3,4"
+    },
+    {
+     "section": "Most important combos",
+     "starters": [
+      "LOW PARRY"
+     ],
+     "route": "b+2 df+1 f+2,3,4",
+     "raw": "b+2 ⏵ df+1 ⏵ f+2,3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 1+2"
+     ],
+     "route": "3~B df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "3~B ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH 1+2,4"
+     ],
+     "route": "df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "(1+2,4),4"
+     ],
+     "route": "db+3~B df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "db+3~B ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "df+2+3"
+     ],
+     "route": "(sidestep left) df+2,3 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "(sidestep left)  df+2,3 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T!  ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+3"
+     ],
+     "route": "(dash) SCR.4 T! b+2 df+1 f+2,3,4",
+     "raw": "(dash)  SCR 4 T! ⏵ b+2 ⏵ df+1 ⏵ f+2,3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "f+3~B"
+     ],
+     "route": "uf+1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "uf+1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (1),4"
+     ],
+     "route": "TRT.2 T! b+2 df+1 f+2,3,4",
+     "raw": "TRT 2 T! ⏵ b+2 ⏵ df+1 ⏵ f+2,3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH (d+1),1"
+     ],
+     "route": "3~B df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "3~B ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+1+2,1+2",
+      "CH db+4,2",
+      "SCR.4",
+      "SCR.df+3,3",
+      "CH SCR.d+3,3~B"
+     ],
+     "route": "b+2 df+1 f+2,3,4",
+     "raw": "b+2 ⏵ df+1 ⏵ f+2,3,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH d+4,3",
+      "TRT.2"
+     ],
+     "route": "b+2 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "b+2 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "MNT.df+2",
+      "CH TRT.4,3"
+     ],
+     "route": "df+1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "df+1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH MNT.2",
+      "CH MNT.4,3"
+     ],
+     "route": "MNT.1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "MNT 1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "db+1+2",
+      "CH MNT.3,1"
+     ],
+     "route": "MNT.3,1 MNT.4,3 T! (tap foward) MNT.2,1,4",
+     "raw": "MNT 3,1 ⏵ MNT 4,3 T! ⏵ (tap foward) ⏵ MNT 2,1,4"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "CH SCR.df+4"
+     ],
+     "route": "MNT.df+2 3 SCR.4 T! 2,1,3",
+     "raw": "MNT df+2 ⏵ 3 ⏵ SCR 4 T! ⏵ 2,1,3"
+    },
+    {
+     "section": "More combos",
+     "starters": [
+      "heat dash f+1+2~F",
+      "heat dash SCR.2,1~F",
+      "heat dash MNT.df+1~F"
+     ],
+     "route": "uf+1 df+1 f+2,3 SCR.4 T! f,f,f+1+2 TRT.df+1",
+     "raw": "uf+1 ⏵ df+1 ⏵ f+2,3 ⏵ SCR 4 T! ⏵ f,f,f+1+2 ⏵ TRT df+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "WITH TORNADO"
+     ],
+     "route": "ws+2 T! uf+1 df+1,2,1 (delay last hit)",
+     "raw": "ws+2 T! ⏵ uf+1 ⏵ df+1,2,1 (delay last hit)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "FOR DMG",
+      "WALL CARRY",
+      "WALL BREAK",
+      "FLOOR BREAK"
+     ],
+     "route": "uf+1 b+1:1+2",
+     "raw": "uf+1 ⏵ b+1:1+2"
+    }
+   ]
+  }
+ }
+}

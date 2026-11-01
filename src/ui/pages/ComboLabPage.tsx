@@ -25,6 +25,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
     .filter((c) => filter === 'all' || (filter === 'new' ? isRecent(c.firstSeen) : c.tags.includes(filter)))
     .filter((c) => !needle || `${c.name} ${c.starters.join(' ')} ${c.route}`.toLowerCase().includes(needle))
     .sort((a, b) => Number(!!b.curated) - Number(!!a.curated) || (a.difficulty ?? 9) - (b.difficulty ?? 9));
+  const fromApplay = char.combos.filter((c) => c.tags.includes('applay')).length;
   const imported = char.combos.filter((c) => !c.curated);
   const newCount = char.combos.filter((c) => isRecent(c.firstSeen)).length;
 
@@ -33,7 +34,7 @@ export function ComboLabPage({ comboId, focusStep }: { comboId?: string; focusSt
       <div className="page-head">
         <div>
           <h1>Combo lab · {char.profile.name}</h1>
-          <p>{char.combos.length} routes from the Wavu Wiki combo page{imported.length !== char.combos.length ? ` (${char.combos.length - imported.length} curated with coaching tips)` : ''}, refreshed automatically when the wiki changes. Damage is shown exactly as listed there; difficulty stars are coach estimates on curated combos only. Your controller input is checked live.</p>
+          <p>{char.combos.length} routes: {char.combos.length - fromApplay} from the Wavu Wiki combo page{imported.length !== char.combos.length ? ` (${char.combos.length - imported.length} curated with coaching tips)` : ''}, refreshed automatically when the wiki changes{fromApplay ? <>, and {fromApplay} more from <a href={char.combos.find((c) => c.tags.includes('applay'))?.source.url} target="_blank" rel="noreferrer">Applay's Tekken 8 Library</a></> : ''}. Damage is shown exactly as listed there; difficulty stars are coach estimates on curated combos only. Your controller input is checked live.</p>
         </div>
       </div>
       <div className="split">
