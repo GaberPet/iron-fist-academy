@@ -155,3 +155,13 @@ describe("Applay's combo routes", () => {
     for (const c of fromApplay) expect(others.has(c.route.replace(/\s+/g, ' ').toLowerCase())).toBe(false);
   });
 });
+
+describe("Applay first, Wavu for the rest", () => {
+  it('uses Applay punishers and Heat Engagers that match real moves, and Wavu for uncovered speeds', () => {
+    const jin = loadCharacter('jin');
+    expect(jin.punishers.some((p) => p.window === -10 && p.moveId === '2,4')).toBe(true); // Applay's i10
+    for (const p of jin.punishers) expect(lookupMove(jin, p.moveId), p.moveId).toBeTruthy();
+    expect(jin.profile.heatEngagers).toContain('f+3,1');
+    expect(jin.combos[0].tags).toContain('applay'); // Applay's combos come first
+  });
+});

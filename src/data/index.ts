@@ -5,7 +5,7 @@
 // Every character in the manifest works out of the box (move library, combos, punishers, quizzes,
 // drills). To add a curriculum for one: create characters/<id>/curated.json (found automatically).
 // `npm test` validates every curated reference against the generated frame data.
-import type { CharacterCurated, CharacterData, CharacterFile, CharacterProfile, ComboDef, Lesson, Move } from '../types';
+import type { CharacterCurated, CharacterData, CharacterFile, CharacterProfile, ComboDef, Lesson, Move, PunisherEntry } from '../types';
 import general from './general.json';
 import applay from './applay.json';
 import { parseNotation } from '../core/notation';
@@ -129,8 +129,11 @@ const parses = (s: string) => {
 };
 
 /** Combo routes from Applay's Tekken 8 Library (scripts/import-applay.py), credited, skipping routes we already have. */
+interface ApplaySheet { gid: string; combos: { section: string; starters: string[]; route: string }[]; heatEngagers?: string[]; punishers?: PunisherEntry[] }
+const applaySheet = (charId: string) => (applay.characters as Record<string, ApplaySheet>)[charId];
+
 export function applayCombos(charId: string, have: ComboDef[]): ComboDef[] {
-  const sheet = (applay.characters as Record<string, { gid: string; combos: { section: string; starters: string[]; route: string }[] }>)[charId];
+  const sheet = applaySheet(charId);
   if (!sheet) return [];
   const known = new Set(have.map((c) => routeKey(c.route)));
   const url = `${applay.source.url}?gid=${sheet.gid}`;
@@ -158,11 +161,24 @@ export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, ove
   for (const m of moves) moveIndex.set(m.id, m);
   for (const m of moves) for (const a of m.alt) if (!moveIndex.has(a)) moveIndex.set(a, m);
   const curatedCombos = (curated?.combos ?? []).map((c) => ({ ...c, curated: true, parseOk: true }));
-  const wavu = [...curatedCombos, ...importedCombos(f, curatedCombos)];
-  const combos = [...wavu, ...applayCombos(f.id, wavu)];
-  const profile = curated?.profile ?? autoProfile(f);
-  const punishers = curated?.punishers?.length ? curated.punishers : f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) }));
-  // Characters without a hand-written curriculum get one generated from their own data.
+  // Applay's sheet first wherever it has the data; Wavu Wiki fills in the rest (and all frame data).
+  // Curated combos keep their place (lessons point at them); Wavu combos Applay already lists are dropped.
+  const fromApplay = applayCombos(f.id, curatedCombos);
+  const covered = new Set(fromApplay.map((c) => routeKey(c.route)));
+  const combos = [...fromApplay, ...curatedCombos, ...importedCombos(f, curatedCombos).filter((c) => !covered.has(routeKey(c.route)))];
+  const known = (id: string) => !!lookupMove({ moveIndex, profile: curated?.profile ?? autoProfile(f) } as CharacterData, id);
+  const sheet = applaySheet(f.id);
+  const applayPunishers = (sheet?.punishers ?? []).filter((p) => known(p.moveId));
+  const applayHeat = (sheet?.heatEngagers ?? []).filter(known);
+  const baseProfile = curated?.profile ?? autoProfile(f);
+  const profile = applayHeat.length ? { ...baseProfile, heatEngagers: applayHeat } : baseProfile;
+  const wavuPunishers: PunisherEntry[] = f.punishers.items.map(({ window, moveId, stance, note }) => ({ window, moveId, stance, ...(note ? { note } : {}) }));
+  // Applay's punisher for each speed; Wavu's for any speed and stance Applay doesn't cover.
+  const slot = (p: PunisherEntry) => `${p.stance}:${p.window}`;
+  const applaySlots = new Set(applayPunishers.map(slot));
+  const punishers = curated?.punishers?.length
+    ? curated.punishers
+    : [...applayPunishers, ...wavuPunishers.filter((p) => !applaySlots.has(slot(p)))].sort((a, b) => b.window - a.window);
   // Characters without hand-written lessons get them built from their coach notes (if any) and their own data.
   const generated = curated?.lessons?.length ? null : generateCurriculum({ ...f, frames: { ...f.frames, moves } }, combos, punishers, profile.heatEngagers, profile.stances.map((s) => s.code), curated?.keyMoves);
   return {

@@ -1,8 +1,8 @@
 #!/usr/bin/env python3
 """Import combo routes from Applay's Tekken 8 Library (a public Google Sheet) into src/data/applay.json.
 
-Only the combo routes are taken (starter → route): they are game facts. Applay's written tips,
-layout and other sections are not copied. Every combo keeps a credit and a link to Applay's sheet.
+Only game facts are taken: combo routes (starter → route), the Heat Engager list and the punisher
+table (startup → move). Applay's written tips and layout are not copied. Every combo keeps a credit and a link to Applay's sheet.
 Frame data still comes from Wavu Wiki.
 
 Usage: python3 scripts/import-applay.py
@@ -95,7 +95,73 @@ def parse_sheet(rows, cid):
             starters.append(normalize(st, codes, rename))
         if starters:
             combos.append({'section': section, 'starters': starters, 'route': normalize(rows[ri][ci], codes, rename), 'raw': rows[ri][ci].replace('\n', ' ').strip()})
-    return combos
+    return combos, heat_engagers(rows, codes, rename), punishers(rows, codes, rename)
+
+
+def cell(rows, ri, ci):
+    return rows[ri][ci].strip() if ri < len(rows) and ci < len(rows[ri]) else ''
+
+
+def find(rows, label):
+    for ri, r in enumerate(rows):
+        for ci, c in enumerate(r):
+            if c.strip() == label:
+                return ri, ci
+    return None
+
+
+def moves_in(text, codes, rename):
+    """'1,2 / 2,3 (wallsplat) / 3+4 (heat)' → ['1,2', '2,3']: Heat-only and placeholder entries are left out."""
+    out = []
+    for part in re.split(r'\s*(?:/|―)\s*', text.replace('\n', ' / ')):
+        part = part.strip()
+        if not part or part in ('―', '...', '-') or re.search(r'\bheat\b', part, re.I):
+            continue
+        part = re.sub(r'\s*\([^)]*\)\s*$', '', part).strip()  # trailing notes like (wallsplat)
+        if re.search(r'[1-4]', part) and len(part) < 30:
+            out.append(normalize(part, codes, rename))
+    return out
+
+
+def heat_engagers(rows, codes, rename):
+    at = find(rows, 'HEAT ENGAGERS')
+    if not at:
+        return []
+    ri, ci = at
+    out = []
+    for r in range(ri + 1, ri + 14):
+        v = cell(rows, r, ci)
+        if re.fullmatch(r'[A-Z][A-Z /]{4,}', v):  # next heading, e.g. IMPORTANT MOVES
+            break
+        out += moves_in(v, codes, rename)
+    return out
+
+
+def punishers(rows, codes, rename):
+    """Applay's punisher table: startup → standing and crouching punishers."""
+    head = find(rows, 'STARTUP')
+    if not head:
+        return []
+    ri, ci = head
+    out, startup, blank = [], None, 0
+    for r in range(ri + 1, ri + 30):
+        s0 = cell(rows, r, ci)
+        if s0 and not s0.isdigit():
+            break
+        stand, crouch = cell(rows, r, ci + 1), cell(rows, r, ci + 2)
+        if not (s0 or stand or crouch):
+            blank += 1
+            if blank > 3:
+                break
+            continue
+        blank = 0
+        if s0:
+            startup = int(s0)
+        if startup is None:
+            continue
+        out += [{'window': -startup, 'moveId': m, 'stance': 'standing'} for m in moves_in(stand, codes, rename)]
+        out += [{'window': -startup, 'moveId': m, 'stance': 'crouching'} for m in moves_in(crouch, codes, rename)]
+    return out
 
 
 def main():
@@ -108,10 +174,10 @@ def main():
         if cid not in ids:
             continue
         rows = list(csv.reader(io.StringIO(get(f'{PUB}?gid={gid}&single=true&output=csv'))))
-        combos = parse_sheet(rows, cid)
-        if combos:
-            out[cid] = {'gid': gid, 'combos': combos}
-        print(f'{cid:12} {len(combos):3} combos')
+        combos, heat, pun = parse_sheet(rows, cid)
+        if combos or heat or pun:
+            out[cid] = {'gid': gid, 'combos': combos, 'heatEngagers': heat, 'punishers': pun}
+        print(f'{cid:12} {len(combos):3} combos {len(heat):2} heat engagers {len(pun):3} punishers')
     dest = os.path.join(ROOT, 'src/data/applay.json')
     json.dump({'source': {'name': "Applay's Tekken 8 Library", 'url': PUB + 'html'}, 'characters': out}, open(dest, 'w'), ensure_ascii=False, indent=1)
     print('wrote', dest, sum(len(v['combos']) for v in out.values()), 'combos')

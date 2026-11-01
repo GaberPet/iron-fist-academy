@@ -35,7 +35,7 @@ export function PunishPage() {
       <div className="page-head">
         <div>
           <h1>Punishment trainer · {char.profile.name}</h1>
-          <p>Know your punisher for every frame window, then execute it. Opponent moves and frame values come from the imported data; {char.profile.short}'s punisher list comes from Wavu's punisher table.</p>
+          <p>Know your punisher for every frame window, then execute it. Opponent moves and frame values come from the imported data; {char.profile.short}'s punishers come from Applay's Tekken 8 Library, with Wavu Wiki filling any speed it doesn't cover.</p>
         </div>
         <div className="row">
           <button className="btn desktop-only" onClick={() => navigate('dojo', 'punish-standing')}>Timing drill (standing) →</button>
@@ -107,7 +107,7 @@ export function PunishPage() {
               </table>
             </div>
           ))}
-          <div className="source-line">Punisher windows: Wavu Wiki punisher table. Note that range and pushback can make listed punishers whiff at long distance.</div>
+          <div className="source-line">Punishers: Applay's Tekken 8 Library first, Wavu Wiki for the rest. Note that range and pushback can make listed punishers whiff at long distance.</div>
         </div>
       </div>
     </div>

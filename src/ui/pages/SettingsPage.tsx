@@ -175,7 +175,7 @@ export function SettingsPage() {
         Iron Fist Academy is an unofficial fan tool, not affiliated with or endorsed by Bandai Namco. TEKKEN is a trademark of Bandai Namco Entertainment Inc. Code: MIT. Lessons and coach notes: CC BY-SA 4.0. Frame data: Wavu Wiki contributors, CC0. Source: github.com/GaberPet/iron-fist-academy.
       </div>
       <p className="small muted">
-        All credit for the combos, frame data and punisher tables goes to the contributors of <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a>, the community Tekken wiki they come from, and to <b>Applay</b> for the extra combo routes from <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgbCJNSTKajMNlJvQleJOl0eTiEcV-PbeU0obDg1lsSqmz0lTtcD2k6NzfTPt7Db9Ua2dz1o_34Sv/pubhtml" target="_blank" rel="noreferrer">Applay's Tekken 8 Library</a>. Thank you!
+        All credit for the combos, frame data and punisher tables goes to the contributors of <a href="https://wavu.wiki" target="_blank" rel="noreferrer">Wavu Wiki</a>, the community Tekken wiki they come from, and to <b>Applay</b> for the combos, punishers and Heat Engager lists from <a href="https://docs.google.com/spreadsheets/d/e/2PACX-1vTsgbCJNSTKajMNlJvQleJOl0eTiEcV-PbeU0obDg1lsSqmz0lTtcD2k6NzfTPt7Db9Ua2dz1o_34Sv/pubhtml" target="_blank" rel="noreferrer">Applay's Tekken 8 Library</a>. Thank you!
       </p>
     </div>
   );
