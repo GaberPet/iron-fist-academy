@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-10-29T11:32:46.322Z",
+ "generatedAt": "2026-11-02T13:31:16.380Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -11,8 +11,8 @@
    "id": "alisa",
    "name": "Alisa",
    "file": "characters/alisa.json",
-   "hash": "18xa8kr",
-   "updatedAt": "2026-10-29T11:32:46.322Z",
+   "hash": "xaazar",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 188,
@@ -21,7 +21,7 @@
     "punishers": 20
    },
    "revisions": {
-    "movelist": 63369,
+    "movelist": 63400,
     "combos": 60854,
     "punishers": 59229,
     "page": 62074
@@ -31,8 +31,8 @@
    "id": "anna",
    "name": "Anna",
    "file": "characters/anna.json",
-   "hash": "1w2da2m",
-   "updatedAt": "2026-10-27T12:40:40.578Z",
+   "hash": "p51oul",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 165,
@@ -41,7 +41,7 @@
     "punishers": 13
    },
    "revisions": {
-    "movelist": 63356,
+    "movelist": 63407,
     "combos": 61102,
     "punishers": 60547,
     "page": 62075
@@ -71,8 +71,8 @@
    "id": "asuka",
    "name": "Asuka",
    "file": "characters/asuka.json",
-   "hash": "j26gs8",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "1s3oo9l",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 146,
@@ -81,7 +81,7 @@
     "punishers": 15
    },
    "revisions": {
-    "movelist": 62778,
+    "movelist": 63406,
     "combos": 59716,
     "punishers": 59231,
     "page": 62078
@@ -131,8 +131,8 @@
    "id": "bryan",
    "name": "Bryan",
    "file": "characters/bryan.json",
-   "hash": "177epm1",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "11j54wq",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 168,
@@ -141,7 +141,7 @@
     "punishers": 18
    },
    "revisions": {
-    "movelist": 62021,
+    "movelist": 63403,
     "combos": 59619,
     "punishers": 58423,
     "page": 62081
@@ -191,8 +191,8 @@
    "id": "devil-jin",
    "name": "Devil Jin",
    "file": "characters/devil-jin.json",
-   "hash": "bt0vp9",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "181jcj",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
@@ -201,7 +201,7 @@
     "punishers": 17
    },
    "revisions": {
-    "movelist": 63066,
+    "movelist": 63396,
     "combos": 60625,
     "punishers": 61042,
     "page": 62084
@@ -251,17 +251,17 @@
    "id": "fahkumram",
    "name": "Fahkumram",
    "file": "characters/fahkumram.json",
-   "hash": "10xi3q5",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1goz49q",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
-    "moves": 144,
+    "moves": 153,
     "combos": 15,
     "combosParsed": 15,
     "punishers": 17
    },
    "revisions": {
-    "movelist": 63097,
+    "movelist": 63399,
     "combos": 60558,
     "punishers": 59236,
     "page": 62087
@@ -311,17 +311,17 @@
    "id": "hwoarang",
    "name": "Hwoarang",
    "file": "characters/hwoarang.json",
-   "hash": "1aonzh2",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "a6ggxu",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
-    "moves": 210,
+    "moves": 209,
     "combos": 60,
     "combosParsed": 39,
     "punishers": 17
    },
    "revisions": {
-    "movelist": 61929,
+    "movelist": 63405,
     "combos": 59624,
     "punishers": 59238,
     "page": 63349
@@ -431,8 +431,8 @@
    "id": "kuma",
    "name": "Kuma",
    "file": "characters/kuma.json",
-   "hash": "z0i0jb",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "snjrtr",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 142,
@@ -441,7 +441,7 @@
     "punishers": 9
    },
    "revisions": {
-    "movelist": 63251,
+    "movelist": 63408,
     "combos": 61879,
     "punishers": 59240,
     "page": 62097
@@ -491,8 +491,8 @@
    "id": "law",
    "name": "Law",
    "file": "characters/law.json",
-   "hash": "axhly",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "19bu1t9",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 162,
@@ -501,7 +501,7 @@
     "punishers": 16
    },
    "revisions": {
-    "movelist": 61978,
+    "movelist": 63409,
     "combos": 62202,
     "punishers": 59241,
     "page": 62100
@@ -511,8 +511,8 @@
    "id": "lee",
    "name": "Lee",
    "file": "characters/lee.json",
-   "hash": "1cr3qns",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1hvig77",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 156,
@@ -521,7 +521,7 @@
     "punishers": 21
    },
    "revisions": {
-    "movelist": 63020,
+    "movelist": 63410,
     "combos": 60975,
     "punishers": 48522,
     "page": 62101
@@ -571,8 +571,8 @@
    "id": "lidia",
    "name": "Lidia",
    "file": "characters/lidia.json",
-   "hash": "1y2oqoj",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "zj053a",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 167,
@@ -581,7 +581,7 @@
     "punishers": 17
    },
    "revisions": {
-    "movelist": 62026,
+    "movelist": 63411,
     "combos": 62147,
     "punishers": 31703,
     "page": 62104
@@ -751,8 +751,8 @@
    "id": "steve",
    "name": "Steve",
    "file": "characters/steve.json",
-   "hash": "gn5skp",
-   "updatedAt": "2026-10-29T11:32:46.322Z",
+   "hash": "16jcgjx",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 171,
@@ -761,7 +761,7 @@
     "punishers": 15
    },
    "revisions": {
-    "movelist": 63366,
+    "movelist": 63412,
     "combos": 59439,
     "punishers": 60968,
     "page": 62401
@@ -791,8 +791,8 @@
    "id": "xiaoyu",
    "name": "Xiaoyu",
    "file": "characters/xiaoyu.json",
-   "hash": "whscpe",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1cudoay",
+   "updatedAt": "2026-11-02T13:31:16.380Z",
    "addedAt": null,
    "counts": {
     "moves": 175,
@@ -801,7 +801,7 @@
     "punishers": 13
    },
    "revisions": {
-    "movelist": 63091,
+    "movelist": 63413,
     "combos": 61068,
     "punishers": 47950,
     "page": 62115
