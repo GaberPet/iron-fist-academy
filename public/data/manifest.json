@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-02T13:31:16.380Z",
+ "generatedAt": "2026-11-03T12:49:31.964Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -11,8 +11,8 @@
    "id": "alisa",
    "name": "Alisa",
    "file": "characters/alisa.json",
-   "hash": "xaazar",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "rnuns",
+   "updatedAt": "2026-11-03T12:49:31.964Z",
    "addedAt": null,
    "counts": {
     "moves": 188,
@@ -21,7 +21,7 @@
     "punishers": 20
    },
    "revisions": {
-    "movelist": 63400,
+    "movelist": 63434,
     "combos": 60854,
     "punishers": 59229,
     "page": 62074
@@ -111,8 +111,8 @@
    "id": "bob",
    "name": "Bob",
    "file": "characters/bob.json",
-   "hash": "lkohsv",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1fgiiqa",
+   "updatedAt": "2026-11-03T12:49:31.964Z",
    "addedAt": null,
    "counts": {
     "moves": 161,
@@ -121,7 +121,7 @@
     "punishers": 11
    },
    "revisions": {
-    "movelist": 62023,
+    "movelist": 63431,
     "combos": 61877,
     "punishers": 61867,
     "page": 62080
@@ -251,17 +251,17 @@
    "id": "fahkumram",
    "name": "Fahkumram",
    "file": "characters/fahkumram.json",
-   "hash": "1goz49q",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "k0x7p7",
+   "updatedAt": "2026-11-03T12:49:31.964Z",
    "addedAt": null,
    "counts": {
-    "moves": 153,
+    "moves": 150,
     "combos": 15,
     "combosParsed": 15,
     "punishers": 17
    },
    "revisions": {
-    "movelist": 63399,
+    "movelist": 63438,
     "combos": 60558,
     "punishers": 59236,
     "page": 62087
@@ -491,8 +491,8 @@
    "id": "law",
    "name": "Law",
    "file": "characters/law.json",
-   "hash": "19bu1t9",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "156ghhc",
+   "updatedAt": "2026-11-03T12:49:31.964Z",
    "addedAt": null,
    "counts": {
     "moves": 162,
@@ -501,7 +501,7 @@
     "punishers": 16
    },
    "revisions": {
-    "movelist": 63409,
+    "movelist": 63440,
     "combos": 62202,
     "punishers": 59241,
     "page": 62100
