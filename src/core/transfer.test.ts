@@ -57,4 +57,14 @@ describe('send to phone', () => {
     const wiped = mergeProgress(phone, resetProgress(structuredClone(base), 'all', new Date('2026-10-02T10:00:00Z')));
     expect(Object.keys(wiped.lessons)).toEqual(['anna:l2']);
   });
+
+  it('syncs notes: the most recently edited version of each character wins', () => {
+    const a = emptyProgress(), b = emptyProgress();
+    a.notes = { jin: { text: 'old', columns: { Oki: ['d+3'] }, updatedAt: '2026-11-01T10:00:00Z' } };
+    b.notes = { jin: { text: 'new', columns: {}, updatedAt: '2026-11-02T10:00:00Z' }, general: { text: 'g', columns: {}, updatedAt: '2026-11-01T00:00:00Z' } };
+    const m = mergeProgress(a, b);
+    expect(m.notes?.jin.text).toBe('new');
+    expect(m.notes?.general.text).toBe('g');
+    expect(mergeProgress(b, a).notes?.jin.text).toBe('new');
+  });
 });

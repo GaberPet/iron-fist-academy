@@ -6,6 +6,8 @@ const fs = require('node:fs');
 const { spawn } = require('node:child_process');
 
 const isDev = !!process.env.IFA_DEV_URL;
+// Renamed to Fighters Academy: keep using the old data folder so existing players and progress stay.
+app.setPath('userData', path.join(app.getPath('appData'), 'Iron Fist Academy'));
 const DIST = path.join(__dirname, '..', 'dist');
 
 // Serve the built app from app://ifa/ so fetch() works for the data files (it doesn't over file://).
@@ -43,7 +45,7 @@ function createWindow() {
     minWidth: 1024,
     minHeight: 680,
     backgroundColor: '#000000',
-    title: 'Iron Fist Academy',
+    title: 'Fighters Academy',
     icon: path.join(__dirname, '..', 'build', 'icon.png'),
     autoHideMenuBar: true,
     webPreferences: {
@@ -156,8 +158,8 @@ ipcMain.handle('app:uninstall', async (e) => {
   }
   const r = await dialog.showMessageBox(win, {
     type: 'warning',
-    title: 'Uninstall Iron Fist Academy',
-    message: 'Uninstall Iron Fist Academy from this computer?',
+    title: 'Uninstall Fighters Academy',
+    message: 'Uninstall Fighters Academy from this computer?',
     detail: kind === 'portable' ? 'This is the portable version: the app will close and show you its file so you can delete it.' : 'The app will close and be removed.',
     buttons: ['Uninstall', 'Cancel'],
     defaultId: 1,

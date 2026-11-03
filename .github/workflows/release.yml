@@ -28,7 +28,7 @@ jobs:
         run: |
           $env:IFA_SMOKE = '1'
           $env:IFA_SMOKE_OUT = "$env:RUNNER_TEMP\smoke.json"
-          $p = Start-Process -FilePath "release\win-unpacked\Iron Fist Academy.exe" -PassThru
+          $p = Start-Process -FilePath "release\win-unpacked\Fighters Academy.exe" -PassThru
           if (-not $p.WaitForExit(120000)) { $p.Kill(); throw 'Smoke test timed out' }
           Get-Content $env:IFA_SMOKE_OUT
           if ($p.ExitCode -ne 0) { throw "Smoke test failed with exit code $($p.ExitCode)" }
@@ -73,4 +73,4 @@ jobs:
           GH_TOKEN: ${{ github.token }}
         run: |
           gh release create "$GITHUB_REF_NAME" --repo "$GITHUB_REPOSITORY" --latest --generate-notes \
-            --title "Iron Fist Academy $GITHUB_REF_NAME" out/*
+            --title "Fighters Academy $GITHUB_REF_NAME" out/*

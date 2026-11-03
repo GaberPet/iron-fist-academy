@@ -1,6 +1,6 @@
 {
-  "name": "Iron Fist Academy",
-  "short_name": "Iron Fist",
+  "name": "Fighters Academy",
+  "short_name": "Fighters",
   "description": "Tekken 8 training: frame data, combos, punishers and lessons for every character.",
   "start_url": "./#/home",
   "scope": "./",

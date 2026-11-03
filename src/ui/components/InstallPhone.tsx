@@ -34,7 +34,7 @@ export function InstallPhone() {
   return (
     <section className="card stack phone-only">
       <h2>Install on your phone</h2>
-      <p className="small">Get Iron Fist Academy on your home screen. It opens full screen and works offline, with every character's moves and combos.</p>
+      <p className="small">Get Fighters Academy on your home screen. It opens full screen and works offline, with every character's moves and combos.</p>
       {canPrompt ? (
         <button className="btn primary" onClick={async () => { await deferred?.prompt(); deferred = null; setCanPrompt(false); }}>Install app</button>
       ) : (

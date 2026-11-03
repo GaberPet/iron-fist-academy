@@ -94,7 +94,7 @@ function ConsentForm({ onChoose }: { onChoose: (c: Consent) => void }) {
       <div className="login-card stack">
         <div className="login-brand"><Logo tone="white" /></div>
         <h1>Your data on this device</h1>
-        <p>Iron Fist Academy uses no cookies, no trackers and no adverts. To save your training it keeps a few items in this browser's storage. Nothing is sent to us unless you turn on sync between devices.</p>
+        <p>Fighters Academy uses no cookies, no trackers and no adverts. To save your training it keeps a few items in this browser's storage. Nothing is sent to us unless you turn on sync between devices.</p>
         <table className="consent-table">
           <thead><tr><th scope="col">What</th><th scope="col">Why</th><th scope="col">How long</th></tr></thead>
           <tbody>

@@ -11,7 +11,7 @@ export function PrivacyPage() {
 
       <section className="card stack">
         <h2>The short version</h2>
-        <p>Iron Fist Academy has no accounts, no cookies, no analytics, no trackers and no adverts. Your players and training progress stay on your own device, unless you turn on sync between devices. We never sell or share them.</p>
+        <p>Fighters Academy has no accounts, no cookies, no analytics, no trackers and no adverts. Your players and training progress stay on your own device, unless you turn on sync between devices. We never sell or share them.</p>
       </section>
 
       <section className="card stack">

@@ -20,6 +20,7 @@ import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
 import { HelpPage } from './pages/HelpPage';
 import { RankingPage } from './pages/RankingPage';
+import { NotesPage } from './pages/NotesPage';
 import { RankUp } from './components/RankUp';
 import { ImportPage } from './pages/ImportPage';
 import { SyncJoinPage } from './pages/SyncJoinPage';
@@ -39,6 +40,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'matchup', label: 'How to beat…', icon: '◎' },
   { id: 'ranking', label: 'Ranking', icon: '♔' },
+  { id: 'notes', label: 'Notes', icon: '✎' },
   { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
   { id: 'fight', label: 'Free fight', icon: '✊' },
   { id: 'companion', label: 'In Tekken 8', icon: '⎚', sep: true },
@@ -146,6 +148,7 @@ export function App() {
       case 'install': return <InstallPage />;
       case 'help': return <HelpPage />;
       case 'ranking': return <RankingPage />;
+      case 'notes': return <NotesPage />;
       case 'import': return <ImportPage />;
       case 'sync': return <SyncJoinPage />;
       case 'dojo': return <DojoPage drill={route[1]} />;
@@ -197,7 +200,7 @@ export function App() {
         </div>
         {storage.isElectron() && <ImportProgressButton />}
         {storage.isElectron() && (
-          <button className="btn uninstall-btn" onClick={() => storage.uninstall()} title="Remove Iron Fist Academy from this computer">
+          <button className="btn uninstall-btn" onClick={() => storage.uninstall()} title="Remove Fighters Academy from this computer">
             <span aria-hidden>✕</span> <span className="lbl">Uninstall</span>
           </button>
         )}

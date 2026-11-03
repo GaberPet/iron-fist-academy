@@ -1,6 +1,6 @@
 {
   "name": "iron-fist-academy",
-  "productName": "Iron Fist Academy",
+  "productName": "Fighters Academy",
   "version": "0.3.1",
   "description": "Open-source training academy for Tekken 8: structured lessons, live DualSense combo trainer, punishment drills and progress tracking. Unofficial fan project.",
   "author": "GaberPet and contributors",
@@ -21,7 +21,7 @@
   },
   "build": {
     "appId": "io.github.gaberpet.ironfistacademy",
-    "productName": "Iron Fist Academy",
+    "productName": "Fighters Academy",
     "files": [
       "dist/**",
       "!dist/models-private/**",
@@ -43,8 +43,8 @@
       "oneClick": false,
       "allowToChangeInstallationDirectory": true,
       "artifactName": "Iron-Fist-Academy-Setup.exe",
-      "shortcutName": "Iron Fist Academy",
-      "uninstallDisplayName": "Iron Fist Academy"
+      "shortcutName": "Fighters Academy",
+      "uninstallDisplayName": "Fighters Academy"
     },
     "portable": {
       "artifactName": "Iron-Fist-Academy-Portable.exe"

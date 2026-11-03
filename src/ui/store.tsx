@@ -4,7 +4,7 @@ import type { Changelog, CharacterData, CharacterFile, ManifestEntry } from '../
 import { CURATED, buildCharacter, type MoveOverride, type OverrideMap } from '../data';
 import {
   addPracticeSeconds, emptyProgress, migrateProgress, migrateSettings, recordAttempt, recordComboAttempt,
-  resetProgress, setLessonPart, DEFAULT_SETTINGS, type AttemptRecord, type ProgressData, type Settings,
+  resetProgress, setLessonPart, DEFAULT_SETTINGS, type AttemptRecord, type ProgressData, type Settings, type CharNotes,
 } from '../core/progress';
 import { storage, type StorageInfo } from '../runtime/storage';
 import { inputManager } from '../runtime/inputManager';
@@ -47,6 +47,7 @@ interface Store {
   addPractice(seconds: number): void;
   reset(char: string | 'all'): void;
   replaceProgress(p: ProgressData): void;
+  setNotes(key: string, n: Omit<CharNotes, 'updatedAt'>): void;
   sync: SyncState;
   syncNow(): Promise<void>;
   setOverride(charId: string, moveId: string, o: MoveOverride | null): void;
@@ -255,6 +256,7 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
   const addPractice = useCallback((sec: number) => setProgress((p) => addPracticeSeconds(p, sec)), []);
   const reset = useCallback((c: string | 'all') => setProgress((p) => resetProgress(p, c)), []);
   const replaceProgress = useCallback((p: ProgressData) => setProgress(migrateProgress(p)), []);
+  const setNotes = useCallback((key: string, n: Omit<CharNotes, 'updatedAt'>) => setProgress((p) => ({ ...p, notes: { ...p.notes, [key]: { ...n, updatedAt: new Date().toISOString() } } })), []);
   const setOverride = useCallback((charId: string, moveId: string, o: MoveOverride | null) => {
     setOverrides((prev) => {
       const forChar = { ...(prev[charId] ?? {}) };
@@ -272,10 +274,10 @@ export function StoreProvider({ children, fallback, errorView }: { children: Rea
         ? {
             settings, progress, overrides, roster: data.manifest.characters, data, changelog, characters, char, opponents: characters, loadingIds,
             storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice,
-            updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow,
+            updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow, setNotes,
           }
         : null,
-    [settings, progress, overrides, data, changelog, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow],
+    [settings, progress, overrides, data, changelog, characters, char, loadingIds, storageInfo, saveError, dataNotice, isCurated, ensureLoaded, checkForDataUpdate, dismissDataNotice, updateSettings, setActiveChar, record, recordCombo, setLesson, addPractice, reset, replaceProgress, setOverride, sync, syncNow, setNotes],
   );
 
   if (loadError) return <>{errorView(loadError)}</>;

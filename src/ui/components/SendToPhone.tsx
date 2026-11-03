@@ -41,7 +41,7 @@ export function SendToPhone() {
           <h2 id="send-title">Send your progress to your phone</h2>
           <ol>
             <li>Open the camera on your phone and point it at the code.</li>
-            <li>Tap the link that appears. Iron Fist Academy opens on your phone.</li>
+            <li>Tap the link that appears. Fighters Academy opens on your phone.</li>
             <li>Sign in as your player there and tap <b>Add to my progress</b>.</li>
           </ol>
           {error && <p className="notice warn" role="alert">{error}</p>}

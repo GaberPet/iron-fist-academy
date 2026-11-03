@@ -55,7 +55,7 @@ export async function encodeTransfer(p: ProgressData, from: string, source: Tran
 export async function decodeTransfer(data: string): Promise<Transfer> {
   const json = new TextDecoder().decode(await pipe(fromB64url(data), new DecompressionStream('deflate-raw')));
   const t = JSON.parse(json) as Transfer;
-  if (t?.v !== 1 || typeof t.from !== 'string') throw new Error('This is not an Iron Fist Academy progress code.');
+  if (t?.v !== 1 || typeof t.from !== 'string') throw new Error('This is not an Fighters Academy progress code.');
   return { ...t, progress: migrateProgress(t.progress) };
 }
 
@@ -98,5 +98,8 @@ export function mergeProgress(mineIn: ProgressData, theirsIn: ProgressData): Pro
   const key = (a: AttemptRecord) => `${a.at}|${a.kind}|${a.itemId}`;
   const seen = new Set(mine.attempts.map(key));
   const attempts = [...mine.attempts, ...theirs.attempts.filter((a) => !seen.has(key(a)))].sort((a, b) => a.at.localeCompare(b.at));
-  return { ...mine, createdAt: earlier(mine.createdAt, theirs.createdAt) ?? mine.createdAt, lessons, combos, practiceSeconds, attempts };
+  // Notes: the most recently edited version of each character's notes wins.
+  const notes = { ...mine.notes };
+  for (const [k, v] of Object.entries(theirs.notes ?? {})) if (!notes[k] || v.updatedAt > notes[k].updatedAt) notes[k] = v;
+  return { ...mine, createdAt: earlier(mine.createdAt, theirs.createdAt) ?? mine.createdAt, lessons, combos, practiceSeconds, attempts, ...(Object.keys(notes).length ? { notes } : {}) };
 }

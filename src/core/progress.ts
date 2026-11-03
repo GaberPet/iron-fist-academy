@@ -51,7 +51,13 @@ export interface ProgressData {
   practiceSeconds: Record<string, number>;
   /** When each character (or 'all') was last reset, so synced devices drop the older progress too. */
   resets?: Record<string, string>;
+  /** Personal notes and game plan per character id ('general' = not tied to a character). */
+  notes?: Record<string, CharNotes>;
 }
+
+/** The game-plan board's columns, in order. */
+export const PLAN_COLUMNS = ['Punishment', 'Keep out', '50/50', 'Neutral', 'Oki'] as const;
+export interface CharNotes { text: string; columns: Partial<Record<(typeof PLAN_COLUMNS)[number], string[]>>; updatedAt: string }
 
 export type Difficulty = 'easy' | 'normal' | 'hard';
 
@@ -141,6 +147,7 @@ export function migrateProgress(raw: unknown): ProgressData {
     combos: r.combos && typeof r.combos === 'object' ? r.combos : {},
     practiceSeconds: r.practiceSeconds && typeof r.practiceSeconds === 'object' ? r.practiceSeconds : {},
     ...(r.resets && typeof r.resets === 'object' ? { resets: r.resets } : {}),
+    ...(r.notes && typeof r.notes === 'object' ? { notes: r.notes } : {}),
   };
 }
 

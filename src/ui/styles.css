@@ -1,4 +1,4 @@
-/* Iron Fist Academy · a Level Academy programme.
+/* Fighters Academy · a Level Academy programme.
  * Styled to the Level Academy brand guidelines v1 (October 2026): monochrome, Montserrat + Source
  * Sans 3, square-cut and calm, one diamond device per layout, spacing 4 8 16 24 40 64.
  * Status is never shown with colour: filled vs outlined, solid vs dashed, and words carry it. */
@@ -494,3 +494,12 @@ table.board tr.sel td { color: var(--red); font-weight: 700; }
 .rank-up { text-align: center; }
 .rank-up .rank-badge { margin: 0 auto; }
 .rank-chip { display: flex; align-items: center; gap: var(--space-xs); background: none; border: 0; padding: 0; color: inherit; text-align: left; cursor: pointer; font: inherit; }
+/* Notes: game-plan board and personal notes */
+.plan-board { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-sm); }
+@media (max-width: 75rem) { .plan-board { grid-template-columns: repeat(auto-fill, minmax(220px, 1fr)); } }
+.plan-col { border: var(--rule-hair) solid var(--line); padding: var(--space-sm); display: flex; flex-direction: column; gap: var(--space-xs); min-width: 0; }
+.plan-col h3 { color: var(--red); }
+.plan-moves { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-2xs); }
+.plan-moves li { display: flex; align-items: center; justify-content: space-between; gap: var(--space-xs); border-bottom: var(--rule-hair) solid var(--line); padding-bottom: var(--space-2xs); }
+.plan-col form input { flex: 1; min-width: 0; }
+.notes-text { width: 100%; min-height: 220px; resize: vertical; font: inherit; color: var(--ink); background: var(--surface); border: var(--rule-hair) solid var(--line); border-radius: var(--radius-input); padding: var(--space-xs); }
