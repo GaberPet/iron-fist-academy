@@ -95,7 +95,7 @@
   --color-overlay: rgba(7, 6, 12, 0.85);
 }
 
-/* High contrast: pure black and white with yellow, for easy reading. */
+/* Default (id "contrast", kept so saved settings still work): pure black and white with yellow, for easy reading. */
 :root[data-theme="contrast"] {
   --ink: #ffffff; --paper: #000000; --surface: #1a1a1a; --graphite: #ffffff; --muted: #ffffff; --line: #ffffff; --steel: #bdbdbd;
   --red: #ffd400; --red-dark: #e6be00; --on-red: #000000;

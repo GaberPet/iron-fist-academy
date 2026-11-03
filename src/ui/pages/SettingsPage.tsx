@@ -181,7 +181,7 @@ export function SettingsPage() {
   );
 }
 
-const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade', neon: 'Neon', dojo: 'Dojo', devil: 'Devil', contrast: 'High contrast' };
+const THEME_LABEL: Record<Theme, string> = { light: 'Light', dark: 'Dark', arcade: 'Arcade', neon: 'Neon', dojo: 'Dojo', devil: 'Devil', contrast: 'Default' };
 const THEME_INFO: Record<Theme, string> = {
   light: 'White pages, black text and a white menu.',
   dark: 'Black pages, white text and a black menu with red outlines.',
@@ -189,7 +189,7 @@ const THEME_INFO: Record<Theme, string> = {
   neon: 'Dark purple night with hot-pink highlights.',
   dojo: 'Warm paper and wood colours with a deep red, like a dojo banner.',
   devil: 'Almost black with violet lightning.',
-  contrast: 'Pure black and white with yellow highlights, the easiest to read.',
+  contrast: 'Black and white with yellow highlights, to match the logo. The easiest to read.',
 };
 const TEXT_LABEL: Record<TextSize, string> = { normal: 'Normal text', large: 'Large', xlarge: 'Extra large' };
 

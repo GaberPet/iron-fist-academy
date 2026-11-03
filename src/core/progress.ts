@@ -98,11 +98,11 @@ export type TextSize = 'normal' | 'large' | 'xlarge';
 export const TEXT_SIZES: TextSize[] = ['normal', 'large', 'xlarge'];
 
 export type Theme = 'dark' | 'light' | 'arcade' | 'neon' | 'dojo' | 'devil' | 'contrast';
-export const THEMES: Theme[] = ['light', 'dark', 'arcade', 'neon', 'dojo', 'devil', 'contrast'];
+export const THEMES: Theme[] = ['contrast', 'light', 'dark', 'arcade', 'neon', 'dojo', 'devil'];
 
 export const DEFAULT_SETTINGS: Settings = {
   version: 1,
-  theme: 'dark',
+  theme: 'contrast',
   favoriteChar: '',
   textSize: 'normal',
   reduceMotion: false,
@@ -158,7 +158,7 @@ export function migrateSettings(raw: unknown): Settings {
     ...DEFAULT_SETTINGS,
     ...r,
     version: 1,
-    theme: THEMES.includes(r.theme as Theme) ? (r.theme as Theme) : 'dark',
+    theme: THEMES.includes(r.theme as Theme) ? (r.theme as Theme) : 'contrast',
     favoriteChar: typeof r.favoriteChar === 'string' ? r.favoriteChar : '',
     textSize: TEXT_SIZES.includes(r.textSize as TextSize) ? (r.textSize as TextSize) : 'normal',
     reduceMotion: r.reduceMotion === true,
