@@ -20,7 +20,7 @@ import { MatchupPage } from './pages/MatchupPage';
 import { InstallPage } from './pages/InstallPage';
 import { HelpPage } from './pages/HelpPage';
 import { RankingPage } from './pages/RankingPage';
-import { NotesPage } from './pages/NotesPage';
+import { GamePlanPage, NotesPage } from './pages/NotesPage';
 import { RankUp } from './components/RankUp';
 import { ImportPage } from './pages/ImportPage';
 import { SyncJoinPage } from './pages/SyncJoinPage';
@@ -40,6 +40,7 @@ const NAV: { id: string; label: string; icon: string; sep?: boolean }[] = [
   { id: 'punish', label: 'Punishment', icon: '✦' },
   { id: 'matchup', label: 'How to beat…', icon: '◎' },
   { id: 'ranking', label: 'Ranking', icon: '♔' },
+  { id: 'plan', label: 'Game plan', icon: '▦' },
   { id: 'notes', label: 'Notes', icon: '✎' },
   { id: 'dojo', label: 'Bot dojo', icon: '⚔' },
   { id: 'fight', label: 'Free fight', icon: '✊' },
@@ -148,6 +149,7 @@ export function App() {
       case 'install': return <InstallPage />;
       case 'help': return <HelpPage />;
       case 'ranking': return <RankingPage />;
+      case 'plan': return <GamePlanPage />;
       case 'notes': return <NotesPage />;
       case 'import': return <ImportPage />;
       case 'sync': return <SyncJoinPage />;

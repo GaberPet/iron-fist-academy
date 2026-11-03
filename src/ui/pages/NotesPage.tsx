@@ -13,12 +13,11 @@ const HINT: Record<Column, string> = {
   Oki: 'What to do when they are knocked down',
 };
 
-// Notes: a game-plan board (5 columns of moves) and free personal notes, per character, saved with the player.
-export function NotesPage() {
+// Game plan: a board of 5 columns of moves per character, saved with the player.
+export function GamePlanPage() {
   const { char, progress, setNotes } = useStore();
   const id = char.profile.id;
   const mine = progress.notes?.[id] ?? EMPTY;
-  const general = progress.notes?.general ?? EMPTY;
   const [draft, setDraft] = useState<Partial<Record<Column, string>>>({});
 
   const add = (col: Column) => {
@@ -34,13 +33,12 @@ export function NotesPage() {
     <div className="stack">
       <div className="page-head">
         <div>
-          <h1>Notes · {char.profile.name}</h1>
-          <p>Your own game plan and notes. Saved for this player, and synced to your other devices if sync is on.</p>
+          <h1>Game plan · {char.profile.name}</h1>
+          <p>Your own game plan, sorted by situation. Saved for this player, and synced to your other devices if sync is on.</p>
         </div>
       </div>
 
       <section className="card stack">
-        <h2>Game plan</h2>
         <p className="small muted">Type a move (for example df+2) and press Enter or Add. The list suggests {char.profile.short}'s moves as you type.</p>
         <datalist id="char-moves">{char.frames.moves.map((m) => <option key={m.id} value={m.id}>{m.name}</option>)}</datalist>
         <div className="plan-board">
@@ -64,6 +62,25 @@ export function NotesPage() {
           ))}
         </div>
       </section>
+    </div>
+  );
+}
+
+// Notes: free personal notes for the selected character and for every character.
+export function NotesPage() {
+  const { char, progress, setNotes } = useStore();
+  const id = char.profile.id;
+  const mine = progress.notes?.[id] ?? EMPTY;
+  const general = progress.notes?.general ?? EMPTY;
+
+  return (
+    <div className="stack">
+      <div className="page-head">
+        <div>
+          <h1>Notes · {char.profile.name}</h1>
+          <p>Write down anything you want to remember. Saved for this player, and synced to your other devices if sync is on.</p>
+        </div>
+      </div>
 
       <div className="grid g2">
         <section className="card stack">
