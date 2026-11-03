@@ -23,7 +23,7 @@ code { font-family: var(--font-body); background: var(--surface); padding: 0 var
 .app { display: grid; grid-template-columns: 264px minmax(0, 1fr); height: 100%; }
 .sidebar { background: var(--ink); color: var(--paper); display: flex; flex-direction: column; gap: var(--space-2xs); padding: var(--space-lg) var(--space-sm); overflow-y: auto; }
 .brand { display: flex; flex-direction: column; align-items: flex-start; gap: var(--space-xs); padding: 0 var(--space-xs) var(--space-lg); color: var(--paper); text-decoration: none; }
-.brand-mark { width: 40px; height: 40px; flex: none; }
+.brand-mark { width: 140px; height: auto; max-width: 100%; flex: none; }
 .brand-name { font-family: var(--font-display); font-size: 1.0625rem; line-height: 1; letter-spacing: 0.01em; color: var(--paper); white-space: nowrap; }
 .brand-name b { font-weight: 800; }
 .brand-name span { font-weight: 300; }

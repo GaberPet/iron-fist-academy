@@ -1,6 +1,6 @@
 import { useEffect, useState, type FormEvent, type ReactNode } from 'react';
 import { storage, setProfile, setPersist, canPersist } from '../runtime/storage';
-import { Logo, Wordmark } from './components/Logo';
+import { Logo } from './components/Logo';
 import { PrivacyPage } from './pages/PrivacyPage';
 
 // Players on this device. No passwords: this only keeps each player's progress apart, it is not security.
@@ -92,7 +92,7 @@ function ConsentForm({ onChoose }: { onChoose: (c: Consent) => void }) {
   return (
     <main className="login">
       <div className="login-card stack">
-        <div className="login-brand"><Logo tone="white" /></div>
+        <div className="login-brand"><Logo size={120} /></div>
         <h1>Your data on this device</h1>
         <p>Fighters Academy uses no cookies, no trackers and no adverts. To save your training it keeps a few items in this browser's storage. Nothing is sent to us unless you turn on sync between devices.</p>
         <table className="consent-table">
@@ -163,7 +163,7 @@ function SignIn({ children }: { children: ReactNode }) {
   return (
     <main className="login">
       <div className="login-card stack">
-        <div className="login-brand"><Logo tone="white" /><Wordmark /></div>
+        <div className="login-brand"><Logo size={120} /></div>
         <h1>Sign in</h1>
         <p className="muted">{canPersist() ? 'Pick your player to carry on where you left off. Your academy progress is saved for each player on this device.' : 'Saving is off, so this player and their progress last only until you close the tab.'}</p>
         {players.length > 0 && (

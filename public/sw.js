@@ -2,11 +2,11 @@
 // Pages and frame data: network first, so updates arrive when online; the cache is the offline fallback.
 // Hashed build files (scripts, styles, fonts): cache first, they never change under the same name.
 // 3D models (.glb) are not cached: the fight modes are desktop only.
-const CACHE = 'ifa-v1';
+const CACHE = 'ifa-v2';
 
 async function precache() {
   const c = await caches.open(CACHE);
-  await c.addAll(['./', './index.html', './favicon.svg', './manifest.webmanifest', './icon-192.png', './data/manifest.json', './data/changelog.json']);
+  await c.addAll(['./', './index.html', './favicon.png', './logo.png', './manifest.webmanifest', './icon-192.png', './data/manifest.json', './data/changelog.json']);
   // The app shell: scripts and styles named in index.html, and the fonts those styles use.
   const html = await (await fetch('./index.html', { cache: 'no-cache' })).text();
   const assets = [...html.matchAll(/(?:src|href)="(\.\/assets\/[^"]+)"/g)].map((m) => m[1]);

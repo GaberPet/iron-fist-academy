@@ -26,7 +26,7 @@ import { ImportPage } from './pages/ImportPage';
 import { SyncJoinPage } from './pages/SyncJoinPage';
 import { ImportProgressButton } from './components/ImportProgress';
 import { PrivacyPage } from './pages/PrivacyPage';
-import { Logo, Wordmark } from './components/Logo';
+import { Logo } from './components/Logo';
 import { Icon } from './components/Icon';
 import { RosterTiles } from './components/RosterTiles';
 import { fmtShortDate } from './format';
@@ -179,8 +179,7 @@ export function App() {
       </a>
       <nav className="sidebar" id="main-nav" aria-label="Main">
         <div className="brand">
-          <Logo tone="current" />
-          <Wordmark />
+          <Logo />
           <span className="brand-sub">A Level Academy programme</span>
         </div>
         {NAV_HERE.map((n) => (
