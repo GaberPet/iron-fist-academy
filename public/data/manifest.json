@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-03T12:49:31.964Z",
+ "generatedAt": "2026-11-04T13:00:27.031Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -251,8 +251,8 @@
    "id": "fahkumram",
    "name": "Fahkumram",
    "file": "characters/fahkumram.json",
-   "hash": "k0x7p7",
-   "updatedAt": "2026-11-03T12:49:31.964Z",
+   "hash": "1ptakrf",
+   "updatedAt": "2026-11-04T13:00:27.031Z",
    "addedAt": null,
    "counts": {
     "moves": 150,
@@ -261,7 +261,7 @@
     "punishers": 17
    },
    "revisions": {
-    "movelist": 63438,
+    "movelist": 63484,
     "combos": 60558,
     "punishers": 59236,
     "page": 62087
@@ -411,8 +411,8 @@
    "id": "king",
    "name": "King",
    "file": "characters/king.json",
-   "hash": "bclsqq",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1sddlr9",
+   "updatedAt": "2026-11-04T13:00:27.031Z",
    "addedAt": null,
    "counts": {
     "moves": 215,
@@ -421,7 +421,7 @@
     "punishers": 10
    },
    "revisions": {
-    "movelist": 61905,
+    "movelist": 63482,
     "combos": 59521,
     "punishers": 30989,
     "page": 62096
@@ -491,8 +491,8 @@
    "id": "law",
    "name": "Law",
    "file": "characters/law.json",
-   "hash": "156ghhc",
-   "updatedAt": "2026-11-03T12:49:31.964Z",
+   "hash": "65mt6s",
+   "updatedAt": "2026-11-04T13:00:27.031Z",
    "addedAt": null,
    "counts": {
     "moves": 162,
@@ -501,7 +501,7 @@
     "punishers": 16
    },
    "revisions": {
-    "movelist": 63440,
+    "movelist": 63481,
     "combos": 62202,
     "punishers": 59241,
     "page": 62100
@@ -771,8 +771,8 @@
    "id": "victor",
    "name": "Victor",
    "file": "characters/victor.json",
-   "hash": "1mslbqy",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1b6qpqq",
+   "updatedAt": "2026-11-04T13:00:27.031Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -781,7 +781,7 @@
     "punishers": 13
    },
    "revisions": {
-    "movelist": 62128,
+    "movelist": 63486,
     "combos": 60825,
     "punishers": 37570,
     "page": 63069
@@ -811,8 +811,8 @@
    "id": "yoshimitsu",
    "name": "Yoshimitsu",
    "file": "characters/yoshimitsu.json",
-   "hash": "12vve7o",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1phahr3",
+   "updatedAt": "2026-11-04T13:00:27.031Z",
    "addedAt": null,
    "counts": {
     "moves": 312,
@@ -821,7 +821,7 @@
     "punishers": 22
    },
    "revisions": {
-    "movelist": 62125,
+    "movelist": 63483,
     "combos": 59572,
     "punishers": 59246,
     "page": 62116
