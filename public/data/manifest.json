@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-04T13:00:27.031Z",
+ "generatedAt": "2026-11-05T13:13:48.884Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -611,8 +611,8 @@
    "id": "miary-zo",
    "name": "Miary Zo",
    "file": "characters/miary-zo.json",
-   "hash": "17a8g97",
-   "updatedAt": "2026-10-26T09:49:22.785Z",
+   "hash": "jk2myf",
+   "updatedAt": "2026-11-05T13:13:48.884Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -621,7 +621,7 @@
     "punishers": 15
    },
    "revisions": {
-    "movelist": 61932,
+    "movelist": 63494,
     "combos": 60973,
     "punishers": 58661,
     "page": 62106
