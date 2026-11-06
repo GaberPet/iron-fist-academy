@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-05T13:13:48.884Z",
+ "generatedAt": "2026-11-06T12:58:10.344Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -291,8 +291,8 @@
    "id": "heihachi",
    "name": "Heihachi",
    "file": "characters/heihachi.json",
-   "hash": "13pg77p",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "12oieta",
+   "updatedAt": "2026-11-06T12:58:10.344Z",
    "addedAt": null,
    "counts": {
     "moves": 145,
@@ -302,7 +302,7 @@
    },
    "revisions": {
     "movelist": 62119,
-    "combos": 59753,
+    "combos": 63506,
     "punishers": 58167,
     "page": 62090
    }
