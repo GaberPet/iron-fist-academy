@@ -8,6 +8,7 @@
 import type { CharacterCurated, CharacterData, CharacterFile, CharacterProfile, ComboDef, Lesson, Move, PunisherEntry } from '../types';
 import general from './general.json';
 import applay from './applay.json';
+import tekkendocs from './tekkendocs.json';
 import { parseNotation } from '../core/notation';
 import { parseFrame, parseFrameRange, parseStartup } from './wavuNormalize.js';
 import { generateCurriculum } from './autoCurriculum';
@@ -153,6 +154,31 @@ export function applayCombos(charId: string, have: ComboDef[]): ComboDef[] {
     }));
 }
 
+/** Combo routes from the TekkenDocs character guides (scripts/import-tekkendocs.py), credited to the guide's author. */
+interface DocsGuide { authors: string[]; combos: { section: string; starters: string[]; route: string }[] }
+
+export function tekkenDocsCombos(charId: string, have: ComboDef[]): ComboDef[] {
+  const guide = (tekkendocs.characters as Record<string, DocsGuide>)[charId];
+  if (!guide) return [];
+  const known = new Set(have.map((c) => routeKey(c.route)));
+  const name = `${tekkendocs.source.name}${guide.authors.length ? ` (guide by ${guide.authors.join(', ')})` : ''}`;
+  // Guides are free-form text: a route the notation parser can't read is left out rather than shown garbled.
+  return guide.combos
+    .filter((c) => !known.has(routeKey(c.route)) && parses(c.route))
+    .map((c, i) => ({
+      id: `tekkendocs-${charId}-${i}`,
+      name: `${c.section} · ${c.starters[0]}`,
+      section: c.section,
+      starters: c.starters,
+      situation: `After ${c.starters.join(' / ')}.`,
+      route: c.route,
+      parseOk: true,
+      tags: [slugTag(c.section), 'tekkendocs'],
+      mistakes: [],
+      source: { name, url: `${tekkendocs.source.url}/t8/${charId}/guide`, revision: null, verified: 'source' as const },
+    }));
+}
+
 const slugTag = (s: string) => s.toLowerCase().split(' · ')[0].replace(/[^a-z0-9]+/g, '-').replace(/^-|-$/g, '') || 'combo';
 
 export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, overrides: Record<string, MoveOverride> = {}): CharacterData {
@@ -161,11 +187,12 @@ export function buildCharacter(f: CharacterFile, curated?: CharacterCurated, ove
   for (const m of moves) moveIndex.set(m.id, m);
   for (const m of moves) for (const a of m.alt) if (!moveIndex.has(a)) moveIndex.set(a, m);
   const curatedCombos = (curated?.combos ?? []).map((c) => ({ ...c, curated: true, parseOk: true }));
-  // Applay's sheet first wherever it has the data; Wavu Wiki fills in the rest (and all frame data).
+  // Applay's sheet first wherever it has the data, then TekkenDocs; Wavu Wiki fills in the rest (and all frame data).
   // Curated combos keep their place (lessons point at them); Wavu combos Applay already lists are dropped.
   const fromApplay = applayCombos(f.id, curatedCombos);
-  const covered = new Set(fromApplay.map((c) => routeKey(c.route)));
-  const combos = [...fromApplay, ...curatedCombos, ...importedCombos(f, curatedCombos).filter((c) => !covered.has(routeKey(c.route)))];
+  const fromDocs = tekkenDocsCombos(f.id, [...fromApplay, ...curatedCombos]);
+  const covered = new Set([...fromApplay, ...fromDocs].map((c) => routeKey(c.route)));
+  const combos = [...fromApplay, ...fromDocs, ...curatedCombos, ...importedCombos(f, curatedCombos).filter((c) => !covered.has(routeKey(c.route)))];
   const known = (id: string) => !!lookupMove({ moveIndex, profile: curated?.profile ?? autoProfile(f) } as CharacterData, id);
   const sheet = applaySheet(f.id);
   const applayPunishers = (sheet?.punishers ?? []).filter((p) => known(p.moveId));

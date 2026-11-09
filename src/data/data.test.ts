@@ -156,6 +156,22 @@ describe("Applay's combo routes", () => {
   });
 });
 
+describe('TekkenDocs combo routes', () => {
+  it('adds parseable, credited routes after Applay and skips ones already listed', () => {
+    const jin = buildCharacter(loadFile('jin'));
+    const docs = jin.combos.filter((c) => c.tags.includes('tekkendocs'));
+    expect(docs.length).toBeGreaterThan(3);
+    for (const c of docs) {
+      expect(c.parseOk).toBe(true);
+      expect(c.source.name).toMatch(/^TekkenDocs/);
+      expect(c.source.url).toBe('https://tekkendocs.com/t8/jin/guide');
+    }
+    const key = (s: string) => s.replace(/\s+/g, ' ').toLowerCase();
+    const others = new Set(jin.combos.filter((c) => c.tags.includes('applay')).map((c) => key(c.route)));
+    for (const c of docs) expect(others.has(key(c.route))).toBe(false);
+  });
+});
+
 describe("Applay first, Wavu for the rest", () => {
   it('uses Applay punishers and Heat Engagers that match real moves, and Wavu for uncovered speeds', () => {
     const jin = loadCharacter('jin');

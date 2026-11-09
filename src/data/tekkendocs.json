@@ -1,0 +1,5885 @@
+{
+ "source": {
+  "name": "TekkenDocs",
+  "url": "https://tekkendocs.com"
+ },
+ "characters": {
+  "alisa": {
+   "authors": [
+    "Nick RM",
+    "Yoshi",
+    "Miltonation",
+    "YaBoiDre"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "DF+2",
+      "uf+4,4",
+      "CH B+4",
+      "CH (2,3),3",
+      "BKP.4",
+      "u+1+2",
+      "ub+3+4,1+2",
+      "DES.UF+1+2,1+2",
+      "CH (1,2),D+2",
+      "CH (b+2),1"
+     ],
+     "route": "df+1,1 F+2 UF+1 T! F+3 DBT.F+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "3 SBT.3 ws1,2 UF+1 T! F+3 DBT.F+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3+4"
+     ],
+     "route": "F+2 DF+1 1 UF+1 F+3 DBT.F+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "d+3+4",
+      "Low Parry",
+      "CLK D+3"
+     ],
+     "route": "UF+1 F+3 DBT.F+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "DES.2,1"
+     ],
+     "route": "DES.2,1 T! 2,3,3 df+1,1 uf+3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "(b+1),1+2"
+     ],
+     "route": "UF+1 dash UF+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH D+3"
+     ],
+     "route": "ws4 UF+1 F+3 DBT.F+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH SBT.3",
+      "CH DBT.3"
+     ],
+     "route": "ws1,2,3 UF+1 F+3 DBT.F+1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "DF+2",
+      "uf+4,4",
+      "CH B+4",
+      "CH (2,3),3",
+      "BKP.4",
+      "u+1+2",
+      "ub+3+4,1+2",
+      "(b+1),1+2",
+      "WS(1,2),3",
+      "b+3+4",
+      "DES.u+1+2,1+2",
+      "CH (1,2),D+2",
+      "CH (b+2),1",
+      "CH SBT.3",
+      "CH DBT.3"
+     ],
+     "route": "UF+1 dash UF+1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "3 SBT.1,2,1,3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "DES.2,1"
+     ],
+     "route": "DES.2,1 T! 2,3,3 2,3,3 d+4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "d+3+4",
+      "Low Parry"
+     ],
+     "route": "UF+1 F+3 DBT.F+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1,2 f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "F,F 3,4,4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+2,3 uf+3+4 d+2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+2,3 2,3,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "DES.f+1+2"
+     ],
+     "route": "DBT.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WR2"
+     ],
+     "route": "f+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+4,4"
+     ],
+     "route": "SBT.1,2,1,3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH F,f+1+2",
+      "CH (df+1),2"
+     ],
+     "route": "2,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+3,2"
+     ],
+     "route": "DES.b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "(2,3),4",
+      "uf+3+4",
+      "CH (1),1"
+     ],
+     "route": "(while grounded) db+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ws1+2",
+      "CH (df+3),3"
+     ],
+     "route": "D+3"
+    }
+   ]
+  },
+  "anna": {
+   "authors": [
+    "Joi",
+    "Senpai Relax",
+    "keylo3",
+    "Victeemo"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "qcf+1 uf+2 HAM.2,1 b+4 HAM.2,2 TOM.3 CJM.uf+3 db+2 TOM.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "4 uf+2 HAM.2,1 b+4 HAM.2,2 TOM.3 CJM.uf+3 db+2 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+3",
+      "FC df+2",
+      "qcf+2,1",
+      "Low Parry"
+     ],
+     "route": "ws3 d+3,3 b+4 DB uf+2 HAM.2,1 WR3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FF4",
+      "CH ROLL 3"
+     ],
+     "route": "ws3 d+3,3 b+4 DB uf+2 HAM.2,2 TOM.3 CJM.uf+3 db+2 TOM.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ROLL 4",
+      "uf+4"
+     ],
+     "route": "qcf+1 d+4,1 b+4 DB uf+2 HAM.2,2 TOM.3 CJM.uf+3 db+2 TOM.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH uf+1,3,3+4"
+     ],
+     "route": "f+3 HAM.2,1 b+4 DB uf+2 HAM.2,1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH UF(1),3",
+      "CH (2),4",
+      "CH (1,2),4",
+      "CH DF(3,2),4"
+     ],
+     "route": "uf+2 HAM.2,1 b+4 DB uf+2 HAM.2,2 TOM.3 CJM.uf+3 db+2 TOM.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH qcf+1"
+     ],
+     "route": "qcf+1 uf+3 qcf+1 d+4,1 b+4 HAM.2,2 TOM.3 CJM.uf+3 db+2 TOM.2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "ws2"
+     ],
+     "route": "2,2 HAM.2,1 b+4 HAM.2,2 TOM.3 CJM.2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "db+3",
+      "FC df+2"
+     ],
+     "route": "uf+3 d+4,1 b+4 HAM.2,1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "FF4"
+     ],
+     "route": "d+4,1 b+4 HAM.2,2 TOM.3 CJM.2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4",
+      "CH qcf+1"
+     ],
+     "route": "df+3,2 HAM.2,1 b+4 HAM.2,2 TOM.3 dash CJM.2,1 f+3 HAM.2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH ROLL 3"
+     ],
+     "route": "ws3 CJM.uf+4 b+4 HAM.2,1 uf+2 HAM.1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "HAM.2,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+3,2 db+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "uf+4 f+3 HAM.2,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcf+2,1 f+3 HAM.2,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ROLL 3"
+     ],
+     "route": "ws1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "D(4),1~4"
+     ],
+     "route": "df+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ws3",
+      "CH (2),3"
+     ],
+     "route": "CJM.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH CJM.1+2",
+      "CH d+2",
+      "CH df+4",
+      "uf+3"
+     ],
+     "route": "db+3+4 d+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH CJM.1"
+     ],
+     "route": "3,2"
+    }
+   ]
+  },
+  "armor-king": {
+   "authors": [
+    "ArmorKingTV21"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,N,d,df+2"
+     ],
+     "route": "DUx2,f+3,2,df~1,f+3,2,1 T! dash f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "f,n,d,df+1,uf+3,DU,f+3,2df~1,df+1,2 T!,dash SSR f+1+2,SAT! BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+2,1"
+     ],
+     "route": "B! ws4,df+3,f+3,2df~1,f+3,2,1 T! dash f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH ws2"
+     ],
+     "route": "2 (Dark upper),f,n,d,df+1 f+3,2df~1,f+3,2,1 T! dash SSR f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH df+2"
+     ],
+     "route": "MSSL,d+3+4,1 f+3,2df~1,f+3,2,1 T! dash SSL f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "b+3 T! SSR f,n,d,df+1,f+3,2df~1,f+3,2df~ws3,1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH db+3"
+     ],
+     "route": "CH db+3 T! SSR f,n,d,df+1,f+3,2df~1,f+3,2df~ws3,1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH f,f+2"
+     ],
+     "route": "CH f,f+2,3+4,1,f+3,2df~1,f+3,2,1 T! dash SSR,f+1+2f BAD.2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH df+3"
+     ],
+     "route": "CH df+3,SSL,3+4 BT.f+3,2df~1,d+3+4,3 T! dash f+1+2f,BAD.db+1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "fc df+2"
+     ],
+     "route": "fc df+2,SSR f,n,d,df+1,df+3,f+3,2df~1,f+3,2df delay 1 HB! ub+1,dash f,n,d,df+4 T! SSR ub+1,iSW"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f,N,d,df+2"
+     ],
+     "route": "DU,df+3,f+3,2,df~1,f+3,2,1 T! dash f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "4,3 f+3,2df~1,f+3,2,1 T! dash SSR f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+2,1"
+     ],
+     "route": "B! df+3,f+3,2df~1,f+3,2,1 T!,dash SSR f+1+2f,SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "fcd f+2"
+     ],
+     "route": "SSR f,n,d,df+1,uf+3,DU,f+3,2df~1,df+1,2 T!,dash SSR f+1+2,SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH ws2"
+     ],
+     "route": "2 (dark upper),df+3 f+3,2df~1,f+3,2,1 T! dash SSR f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH df+2"
+     ],
+     "route": "d+3+4,1,f+3,2,1 T! dash SSL f+1+2f SAT! BAD.2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "SSR f,n,d,df+1,uf+3,DU,f+3,2df~1,d+4,4,3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f+3,2,1 T! b+1,2f"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1,2 T! 3,4,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1+2,2 f+1+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "d+2,4,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+4",
+      "BAD.1+2"
+     ],
+     "route": "d+2+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,N,d,df+1"
+     ],
+     "route": "d+4,4,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ub+1",
+      "f,N,d,df+4"
+     ],
+     "route": "dash d+4,4,3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ff,n,2~f",
+      "CH (b+1),2~f",
+      "CH (df+2),1~f"
+     ],
+     "route": "BAD.1,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+2"
+     ],
+     "route": "ws3,1"
+    }
+   ]
+  },
+  "asuka": {
+   "authors": [
+    "fergus2k8"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "f+2",
+      "ws3",
+      "1+2",
+      "CH d+3+4",
+      "CH df+(1),4",
+      "CH ws1+2"
+     ],
+     "route": "ff+2,3 db+1,4 t! 1,2,3 uf+1,2 f+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "b+2,4,3 db+1,4 t! 1,2,3 uf+1,2 f+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "b+3,4,3 2,1,2 t! uf+1,2 f+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH (or NWG) WR1+2",
+      "CH (or NWG) f,f+1+2",
+      "3~4"
+     ],
+     "route": "WR3 1+4 1+4 uf+1,2 f+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "f+2",
+      "1+2",
+      "ws3",
+      "CH b+4"
+     ],
+     "route": "db+4,3 2,1,2 t! f,f+2,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH d+3+4"
+     ],
+     "route": "b+2,1,3 2,1,2 t! ff+2,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "db+4,3 2,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1+4,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+2,1,d+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "db+2 t! 1+4,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "db+1,4 t! ff+2,1+2 (For NWG)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 4",
+      "CH f,f+3"
+     ],
+     "route": "f+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC df+3",
+      "CH (3),1",
+      "d+1+2"
+     ],
+     "route": "f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (1,1),3"
+     ],
+     "route": "db+1,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH FC df+2"
+     ],
+     "route": "ws1,4 f+3+4"
+    }
+   ]
+  },
+  "azucena": {
+   "authors": [
+    "Koenji"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "CH ws1"
+     ],
+     "route": "df+3 d+2,3 LIB.3+4 dash db+3,4 f+2,1,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "f,f+3",
+      "db+1+2",
+      "LIB.1+2",
+      "CH d+1",
+      "CH 1+2",
+      "CH df+3"
+     ],
+     "route": "f+3,4 d+2,3 LIB.3+4 f,F+3 f+2,1,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "f+3,4 d+4,1~2 dash d+2,3 uf+3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "ws2"
+     ],
+     "route": "4,3 d+2,3 LIB.1+2 f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "db+1+2",
+      "f,f+3",
+      "LIB.1+2",
+      "uf+4",
+      "CH 1+2",
+      "CH df+3"
+     ],
+     "route": "d+2,3 LIB.4,1,2 dash f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "d+2,3 LIB.4,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1,4,1~2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "WS.4,1,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,f+3 t! df+1,4,1~2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+4,1 t! f+3+4 LIB.d+3 FC df+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+2"
+     ],
+     "route": "3,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+4",
+      "CH BT.3",
+      "FC.df+3"
+     ],
+     "route": "d+1+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+3,2",
+      "4,3"
+     ],
+     "route": "f,f+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "df+1,4,1~2"
+     ],
+     "route": "db+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.3"
+     ],
+     "route": "LIB.2"
+    }
+   ]
+  },
+  "bryan": {
+   "authors": [
+    "Ty"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,b+2"
+     ],
+     "route": "F,B+2 Dash iWS3,4 b+21~f+24,dash b+3~f+21"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "WS 1"
+     ],
+     "route": "ws1,iWS3,4 b+21~f+24,dash b+3~f+21"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH qcb+1"
+     ],
+     "route": "qcb+1,Dash b+2,4 Dash 1,b+21,f+24"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH f+3"
+     ],
+     "route": "f+3 SSR iWS3,4 Dash 1 b+3~f+24,Dash b+3~f+21"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+1"
+     ],
+     "route": "b+1 b+2~f+4,b+21,f+24 dash b+3~f+21"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low parry"
+     ],
+     "route": "Low parry b+2,4 dash 1,b+21,f+24"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 3+4"
+     ],
+     "route": "3+4 dash iWS3,4 dash 1 b+3~f+24,dash b+3~f+21"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f,b+2"
+     ],
+     "route": "F,B+2 f+1+2,d+3+4,2 dash b+3~f+21"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "WS 1"
+     ],
+     "route": "ws1,d+3+4,2 dash b+3~f+21"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH f+3"
+     ],
+     "route": "f+3 db+2,d+3+4,2 dash b+3~f+21"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH 3+4"
+     ],
+     "route": "3+4 dash db+2 1 b+3~f+24 dash b+3~f+21"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH b+1"
+     ],
+     "route": "b+1 db+2 1 b+21,f+24 Dash b+3~f+21"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1+2,1 uf+2,2,2,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+2,1~f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "uf+3+4,1+2,1 uf+2,2,2,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "d+3+4,2 uf+3 uf+2,2,2,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "qcb+2,4",
+      "CH qcb+3",
+      "f,f+4",
+      "qcb+1"
+     ],
+     "route": "qcb+4"
+    }
+   ]
+  },
+  "claudio": {
+   "authors": [
+    "Tetsu"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+1,2",
+      "uf+4",
+      "CH df+2",
+      "STB.f+1+2,1+2"
+     ],
+     "route": "b+2 T! f,f+4 b+3 f+2 b+4,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "STB.db+1+2",
+      "low parry"
+     ],
+     "route": "f,f+4 b+3 f+2 f,f+4 3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "b+3 1 f,f+4 b+3 d+1,2 T! f,f,f+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+1,2",
+      "uf+4",
+      "CH df+2",
+      "STB.f+1+2,1+2"
+     ],
+     "route": "b+2 T! f,f,f+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "STB.db+1+2",
+      "low parry"
+     ],
+     "route": "ff+4 b+3 f+2 f+2 b+4,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "b+3 b+3 db+1+2 f,f,f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+3,2 ,d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "STB.b+4,3.2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "d+1,2 T! b+3 d+1+2,"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+2 T! STB.b+4,3,2 (when you have STB)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH SS.4",
+      "CH f+4"
+     ],
+     "route": "db+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f,f+4"
+     ],
+     "route": "f+2,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+3",
+      "CH (b+3,n),3"
+     ],
+     "route": "3,2"
+    }
+   ]
+  },
+  "clive": {
+   "authors": [
+    "Kwstakys",
+    "TekkenDocs",
+    "K-TOP",
+    "H-DOPE"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "f+3",
+      "counterhit launchers"
+     ],
+     "route": "d+1 ws4 db+1+2,1+2 GAR.2,2 df+1,2~f PHX.2,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "heatdash"
+     ],
+     "route": "b+2 db+1+2,1+2 GAR.2,2 (blue it) df+1,2~f PHX.2,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "lowparry"
+     ],
+     "route": "b+2 db+1+2,1+2 GAR.3 db+2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      ""
+     ],
+     "route": "f+2,1 2,2,2 PHX.2,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2",
+      "heatdash"
+     ],
+     "route": "b+2 2,2,2 PHX.2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+2,1 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+2,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "d+1+2 f+2,1 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "3,3 BAH2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH PHX.2"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH PHX.2"
+     ],
+     "route": "ws1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WR2"
+     ],
+     "route": "PHX.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "GAR.1"
+     ],
+     "route": "dash b+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "heatdash"
+     ],
+     "route": "df+3,1+2 (bluespark it)"
+    }
+   ]
+  },
+  "devil-jin": {
+   "authors": [
+    "Vermilion"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "EWGF",
+      "SS+2"
+     ],
+     "route": "u+1+2 iWS+3~F MCR.4,1 dash d/f+3,2,4~U FLY2 (iWS 3 can be performed by holding 3 and inputting f,N,d,df,N+4)"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "MCR.3"
+     ],
+     "route": "deep dash u+1+2 iWS+3 iWS+3 iWS+3~F MCR.4,2,1~U/F"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Hellsweep"
+     ],
+     "route": "dash d+2 ws3~f MCR.4,2,1~U/F"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4",
+      "f,f+4"
+     ],
+     "route": "d/f+1 2 iWS+3~F MCR.4,1 iWS+3~F MCR.3 T! dash b+2,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "d+3+4"
+     ],
+     "route": "3,1,2 T! u/f+1 MCR.4,2,1~U"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "u+4"
+     ],
+     "route": "FLY1 iWS+3~F MCR.4,1 iWS+3~F MCR.3 T! iWS+3~F MCR.2,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "H.f,n,d,DF+4,3"
+     ],
+     "route": "f+3 MCR.4,1 u/f+1 MCR.4,2,1~U"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "H.f,n,d,df+1+2,1+2"
+     ],
+     "route": "dash 3,1 b,f+2,1,4,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "ws3~F MCR.4,1 iWS+3~F MCR.4,2,1~U"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "EWGF",
+      "SS+2"
+     ],
+     "route": "u+1+2 u/f+1 MCR.3 T! u/f+1 MCR.4,2,1~U/F"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2",
+      "MCR.3"
+     ],
+     "route": "deep dash u+1+2 3,1 b,f+2,1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Hellsweep"
+     ],
+     "route": "dash d+2 ws3~f MCR.4,2,1~U/F"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH b+4",
+      "f,f+4"
+     ],
+     "route": "d/f+1 2 b+2,1 T! dash b,f+2,1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "d+3+4"
+     ],
+     "route": "3,1,2 T! u/f+1 MCR.4,2,1~U"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "u+4"
+     ],
+     "route": "FLY1 b+2,1 T! u/f+1 MCR.4,2,1~U"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "H.f,n,d,df+1+2,1+2"
+     ],
+     "route": "dash 3,1 b,f+2,1,4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "3,1 b,f+2,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b,f+2,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1,1 b+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b,f+2,1,d+2 T! b,f+1+2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b,f+2,1,d+2 T! low wall slump MCR.3 b+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d/b+2",
+      "CH b+1+2",
+      "CH medium charge d/b+1+2",
+      "CH (d/f+1),4"
+     ],
+     "route": "b+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ws3"
+     ],
+     "route": "b+2,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "u/f+1",
+      "CH ws1,1",
+      "CH d/f+2~F",
+      "CH ws3~F"
+     ],
+     "route": "MCR.2,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (d/f+1),4~F"
+     ],
+     "route": "MCR.3 b+4"
+    }
+   ]
+  },
+  "dragunov": {
+   "authors": [
+    "Fear Of Silence"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "Df+2",
+      "ws2"
+     ],
+     "route": "df+1 4,4 fc df+1,4 SNK.2 T! df+3+4 b+4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "SNK.1"
+     ],
+     "route": "SSL Qcf+3+4 4,4 fc df+1,4 SNK.2 T! (3+4) PGN 2 dash b+4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH WR+2"
+     ],
+     "route": "Qcf+3+4 4,4 fc df+1,4 SNK.2 T! (3+4) PGN 2 dash B+4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "SNK.2"
+     ],
+     "route": "df+3+4 4,4 fc df+1,4 SNK.2 T! (3+4) PGN 2 dash b+4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+(2,1),2",
+      "CH f+(2),4"
+     ],
+     "route": "iws4 1 4,4 fc df+1,4 SNK.2 T! (3+4) PGN 2 dash b+4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Db+3",
+      "Low parry"
+     ],
+     "route": "Df+3+4 Qcf+3+4 4,4 fc df+1,4 SNK.3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Df+2",
+      "Ws+2"
+     ],
+     "route": "4,1 4,4 fc df+1,4 SNK.2 T! B+4,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "SNK.1"
+     ],
+     "route": "d+2 Ws+4 b+1,2 T! 3,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH WR+2",
+      "SNK.2",
+      "db+(2,1),2",
+      "CH f+(2),4"
+     ],
+     "route": "d+2 Ws+4 b+1,2 T! dash df+3+4 3,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "db+3"
+     ],
+     "route": "d+2 ws4 1 3,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "low parry"
+     ],
+     "route": "df+3+4 4,1 2,1,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "d+3,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+3 df,SNK.2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "WR+4 d+3,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcf+2 b+4,2 d ws4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "Uf+4"
+     ],
+     "route": "d+3,2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "B+1+2",
+      "Uf+1"
+     ],
+     "route": "d+2+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH B+(4,2),1",
+      "4,3"
+     ],
+     "route": "B+4.3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+1"
+     ],
+     "route": "db+3"
+    }
+   ]
+  },
+  "eddy": {
+   "authors": [
+    "ACE",
+    "Scorpion"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "WS 1,3",
+      "CH B+3,3"
+     ],
+     "route": "RLX.2 B+1 WS 1,4 QCF+3 DASH DB+4,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "DF+3",
+      "ws2"
+     ],
+     "route": "B+3,3 RLX.2 B+1 WS 1,4 QCF+3 DASH DB+4,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "QCF+3",
+      "CH HSP.4,2"
+     ],
+     "route": "UF+4 RLX.2 B+1 WS 1,4 DB+4,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "WS 1,3",
+      "CH B+3,3"
+     ],
+     "route": "RLX.3+4 UF+4 RLX.2,4~D RLX.3,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "DF+3",
+      "ws2"
+     ],
+     "route": "3,3 HSP.3,3,3 RLX.3,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "B+2,3,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "QCF+3 B+2,3,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "UF+2"
+     ],
+     "route": "F+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH B+1,4,3+4",
+      "CH HSP.1"
+     ],
+     "route": "RLX.3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH HSP.4"
+     ],
+     "route": "HSP.1 (or HSP.B+4 if you have stacks)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH DB+3"
+     ],
+     "route": "QCF+3"
+    }
+   ]
+  },
+  "fahkumram": {
+   "authors": [
+    "Leemishima"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,3"
+     ],
+     "route": "df+3~4 b+1 d+3,4,3~4 uf+4 T!"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "WS 3"
+     ],
+     "route": "df+3~4 3,4~4 dash 3,4~4 uf+4 T!"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b,f+4"
+     ],
+     "route": "df+3~4 3,4~4 dash 3,4~4 dash 3,4~3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 3+4"
+     ],
+     "route": "df+3~4 3,4~4 dash b+4 f+3,2,4~3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2,3"
+     ],
+     "route": "b+1 d+3,4,3~4 uf+4 T!"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2,3"
+     ],
+     "route": "3,4~4 3,4~4 uf+4 T!"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1,2,1,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "uf+4 T! b+4,3,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3,1 uf+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+4,3 T! 3,1,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+1",
+      "WS 2,4",
+      "CH FC df+2"
+     ],
+     "route": "ff+1+2"
+    }
+   ]
+  },
+  "feng": {
+   "authors": [
+    "Weak Akuma"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "Uf+4",
+      "Ws+3",
+      "f+3,4",
+      "FF4"
+     ],
+     "route": "df+1 FF+4,3 1 B+3 DF LS 2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+4~b"
+     ],
+     "route": "Ws2 df+1 1 1 b+4,2 DF LS 2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+4"
+     ],
+     "route": "SSL 1+2 b+4,2 DF LS 3 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FF4,3"
+     ],
+     "route": "b+3 DF LS3 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FC df+2"
+     ],
+     "route": "uf+3,b+3 DF LS3 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CD.2"
+     ],
+     "route": "uf+3 FF4,3 1 1 df+4,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3+4"
+     ],
+     "route": "df+1 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3+4,3"
+     ],
+     "route": "SSL b+3 1 1 df+4,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "STC P"
+     ],
+     "route": "SSL b+3 DF LS3 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+3"
+     ],
+     "route": "uf+3 FF4,3 1 1 3,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Uf+4",
+      "Ws+3",
+      "f+3,4"
+     ],
+     "route": "df+1 df+4,3 df+4,2,1+2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+3"
+     ],
+     "route": "uf+3 b+3 1 df+4,2,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "FC df+2"
+     ],
+     "route": "uf+3,b+3 DF LS3 b+4,2 DF LS2 T! uf+3 3,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "low parry"
+     ],
+     "route": "FF4~3 1 FF4,3 b+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+3,1 b+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1,3 b+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "DF+3 b+1+2 normal wall combo"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "DF+1 b+4,3+4 (in heat) BT.D+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "4~3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH UF+2"
+     ],
+     "route": "d+4 - b+1+2 / b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "STC.1+2"
+     ],
+     "route": "d+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+1",
+      "CH CD.1+2"
+     ],
+     "route": "b+1+2"
+    }
+   ]
+  },
+  "heihachi": {
+   "authors": [
+    "Trunkiez"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "F,n,d,df+2",
+      "F,f+2"
+     ],
+     "route": "f,n,d,df+2 f,n,d,df+2 f+3 df+1 f+3,d FUJ.2 ss+2,f RAI.1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4",
+      "F,f+3",
+      "Fc.df+2"
+     ],
+     "route": "f,n,d,df+2 f+3,d df+4,4,1 f+3,d FUJ.2 b+2* qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FUJ.2",
+      "Low parry"
+     ],
+     "route": "f,n,d,df+2 f+3,d df+4,4,1 f+3,d FUJ.2 f,n,d,df+4,4,1 1,b+2,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH F,n,d,df+4",
+      "F,n,d,df+4,4"
+     ],
+     "route": "f,n,d,df+2 f+3,d df+4,4,1 f+3,d FUJ.2 ss+2,f RAI.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "F,f+2",
+      "F,f+3",
+      "CH b+4"
+     ],
+     "route": "uf+4 f+3 b+1,4 uf+3,4 uf+2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "F,n,d,df+2"
+     ],
+     "route": "f,n,d,df+2 f+3 df+1 f+3,d RAI.2 ss+2,f RAI.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "F,n,d,df+4,4,n+4"
+     ],
+     "route": "b+1,4 uf+3,4 uf+2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+3,1+2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+3,2 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,f+2 1+2 df+3,1+2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH Ws+2",
+      "f+1+2"
+     ],
+     "route": "qcf+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH Ws+2",
+      "f+1+2"
+     ],
+     "route": "df+1:2*"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "Ws1"
+     ],
+     "route": "f,n,d,df+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "Fc.df+4"
+     ],
+     "route": "f,f+2"
+    }
+   ]
+  },
+  "hwoarang": {
+   "authors": [
+    "Kicking Machine"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "f+4 RFS.3~4 uf+3+4~f LFS.uf+4 T! deep dash uf+3,4,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "u+3 LFS.2 RFF.3,4 (delay) RFS.u+4,4 T! dash f+3+4 f+4~3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,n,df+4"
+     ],
+     "route": "3+4 RFF.3~4 (backlash) dash 4,4,4,4 T! uf+3+4~f uf+3+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low parry"
+     ],
+     "route": "f+3+4 RFF.f+3 LFS.2 RFF.f+3 LFS.uf+3+4 ub+3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "f+4 uf+4 uf+3,4,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "4,4,4,4 uf+3,4,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "SS 3,3 LFS.3~f LFS.f+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "SS 3,3 LFS.3,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3+4 RFF.f+3 LFS.f+3 LFS.3,f+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+3 T! 3+4 RFF.f+3 LFS.f+3 LFS.3,f+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f,f+3"
+     ],
+     "route": "f,f,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "RFF.3~4"
+     ],
+     "route": "dash b+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WS 3"
+     ],
+     "route": "uf+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+1+2"
+     ],
+     "route": "df+3+4"
+    }
+   ]
+  },
+  "jack-8": {
+   "authors": [
+    "Fisherboat"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "f+4 b+3.2 b+3.2d GMH.f+1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,1*"
+     ],
+     "route": "dash b+3.2 2,1 uf+1+2 GMC.1 dash 3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws1"
+     ],
+     "route": "u+1+2 b+3.2 2,1 uf+1+2 GMH.f+1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,F+1+2",
+      "CH ws2,1"
+     ],
+     "route": "b+3.2 2,1 uf+1+2 GMH.f+1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 3,1+2"
+     ],
+     "route": "f,f+2 b+1 f+1,2,1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "d+1+2"
+     ],
+     "route": "u+1+2 f+4 b+1 f+1,2,1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "2,1,2"
+     ],
+     "route": "ws2 b+3.2 b+3.2d GMH.f+1 T! dash 3d GMH.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low parry"
+     ],
+     "route": "f+4 b+3.2 b+3.2,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "f+4 f+1,2,1 T! f+1,2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws1"
+     ],
+     "route": "u+1+2 f+1,2,1 T! f+1,2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+3.2d GMH.f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "heat burst hFC.db+1,1 hFC.db+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1,1 3~d GMH.f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1,1 heat burst 2 uf+3 GMH.f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ss2",
+      "CH f+2"
+     ],
+     "route": "f,f+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "3,1+2",
+      "ws2,1"
+     ],
+     "route": "b+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH df+4"
+     ],
+     "route": "b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+3+4"
+     ],
+     "route": "d+1+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 1,1~d",
+      "CH f,f+1~d"
+     ],
+     "route": "GMH.3"
+    }
+   ]
+  },
+  "jin": {
+   "authors": [
+    "BOK DIBI"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "f,n,d,df+1",
+      "uf+4",
+      "f,f+3",
+      "CH uf+3",
+      "d+3+4"
+     ],
+     "route": "df+2,4 3,1~F ZEN.2 b+3~F ZEN.u+1 f+3+4~F ZEN.1,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH F+4"
+     ],
+     "route": "(dash) b+3,f+1 (dash) b+3,f+1 (dash) b+3f,u+1 (2),4~F ZEN.2 (dash) b+3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "f,n,d,df+1",
+      "uf+4",
+      "d+3+4"
+     ],
+     "route": "f,n,d,df+2 df+2,4 b,f+2,3~F ZEN.u+1 (dash,SSL) df+2,4 (dash) b+3~F ZEN.u+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "f,n,d,df+1",
+      "uf+4",
+      "d+3+4"
+     ],
+     "route": "f,n,d,df+2 b+3~F ZEN.1 b,f+2,3~F ZEN.u+1 (dash) (2),4f,ZEN.2 (dash) b+3,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH FC.df+4~F ZEN"
+     ],
+     "route": "df+2 b+3,f+1 b+3,f+1,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4",
+      "CH uf+3",
+      "d+3+4",
+      "ws2"
+     ],
+     "route": "b,f+2,3f,u+1 b+3,f+1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "low parry",
+      "CH FC.df+4"
+     ],
+     "route": "3,1 b,f+2,3f,1,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "b+3,f+1 b+3f,u+1 b+3,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 db+2,2,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b,f+2,1,df+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,n,d,df+1 f,n,d,df+2 1 db+2,2,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+1,2 1 b,f+2,1,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 4"
+     ],
+     "route": "df+1,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+1+2"
+     ],
+     "route": "f,F+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "db+3",
+      "ZEN.4",
+      "CH (2,1),4"
+     ],
+     "route": "d+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 2,1,4~4"
+     ],
+     "route": "f,n,d,df+1"
+    }
+   ]
+  },
+  "jun": {
+   "authors": [
+    "Pagani"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+2",
+      "IZU.2"
+     ],
+     "route": "f+4 FF2,B MIA.1+2 f+3 b+2,1 B MIA.1+2 IZU.2 T! GEN.3,DELAY 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,1+2",
+      "WS 3+4"
+     ],
+     "route": "f+4 b+4,2 f+3 b+2,1,B MIA.1+2 IZU.2 T! GEN.3,DELAY 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "d+1+2",
+      "MIA.1",
+      "CH uf+2",
+      "CH b+2,1,2"
+     ],
+     "route": "GEN.4 b+4,2 f+3 b+2,1,B MIA.1+2 IZU.1,F GEN 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH uf+3",
+      "CH ws2",
+      "CH WS 1+2",
+      "CH df+4"
+     ],
+     "route": "d+1+2 T! GEN.4 f+3 B,2,1,B MIA.1+2 IZU.1,F GEN.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3,2",
+      "uf+4,3"
+     ],
+     "route": "GEN.4 f+3 B,2,1,B MIA.1+2 IZU.1,F GEN.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH d+2"
+     ],
+     "route": "FC df+2 WS 2 f+3 b+2,1,B MIA.1+2 IZU.f+1,1 T! GEN.3 DELAY 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH IZU.1,2"
+     ],
+     "route": "1+4 4 FF2,b MIA.1+2 IZU.2 T! MIA.1+2 IZU.1,F GEN 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH d+3+4",
+      "ws3"
+     ],
+     "route": "4 FF2,B MIA.1+2 f+3 b+2,1 B MIA.1+2 IZU.2 T! GEN.3,DELAY 2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+2+3"
+     ],
+     "route": "Side walk right d+1+2 T! GEN.4 b+4,2 FF2,B MIA.1+2 IZU.1,F GEN.2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f+2"
+     ],
+     "route": "F 3 1,1 IZU.1,1 T! (f+1) IZU.1,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "d+3+4"
+     ],
+     "route": "4 f+1 IZU.1,1 T! (f+1) IZU.1,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "4 1,1 IZU.1,1 T! (f+1) IZU.1,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2,1+2",
+      "WS 3+4"
+     ],
+     "route": "uf+3 1,1 IZU.1,1 T! (f+1) IZU.1,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "b+3,2"
+     ],
+     "route": "RUN UP uf+4,3 MIA.2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4,3"
+     ],
+     "route": "GEN.4 1,1 IZU.1,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1+4,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "db+1,1,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "uf+4,3 MIA.2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "d+1+2 T! uf+4,3 MIA.2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f+3,4 T! FF2,MIA.2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "u+2,IZU.1,1 T! FF2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+2,1,2 T! ws1,1,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC df+3",
+      "CH SS2",
+      "CH 4",
+      "CH (df+3+4) 4",
+      "(FF3 )3+4",
+      "(ws3+4) 3"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+4"
+     ],
+     "route": "1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "UF 3+4",
+      "(ws1,4) 2",
+      "CH GEN.1"
+     ],
+     "route": "Dash in f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (df+1) 2"
+     ],
+     "route": "uf+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+1"
+     ],
+     "route": "IZU.1,2 KND f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH u+2"
+     ],
+     "route": "IZU.4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH IZU.f+1+2"
+     ],
+     "route": "db+1,1,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+1+2"
+     ],
+     "route": "MIA.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "u+4"
+     ],
+     "route": "f+2 1+2"
+    }
+   ]
+  },
+  "kazuya": {
+   "authors": [
+    "Ishan"
+   ],
+   "combos": [
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "EWGF"
+     ],
+     "route": "3,1,4 df+1,df+2 T! 3,1 DF(hold) 3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "FF3",
+      "WS 2",
+      "CH df+2"
+     ],
+     "route": "Cd 1+2 T! (1,2),4,3 shortdash b+2,2,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "FF4"
+     ],
+     "route": "df+3,2,1 T! SS4,1 b+2,2,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH d+1+2"
+     ],
+     "route": "ws1+2 b+2,2 df+1,df+2 3,1,DF(hold) 3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "EWGF"
+     ],
+     "route": "EWGF EWGF microdash 3,1,df+1+2 SS4,1 dash b+2,2,1+2 (damage ender) (replace the ender with electric for oki)"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FF3"
+     ],
+     "route": "ws1+2 (delay timing to this) b+2,2 df+1,df+2 T! SS4,1 DASH b+2,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "ws1+2 b+2,2 df+1,df+2 T! DASH SS4,1 df+1,df+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH DF+2"
+     ],
+     "route": "(1,2),4,3 microdash df+1,df+2 T! SS4,1 microdash b+2,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH FF4"
+     ],
+     "route": "Dash EWGF b+2,2 df+1,df+2 T! SS4,1 EWGF"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH d+1+2"
+     ],
+     "route": "ws1+2 b+2,2 df+1,df+2 T! SS4,1 microdash b+2,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH DF+2(PEWGF)"
+     ],
+     "route": "PEWGF EWGF microdash 3,1,df+1+2 SS4,1 b+2,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+3+4,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+2,4 df+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1,df+2 T! df+3+4,1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,n,d,df+1+2 b+2,4 df+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "DF+1,4"
+     ],
+     "route": "FF+4(oki)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC DF+3+4",
+      "CH 4",
+      "CH db+2",
+      "CH (3,1),4"
+     ],
+     "route": "FF+4"
+    }
+   ]
+  },
+  "king": {
+   "authors": [],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4",
+      "ws1+2"
+     ],
+     "route": "4 df+4,3 b+1,2 WR2+4 (double check for microdash requirement)"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "fc df+2",
+      "d+1+2"
+     ],
+     "route": "ff+1 df+4,3 b+1,2 WR2+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+1,2"
+     ],
+     "route": "JGR.2 1 iWR2+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4",
+      "ws1+2"
+     ],
+     "route": "4 b+1,2 WR2+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3,2,2*"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "ff+4 3,2,2*"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+1,2 3,2,2 (uncharged)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ff+1"
+     ],
+     "route": "dash d+2+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ff,n,1+2"
+     ],
+     "route": "f+2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "wr3",
+      "ub+1"
+     ],
+     "route": "f+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "db+3"
+     ],
+     "route": "ffn+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "JGR.2"
+     ],
+     "route": "d+2+3"
+    }
+   ]
+  },
+  "kuma": {
+   "authors": [
+    "Nino"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,1"
+     ],
+     "route": "b+2,1 b+2,2,1 T! f,f,f+1+2 HBS.1 b+2,2,1 T! dash u+3+4 SIT.1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "b+2,2,1 T! b+2,1,1+2 b+2,2,1+2 t! f,f,f+1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,f+2"
+     ],
+     "route": "u+1+2~d HBS.1 b+2,2,1 T! f,f,f+1+2 2+3 f+1+2 1+2 f,f,f+1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "WS 2"
+     ],
+     "route": "1,1,1 T! f,f,f+1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "HBS.df+2"
+     ],
+     "route": "b+2,2,1T! uf+2 b,f+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+2,1,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1,2,1+2 (delay) d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "uf+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+1"
+     ],
+     "route": "f,f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "(df,1,2),1+2",
+      "CH 4"
+     ],
+     "route": "db+2+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "H. ROL.1"
+     ],
+     "route": "f+2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "(uf+3,4),1+2~d"
+     ],
+     "route": "HBS.3+4"
+    }
+   ]
+  },
+  "kunimitsu": {
+   "authors": [
+    "Koenji"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "KAT.3,2",
+      "ws3",
+      "CH f,f+2",
+      "CH df+(1),3",
+      "CH KAT.2"
+     ],
+     "route": "uf+3 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "df+4 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+2,4,2",
+      "CH u+2",
+      "CH SET.3"
+     ],
+     "route": "ws4 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "BT.1+2",
+      "CH MUS.2",
+      "CH (3),4"
+     ],
+     "route": "KAT.4,2 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+2"
+     ],
+     "route": "ws2,1 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH SET.2",
+      "H.db+1+2"
+     ],
+     "route": "KAT.4,2 f+3+4 BT.4f SET.1 qcf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "SET.1+2",
+      "f+1+2"
+     ],
+     "route": "3+4 df+4 f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "uf+3",
+      "KAT.3,2",
+      "ws3",
+      "CH f,f+2",
+      "CH df+(1),3",
+      "CH KAT.2",
+      "CH b+2",
+      "BT.1+2",
+      "SET.1+2",
+      "f+1+2"
+     ],
+     "route": "f+3+4 BT.4f SET.1,2,1 3+4 qcf+1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH SET.2",
+      "H.db+1+2"
+     ],
+     "route": "f+3+4 BT.4 f+4 SET.1,2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 df+1 d+2,1,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+1,1 df+1,2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1,3 1 d+2,1,2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+4,3 1 d+2,1,2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+2",
+      "MUS.2",
+      "BT.4",
+      "3,4",
+      "(1,1),4",
+      "KAT.2",
+      "SET.4,3",
+      "SET.1,2,4",
+      "ub+2"
+     ],
+     "route": "qcf+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+4",
+      "SET.1,2,3"
+     ],
+     "route": "f,f+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+1"
+     ],
+     "route": "ws2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+4"
+     ],
+     "route": "SET.1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH SS.2"
+     ],
+     "route": "BT.1,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+(4),3",
+      "(1,1),2",
+      "SET.(1,2),2"
+     ],
+     "route": "qcf+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ws2,1",
+      "BT.1,4",
+      "KAT.1,2"
+     ],
+     "route": "qcf+1+2"
+    }
+   ]
+  },
+  "lars": {
+   "authors": [
+    "KayDash"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "F,N,B+2,1",
+      "uf+4",
+      "CH FC df+2",
+      "CH DEN.2"
+     ],
+     "route": "DEN.2 f+123~ DEN.1 b+3~f SEN.1+2 DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+1+2",
+      "SEN.3"
+     ],
+     "route": "df+3~d DEN.2 df+2~SEN.4 2 b+3~f SEN.1+2 DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "UF+3"
+     ],
+     "route": "FC df+2 db+2~f SEN.1+2 f,f+42~DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH db+4"
+     ],
+     "route": "FC df+2 db+21 df+2~SEN.4 db+2~f SEN.1+2 SSL DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH FF1+2"
+     ],
+     "route": "fff+1~ SEN.4 df+3~d DEN.2 df+2~ SEN.1+2 SSL DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws1",
+      "FF2"
+     ],
+     "route": "~f SEN.3 df+3~d DEN.2 df+2~ SEN.4 db+2~f SEN.1+2 DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws3"
+     ],
+     "route": "~d LEN.2 fff+1~b f,f+42~ DEN.1 df+3~d DEN.2 u 4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "DEN.1+2",
+      "Low Parry"
+     ],
+     "route": "fff+1~b f,f+42~ DEN.1 df+3~d DEN.2 u 4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "F,N,B+2,1",
+      "uf+4",
+      "CH FC df+2",
+      "CH DEN.2"
+     ],
+     "route": "f+123~ DEN.1 b+3 SEN.1+2 DEN.2 u 4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f+1+2",
+      "SEN.3"
+     ],
+     "route": "df+3~d DEN.2 f+21~SEN.1+2 f+21~ SEN.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "UF+3",
+      "CH db+4"
+     ],
+     "route": "ws2~f SEN.1+2 df+1 f+21~SEN.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH FF1+2"
+     ],
+     "route": "db+21 f+21~ SEN.1+2 f+21~SEN.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws3"
+     ],
+     "route": "~d LEN.2 f+123~ DEN.1~f SEN.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws1",
+      "FF2"
+     ],
+     "route": "uf+3 ws2~f ~SEN.1+2 DEN.2 u 4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "f+123~DEN.1 b+3~f SEN.1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1 db+21 f+1+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 df+1 d+3 1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1 d 3,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,f,F+2+4 f+1+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "SS+2"
+     ],
+     "route": "ff+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH df+2"
+     ],
+     "route": "SEN.1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "df+3",
+      "db+1+2"
+     ],
+     "route": "~d DEN.1 2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH DEN.3+4"
+     ],
+     "route": "~f SEN.1"
+    }
+   ]
+  },
+  "law": {
+   "authors": [
+    "Landon D",
+    "Ninjakilla_212"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws2",
+      "literally anything that launches them in the air and you still have your tailspin. I'm not even joking"
+     ],
+     "route": "4,u+3 dash df+1,2 f,f+4 (dash) 1+2 T! 4,3~f DSS.f+4 dash df+1,2 f,f+4 (dash) 1+2 T! df+1,2 f,f+4 dash df+1,2 f,f+4 (dash) 1+2 T! df+1,2 dash HEAT BURST df+1,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 1+2",
+      "ws4,3"
+     ],
+     "route": "d+1+2 dss 3 b+2,3,4~f DSS.f+4 b+2 2,2,2~f DSS.1+2 f+3,1~f DSS~df ws4~f 3+4,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4,3"
+     ],
+     "route": "SSL dash d+1+2 DSS.3 b+2,3,4~f DSS.f+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws2",
+      "CH f+1+2"
+     ],
+     "route": "4,u+3 4,3~f DSS.uf+2 dash 1+2 dash 4,3~f DSS.f+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4,3"
+     ],
+     "route": "dash 4,u+3 4,3~f DSS.f+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+2,3,4~f DSS.uf+2_f3_3 1,2,2 delay 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "4,3~f DSS.f+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+3",
+      "(d+3),3",
+      "CH df+3+4",
+      "(b+2),2"
+     ],
+     "route": "1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+1+2"
+     ],
+     "route": "b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "DSS.3"
+     ],
+     "route": "f,f+3 1+2 (no idea if the stomp is actually guaranteed but nobody ever techs it)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC df,d,df+3"
+     ],
+     "route": "BT d+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ws3"
+     ],
+     "route": "DSS.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH DSS.4"
+     ],
+     "route": "microdash 1+2 (can sometimes be a full combo if the dash is done quick enough)"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ss3"
+     ],
+     "route": "f+1"
+    }
+   ]
+  },
+  "lee": {
+   "authors": [
+    "Super Akouma"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4",
+      "df+2"
+     ],
+     "route": "4,u+3 b+2,4,3,f b+2,f f+4:1 dash side step b+4 d+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "f,n,d+2 dash d+2 b+2,4,3,f b+2,f f+4:1 dash side step b+4 d+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2,3",
+      "f+3,3,3,3,3,4"
+     ],
+     "route": "b,b+4 dash d+2 b+2,f ws1,2,f f+4:1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 4,4:4"
+     ],
+     "route": "qcf+4 b,b+4 dash d+2 b+2,f ws1,2,f f+4:1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH d+3"
+     ],
+     "route": "b,b+3,3 b+2,4,3,f b+2,f f+4:1 dash side step b+4 d+3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4",
+      "df+2"
+     ],
+     "route": "4,u+3 b+2,4,3,f f+4:1 wr3,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+1 f+4:1 T! HMS.4 (grounded wall hit) UB+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1 f+4,3 d+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "d+4,n,4,3,3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH HMS.u+4"
+     ],
+     "route": "df+4,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+4"
+     ],
+     "route": "qcf+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH fc df+4"
+     ],
+     "route": "Dash qcf+4"
+    }
+   ]
+  },
+  "leo": {
+   "authors": [
+    "AyoRichie",
+    "StrikeMist"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "KNK.3",
+      "f,f+4",
+      "CH KNK.2",
+      "CH d+2",
+      "CH SS+1+2",
+      "CH ub+3"
+     ],
+     "route": "b+1,4 KNK.1,4~D BOK.4 KNK.1+2 T! dash SSL b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,f+4,3"
+     ],
+     "route": "f+2 b+1,1+2~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "BOK.2",
+      "db+3"
+     ],
+     "route": "f+3 f+2 b+1,1+2~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "4 b+1,1+2~D BOK.4 KNK.1,4~D BOK.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+2,1"
+     ],
+     "route": "HB b+1,4 KNK.1,4~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "KNK.3,4",
+      "BOK.1,2"
+     ],
+     "route": "dash b+1,4 KNK.1,4~D BOK.4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH KNK.4"
+     ],
+     "route": "f+4 KNK.df ws3 b+1,1+2~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH df+2+3"
+     ],
+     "route": "ws3 4,b+1,1+2~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+2,4~F",
+      "KNK.1,2~F"
+     ],
+     "route": "b+1,1+2~D BOK.4 KNK.1,4~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH (uf+2),1 second hit"
+     ],
+     "route": "dash f+4 KNK.df ws3 b+1,1+2~D BOK.1,2 T! dash b+1+2,1+2,qcf+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "KNK.3",
+      "f,f+4",
+      "CH KNK.2",
+      "CH d+2",
+      "CH SS+1+2",
+      "CH ub+3"
+     ],
+     "route": "b+1,4 KNK.1+2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f,f+4,3"
+     ],
+     "route": "f+2 b+1,4 KNK.1+2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "BOK.2",
+      "db+3"
+     ],
+     "route": "f+3 b+1,1+2~D BOK.1,2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "b+1,4 KNK.1,4~D BOK.4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+2,1"
+     ],
+     "route": "HB b+1,4 KNK.1+2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH KNK.4"
+     ],
+     "route": "f+4 KNK.df ws3 f+4 KNK.1+2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH df+2+3"
+     ],
+     "route": "ws3 f+4 KNK.df ws3 f+4 KNK.1+2 T! dash f+4 KNK.df CD.2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+1,4 KNK.1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+1,4 KNK.3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+1,4 KNK.(HB) u+1 T! BOK.1+2 df+2+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "KNK.3,4 BOK.1+2 df+2+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+1~D FC"
+     ],
+     "route": "ws4,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+1"
+     ],
+     "route": "uf+1,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 4",
+      "CH (f+2),2"
+     ],
+     "route": "BOK.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC.df+3"
+     ],
+     "route": "BOK.2 323 BOK.1+2 df+2+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+2,1+2",
+      "ws4,1+2",
+      "BOK.1+2"
+     ],
+     "route": "qcf+2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ws3,1,2",
+      "CH df+1,2"
+     ],
+     "route": "d+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (df+1),2"
+     ],
+     "route": "f+1+2"
+    }
+   ]
+  },
+  "leroy": {
+   "authors": [
+    "SYRAXSLAYER",
+    "Guvgang"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,1+2",
+      "ws2"
+     ],
+     "route": "qcf+2 2,2 f+3,1+2,4 dash hrm 1,2 b+3+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+3+4"
+     ],
+     "route": "qcf+2 df+4,3 df+3,1 dash uf+3+4,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "d,df,f+2"
+     ],
+     "route": "2,2 f+3,1+2,4 dash hrm 1,2 f,f+3 b+3+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH (f,f+4),2"
+     ],
+     "route": "uf+3 2,2 f+3,1+2,4 dash hrm 1,2 b+3+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH (db+1),1+2"
+     ],
+     "route": "(db+1),2 dash ssr qcf+2 2 df+3,1 dash uf+3+4,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+1+2"
+     ],
+     "route": "qcf+2 2,2 f+3,1+2,4 dash hrm 1,2 f,f+3 b+3+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "SSR b+3 hrm 2 1 f,f+3 df+3,1 dash uf+3+4,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+2+3"
+     ],
+     "route": "Hrm 1,2 f,f+3 df+3,1 deep dash uf+3+4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2,1+2",
+      "ws2",
+      "CH b+1+2",
+      "qcf+2"
+     ],
+     "route": "f+2,3,4 hrm 2,3 dash hrm 1,2 b+3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+3+4"
+     ],
+     "route": "SSR f+2,3,4 hrm 2,3 uf+3+4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH (f,f+4),2"
+     ],
+     "route": "b+3 hrm 2 f+3,1+2,4 dash hrm 1,2 b+3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH (db+1),1+2"
+     ],
+     "route": "(db+1),2 db+1,3 uf+3+4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "qcf+2 df+4,3 df+3,1 dash uf+3+4,1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "db+2+3"
+     ],
+     "route": "SSR qcf+2 2 df+3,1 dash uf+3+4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "Hrm f+4 db+2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1+2,1+2,1 (delay the 1 by about a frame for max damage and oki)."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "2 uf+3+4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "(2),1,2,1 hrm f+4 db+2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+1+2"
+     ],
+     "route": "1+2,1+2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ub+2",
+      "CH (df+4),3"
+     ],
+     "route": "Dash uf+3+4,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (f+2,3),4"
+     ],
+     "route": "Hrm f+4 db+2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH db+4"
+     ],
+     "route": "db+2,1+2"
+    }
+   ]
+  },
+  "lidia": {
+   "authors": [
+    "Leemishima"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "hold b to cancel stance f,f+2 HRS.2 qcf+2,2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "WS 2"
+     ],
+     "route": "f,f+2 HRS.2 db+2,qcf+1+2,2 T! cancel stance holding b b+3,4,qcf+1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "3,2"
+     ],
+     "route": "f+3+4 hold f WLF.2 f,f+2 2 qcf+1+2,2 T! b+3,4,qcf+1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "f+2 2 b+3,4 qcf+1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "WS 2"
+     ],
+     "route": "df+2 4 WLF.2 df+4,2 T! b+3,4,qcf+1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "ff+2 2 1 b+3,4 qcf+1+2 4 2 1,2,3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "3,2"
+     ],
+     "route": "f,f+2 2 df+4,2 T! b+3,4,qcf+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+1+2,3,qcf+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "qcf+2,2 delay 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f+4,3,4 T! f+1+2,3,qcf+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "df+4,2 T! qcf+2,2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "df+4,2"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "f,f+3"
+    }
+   ]
+  },
+  "lili": {
+   "authors": [
+    "DewGlider"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "df+2 f+2,3 df+3+4 bt1,2 T! u+1+2 (Hold) qcf+1,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "f+2,3 f,f+3f3+4 df+3+4 bt1,2 T! u+1+2 (Hold) qcf+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws3",
+      "db+4",
+      "low parry"
+     ],
+     "route": "qcf+3 df+1 b+2,1f3+4 WR1+2 qcf+1,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "d+3+4"
+     ],
+     "route": "u+3,3f3+4 df+3+4 bt1,2 T! u+1+2 (hold) qcf+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "u+3+4",
+      "CH f+4",
+      "CH qcf+1,(2)",
+      "CH 1,1"
+     ],
+     "route": "qcf+3 qcf+3 3,2f3+4 WR1+2 qcf+1,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "bt 1+2"
+     ],
+     "route": "db+2 ws1,2f3+4 df+3+4 bt1,2 T! u+1+2 (Hold) qcf+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH FC df+3"
+     ],
+     "route": "d+1,2b bt3,4 b+1,4 T! u+1+2 (Hold) qcf+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+3+4",
+      "ss4"
+     ],
+     "route": "bt3,4 b+1f3+4 df+3+4 bt1,2 T! u+1+2 (Hold) qcf+3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+3",
+      "df+2"
+     ],
+     "route": "df+2b BT.1,2 f,f+3,f+1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws3",
+      "db+4",
+      "low parry"
+     ],
+     "route": "df+2b bt3,4 b+1f14"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2",
+      "d+3+4"
+     ],
+     "route": "u+3,3f3 f,f+3,f+1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "u+3+4"
+     ],
+     "route": "f+4 df+3+4 bt3,4 b+1f1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "bt 1+2"
+     ],
+     "route": "db+2 ws1,2f3 f,f+3f1,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "uf+4,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "ws1,2f 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "2 db+2 fc df+1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "b+1,4 T! uf+4,3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcf+3 T! ws1,2f 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcf+3 T! 2 db+2 fc df+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH fc df+1",
+      "ss3",
+      "bt3,4",
+      "CH uf+4,(3)"
+     ],
+     "route": "qcf+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH f+1+2"
+     ],
+     "route": "1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+3"
+     ],
+     "route": "f,f+3,3+4 DEW.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+1",
+      "3,2"
+     ],
+     "route": "DEW.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+2,(1)"
+     ],
+     "route": "bt1,2"
+    }
+   ]
+  },
+  "miary-zo": {
+   "authors": [
+    "Koenji"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "Ws+2",
+      "CH df+4",
+      "CH SS.2",
+      "CH WS.3",
+      "d+1+2",
+      "CH d+2",
+      "MOR.1+2"
+     ],
+     "route": "u+3 df+4,f MOR.u+1+2 4,4 BAO.2 B+3,4,2f db uf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3+4"
+     ],
+     "route": "uf+3+4 df+4,f MOR.1,4 BAO.4 b+3,4,2f db uf+1"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4,4",
+      "CH b+1,4",
+      "CH MOR.2"
+     ],
+     "route": "f,f+3 df+4f MOR.u+1+2 dash b+3,4,2f db uf+1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "Ws+2",
+      "CH df+4",
+      "CH SS.2",
+      "CH WS.3",
+      "d+1+2",
+      "CH d+2",
+      "MOR.1+2"
+     ],
+     "route": "u+3 df+4,f MOR.u+1+2 4,4 BAO.2 B+3,4,2f MOR.1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 df+1 f+3+4,3+4,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 3,1,(delay)2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "d+1+2 1 3,1,(delay)2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1,1,1+2 3,1,(delay)2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+2",
+      "ws1,4",
+      "MOR.1,2"
+     ],
+     "route": "qcf+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "db+1+2"
+     ],
+     "route": "3,2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WR.2,1~f"
+     ],
+     "route": "MOR.1+2b"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "d+2",
+      "FC.df+4",
+      "CH df+3+4",
+      "CH b+4",
+      "BAO.1,4"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "MOR.1+2"
+     ],
+     "route": "BAO.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "u+1+2"
+     ],
+     "route": "ws1,4"
+    }
+   ]
+  },
+  "nina": {
+   "authors": [
+    "Lalo",
+    "Jodd",
+    "Koifish"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "uf+4 uf+3 df+32~db+2 ff df+32~b+4 tornado db+2 qcf+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Ws2"
+     ],
+     "route": "uf+3 df+32~ss1~db+2 ff df+32~b+4 tornado qcf+43 1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 4,4"
+     ],
+     "route": "d+41 df+32~db+2 ff db+3+4 tornado db+2 1+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH f+3"
+     ],
+     "route": "same combo as ws3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH f+2,1,3"
+     ],
+     "route": "ss1~db+2 ff df+32~db+2 ff 1+4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "heatdash combos"
+     ],
+     "route": "same combo as f+3 counterhit"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ub+1"
+     ],
+     "route": "d+22 ss1~db+2 ff df+32~db+2 ff qcf+43 1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "uf+4 uf+3 df+32 b+3+4 3 tornado qcf+43 1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws2"
+     ],
+     "route": "uf+3 df+32~ws1 df+32~b+4 db+2 qcf+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH qcf+3"
+     ],
+     "route": "d+41 df+32 b+3+4 3 tornado qcf+43 1+2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "A combo you should be trying to learn"
+     ],
+     "route": "uf+3 df+32~ss1~db+2 ff df+32~b+4 tornado db+2 ff 1+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Instant tornado easy combo"
+     ],
+     "route": "qcf+1 df+32~ws1 df+32~b+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+32~qcf+2 gives a flipover and is a decent mix of damage and oki"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "ss1~df+121+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "ss1 df+1 1+4.do d+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FC df+4"
+     ],
+     "route": "ss (up) d+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+3,4",
+      "CH (b+2,2),2"
+     ],
+     "route": "f+3+4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+2"
+     ],
+     "route": "qcf+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+1+2"
+     ],
+     "route": "f,f+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "(b+3+4),3"
+     ],
+     "route": "d+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (d+4),1"
+     ],
+     "route": "db+1+2"
+    }
+   ]
+  },
+  "paul": {
+   "authors": [
+    "Romanjelly"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "qcf+1",
+      "uf+4",
+      "CH f+1+2*",
+      "qcb+1+2"
+     ],
+     "route": "qcf+1 df+4 df+1 backsway df ws 1,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "3 df+4 3,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3,4",
+      "f,f+3,4"
+     ],
+     "route": "df+4,3,2 backsway deep dive 1+2 deep dive 1 wr2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Low parry",
+      "qcf+1+2"
+     ],
+     "route": "qcf+1 df+1 backsway df ws 1,2 backsway deep dive 2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "qcf+1",
+      "uf+4",
+      "CH f+1+2*"
+     ],
+     "route": "df+4 df+1 backsway ws 1,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "3,2 3,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+3,4",
+      "f,f+3,4"
+     ],
+     "route": "3,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "qcb+1+2"
+     ],
+     "route": "df+4 3,2 backsway deep dive 2,1 deep dive 1 wr2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low parry"
+     ],
+     "route": "3,2 3,2 backsway deep dive 2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "qcf+1+2"
+     ],
+     "route": "df+4 3,2 3,2 backsway deep dive 2,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3,2 backsway 2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3,2 d+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcb+3,2,1 low splat qcf+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcb+1+2 3,2 backsway up cancel qcf 2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "4"
+     ],
+     "route": "db+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "d+1+2",
+      "ss3"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "db+1+2",
+      "ss1",
+      "f+1+2"
+     ],
+     "route": "qcf+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "qcf+3"
+     ],
+     "route": "d+4,2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "df+4"
+     ],
+     "route": "b+1,2"
+    }
+   ]
+  },
+  "raven": {
+   "authors": [
+    "JacobKaas"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws1",
+      "CH ws2"
+     ],
+     "route": "f,f+3 f,f+4 db+2,1,3+4 SZN.3,2 T! b+2,4,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "qcf+4"
+     ],
+     "route": "BT.b+3 BT.f+3 db+2,1,3+4 SZN.3,2 T! b+2,4,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws3,2",
+      "CH qcf+1,2"
+     ],
+     "route": "SZN.1+2 deep dash f,f+4 4,1 BT.b+2,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3+4,4",
+      "uf+3",
+      "BT.f,f+3+4"
+     ],
+     "route": "db+2,1 db+2,1,3+4 SZN.3,2 T! b+2,4,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "bt f,f+3+4"
+     ],
+     "route": "BT.f+2,4,2 T! b+3+4 BT.2,1,f 1,2."
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "BT.b+2,3 f,f+3 qcf+1,2 T! b+2,4,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2,3"
+     ],
+     "route": "f,f+3 db+2 bt2 BT.f+2,4,2 T! b+2,4,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "WS 1",
+      "CH WS 2"
+     ],
+     "route": "b+2,4,2 T! db+1,2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "qcf+4"
+     ],
+     "route": "BT.f+2,4,2 db+1,2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "ws3,2",
+      "CH qcf+1,2"
+     ],
+     "route": "4,1 BT.2,1,f 3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+3+4,4",
+      "uf+3",
+      "BT.f,f+3+4"
+     ],
+     "route": "db+2 BT.f+4,1 T! db+1,2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "BT.f,f+3+4"
+     ],
+     "route": "BT.f+4,1 T! b+2,4,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "BT.b+2,3 b+2,4,2 T! df+1,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "db+2,1,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1,2,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "b+4,4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "qcf+1,2 T! db+2,1,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "bt f+2,4,2 T! df+1,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH db+4",
+      "CH db+3"
+     ],
+     "route": "uf+3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.1+2",
+      "f+3,2 last hit ch"
+     ],
+     "route": "f,f+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH BT.f+3"
+     ],
+     "route": "1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.b+3"
+     ],
+     "route": "BT.f+3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+3"
+     ],
+     "route": "db+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.f+3+4",
+      "f,f,f+3"
+     ],
+     "route": "BT.1+2"
+    }
+   ]
+  },
+  "reina": {
+   "authors": [
+    "Heavenly"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2"
+     ],
+     "route": "F+2,3f - Sen1+2 - T! - WRA.3,4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "WR4 - f+2,3f - Sen1,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "Fn3"
+     ],
+     "route": "FF2f - Sen3 - df+2 - df+1,f - Sen1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "CH b+4"
+     ],
+     "route": "FF2f - Sen3 - df+2 - df+1 - f+2,3f - Sen1,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "Low Parry"
+     ],
+     "route": "FF2f - SEN.3 - df+2 - df+1 - f+2,3f - SEN.1,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+1,1,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 d+4,1 (just frame is timed during the first hit of the stomp)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "WRA.4,2,2,qcf+1+2 (Whenever in WRA stance)"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "SEN.1+2 - T! - WRA.4,2,2,qcf+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "DF+4,2,3 - T! - d+3+4,4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "F+4",
+      "ws2 CH"
+     ],
+     "route": "df+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "d+2"
+     ],
+     "route": "Micro dash d+4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "UNS 2"
+     ],
+     "route": "FF+2 - SEN.3 d+4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WRA.1"
+     ],
+     "route": "WRA.1,f - SEN.3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WRA.1"
+     ],
+     "route": "WRA.1,f - SEN.1+2 - WRA.2 UNS 4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FF+2"
+     ],
+     "route": "SEN.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "SEN.1+2"
+     ],
+     "route": "WRA.2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "WRA.3+4"
+     ],
+     "route": "EWGK (F,n,D,DF+3)"
+    }
+   ]
+  },
+  "shaheen": {
+   "authors": [
+    "alihandal21",
+    "Oracle99"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "uf+4"
+     ],
+     "route": "3df ▶ SNK.df+2 ▶ df+4,1df ▶ SNK.1 ▶ f+2,3 T! ▶ FC.df+2 ▶ f,F+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "D+2 ▶ db+2 df ▶ SNK.1 ▶ df+4,1 SNK ▶ db,ws3,3 T! ▶ FC.df+2 ▶ f,F+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,F+3",
+      "low parry"
+     ],
+     "route": "fc df+2 ▶ df+1 ▶ df+4,1df ▶ SNK.1 ▶ db+2 df ▶ SNK.3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "d+2 ▶ db+2 df ▶ snk1 ▶ df+4,1 df ▶ SNK.1 ▶ 3+4 T! ▶ FC.df+2 ▶ f,F+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 4,1"
+     ],
+     "route": "3df ▶ SNK.2 ▶ df+4,1df ▶ SNK.db ▶ n ws3,3 T! ▶ FC.df+2 ▶ f,F+3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ws2",
+      "db+4"
+     ],
+     "route": "3df ▶ SNK.2 ▶ df+4,1df ▶ SNK.1 ▶ f+2,3 T! ▶ FC.df+2 ▶ f,F+3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "uf+4",
+      "ws2",
+      "db+4"
+     ],
+     "route": "f+2,4,4 ▶ f+2,3 T! ▶ db+2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "uf+3"
+     ],
+     "route": "df+1 ▶ 4,1 ▶ f+2,3 T! ▶ f,F+3"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH b+4"
+     ],
+     "route": "d+2 ▶ f+2,4,4 ▶ f+2,3 T! ▶ db+2,1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f,F+3",
+      "low parry"
+     ],
+     "route": "f,F+3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "df+4,1,delay 3"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "db+3,4 T! ▶ df+1 ▶ b+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "4,1 ▶ b+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "3+4 ▶ df+4,1,delay 3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH SS.1+2",
+      "uf+1"
+     ],
+     "route": "b+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "Slide"
+     ],
+     "route": "SNK.2"
+    }
+   ]
+  },
+  "steve": {
+   "authors": [
+    "SEAGERR"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH B+1",
+      "CH FLK.2"
+     ],
+     "route": "dck.1 df,1,2~1 f+2,2,LNH,2 T! dash 1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "pab df+2"
+     ],
+     "route": "pab f+1+2 f,2,2,2 T! dash 1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "fc df+2",
+      "u+2"
+     ],
+     "route": "ub+2 dck.1 df,1,2~1 f,2,2,2 T! dash b,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "LNH.2"
+     ],
+     "route": "exd+1 df,1,2~1 f+2,2,LNH,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "4,1,2~1",
+      "all swindler moves"
+     ],
+     "route": "3,1,1 f+2,2,LNH.2 T! 3,1,2,LNH,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH B+1",
+      "CH FLK.2"
+     ],
+     "route": "dck.1 df,1,2,~1-b dck cancel ws,1 f,2,2,2 T! 3,1,2,LNH.2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "pab df+2"
+     ],
+     "route": "PAB f+1+2 b,1,2-b f+2,2,LNH,2 T! 3,1,2,dck.1"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "fc df+2",
+      "u+2"
+     ],
+     "route": "ub+2 dck.1 df,1,2,1,-b dck.f+2 LNH.2 T! 2,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "LNH.2"
+     ],
+     "route": "exd.1 df,1,2,1 f+2,1-b FLK.1 ALB,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "4,1,2~1",
+      "all swindler moves"
+     ],
+     "route": "df,1,2,1 df+1,2,1~b dck.f+2,LNH.2 T! 3,1,2,LHN 2."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "F,2,1-b dck.1+2,1+2,1+2,1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "2,1-b db ws,1,delay 2."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "FLK.B+2 3,1,1 1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "u+2 FLK.1,1,F+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "B+2",
+      "SWA. 1"
+     ],
+     "route": "1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "DCK.1"
+     ],
+     "route": "ff+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "UB+2",
+      "DCK.F+2"
+     ],
+     "route": "LNH,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "FLK. 2"
+     ],
+     "route": "d+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH DF+2"
+     ],
+     "route": "DCK.1+2,1+2,1+2,1+2"
+    }
+   ]
+  },
+  "victor": {
+   "authors": [
+    "Yung_P"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+2",
+      "f,f+2",
+      "ws1",
+      "CH ws2"
+     ],
+     "route": "df+4,2 IAI.4,2 db+1,1,f PRF.2,2 IAI.2 b+3,1."
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "db+3",
+      "CH f,f,f+2"
+     ],
+     "route": "dash df+4,2 IAI.4,2 db+1,1,f PRF.2,2 IAI.1,2,2."
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ch.db+4",
+      "CH 1+2"
+     ],
+     "route": "ws2 df+4,2 IAI.4,2 db+1,1,f PRF.2,2 IAI.2 T! b+3,1."
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "3+4 IAI.4,2 df+3 db+1,1,f PRF.2,2 IAI. 1,2,2."
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "low parry"
+     ],
+     "route": "df+4,2 IAI.4,2 db+1,1,f PRF.2,2 IAI.1,2,2."
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "f,f+2",
+      "ws1",
+      "CH 1+2",
+      "CH ws2"
+     ],
+     "route": "df+3,4 db+1,1,f PRF.2,2 IAI.2 T! b+3,1."
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH db+4"
+     ],
+     "route": "ws2 df+3,4 db+1,1,f PRF.2,2 IAI.2 T! b+3,1."
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "db+3"
+     ],
+     "route": "f+3 PRF.2,2,1 db+1,1 PRF.2,2 IAI.1,2,2."
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "low parry"
+     ],
+     "route": "df+3,4 db+1,1,f PRF.2,2 IAI.1,2,2."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+2,2,1,1"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "1 f+4,2,d"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "2,1,f PER.2,2 (these enders enable our IAI wall pressure)."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "uf+1,1 T! f+2,2,1,1."
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "f,f+2 T! 4,3,delayed 2."
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+2",
+      "b+4",
+      "PRF.4"
+     ],
+     "route": "f+4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH IAI.2"
+     ],
+     "route": "u+1+2 ."
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH ub+2",
+      "ub+2"
+     ],
+     "route": "u+1+2."
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+1+2"
+     ],
+     "route": "dash f+1+2"
+    }
+   ]
+  },
+  "xiaoyu": {
+   "authors": [
+    "kanda"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "b+1+2",
+      "uf+3",
+      "BT.4"
+     ],
+     "route": "b+2 BT.b+3 f+3,1 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2 BT.2 BT.f+3+4.3+4 BT.2 BT.1+2 ub+3 (dash) AOP.uf.n.3 (dash) df+2,3"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "AOP.d+1+2",
+      "ws2*,f",
+      "CH ws2,f"
+     ],
+     "route": "b+3 BT.2 BT.f+3+4,3+4 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2 (doesn't work for Xiao and Bears; in this case do the combo above instead)"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH ss4",
+      "AOP.uf,n,3"
+     ],
+     "route": "ws2,f f+3,1 BT.2 BT.1.2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2 BT.2 BT.2 BT.2 BT.1,2 T! f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "BT.f+3+4,3+4"
+     ],
+     "route": "BT.f+3+4,3+4 BT.2 BT.2 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "3",
+      "HYP.3+4"
+     ],
+     "route": "f,f+3 BT.d+3,4 ub+3 T! AOP.uf,n,3 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "1+2",
+      "(1,d+2),1+2",
+      "HYP.3+4"
+     ],
+     "route": "f,f+3 BT.d+3,4 dash df+1 ub+3 T! AOP.uf.n.3 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "ub+3"
+     ],
+     "route": "AOP.uf,n,4 f+2 f+3,1 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH (b+2),2"
+     ],
+     "route": "BT.d+3,4 dash df+1 ub+3 T! AOP.uf.n.3 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,f,F+3"
+     ],
+     "route": "AOP.1,2 BT.2 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH AOP.3",
+      "CH AOP.1+2",
+      "HYP.4",
+      "CH ws3",
+      "HYP.3",
+      "CH uf+2",
+      "CH H.(f+2,1),2",
+      "CH H.(f,f+1).2",
+      "CH uf+4",
+      "CH BT.1",
+      "CH (f,f+1+2),1+2",
+      "CH (ws1+2),1+2"
+     ],
+     "route": "ws2*,f f+3,1 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f+2+3",
+      "BT.f+2+3"
+     ],
+     "route": "db+2 BT.d+3,4 ub+3 AOP.uf,n,3 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,f+3+4"
+     ],
+     "route": "ub+4 ws2*,f f+3,1 BT.2,2 BT.4"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH ff+4"
+     ],
+     "route": "HYP.3+4 hold forward f+3,1 BT.2 BT.1,2 T! ub+1+2 HYP.3+4 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "CH 3+4"
+     ],
+     "route": "df+2 f+2 f+3,1 BT.1,2 ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "BT.f,f+3+4"
+     ],
+     "route": "BT.f+3+4,3+4 BT.d+2 FC df.2 BT.1,2 T! ub+1+2 HYP.3+4 f,f+4 HYP.2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "AOP.uf+3,4"
+     ],
+     "route": "f,f+3 BT.d+3,4 dash ub+3 dash df+2,1+2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "df+3",
+      "low parry"
+     ],
+     "route": "b+3 BT.d+3,4 dash f+2 f+2 f+3,1,1+2 f+2 f+3,1 BT.2.2 BT.4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "b+1+2",
+      "uf+3",
+      "ws2*,f",
+      "CH AOP.1+2",
+      "CH 3+4",
+      "BT.4",
+      "CH uf+4"
+     ],
+     "route": "f+3,1 BT.2 BT.1,2 T! f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "BT.4",
+      "AOP.d+1+2"
+     ],
+     "route": "b+3 BT.2 BT.2 BT.1,2 T! f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH ss4"
+     ],
+     "route": "f,f+3 BT.2 BT.2 BT.1,2 T! f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "BT.f+3+4,3+4"
+     ],
+     "route": "BT.f+3+4,3+4 BT.2 BT.2 BT.1,2 T! f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "1+2",
+      "(1,d+2),1+2"
+     ],
+     "route": "3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "CH (b+2),2"
+     ],
+     "route": "BT.d+3,4 ub+3 AOP.uf,n,3 3+4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "f,f,F+3"
+     ],
+     "route": "AOP.1,2 BT.2 BT.1,2 T! f+2,1,4"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+3",
+      "low parry"
+     ],
+     "route": "df+2 f+2 f+3,1 BT.2,2 BT.4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "f+2,1,B HYP.2 f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "(HB) H.f+2,1<2,F 3+4"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "ub+4 2,1 f+1+2 ub+1+2 HYP.2 f+1+2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "ub+4 (HB) H.f+2,1<2,f 3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f+4"
+     ],
+     "route": "b+4,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "db+4",
+      "CH db+3",
+      "CH BT.db+4"
+     ],
+     "route": "df+2,1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH 4",
+      "CH (BT.d+3),4",
+      "HYP.3",
+      "BT.1+2,1+2",
+      "BT.d+4",
+      "AOP.uf,n,3"
+     ],
+     "route": "3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "b+4,1",
+      "AOP.2,1"
+     ],
+     "route": "f+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+1,d"
+     ],
+     "route": "AOP.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.3",
+      "CH db+2",
+      "CH f,f+3"
+     ],
+     "route": "BT.2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.uf+1"
+     ],
+     "route": "AOP.4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "AOP.3+4"
+     ],
+     "route": "fc 3"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "H.f+2,1,2",
+      "H.f,f+1,2"
+     ],
+     "route": "dash 3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "ws4"
+     ],
+     "route": "d+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "HYP.2+3"
+     ],
+     "route": "b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+3+4 (near wall"
+     ],
+     "route": "no wall splat) ;db+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.1+2"
+     ],
+     "route": "b+1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "AOP.uf+3,1"
+     ],
+     "route": "AOP.f+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "AOP.uf+4"
+     ],
+     "route": "(AOP.uf+4),4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "BT.f+1+2"
+     ],
+     "route": "BT.f+3+4,3+4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (1),2"
+     ],
+     "route": "(1,2),1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (f+2,)1"
+     ],
+     "route": "(f+2,1),4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (f+3),1"
+     ],
+     "route": "(f+3,1),1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH"
+     ],
+     "route": "(BT.2,1),4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH u+1+2"
+     ],
+     "route": "(u+1+2),2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH BT.d+3"
+     ],
+     "route": "(BT.d+3,)4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH BT.2"
+     ],
+     "route": "(BT.2),2,1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH BT.3+4"
+     ],
+     "route": "BT.f+3+4 BT.4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH d+3"
+     ],
+     "route": "(d+3),4"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH b+3",
+      "wall jump"
+     ],
+     "route": "BT.b+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "CH (1),d+2"
+     ],
+     "route": "BT.b+3"
+    }
+   ]
+  },
+  "yoshimitsu": {
+   "authors": [
+    "TrizzyTheRapper"
+   ],
+   "combos": [
+    {
+     "section": "Main combos",
+     "starters": [
+      "f,f+4"
+     ],
+     "route": "BT 2,1 b+1+2 f+3+4 jab f+3+4 d+2,2"
+    },
+    {
+     "section": "Main combos",
+     "starters": [
+      "FC df+1",
+      "low parry"
+     ],
+     "route": "d+2,2b Jab f+3+4 d+2,2,2"
+    },
+    {
+     "section": "Beginner combos",
+     "starters": [
+      "df+2",
+      "uf+3"
+     ],
+     "route": "d+2,2 df+1,2,1 d+2,2,2"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "At the wall"
+     ],
+     "route": "3,2,1+2 (delay) in heat"
+    },
+    {
+     "section": "Wall combos",
+     "starters": [
+      "Tornado at the wall"
+     ],
+     "route": "2,2 Jab f+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "KIN.2,1+2",
+      "(df+1) ,CH 2"
+     ],
+     "route": "ub+1+2"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "uf+4"
+     ],
+     "route": "CD 1"
+    },
+    {
+     "section": "Small combos",
+     "starters": [
+      "f,f+3"
+     ],
+     "route": "KIN.f+2"
+    }
+   ]
+  }
+ }
+}
