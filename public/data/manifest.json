@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-10T13:29:15.638Z",
+ "generatedAt": "2026-11-11T12:44:22.472Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -491,8 +491,8 @@
    "id": "law",
    "name": "Law",
    "file": "characters/law.json",
-   "hash": "65mt6s",
-   "updatedAt": "2026-11-04T13:00:27.031Z",
+   "hash": "ywdsgl",
+   "updatedAt": "2026-11-11T12:44:22.472Z",
    "addedAt": null,
    "counts": {
     "moves": 162,
@@ -501,7 +501,7 @@
     "punishers": 16
    },
    "revisions": {
-    "movelist": 63481,
+    "movelist": 63653,
     "combos": 62202,
     "punishers": 59241,
     "page": 62100
