@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-11T12:44:22.472Z",
+ "generatedAt": "2026-11-12T13:48:02.323Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -191,8 +191,8 @@
    "id": "devil-jin",
    "name": "Devil Jin",
    "file": "characters/devil-jin.json",
-   "hash": "181jcj",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "1npmuxh",
+   "updatedAt": "2026-11-12T13:48:02.323Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
@@ -201,7 +201,7 @@
     "punishers": 17
    },
    "revisions": {
-    "movelist": 63396,
+    "movelist": 63657,
     "combos": 60625,
     "punishers": 61042,
     "page": 62084
@@ -611,8 +611,8 @@
    "id": "miary-zo",
    "name": "Miary Zo",
    "file": "characters/miary-zo.json",
-   "hash": "jk2myf",
-   "updatedAt": "2026-11-05T13:13:48.884Z",
+   "hash": "dhwu6b",
+   "updatedAt": "2026-11-12T13:48:02.323Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -624,7 +624,7 @@
     "movelist": 63494,
     "combos": 60973,
     "punishers": 58661,
-    "page": 62106
+    "page": 63655
    }
   },
   {
