@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-12T13:48:02.323Z",
+ "generatedAt": "2026-11-17T14:27:00.896Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -51,8 +51,8 @@
    "id": "armor-king",
    "name": "Armor King",
    "file": "characters/armor-king.json",
-   "hash": "5fd2ds",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "s3a5px",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 173,
@@ -61,10 +61,10 @@
     "punishers": 23
    },
    "revisions": {
-    "movelist": 63326,
+    "movelist": 63749,
     "combos": 60491,
     "punishers": 60993,
-    "page": 62076
+    "page": 63722
    }
   },
   {
@@ -111,8 +111,8 @@
    "id": "bob",
    "name": "Bob",
    "file": "characters/bob.json",
-   "hash": "1fgiiqa",
-   "updatedAt": "2026-11-03T12:49:31.964Z",
+   "hash": "55a70x",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 161,
@@ -124,7 +124,7 @@
     "movelist": 63431,
     "combos": 61877,
     "punishers": 61867,
-    "page": 62080
+    "page": 63691
    }
   },
   {
@@ -171,8 +171,8 @@
    "id": "clive",
    "name": "Clive",
    "file": "characters/clive.json",
-   "hash": "b6sf7m",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "ohlc0c",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 122,
@@ -184,15 +184,15 @@
     "movelist": 61570,
     "combos": 61417,
     "punishers": 59233,
-    "page": 62083
+    "page": 63723
    }
   },
   {
    "id": "devil-jin",
    "name": "Devil Jin",
    "file": "characters/devil-jin.json",
-   "hash": "1npmuxh",
-   "updatedAt": "2026-11-12T13:48:02.323Z",
+   "hash": "shuedd",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
@@ -204,15 +204,15 @@
     "movelist": 63657,
     "combos": 60625,
     "punishers": 61042,
-    "page": 62084
+    "page": 63700
    }
   },
   {
    "id": "dragunov",
    "name": "Dragunov",
    "file": "characters/dragunov.json",
-   "hash": "1ypghpn",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "y09y93",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 141,
@@ -221,7 +221,7 @@
     "punishers": 20
    },
    "revisions": {
-    "movelist": 61304,
+    "movelist": 63685,
     "combos": 59565,
     "punishers": 59234,
     "page": 62085
@@ -391,8 +391,8 @@
    "id": "kazuya",
    "name": "Kazuya",
    "file": "characters/kazuya.json",
-   "hash": "1wr5a45",
-   "updatedAt": "2026-11-10T13:29:15.638Z",
+   "hash": "ox055g",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 135,
@@ -401,7 +401,7 @@
     "punishers": 11
    },
    "revisions": {
-    "movelist": 63649,
+    "movelist": 63740,
     "combos": 59522,
     "punishers": 26753,
     "page": 62095
@@ -511,8 +511,8 @@
    "id": "lee",
    "name": "Lee",
    "file": "characters/lee.json",
-   "hash": "1hvig77",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "1bj5j4g",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
    "addedAt": null,
    "counts": {
     "moves": 156,
@@ -524,7 +524,7 @@
     "movelist": 63410,
     "combos": 60975,
     "punishers": 48522,
-    "page": 62101
+    "page": 63696
    }
   },
   {
@@ -725,6 +725,26 @@
     "combos": 60661,
     "punishers": 37395,
     "page": 62111
+   }
+  },
+  {
+   "id": "roger-jr",
+   "name": "Roger Jr.",
+   "file": "characters/roger-jr.json",
+   "hash": "11mk96i",
+   "updatedAt": "2026-11-17T14:27:00.896Z",
+   "addedAt": "2026-11-17",
+   "counts": {
+    "moves": 132,
+    "combos": 15,
+    "combosParsed": 10,
+    "punishers": 0
+   },
+   "revisions": {
+    "movelist": 63745,
+    "combos": 63737,
+    "punishers": 63704,
+    "page": 63748
    }
   },
   {
