@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-18T14:00:19.123Z",
+ "generatedAt": "2026-11-19T14:27:14.853Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -731,8 +731,8 @@
    "id": "roger-jr",
    "name": "Roger Jr.",
    "file": "characters/roger-jr.json",
-   "hash": "11mk96i",
-   "updatedAt": "2026-11-17T14:27:00.896Z",
+   "hash": "18mxe9",
+   "updatedAt": "2026-11-19T14:27:14.853Z",
    "addedAt": "2026-11-17",
    "counts": {
     "moves": 132,
@@ -741,10 +741,10 @@
     "punishers": 0
    },
    "revisions": {
-    "movelist": 63745,
+    "movelist": 63837,
     "combos": 63737,
     "punishers": 63704,
-    "page": 63748
+    "page": 63834
    }
   },
   {
