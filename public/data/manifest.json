@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-23T15:59:50.640Z",
+ "generatedAt": "2026-11-24T15:54:41.617Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -671,8 +671,8 @@
    "id": "paul",
    "name": "Paul",
    "file": "characters/paul.json",
-   "hash": "1kmjwpy",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "c1rz5m",
+   "updatedAt": "2026-11-24T15:54:41.617Z",
    "addedAt": null,
    "counts": {
     "moves": 143,
@@ -681,7 +681,7 @@
     "punishers": 19
    },
    "revisions": {
-    "movelist": 62131,
+    "movelist": 63887,
     "combos": 60911,
     "punishers": 58529,
     "page": 62109
@@ -731,8 +731,8 @@
    "id": "roger-jr",
    "name": "Roger Jr.",
    "file": "characters/roger-jr.json",
-   "hash": "nudwav",
-   "updatedAt": "2026-11-23T15:59:50.640Z",
+   "hash": "ewnzn9",
+   "updatedAt": "2026-11-24T15:54:41.617Z",
    "addedAt": "2026-11-17",
    "counts": {
     "moves": 132,
@@ -741,7 +741,7 @@
     "punishers": 0
    },
    "revisions": {
-    "movelist": 63873,
+    "movelist": 63886,
     "combos": 63737,
     "punishers": 63704,
     "page": 63879
