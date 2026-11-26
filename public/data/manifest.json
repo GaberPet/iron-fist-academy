@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-25T15:37:49.080Z",
+ "generatedAt": "2026-11-26T15:19:43.298Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -531,11 +531,11 @@
    "id": "leo",
    "name": "Leo",
    "file": "characters/leo.json",
-   "hash": "1wdznsc",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1no45eh",
+   "updatedAt": "2026-11-26T15:19:43.298Z",
    "addedAt": null,
    "counts": {
-    "moves": 140,
+    "moves": 142,
     "combos": 68,
     "combosParsed": 67,
     "punishers": 25
@@ -731,8 +731,8 @@
    "id": "roger-jr",
    "name": "Roger Jr.",
    "file": "characters/roger-jr.json",
-   "hash": "ai95dt",
-   "updatedAt": "2026-11-25T15:37:49.080Z",
+   "hash": "tavmkt",
+   "updatedAt": "2026-11-26T15:19:43.298Z",
    "addedAt": "2026-11-17",
    "counts": {
     "moves": 132,
@@ -744,7 +744,7 @@
     "movelist": 63894,
     "combos": 63737,
     "punishers": 63704,
-    "page": 63879
+    "page": 63909
    }
   },
   {
