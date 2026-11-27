@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-26T15:19:43.298Z",
+ "generatedAt": "2026-11-27T15:07:45.237Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -71,8 +71,8 @@
    "id": "asuka",
    "name": "Asuka",
    "file": "characters/asuka.json",
-   "hash": "1s3oo9l",
-   "updatedAt": "2026-11-02T13:31:16.380Z",
+   "hash": "1o99k7s",
+   "updatedAt": "2026-11-27T15:07:45.237Z",
    "addedAt": null,
    "counts": {
     "moves": 146,
@@ -81,7 +81,7 @@
     "punishers": 15
    },
    "revisions": {
-    "movelist": 63406,
+    "movelist": 64101,
     "combos": 59716,
     "punishers": 59231,
     "page": 62078
