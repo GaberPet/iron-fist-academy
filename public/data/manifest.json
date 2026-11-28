@@ -1,6 +1,6 @@
 {
  "schema": 1,
- "generatedAt": "2026-11-27T15:07:45.237Z",
+ "generatedAt": "2026-11-28T14:13:48.731Z",
  "source": {
   "name": "Wavu Wiki",
   "url": "https://wavu.wiki",
@@ -711,8 +711,8 @@
    "id": "reina",
    "name": "Reina",
    "file": "characters/reina.json",
-   "hash": "1r3szoe",
-   "updatedAt": "2026-10-27T17:28:27.303Z",
+   "hash": "1wikmfb",
+   "updatedAt": "2026-11-28T14:13:48.731Z",
    "addedAt": null,
    "counts": {
     "moves": 150,
@@ -721,7 +721,7 @@
     "punishers": 14
    },
    "revisions": {
-    "movelist": 61909,
+    "movelist": 64132,
     "combos": 60661,
     "punishers": 37395,
     "page": 62111
@@ -731,17 +731,17 @@
    "id": "roger-jr",
    "name": "Roger Jr.",
    "file": "characters/roger-jr.json",
-   "hash": "tavmkt",
-   "updatedAt": "2026-11-26T15:19:43.298Z",
+   "hash": "1v5sn5a",
+   "updatedAt": "2026-11-28T14:13:48.731Z",
    "addedAt": "2026-11-17",
    "counts": {
-    "moves": 132,
+    "moves": 131,
     "combos": 15,
     "combosParsed": 10,
     "punishers": 0
    },
    "revisions": {
-    "movelist": 63894,
+    "movelist": 64131,
     "combos": 63737,
     "punishers": 63704,
     "page": 63909
